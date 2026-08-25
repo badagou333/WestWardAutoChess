@@ -1,39 +1,37 @@
-# 游戏玩法原型
+# 西游护送
 
-项目目前包含两个 Demo：
+一个结合棋盘布阵、自走棋战斗、塔防压力和队伍经营的单人 PVE 护送游戏原型。
 
-- 根目录：早期“三路塔防 + 三合一”浏览器原型，无需安装依赖。
-- `godot-demo/`：当前“唐僧中央护送 + 棋盘布阵 + 金币经营 + 自动三合一 + 四波 Boss 战”Godot 单战 Demo。
+当前仓库只保留 Godot 版本。玩家在 5×7 棋盘上围绕唐僧布置队伍，通过招募、刷新、升人口和自动三合一规划章节经济；开战后英雄自动走位、攻击和释放技能。
 
-当前方向请优先运行 `godot-demo/`，详细说明见 [`godot-demo/README.md`](godot-demo/README.md)。
+## 项目入口
 
-项目的设计依据和换机器说明：
-
+- [`godot-demo/`](godot-demo/)：当前可运行的单战 Demo。
 - [`docs/CONFIRMED_GAME_DESIGN.md`](docs/CONFIRMED_GAME_DESIGN.md)：只记录已经明确确认的玩法和范围。
-- [`docs/DEVELOPMENT_HANDOFF.md`](docs/DEVELOPMENT_HANDOFF.md)：新机器环境、运行、测试和文件迁移说明。
-
-当前 Demo 的画风仍待确认，三头身比例已得到偏好确认，但现有明亮国风 Q 版素材不能视为最终美术定案。
-
-## 早期浏览器原型
-
-一个无需安装依赖的浏览器 Demo，用来验证“植物大战僵尸式分路棋盘 + 自走棋三合一升星”。
+- [`docs/DEVELOPMENT_HANDOFF.md`](docs/DEVELOPMENT_HANDOFF.md)：换机器运行、测试和迁移说明。
+- [`godot-demo/art/ART_DIRECTION.md`](godot-demo/art/ART_DIRECTION.md)：当前美术确认状态。
 
 ## 运行
 
-直接双击 `index.html`，或在项目目录启动任意静态文件服务器。
+安装 Godot 4.7.x 后，在仓库根目录执行：
 
-## 当前内容
+```bash
+godot --path godot-demo
+```
 
-- 3 条敌人路线、6 列部署格
-- 4 种单位：玉米、辣椒、土豆、咖啡
-- 商店刷新、购买、备战区、部署、移动和出售
-- 3 个同名同星单位合成升星，最高 3 星
-- 3 种敌人、8 个波次和完整胜负流程
+打开 Godot 编辑器：
 
-## 操作
+```bash
+godot --editor --path godot-demo
+```
 
-- 点击备战区或棋盘单位，再点击空格进行移动。
-- 出现可合成单位时，点击“合成”，再选择要保留的位置。
-- 准备完成后点击“开始第 N 波”。
+如果本机命令名是 `godot4`，将命令中的 `godot` 换成 `godot4`。
 
-这是机制验证版本，使用临时图形和 Emoji，不代表最终美术。
+## 当前状态
+
+- 单场四波 Boss 战可以完整运行。
+- 商店、金币、人口、候选区、布阵、自动合成与合成锁已经接通。
+- 自动战斗、暂停、倍速、战利品暂存和星级结算已经接通。
+- 画风仍待确认；当前明亮国风 Q 版素材是探索方案，不是最终定案。
+
+旧浏览器 Demo 和旧“守粮仓”Godot Demo 已从当前版本删除；需要时仍可从 Git 历史恢复。

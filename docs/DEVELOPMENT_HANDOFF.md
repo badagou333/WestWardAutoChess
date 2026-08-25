@@ -9,7 +9,7 @@
 - 已确认设计：`docs/CONFIRMED_GAME_DESIGN.md`
 - 当前美术状态：`godot-demo/art/ART_DIRECTION.md`
 
-根目录的 `index.html`、`game.js` 和 `styles.css` 是更早的浏览器机制原型，不是当前主要开发版本。
+旧浏览器原型和“守粮仓”Godot 原型已经从当前项目删除；如需查阅，只能从 Git 历史恢复。
 
 ## 新机器准备
 
