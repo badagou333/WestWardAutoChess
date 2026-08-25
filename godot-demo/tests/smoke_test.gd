@@ -12,51 +12,81 @@ func _run_test() -> void:
 	root.add_child(game)
 	await process_frame
 
-	# 固定商店内容，购买三个一星玉米，检查是否自动合成为一个二星单位。
+	if game.population != 3 or game.escort.position != game._cell_center(Vector2i(2, 3)):
+		_fail("初始人口或唐僧中央位置错误")
+		return
+	if game.coins != 10 or game.refresh_token != 1 or game.shop_types.size() != 5:
+		_fail("初始经济或商店错误")
+		return
+
 	for i in range(3):
-		game.shop_types[0] = "corn"
-		game._update_shop_buttons()
-		game._on_shop_pressed(0)
-	if game.units.size() != 1:
-		_fail("三合一后单位数量错误：%d" % game.units.size())
+		game._on_shop_pressed(i)
+	if game.heroes.size() != 1:
+		_fail("三合一后队员数量错误：%d" % game.heroes.size())
 		return
-	if game.units[0].star != 2 or game.units[0].unit_type != "corn":
-		_fail("三合一没有生成二星玉米")
+	var merged = game.heroes[0]
+	if merged.star != 2 or merged.unit_type != "rabbit" or game.coins != 7:
+		_fail("自动三合一或招募金币结算错误")
 		return
 
-	# 走真实的指针拖放链路，将合成单位部署到棋盘。
-	var merged_unit = game.units[0]
-	game._begin_pointer_action(merged_unit.global_position)
+	game._begin_pointer_action(merged.position)
 	game.dragging = true
-	game._end_pointer_action(game._cell_center(1, 1))
-	if merged_unit.lane != 1 or merged_unit.column != 1 or merged_unit.bench_slot != -1:
-		_fail("单位拖放部署失败")
+	game._end_pointer_action(game._cell_center(Vector2i(2, 2)))
+	if merged.board_row != 2 or merged.board_col != 2 or game._deployed_count() != 1:
+		_fail("拖放布阵失败")
 		return
 
-	# 开始第一波，检查敌人生成链路。
-	game._start_next_wave()
-	game._process_wave(1.0)
-	if game.current_wave != 1 or game.enemies.is_empty():
-		_fail("第一波没有正常启动或生成敌人")
+	game.coins = 20
+	game._on_level_pressed()
+	if game.population != 4 or game.coins != 10:
+		_fail("升人口价格或结果错误")
 		return
 
-	# 验证伤害、击杀奖励和敌人移除。
+	game._start_battle()
+	if game.state != game.GameState.BATTLE_RUNNING or not merged.active_in_battle or game.intermission <= 0.0:
+		_fail("战斗启动或3秒预告错误")
+		return
+	game.intermission = 0.0
+	game._begin_wave()
+	game._process_wave(0.1)
+	if game.enemies.is_empty():
+		_fail("第一波敌人没有生成")
+		return
+
 	var enemy = game.enemies[0]
-	enemy.lane = 1
-	enemy.position = merged_unit.position + Vector2(140, 0)
-	var coins_before_kill = game.coins
-	game._on_projectile_impact(enemy, enemy.max_health + 10.0, 0.0, enemy.global_position)
-	if game.enemies.has(enemy) or game.coins <= coins_before_kill:
-		_fail("攻击击杀或金币奖励链路失败")
+	enemy.battle_cell = Vector2i(2, 1)
+	enemy.position = game._cell_center(enemy.battle_cell)
+	merged.mana = merged.max_mana
+	var health_before: float = enemy.health
+	game._cast_skill(merged, enemy)
+	if enemy.health >= health_before or merged.mana != 0.0:
+		_fail("自动技能释放错误")
 		return
 
-	# 验证重新开始会清空战局状态。
-	game._restart_game()
-	if not game.units.is_empty() or not game.enemies.is_empty() or game.current_wave != 0 or game.coins != 100:
-		_fail("重新开始没有完整重置战局")
+	merged.active_in_battle = false
+	game._spawn_enemy("boar", Vector2i(2, 2))
+	enemy = game.enemies.back()
+	enemy.attack_cooldown = 0.0
+	var escort_before: float = game.escort.health
+	game._process_enemies(0.1)
+	if game.escort.health >= escort_before:
+		_fail("敌人没有攻击唐僧")
 		return
 
-	print("SMOKE_TEST_OK: 购买、三合一、真实拖放、战斗击杀、波次生成和重开均通过")
+	game.coins = 5
+	game.pending_loot = 20
+	game.escort.health = game.escort.max_health
+	game._finish_battle(true)
+	if game.coins != 25 or not game.overlay.visible:
+		_fail("三星战利品结算错误")
+		return
+
+	game._restart_demo()
+	if not game.heroes.is_empty() or not game.enemies.is_empty() or game.coins != 10 or game.population != 3 or game.state != game.GameState.PREPARING:
+		_fail("重新体验没有完整重置")
+		return
+
+	print("SMOKE_TEST_OK: 商店、自动合成、布阵、人口、波次、技能、唐僧受击、战后结算和重开均通过")
 	game.queue_free()
 	await process_frame
 	quit(0)

@@ -1,4 +1,20 @@
-# 今晚别偷粮：玩法原型
+# 游戏玩法原型
+
+项目目前包含两个 Demo：
+
+- 根目录：早期“三路塔防 + 三合一”浏览器原型，无需安装依赖。
+- `godot-demo/`：当前“唐僧中央护送 + 棋盘布阵 + 金币经营 + 自动三合一 + 四波 Boss 战”Godot 单战 Demo。
+
+当前方向请优先运行 `godot-demo/`，详细说明见 [`godot-demo/README.md`](godot-demo/README.md)。
+
+项目的设计依据和换机器说明：
+
+- [`docs/CONFIRMED_GAME_DESIGN.md`](docs/CONFIRMED_GAME_DESIGN.md)：只记录已经明确确认的玩法和范围。
+- [`docs/DEVELOPMENT_HANDOFF.md`](docs/DEVELOPMENT_HANDOFF.md)：新机器环境、运行、测试和文件迁移说明。
+
+当前 Demo 的画风仍待确认，三头身比例已得到偏好确认，但现有明亮国风 Q 版素材不能视为最终美术定案。
+
+## 早期浏览器原型
 
 一个无需安装依赖的浏览器 Demo，用来验证“植物大战僵尸式分路棋盘 + 自走棋三合一升星”。
 

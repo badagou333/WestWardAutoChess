@@ -1,39 +1,41 @@
-# 美术方向：丰收童话贴纸风
+# 美术方向状态
 
-## 核心规则
+状态：待确认
 
-- 西式2D卡通贴纸角色，圆润比例，大头小身体。
-- 深棕色粗描边，不使用纯黑轮廓。
-- 丰收黄、田野绿、木材棕、辣椒红和鼠群灰紫为主色。
-- 平涂为主，只保留少量柔和高光和阴影。
-- 守卫统一朝右，敌人统一朝左。
-- 单角色、完整身体、强轮廓，缩小至80～120像素仍能识别职业。
-- 不使用写实武器、恐怖表情、血腥效果和复杂背景。
+## 已确认部分
 
-## 生产提示模板
+- 角色比例偏向约三头身，用户明确认为这种比例更适合作为游戏角色。
+- 战场和人物必须在实际棋盘尺寸下容易辨认，角色职业、敌我关系和品质差异需要清楚。
 
-```text
-Use case: stylized-concept
-Asset type: production 2D game character sprite for chroma-key extraction
-Primary request: a single [角色描述] for a cozy harvest tower-defense game
-Scene/backdrop: perfectly uniform flat solid pure cyan background (#00FFFF), edge to edge; no checkerboard, gradient, texture, floor or shadow
-Style/medium: polished 2D Western cartoon game sprite; rounded shapes; bold dark-brown outline; flat harvest colors with minimal soft shading
-Composition/framing: centered single character, full body visible, generous cyan padding, square asset, strong silhouette readable at 100 pixels tall
-Constraints: one character only; no text, logo or watermark; clean outer silhouette; keep all character colors far from cyan
-Avoid: cropped body, multiple poses, sprite sheet, photorealism, anime, excessive detail
-```
+## 尚未确认部分
 
-## 当前资产
+- 最终采用国风、绘本、动画、厚涂、贴纸或其他表现方式。
+- 最终线条粗细、材质、光影、色彩饱和度和场景细节密度。
+- UI 的最终结构、装饰风格、字体和动效。
+- 英雄升星后的具体外观变化方案。
+- 正式角色、普通敌人和 Boss 的完整造型规范。
 
-- `units/corn.png`：玉米射手
-- `units/potato.png`：土豆盾卫
-- `units/chili.png`：辣椒炮手
-- `units/coffee.png`：咖啡豆辅助
-- `enemies/small.png`：小老鼠
-- `enemies/fat.png`：装甲胖鼠
-- `enemies/thief.png`：盗粮鼠
-- `enemies/king.png`：鼠王
-- `environment/battlefield.png`：粮仓战场
+因此，不能根据当前 Demo 直接批量生产正式美术资源。
 
-角色使用 `materials/chroma_key.gdshader` 在Godot中实时去除青幕背景。新增角色必须避开高饱和青色，避免材质误删角色细节。
+## 当前 Demo 方案
 
+`art/demo/` 中的资源是为了验证玩法而制作的明亮国风 Q 版方案，参考了讨论时选中的三头身角色比例和庭院棋盘构图。它是一个待评估的美术样例，不是最终定案。
+
+- `demo/temple_battlefield.png`：当前单战庭院背景。
+- `demo/hero_atlas_keyed.png`：唐僧和原型英雄透明图集。
+- `demo/enemy_atlas_keyed.png`：原型敌人和虎先锋透明图集。
+- 没有 `_keyed` 后缀的图集保留为生成过程中的源文件。
+
+`art/units/`、`art/enemies/` 和 `art/environment/` 下的丰收题材素材属于上一版原型，不代表当前方向，也不应继续扩展。
+
+## 下一次美术确认建议输出
+
+后续确认画风时，应把同一场景和同一角色制作成少量并排方案，再逐项确认：
+
+1. 角色比例与轮廓。
+2. 描边和上色方式。
+3. 场景透视与棋盘可读性。
+4. UI 是否与角色画面统一。
+5. 缩小到游戏实际尺寸后的辨识度。
+
+确认结果应写回本文件；在确认前，所有新图仍标记为 Demo 或探索稿。

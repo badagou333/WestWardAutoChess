@@ -1,100 +1,86 @@
-class_name RatEnemy
+class_name JourneyEnemy
 extends Node2D
 
 signal defeated(enemy)
-signal reached_base(enemy)
 
-var enemy_type := "small"
-var display_name := "小老鼠"
-var lane := 0
+var enemy_type := "rat"
+var display_name := "灰鼠喽啰"
+var battle_cell := Vector2i(-1, -1)
 var max_health := 55.0
 var health := 55.0
-var speed := 44.0
-var damage := 12.0
-var attack_interval := 0.85
+var damage := 10.0
+var attack_interval := 0.9
+var move_interval := 0.65
 var attack_cooldown := 0.0
-var reward := 5
-var base_damage := 1
+var move_cooldown := 0.0
+var reward := 1
 var dead := false
-var wave_scale := 1.0
 var portrait: Sprite2D
 var idle_phase := 0.0
 
-const CHROMA_SHADER = preload("res://materials/chroma_key.gdshader")
-const ENEMY_TEXTURES := {
-	"small": preload("res://art/enemies/small.png"),
-	"fat": preload("res://art/enemies/fat.png"),
-	"thief": preload("res://art/enemies/thief.png"),
-	"king": preload("res://art/enemies/king.png")
+const ENEMY_ATLAS = preload("res://art/demo/enemy_atlas_keyed.png")
+const ATLAS_REGIONS := {
+	"rat": Rect2(0, 0, 768, 512),
+	# The tiger's tall plume crosses the atlas guide; trim the boar cell to avoid bleed.
+	"boar": Rect2(768, 0, 768, 470),
+	"wolf": Rect2(0, 512, 768, 512),
+	"tiger": Rect2(768, 512, 768, 512)
 }
-
 const ENEMY_DATA := {
-	"small": {"name": "小老鼠", "hp": 52.0, "speed": 48.0, "damage": 10.0, "interval": 0.9, "reward": 5, "base_damage": 1},
-	"fat": {"name": "胖老鼠", "hp": 145.0, "speed": 27.0, "damage": 16.0, "interval": 1.2, "reward": 10, "base_damage": 2},
-	"thief": {"name": "偷粮鼠", "hp": 90.0, "speed": 40.0, "damage": 20.0, "interval": 0.7, "reward": 15, "base_damage": 2},
-	"king": {"name": "鼠王", "hp": 650.0, "speed": 20.0, "damage": 28.0, "interval": 0.75, "reward": 60, "base_damage": 4}
+	"rat": {"name": "灰鼠喽啰", "hp": 52.0, "damage": 7.0, "interval": 0.95, "move": 0.58, "reward": 1, "scale": 0.29},
+	"boar": {"name": "山猪喽啰", "hp": 96.0, "damage": 10.0, "interval": 1.1, "move": 0.7, "reward": 1, "scale": 0.30},
+	"wolf": {"name": "黑狼精英", "hp": 155.0, "damage": 14.0, "interval": 0.9, "move": 0.52, "reward": 2, "scale": 0.32},
+	"tiger": {"name": "虎先锋", "hp": 240.0, "damage": 16.0, "interval": 1.1, "move": 0.75, "reward": 6, "scale": 0.38}
 }
 
-func setup(new_type: String, new_lane: int, difficulty: float) -> void:
+func setup(new_type: String) -> void:
 	enemy_type = new_type
-	lane = new_lane
-	wave_scale = difficulty
 	var data: Dictionary = ENEMY_DATA[enemy_type]
 	display_name = data.name
-	max_health = data.hp * difficulty
+	max_health = data.hp
 	health = max_health
-	speed = data.speed
-	damage = data.damage * (0.85 + difficulty * 0.15)
+	damage = data.damage
 	attack_interval = data.interval
+	move_interval = data.move
 	reward = data.reward
-	base_damage = data.base_damage
-	_create_portrait()
-	queue_redraw()
-
-func _create_portrait() -> void:
+	var atlas_texture := AtlasTexture.new()
+	atlas_texture.atlas = ENEMY_ATLAS
+	atlas_texture.region = ATLAS_REGIONS[enemy_type]
+	atlas_texture.filter_clip = true
 	portrait = Sprite2D.new()
-	portrait.texture = ENEMY_TEXTURES[enemy_type]
+	portrait.texture = atlas_texture
 	portrait.centered = true
-	portrait.position = Vector2(0, -3)
-	var sprite_scale := 0.065
-	if enemy_type == "fat":
-		sprite_scale = 0.074
-	elif enemy_type == "thief":
-		sprite_scale = 0.068
-	elif enemy_type == "king":
-		sprite_scale = 0.102
-	portrait.scale = Vector2.ONE * sprite_scale
+	portrait.position = Vector2(0, -18)
+	portrait.scale = Vector2.ONE * data.scale
 	portrait.z_index = -1
-	var chroma_material := ShaderMaterial.new()
-	chroma_material.shader = CHROMA_SHADER
-	portrait.material = chroma_material
 	add_child(portrait)
 	idle_phase = randf_range(0.0, TAU)
+	queue_redraw()
 
 func _process(delta: float) -> void:
-	idle_phase += delta * (4.6 if enemy_type == "small" else 2.6)
+	idle_phase += delta * 2.4
 	if is_instance_valid(portrait) and not dead:
-		portrait.position.y = -3.0 + abs(sin(idle_phase)) * -2.5
+		portrait.position.y = -18.0 - abs(sin(idle_phase)) * 2.0
 
 func play_attack() -> void:
 	if not is_instance_valid(portrait):
 		return
-	var rest_position := portrait.position
+	var rest_scale := portrait.scale
 	var tween := create_tween()
-	tween.tween_property(portrait, "position:x", rest_position.x - 8.0, 0.07)
-	tween.tween_property(portrait, "position:x", rest_position.x, 0.12).set_trans(Tween.TRANS_BACK)
+	tween.tween_property(portrait, "scale", rest_scale * 1.1, 0.07)
+	tween.tween_property(portrait, "scale", rest_scale, 0.12).set_trans(Tween.TRANS_BACK)
 
 func take_damage(amount: float) -> void:
 	if dead:
 		return
 	health = max(0.0, health - amount)
 	var tween := create_tween()
-	tween.tween_property(self, "modulate", Color.WHITE * 1.8, 0.05)
+	tween.tween_property(self, "modulate", Color(1.7, 1.7, 1.7), 0.05)
 	tween.tween_property(self, "modulate", Color.WHITE, 0.08)
-	queue_redraw()
 	if health <= 0.0:
 		dead = true
 		defeated.emit(self)
+	queue_redraw()
 
 func play_death() -> void:
 	var tween := create_tween()
@@ -104,7 +90,6 @@ func play_death() -> void:
 	tween.chain().tween_callback(queue_free)
 
 func _draw() -> void:
-	var bar_width := 86.0 if enemy_type == "king" else 64.0
-	var bar_y := -67.0 if enemy_type == "king" else -49.0
-	draw_rect(Rect2(-bar_width * 0.5, bar_y, bar_width, 8), Color("43262a"), true)
-	draw_rect(Rect2(-bar_width * 0.5 + 2, bar_y + 2, (bar_width - 4) * health / max_health, 4), Color("ef6b63"), true)
+	var width := 88.0 if enemy_type == "tiger" else 66.0
+	draw_rect(Rect2(-width * 0.5, -72, width, 8), Color("45242d"), true)
+	draw_rect(Rect2(-width * 0.5 + 2, -70, (width - 4) * health / max_health, 4), Color("f05f67"), true)
