@@ -7,6 +7,7 @@
 - 主场景：`godot-demo/scenes/main.tscn`
 - 核心逻辑：`godot-demo/scripts/game.gd`
 - 已确认设计：`docs/CONFIRMED_GAME_DESIGN.md`
+- 第一章梳理：`docs/FIRST_CHAPTER_DESIGN.md`
 - 当前美术状态：`godot-demo/art/ART_DIRECTION.md`
 
 旧浏览器原型和“守粮仓”Godot 原型已经从当前项目删除；如需查阅，只能从 Git 历史恢复。
