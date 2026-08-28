@@ -37,6 +37,8 @@
 
 - `concepts/guard_monk/guard_monk_model_sheet_exploration_v1.png`：护寺棍僧一星形态的首张角色设定探索稿；项目负责人已表示不满意，本稿未通过，不得作为后续角色造型基准。
 - `concepts/guard_monk/guard_monk_shape_exploration_v2.png`：不使用 v1 作为参考、从空白画布生成的六种原创轮廓方案；当前待选择，任何一个方案都尚未确认。
+- 护寺棍僧六方案中的第 3 个是项目负责人当前最偏好的方向，但还不是最终确认造型。
+- `concepts/style/dark_handdrawn_battle_style_reference_v1.png`：此前生成的暗色二维手绘棋盘候选图，保留用于比较实际战场尺寸下的线条、色块与角色辨识度；图中兔子、鸟弓手等不是已确认角色。
 - `concepts/guard_monk/README.md`：探索稿状态、限制和进入正式动画前的检查项。
 - 该设定稿采用纯色背景，尚未完成透明抠图、身体分层或骨骼绑定，不能直接作为游戏贴图使用。
 - 下一轮不继续修改该设定稿，改为从空白画布制作多种角色轮廓小稿，先选择体型、气质和服装语言，再制作正式三视图。
