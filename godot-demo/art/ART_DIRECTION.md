@@ -1,6 +1,6 @@
 # 美术方向状态
 
-状态：整体待确认；护寺棍僧、山野猎户、山雀精与狐火小妖已有项目负责人基准图
+状态：整体待确认；第一章初始 5 名英雄均已有项目负责人视觉基准图
 
 ## 已确认部分
 
@@ -10,7 +10,7 @@
 - 可以学习《九日》的整体二维手绘视觉语言，包括有力度的轮廓线、克制的平面色块、东方服饰形状、角色体块差异以及暗色场景中的局部亮色。
 - 参考对象不是《九日》中的某一个具体角色，也不拼接或改造其现有角色设计；本项目角色必须从自身的剧情身份、战斗定位和技能出发独立设计。
 - 不复制《九日》的具体服装、武器、身体特征、符号、构图、角色姿势或可识别造型。
-- `concepts/guard_monk/guard_monk_project_owner_reference_v1.png`、`concepts/wild_hunter/wild_hunter_project_owner_reference_v1.png`、`concepts/sparrow_spirit/sparrow_spirit_project_owner_reference_v1.png` 与 `concepts/foxfire_imp/foxfire_imp_project_owner_reference_v1.png` 是项目负责人提供的当前角色视觉基准。
+- `concepts/guard_monk/guard_monk_project_owner_reference_v1.png`、`concepts/wild_hunter/wild_hunter_project_owner_reference_v1.png`、`concepts/sparrow_spirit/sparrow_spirit_project_owner_reference_v1.png`、`concepts/herbal_spirit_child/herbal_spirit_child_project_owner_reference_v1.png` 与 `concepts/foxfire_imp/foxfire_imp_project_owner_reference_v1.png` 是项目负责人提供的当前角色视觉基准。
 - 此前由助手生成的护寺棍僧与狐火小妖探索图均未通过，不代表项目结论，也不得作为后续角色或动画的视觉基准。
 
 ## 尚未确认部分
@@ -48,6 +48,7 @@
 - `concepts/foxfire_imp/foxfire_imp_five_view_exploration_v1.png`：未通过项目负责人审核，只保留为已否定探索历史。
 - `concepts/wild_hunter/wild_hunter_project_owner_reference_v1.png`：项目负责人提供的山野猎户当前视觉基准，表现为兽类拟人短弓猎手和猎犬同伴。
 - `concepts/sparrow_spirit/sparrow_spirit_project_owner_reference_v1.png`：项目负责人提供的山雀精当前视觉基准，表现为山雀拟人精怪与羽翼/风刃攻击。
+- `concepts/herbal_spirit_child/herbal_spirit_child_project_owner_reference_v1.png`：项目负责人提供的药灵童子当前视觉基准，表现为草木通灵童子、药杖、草药烟雾和草灵伙伴。
 - 该设定稿采用纯色背景，尚未完成透明抠图、身体分层或骨骼绑定，不能直接作为游戏贴图使用。
 - 下一轮不继续修改该设定稿，改为从空白画布制作多种角色轮廓小稿，先选择体型、气质和服装语言，再制作正式三视图。
 
