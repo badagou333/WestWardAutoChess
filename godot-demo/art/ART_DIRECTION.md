@@ -1,6 +1,6 @@
 # 美术方向状态
 
-状态：待确认
+状态：整体待确认；护寺棍僧与狐火小妖已有项目负责人基准图
 
 ## 已确认部分
 
@@ -10,6 +10,8 @@
 - 可以学习《九日》的整体二维手绘视觉语言，包括有力度的轮廓线、克制的平面色块、东方服饰形状、角色体块差异以及暗色场景中的局部亮色。
 - 参考对象不是《九日》中的某一个具体角色，也不拼接或改造其现有角色设计；本项目角色必须从自身的剧情身份、战斗定位和技能出发独立设计。
 - 不复制《九日》的具体服装、武器、身体特征、符号、构图、角色姿势或可识别造型。
+- `concepts/guard_monk/guard_monk_project_owner_reference_v1.png` 与 `concepts/foxfire_imp/foxfire_imp_project_owner_reference_v1.png` 是项目负责人提供的当前角色视觉基准。
+- 此前由助手生成的护寺棍僧与狐火小妖探索图均未通过，不代表项目结论，也不得作为后续角色或动画的视觉基准。
 
 ## 尚未确认部分
 
@@ -38,12 +40,12 @@
 
 - `concepts/guard_monk/guard_monk_model_sheet_exploration_v1.png`：护寺棍僧一星形态的首张角色设定探索稿；项目负责人已表示不满意，本稿未通过，不得作为后续角色造型基准。
 - `concepts/guard_monk/guard_monk_shape_exploration_v2.png`：不使用 v1 作为参考、从空白画布生成的六种原创轮廓方案；当前待选择，任何一个方案都尚未确认。
-- 护寺棍僧六方案中的第 3 个是项目负责人当前最偏好的方向，但还不是最终确认造型。
+- 护寺棍僧六方案中的第 3 个曾是阶段性偏好，现已被项目负责人基准图替代。
 - `concepts/style/dark_handdrawn_battle_style_reference_v1.png`：此前生成的暗色二维手绘棋盘候选图，保留用于比较实际战场尺寸下的线条、色块与角色辨识度；图中兔子、鸟弓手等不是已确认角色。
 - `concepts/guard_monk/README.md`：探索稿状态、限制和进入正式动画前的检查项。
 - `concepts/guard_monk/guard_monk_five_view_exploration_v3_a.png`～`v3_c.png`：已否定的五视图方向；虽然压缩了头身比，但仍保留写实骨架和僵直设定稿逻辑，不得作为后续基准。
-- `concepts/guard_monk/guard_monk_five_view_exploration_v4_a.png`～`v4_c.png`：重新从动画形体、动作线、非对称衣片和笔触节奏出发生成的三组五视图；C 当前最接近本轮目标，但三组均尚未确认。
-- `concepts/foxfire_imp/foxfire_imp_five_view_exploration_v1.png`：一星狐火小妖的一尾五视图探索稿；使用动画化狐头、短躯干和短弹性腿，尚未确认造型、配色或狐火表现。
+- `concepts/guard_monk/guard_monk_five_view_exploration_v4_a.png`～`v4_c.png`、`v5.png`：均未通过项目负责人审核，只保留为已否定探索历史。
+- `concepts/foxfire_imp/foxfire_imp_five_view_exploration_v1.png`：未通过项目负责人审核，只保留为已否定探索历史。
 - 该设定稿采用纯色背景，尚未完成透明抠图、身体分层或骨骼绑定，不能直接作为游戏贴图使用。
 - 下一轮不继续修改该设定稿，改为从空白画布制作多种角色轮廓小稿，先选择体型、气质和服装语言，再制作正式三视图。
 
