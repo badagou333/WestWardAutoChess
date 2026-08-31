@@ -7,6 +7,8 @@
 ## 项目入口
 
 - [`godot-demo/`](godot-demo/)：当前可运行的单战 Demo。
+- [`docs/PROJECT_STATE.md`](docs/PROJECT_STATE.md)：跨聊天共享的项目阶段、优先级和阻塞项摘要。
+- [`docs/DECISION_LOG.md`](docs/DECISION_LOG.md)：项目负责人已确认的跨领域决策记录。
 - [`docs/CONFIRMED_GAME_DESIGN.md`](docs/CONFIRMED_GAME_DESIGN.md)：只记录已经明确确认的玩法和范围。
 - [`docs/DEVELOPMENT_HANDOFF.md`](docs/DEVELOPMENT_HANDOFF.md)：换机器运行、测试和迁移说明。
 - [`godot-demo/art/ART_DIRECTION.md`](godot-demo/art/ART_DIRECTION.md)：当前美术确认状态。
