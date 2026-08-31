@@ -43,6 +43,7 @@
 - `concepts/guard_monk/README.md`：探索稿状态、限制和进入正式动画前的检查项。
 - `concepts/guard_monk/guard_monk_five_view_exploration_v3_a.png`～`v3_c.png`：已否定的五视图方向；虽然压缩了头身比，但仍保留写实骨架和僵直设定稿逻辑，不得作为后续基准。
 - `concepts/guard_monk/guard_monk_five_view_exploration_v4_a.png`～`v4_c.png`：重新从动画形体、动作线、非对称衣片和笔触节奏出发生成的三组五视图；C 当前最接近本轮目标，但三组均尚未确认。
+- `concepts/foxfire_imp/foxfire_imp_five_view_exploration_v1.png`：一星狐火小妖的一尾五视图探索稿；使用动画化狐头、短躯干和短弹性腿，尚未确认造型、配色或狐火表现。
 - 该设定稿采用纯色背景，尚未完成透明抠图、身体分层或骨骼绑定，不能直接作为游戏贴图使用。
 - 下一轮不继续修改该设定稿，改为从空白画布制作多种角色轮廓小稿，先选择体型、气质和服装语言，再制作正式三视图。
 
