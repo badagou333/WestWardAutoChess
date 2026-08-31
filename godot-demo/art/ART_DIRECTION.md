@@ -1,6 +1,6 @@
 # 美术方向状态
 
-状态：整体待确认；第一章初始 5 名英雄均已有项目负责人视觉基准图
+状态：整体待确认；第一章初始 5 名英雄与熊山君已有项目负责人视觉基准图
 
 ## 已确认部分
 
@@ -49,6 +49,7 @@
 - `concepts/wild_hunter/wild_hunter_project_owner_reference_v1.png`：项目负责人提供的山野猎户当前视觉基准，表现为兽类拟人短弓猎手和猎犬同伴。
 - `concepts/sparrow_spirit/sparrow_spirit_project_owner_reference_v1.png`：项目负责人提供的山雀精当前视觉基准，表现为山雀拟人精怪与羽翼/风刃攻击。
 - `concepts/herbal_spirit_child/herbal_spirit_child_project_owner_reference_v1.png`：项目负责人提供的药灵童子当前视觉基准，表现为草木通灵童子、药杖、草药烟雾和草灵伙伴。
+- `concepts/bear_lord/bear_lord_project_owner_reference_v1.png`：项目负责人提供的熊山君当前视觉基准，表现为巨熊妖王、碎山棒以及践踏、暴怒和恢复动作。
 - 该设定稿采用纯色背景，尚未完成透明抠图、身体分层或骨骼绑定，不能直接作为游戏贴图使用。
 - 下一轮不继续修改该设定稿，改为从空白画布制作多种角色轮廓小稿，先选择体型、气质和服装语言，再制作正式三视图。
 
