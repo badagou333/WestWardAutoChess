@@ -10,7 +10,7 @@
 - 可以学习《九日》的整体二维手绘视觉语言，包括有力度的轮廓线、克制的平面色块、东方服饰形状、角色体块差异以及暗色场景中的局部亮色。
 - 参考对象不是《九日》中的某一个具体角色，也不拼接或改造其现有角色设计；本项目角色必须从自身的剧情身份、战斗定位和技能出发独立设计。
 - 不复制《九日》的具体服装、武器、身体特征、符号、构图、角色姿势或可识别造型。
-- `concepts/guard_monk/guard_monk_project_owner_reference_v1.png`、`concepts/wild_hunter/wild_hunter_project_owner_reference_v1.png`、`concepts/sparrow_spirit/sparrow_spirit_project_owner_reference_v1.png`、`concepts/herbal_spirit_child/herbal_spirit_child_project_owner_reference_v1.png` 与 `concepts/foxfire_imp/foxfire_imp_project_owner_reference_v1.png` 是项目负责人提供的当前角色视觉基准。
+- `concepts/guard_monk/guard_monk_project_owner_reference_v1.png`、`concepts/wild_hunter/wild_hunter_project_owner_reference_v1.png`、`concepts/sparrow_spirit/sparrow_spirit_project_owner_reference_v1.png`、`concepts/herbal_spirit_child/herbal_spirit_child_project_owner_reference_v1.png` 与 `concepts/foxfire_imp/foxfire_imp_project_owner_reference_v2.png` 是项目负责人提供的当前角色视觉基准；狐火小妖 v1 已被 v2 替代，仅作为历史版本保留。
 - 此前由助手生成的护寺棍僧与狐火小妖探索图均未通过，不代表项目结论，也不得作为后续角色或动画的视觉基准。
 
 ## 尚未确认部分
@@ -46,6 +46,7 @@
 - `concepts/guard_monk/guard_monk_five_view_exploration_v3_a.png`～`v3_c.png`：已否定的五视图方向；虽然压缩了头身比，但仍保留写实骨架和僵直设定稿逻辑，不得作为后续基准。
 - `concepts/guard_monk/guard_monk_five_view_exploration_v4_a.png`～`v4_c.png`、`v5.png`：均未通过项目负责人审核，只保留为已否定探索历史。
 - `concepts/foxfire_imp/foxfire_imp_five_view_exploration_v1.png`：未通过项目负责人审核，只保留为已否定探索历史。
+- `concepts/foxfire_imp/foxfire_imp_project_owner_reference_v2.png`：项目负责人提供的狐火小妖当前视觉基准，表现为一尾小型狐妖、狐火施法、五视图、表情与动作；v1 已被本版替代。
 - `concepts/wild_hunter/wild_hunter_project_owner_reference_v1.png`：项目负责人提供的山野猎户当前视觉基准，表现为兽类拟人短弓猎手和猎犬同伴。
 - `concepts/sparrow_spirit/sparrow_spirit_project_owner_reference_v1.png`：项目负责人提供的山雀精当前视觉基准，表现为山雀拟人精怪与羽翼/风刃攻击。
 - `concepts/herbal_spirit_child/herbal_spirit_child_project_owner_reference_v1.png`：项目负责人提供的药灵童子当前视觉基准，表现为草木通灵童子、药杖、草药烟雾和草灵伙伴。
