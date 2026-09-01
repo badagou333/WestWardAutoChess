@@ -47,12 +47,15 @@
 - `concepts/guard_monk/guard_monk_five_view_exploration_v4_a.png`～`v4_c.png`、`v5.png`：均未通过项目负责人审核，只保留为已否定探索历史。
 - `concepts/foxfire_imp/foxfire_imp_five_view_exploration_v1.png`：未通过项目负责人审核，只保留为已否定探索历史。
 - `concepts/foxfire_imp/foxfire_imp_project_owner_reference_v2.png`：项目负责人提供的狐火小妖当前视觉基准，表现为一尾小型狐妖、狐火施法、五视图、表情与动作；v1 已被本版替代。
+- `concepts/guard_monk/guard_monk_action_keypose_sheet_v1.png`：项目负责人生成并要求保存的护寺棍僧八动作关键姿势稿，用于后续动作与动画拆分参考。
+- `concepts/foxfire_imp/foxfire_imp_action_keypose_sheet_v1.png`：基于狐火小妖 v2 生成并由项目负责人要求保存的八动作关键姿势稿，用于后续动作与动画拆分参考。
 - `concepts/wild_hunter/wild_hunter_project_owner_reference_v1.png`：项目负责人提供的山野猎户当前视觉基准，表现为兽类拟人短弓猎手和猎犬同伴。
 - `concepts/sparrow_spirit/sparrow_spirit_project_owner_reference_v1.png`：项目负责人提供的山雀精当前视觉基准，表现为山雀拟人精怪与羽翼/风刃攻击。
 - `concepts/herbal_spirit_child/herbal_spirit_child_project_owner_reference_v1.png`：项目负责人提供的药灵童子当前视觉基准，表现为草木通灵童子、药杖、草药烟雾和草灵伙伴。
 - `concepts/bear_lord/bear_lord_project_owner_reference_v1.png`：项目负责人提供的熊山君当前视觉基准，表现为巨熊妖王、碎山棒以及践踏、暴怒和恢复动作。
-- 该设定稿采用纯色背景，尚未完成透明抠图、身体分层或骨骼绑定，不能直接作为游戏贴图使用。
-- 下一轮不继续修改该设定稿，改为从空白画布制作多种角色轮廓小稿，先选择体型、气质和服装语言，再制作正式三视图。
+- 六名角色的项目负责人设定稿均尚未完成透明抠图、身体分层或骨骼绑定，不能直接作为游戏贴图使用。
+- 两张动作关键姿势稿同样不是最终 Sprite Sheet；正式制作前仍需统一部件、拆分角色与特效、补齐必要朝向并进行实际棋盘尺寸测试。
+- 下一轮优先使用护寺棍僧与狐火小妖动作稿进行实际棋盘尺寸测试，再确认正/背 3/4 朝向、角色与特效分层以及首组逐帧数量。
 
 ## 下一次美术确认计划（已确认）
 

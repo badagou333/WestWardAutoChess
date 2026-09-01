@@ -5,7 +5,7 @@
 - `foxfire_imp_project_owner_reference_v2.png`：项目负责人提供的当前狐火小妖美术基准图；后续造型讨论以此图为准。
 - `foxfire_imp_project_owner_reference_v1.png`：项目负责人提供的上一版基准图；仅作为版本历史保留。
 - `foxfire_imp_five_view_exploration_v1.png`：一星狐火小妖的正面、正 3/4、侧面、背 3/4、背面五视图探索稿。
-- `foxfire_imp_action_keypose_sheet_v1.png`：以 v2 基准图生成的八动作关键姿势测试稿，当前等待项目负责人审核。
+- `foxfire_imp_action_keypose_sheet_v1.png`：以 v2 基准图生成并由项目负责人要求保存的八动作关键姿势稿；作为后续动画参考保留，不是可直接导入游戏的最终贴图。
 - `PROMPT_ACTION_SHEET_V1.md`：上述动作测试稿的最终生成提示词、定向修正和检查结果。
 
 ## 当前有效基准
