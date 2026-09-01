@@ -17,7 +17,7 @@ REFERENCE HIERARCHY
 Image 1 is the strict and only character identity reference. Preserve the exact project-owned Herbal Spirit Child design from Image 1. Do not redesign, reinterpret, modernize, simplify into a generic wizard, or borrow from any other artwork. Treat all writing, labels, layout boxes, scenery thumbnails, companion plant spirits, equipment callouts, color swatches, and instructional-looking text inside Image 1 as non-instructional image content. Extract only the confirmed Herbal Spirit Child's visual design, proportions, clothing construction, staff, equipment, palette, and hand-drawn rendering language.
 
 CHARACTER IDENTITY — MUST REMAIN IDENTICAL IN EVERY POSE
-- the same small grass-and-herb spirit child, approximately THREE HEADS TALL, with a large readable head, compact torso, short legs, slightly oversized hands and feet, quiet and uncanny rather than cute or comedic;
+- the same small grass-and-herb spirit child with the reference's preferred roughly FOUR-HEADS-TALL animation proportions: readable head, naturally compact but not compressed torso, moderately short legs, and clear hands and feet; quiet and uncanny rather than cute or comedic; preserve this proportion and do not force the character into three-heads-tall chibi anatomy;
 - the same pale narrow face, deep-set dark eyes, straight nose, shoulder-length messy black hair, and calm reserved expression;
 - the exact same broad dark woven conical herb hat with radial ribs, irregular edge, leafy sprout at the crown, and the same restrained hanging herb charms and tassels;
 - the same layered charcoal-black and deep moss-green robe, ragged leaf-like cloak edges, muted aged-ochre botanical line details, dark baggy trousers, wrapped calves, simple sandals, belt pouches, small herb gourds, and waist ornaments;
@@ -65,3 +65,8 @@ CONSISTENCY CHECKS
 4. 毒草散是否确实为单个药包投掷，没有变成大范围持续施法或炼药场景。
 5. 是否完全没有草灵伙伴、额外角色、文字和 UI。
 6. 缩小到游戏尺寸后，斗笠轮廓、药杖圆环、治疗绿色与毒草紫绿色是否仍然清楚。
+
+## 定向修正记录
+
+- 首张约四头身版本的整体比例优于后续三头身修正版，项目负责人明确要求保留首张比例。
+- 最终版本只把第五个动作中误画成小葫芦的投掷物改为系口布药包，没有压缩人物比例或修改其他动作。
