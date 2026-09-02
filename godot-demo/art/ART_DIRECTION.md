@@ -12,6 +12,8 @@
 - 不复制《九日》的具体服装、武器、身体特征、符号、构图、角色姿势或可识别造型。
 - `concepts/guard_monk/guard_monk_project_owner_reference_v1.png`、`concepts/wild_hunter/wild_hunter_project_owner_reference_v1.png`、`concepts/sparrow_spirit/sparrow_spirit_project_owner_reference_v1.png`、`concepts/herbal_spirit_child/herbal_spirit_child_project_owner_reference_v1.png` 与 `concepts/foxfire_imp/foxfire_imp_project_owner_reference_v2.png` 是项目负责人提供的当前角色视觉基准；狐火小妖 v1 已被 v2 替代，仅作为历史版本保留。
 - 此前由助手生成的护寺棍僧与狐火小妖探索图均未通过，不代表项目结论，也不得作为后续角色或动画的视觉基准。
+- 护寺棍僧与山野猎户采用兽类拟人身份已获项目负责人确认；与旧版“凡人”和初始阵容身份构成记录的同步由总控及相关工作流处理。
+- 山野猎户继续保持“近战输出”定位；当前 v1 设定稿中的短弓、箭筒和射箭动作已被要求修改，不能再作为正式武器与战斗动作基准。
 
 ## 尚未确认部分
 
@@ -51,13 +53,13 @@
 - `concepts/foxfire_imp/foxfire_imp_project_owner_reference_v2.png`：项目负责人提供的狐火小妖当前视觉基准，表现为一尾小型狐妖、狐火施法、五视图、表情与动作；v1 已被本版替代。
 - `concepts/guard_monk/guard_monk_action_keypose_sheet_v1.png`：项目负责人生成并要求保存的护寺棍僧八动作关键姿势稿，用于后续动作与动画拆分参考。
 - `concepts/foxfire_imp/foxfire_imp_action_keypose_sheet_v1.png`：基于狐火小妖 v2 生成并由项目负责人要求保存的八动作关键姿势稿，用于后续动作与动画拆分参考。
-- `concepts/wild_hunter/wild_hunter_project_owner_reference_v1.png`：项目负责人提供的山野猎户当前视觉基准，表现为兽类拟人短弓猎手和猎犬同伴。
+- `concepts/wild_hunter/wild_hunter_project_owner_reference_v1.png`：项目负责人提供的山野猎户身份与造型基准；兽类拟人身份有效，短弓与射箭部分待按近战定位修改。
 - `concepts/sparrow_spirit/sparrow_spirit_project_owner_reference_v1.png`：项目负责人提供的山雀精当前视觉基准，表现为山雀拟人精怪与羽翼/风刃攻击。
 - `concepts/herbal_spirit_child/herbal_spirit_child_project_owner_reference_v1.png`：项目负责人提供的药灵童子当前视觉基准，表现为草木通灵童子、药杖、草药烟雾和草灵伙伴。
 - `concepts/herbal_spirit_child/herbal_spirit_child_action_keypose_sheet_v1.png`：保留首张约四头身比例、仅定向修正毒草药包后的八动作关键姿势稿，用于后续动画拆分参考。
 - `concepts/bear_lord/bear_lord_project_owner_reference_v1.png`：项目负责人提供的熊山君当前视觉基准，表现为巨熊妖王、碎山棒以及践踏、暴怒和恢复动作。
 - `concepts/bear_lord/bear_lord_action_keypose_sheet_v1.png`：保持巨熊体量、将践踏明确修正为脚掌冲击的八动作关键姿势稿。
-- `concepts/wild_hunter/wild_hunter_action_keypose_sheet_v1.png`：保持猎户短壮比例与完整短弓结构的八动作视觉试稿；不代表已解决近战/远程定位冲突，猎犬和鹰仍需独立资产。
+- `concepts/wild_hunter/wild_hunter_action_keypose_sheet_v1.png`：短弓修改前的八动作视觉试稿，只保留为历史，不再作为后续动作基准；猎犬和鹰仍需独立资产。
 - `concepts/sparrow_spirit/sparrow_spirit_action_keypose_sheet_v1.png`：保持自然鸟体比例、以羽翼与风刃完成的八动作视觉试稿；不代表已确认用风刃替代箭矢语义。
 - 六名角色的项目负责人设定稿均尚未完成透明抠图、身体分层或骨骼绑定，不能直接作为游戏贴图使用。
 - 当前动作关键姿势稿均不是最终 Sprite Sheet；正式制作前仍需统一部件、拆分角色与特效、补齐必要朝向并进行实际棋盘尺寸测试。
