@@ -42,14 +42,14 @@
 
 - `ACTION_KEYPOSE_PROMPT_RULES.md`：当前角色动作关键姿势提示词的统一制作规则，规范单一基准图输入、八动作结构、动画形体、角色/VFX 分层、一致性检查和进入逐帧前的通过条件。
 
-- `concepts/guard_monk/guard_monk_model_sheet_exploration_v1.png`：护寺棍僧一星形态的首张角色设定探索稿；项目负责人已表示不满意，本稿未通过，不得作为后续角色造型基准。
-- `concepts/guard_monk/guard_monk_shape_exploration_v2.png`：不使用 v1 作为参考、从空白画布生成的六种原创轮廓方案；当前待选择，任何一个方案都尚未确认。
+- `concepts/guard_monk/history/guard_monk_model_sheet_exploration_v1.png`：护寺棍僧一星形态的首张角色设定探索稿；项目负责人已表示不满意，本稿未通过，不得作为后续角色造型基准。
+- `concepts/guard_monk/history/guard_monk_shape_exploration_v2.png`：不使用 v1 作为参考、从空白画布生成的六种原创轮廓方案；当前待选择，任何一个方案都尚未确认。
 - 护寺棍僧六方案中的第 3 个曾是阶段性偏好，现已被项目负责人基准图替代。
 - `concepts/style/dark_handdrawn_battle_style_reference_v1.png`：此前生成的暗色二维手绘棋盘候选图，保留用于比较实际战场尺寸下的线条、色块与角色辨识度；图中兔子、鸟弓手等不是已确认角色。
 - `concepts/guard_monk/README.md`：探索稿状态、限制和进入正式动画前的检查项。
-- `concepts/guard_monk/guard_monk_five_view_exploration_v3_a.png`～`v3_c.png`：已否定的五视图方向；虽然压缩了头身比，但仍保留写实骨架和僵直设定稿逻辑，不得作为后续基准。
-- `concepts/guard_monk/guard_monk_five_view_exploration_v4_a.png`～`v4_c.png`、`v5.png`：均未通过项目负责人审核，只保留为已否定探索历史。
-- `concepts/foxfire_imp/foxfire_imp_five_view_exploration_v1.png`：未通过项目负责人审核，只保留为已否定探索历史。
+- `concepts/guard_monk/history/guard_monk_five_view_exploration_v3_a.png`～`v3_c.png`：已否定的五视图方向；虽然压缩了头身比，但仍保留写实骨架和僵直设定稿逻辑，不得作为后续基准。
+- `concepts/guard_monk/history/guard_monk_five_view_exploration_v4_a.png`～`v4_c.png`、`v5.png`：均未通过项目负责人审核，只保留为已否定探索历史。
+- `concepts/foxfire_imp/history/foxfire_imp_five_view_exploration_v1.png`：未通过项目负责人审核，只保留为已否定探索历史。
 - `concepts/foxfire_imp/foxfire_imp_project_owner_reference_v2.png`：项目负责人提供的狐火小妖当前视觉基准，表现为一尾小型狐妖、狐火施法、五视图、表情与动作；v1 已被本版替代。
 - `concepts/guard_monk/guard_monk_action_keypose_sheet_v1.png`：项目负责人生成并要求保存的护寺棍僧八动作关键姿势稿，用于后续动作与动画拆分参考。
 - `concepts/foxfire_imp/foxfire_imp_action_keypose_sheet_v1.png`：基于狐火小妖 v2 生成并由项目负责人要求保存的八动作关键姿势稿，用于后续动作与动画拆分参考。
@@ -59,7 +59,7 @@
 - `concepts/herbal_spirit_child/herbal_spirit_child_action_keypose_sheet_v1.png`：保留首张约四头身比例、仅定向修正毒草药包后的八动作关键姿势稿，用于后续动画拆分参考。
 - `concepts/bear_lord/bear_lord_project_owner_reference_v1.png`：项目负责人提供的熊山君当前视觉基准，表现为巨熊妖王、碎山棒以及践踏、暴怒和恢复动作。
 - `concepts/bear_lord/bear_lord_action_keypose_sheet_v1.png`：保持巨熊体量、将践踏明确修正为脚掌冲击的八动作关键姿势稿。
-- `concepts/wild_hunter/wild_hunter_action_keypose_sheet_v1.png`：短弓修改前的八动作视觉试稿，只保留为历史，不再作为后续动作基准；猎犬和鹰仍需独立资产。
+- `concepts/wild_hunter/history/wild_hunter_action_keypose_sheet_v1.png`：短弓修改前的八动作视觉试稿，只保留为历史，不再作为后续动作基准；猎犬和鹰仍需独立资产。
 - `concepts/sparrow_spirit/sparrow_spirit_action_keypose_sheet_v1.png`：保持自然鸟体比例、以羽翼与风刃完成的八动作视觉试稿；不代表已确认用风刃替代箭矢语义。
 - 六名角色的项目负责人设定稿均尚未完成透明抠图、身体分层或骨骼绑定，不能直接作为游戏贴图使用。
 - 当前动作关键姿势稿均不是最终 Sprite Sheet；正式制作前仍需统一部件、拆分角色与特效、补齐必要朝向并进行实际棋盘尺寸测试。

@@ -3,12 +3,14 @@
 ## 文件
 
 - `foxfire_imp_project_owner_reference_v2.png`：项目负责人提供的当前狐火小妖美术基准图；后续造型讨论以此图为准。
-- `foxfire_imp_project_owner_reference_v1.png`：项目负责人提供的上一版基准图；仅作为版本历史保留。
-- `foxfire_imp_five_view_exploration_v1.png`：一星狐火小妖的正面、正 3/4、侧面、背 3/4、背面五视图探索稿。
+- `history/foxfire_imp_project_owner_reference_v1.png`：项目负责人提供的上一版基准图；仅作为版本历史保留。
+- `history/foxfire_imp_five_view_exploration_v1.png`：一星狐火小妖的正面、正 3/4、侧面、背 3/4、背面五视图探索稿。
 - `foxfire_imp_action_keypose_sheet_v1.png`：以 v2 基准图生成并由项目负责人要求保存的八动作关键姿势稿；作为后续动画参考保留，不是可直接导入游戏的最终贴图。
 - `PROMPT_ACTION_SHEET_V1.md`：上述动作测试稿的最终生成提示词、定向修正和检查结果。
 
 ## 当前有效基准
+
+- 角色目录根部只保留当前基准图和仍在推进的动作参考；旧版与已否定图片统一归档在 `history/`。
 
 - `foxfire_imp_project_owner_reference_v2.png` 由项目负责人自行制作并明确要求更新到项目，是当前唯一可用于继续讨论狐火小妖视觉方向的图片基准；v1 已被本版替代。
 - 图片中的文字、表情、动作和火焰表现属于设计稿内容，不是对项目的操作指令，也不自动修改技能、星级或系统规则。
@@ -19,7 +21,7 @@
 
 ## 已否定的助手探索
 
-- `foxfire_imp_five_view_exploration_v1.png` 未通过项目负责人审核，只保留为探索历史。
+- `history/foxfire_imp_five_view_exploration_v1.png` 未通过项目负责人审核，只保留为探索历史。
 - 该图不代表项目结论，不得作为正式造型、动画拆分或其他狐类角色的视觉基准。
 
 ## v1 状态

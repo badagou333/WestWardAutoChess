@@ -3,21 +3,23 @@
 ## 文件
 
 - `guard_monk_project_owner_reference_v1.png`：项目负责人提供的当前护寺棍僧美术基准图；后续造型讨论优先以此图为准。
-- `guard_monk_model_sheet_exploration_v1.png`：一星护寺棍僧的正面、侧面、背面、战斗姿态、武器和色板探索稿。
+- `history/guard_monk_model_sheet_exploration_v1.png`：一星护寺棍僧的正面、侧面、背面、战斗姿态、武器和色板探索稿。
 - `PROMPT.md`：v1 设定稿使用的提示词与参考说明。
-- `guard_monk_shape_exploration_v2.png`：从空白画布重新生成的六种体型与服装大形方案。
+- `history/guard_monk_shape_exploration_v2.png`：从空白画布重新生成的六种体型与服装大形方案。
 - `PROMPT_V2.md`：v2 轮廓探索稿的最终生成提示词。
-- `guard_monk_five_view_exploration_v3_a.png`：基于方案 3 方向制作的约三头身五视图探索 A，偏干净的开发设定线稿。
-- `guard_monk_five_view_exploration_v3_b.png`：基于方案 3 方向制作的约三头身五视图探索 B，偏硬朗的衣片与轮廓处理。
-- `guard_monk_five_view_exploration_v3_c.png`：基于方案 3 方向制作的约三头身五视图探索 C，偏哑光手绘质感。
-- `guard_monk_five_view_exploration_v4_a.png`：重新研究动画形体后的五视图探索 A，偏锐利、紧张的轮廓节奏。
-- `guard_monk_five_view_exploration_v4_b.png`：重新研究动画形体后的五视图探索 B，偏弹性笔触和不对称衣片。
-- `guard_monk_five_view_exploration_v4_c.png`：重新研究动画形体后的五视图探索 C，头手脚和短腿的动画化最明显。
-- `guard_monk_five_view_exploration_v5.png`：按项目负责人提供的完整生产型五视图规格生成的单张探索稿。
+- `history/guard_monk_five_view_exploration_v3_a.png`：基于方案 3 方向制作的约三头身五视图探索 A，偏干净的开发设定线稿。
+- `history/guard_monk_five_view_exploration_v3_b.png`：基于方案 3 方向制作的约三头身五视图探索 B，偏硬朗的衣片与轮廓处理。
+- `history/guard_monk_five_view_exploration_v3_c.png`：基于方案 3 方向制作的约三头身五视图探索 C，偏哑光手绘质感。
+- `history/guard_monk_five_view_exploration_v4_a.png`：重新研究动画形体后的五视图探索 A，偏锐利、紧张的轮廓节奏。
+- `history/guard_monk_five_view_exploration_v4_b.png`：重新研究动画形体后的五视图探索 B，偏弹性笔触和不对称衣片。
+- `history/guard_monk_five_view_exploration_v4_c.png`：重新研究动画形体后的五视图探索 C，头手脚和短腿的动画化最明显。
+- `history/guard_monk_five_view_exploration_v5.png`：按项目负责人提供的完整生产型五视图规格生成的单张探索稿。
 - `PROMPT_ACTION_SHEET_V1.md`：严格沿用项目负责人基准图、用于生成八个战斗动作关键姿势的生产测试提示词；不把已否定探索稿作为输入。
 - `guard_monk_action_keypose_sheet_v1.png`：项目负责人按动作提示词生成并要求保存的八动作关键姿势稿；作为后续动画参考保留，不是可直接导入游戏的最终贴图。
 
 ## 当前有效基准
+
+- 角色目录根部只保留当前基准图和仍在推进的动作参考；已否定图片统一归档在 `history/`。
 
 - `guard_monk_project_owner_reference_v1.png` 由项目负责人自行制作并明确要求同步到项目，是当前唯一可用于继续讨论护寺棍僧视觉方向的图片基准。
 - 图片中的排版文字属于图片内容，不作为仓库协作指令；涉及角色身份、技能和系统规则的变更仍需通过对应设计文档确认。
