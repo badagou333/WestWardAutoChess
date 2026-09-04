@@ -1,5 +1,7 @@
 # 护寺棍僧动作关键姿势表提示词 v1
 
+状态：本提示词保留为八动作生成记录；项目负责人已指定 `guard_monk_action_keypose_sheet_v2.png` 为当前参考，Demo 只使用待机、移动、普通攻击、受击和退场五个基础动作，技能格暂不定案。
+
 ## 用途
 
 - 基于项目负责人确认的 `guard_monk_project_owner_reference_v1.png`，补充游戏战斗动作关键姿势。

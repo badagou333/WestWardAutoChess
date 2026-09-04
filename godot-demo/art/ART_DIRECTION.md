@@ -52,7 +52,8 @@
 - `concepts/guard_monk/history/guard_monk_five_view_exploration_v4_a.png`～`v4_c.png`、`v5.png`：均未通过项目负责人审核，只保留为已否定探索历史。
 - `concepts/foxfire_imp/history/foxfire_imp_five_view_exploration_v1.png`：未通过项目负责人审核，只保留为已否定探索历史。
 - `concepts/foxfire_imp/foxfire_imp_project_owner_reference_v2.png`：项目负责人提供的狐火小妖当前视觉基准，表现为一尾小型狐妖、狐火施法、五视图、表情与动作；v1 已被本版替代。
-- `concepts/guard_monk/guard_monk_action_keypose_sheet_v1.png`：项目负责人生成并要求保存的护寺棍僧八动作关键姿势稿，用于后续动作与动画拆分参考。
+- `concepts/guard_monk/history/guard_monk_action_keypose_sheet_v1.png`：护寺棍僧旧动作版本，已归档为历史。
+- `concepts/guard_monk/guard_monk_action_keypose_sheet_v2.png`：项目负责人指定的当前动作参考稿；待机、移动、横扫普攻、受击和跪地退场五个基础动作均可用于 Demo，技能格不约束后续设计。
 - `concepts/foxfire_imp/foxfire_imp_action_keypose_sheet_v1.png`：基于狐火小妖 v2 生成并由项目负责人要求保存的八动作关键姿势稿，用于后续动作与动画拆分参考。
 - `concepts/wild_hunter/wild_hunter_project_owner_reference_v1.png`：项目负责人提供的山野猎户身份与造型基准；兽类拟人身份有效，短弓与射箭部分待按近战定位修改。
 - `concepts/sparrow_spirit/sparrow_spirit_project_owner_reference_v1.png`：项目负责人提供的山雀精当前视觉基准，表现为山雀拟人精怪与羽翼/风刃攻击。
@@ -67,7 +68,7 @@
 - `concepts/sparrow_spirit/sparrow_spirit_action_keypose_sheet_v2.png`：当前动作参考稿；待机、移动、单枚风刃普攻、受击和独立退场五个基础动作均可用于 Demo，技能格不代表已确认用风刃替代箭矢语义。
 - 六名角色的项目负责人设定稿均尚未完成透明抠图、身体分层或骨骼绑定，不能直接作为游戏贴图使用。
 - 当前动作关键姿势稿均不是最终 Sprite Sheet；正式制作前仍需统一部件、拆分角色与特效、补齐必要朝向并进行实际棋盘尺寸测试。
-- 下一轮优先使用护寺棍僧与狐火小妖动作稿进行实际棋盘尺寸测试，再确认正/背 3/4 朝向、角色与特效分层以及首组逐帧数量。
+- 下一轮先审核狐火小妖五个基础动作，再使用已通过的角色动作稿进行实际棋盘尺寸测试，确认正/背 3/4 朝向、角色与特效分层以及首组逐帧数量。
 
 ## 下一次美术确认计划（已确认）
 
