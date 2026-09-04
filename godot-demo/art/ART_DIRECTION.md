@@ -60,7 +60,7 @@
 - `concepts/herbal_spirit_child/history/herbal_spirit_child_action_keypose_sheet_v1.png`：VFX 修正前的八动作探索稿，已归档为历史。
 - `concepts/herbal_spirit_child/herbal_spirit_child_action_keypose_sheet_v2.png`：项目负责人提供的 VFX 修正版；人物与动作保持稳定，待机、普攻、单体治疗、毒草和群体治疗的特效层级已清楚。Demo 仍只取五个基础动作，技能格不约束后续设计。
 - `concepts/bear_lord/bear_lord_project_owner_reference_v1.png`：项目负责人提供的熊山君当前视觉基准，表现为巨熊妖王、碎山棒以及践踏、暴怒和恢复动作。
-- `concepts/bear_lord/bear_lord_action_keypose_sheet_v1.png`：保持巨熊体量、将践踏明确修正为脚掌冲击的八动作探索稿；Demo 五个基础动作中待机、移动、普攻和退场已通过，受击姿势仍需改为沉重、贴地且稳定持棍的短促反应。
+- `concepts/bear_lord/bear_lord_action_keypose_sheet_v1.png`：保持巨熊体量、将践踏明确修正为脚掌冲击的八动作探索稿；项目负责人确认当前版本先用于 Demo，不再修改。受击姿势后仰较大、碎山棒持握不够稳定的问题只留作正式动画优化备注。
 - `concepts/wild_hunter/history/wild_hunter_action_keypose_sheet_v1.png`：短弓修改前的八动作视觉试稿，只保留为历史，不再作为后续动作基准；猎犬和鹰仍需独立资产。
 - `concepts/wild_hunter/wild_hunter_action_keypose_sheet_v2.png`：已通过审核的近战八动作参考稿，以单手猎刀表现待机、移动、突进、横斩、猎犬指令、鹰哨、受击和退场；猎犬与猎鹰仍需作为独立资产制作。
 - `concepts/sparrow_spirit/sparrow_spirit_action_keypose_sheet_v1.png`：保持自然鸟体比例、以羽翼与风刃完成的八动作视觉试稿；不代表已确认用风刃替代箭矢语义。
