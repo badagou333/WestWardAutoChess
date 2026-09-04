@@ -44,5 +44,6 @@ Use a perfectly uniform light warm-gray background. No environment, branch, perc
 
 ## 状态说明
 
-- 首版通过当前视觉检查并保存；未做比例压缩或武器重设计。
+- 首版通过当前视觉检查后已归档至 `history/sparrow_spirit_action_keypose_sheet_v1.png`；未做比例压缩或武器重设计。
+- 当前 `sparrow_spirit_action_keypose_sheet_v2.png` 已统一待机朝向并补充独立退场姿势，作为 Demo 五基础动作参考。
 - “羽翼/风刃”与“数箭齐发、箭矢穿透”的冲突仍待总控及角色/玩法工作流确认。

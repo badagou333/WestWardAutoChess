@@ -63,7 +63,8 @@
 - `concepts/bear_lord/bear_lord_action_keypose_sheet_v1.png`：保持巨熊体量、将践踏明确修正为脚掌冲击的八动作探索稿；项目负责人确认当前版本先用于 Demo，不再修改。受击姿势后仰较大、碎山棒持握不够稳定的问题只留作正式动画优化备注。
 - `concepts/wild_hunter/history/wild_hunter_action_keypose_sheet_v1.png`：短弓修改前的八动作视觉试稿，只保留为历史，不再作为后续动作基准；猎犬和鹰仍需独立资产。
 - `concepts/wild_hunter/wild_hunter_action_keypose_sheet_v2.png`：已通过审核的近战八动作参考稿，以单手猎刀表现待机、移动、突进、横斩、猎犬指令、鹰哨、受击和退场；猎犬与猎鹰仍需作为独立资产制作。
-- `concepts/sparrow_spirit/sparrow_spirit_action_keypose_sheet_v1.png`：保持自然鸟体比例、以羽翼与风刃完成的八动作视觉试稿；Demo 可提取待机、移动、单枚风刃普攻和受击，但缺少独立退场姿势，且待机朝向需统一。技能格不代表已确认用风刃替代箭矢语义。
+- `concepts/sparrow_spirit/history/sparrow_spirit_action_keypose_sheet_v1.png`：基础动作整理前的八动作视觉试稿，已归档为历史。
+- `concepts/sparrow_spirit/sparrow_spirit_action_keypose_sheet_v2.png`：当前动作参考稿；待机、移动、单枚风刃普攻、受击和独立退场五个基础动作均可用于 Demo，技能格不代表已确认用风刃替代箭矢语义。
 - 六名角色的项目负责人设定稿均尚未完成透明抠图、身体分层或骨骼绑定，不能直接作为游戏贴图使用。
 - 当前动作关键姿势稿均不是最终 Sprite Sheet；正式制作前仍需统一部件、拆分角色与特效、补齐必要朝向并进行实际棋盘尺寸测试。
 - 下一轮优先使用护寺棍僧与狐火小妖动作稿进行实际棋盘尺寸测试，再确认正/背 3/4 朝向、角色与特效分层以及首组逐帧数量。
