@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "character": "guard_monk",
+  "source": "art/concepts/guard_monk/guard_monk_action_keypose_sheet_v2.png",
+  "atlas": {
+    "file": "guard_monk_demo_pose_atlas_v1.png",
+    "frame_width": 256,
+    "frame_height": 256,
+    "columns": 6,
+    "rows": 1,
+    "foot_anchor": [128, 218],
+    "display_scale": 1.0
+  },
+  "frames": [
+    {"index": 0, "name": "idle"},
+    {"index": 1, "name": "move"},
+    {"index": 2, "name": "attack_prepare"},
+    {"index": 3, "name": "attack_impact"},
+    {"index": 4, "name": "hit"},
+    {"index": 5, "name": "retreat"}
+  ],
+  "actions": {
+    "idle": {"frames": [0], "loop": true, "cycle_seconds": 0.8, "runtime_bob_pixels": 2},
+    "move": {"frames": [1], "loop": true, "cycle_seconds": 0.4, "runtime_bob_pixels": 2},
+    "basic_attack": {"frames": [2, 3], "frame_seconds": [0.12, 0.16], "return_to": "idle"},
+    "hit": {"frames": [4], "hold_seconds": 0.18, "return_to": "idle"},
+    "retreat": {"frames": [5], "hold_seconds": 0.45, "fade_seconds": 0.25}
+  },
+  "notes": [
+    "Sort board draw order by board row.",
+    "Keep the foot anchor fixed for every state.",
+    "The attack motion arc is baked into the Demo impact frame and must become a separate VFX in formal production.",
+    "This is a pose-switch Demo sample, not a complete frame-by-frame animation."
+  ]
+}
