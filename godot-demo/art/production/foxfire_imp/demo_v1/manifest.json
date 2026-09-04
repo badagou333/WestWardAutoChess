@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "character": "foxfire_imp",
+  "source": "art/concepts/foxfire_imp/foxfire_imp_action_keypose_sheet_v1.png",
+  "frame": {
+    "width": 256,
+    "height": 256,
+    "foot_anchor": [128, 218],
+    "display_scale": 1.0
+  },
+  "atlases": {
+    "body": "foxfire_imp_demo_body_atlas_v1.png",
+    "vfx": "foxfire_imp_demo_vfx_atlas_v1.png",
+    "columns": 6,
+    "rows": 1
+  },
+  "frames": [
+    {"index": 0, "name": "idle", "body": true, "aligned_vfx": true},
+    {"index": 1, "name": "move", "body": true, "aligned_vfx": false},
+    {"index": 2, "name": "attack_prepare", "body": true, "aligned_vfx": false, "charge_vfx_baked_into_body": true},
+    {"index": 3, "name": "attack_impact", "body": true, "aligned_vfx": true},
+    {"index": 4, "name": "hit", "body": true, "aligned_vfx": false},
+    {"index": 5, "name": "retreat", "body": true, "aligned_vfx": true}
+  ],
+  "standalone_vfx": {
+    "idle_flame": {"file": "foxfire_imp_idle_flame_v1.png", "size": [64, 64], "anchor": [32, 32]},
+    "basic_projectile": {"file": "foxfire_imp_basic_projectile_v1.png", "size": [64, 64], "anchor": [32, 32]},
+    "retreat_flame": {"file": "foxfire_imp_retreat_flame_v1.png", "size": [64, 64], "anchor": [32, 32]}
+  },
+  "actions": {
+    "idle": {"body_frames": [0], "vfx_frames": [0], "loop": true, "cycle_seconds": 0.8},
+    "move": {"body_frames": [1], "loop": true, "cycle_seconds": 0.4, "runtime_bob_pixels": 2},
+    "basic_attack": {"body_frames": [2, 3], "body_frame_seconds": [0.12, 0.12], "spawn_vfx": "basic_projectile", "projectile_seconds": 0.2, "return_to": "idle"},
+    "hit": {"body_frames": [4], "hold_seconds": 0.18, "return_to": "idle"},
+    "retreat": {"body_frames": [5], "vfx_frames": [5], "hold_seconds": 0.45, "fade_seconds": 0.25}
+  },
+  "known_limitations": [
+    "The small charge flame overlaps the hands in the flattened source and remains baked into attack_prepare_body_v1.",
+    "Formal production needs a clean hand plate before separating the charge VFX losslessly.",
+    "This is a pose-switch Demo sample, not a complete frame-by-frame animation."
+  ]
+}
