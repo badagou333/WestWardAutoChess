@@ -57,7 +57,8 @@
 - `concepts/wild_hunter/wild_hunter_project_owner_reference_v1.png`：项目负责人提供的山野猎户身份与造型基准；兽类拟人身份有效，短弓与射箭部分待按近战定位修改。
 - `concepts/sparrow_spirit/sparrow_spirit_project_owner_reference_v1.png`：项目负责人提供的山雀精当前视觉基准，表现为山雀拟人精怪与羽翼/风刃攻击。
 - `concepts/herbal_spirit_child/herbal_spirit_child_project_owner_reference_v1.png`：项目负责人提供的药灵童子当前视觉基准，表现为草木通灵童子、药杖、草药烟雾和草灵伙伴。
-- `concepts/herbal_spirit_child/herbal_spirit_child_action_keypose_sheet_v1.png`：保留首张约四头身比例、仅定向修正毒草药包后的八动作探索稿；Demo 只取五个基础动作，治疗与毒草技能动作及 VFX 修正暂缓。
+- `concepts/herbal_spirit_child/history/herbal_spirit_child_action_keypose_sheet_v1.png`：VFX 修正前的八动作探索稿，已归档为历史。
+- `concepts/herbal_spirit_child/herbal_spirit_child_action_keypose_sheet_v2.png`：项目负责人提供的 VFX 修正版；人物与动作保持稳定，待机、普攻、单体治疗、毒草和群体治疗的特效层级已清楚。Demo 仍只取五个基础动作，技能格不约束后续设计。
 - `concepts/bear_lord/bear_lord_project_owner_reference_v1.png`：项目负责人提供的熊山君当前视觉基准，表现为巨熊妖王、碎山棒以及践踏、暴怒和恢复动作。
 - `concepts/bear_lord/bear_lord_action_keypose_sheet_v1.png`：保持巨熊体量、将践踏明确修正为脚掌冲击的八动作关键姿势稿。
 - `concepts/wild_hunter/history/wild_hunter_action_keypose_sheet_v1.png`：短弓修改前的八动作视觉试稿，只保留为历史，不再作为后续动作基准；猎犬和鹰仍需独立资产。
