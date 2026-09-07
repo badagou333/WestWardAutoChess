@@ -2,6 +2,8 @@
 
 ## 文件
 
+- `guard_monk_six_pose_repair_candidate_v1.png`：2026-09-07 基于用户上传六姿势修复图制作的长棍修正候选；上排中间移动姿势的棍身已改为同一直线。生成结果为 RGB，棋盘格是实色背景，尚需清底；未替换当前动作参考或生产包，待用户审核。
+- `PROMPT_REPAIR_CANDIDATE_V1.md`：本轮内置图像编辑提示词与验证记录。
 - `guard_monk_project_owner_reference_v1.png`：项目负责人提供的当前护寺棍僧美术基准图；后续造型讨论优先以此图为准。
 - `history/guard_monk_model_sheet_exploration_v1.png`：一星护寺棍僧的正面、侧面、背面、战斗姿态、武器和色板探索稿。
 - `PROMPT.md`：v1 设定稿使用的提示词与参考说明。
