@@ -13,6 +13,23 @@
 - [`docs/DEVELOPMENT_HANDOFF.md`](docs/DEVELOPMENT_HANDOFF.md)：换机器运行、测试和迁移说明。
 - [`godot-demo/art/ART_DIRECTION.md`](godot-demo/art/ART_DIRECTION.md)：当前美术确认状态。
 
+## 在另一台机器继续开发
+
+Gitee 仓库是本项目跨机器同步的权威来源：
+
+```bash
+git clone https://gitee.com/baiweicheng/tower-defense.git
+cd tower-defense
+git switch master
+git pull --ff-only origin master
+```
+
+然后在 ChatGPT 桌面 App 中切换到 Codex，添加该仓库根目录为本地项目，并将它设为主文件夹。长期的 `00`～`07` 职责任务使用 `Local`；只有确实需要隔离并行代码改动时才使用 `Worktree`。
+
+不同机器和不同 Codex 任务不依赖聊天记录同步。开始工作时按 `AGENTS.md` 读取受 Git 管理的共享记忆；完成一批修改后必须提交并推送到 Gitee。临时附件、未跟踪文件和未提交修改不会自动出现在另一台机器上。
+
+完整的 Codex 工作区建立步骤、任务命名、初始化提示和换机检查清单见 [`docs/DEVELOPMENT_HANDOFF.md`](docs/DEVELOPMENT_HANDOFF.md)。
+
 ## 运行
 
 安装 Godot 4.7.x 后，在仓库根目录执行：
