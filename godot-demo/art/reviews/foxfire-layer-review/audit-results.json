@@ -2,59 +2,59 @@
 	"atlas_checks": [
 		{
 			"alpha_differences": 0,
-			"byte_identical": false,
+			"byte_identical": true,
 			"frame": 0,
 			"layer": "body",
-			"max_premultiplied_delta_255": 0.749019578157686,
-			"visible_rgb_differences": 4
+			"max_premultiplied_delta_255": 0.0,
+			"visible_rgb_differences": 0
 		},
 		{
 			"alpha_differences": 0,
-			"byte_identical": false,
+			"byte_identical": true,
 			"frame": 1,
 			"layer": "body",
-			"max_premultiplied_delta_255": 0.839215645836848,
-			"visible_rgb_differences": 5
+			"max_premultiplied_delta_255": 0.0,
+			"visible_rgb_differences": 0
 		},
 		{
 			"alpha_differences": 0,
-			"byte_identical": false,
+			"byte_identical": true,
 			"frame": 2,
 			"layer": "body",
-			"max_premultiplied_delta_255": 0.91764700903612,
-			"visible_rgb_differences": 2
+			"max_premultiplied_delta_255": 0.0,
+			"visible_rgb_differences": 0
 		},
 		{
 			"alpha_differences": 0,
-			"byte_identical": false,
+			"byte_identical": true,
 			"frame": 3,
 			"layer": "body",
-			"max_premultiplied_delta_255": 0.91764700903612,
-			"visible_rgb_differences": 4
+			"max_premultiplied_delta_255": 0.0,
+			"visible_rgb_differences": 0
 		},
 		{
 			"alpha_differences": 0,
-			"byte_identical": false,
+			"byte_identical": true,
 			"frame": 4,
 			"layer": "body",
-			"max_premultiplied_delta_255": 0.91764700903612,
-			"visible_rgb_differences": 3
+			"max_premultiplied_delta_255": 0.0,
+			"visible_rgb_differences": 0
 		},
 		{
 			"alpha_differences": 0,
-			"byte_identical": false,
+			"byte_identical": true,
 			"frame": 5,
 			"layer": "body",
-			"max_premultiplied_delta_255": 0.756862714477613,
-			"visible_rgb_differences": 2
+			"max_premultiplied_delta_255": 0.0,
+			"visible_rgb_differences": 0
 		},
 		{
 			"alpha_differences": 0,
-			"byte_identical": false,
+			"byte_identical": true,
 			"frame": 0,
 			"layer": "vfx",
-			"max_premultiplied_delta_255": 0.823529373196994,
-			"visible_rgb_differences": 2
+			"max_premultiplied_delta_255": 0.0,
+			"visible_rgb_differences": 0
 		},
 		{
 			"empty": true,
@@ -68,11 +68,11 @@
 		},
 		{
 			"alpha_differences": 0,
-			"byte_identical": false,
+			"byte_identical": true,
 			"frame": 3,
 			"layer": "vfx",
-			"max_premultiplied_delta_255": 0.839215645836848,
-			"visible_rgb_differences": 5
+			"max_premultiplied_delta_255": 0.0,
+			"visible_rgb_differences": 0
 		},
 		{
 			"empty": true,
@@ -81,31 +81,31 @@
 		},
 		{
 			"alpha_differences": 0,
-			"byte_identical": false,
+			"byte_identical": true,
 			"frame": 5,
 			"layer": "vfx",
-			"max_premultiplied_delta_255": 0.192156854739376,
-			"visible_rgb_differences": 2
+			"max_premultiplied_delta_255": 0.0,
+			"visible_rgb_differences": 0
 		}
 	],
 	"failures": [],
 	"files": [
 		{
 			"alpha_10_percent_bbox": [
-				76,
-				94,
-				1382,
+				87,
+				95,
+				1379,
 				125
 			],
 			"border_pixels": 0,
 			"bottom_six_rows_alpha_50_percent_x_span": [
-				88,
-				1413
+				99,
+				1418
 			],
 			"file": "foxfire_imp_demo_body_atlas_v1.png",
 			"format": "RGBA8",
-			"nonzero_alpha_pixels": 39321,
-			"opaque_pixels": 31320,
+			"nonzero_alpha_pixels": 39577,
+			"opaque_pixels": 30174,
 			"size": [
 				1536,
 				256
@@ -113,20 +113,20 @@
 		},
 		{
 			"alpha_10_percent_bbox": [
-				76,
-				94,
-				103,
-				125
+				87,
+				95,
+				102,
+				124
 			],
 			"border_pixels": 0,
 			"bottom_six_rows_alpha_50_percent_x_span": [
-				88,
-				145
+				99,
+				156
 			],
 			"file": "foxfire_imp_idle_body_v1.png",
 			"format": "RGBA8",
-			"nonzero_alpha_pixels": 6808,
-			"opaque_pixels": 5519,
+			"nonzero_alpha_pixels": 6889,
+			"opaque_pixels": 5333,
 			"size": [
 				256,
 				256
@@ -134,20 +134,20 @@
 		},
 		{
 			"alpha_10_percent_bbox": [
-				67,
-				112,
+				70,
+				114,
 				123,
-				107
+				106
 			],
 			"border_pixels": 0,
 			"bottom_six_rows_alpha_50_percent_x_span": [
-				98,
-				105
+				102,
+				109
 			],
 			"file": "foxfire_imp_move_body_v1.png",
 			"format": "RGBA8",
-			"nonzero_alpha_pixels": 7142,
-			"opaque_pixels": 5685,
+			"nonzero_alpha_pixels": 7256,
+			"opaque_pixels": 5564,
 			"size": [
 				256,
 				256
@@ -155,20 +155,20 @@
 		},
 		{
 			"alpha_10_percent_bbox": [
-				76,
-				121,
-				105,
-				98
+				82,
+				122,
+				107,
+				97
 			],
 			"border_pixels": 0,
 			"bottom_six_rows_alpha_50_percent_x_span": [
-				88,
-				154
+				94,
+				160
 			],
 			"file": "foxfire_imp_attack_prepare_body_v1.png",
 			"format": "RGBA8",
-			"nonzero_alpha_pixels": 6602,
-			"opaque_pixels": 5421,
+			"nonzero_alpha_pixels": 6657,
+			"opaque_pixels": 5124,
 			"size": [
 				256,
 				256
@@ -176,20 +176,20 @@
 		},
 		{
 			"alpha_10_percent_bbox": [
-				71,
+				73,
 				108,
-				113,
+				114,
 				110
 			],
 			"border_pixels": 0,
 			"bottom_six_rows_alpha_50_percent_x_span": [
-				93,
-				156
+				95,
+				157
 			],
 			"file": "foxfire_imp_attack_impact_body_v1.png",
 			"format": "RGBA8",
-			"nonzero_alpha_pixels": 6615,
-			"opaque_pixels": 5170,
+			"nonzero_alpha_pixels": 6682,
+			"opaque_pixels": 4967,
 			"size": [
 				256,
 				256
@@ -197,20 +197,20 @@
 		},
 		{
 			"alpha_10_percent_bbox": [
-				68,
-				107,
+				90,
+				108,
 				120,
-				112
+				111
 			],
 			"border_pixels": 0,
 			"bottom_six_rows_alpha_50_percent_x_span": [
-				77,
+				121,
 				132
 			],
 			"file": "foxfire_imp_hit_body_v1.png",
 			"format": "RGBA8",
-			"nonzero_alpha_pixels": 7181,
-			"opaque_pixels": 5451,
+			"nonzero_alpha_pixels": 7057,
+			"opaque_pixels": 5126,
 			"size": [
 				256,
 				256
@@ -218,20 +218,20 @@
 		},
 		{
 			"alpha_10_percent_bbox": [
-				78,
-				127,
+				86,
+				129,
 				100,
-				92
+				90
 			],
 			"border_pixels": 0,
 			"bottom_six_rows_alpha_50_percent_x_span": [
-				83,
-				133
+				92,
+				140
 			],
 			"file": "foxfire_imp_retreat_body_v1.png",
 			"format": "RGBA8",
-			"nonzero_alpha_pixels": 4973,
-			"opaque_pixels": 4074,
+			"nonzero_alpha_pixels": 5036,
+			"opaque_pixels": 4060,
 			"size": [
 				256,
 				256
@@ -239,20 +239,20 @@
 		},
 		{
 			"alpha_10_percent_bbox": [
-				71,
-				113,
-				1388,
-				96
+				81,
+				112,
+				1387,
+				95
 			],
 			"border_pixels": 0,
 			"bottom_six_rows_alpha_50_percent_x_span": [
-				1441,
-				1455
+				1450,
+				1466
 			],
 			"file": "foxfire_imp_demo_vfx_atlas_v1.png",
 			"format": "RGBA8",
-			"nonzero_alpha_pixels": 1582,
-			"opaque_pixels": 535,
+			"nonzero_alpha_pixels": 1607,
+			"opaque_pixels": 534,
 			"size": [
 				1536,
 				256
@@ -260,20 +260,20 @@
 		},
 		{
 			"alpha_10_percent_bbox": [
-				71,
-				113,
+				81,
+				112,
 				20,
-				42
+				43
 			],
 			"border_pixels": 0,
 			"bottom_six_rows_alpha_50_percent_x_span": [
-				73,
-				89
+				83,
+				99
 			],
 			"file": "foxfire_imp_idle_vfx_v1.png",
 			"format": "RGBA8",
-			"nonzero_alpha_pixels": 555,
-			"opaque_pixels": 206,
+			"nonzero_alpha_pixels": 580,
+			"opaque_pixels": 193,
 			"size": [
 				256,
 				256
@@ -281,20 +281,20 @@
 		},
 		{
 			"alpha_10_percent_bbox": [
-				181,
+				189,
 				145,
-				41,
+				36,
 				20
 			],
 			"border_pixels": 0,
 			"bottom_six_rows_alpha_50_percent_x_span": [
-				187,
-				219
+				189,
+				222
 			],
 			"file": "foxfire_imp_attack_impact_vfx_v1.png",
 			"format": "RGBA8",
-			"nonzero_alpha_pixels": 527,
-			"opaque_pixels": 169,
+			"nonzero_alpha_pixels": 544,
+			"opaque_pixels": 178,
 			"size": [
 				256,
 				256
@@ -302,20 +302,20 @@
 		},
 		{
 			"alpha_10_percent_bbox": [
-				158,
 				169,
-				21,
-				40
+				170,
+				19,
+				37
 			],
 			"border_pixels": 0,
 			"bottom_six_rows_alpha_50_percent_x_span": [
-				161,
-				175
+				170,
+				186
 			],
 			"file": "foxfire_imp_retreat_vfx_v1.png",
 			"format": "RGBA8",
-			"nonzero_alpha_pixels": 500,
-			"opaque_pixels": 160,
+			"nonzero_alpha_pixels": 483,
+			"opaque_pixels": 163,
 			"size": [
 				256,
 				256
@@ -323,20 +323,20 @@
 		},
 		{
 			"alpha_10_percent_bbox": [
-				22,
+				23,
 				12,
 				20,
-				42
+				43
 			],
 			"border_pixels": 0,
 			"bottom_six_rows_alpha_50_percent_x_span": [
-				24,
-				40
+				25,
+				41
 			],
 			"file": "foxfire_imp_idle_flame_v1.png",
 			"format": "RGBA8",
-			"nonzero_alpha_pixels": 547,
-			"opaque_pixels": 206,
+			"nonzero_alpha_pixels": 580,
+			"opaque_pixels": 193,
 			"size": [
 				64,
 				64
@@ -344,20 +344,20 @@
 		},
 		{
 			"alpha_10_percent_bbox": [
-				12,
+				13,
 				22,
-				41,
+				36,
 				20
 			],
 			"border_pixels": 0,
 			"bottom_six_rows_alpha_50_percent_x_span": [
-				18,
-				50
+				13,
+				46
 			],
 			"file": "foxfire_imp_basic_projectile_v1.png",
 			"format": "RGBA8",
-			"nonzero_alpha_pixels": 527,
-			"opaque_pixels": 169,
+			"nonzero_alpha_pixels": 544,
+			"opaque_pixels": 178,
 			"size": [
 				64,
 				64
@@ -365,20 +365,20 @@
 		},
 		{
 			"alpha_10_percent_bbox": [
-				21,
-				11,
-				21,
-				40
+				22,
+				13,
+				19,
+				37
 			],
 			"border_pixels": 0,
 			"bottom_six_rows_alpha_50_percent_x_span": [
-				24,
-				38
+				23,
+				39
 			],
 			"file": "foxfire_imp_retreat_flame_v1.png",
 			"format": "RGBA8",
-			"nonzero_alpha_pixels": 495,
-			"opaque_pixels": 160,
+			"nonzero_alpha_pixels": 483,
+			"opaque_pixels": 163,
 			"size": [
 				64,
 				64

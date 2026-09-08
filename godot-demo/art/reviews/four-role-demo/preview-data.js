@@ -2231,6 +2231,16 @@ window.ROLE_PREVIEW_DATA = {
         "anchor": [
           32,
           32
+        ],
+        "aligned_center_trial": [
+          90,
+          132
+        ],
+        "source_box": [
+          80,
+          83,
+          151,
+          217
         ]
       },
       "basic_projectile": {
@@ -2244,8 +2254,14 @@ window.ROLE_PREVIEW_DATA = {
           32
         ],
         "aligned_center_trial": [
-          190,
-          154
+          208,
+          155
+        ],
+        "source_box": [
+          1586,
+          186,
+          1695,
+          252
         ]
       },
       "retreat_flame": {
@@ -2257,6 +2273,16 @@ window.ROLE_PREVIEW_DATA = {
         "anchor": [
           32,
           32
+        ],
+        "aligned_center_trial": [
+          179,
+          189
+        ],
+        "source_box": [
+          1545,
+          673,
+          1608,
+          798
         ]
       }
     },
@@ -2315,6 +2341,114 @@ window.ROLE_PREVIEW_DATA = {
       "Formal production needs a clean hand plate before separating the charge VFX losslessly.",
       "This is a pose-switch Demo sample, not a complete frame-by-frame animation."
     ],
-    "preview_notice": "待修复样板：衣尾缝隙残底、受击地线与身体锚点仍待修复；蓄力手部火焰含在身体图中。投射物发射点沿用独立审核页的试验值。"
+    "source_sha256": "b112aa42f7a6cec63e74eb77b2ef328286ba9ad996849b8fe33d31781a2c602d",
+    "processing_revision": "2026-09-08-neutral-paper-cleanup",
+    "source_scale": 0.34444444444444444,
+    "anchor_method": "Hand-annotated body ground projection; airborne move uses torso projection. Dynamic review pending.",
+    "extraction": [
+      {
+        "name": "idle",
+        "source_box": [
+          102,
+          35,
+          411,
+          410
+        ],
+        "source_ground_anchor": [
+          225,
+          399
+        ],
+        "frame_offset": [
+          86,
+          93
+        ]
+      },
+      {
+        "name": "move",
+        "source_box": [
+          427,
+          86,
+          801,
+          410
+        ],
+        "source_ground_anchor": [
+          602,
+          395
+        ],
+        "frame_offset": [
+          68,
+          112
+        ]
+      },
+      {
+        "name": "attack_prepare",
+        "source_box": [
+          883,
+          113,
+          1211,
+          404
+        ],
+        "source_ground_anchor": [
+          1020,
+          396
+        ],
+        "frame_offset": [
+          81,
+          121
+        ]
+      },
+      {
+        "name": "attack_impact",
+        "source_box": [
+          1240,
+          77,
+          1583,
+          409
+        ],
+        "source_ground_anchor": [
+          1410,
+          400
+        ],
+        "frame_offset": [
+          69,
+          107
+        ]
+      },
+      {
+        "name": "hit",
+        "source_box": [
+          916,
+          490,
+          1277,
+          830
+        ],
+        "source_ground_anchor": [
+          1026,
+          820
+        ],
+        "frame_offset": [
+          90,
+          104
+        ]
+      },
+      {
+        "name": "retreat",
+        "source_box": [
+          1304,
+          564,
+          1596,
+          834
+        ],
+        "source_ground_anchor": [
+          1430,
+          821
+        ],
+        "frame_offset": [
+          85,
+          129
+        ]
+      }
+    ],
+    "preview_notice": "已清底样板：六帧身体及三组独立火焰已重新提取，清理衣尾封闭残底和地线。蓄力手部火焰仍在身体图中；发射点为素材对齐试验值，动态对齐与战斗待验收。"
   }
 };
