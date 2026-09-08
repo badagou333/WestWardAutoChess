@@ -8,6 +8,7 @@ import json, hashlib
 from collections import deque
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
+from pack_four_role_preview import pack
 
 ART = Path(__file__).resolve().parents[2]
 ROLES = {
@@ -156,6 +157,7 @@ def run():
         index.append({'character':key,'name':role['name'],'frames':count,'scale':scale,'manifest':str((dest/'manifest.json').relative_to(ART)).replace('\\','/')})
     out=ART/'reviews'/'four-role-demo';out.mkdir(exist_ok=True)
     (out/'index.json').write_text(json.dumps(index,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    pack()
     print(json.dumps(index,ensure_ascii=False))
 
 if __name__=='__main__':run()

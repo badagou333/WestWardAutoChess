@@ -5,6 +5,7 @@
 <label>动作 <select id="action"><option value="idle">待机</option><option value="move">移动</option><option value="basic_attack">普通攻击</option><option value="hit">受击</option><option value="retreat">退场</option></select></label>
 <label><input type="checkbox" id="effects" checked>特效</label><label>背景 <select id="background"><option value="dark">深色</option><option value="light">浅色</option><option value="board">格子</option></select></label><label>速度 <select id="speed"><option value="1">1×</option><option value="0.25">0.25×</option></select></label><button id="play">暂停</button></nav>
 <canvas id="stage" width="1080" height="420" role="img" aria-label="角色动作与独立特效预览"></canvas><output id="status">载入中</output><label>进度 <input id="seek" type="range" min="0" max="1000" value="0" style="width:75%"></label><p id="note"></p><p id="checks"></p><p id="error"></p></main>
+<script src="./preview-data.js"></script>
 <script>
 (async()=>{
 const $=id=>document.getElementById(id),ctx=$('stage').getContext('2d'),cache={};
@@ -12,7 +13,8 @@ const load=src=>new Promise((ok,no)=>{const im=new Image;im.onload=()=>ok(im);im
 let t=0,last=performance.now(),paused=matchMedia('(prefers-reduced-motion: reduce)').matches;
 try{
 for(const key of ['wild_hunter','herbal_spirit_child','sparrow_spirit','bear_lord']){
- const base='../../production/'+key+'/demo_v1/',m=await(await fetch(base+'manifest.json')).json();
+ const base='../../production/'+key+'/demo_v1/',m=window.FOUR_ROLE_PREVIEW_DATA?.[key];
+ if(!m)throw Error('角色配置未载入，请保留完整素材目录后重新打开 index.html。');
  const [body,fx]=await Promise.all([load(base+m.atlases.body),load(base+m.atlases.vfx)]);const effects={};
  for(const [name,e]of Object.entries(m.standalone_vfx))effects[name]=await load(base+e.file);
  cache[key]={m,body,fx,effects};
@@ -39,6 +41,6 @@ let checks=0;for(const d of Object.values(cache)){if(d.body.width!==d.m.frames.l
 $('checks').textContent='预览载入与动作映射检查 '+checks+'/'+checks+' 通过。';
 for(const id of ['role','action','effects','background','speed'])$(id).onchange=()=>{if(id==='role'||id==='action')t=0;render()};$('play').onclick=()=>{paused=!paused;render()};$('seek').oninput=()=>{paused=true;t=Number($('seek').value)/1000*duration($('action').value);render()};
 function tick(now){const dt=Math.min(.1,(now-last)/1000);last=now;if(!paused)t=(t+dt*Number($('speed').value))%duration($('action').value);render();requestAnimationFrame(tick)}render();requestAnimationFrame(tick);
-}catch(e){$('error').textContent=e.message}
+}catch(e){$('status').textContent='载入失败';$('error').textContent=e.message}
 })();
 </script></html>

@@ -62,6 +62,8 @@ python godot-demo/art/production/tools/verify_four_role_demo.py
 godot --headless --path godot-demo --script res://art/reviews/four-role-demo/verify_resources.gd
 ```
 
-预览需要通过本地 HTTP 服务加载 manifest：从 `godot-demo/art` 运行 `python -m http.server 8766 --bind 127.0.0.1`，访问 `/reviews/four-role-demo/index.html`。不要将本地服务解释为已部署网站。
+预览可直接双击本目录的 `index.html` 打开，无需启动服务。请保留完整仓库目录结构（页面旁的 `preview-data.js` 及 `../../production/` 中的图片）。HTTP 访问也兼容。
+
+2026-09-08 修复：原版使用 fetch 读取 manifest，直接打开本地文件会被浏览器限制并显示 `Failed to fetch`。现改用自动生成的配置脚本；素材重建时会同步刷新。单独修改 manifest 后运行 `python godot-demo/art/production/tools/pack_four_role_preview.py`，追加 `--check` 可检查配置是否同步。
 
 推荐下一步：06 读取四个 manifest 在隔离的测试场景中接入，复核脚底投影、发射位置与按行排序；确认 Demo 动态表现后再决定需要哪些过渡帧。本批不更改护寺棍僧、狐火小妖的既有待修复状态。
