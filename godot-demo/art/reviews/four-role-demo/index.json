@@ -1,0 +1,30 @@
+[
+  {
+    "character": "wild_hunter",
+    "name": "山野猎户",
+    "frames": 6,
+    "scale": 0.3541666666666667,
+    "manifest": "production/wild_hunter/demo_v1/manifest.json"
+  },
+  {
+    "character": "herbal_spirit_child",
+    "name": "药灵童子",
+    "frames": 5,
+    "scale": 0.370757180156658,
+    "manifest": "production/herbal_spirit_child/demo_v1/manifest.json"
+  },
+  {
+    "character": "sparrow_spirit",
+    "name": "山雀精",
+    "frames": 6,
+    "scale": 0.3133159268929504,
+    "manifest": "production/sparrow_spirit/demo_v1/manifest.json"
+  },
+  {
+    "character": "bear_lord",
+    "name": "熊山君",
+    "frames": 5,
+    "scale": 0.4699140401146132,
+    "manifest": "production/bear_lord/demo_v1/manifest.json"
+  }
+]

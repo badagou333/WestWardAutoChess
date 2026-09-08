@@ -1,0 +1,6 @@
+{
+	"engine": "4.7.2-stable (official)",
+	"failures": [],
+	"runtime_pngs_loaded": 42,
+	"scope": "Godot image and texture loading only; no battle integration or visual approval"
+}

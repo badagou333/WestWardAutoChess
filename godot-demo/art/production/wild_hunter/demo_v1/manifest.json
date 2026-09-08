@@ -1,0 +1,517 @@
+{
+  "version": 1,
+  "character": "wild_hunter",
+  "status": "demo_pose_sample_pending_engine_validation",
+  "source": "art/concepts/wild_hunter/wild_hunter_action_keypose_sheet_v2.png",
+  "source_sha256": "c17d02bf380d57b8d64b394eef8e811f0e7ea7d861063267b3ba682ba351a03a",
+  "frame": {
+    "width": 256,
+    "height": 256,
+    "foot_anchor": [
+      128,
+      218
+    ],
+    "display_scale": 1
+  },
+  "source_scale": 0.3541666666666667,
+  "anchor_method": "Hand-annotated body ground projection; not whole-image bounding-box center",
+  "atlases": {
+    "body": "wild_hunter_demo_body_atlas_v1.png",
+    "vfx": "wild_hunter_demo_vfx_atlas_v1.png",
+    "columns": 6,
+    "rows": 1
+  },
+  "frames": [
+    {
+      "index": 0,
+      "name": "idle",
+      "body": true,
+      "file": "wild_hunter_idle_body_v1.png",
+      "source_box": [
+        35,
+        75,
+        385,
+        480
+      ],
+      "source_ground_anchor": [
+        213,
+        469
+      ],
+      "source_body_polygon": [
+        [
+          35,
+          75
+        ],
+        [
+          385,
+          75
+        ],
+        [
+          385,
+          446
+        ],
+        [
+          296,
+          446
+        ],
+        [
+          295,
+          475
+        ],
+        [
+          248,
+          475
+        ],
+        [
+          245,
+          450
+        ],
+        [
+          174,
+          450
+        ],
+        [
+          174,
+          468
+        ],
+        [
+          119,
+          468
+        ],
+        [
+          117,
+          447
+        ],
+        [
+          35,
+          447
+        ]
+      ],
+      "target_bbox_alpha_10_percent": [
+        70,
+        83,
+        187,
+        219
+      ],
+      "aligned_vfx": false
+    },
+    {
+      "index": 1,
+      "name": "move",
+      "body": true,
+      "file": "wild_hunter_move_body_v1.png",
+      "source_box": [
+        383,
+        102,
+        700,
+        470
+      ],
+      "source_ground_anchor": [
+        550,
+        461
+      ],
+      "source_body_polygon": [
+        [
+          383,
+          102
+        ],
+        [
+          700,
+          102
+        ],
+        [
+          700,
+          431
+        ],
+        [
+          492,
+          431
+        ],
+        [
+          492,
+          468
+        ],
+        [
+          443,
+          468
+        ],
+        [
+          443,
+          436
+        ],
+        [
+          383,
+          436
+        ]
+      ],
+      "target_bbox_alpha_10_percent": [
+        69,
+        97,
+        177,
+        220
+      ],
+      "aligned_vfx": false
+    },
+    {
+      "index": 2,
+      "name": "attack_prepare",
+      "body": true,
+      "file": "wild_hunter_attack_prepare_body_v1.png",
+      "source_box": [
+        727,
+        105,
+        1151,
+        462
+      ],
+      "source_ground_anchor": [
+        886,
+        453
+      ],
+      "source_body_polygon": [
+        [
+          727,
+          105
+        ],
+        [
+          1151,
+          105
+        ],
+        [
+          1151,
+          436
+        ],
+        [
+          1021,
+          436
+        ],
+        [
+          1021,
+          460
+        ],
+        [
+          967,
+          460
+        ],
+        [
+          961,
+          435
+        ],
+        [
+          796,
+          435
+        ],
+        [
+          791,
+          454
+        ],
+        [
+          737,
+          454
+        ],
+        [
+          727,
+          436
+        ]
+      ],
+      "target_bbox_alpha_10_percent": [
+        77,
+        101,
+        221,
+        221
+      ],
+      "aligned_vfx": false
+    },
+    {
+      "index": 3,
+      "name": "attack_impact",
+      "body": true,
+      "file": "wild_hunter_attack_impact_body_v1.png",
+      "source_box": [
+        1081,
+        110,
+        1532,
+        465
+      ],
+      "source_ground_anchor": [
+        1234,
+        453
+      ],
+      "source_body_polygon": [
+        [
+          1147,
+          111
+        ],
+        [
+          1404,
+          111
+        ],
+        [
+          1420,
+          275
+        ],
+        [
+          1530,
+          301
+        ],
+        [
+          1494,
+          343
+        ],
+        [
+          1380,
+          327
+        ],
+        [
+          1372,
+          420
+        ],
+        [
+          1171,
+          441
+        ],
+        [
+          1170,
+          458
+        ],
+        [
+          1119,
+          458
+        ],
+        [
+          1116,
+          430
+        ],
+        [
+          1081,
+          416
+        ],
+        [
+          1081,
+          350
+        ]
+      ],
+      "target_bbox_alpha_10_percent": [
+        77,
+        107,
+        229,
+        221
+      ],
+      "aligned_vfx": true
+    },
+    {
+      "index": 4,
+      "name": "hit",
+      "body": true,
+      "file": "wild_hunter_hit_body_v1.png",
+      "source_box": [
+        793,
+        522,
+        1134,
+        895
+      ],
+      "source_ground_anchor": [
+        969,
+        885
+      ],
+      "source_body_polygon": [
+        [
+          793,
+          522
+        ],
+        [
+          1134,
+          522
+        ],
+        [
+          1134,
+          866
+        ],
+        [
+          1081,
+          866
+        ],
+        [
+          1081,
+          892
+        ],
+        [
+          1028,
+          892
+        ],
+        [
+          1027,
+          867
+        ],
+        [
+          859,
+          867
+        ],
+        [
+          850,
+          892
+        ],
+        [
+          806,
+          892
+        ],
+        [
+          805,
+          868
+        ],
+        [
+          793,
+          868
+        ]
+      ],
+      "target_bbox_alpha_10_percent": [
+        71,
+        97,
+        186,
+        221
+      ],
+      "aligned_vfx": false
+    },
+    {
+      "index": 5,
+      "name": "retreat",
+      "body": true,
+      "file": "wild_hunter_retreat_body_v1.png",
+      "source_box": [
+        1126,
+        607,
+        1455,
+        905
+      ],
+      "source_ground_anchor": [
+        1300,
+        887
+      ],
+      "source_body_polygon": [
+        [
+          1126,
+          607
+        ],
+        [
+          1455,
+          607
+        ],
+        [
+          1455,
+          870
+        ],
+        [
+          1425,
+          870
+        ],
+        [
+          1425,
+          885
+        ],
+        [
+          1366,
+          885
+        ],
+        [
+          1389,
+          897
+        ],
+        [
+          1310,
+          898
+        ],
+        [
+          1240,
+          889
+        ],
+        [
+          1164,
+          888
+        ],
+        [
+          1126,
+          871
+        ]
+      ],
+      "target_bbox_alpha_10_percent": [
+        66,
+        124,
+        179,
+        222
+      ],
+      "aligned_vfx": false
+    }
+  ],
+  "standalone_vfx": {
+    "attack_trail": {
+      "file": "wild_hunter_attack_trail_v1.png",
+      "size": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        32
+      ],
+      "aligned_file": "wild_hunter_attack_trail_aligned_v1.png",
+      "source_box": [
+        1370,
+        270,
+        1528,
+        415
+      ],
+      "aligned_center_trial": [
+        204,
+        179
+      ]
+    }
+  },
+  "actions": {
+    "idle": {
+      "body_frames": [
+        0
+      ],
+      "loop": true
+    },
+    "move": {
+      "body_frames": [
+        1
+      ],
+      "runtime_bob_pixels": 2,
+      "loop": true
+    },
+    "basic_attack": {
+      "body_frames": [
+        2,
+        3
+      ],
+      "body_frame_seconds": [
+        0.12,
+        0.12
+      ],
+      "return_to": "idle",
+      "vfx_frames": [
+        3
+      ]
+    },
+    "hit": {
+      "body_frames": [
+        4
+      ],
+      "hold_seconds": 0.18,
+      "return_to": "idle"
+    },
+    "retreat": {
+      "body_frames": [
+        5
+      ],
+      "hold_seconds": 0.45,
+      "fade_seconds": 0.25
+    }
+  },
+  "known_limitations": [
+    "Pose switching only, no continuous in-between animation or engine battle integration.",
+    "Weapons remain part of body poses; not a skeletal cutout rig.",
+    "Per-character annotation and neutral-paper matte require visual review, not a reusable automatic acceptance test.",
+    "The drawn blade shape varies between poses; only detached slash trails are separated. No bow or summoned companion is included."
+  ]
+}

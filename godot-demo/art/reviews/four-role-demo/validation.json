@@ -1,0 +1,282 @@
+{
+  "scope": "Source hashes, file dimensions, alpha, frame edges, atlas identity, action mapping; visual and engine battle acceptance are separate.",
+  "roles": [
+    {
+      "character": "wild_hunter",
+      "body_frames": [
+        {
+          "name": "idle",
+          "bbox_alpha_10_percent": [
+            70,
+            83,
+            187,
+            219
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "move",
+          "bbox_alpha_10_percent": [
+            69,
+            97,
+            177,
+            220
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "attack_prepare",
+          "bbox_alpha_10_percent": [
+            77,
+            101,
+            221,
+            221
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "attack_impact",
+          "bbox_alpha_10_percent": [
+            77,
+            107,
+            229,
+            221
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "hit",
+          "bbox_alpha_10_percent": [
+            71,
+            97,
+            186,
+            221
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "retreat",
+          "bbox_alpha_10_percent": [
+            66,
+            124,
+            179,
+            222
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        }
+      ],
+      "standalone_effects": [
+        "attack_trail"
+      ]
+    },
+    {
+      "character": "herbal_spirit_child",
+      "body_frames": [
+        {
+          "name": "idle",
+          "bbox_alpha_10_percent": [
+            78,
+            78,
+            180,
+            221
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "move",
+          "bbox_alpha_10_percent": [
+            76,
+            85,
+            197,
+            220
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "attack",
+          "bbox_alpha_10_percent": [
+            71,
+            89,
+            189,
+            220
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "hit",
+          "bbox_alpha_10_percent": [
+            40,
+            94,
+            168,
+            221
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "retreat",
+          "bbox_alpha_10_percent": [
+            72,
+            94,
+            188,
+            221
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        }
+      ],
+      "standalone_effects": [
+        "idle_mist",
+        "basic_projectile",
+        "retreat_mist"
+      ]
+    },
+    {
+      "character": "sparrow_spirit",
+      "body_frames": [
+        {
+          "name": "idle",
+          "bbox_alpha_10_percent": [
+            81,
+            100,
+            163,
+            221
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "move",
+          "bbox_alpha_10_percent": [
+            61,
+            112,
+            183,
+            219
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "attack_prepare",
+          "bbox_alpha_10_percent": [
+            83,
+            116,
+            178,
+            220
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "attack_impact",
+          "bbox_alpha_10_percent": [
+            83,
+            115,
+            182,
+            219
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "hit",
+          "bbox_alpha_10_percent": [
+            90,
+            121,
+            194,
+            219
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "retreat",
+          "bbox_alpha_10_percent": [
+            80,
+            134,
+            170,
+            221
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        }
+      ],
+      "standalone_effects": [
+        "basic_projectile"
+      ]
+    },
+    {
+      "character": "bear_lord",
+      "body_frames": [
+        {
+          "name": "idle",
+          "bbox_alpha_10_percent": [
+            59,
+            56,
+            189,
+            221
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "move",
+          "bbox_alpha_10_percent": [
+            45,
+            73,
+            210,
+            221
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "attack",
+          "bbox_alpha_10_percent": [
+            54,
+            80,
+            245,
+            220
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "hit",
+          "bbox_alpha_10_percent": [
+            52,
+            72,
+            197,
+            222
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        },
+        {
+          "name": "retreat",
+          "bbox_alpha_10_percent": [
+            49,
+            98,
+            212,
+            221
+          ],
+          "border_clear": true,
+          "atlas_pixel_identical": true
+        }
+      ],
+      "standalone_effects": [
+        "attack_dust"
+      ]
+    }
+  ],
+  "failures": []
+}

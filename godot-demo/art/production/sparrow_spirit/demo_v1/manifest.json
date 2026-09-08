@@ -1,0 +1,366 @@
+{
+  "version": 1,
+  "character": "sparrow_spirit",
+  "status": "demo_pose_sample_pending_engine_validation",
+  "source": "art/concepts/sparrow_spirit/sparrow_spirit_action_keypose_sheet_v2.png",
+  "source_sha256": "1a0ce082019ff52e64d292ea52f3964d8d3042a302eaf2a93be0c834f9b1c948",
+  "frame": {
+    "width": 256,
+    "height": 256,
+    "foot_anchor": [
+      128,
+      218
+    ],
+    "display_scale": 1
+  },
+  "source_scale": 0.3133159268929504,
+  "anchor_method": "Hand-annotated body ground projection; not whole-image bounding-box center",
+  "atlases": {
+    "body": "sparrow_spirit_demo_body_atlas_v1.png",
+    "vfx": "sparrow_spirit_demo_vfx_atlas_v1.png",
+    "columns": 6,
+    "rows": 1
+  },
+  "frames": [
+    {
+      "index": 0,
+      "name": "idle",
+      "body": true,
+      "file": "sparrow_spirit_idle_body_v1.png",
+      "source_box": [
+        50,
+        42,
+        343,
+        444
+      ],
+      "source_ground_anchor": [
+        217,
+        431
+      ],
+      "source_body_polygon": null,
+      "target_bbox_alpha_10_percent": [
+        81,
+        100,
+        163,
+        221
+      ],
+      "aligned_vfx": false
+    },
+    {
+      "index": 1,
+      "name": "move",
+      "body": true,
+      "file": "sparrow_spirit_move_body_v1.png",
+      "source_box": [
+        401,
+        76,
+        822,
+        435
+      ],
+      "source_ground_anchor": [
+        628,
+        426
+      ],
+      "source_body_polygon": null,
+      "target_bbox_alpha_10_percent": [
+        61,
+        112,
+        183,
+        219
+      ],
+      "aligned_vfx": false
+    },
+    {
+      "index": 2,
+      "name": "attack_prepare",
+      "body": true,
+      "file": "sparrow_spirit_attack_prepare_body_v1.png",
+      "source_box": [
+        865,
+        88,
+        1195,
+        434
+      ],
+      "source_ground_anchor": [
+        1020,
+        421
+      ],
+      "source_body_polygon": null,
+      "target_bbox_alpha_10_percent": [
+        83,
+        116,
+        178,
+        220
+      ],
+      "aligned_vfx": false
+    },
+    {
+      "index": 3,
+      "name": "attack_impact",
+      "body": true,
+      "file": "sparrow_spirit_attack_impact_body_v1.png",
+      "source_box": [
+        1206,
+        86,
+        1530,
+        435
+      ],
+      "source_ground_anchor": [
+        1360,
+        424
+      ],
+      "source_body_polygon": [
+        [
+          1206,
+          86
+        ],
+        [
+          1480,
+          86
+        ],
+        [
+          1495,
+          229
+        ],
+        [
+          1530,
+          285
+        ],
+        [
+          1504,
+          327
+        ],
+        [
+          1460,
+          330
+        ],
+        [
+          1452,
+          402
+        ],
+        [
+          1241,
+          435
+        ],
+        [
+          1206,
+          397
+        ]
+      ],
+      "target_bbox_alpha_10_percent": [
+        83,
+        115,
+        182,
+        219
+      ],
+      "aligned_vfx": true
+    },
+    {
+      "index": 4,
+      "name": "hit",
+      "body": true,
+      "file": "sparrow_spirit_hit_body_v1.png",
+      "source_box": [
+        1318,
+        499,
+        1671,
+        827
+      ],
+      "source_ground_anchor": [
+        1450,
+        818
+      ],
+      "source_body_polygon": [
+        [
+          1318,
+          499
+        ],
+        [
+          1671,
+          499
+        ],
+        [
+          1671,
+          780
+        ],
+        [
+          1438,
+          817
+        ],
+        [
+          1438,
+          824
+        ],
+        [
+          1372,
+          824
+        ],
+        [
+          1372,
+          807
+        ],
+        [
+          1379,
+          790
+        ],
+        [
+          1318,
+          746
+        ]
+      ],
+      "target_bbox_alpha_10_percent": [
+        90,
+        121,
+        194,
+        219
+      ],
+      "aligned_vfx": false
+    },
+    {
+      "index": 5,
+      "name": "retreat",
+      "body": true,
+      "file": "sparrow_spirit_retreat_body_v1.png",
+      "source_box": [
+        21,
+        531,
+        326,
+        832
+      ],
+      "source_ground_anchor": [
+        185,
+        821
+      ],
+      "source_body_polygon": [
+        [
+          21,
+          531
+        ],
+        [
+          326,
+          531
+        ],
+        [
+          326,
+          817
+        ],
+        [
+          275,
+          817
+        ],
+        [
+          275,
+          826
+        ],
+        [
+          228,
+          826
+        ],
+        [
+          228,
+          815
+        ],
+        [
+          177,
+          815
+        ],
+        [
+          177,
+          829
+        ],
+        [
+          128,
+          829
+        ],
+        [
+          126,
+          817
+        ],
+        [
+          21,
+          817
+        ]
+      ],
+      "target_bbox_alpha_10_percent": [
+        80,
+        134,
+        170,
+        221
+      ],
+      "aligned_vfx": false
+    }
+  ],
+  "standalone_vfx": {
+    "basic_projectile": {
+      "file": "sparrow_spirit_basic_projectile_v1.png",
+      "size": [
+        128,
+        128
+      ],
+      "anchor": [
+        64,
+        64
+      ],
+      "aligned_file": "sparrow_spirit_basic_projectile_aligned_v1.png",
+      "source_box": [
+        1515,
+        210,
+        1711,
+        282
+      ],
+      "aligned_center_trial": [
+        207,
+        162
+      ]
+    }
+  },
+  "actions": {
+    "idle": {
+      "body_frames": [
+        0
+      ],
+      "loop": true
+    },
+    "move": {
+      "body_frames": [
+        1
+      ],
+      "runtime_bob_pixels": 2,
+      "loop": true
+    },
+    "basic_attack": {
+      "body_frames": [
+        2,
+        3
+      ],
+      "body_frame_seconds": [
+        0.12,
+        0.12
+      ],
+      "return_to": "idle",
+      "spawn_vfx": "basic_projectile",
+      "projectile_seconds_trial": 0.2,
+      "disable_aligned_projectile_on_spawn": true
+    },
+    "hit": {
+      "body_frames": [
+        4
+      ],
+      "hold_seconds": 0.18,
+      "return_to": "idle"
+    },
+    "retreat": {
+      "body_frames": [
+        5
+      ],
+      "hold_seconds": 0.45,
+      "fade_seconds": 0.25
+    }
+  },
+  "known_limitations": [
+    "Pose switching only, no continuous in-between animation or engine battle integration.",
+    "Weapons remain part of body poses; not a skeletal cutout rig.",
+    "Per-character annotation and neutral-paper matte require visual review, not a reusable automatic acceptance test.",
+    "Single wind blade is a Demo placeholder, not confirmation of final skill semantics; detached projectile is separate from the retained wing silhouette."
+  ]
+}

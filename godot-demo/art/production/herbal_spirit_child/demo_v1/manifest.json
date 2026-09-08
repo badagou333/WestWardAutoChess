@@ -1,0 +1,536 @@
+{
+  "version": 1,
+  "character": "herbal_spirit_child",
+  "status": "demo_pose_sample_pending_engine_validation",
+  "source": "art/concepts/herbal_spirit_child/herbal_spirit_child_action_keypose_sheet_v2.png",
+  "source_sha256": "02057ddcc8c1c2db17816de55e56f0f86f527d4da822daad57bef6c462458d67",
+  "frame": {
+    "width": 256,
+    "height": 256,
+    "foot_anchor": [
+      128,
+      218
+    ],
+    "display_scale": 1
+  },
+  "source_scale": 0.370757180156658,
+  "anchor_method": "Hand-annotated body ground projection; not whole-image bounding-box center",
+  "atlases": {
+    "body": "herbal_spirit_child_demo_body_atlas_v1.png",
+    "vfx": "herbal_spirit_child_demo_vfx_atlas_v1.png",
+    "columns": 5,
+    "rows": 1
+  },
+  "frames": [
+    {
+      "index": 0,
+      "name": "idle",
+      "body": true,
+      "file": "herbal_spirit_child_idle_body_v1.png",
+      "source_box": [
+        95,
+        77,
+        383,
+        476
+      ],
+      "source_ground_anchor": [
+        232,
+        465
+      ],
+      "source_body_polygon": [
+        [
+          95,
+          77
+        ],
+        [
+          383,
+          77
+        ],
+        [
+          383,
+          446
+        ],
+        [
+          307,
+          446
+        ],
+        [
+          307,
+          474
+        ],
+        [
+          269,
+          474
+        ],
+        [
+          266,
+          450
+        ],
+        [
+          237,
+          450
+        ],
+        [
+          237,
+          465
+        ],
+        [
+          180,
+          465
+        ],
+        [
+          180,
+          448
+        ],
+        [
+          159,
+          448
+        ],
+        [
+          159,
+          465
+        ],
+        [
+          143,
+          465
+        ],
+        [
+          135,
+          414
+        ],
+        [
+          95,
+          410
+        ]
+      ],
+      "target_bbox_alpha_10_percent": [
+        78,
+        78,
+        180,
+        221
+      ],
+      "aligned_vfx": true
+    },
+    {
+      "index": 1,
+      "name": "move",
+      "body": true,
+      "file": "herbal_spirit_child_move_body_v1.png",
+      "source_box": [
+        432,
+        91,
+        776,
+        471
+      ],
+      "source_ground_anchor": [
+        584,
+        461
+      ],
+      "source_body_polygon": [
+        [
+          432,
+          91
+        ],
+        [
+          776,
+          91
+        ],
+        [
+          776,
+          435
+        ],
+        [
+          701,
+          435
+        ],
+        [
+          685,
+          461
+        ],
+        [
+          655,
+          461
+        ],
+        [
+          650,
+          442
+        ],
+        [
+          553,
+          442
+        ],
+        [
+          553,
+          466
+        ],
+        [
+          505,
+          455
+        ],
+        [
+          494,
+          439
+        ],
+        [
+          515,
+          434
+        ],
+        [
+          508,
+          398
+        ],
+        [
+          432,
+          398
+        ]
+      ],
+      "target_bbox_alpha_10_percent": [
+        76,
+        85,
+        197,
+        220
+      ],
+      "aligned_vfx": false
+    },
+    {
+      "index": 2,
+      "name": "attack",
+      "body": true,
+      "file": "herbal_spirit_child_attack_body_v1.png",
+      "source_box": [
+        787,
+        101,
+        1111,
+        465
+      ],
+      "source_ground_anchor": [
+        945,
+        454
+      ],
+      "source_body_polygon": [
+        [
+          787,
+          101
+        ],
+        [
+          1040,
+          101
+        ],
+        [
+          1040,
+          191
+        ],
+        [
+          1111,
+          191
+        ],
+        [
+          1111,
+          256
+        ],
+        [
+          1070,
+          266
+        ],
+        [
+          1070,
+          438
+        ],
+        [
+          1047,
+          438
+        ],
+        [
+          1047,
+          460
+        ],
+        [
+          996,
+          460
+        ],
+        [
+          991,
+          437
+        ],
+        [
+          896,
+          437
+        ],
+        [
+          891,
+          460
+        ],
+        [
+          842,
+          460
+        ],
+        [
+          839,
+          438
+        ],
+        [
+          787,
+          438
+        ]
+      ],
+      "target_bbox_alpha_10_percent": [
+        71,
+        89,
+        189,
+        220
+      ],
+      "aligned_vfx": true
+    },
+    {
+      "index": 3,
+      "name": "hit",
+      "body": true,
+      "file": "herbal_spirit_child_hit_body_v1.png",
+      "source_box": [
+        815,
+        532,
+        1178,
+        881
+      ],
+      "source_ground_anchor": [
+        1053,
+        870
+      ],
+      "source_body_polygon": [
+        [
+          815,
+          532
+        ],
+        [
+          1154,
+          532
+        ],
+        [
+          1178,
+          823
+        ],
+        [
+          1150,
+          850
+        ],
+        [
+          1148,
+          878
+        ],
+        [
+          1075,
+          878
+        ],
+        [
+          1042,
+          864
+        ],
+        [
+          988,
+          872
+        ],
+        [
+          973,
+          872
+        ],
+        [
+          962,
+          845
+        ],
+        [
+          897,
+          845
+        ],
+        [
+          868,
+          725
+        ],
+        [
+          815,
+          651
+        ]
+      ],
+      "target_bbox_alpha_10_percent": [
+        40,
+        94,
+        168,
+        221
+      ],
+      "aligned_vfx": false
+    },
+    {
+      "index": 4,
+      "name": "retreat",
+      "body": true,
+      "file": "herbal_spirit_child_retreat_body_v1.png",
+      "source_box": [
+        1232,
+        538,
+        1570,
+        885
+      ],
+      "source_ground_anchor": [
+        1400,
+        873
+      ],
+      "source_body_polygon": [
+        [
+          1232,
+          538
+        ],
+        [
+          1570,
+          538
+        ],
+        [
+          1570,
+          859
+        ],
+        [
+          1532,
+          879
+        ],
+        [
+          1280,
+          879
+        ],
+        [
+          1265,
+          854
+        ],
+        [
+          1232,
+          842
+        ]
+      ],
+      "target_bbox_alpha_10_percent": [
+        72,
+        94,
+        188,
+        221
+      ],
+      "aligned_vfx": true
+    }
+  ],
+  "standalone_vfx": {
+    "idle_mist": {
+      "file": "herbal_spirit_child_idle_mist_v1.png",
+      "size": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        32
+      ],
+      "aligned_file": "herbal_spirit_child_idle_mist_aligned_v1.png",
+      "source_box": [
+        79,
+        191,
+        124,
+        256
+      ],
+      "aligned_center_trial": [
+        80,
+        128
+      ]
+    },
+    "basic_projectile": {
+      "file": "herbal_spirit_child_basic_projectile_v1.png",
+      "size": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        32
+      ],
+      "aligned_file": "herbal_spirit_child_basic_projectile_aligned_v1.png",
+      "source_box": [
+        1110,
+        183,
+        1218,
+        254
+      ],
+      "aligned_center_trial": [
+        209,
+        131
+      ]
+    },
+    "retreat_mist": {
+      "file": "herbal_spirit_child_retreat_mist_v1.png",
+      "size": [
+        64,
+        64
+      ],
+      "anchor": [
+        32,
+        32
+      ],
+      "aligned_file": "herbal_spirit_child_retreat_mist_aligned_v1.png",
+      "source_box": [
+        1240,
+        782,
+        1280,
+        846
+      ],
+      "aligned_center_trial": [
+        76,
+        196
+      ]
+    }
+  },
+  "actions": {
+    "idle": {
+      "body_frames": [
+        0
+      ],
+      "loop": true,
+      "vfx_frames": [
+        0
+      ]
+    },
+    "move": {
+      "body_frames": [
+        1
+      ],
+      "runtime_bob_pixels": 2,
+      "loop": true
+    },
+    "basic_attack": {
+      "body_frames": [
+        2
+      ],
+      "body_frame_seconds": [
+        0.24
+      ],
+      "return_to": "idle",
+      "spawn_vfx": "basic_projectile",
+      "projectile_seconds_trial": 0.2,
+      "disable_aligned_projectile_on_spawn": true
+    },
+    "hit": {
+      "body_frames": [
+        3
+      ],
+      "hold_seconds": 0.18,
+      "return_to": "idle"
+    },
+    "retreat": {
+      "body_frames": [
+        4
+      ],
+      "hold_seconds": 0.45,
+      "fade_seconds": 0.25,
+      "vfx_frames": [
+        4
+      ]
+    }
+  },
+  "known_limitations": [
+    "Pose switching only, no continuous in-between animation or engine battle integration.",
+    "Weapons remain part of body poses; not a skeletal cutout rig.",
+    "Per-character annotation and neutral-paper matte require visual review, not a reusable automatic acceptance test.",
+    "Only the basic green projectile and small idle/retreat wisps are provided; neutral-background matting can simplify very pale smoke edges."
+  ]
+}
