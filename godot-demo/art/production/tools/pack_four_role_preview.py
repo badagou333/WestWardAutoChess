@@ -23,7 +23,7 @@ def pack(check=False):
         action['body_frames'] = action['frames']
         if 'frame_seconds' in action:
             action['body_frame_seconds'] = action['frame_seconds']
-    monk['preview_notice'] = '待修复样板：裁切、残底与脚底对齐尚未通过审核。挥棍轨迹含在身体图中，特效开关无法隐藏它；此前原画修正尚未重新加工到此素材包。'
+    monk['preview_notice'] = '已清底样板：六帧已从确认版八动作稿重新提取，清理腿间、武器围合区域与轮廓残底，补回旧裁切遗漏的棍头和脚部。挥棍轨迹仍在身体图中；动态对齐与正式战斗待验收。'
     fox = data['foxfire_imp']
     fox['standalone_vfx']['basic_projectile']['aligned_center_trial'] = [190, 154]
     fox['preview_notice'] = '待修复样板：衣尾缝隙残底、受击地线与身体锚点仍待修复；蓄力手部火焰含在身体图中。投射物发射点沿用独立审核页的试验值。'

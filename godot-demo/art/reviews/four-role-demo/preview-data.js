@@ -2012,12 +2012,156 @@ window.ROLE_PREVIEW_DATA = {
       "The attack motion arc is baked into the Demo impact frame and must become a separate VFX in formal production.",
       "This is a pose-switch Demo sample, not a complete frame-by-frame animation."
     ],
+    "source_sha256": "80c49800643222bd15afe4cb3669262fa13bf78b16c78ed8d7fa6e78a35b5f46",
+    "processing_revision": "2026-09-08-neutral-paper-cleanup",
+    "source_scale": 0.425531914893617,
+    "anchor_method": "Hand-annotated body ground point, same scale for all poses; dynamic alignment pending review.",
+    "extraction": [
+      {
+        "name": "idle",
+        "source_box": [
+          50,
+          125,
+          385,
+          474
+        ],
+        "source_ground_anchor": [
+          202,
+          464
+        ],
+        "frame_offset": [
+          63,
+          74
+        ],
+        "frame_bbox": [
+          63,
+          75,
+          205,
+          223
+        ]
+      },
+      {
+        "name": "move",
+        "source_box": [
+          410,
+          146,
+          740,
+          489
+        ],
+        "source_ground_anchor": [
+          643,
+          479
+        ],
+        "frame_offset": [
+          29,
+          76
+        ],
+        "frame_bbox": [
+          29,
+          76,
+          169,
+          222
+        ]
+      },
+      {
+        "name": "attack_prepare",
+        "source_box": [
+          744,
+          164,
+          1093,
+          480
+        ],
+        "source_ground_anchor": [
+          885,
+          472
+        ],
+        "frame_offset": [
+          68,
+          87
+        ],
+        "frame_bbox": [
+          69,
+          88,
+          217,
+          221
+        ]
+      },
+      {
+        "name": "attack_impact",
+        "source_box": [
+          1050,
+          145,
+          1528,
+          485
+        ],
+        "source_ground_anchor": [
+          1231,
+          474
+        ],
+        "frame_offset": [
+          51,
+          78
+        ],
+        "frame_bbox": [
+          53,
+          78,
+          252,
+          223
+        ]
+      },
+      {
+        "name": "hit",
+        "source_box": [
+          784,
+          580,
+          1133,
+          920
+        ],
+        "source_ground_anchor": [
+          916,
+          906
+        ],
+        "frame_offset": [
+          72,
+          79
+        ],
+        "frame_bbox": [
+          72,
+          79,
+          221,
+          222
+        ]
+      },
+      {
+        "name": "retreat",
+        "source_box": [
+          1190,
+          575,
+          1527,
+          921
+        ],
+        "source_ground_anchor": [
+          1331,
+          910
+        ],
+        "frame_offset": [
+          68,
+          75
+        ],
+        "frame_bbox": [
+          68,
+          76,
+          208,
+          221
+        ]
+      }
+    ],
     "atlases": {
       "body": "guard_monk_demo_pose_atlas_v1.png",
       "vfx": null
     },
     "standalone_vfx": {},
-    "preview_notice": "待修复样板：裁切、残底与脚底对齐尚未通过审核。挥棍轨迹含在身体图中，特效开关无法隐藏它；此前原画修正尚未重新加工到此素材包。"
+    "preview_notice": "已清底样板：六帧已从确认版八动作稿重新提取，清理腿间、武器围合区域与轮廓残底，补回旧裁切遗漏的棍头和脚部。挥棍轨迹仍在身体图中；动态对齐与正式战斗待验收。"
   },
   "foxfire_imp": {
     "version": 1,
