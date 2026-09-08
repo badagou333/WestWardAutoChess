@@ -1,0 +1,56 @@
+{
+	"actual_battle_events": {
+		"bear_lord": {
+			"basic_attack": 18,
+			"hit": 69,
+			"idle": 52,
+			"move": 0,
+			"retreat": 1
+		},
+		"foxfire_imp": {
+			"basic_attack": 18,
+			"hit": 0,
+			"idle": 19,
+			"move": 0,
+			"retreat": 0
+		},
+		"guard_monk": {
+			"basic_attack": 18,
+			"hit": 15,
+			"idle": 27,
+			"move": 2,
+			"retreat": 0
+		},
+		"herbal_spirit_child": {
+			"basic_attack": 19,
+			"hit": 0,
+			"idle": 20,
+			"move": 0,
+			"retreat": 0
+		},
+		"sparrow_spirit": {
+			"basic_attack": 18,
+			"hit": 0,
+			"idle": 19,
+			"move": 0,
+			"retreat": 0
+		},
+		"wild_hunter": {
+			"basic_attack": 18,
+			"hit": 0,
+			"idle": 21,
+			"move": 2,
+			"retreat": 0
+		}
+	},
+	"battle_counts": {
+		"attacks": 109,
+		"cancelled": 5,
+		"heals": 19,
+		"hits": 85,
+		"projectiles": 55
+	},
+	"failures": [],
+	"scope": "Isolated art trial using existing board navigation; provisional stats; not formal skills/balance acceptance",
+	"seconds": 20.5500000000001
+}
