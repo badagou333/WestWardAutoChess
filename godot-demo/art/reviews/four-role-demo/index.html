@@ -1,10 +1,10 @@
-<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>四角色 Demo 素材预览</title>
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>六角色 Demo 素材预览</title>
 <style>body{margin:24px;background:#17202a;color:#edf1f5;font:16px system-ui,sans-serif}main{max-width:1080px;margin:auto}h1{font-size:24px}p{color:#c8d1d9;line-height:1.6}nav{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:20px 0}select,button,input{font:inherit}select,button{padding:7px 12px}canvas{display:block;width:100%;height:auto}output{display:block;padding:12px 0}#error{color:#ffa68e}</style>
-<main><h1>四角色 · Demo 五基础动作</h1><p>左侧按游戏逻辑像素绘制，右侧放大 2 倍；十字为共同地面锚点。此页用于素材复核，尚未接入正式战斗。</p>
-<nav><label>角色 <select id="role"><option value="wild_hunter">山野猎户</option><option value="herbal_spirit_child">药灵童子</option><option value="sparrow_spirit">山雀精</option><option value="bear_lord">熊山君</option></select></label>
+<main><h1>六角色 · Demo 五基础动作</h1><p>左侧按游戏逻辑像素绘制，右侧放大 2 倍；十字为共同地面锚点。此页用于素材复核，尚未接入正式战斗。</p>
+<nav><label>角色 <select id="role"><option value="guard_monk">护寺棍僧（待修复样板）</option><option value="foxfire_imp">狐火小妖（待修复样板）</option><option value="wild_hunter">山野猎户</option><option value="herbal_spirit_child">药灵童子</option><option value="sparrow_spirit">山雀精</option><option value="bear_lord">熊山君</option></select></label>
 <label>动作 <select id="action"><option value="idle">待机</option><option value="move">移动</option><option value="basic_attack">普通攻击</option><option value="hit">受击</option><option value="retreat">退场</option></select></label>
 <label><input type="checkbox" id="effects" checked>特效</label><label>背景 <select id="background"><option value="dark">深色</option><option value="light">浅色</option><option value="board">格子</option></select></label><label>速度 <select id="speed"><option value="1">1×</option><option value="0.25">0.25×</option></select></label><button id="play">暂停</button></nav>
-<canvas id="stage" width="1080" height="420" role="img" aria-label="角色动作与独立特效预览"></canvas><output id="status">载入中</output><label>进度 <input id="seek" type="range" min="0" max="1000" value="0" style="width:75%"></label><p id="note"></p><p id="checks"></p><p id="error"></p></main>
+<canvas id="stage" width="1080" height="420" role="img" aria-label="角色动作与独立特效预览"></canvas><output id="status">载入中</output><label>进度 <input id="seek" type="range" min="0" max="1000" value="0" style="width:75%"></label><p id="quality" aria-live="polite"></p><p id="note"></p><p id="checks"></p><p id="error"></p></main>
 <script src="./preview-data.js"></script>
 <script>
 (async()=>{
@@ -12,10 +12,10 @@ const $=id=>document.getElementById(id),ctx=$('stage').getContext('2d'),cache={}
 const load=src=>new Promise((ok,no)=>{const im=new Image;im.onload=()=>ok(im);im.onerror=()=>no(Error('素材读取失败 '+src));im.src=src});
 let t=0,last=performance.now(),paused=matchMedia('(prefers-reduced-motion: reduce)').matches;
 try{
-for(const key of ['wild_hunter','herbal_spirit_child','sparrow_spirit','bear_lord']){
- const base='../../production/'+key+'/demo_v1/',m=window.FOUR_ROLE_PREVIEW_DATA?.[key];
+for(const key of ['guard_monk','foxfire_imp','wild_hunter','herbal_spirit_child','sparrow_spirit','bear_lord']){
+ const base='../../production/'+key+'/demo_v1/',m=window.ROLE_PREVIEW_DATA?.[key];
  if(!m)throw Error('角色配置未载入，请保留完整素材目录后重新打开 index.html。');
- const [body,fx]=await Promise.all([load(base+m.atlases.body),load(base+m.atlases.vfx)]);const effects={};
+ const [body,fx]=await Promise.all([load(base+m.atlases.body),m.atlases.vfx?load(base+m.atlases.vfx):Promise.resolve(null)]);const effects={};
  for(const [name,e]of Object.entries(m.standalone_vfx))effects[name]=await load(base+e.file);
  cache[key]={m,body,fx,effects};
 }
@@ -27,17 +27,17 @@ function getState(d,action,time){
  if(action==='hit'&&time>=a.hold_seconds){index=0;fx=d.m.frames[0].aligned_vfx?0:-1}
  if(action==='retreat'){alpha=Math.max(0,1-Math.max(0,time-a.hold_seconds)/a.fade_seconds);fx=d.m.frames[index].aligned_vfx?index:-1}
  if(action==='basic_attack'){
-  const two=a.body_frames.length===2,spawn=two?.12:0;
-  if(two&&time>=.12)index=a.body_frames[1];
+  const two=a.body_frames.length===2,seconds=a.body_frame_seconds||[.12,.12],spawn=two?seconds[0]:0,end=two?seconds[0]+seconds[1]:.24;
+  if(two&&time>=spawn)index=a.body_frames[1];
   if(d.m.frames[index].aligned_vfx&&!a.spawn_vfx)fx=index;
   if(a.spawn_vfx&&time>=spawn&&time<spawn+.20){const e=d.m.standalone_vfx[a.spawn_vfx];projectile={image:d.effects[a.spawn_vfx],x:e.aligned_center_trial[0]+(time-spawn)/.20*160,y:e.aligned_center_trial[1],anchor:e.anchor}}
-  if(time>=.24){index=0;fx=d.m.frames[0].aligned_vfx?0:-1}
+  if(time>=end){index=0;fx=d.m.frames[0].aligned_vfx?0:-1}
  }
  return {index,alpha,fx,projectile,dx,dy};
 }
-function draw(d,s,x,y,scale){ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);ctx.translate(-128,-218);ctx.globalAlpha=s.alpha;ctx.drawImage(d.body,s.index*256,0,256,256,0,0,256,256);if($('effects').checked&&s.fx>=0)ctx.drawImage(d.fx,s.fx*256,0,256,256,0,0,256,256);if($('effects').checked&&s.projectile){const p=s.projectile;ctx.drawImage(p.image,p.x-p.anchor[0],p.y-p.anchor[1])}ctx.restore();ctx.strokeStyle='#35abb5';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x-6,y);ctx.lineTo(x+6,y);ctx.moveTo(x,y-6);ctx.lineTo(x,y+6);ctx.stroke()}
-function render(){const d=cache[$('role').value],action=$('action').value,s=getState(d,action,t),bg=$('background').value;ctx.fillStyle=bg==='dark'?'#17232d':'#eadfc8';ctx.fillRect(0,0,1080,420);if(bg==='board'){ctx.strokeStyle='#b4a27f';for(let x=0;x<1080;x+=162)for(let y=0;y<420;y+=113)ctx.strokeRect(x,y,162,113)}draw(d,s,175+s.dx,300+s.dy,1);draw(d,s,800,380,2);ctx.font='16px system-ui';ctx.fillStyle=bg==='dark'?'#e4edf5':'#26313a';ctx.fillText('1× 逻辑尺寸',16,26);ctx.fillText('2× 细节',568,26);$('status').textContent=d.m.frames[s.index].name+' · '+t.toFixed(3)+' 秒 · 独立投射物 '+(s.projectile&&$('effects').checked?1:0)+' · 透明度 '+s.alpha.toFixed(2);$('seek').value=Math.round(t/duration(action)*1000);$('play').textContent=paused?'播放':'暂停';$('note').textContent=action==='basic_attack'&&d.m.actions.basic_attack.spawn_vfx?'发射时关闭同帧投射物，避免重复；当前发射点与节奏为试接入建议值。':'武器保留在身体层；本轮是关键姿势素材，不是完整逐帧动画。'}
-let checks=0;for(const d of Object.values(cache)){if(d.body.width!==d.m.frames.length*256||d.fx.width!==d.body.width)throw Error('图集尺寸不符');checks++;for(const action of Object.keys(d.m.actions)){const s=getState(d,action,0);if(!Number.isInteger(s.index)||s.index<0||s.index>=d.m.frames.length)throw Error('动作映射不符');checks++}if(getState(d,'retreat',.8).alpha!==0)throw Error('退场未淡出');checks++}
+function draw(d,s,x,y,scale){ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);ctx.translate(-128,-218);ctx.globalAlpha=s.alpha;ctx.drawImage(d.body,s.index*256,0,256,256,0,0,256,256);if($('effects').checked&&d.fx&&s.fx>=0)ctx.drawImage(d.fx,s.fx*256,0,256,256,0,0,256,256);if($('effects').checked&&s.projectile){const p=s.projectile;ctx.drawImage(p.image,p.x-p.anchor[0],p.y-p.anchor[1])}ctx.restore();ctx.strokeStyle='#35abb5';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x-6,y);ctx.lineTo(x+6,y);ctx.moveTo(x,y-6);ctx.lineTo(x,y+6);ctx.stroke()}
+function render(){const d=cache[$('role').value],action=$('action').value,s=getState(d,action,t),bg=$('background').value;ctx.fillStyle=bg==='dark'?'#17232d':'#eadfc8';ctx.fillRect(0,0,1080,420);if(bg==='board'){ctx.strokeStyle='#b4a27f';for(let x=0;x<1080;x+=162)for(let y=0;y<420;y+=113)ctx.strokeRect(x,y,162,113)}draw(d,s,175+s.dx,300+s.dy,1);draw(d,s,800,380,2);ctx.font='16px system-ui';ctx.fillStyle=bg==='dark'?'#e4edf5':'#26313a';ctx.fillText('1× 逻辑尺寸',16,26);ctx.fillText('2× 细节',568,26);$('status').textContent=d.m.frames[s.index].name+' · '+t.toFixed(3)+' 秒 · 独立投射物 '+(s.projectile&&$('effects').checked?1:0)+' · 透明度 '+s.alpha.toFixed(2);$('quality').textContent=d.m.preview_notice||'已完成本批静态加工，可供试接入；实际战斗与连续动画尚未验收。';$('seek').value=Math.round(t/duration(action)*1000);$('play').textContent=paused?'播放':'暂停';$('note').textContent=action==='basic_attack'&&d.m.actions.basic_attack.spawn_vfx?'发射时关闭同帧投射物，避免重复；当前发射点与节奏为试接入建议值。':'武器保留在身体层；本轮是关键姿势素材，不是完整逐帧动画。'}
+let checks=0;for(const d of Object.values(cache)){if(d.body.width!==d.m.frames.length*256||(d.fx&&(d.fx.width!==d.body.width||d.fx.height!==256))||d.body.height!==256)throw Error('图集尺寸不符');checks++;for(const action of Object.keys(d.m.actions)){const s=getState(d,action,0);if(!Number.isInteger(s.index)||s.index<0||s.index>=d.m.frames.length)throw Error('动作映射不符');checks++}if(getState(d,'retreat',.8).alpha!==0)throw Error('退场未淡出');checks++}
 $('checks').textContent='预览载入与动作映射检查 '+checks+'/'+checks+' 通过。';
 for(const id of ['role','action','effects','background','speed'])$(id).onchange=()=>{if(id==='role'||id==='action')t=0;render()};$('play').onclick=()=>{paused=!paused;render()};$('seek').oninput=()=>{paused=true;t=Number($('seek').value)/1000*duration($('action').value);render()};
 function tick(now){const dt=Math.min(.1,(now-last)/1000);last=now;if(!paused)t=(t+dt*Number($('speed').value))%duration($('action').value);render();requestAnimationFrame(tick)}render();requestAnimationFrame(tick);
