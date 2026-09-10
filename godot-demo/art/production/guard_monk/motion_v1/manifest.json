@@ -1,0 +1,204 @@
+{
+  "version": 1,
+  "character": "guard_monk",
+  "status": "trial_motion_candidate",
+  "source": "generated-sheet.png",
+  "source_sha256": "22c50dc6529c017a4a000fe24a701316dda25e3fd2158f5d0256a9408f214faf",
+  "atlas": "body-atlas.png",
+  "frame_size": [
+    256,
+    256
+  ],
+  "foot_anchor": [
+    128,
+    218
+  ],
+  "source_scale": 0.3783783783783784,
+  "frames": [
+    {
+      "index": 0,
+      "name": "walk_contact",
+      "source_box": [
+        56,
+        121,
+        368,
+        494
+      ],
+      "ground_anchor": [
+        206,
+        493
+      ],
+      "frame_bbox": [
+        71,
+        77,
+        189,
+        218
+      ],
+      "file": "walk_contact.png"
+    },
+    {
+      "index": 1,
+      "name": "walk_pass",
+      "source_box": [
+        449,
+        134,
+        749,
+        497
+      ],
+      "ground_anchor": [
+        585,
+        493
+      ],
+      "frame_bbox": [
+        77,
+        82,
+        191,
+        219
+      ],
+      "file": "walk_pass.png"
+    },
+    {
+      "index": 2,
+      "name": "walk_opposite",
+      "source_box": [
+        806,
+        139,
+        1125,
+        496
+      ],
+      "ground_anchor": [
+        958,
+        494
+      ],
+      "frame_bbox": [
+        70,
+        84,
+        191,
+        219
+      ],
+      "file": "walk_opposite.png"
+    },
+    {
+      "index": 3,
+      "name": "walk_return",
+      "source_box": [
+        1195,
+        133,
+        1505,
+        498
+      ],
+      "ground_anchor": [
+        1308,
+        497
+      ],
+      "frame_bbox": [
+        85,
+        80,
+        202,
+        218
+      ],
+      "file": "walk_return.png"
+    },
+    {
+      "index": 4,
+      "name": "attack_windup",
+      "source_box": [
+        27,
+        556,
+        362,
+        936
+      ],
+      "ground_anchor": [
+        186,
+        932
+      ],
+      "frame_bbox": [
+        68,
+        76,
+        195,
+        220
+      ],
+      "file": "attack_windup.png"
+    },
+    {
+      "index": 5,
+      "name": "attack_accelerate",
+      "source_box": [
+        390,
+        606,
+        816,
+        930
+      ],
+      "ground_anchor": [
+        551,
+        930
+      ],
+      "frame_bbox": [
+        67,
+        95,
+        228,
+        218
+      ],
+      "file": "attack_accelerate.png"
+    },
+    {
+      "index": 6,
+      "name": "attack_impact",
+      "source_box": [
+        759,
+        620,
+        1231,
+        936
+      ],
+      "ground_anchor": [
+        937,
+        932
+      ],
+      "frame_bbox": [
+        61,
+        100,
+        240,
+        220
+      ],
+      "file": "attack_impact.png"
+    },
+    {
+      "index": 7,
+      "name": "attack_recover",
+      "source_box": [
+        1214,
+        607,
+        1522,
+        936
+      ],
+      "ground_anchor": [
+        1360,
+        933
+      ],
+      "frame_bbox": [
+        73,
+        95,
+        190,
+        219
+      ],
+      "file": "attack_recover.png"
+    }
+  ],
+  "move": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "attack": {
+    "windup": 4,
+    "accelerate": 5,
+    "impact": 6,
+    "recover": 7
+  },
+  "notes": [
+    "Generated limb poses, neutral checker removed locally; demo_v1 preserved.",
+    "Ground projections are manually annotated; not bounding-box centered.",
+    "Short trial sequences, not an accepted full directional walk cycle."
+  ]
+}

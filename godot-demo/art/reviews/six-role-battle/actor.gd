@@ -16,6 +16,10 @@ var role := ""
 var display_name := ""
 var manifest: Dictionary
 var body: Texture2D
+var motion_body: Texture2D
+var motion_manifest := {}
+var use_motion_frames := true
+var motion_frame := -1
 var vfx: Texture2D
 var effects := {}
 var pose := "idle"
@@ -44,6 +48,7 @@ var move_start := Vector2.ZERO
 var move_end := Vector2.ZERO
 var move_left := 0.0
 var show_anchor := true
+var show_status := true
 var effects_on := true
 var events := {"idle": 1, "move": 0, "basic_attack": 0, "hit": 0, "retreat": 0}
 
@@ -65,6 +70,10 @@ func setup_role(key: String, title: String, stats: Array, enemy := false) -> voi
 			if action.has("frame_seconds"):
 				action["body_frame_seconds"] = action.frame_seconds
 	body = ImageTexture.create_from_image(Image.load_from_file(base + manifest.atlases.body))
+	var motion_base := "res://art/production/%s/motion_v1/" % role
+	if FileAccess.file_exists(motion_base + "manifest.json"):
+		motion_manifest = JSON.parse_string(FileAccess.get_file_as_string(motion_base + "manifest.json"))
+		motion_body = ImageTexture.create_from_image(Image.load_from_file(motion_base + motion_manifest.atlas))
 	if manifest.atlases.has("vfx"):
 		vfx = ImageTexture.create_from_image(Image.load_from_file(base + manifest.atlases.vfx))
 	for key_name in manifest.standalone_vfx:
@@ -145,6 +154,7 @@ func tick(delta: float) -> void:
 	queue_redraw()
 
 func update_frame() -> void:
+	motion_frame = -1
 	var action: Dictionary = manifest.actions[pose]
 	frame_index = int(action.body_frames[0])
 	visual_alpha = 1.0
@@ -156,12 +166,27 @@ func update_frame() -> void:
 			frame_index = int(action.body_frames[-1])
 		if pose_time >= end - float(motion.recover) * 0.30:
 			frame_index = int(manifest.actions.idle.body_frames[0])
+		if use_motion_frames and motion_body != null:
+			var attack: Dictionary = motion_manifest.attack
+			if pose_time >= float(motion.windup) * 0.20:
+				motion_frame = int(attack.windup)
+			if pose_time >= float(motion.windup) * 0.78:
+				motion_frame = int(attack.accelerate)
+			# The strongest silhouette and the hit use exactly the same clock.
+			if pose_time >= impact_delay():
+				motion_frame = int(attack.impact)
+			if pose_time >= float(motion.windup) + float(motion.strike) + float(motion.recover) * 0.20:
+				motion_frame = int(attack.recover)
 		if pose_time >= end:
 			set_pose("move" if move_left > 0 else "idle")
 	elif pose == "hit" and pose_time >= float(action.hold_seconds):
 		set_pose("move" if move_left > 0 else "idle")
-	elif pose == "move" and move_left <= 0:
-		set_pose("idle")
+	elif pose == "move":
+		if use_motion_frames and motion_body != null:
+			var progress := clampf(1 - move_left / float(motion.walk), 0, 0.9999)
+			motion_frame = int(motion_manifest.move[int(progress * motion_manifest.move.size())])
+		if move_left <= 0:
+			set_pose("idle")
 	elif pose == "retreat":
 		visual_alpha = clampf(1 - (pose_time - float(action.hold_seconds)) / float(action.fade_seconds), 0, 1)
 
@@ -176,9 +201,11 @@ func visual_transform() -> Transform2D:
 	elif pose == "move":
 		var progress := clampf(1 - move_left / float(motion.walk), 0, 1)
 		var step_lift := absf(sin(progress * TAU))
-		offset.y = -step_lift * float(motion.lift)
-		angle = 0.025 * facing * sin(progress * TAU)
-		stretch = Vector2(1 + step_lift * 0.012, 1 - step_lift * 0.016)
+		# Drawn legs already lift: only a small remaining body weight shift is needed.
+		var amount := 0.35 if motion_frame >= 0 else 1.0
+		offset.y = -step_lift * float(motion.lift) * amount
+		angle = 0.025 * facing * sin(progress * TAU) * amount
+		stretch = Vector2(1 + step_lift * 0.012 * amount, 1 - step_lift * 0.016 * amount)
 	elif pose == "basic_attack":
 		var weight := Motion.attack_weight(pose_time, motion)
 		offset = attack_direction * float(motion.reach) * weight
@@ -215,15 +242,18 @@ func _draw() -> void:
 	draw_circle(Vector2.ZERO, 25, Color(0.07, 0.06, 0.04, visual_alpha * 0.2))
 	draw_set_transform_matrix(visual_transform())
 	var source := Rect2(frame_index * 256, 0, 256, 256)
-	draw_texture_rect_region(body, Rect2(-128, -218, 256, 256), source, tint)
+	if motion_frame >= 0:
+		draw_texture_rect_region(motion_body, Rect2(-128, -218, 256, 256), Rect2(motion_frame * 256, 0, 256, 256), tint)
+	else:
+		draw_texture_rect_region(body, Rect2(-128, -218, 256, 256), source, tint)
 	var separate_projectile: bool = pose == "basic_attack" and manifest.actions.basic_attack.has("spawn_vfx")
-	if effects_on and vfx != null and not separate_projectile:
+	if effects_on and vfx != null and not separate_projectile and motion_frame < 0:
 		draw_texture_rect_region(vfx, Rect2(-128, -218, 256, 256), source, tint)
 	draw_set_transform(Vector2.ZERO)
 	if show_anchor and visual_alpha > 0:
 		draw_line(FOOT - Vector2(5, 0), FOOT + Vector2(5, 0), Color("33b7c8"))
 		draw_line(FOOT - Vector2(0, 5), FOOT + Vector2(0, 5), Color("33b7c8"))
-	if not dead:
+	if not dead and show_status:
 		var y := -148.0 if enemy_side else -120.0
 		draw_rect(Rect2(-65, y - 27, 130, 23), Color(0.08, 0.13, 0.16, 0.82))
 		draw_rect(Rect2(-37, y, 74, 7), Color("302921"))

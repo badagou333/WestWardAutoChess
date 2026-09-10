@@ -1,6 +1,6 @@
 # 六角色棋盘试战斗
 
-更新时间：2026-09-10；职责：05｜美术试接入。
+更新时间：2026-09-11；职责：05｜美术试接入。
 
 ## 打开与操作
 
@@ -12,10 +12,21 @@ Windows 双击本目录 **`launch.cmd`**。它查找 `GODOT_BIN`、PATH 中的 G
 - 退场检查：六名角色同时播放保持和淡出，用于检查通常不会阵亡的后排。
 - 显示落脚点：开关青色十字，重开保留开关状态。
 - R：重开。
+- 补帧开关 / M：对比新增肢体帧与上一轮原姿势版本；重开保留当前选择。
 
 这是独立美术测试场景。原主场景、商店、四波流程和正式数据没有替换；测试从真实 Godot 棋盘走格与战斗开始，不是浏览器摆图。
 
-## 2026-09-10 动作优化
+## 2026-09-11 实际肢体补帧
+
+棍僧、猎户、熊山君各增加 4 张移动和 4 张攻击姿势，共 24 张新绘制帧，位于各自 `production/<角色>/motion_v1/`。已清理生成图的棋盘底、统一脚底对齐，并接入试玩。新帧默认为开，M 可即时对比；狐火、山雀、药灵继续使用现有姿势与施法时序。
+
+移动依次播放四帧并减少额外弹跳；普攻依次经过蓄力、加速、命中、收势，最伸展的命中帧与伤害释放同步。待机、受击、退场继续用原包。新帧不混叠旧图集的武器轨迹。素材来源、重建和限制见 `../../production/melee-motion-v1.md`。
+
+验证：三角色 24 帧均进入实际播放，命中图不会提前，释放时刻一致，开关恢复原图集且重开保留选择；六角色专项无失败，30/60/120 FPS 时长/事件计数仍一致，原冒烟/四波回归通过。深浅底与实际连续画面采样已复核。此为动作候选，用户最终观感尚待确认。
+
+新增 `frame-comparison.gif`（4 秒，左旧右新），更新 `motion-preview.gif`（8 秒实战），均为真实 Godot 渲染、24 帧/秒。比较两列只改变补帧开关，动作时序一致。新增对比渲染与打包工具，并更新三张棋盘截图。
+
+## 2026-09-10 动作优化（上一轮）
 
 - 增加每角色独立的蓄力、出手、收势和步伐配置（`motion.gd`）。猎户快、熊山君慢，棍僧较稳；远程施法先准备再发射。
 - 在脚底支点上增加待机呼吸、步伐起伏/落地缓冲、近战前探/回位；阴影随前探移动、随离地高度缩小。角色不再全部同步呼吸/出手。
@@ -23,7 +34,7 @@ Windows 双击本目录 **`launch.cmd`**。它查找 `GODOT_BIN`、PATH 中的 G
 - 出手和伤害事件共用角色动作时钟，发射点通过当前绘制变换计算；近战命中带 35 毫秒短暂停顿，死亡目标仍安全取消。内部计算步长不超过 1/120 秒，避免倍速跳过发射时刻。
 - 新增 `motion-preview.gif`：8 秒真实 Godot 连续渲染，压缩为 12 帧/秒供快速复核；实际试玩按显示帧率绘制。`render_motion.gd` 与 `pack_motion_preview.py` 可复现。
 
-这轮未重绘原画、未增加肢体中间帧。整张姿势的重心变化能改善节奏，但不能替代真实走路循环或完整挥棍动画。下一批优先补棍僧/猎户移动脚步与出手过渡，再处理狐火待机/攻击尾巴方向跳变。
+当轮未重绘原画、未增加肢体中间帧。2026-09-11 已补入三名近战角色的短序列；完整双步循环与方向衔接仍待精修。
 
 ## 本批接入
 
@@ -45,7 +56,7 @@ Windows 双击本目录 **`launch.cmd`**。它查找 `GODOT_BIN`、PATH 中的 G
 - 已通过实际 OpenGL 渲染导出开场、6.2 秒交战和退场截图，并逐张复核。截图不是浏览器模拟画布。
 - 六角色尺寸可放入当前格子，棍僧/狐火已清理的白底未再出现；近战接触和前后排序可观察。
 - **仍待改善**：暗色手绘角色与明亮棋盘/唐僧占位图差异明显；猎户、药灵的小尺寸细节偏密；前后相邻角色的头顶信息有遮挡。正式 UI 需优化血条/姓名显示条件。
-- **未验收**：移动仍以单姿势配合重心曲线实现，左右翻转不等于完整方向动画；姿势切换、每名角色武器端点与肢体过渡需继续校准。测试通过不等于已完成正式动画或全部阵型遮挡验收。
+- **未验收**：近战现为四帧移动/四帧攻击短序列，另外三名角色仍用原姿势；新图与旧待机的细节衔接、左右腿交替幅度、方向动画和武器端点仍需精修。测试通过不等于已完成正式动画或全部阵型遮挡验收。
 - 受限运行环境有系统证书/着色器缓存告警，未影响本地 PNG 读取、测试或 OpenGL 截图。本轮没有浏览器自动访问。
 
 ## 复现
@@ -58,6 +69,8 @@ godot --headless --path godot-demo --script res://art/reviews/six-role-battle/ve
 godot --path godot-demo --rendering-method gl_compatibility --script res://art/reviews/six-role-battle/render.gd
 godot --path godot-demo --rendering-method gl_compatibility --resolution 1440x810 --script res://art/reviews/six-role-battle/render_motion.gd
 python godot-demo/art/reviews/six-role-battle/pack_motion_preview.py
+godot --path godot-demo --rendering-method gl_compatibility --resolution 960x800 --script res://art/reviews/six-role-battle/render_frame_comparison.gd
+python godot-demo/art/reviews/six-role-battle/pack_frame_comparison.py
 ```
 
-截图：`board-start.png`、`board-combat.png`、`board-retreat.png`。此批没有更改原画或 PNG 生产素材。下一步优先复核用户实际体验，再由 06 决定如何把适配器与动作时钟整合到正式场景。
+截图：`board-start.png`、`board-combat.png`、`board-retreat.png`；对比采样：`frame-comparison-contact.png`。原概念图和 `demo_v1` 保留，新资产单独放在 `motion_v1`。下一步精修收势回待机与狐火施法过渡，由 06 评估正式整合。

@@ -43,6 +43,50 @@
 			"retreat": 0
 		}
 	},
+	"added_sprite_coverage": {
+		"bear_lord": {
+			"attack": [
+				4,
+				5,
+				6,
+				7
+			],
+			"move": [
+				0,
+				1,
+				2,
+				3
+			]
+		},
+		"guard_monk": {
+			"attack": [
+				4,
+				5,
+				6,
+				7
+			],
+			"move": [
+				0,
+				1,
+				2,
+				3
+			]
+		},
+		"wild_hunter": {
+			"attack": [
+				4,
+				5,
+				6,
+				7
+			],
+			"move": [
+				0,
+				1,
+				2,
+				3
+			]
+		}
+	},
 	"battle_counts": {
 		"attacks": 109,
 		"cancelled": 2,

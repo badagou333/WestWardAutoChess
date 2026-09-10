@@ -52,6 +52,33 @@ func run() -> void:
 	check(scene.missiles.is_empty(), "No orphan missile")
 	# Presentation contracts, separate from actual encounter coverage.
 	scene.reset_trial()
+	var sprite_coverage := {}
+	for actor in scene.actors:
+		if actor.motion_body == null: continue
+		check(actor.motion_body.get_width() == 2048 and actor.motion_body.get_height() == 256, actor.role + " motion atlas dimensions")
+		var move_frames := {}; var attack_frames := {}
+		actor.move_to(actor.position + Vector2(100, 0))
+		for sample in 120:
+			actor.tick(actor.motion.walk / 120.0)
+			if actor.motion_frame >= 0: move_frames[actor.motion_frame] = true
+		actor.tick(0.1); actor.play_attack()
+		for sample in 180:
+			actor.tick(actor.Motion.duration(actor.motion) / 180.0)
+			if actor.motion_frame >= 0: attack_frames[actor.motion_frame] = true
+			if actor.pose == "basic_attack" and actor.pose_time < actor.impact_delay():
+				check(actor.motion_frame != int(actor.motion_manifest.attack.impact), actor.role + " impact image never early")
+		check(move_frames.keys().size() == 4, actor.role + " four movement images actually played")
+		check(attack_frames.keys().size() == 4, actor.role + " four attack images actually played")
+		actor.play_attack(); actor.tick(actor.impact_delay())
+		check(actor.motion_frame == int(actor.motion_manifest.attack.impact), actor.role + " image matches exact damage release")
+		sprite_coverage[actor.role] = {"move":move_frames.keys(),"attack":attack_frames.keys()}
+	check(sprite_coverage.size() == 3, "Three melee roles use added frames")
+	scene._toggle_motion_frames()
+	for actor in scene.actors:
+		check(actor.motion_frame == -1, actor.role + " comparison switch restores original atlas")
+	scene.reset_trial()
+	check(not scene.motion_frames_enabled and not scene.actors[0].use_motion_frames, "Restart preserves comparison preference")
+	scene._toggle_motion_frames(); scene.reset_trial()
 	var profiles := {}
 	for actor in scene.actors:
 		profiles[actor.role] = actor.motion
@@ -87,7 +114,7 @@ func run() -> void:
 		check(absf(scene.elapsed - seconds) < 0.04, "Stable battle timing at %d FPS" % rate)
 		check(scene.counts == battle_counts, "Stable hit/release counts at %d FPS" % rate)
 		rate_results[rate] = scene.elapsed
-	var result := {"scope": "Isolated art trial using existing board navigation; provisional stats; not formal skills/balance acceptance", "seconds": seconds, "frame_rate_seconds": rate_results, "motion_profiles": profiles, "battle_counts": battle_counts, "actual_battle_events": actual_events, "failures": failures}
+	var result := {"scope": "Isolated art trial using existing board navigation; provisional stats; not formal skills/balance acceptance", "seconds": seconds, "frame_rate_seconds": rate_results, "motion_profiles": profiles, "added_sprite_coverage":sprite_coverage, "battle_counts": battle_counts, "actual_battle_events": actual_events, "failures": failures}
 	var file := FileAccess.open("res://art/reviews/six-role-battle/validation.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(result, "\t") + "\n")
 	print("SIX_ROLE_BATTLE_CHECK: actors=6 seconds=%.2f failures=%d" % [seconds, failures.size()])
