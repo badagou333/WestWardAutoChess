@@ -19,7 +19,7 @@ var summary: Label
 var counts := {"attacks": 0, "projectiles": 0, "hits": 0, "heals": 0, "cancelled": 0}
 
 func _ready() -> void:
-	DisplayServer.window_set_title("六角色 · 棋盘试战斗")
+	DisplayServer.window_set_title("六角色 · 动作优化试玩")
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	_create_background()
 	_create_escort()
@@ -40,7 +40,7 @@ func _create_review_ui() -> void:
 	ui.add_child(panel)
 	var title := Label.new()
 	title.position = Vector2(52, 35)
-	title.text = "六角色 · 棋盘试战斗"
+	title.text = "六角色 · 动作优化试玩"
 	title.add_theme_font_size_override("font_size", 30)
 	ui.add_child(title)
 	summary = Label.new(); summary.position = Vector2(52, 85)
@@ -62,7 +62,7 @@ func _create_review_ui() -> void:
 	var bottom := ColorRect.new(); bottom.position = Vector2(28, 917); bottom.size = Vector2(1864, 139)
 	bottom.color = Color("182831"); ui.add_child(bottom)
 	var instructions := Label.new(); instructions.position = Vector2(52, 937)
-	instructions.text = "观察：落脚点是否稳定 · 前排是否遮住后排 · 飞弹是否从手边发出 · 命中后才扣血 · 退场是否淡出\n药灵童子优先治疗受伤队友或唐僧；未受伤时待机。空格暂停，R 重开。\n当前沿用明亮棋盘与唐僧占位图，角色朝向翻转和关键姿势切换仍待正式动画优化。"
+	instructions.text = "观察：落脚点是否稳定 · 前排是否遮住后排 · 飞弹是否从手边发出 · 命中后才扣血 · 退场是否淡出\n药灵童子优先治疗受伤队友或唐僧；未受伤时待机。空格暂停，R 重开。\n当前沿用明亮棋盘与唐僧占位图，已加入分角色蓄力、出手、收势和步伐；完整方向与肢体中间帧仍待补充。"
 	instructions.add_theme_font_size_override("font_size", 20); ui.add_child(instructions)
 
 func reset_trial() -> void:
@@ -77,7 +77,7 @@ func reset_trial() -> void:
 		var hero = ArtActor.new(); hero.setup_role(entry[0], entry[1], entry[2])
 		hero.board_row = entry[3].x; hero.board_col = entry[3].y
 		hero.battle_cell = entry[3]; hero.home_cell = entry[3]
-		hero.position = _cell_center(entry[3]); hero.cooldown = 0.35
+		hero.position = _cell_center(entry[3]); hero.cooldown = 0.24 + heroes.size() * 0.11
 		add_child(hero); heroes.append(hero); actors.append(hero)
 	var boss = ArtActor.new(); boss.setup_role("bear_lord", "熊山君", [1500, 38, 1], true)
 	boss.battle_cell = Vector2i(2, 6); boss.home_cell = boss.battle_cell
@@ -95,6 +95,14 @@ func _process(delta: float) -> void:
 func step(delta: float) -> void:
 	if battle_paused:
 		return
+	# Bound each integration step so doubled speed cannot skip the release instant.
+	var remaining := delta
+	while remaining > 0.000001:
+		var slice := minf(remaining, 1.0 / 120)
+		_step(slice)
+		remaining -= slice
+
+func _step(delta: float) -> void:
 	for actor in actors: actor.tick(delta)
 	if state == GameState.BATTLE_RUNNING:
 		elapsed += delta
@@ -119,10 +127,10 @@ func _process_heroes(delta: float) -> void:
 		if target == null: continue
 		var cell: Vector2i = CENTER_CELL if target == escort else target.battle_cell
 		if _cell_distance(hero.battle_cell, cell) <= hero.attack_range_cells:
-			if hero.cooldown <= 0 and hero.move_left <= 0:
+			if hero.cooldown <= 0 and hero.move_left <= 0 and hero.pose != "basic_attack":
 				hero.cooldown = hero.attack_interval
 				queue_attack(hero, target, healing)
-		elif hero.move_cooldown <= 0:
+		elif hero.move_cooldown <= 0 and hero.pose != "basic_attack":
 			_move_hero_toward(hero, cell)
 
 func _healing_target(hero):
@@ -143,33 +151,20 @@ func _process_enemies(delta: float) -> void:
 		var target = _adjacent_blocking_hero(enemy.battle_cell)
 		if target == null and _cell_distance(enemy.battle_cell, CENTER_CELL) <= 1: target = escort
 		if target != null:
-			if enemy.attack_cooldown <= 0 and enemy.move_left <= 0:
+			if enemy.attack_cooldown <= 0 and enemy.move_left <= 0 and enemy.pose != "basic_attack":
 				enemy.attack_cooldown = enemy.attack_interval
 				queue_attack(enemy, target, false)
-		elif enemy.move_cooldown <= 0:
+		elif enemy.move_cooldown <= 0 and enemy.pose != "basic_attack":
 			_move_enemy_toward_center(enemy)
 
 func queue_attack(actor, target, healing: bool) -> void:
 	actor.face(target.position); actor.play_attack(); counts.attacks += 1
-	strikes.append({"source": actor, "target": target, "left": actor.impact_delay(), "healing": healing, "amount": actor.damage})
+	strikes.append({"source": actor, "target": target, "serial": actor.attack_serial, "healing": healing, "amount": actor.damage})
 
 func _target_alive(target) -> bool:
 	return is_instance_valid(target) and not target.dead
 
 func _resolve_strikes(delta: float) -> void:
-	for strike in strikes.duplicate():
-		strike.left -= delta
-		if strike.left > 0: continue
-		strikes.erase(strike)
-		if not _target_alive(strike.source) or not _target_alive(strike.target) or strike.source.pose != "basic_attack":
-			counts.cancelled += 1; continue
-		var action: Dictionary = strike.source.manifest.actions.basic_attack
-		if action.has("spawn_vfx"):
-			var from: Vector2 = strike.source.emission_position()
-			missiles.append({"target": strike.target, "from": from, "position": from, "time": 0.0, "healing": strike.healing, "amount": strike.amount, "texture": strike.source.effects[action.spawn_vfx]})
-			counts.projectiles += 1
-		else:
-			apply_hit(strike.target, strike.amount, strike.healing)
 	for missile in missiles.duplicate():
 		if not _target_alive(missile.target):
 			missiles.erase(missile); counts.cancelled += 1; continue
@@ -180,6 +175,20 @@ func _resolve_strikes(delta: float) -> void:
 			apply_hit(missile.target, missile.amount, missile.healing)
 			missiles.erase(missile)
 
+	for strike in strikes.duplicate():
+		if not _target_alive(strike.source) or not _target_alive(strike.target) or strike.source.attack_serial != strike.serial or strike.source.pose != "basic_attack":
+			strikes.erase(strike); counts.cancelled += 1; continue
+		if strike.source.pose_time < strike.source.impact_delay(): continue
+		strikes.erase(strike)
+		var action: Dictionary = strike.source.manifest.actions.basic_attack
+		if action.has("spawn_vfx"):
+			var from: Vector2 = strike.source.emission_position()
+			missiles.append({"target": strike.target, "from": from, "position": from, "time": 0.0, "healing": strike.healing, "amount": strike.amount, "texture": strike.source.effects[action.spawn_vfx]})
+			counts.projectiles += 1
+		else:
+			apply_hit(strike.target, strike.amount, strike.healing)
+			strike.source.impact_stop = 0.035
+
 func apply_hit(target, amount: float, healing: bool) -> void:
 	if not _target_alive(target): return
 	if healing:
@@ -187,6 +196,7 @@ func apply_hit(target, amount: float, healing: bool) -> void:
 		counts.heals += 1
 	else:
 		target.take_damage(amount); counts.hits += 1
+		if target != escort: target.impact_stop = 0.025
 	marks.append({"position": target.position + Vector2(0, -35), "time": 0.20, "healing": healing})
 
 func _heal_escort(amount: float) -> void:

@@ -2,8 +2,8 @@
 	"actual_battle_events": {
 		"bear_lord": {
 			"basic_attack": 18,
-			"hit": 69,
-			"idle": 52,
+			"hit": 8,
+			"idle": 19,
 			"move": 0,
 			"retreat": 1
 		},
@@ -16,15 +16,15 @@
 		},
 		"guard_monk": {
 			"basic_attack": 18,
-			"hit": 15,
-			"idle": 27,
-			"move": 2,
+			"hit": 6,
+			"idle": 24,
+			"move": 1,
 			"retreat": 0
 		},
 		"herbal_spirit_child": {
 			"basic_attack": 19,
 			"hit": 0,
-			"idle": 20,
+			"idle": 19,
 			"move": 0,
 			"retreat": 0
 		},
@@ -45,12 +45,72 @@
 	},
 	"battle_counts": {
 		"attacks": 109,
-		"cancelled": 5,
-		"heals": 19,
-		"hits": 85,
-		"projectiles": 55
+		"cancelled": 2,
+		"heals": 18,
+		"hits": 88,
+		"projectiles": 54
 	},
 	"failures": [],
+	"frame_rate_seconds": {
+		"30": 20.6999999999995,
+		"120": 20.6999999999995
+	},
+	"motion_profiles": {
+		"bear_lord": {
+			"lean": 0.065,
+			"lift": 2.5,
+			"reach": 56.0,
+			"recover": 0.34,
+			"strike": 0.14,
+			"walk": 0.68,
+			"windup": 0.34
+		},
+		"foxfire_imp": {
+			"lean": 0.045,
+			"lift": 7.0,
+			"reach": 14.0,
+			"recover": 0.26,
+			"strike": 0.1,
+			"walk": 0.42,
+			"windup": 0.24
+		},
+		"guard_monk": {
+			"lean": 0.055,
+			"lift": 4.0,
+			"reach": 56.0,
+			"recover": 0.24,
+			"strike": 0.1,
+			"walk": 0.5,
+			"windup": 0.2
+		},
+		"herbal_spirit_child": {
+			"lean": 0.025,
+			"lift": 3.0,
+			"reach": 9.0,
+			"recover": 0.28,
+			"strike": 0.12,
+			"walk": 0.58,
+			"windup": 0.26
+		},
+		"sparrow_spirit": {
+			"lean": 0.035,
+			"lift": 10.0,
+			"reach": 12.0,
+			"recover": 0.23,
+			"strike": 0.09,
+			"walk": 0.46,
+			"windup": 0.18
+		},
+		"wild_hunter": {
+			"lean": 0.075,
+			"lift": 5.0,
+			"reach": 70.0,
+			"recover": 0.22,
+			"strike": 0.08,
+			"walk": 0.42,
+			"windup": 0.14
+		}
+	},
 	"scope": "Isolated art trial using existing board navigation; provisional stats; not formal skills/balance acceptance",
-	"seconds": 20.5500000000001
+	"seconds": 20.6999999999995
 }

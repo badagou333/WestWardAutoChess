@@ -3,6 +3,15 @@ extends Node2D
 signal defeated(actor)
 
 const FOOT := Vector2(0, 35)
+const Motion = preload("res://art/reviews/six-role-battle/motion.gd")
+var motion: Dictionary
+var animation_clock := 0.0
+var attack_serial := 0
+var attack_direction := Vector2.RIGHT
+var hit_pulse := 0.0
+var hit_cooldown := 0.0
+var impact_stop := 0.0
+var landing := 0.0
 var role := ""
 var display_name := ""
 var manifest: Dictionary
@@ -40,6 +49,8 @@ var events := {"idle": 1, "move": 0, "basic_attack": 0, "hit": 0, "retreat": 0}
 
 func setup_role(key: String, title: String, stats: Array, enemy := false) -> void:
 	role = key
+	motion = Motion.PROFILES[key]
+	move_interval = motion.walk + 0.03
 	display_name = title
 	enemy_side = enemy
 	max_health = float(stats[0]); health = max_health
@@ -69,6 +80,7 @@ func set_pose(value: String) -> void:
 	update_frame()
 
 func play_attack() -> void:
+	attack_serial += 1
 	set_pose("basic_attack")
 
 func take_damage(amount: float) -> bool:
@@ -81,7 +93,11 @@ func take_damage(amount: float) -> bool:
 		set_pose("retreat")
 		defeated.emit(self)
 	else:
-		set_pose("hit")
+		hit_pulse = 0.14
+		# Damage still applies. Recoil must not restart windups or repeatedly lock a pose.
+		if pose not in ["basic_attack", "move", "hit"] and hit_cooldown <= 0:
+			set_pose("hit")
+			hit_cooldown = 0.30
 	return dead
 
 func heal(amount: float) -> void:
@@ -89,31 +105,41 @@ func heal(amount: float) -> void:
 		health = minf(max_health, health + amount)
 
 func move_to(point: Vector2) -> void:
-	move_start = position; move_end = point; move_left = 0.30
+	move_start = position; move_end = point; move_left = motion.walk
 	if absf(point.x - position.x) > 1:
 		facing = signf(point.x - position.x)
 	set_pose("move")
 
 func face(point: Vector2) -> void:
+	attack_direction = (point - position).normalized()
 	if absf(point.x - position.x) > 1:
 		facing = signf(point.x - position.x)
 
 func impact_delay() -> float:
-	var action: Dictionary = manifest.actions.basic_attack
-	return float(action.get("body_frame_seconds", [0.12])[0]) if action.body_frames.size() > 1 else 0.08
+	return Motion.release(motion)
 
 func emission_position() -> Vector2:
 	var action: Dictionary = manifest.actions.basic_attack
 	if not action.has("spawn_vfx"):
 		return position + FOOT + Vector2(36 * facing, -70)
 	var center: Array = manifest.standalone_vfx[action.spawn_vfx].aligned_center_trial
-	return position + FOOT + Vector2((float(center[0]) - 128) * facing, float(center[1]) - 218)
+	return position + visual_transform() * Vector2(float(center[0]) - 128, float(center[1]) - 218)
 
 func tick(delta: float) -> void:
+	hit_pulse = maxf(0, hit_pulse - delta)
+	hit_cooldown = maxf(0, hit_cooldown - delta)
+	if impact_stop > 0:
+		var frozen := minf(delta, impact_stop)
+		impact_stop -= frozen
+		delta -= frozen
+	animation_clock += delta
+	landing = maxf(0, landing - delta)
 	pose_time += delta
 	if move_left > 0:
 		move_left = maxf(0, move_left - delta)
-		position = move_start.lerp(move_end, smoothstep(0, 1, 1 - move_left / 0.30))
+		position = move_start.lerp(move_end, smoothstep(0, 1, 1 - move_left / float(motion.walk)))
+		if move_left == 0:
+			landing = 0.12
 	update_frame()
 	z_index = int(round(position.y + FOOT.y))
 	queue_redraw()
@@ -123,13 +149,13 @@ func update_frame() -> void:
 	frame_index = int(action.body_frames[0])
 	visual_alpha = 1.0
 	if pose == "basic_attack":
-		var durations: Array = action.get("body_frame_seconds", [0.24])
-		var end := 0.0
-		for i in range(durations.size()):
-			end += float(durations[i])
-			if pose_time < end:
-				frame_index = int(action.body_frames[i])
-				break
+		var end := Motion.duration(motion)
+		if pose_time < float(motion.windup) * 0.30:
+			frame_index = int(manifest.actions.idle.body_frames[0])
+		elif pose_time >= float(motion.windup):
+			frame_index = int(action.body_frames[-1])
+		if pose_time >= end - float(motion.recover) * 0.30:
+			frame_index = int(manifest.actions.idle.body_frames[0])
 		if pose_time >= end:
 			set_pose("move" if move_left > 0 else "idle")
 	elif pose == "hit" and pose_time >= float(action.hold_seconds):
@@ -139,14 +165,55 @@ func update_frame() -> void:
 	elif pose == "retreat":
 		visual_alpha = clampf(1 - (pose_time - float(action.hold_seconds)) / float(action.fade_seconds), 0, 1)
 
+func visual_transform() -> Transform2D:
+	var offset := Vector2.ZERO
+	var stretch := Vector2.ONE
+	var angle := 0.0
+	if pose == "idle":
+		# Separate phases prevent an entire line of characters breathing in unison.
+		var breath := sin(animation_clock * 2.6 + float(role.hash() % 37))
+		stretch = Vector2(1 - breath * 0.003, 1 + breath * 0.009)
+	elif pose == "move":
+		var progress := clampf(1 - move_left / float(motion.walk), 0, 1)
+		var step_lift := absf(sin(progress * TAU))
+		offset.y = -step_lift * float(motion.lift)
+		angle = 0.025 * facing * sin(progress * TAU)
+		stretch = Vector2(1 + step_lift * 0.012, 1 - step_lift * 0.016)
+	elif pose == "basic_attack":
+		var weight := Motion.attack_weight(pose_time, motion)
+		offset = attack_direction * float(motion.reach) * weight
+		angle = float(motion.lean) * facing * weight
+		if pose_time < float(motion.windup):
+			var anticipate := smoothstep(0, motion.windup, pose_time)
+			stretch = Vector2(1 + anticipate * 0.018, 1 - anticipate * 0.025)
+	elif pose == "hit":
+		var recoil := sin(clampf(pose_time / 0.18, 0, 1) * PI)
+		offset.x = -facing * recoil * 6
+		angle = -facing * recoil * 0.035
+	elif pose == "retreat":
+		stretch.y = lerpf(1.02, 1, smoothstep(0, 0.20, pose_time))
+	if landing > 0:
+		stretch *= Vector2(1 + landing * 0.18, 1 - landing * 0.18)
+	if hit_pulse > 0 and pose != "retreat":
+		offset.x -= facing * sin(hit_pulse / 0.14 * PI) * 2
+	return Transform2D(angle, stretch * Vector2(facing, 1), 0, FOOT + offset)
+
+func ground_offset() -> Vector2:
+	# A melee step carries the contact shadow; hop height must not move the shadow.
+	if pose == "basic_attack":
+		return attack_direction * float(motion.reach) * Motion.attack_weight(pose_time, motion)
+	return Vector2.ZERO
+
 func _draw() -> void:
 	if body == null:
 		return
-	var tint := Color(1, 1, 1, visual_alpha)
-	draw_set_transform(FOOT, 0, Vector2(1, 0.28))
+	var flash := maxf(0, (hit_pulse - 0.09) / 0.05) * 0.30
+	var tint := Color(1 + flash, 1 + flash * 0.8, 1 + flash * 0.5, visual_alpha)
+	var airborne := maxf(0, FOOT.y + ground_offset().y - visual_transform().origin.y)
+	var shadow_scale := 1 - airborne * 0.015
+	draw_set_transform(FOOT + ground_offset(), 0, Vector2(shadow_scale, 0.28 * shadow_scale))
 	draw_circle(Vector2.ZERO, 25, Color(0.07, 0.06, 0.04, visual_alpha * 0.2))
-	var bob := sin(pose_time * TAU / 0.4) * 2 if pose == "move" else 0.0
-	draw_set_transform(FOOT + Vector2(0, bob), 0, Vector2(facing, 1))
+	draw_set_transform_matrix(visual_transform())
 	var source := Rect2(frame_index * 256, 0, 256, 256)
 	draw_texture_rect_region(body, Rect2(-128, -218, 256, 256), source, tint)
 	var separate_projectile: bool = pose == "basic_attack" and manifest.actions.basic_attack.has("spawn_vfx")
