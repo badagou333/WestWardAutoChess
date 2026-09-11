@@ -78,18 +78,19 @@ func run() -> void:
 		check(actor.motion_frame == int(actor.motion_manifest.attack.impact), actor.role + " image matches exact damage release")
 		sprite_coverage[actor.role] = {"move":move_frames.keys(),"attack":attack_frames.keys()}
 	check(sprite_coverage.size() == 4, "Three melee roles and fox use added frames")
-	var monk = scene.heroes[0]
 	check(not sprite_coverage.guard_monk.attack.has(7), "Monk no longer inserts old retract before extended recovery")
-	for direction in [-1,1]:
-		monk.face(monk.position + Vector2(direction * 200,0)); monk.play_attack()
-		monk.tick(monk.Motion.duration(monk.motion) - 0.001)
-		var last_recovery: int = monk.motion_frame
-		var before: Transform2D = monk.visual_transform()
-		monk.tick(0.002)
-		check(last_recovery == 11 and monk.motion_frame == last_recovery and monk.pose == "idle", "Monk recovery ends on identical ready image in both facings")
-		check(before.origin.distance_to(monk.visual_transform().origin) < 0.01, "Monk body does not jump at return boundary")
-		monk.play_attack(); monk.tick(0)
-		check(monk.motion_frame == last_recovery, "Monk next attack starts on same ready image")
+	check(not sprite_coverage.wild_hunter.attack.has(7), "Hunter uses continuous new knife recovery")
+	for melee in [scene.heroes[0], scene.heroes[1]]:
+		for direction in [-1,1]:
+			melee.face(melee.position + Vector2(direction * 200,0)); melee.play_attack()
+			melee.tick(melee.Motion.duration(melee.motion) - 0.001)
+			var last_recovery: int = melee.motion_frame
+			var before: Transform2D = melee.visual_transform()
+			melee.tick(0.002)
+			check(last_recovery == 11 and melee.motion_frame == last_recovery and melee.pose == "idle", melee.role + " recovery ends on identical ready image in both facings")
+			check(before.origin.distance_to(melee.visual_transform().origin) < 0.01, melee.role + " body does not jump at return boundary")
+			melee.play_attack(); melee.tick(0)
+			check(melee.motion_frame == last_recovery, melee.role + " next attack starts on same ready image")
 	# New fox hand point is used on both facings, including actor translation and lean.
 	var cast_fox = scene.heroes[4]
 	for direction in [-1, 1]:

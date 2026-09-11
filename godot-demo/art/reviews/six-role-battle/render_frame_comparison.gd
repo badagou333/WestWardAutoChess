@@ -22,12 +22,15 @@ func _init() -> void:
 func run() -> void:
 	var fox_only := OS.get_cmdline_user_args().has("--foxfire")
 	var monk_recovery := OS.get_cmdline_user_args().has("--monk-recovery")
+	var hunter_recovery := OS.get_cmdline_user_args().has("--hunter-recovery")
+	var recovery := monk_recovery or hunter_recovery
 	var roles: Array = ["foxfire_imp"] if fox_only else ROLE_KEYS
 	if monk_recovery: roles = ["guard_monk"]
+	if hunter_recovery: roles = ["wild_hunter"]
 	root.content_scale_size = Vector2i(960, 80 + roles.size() * 240)
 	root.size = root.content_scale_size
 	var backdrop := Backdrop.new(); backdrop.rows = roles.size()
-	if monk_recovery:
+	if recovery:
 		backdrop.title_before = "BEFORE / motion v1 / 0.5x"
 		backdrop.title_after = "AFTER / recovery v2 / 0.5x"
 	root.add_child(backdrop)
@@ -35,9 +38,9 @@ func run() -> void:
 	for row in roles.size():
 		for column in 2:
 			var actor := Actor.new()
-			if monk_recovery and column == 0: actor.motion_revision = 1
+			if recovery and column == 0: actor.motion_revision = 1
 			actor.setup_role(roles[row], "", [100, 1, 1])
-			actor.use_motion_frames = column == 1 or monk_recovery
+			actor.use_motion_frames = column == 1 or recovery
 			actor.show_status = false; actor.show_anchor = false
 			actor.scale = Vector2(1.35, 1.35)
 			actor.position = Vector2(220 + column * 440, 215 + row * 240)
@@ -45,16 +48,17 @@ func run() -> void:
 	var output := "res://art/reviews/six-role-battle/.capture/comparison"
 	if fox_only: output += "-foxfire"
 	if monk_recovery: output += "-monk-recovery"
+	if hunter_recovery: output += "-hunter-recovery"
 	DirAccess.make_dir_recursive_absolute(output)
 	# Both columns use the identical actor implementation and timing, differing only in atlas toggle.
 	for index in 96:
-		if index == 6 and not fox_only and not monk_recovery:
+		if index == 6 and not fox_only and not recovery:
 			for actor in actors: actor.move_to(actor.position + Vector2(44, 0))
 		if index in [30, 62]:
 			for actor in actors:
 				actor.face(actor.position + Vector2(200, 0)); actor.play_attack()
 		for tick in 5:
-			for actor in actors: actor.tick(1.0 / 240 if monk_recovery else 1.0 / 120)
+			for actor in actors: actor.tick(1.0 / 240 if recovery else 1.0 / 120)
 		await process_frame
 		await RenderingServer.frame_post_draw
 		root.get_texture().get_image().save_png(output + "/%03d.png" % index)
