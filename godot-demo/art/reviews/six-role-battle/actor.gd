@@ -49,6 +49,7 @@ var move_end := Vector2.ZERO
 var move_left := 0.0
 var show_anchor := true
 var show_status := true
+var show_name := false
 var effects_on := true
 var events := {"idle": 1, "move": 0, "basic_attack": 0, "hit": 0, "retreat": 0}
 
@@ -128,11 +129,17 @@ func impact_delay() -> float:
 	return Motion.release(motion)
 
 func emission_position() -> Vector2:
+	if motion_frame >= 0 and motion_manifest.has("hand_sockets"):
+		return position + visual_transform() * motion_flame_socket()
 	var action: Dictionary = manifest.actions.basic_attack
 	if not action.has("spawn_vfx"):
 		return position + FOOT + Vector2(36 * facing, -70)
 	var center: Array = manifest.standalone_vfx[action.spawn_vfx].aligned_center_trial
 	return position + visual_transform() * Vector2(float(center[0]) - 128, float(center[1]) - 218)
+
+func motion_flame_socket() -> Vector2:
+	var hand: Array = motion_manifest.hand_sockets[motion_frame]
+	return Vector2(float(hand[0]) - 128, float(hand[1]) - 218 - 8)
 
 func tick(delta: float) -> void:
 	hit_pulse = maxf(0, hit_pulse - delta)
@@ -158,6 +165,8 @@ func update_frame() -> void:
 	var action: Dictionary = manifest.actions[pose]
 	frame_index = int(action.body_frames[0])
 	visual_alpha = 1.0
+	if pose == "idle" and use_motion_frames and motion_manifest.has("idle"):
+		motion_frame = int(motion_manifest.idle)
 	if pose == "basic_attack":
 		var end := Motion.duration(motion)
 		if pose_time < float(motion.windup) * 0.30:
@@ -177,12 +186,18 @@ func update_frame() -> void:
 				motion_frame = int(attack.impact)
 			if pose_time >= float(motion.windup) + float(motion.strike) + float(motion.recover) * 0.20:
 				motion_frame = int(attack.recover)
+			if motion_manifest.has("attack_track"):
+				for key in motion_manifest.attack_track:
+					var at := float(motion.windup) * float(key.fraction)
+					if key.phase == "release": at = impact_delay()
+					elif key.phase == "recover": at = float(motion.windup) + float(motion.strike) + float(motion.recover) * float(key.fraction)
+					if pose_time >= at: motion_frame = int(key.frame)
 		if pose_time >= end:
 			set_pose("move" if move_left > 0 else "idle")
 	elif pose == "hit" and pose_time >= float(action.hold_seconds):
 		set_pose("move" if move_left > 0 else "idle")
 	elif pose == "move":
-		if use_motion_frames and motion_body != null:
+		if use_motion_frames and motion_body != null and not motion_manifest.move.is_empty():
 			var progress := clampf(1 - move_left / float(motion.walk), 0, 0.9999)
 			motion_frame = int(motion_manifest.move[int(progress * motion_manifest.move.size())])
 		if move_left <= 0:
@@ -249,13 +264,19 @@ func _draw() -> void:
 	var separate_projectile: bool = pose == "basic_attack" and manifest.actions.basic_attack.has("spawn_vfx")
 	if effects_on and vfx != null and not separate_projectile and motion_frame < 0:
 		draw_texture_rect_region(vfx, Rect2(-128, -218, 256, 256), source, tint)
+	if effects_on and motion_frame >= 0 and motion_manifest.has("hand_sockets"):
+		var charge := 0.45 if pose == "idle" else clampf(pose_time / impact_delay(), 0.35, 1.0)
+		if pose == "idle" or (pose == "basic_attack" and pose_time < impact_delay()):
+			var size := Vector2(24, 30) * lerpf(0.55, 1.0, charge)
+			draw_texture_rect(effects.idle_flame, Rect2(motion_flame_socket() - size * 0.5, size), false, tint)
 	draw_set_transform(Vector2.ZERO)
 	if show_anchor and visual_alpha > 0:
 		draw_line(FOOT - Vector2(5, 0), FOOT + Vector2(5, 0), Color("33b7c8"))
 		draw_line(FOOT - Vector2(0, 5), FOOT + Vector2(0, 5), Color("33b7c8"))
 	if not dead and show_status:
 		var y := -148.0 if enemy_side else -120.0
-		draw_rect(Rect2(-65, y - 27, 130, 23), Color(0.08, 0.13, 0.16, 0.82))
+		if show_name:
+			draw_rect(Rect2(-65, y - 27, 130, 23), Color(0.08, 0.13, 0.16, 0.82))
+			draw_string(ThemeDB.fallback_font, Vector2(-62, y - 7), display_name, HORIZONTAL_ALIGNMENT_CENTER, 124, 17, Color("fff5df"))
 		draw_rect(Rect2(-37, y, 74, 7), Color("302921"))
 		draw_rect(Rect2(-35, y + 2, 70 * health / max_health, 3), Color("ed7574") if enemy_side else Color("6bd58a"))
-		draw_string(ThemeDB.fallback_font, Vector2(-62, y - 7), display_name, HORIZONTAL_ALIGNMENT_CENTER, 124, 17, Color("fff5df"))

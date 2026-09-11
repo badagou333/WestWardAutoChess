@@ -40,9 +40,9 @@ def components(mask):
     return sorted(found, key=lambda p: (int(np.mean([v[0] for v in p]) > 512), min(v[1] for v in p)))
 
 
-def run():
+def run(roles=ROLES, names=NAMES, metadata=None):
     report = {}
-    for role, (scale, pivots) in ROLES.items():
+    for role, (scale, pivots) in roles.items():
         dest = ART / 'production' / role / 'motion_v1'
         source = dest / 'generated-sheet.png'
         rgb = np.asarray(Image.open(source).convert('RGB'))
@@ -67,9 +67,9 @@ def run():
             assert offset[0] >= 2 and offset[1] >= 2
             assert offset[0]+resized.width < 254 and offset[1]+resized.height < 254
             frame = Image.new('RGBA',(256,256)); frame.alpha_composite(resized, offset)
-            frame.save(dest / (NAMES[i]+'.png')); atlas.alpha_composite(frame,(i*256,0))
-            frames.append({'index':i,'name':NAMES[i],'source_box':box,'ground_anchor':pivot,
-                           'frame_bbox':frame.getbbox(),'file':NAMES[i]+'.png'})
+            frame.save(dest / (names[i]+'.png')); atlas.alpha_composite(frame,(i*256,0))
+            frames.append({'index':i,'name':names[i],'source_box':box,'ground_anchor':pivot,
+                           'frame_bbox':frame.getbbox(),'file':names[i]+'.png'})
         atlas.save(dest/'body-atlas.png')
         manifest = {'version':1,'character':role,'status':'trial_motion_candidate',
                     'source':'generated-sheet.png','source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),
@@ -79,11 +79,13 @@ def run():
                     'notes':['Generated limb poses, neutral checker removed locally; demo_v1 preserved.',
                              'Ground projections are manually annotated; not bounding-box centered.',
                              'Short trial sequences, not an accepted full directional walk cycle.']}
+        if metadata:
+            manifest.update(metadata)
         (dest/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
         contact = Image.new('RGB',(2048,568)); draw = ImageDraw.Draw(contact)
         for row, color in enumerate(['#17232d','#eadfc8']):
             draw.rectangle((0,row*284,2048,(row+1)*284), fill=color)
-            for i, name in enumerate(NAMES):
+            for i, name in enumerate(names):
                 frame = atlas.crop((i*256,0,(i+1)*256,256))
                 contact.paste(frame,(i*256,row*284+28),frame)
                 draw.text((i*256+10,row*284+8),name,fill='#799fa5')

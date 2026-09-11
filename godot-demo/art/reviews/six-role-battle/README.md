@@ -13,12 +13,17 @@ Windows 双击本目录 **`launch.cmd`**。它查找 `GODOT_BIN`、PATH 中的 G
 - 显示落脚点：开关青色十字，重开保留开关状态。
 - R：重开。
 - 补帧开关 / M：对比新增肢体帧与上一轮原姿势版本；重开保留当前选择。
+- 角色名称：默认关闭，保留血条；需要辨认角色时打开。减少姓名牌遮住相邻角色的动作，重开保留选择。
 
 这是独立美术测试场景。原主场景、商店、四波流程和正式数据没有替换；测试从真实 Godot 棋盘走格与战斗开始，不是浏览器摆图。
 
 ## 2026-09-11 实际肢体补帧
 
-棍僧、猎户、熊山君各增加 4 张移动和 4 张攻击姿势，共 24 张新绘制帧，位于各自 `production/<角色>/motion_v1/`。已清理生成图的棋盘底、统一脚底对齐，并接入试玩。新帧默认为开，M 可即时对比；狐火、山雀、药灵继续使用现有姿势与施法时序。
+续轮：狐火新增 8 帧准备/蓄力/释放/收手序列，当前共 4 名角色、32 张新增姿势。新待机到施法的尾巴保持在同一侧，逐帧手部坐标控制蓄力火焰与释放位置，左右朝向均通过检查；药灵和山雀仍沿用旧姿势。新图与旧移动/受击/退场的细节衔接仍待进一步精修。详见 `../../production/foxfire_imp/motion_v1/README.md`。
+
+新增 `frame-comparison-foxfire.gif` 及采样图；实战动图与三张棋盘截图已更新。验证后发现姓名牌遮挡动作，已增加“角色名称”开关并默认隐藏姓名、保留血条。专项播放覆盖现在包括狐火全部 8 帧；战斗仍为 20.70 秒，帧率一致性与原两项回归通过。
+
+首轮：棍僧、猎户、熊山君各增加 4 张移动和 4 张攻击姿势，共 24 张新绘制帧，位于各自 `production/<角色>/motion_v1/`。已清理生成图的棋盘底、统一脚底对齐，并接入试玩。新帧默认为开，M 可即时对比。
 
 移动依次播放四帧并减少额外弹跳；普攻依次经过蓄力、加速、命中、收势，最伸展的命中帧与伤害释放同步。待机、受击、退场继续用原包。新帧不混叠旧图集的武器轨迹。素材来源、重建和限制见 `../../production/melee-motion-v1.md`。
 
@@ -55,8 +60,8 @@ Windows 双击本目录 **`launch.cmd`**。它查找 `GODOT_BIN`、PATH 中的 G
 - 主 Demo 回归：`SMOKE_TEST_OK`，`FULL_BATTLE_TEST_OK`；旧默认阵容 47.7 秒完成四波，唐僧 300/300，战利品 20。
 - 已通过实际 OpenGL 渲染导出开场、6.2 秒交战和退场截图，并逐张复核。截图不是浏览器模拟画布。
 - 六角色尺寸可放入当前格子，棍僧/狐火已清理的白底未再出现；近战接触和前后排序可观察。
-- **仍待改善**：暗色手绘角色与明亮棋盘/唐僧占位图差异明显；猎户、药灵的小尺寸细节偏密；前后相邻角色的头顶信息有遮挡。正式 UI 需优化血条/姓名显示条件。
-- **未验收**：近战现为四帧移动/四帧攻击短序列，另外三名角色仍用原姿势；新图与旧待机的细节衔接、左右腿交替幅度、方向动画和武器端点仍需精修。测试通过不等于已完成正式动画或全部阵型遮挡验收。
+- **仍待改善**：暗色手绘角色与明亮棋盘/唐僧占位图差异明显；猎户、药灵的小尺寸细节偏密；姓名默认隐藏已改善遮挡，但相邻血条与角色本身仍可能重叠。
+- **未验收**：近战现为四帧移动/四帧攻击短序列，狐火为八帧施法序列；山雀和药灵仍用原姿势。新旧图细节衔接、左右腿交替幅度、方向动画和武器端点仍需精修。测试通过不等于已完成正式动画或全部阵型遮挡验收。
 - 受限运行环境有系统证书/着色器缓存告警，未影响本地 PNG 读取、测试或 OpenGL 截图。本轮没有浏览器自动访问。
 
 ## 复现
@@ -71,6 +76,8 @@ godot --path godot-demo --rendering-method gl_compatibility --resolution 1440x81
 python godot-demo/art/reviews/six-role-battle/pack_motion_preview.py
 godot --path godot-demo --rendering-method gl_compatibility --resolution 960x800 --script res://art/reviews/six-role-battle/render_frame_comparison.gd
 python godot-demo/art/reviews/six-role-battle/pack_frame_comparison.py
+godot --path godot-demo --rendering-method gl_compatibility --resolution 960x320 --script res://art/reviews/six-role-battle/render_frame_comparison.gd -- --foxfire
+python godot-demo/art/reviews/six-role-battle/pack_frame_comparison.py --foxfire
 ```
 
 截图：`board-start.png`、`board-combat.png`、`board-retreat.png`；对比采样：`frame-comparison-contact.png`。原概念图和 `demo_v1` 保留，新资产单独放在 `motion_v1`。下一步精修收势回待机与狐火施法过渡，由 06 评估正式整合。

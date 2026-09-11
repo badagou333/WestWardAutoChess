@@ -1,0 +1,311 @@
+{
+  "version": 1,
+  "character": "foxfire_imp",
+  "status": "trial_motion_candidate",
+  "source": "generated-sheet.png",
+  "source_sha256": "b5d51d649e67e5e08cced474cb95edc307507443fb689a208f936d3ca6ec5380",
+  "atlas": "body-atlas.png",
+  "frame_size": [
+    256,
+    256
+  ],
+  "foot_anchor": [
+    128,
+    218
+  ],
+  "source_scale": 0.3333333333333333,
+  "frames": [
+    {
+      "index": 0,
+      "name": "cast_ready",
+      "source_box": [
+        39,
+        109,
+        376,
+        483
+      ],
+      "ground_anchor": [
+        235,
+        480
+      ],
+      "frame_bbox": [
+        63,
+        94,
+        175,
+        219
+      ],
+      "file": "cast_ready.png"
+    },
+    {
+      "index": 1,
+      "name": "cast_gather",
+      "source_box": [
+        426,
+        109,
+        728,
+        483
+      ],
+      "ground_anchor": [
+        612,
+        481
+      ],
+      "frame_bbox": [
+        66,
+        94,
+        167,
+        219
+      ],
+      "file": "cast_gather.png"
+    },
+    {
+      "index": 2,
+      "name": "cast_charge",
+      "source_box": [
+        785,
+        135,
+        1088,
+        483
+      ],
+      "ground_anchor": [
+        973,
+        480
+      ],
+      "frame_bbox": [
+        65,
+        103,
+        166,
+        219
+      ],
+      "file": "cast_charge.png"
+    },
+    {
+      "index": 3,
+      "name": "cast_extend",
+      "source_box": [
+        1147,
+        114,
+        1488,
+        483
+      ],
+      "ground_anchor": [
+        1345,
+        480
+      ],
+      "frame_bbox": [
+        62,
+        96,
+        176,
+        219
+      ],
+      "file": "cast_extend.png"
+    },
+    {
+      "index": 4,
+      "name": "cast_release",
+      "source_box": [
+        29,
+        587,
+        421,
+        947
+      ],
+      "ground_anchor": [
+        229,
+        944
+      ],
+      "frame_bbox": [
+        61,
+        99,
+        192,
+        219
+      ],
+      "file": "cast_release.png"
+    },
+    {
+      "index": 5,
+      "name": "cast_follow",
+      "source_box": [
+        428,
+        585,
+        791,
+        948
+      ],
+      "ground_anchor": [
+        622,
+        945
+      ],
+      "frame_bbox": [
+        63,
+        98,
+        184,
+        219
+      ],
+      "file": "cast_follow.png"
+    },
+    {
+      "index": 6,
+      "name": "cast_recover",
+      "source_box": [
+        807,
+        570,
+        1119,
+        947
+      ],
+      "ground_anchor": [
+        1005,
+        945
+      ],
+      "frame_bbox": [
+        62,
+        93,
+        166,
+        219
+      ],
+      "file": "cast_recover.png"
+    },
+    {
+      "index": 7,
+      "name": "cast_settle",
+      "source_box": [
+        1183,
+        578,
+        1510,
+        948
+      ],
+      "ground_anchor": [
+        1371,
+        945
+      ],
+      "frame_bbox": [
+        65,
+        96,
+        174,
+        219
+      ],
+      "file": "cast_settle.png"
+    }
+  ],
+  "move": [],
+  "attack": {
+    "windup": 1,
+    "accelerate": 3,
+    "impact": 4,
+    "recover": 6
+  },
+  "notes": [
+    "Tail stays on the same side from ready through release/recovery.",
+    "Original demo_v1 preserved; generated neutral checker removed locally.",
+    "Per-frame hand points drive charge effect and projectile origin.",
+    "Move/hit/retreat retain original poses; full directional continuity remains pending."
+  ],
+  "idle": 0,
+  "attack_track": [
+    {
+      "phase": "windup",
+      "fraction": 0,
+      "frame": 0
+    },
+    {
+      "phase": "windup",
+      "fraction": 0.18,
+      "frame": 1
+    },
+    {
+      "phase": "windup",
+      "fraction": 0.45,
+      "frame": 2
+    },
+    {
+      "phase": "windup",
+      "fraction": 0.78,
+      "frame": 3
+    },
+    {
+      "phase": "release",
+      "fraction": 0,
+      "frame": 4
+    },
+    {
+      "phase": "recover",
+      "fraction": 0,
+      "frame": 5
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.32,
+      "frame": 6
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.72,
+      "frame": 7
+    }
+  ],
+  "hand_sockets": [
+    [
+      167.33,
+      156.67
+    ],
+    [
+      118.67,
+      159.67
+    ],
+    [
+      146.33,
+      169.33
+    ],
+    [
+      168.0,
+      149.33
+    ],
+    [
+      183.33,
+      152.0
+    ],
+    [
+      176.33,
+      153.0
+    ],
+    [
+      119.33,
+      160.67
+    ],
+    [
+      168.0,
+      164.67
+    ]
+  ],
+  "hand_source_points": [
+    [
+      353,
+      296
+    ],
+    [
+      584,
+      306
+    ],
+    [
+      1028,
+      334
+    ],
+    [
+      1465,
+      274
+    ],
+    [
+      395,
+      746
+    ],
+    [
+      767,
+      750
+    ],
+    [
+      979,
+      773
+    ],
+    [
+      1491,
+      785
+    ]
+  ]
+}

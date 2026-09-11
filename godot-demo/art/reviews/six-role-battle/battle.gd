@@ -16,6 +16,7 @@ var elapsed := 0.0
 var result_delay := -1.0
 var anchors_enabled := true
 var motion_frames_enabled := true
+var names_enabled := false
 var motion_toggle: Button
 var summary: Label
 var counts := {"attacks": 0, "projectiles": 0, "hits": 0, "heals": 0, "cancelled": 0}
@@ -64,10 +65,19 @@ func _create_review_ui() -> void:
 		for actor in actors: actor.show_anchor = on
 	)
 	ui.add_child(toggle)
+	var name_toggle := CheckButton.new(); name_toggle.text = "角色名称"
+	name_toggle.position = Vector2(1350, 122); name_toggle.button_pressed = names_enabled
+	name_toggle.toggled.connect(func(on: bool):
+		names_enabled = on
+		for actor in actors:
+			actor.show_name = on
+			actor.queue_redraw()
+	)
+	ui.add_child(name_toggle)
 	var bottom := ColorRect.new(); bottom.position = Vector2(28, 917); bottom.size = Vector2(1864, 139)
 	bottom.color = Color("182831"); ui.add_child(bottom)
 	var instructions := Label.new(); instructions.position = Vector2(52, 937)
-	instructions.text = "观察：落脚点是否稳定 · 前排是否遮住后排 · 飞弹是否从手边发出 · 命中后才扣血 · 退场是否淡出\n药灵童子优先治疗受伤队友或唐僧；未受伤时待机。空格暂停，R 重开，M 切换补帧。\n棍僧、猎户、熊山君各增加 4 个移动与 4 个攻击姿势；点击补帧开关可对比。其他三名角色沿用现有施法动作。"
+	instructions.text = "观察：步伐和收势是否连贯 · 火焰是否跟手 · 命中后才扣血 · 退场是否淡出\n药灵童子优先治疗受伤队友或唐僧；未受伤时待机。空格暂停，R 重开，M 切换补帧。\n三名近战各增加 8 帧，狐火增加 8 帧施法过渡；补帧开关可对比，角色名称可按需显示。"
 	instructions.add_theme_font_size_override("font_size", 20); ui.add_child(instructions)
 
 func reset_trial() -> void:
@@ -91,6 +101,7 @@ func reset_trial() -> void:
 	add_child(boss); enemies.append(boss); actors.append(boss)
 	for actor in actors:
 		actor.show_anchor = anchors_enabled
+		actor.show_name = names_enabled
 		actor.use_motion_frames = motion_frames_enabled
 		actor.tick(0)
 	_update_ui(); queue_redraw()

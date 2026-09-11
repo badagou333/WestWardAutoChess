@@ -60,19 +60,27 @@ func run() -> void:
 		actor.move_to(actor.position + Vector2(100, 0))
 		for sample in 120:
 			actor.tick(actor.motion.walk / 120.0)
-			if actor.motion_frame >= 0: move_frames[actor.motion_frame] = true
+			if actor.pose == "move" and actor.motion_frame >= 0: move_frames[actor.motion_frame] = true
 		actor.tick(0.1); actor.play_attack()
 		for sample in 180:
 			actor.tick(actor.Motion.duration(actor.motion) / 180.0)
-			if actor.motion_frame >= 0: attack_frames[actor.motion_frame] = true
+			if actor.pose == "basic_attack" and actor.motion_frame >= 0: attack_frames[actor.motion_frame] = true
 			if actor.pose == "basic_attack" and actor.pose_time < actor.impact_delay():
 				check(actor.motion_frame != int(actor.motion_manifest.attack.impact), actor.role + " impact image never early")
-		check(move_frames.keys().size() == 4, actor.role + " four movement images actually played")
-		check(attack_frames.keys().size() == 4, actor.role + " four attack images actually played")
+		check(move_frames.keys().size() == actor.motion_manifest.move.size(), actor.role + " all movement images actually played")
+		check(attack_frames.keys().size() == (8 if actor.motion_manifest.has("attack_track") else 4), actor.role + " all attack images actually played")
 		actor.play_attack(); actor.tick(actor.impact_delay())
 		check(actor.motion_frame == int(actor.motion_manifest.attack.impact), actor.role + " image matches exact damage release")
 		sprite_coverage[actor.role] = {"move":move_frames.keys(),"attack":attack_frames.keys()}
-	check(sprite_coverage.size() == 3, "Three melee roles use added frames")
+	check(sprite_coverage.size() == 4, "Three melee roles and fox use added frames")
+	# New fox hand point is used on both facings, including actor translation and lean.
+	var cast_fox = scene.heroes[4]
+	for direction in [-1, 1]:
+		cast_fox.face(cast_fox.position + Vector2(direction * 200, 0))
+		cast_fox.play_attack(); cast_fox.tick(cast_fox.impact_delay())
+		var socket: Array = cast_fox.motion_manifest.hand_sockets[4]
+		var rendered_origin: Vector2 = cast_fox.position + cast_fox.visual_transform() * Vector2(socket[0] - 128, socket[1] - 226)
+		check(rendered_origin.distance_to(cast_fox.emission_position()) < 0.01, "Fox projectile matches annotated palm in facing %d" % direction)
 	scene._toggle_motion_frames()
 	for actor in scene.actors:
 		check(actor.motion_frame == -1, actor.role + " comparison switch restores original atlas")
