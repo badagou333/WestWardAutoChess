@@ -20,7 +20,7 @@ ROLES = {
 }
 
 
-def components(mask):
+def components(mask, expected=8):
     pending = mask.copy()
     found = []
     height, width = pending.shape
@@ -36,7 +36,7 @@ def components(mask):
                     pending[ny,nx] = False; queue.append((ny,nx))
         if len(pixels) > 1500:
             found.append(pixels)
-    assert len(found) == 8, f'Expected 8 separate silhouettes, got {len(found)}'
+    assert len(found) == expected, f'Expected {expected} separate silhouettes, got {len(found)}'
     return sorted(found, key=lambda p: (int(np.mean([v[0] for v in p]) > 512), min(v[1] for v in p)))
 
 

@@ -18,6 +18,7 @@ var manifest: Dictionary
 var body: Texture2D
 var motion_body: Texture2D
 var motion_manifest := {}
+var motion_revision := 2
 var use_motion_frames := true
 var motion_frame := -1
 var vfx: Texture2D
@@ -72,6 +73,9 @@ func setup_role(key: String, title: String, stats: Array, enemy := false) -> voi
 				action["body_frame_seconds"] = action.frame_seconds
 	body = ImageTexture.create_from_image(Image.load_from_file(base + manifest.atlases.body))
 	var motion_base := "res://art/production/%s/motion_v1/" % role
+	var revised_base := "res://art/production/%s/motion_v2/" % role
+	if motion_revision >= 2 and FileAccess.file_exists(revised_base + "manifest.json"):
+		motion_base = revised_base
 	if FileAccess.file_exists(motion_base + "manifest.json"):
 		motion_manifest = JSON.parse_string(FileAccess.get_file_as_string(motion_base + "manifest.json"))
 		motion_body = ImageTexture.create_from_image(Image.load_from_file(motion_base + motion_manifest.atlas))
@@ -228,6 +232,11 @@ func visual_transform() -> Transform2D:
 		if pose_time < float(motion.windup):
 			var anticipate := smoothstep(0, motion.windup, pose_time)
 			stretch = Vector2(1 + anticipate * 0.018, 1 - anticipate * 0.025)
+		if motion_frame >= 0 and motion_manifest.has("recovery_unfold"):
+			var recovery_start := float(motion.windup) + float(motion.strike)
+			if pose_time >= recovery_start:
+				var unfold: Dictionary = motion_manifest.recovery_unfold
+				stretch.y *= lerpf(unfold.start_scale_y, 1.0, smoothstep(recovery_start, recovery_start + float(motion.recover) * float(unfold.end_fraction), pose_time))
 	elif pose == "hit":
 		var recoil := sin(clampf(pose_time / 0.18, 0, 1) * PI)
 		offset.x = -facing * recoil * 6

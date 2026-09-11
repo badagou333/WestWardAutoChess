@@ -55,7 +55,7 @@ func run() -> void:
 	var sprite_coverage := {}
 	for actor in scene.actors:
 		if actor.motion_body == null: continue
-		check(actor.motion_body.get_width() == 2048 and actor.motion_body.get_height() == 256, actor.role + " motion atlas dimensions")
+		check(actor.motion_body.get_width() == actor.motion_manifest.frames.size() * 256 and actor.motion_body.get_height() == 256, actor.role + " motion atlas dimensions")
 		var move_frames := {}; var attack_frames := {}
 		actor.move_to(actor.position + Vector2(100, 0))
 		for sample in 120:
@@ -68,11 +68,28 @@ func run() -> void:
 			if actor.pose == "basic_attack" and actor.pose_time < actor.impact_delay():
 				check(actor.motion_frame != int(actor.motion_manifest.attack.impact), actor.role + " impact image never early")
 		check(move_frames.keys().size() == actor.motion_manifest.move.size(), actor.role + " all movement images actually played")
-		check(attack_frames.keys().size() == (8 if actor.motion_manifest.has("attack_track") else 4), actor.role + " all attack images actually played")
+		var expected_attack_frames := 4
+		if actor.motion_manifest.has("attack_track"):
+			var configured := {}
+			for key in actor.motion_manifest.attack_track: configured[int(key.frame)] = true
+			expected_attack_frames = configured.size()
+		check(attack_frames.keys().size() == expected_attack_frames, actor.role + " all attack images actually played")
 		actor.play_attack(); actor.tick(actor.impact_delay())
 		check(actor.motion_frame == int(actor.motion_manifest.attack.impact), actor.role + " image matches exact damage release")
 		sprite_coverage[actor.role] = {"move":move_frames.keys(),"attack":attack_frames.keys()}
 	check(sprite_coverage.size() == 4, "Three melee roles and fox use added frames")
+	var monk = scene.heroes[0]
+	check(not sprite_coverage.guard_monk.attack.has(7), "Monk no longer inserts old retract before extended recovery")
+	for direction in [-1,1]:
+		monk.face(monk.position + Vector2(direction * 200,0)); monk.play_attack()
+		monk.tick(monk.Motion.duration(monk.motion) - 0.001)
+		var last_recovery: int = monk.motion_frame
+		var before: Transform2D = monk.visual_transform()
+		monk.tick(0.002)
+		check(last_recovery == 11 and monk.motion_frame == last_recovery and monk.pose == "idle", "Monk recovery ends on identical ready image in both facings")
+		check(before.origin.distance_to(monk.visual_transform().origin) < 0.01, "Monk body does not jump at return boundary")
+		monk.play_attack(); monk.tick(0)
+		check(monk.motion_frame == last_recovery, "Monk next attack starts on same ready image")
 	# New fox hand point is used on both facings, including actor translation and lean.
 	var cast_fox = scene.heroes[4]
 	for direction in [-1, 1]:

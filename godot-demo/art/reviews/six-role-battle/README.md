@@ -19,6 +19,8 @@ Windows 双击本目录 **`launch.cmd`**。它查找 `GODOT_BIN`、PATH 中的 G
 
 ## 2026-09-11 实际肢体补帧
 
+收势续轮：棍僧新增 4 张回收/站稳图，默认载入 `motion_v2`（共 12 格，前 8 格保留）。命中直接衔接新回收序列，末收势、待机和下次起手共用站稳图；旧收势导致的“先缩回再伸出”已在慢速复核后移除。站起过程保持脚底支点。两朝向结束边界和下一次起手检查通过，时长/计数仍与此前相同。新增 `frame-comparison-monk-recovery.gif`，0.5× 左 motion_v1 / 右 v2；不是与最初单姿势包对比。详情见 `../../production/guard_monk/motion_v2/README.md`。
+
 续轮：狐火新增 8 帧准备/蓄力/释放/收手序列，当前共 4 名角色、32 张新增姿势。新待机到施法的尾巴保持在同一侧，逐帧手部坐标控制蓄力火焰与释放位置，左右朝向均通过检查；药灵和山雀仍沿用旧姿势。新图与旧移动/受击/退场的细节衔接仍待进一步精修。详见 `../../production/foxfire_imp/motion_v1/README.md`。
 
 新增 `frame-comparison-foxfire.gif` 及采样图；实战动图与三张棋盘截图已更新。验证后发现姓名牌遮挡动作，已增加“角色名称”开关并默认隐藏姓名、保留血条。专项播放覆盖现在包括狐火全部 8 帧；战斗仍为 20.70 秒，帧率一致性与原两项回归通过。
@@ -61,7 +63,7 @@ Windows 双击本目录 **`launch.cmd`**。它查找 `GODOT_BIN`、PATH 中的 G
 - 已通过实际 OpenGL 渲染导出开场、6.2 秒交战和退场截图，并逐张复核。截图不是浏览器模拟画布。
 - 六角色尺寸可放入当前格子，棍僧/狐火已清理的白底未再出现；近战接触和前后排序可观察。
 - **仍待改善**：暗色手绘角色与明亮棋盘/唐僧占位图差异明显；猎户、药灵的小尺寸细节偏密；姓名默认隐藏已改善遮挡，但相邻血条与角色本身仍可能重叠。
-- **未验收**：近战现为四帧移动/四帧攻击短序列，狐火为八帧施法序列；山雀和药灵仍用原姿势。新旧图细节衔接、左右腿交替幅度、方向动画和武器端点仍需精修。测试通过不等于已完成正式动画或全部阵型遮挡验收。
+- **未验收**：棍僧已加连续收势，猎户和熊山君仍为四帧移动/四帧攻击短序列，狐火为八帧施法序列；山雀和药灵仍用原姿势。新旧图细节衔接、左右腿交替幅度、方向动画和武器端点仍需精修。测试通过不等于已完成正式动画或全部阵型遮挡验收。
 - 受限运行环境有系统证书/着色器缓存告警，未影响本地 PNG 读取、测试或 OpenGL 截图。本轮没有浏览器自动访问。
 
 ## 复现
@@ -78,6 +80,8 @@ godot --path godot-demo --rendering-method gl_compatibility --resolution 960x800
 python godot-demo/art/reviews/six-role-battle/pack_frame_comparison.py
 godot --path godot-demo --rendering-method gl_compatibility --resolution 960x320 --script res://art/reviews/six-role-battle/render_frame_comparison.gd -- --foxfire
 python godot-demo/art/reviews/six-role-battle/pack_frame_comparison.py --foxfire
+godot --path godot-demo --rendering-method gl_compatibility --resolution 960x320 --script res://art/reviews/six-role-battle/render_frame_comparison.gd -- --monk-recovery
+python godot-demo/art/reviews/six-role-battle/pack_frame_comparison.py --monk-recovery
 ```
 
 截图：`board-start.png`、`board-combat.png`、`board-retreat.png`；对比采样：`frame-comparison-contact.png`。原概念图和 `demo_v1` 保留，新资产单独放在 `motion_v1`。下一步精修收势回待机与狐火施法过渡，由 06 评估正式整合。

@@ -1,0 +1,366 @@
+{
+  "version": 2,
+  "character": "guard_monk",
+  "status": "trial_motion_candidate",
+  "source": "generated-recovery-sheet.png",
+  "source_sha256": "ee29760d72b99fb8ec6dd12068cc21b84580e386e16498b78f58dd2051365acf",
+  "atlas": "body-atlas.png",
+  "frame_size": [
+    256,
+    256
+  ],
+  "foot_anchor": [
+    128,
+    218
+  ],
+  "source_scale": 0.32941176470588235,
+  "frames": [
+    {
+      "index": 0,
+      "name": "walk_contact",
+      "source_box": [
+        56,
+        121,
+        368,
+        494
+      ],
+      "ground_anchor": [
+        206,
+        493
+      ],
+      "frame_bbox": [
+        71,
+        77,
+        189,
+        218
+      ],
+      "file": "../motion_v1/walk_contact.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 1,
+      "name": "walk_pass",
+      "source_box": [
+        449,
+        134,
+        749,
+        497
+      ],
+      "ground_anchor": [
+        585,
+        493
+      ],
+      "frame_bbox": [
+        77,
+        82,
+        191,
+        219
+      ],
+      "file": "../motion_v1/walk_pass.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 2,
+      "name": "walk_opposite",
+      "source_box": [
+        806,
+        139,
+        1125,
+        496
+      ],
+      "ground_anchor": [
+        958,
+        494
+      ],
+      "frame_bbox": [
+        70,
+        84,
+        191,
+        219
+      ],
+      "file": "../motion_v1/walk_opposite.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 3,
+      "name": "walk_return",
+      "source_box": [
+        1195,
+        133,
+        1505,
+        498
+      ],
+      "ground_anchor": [
+        1308,
+        497
+      ],
+      "frame_bbox": [
+        85,
+        80,
+        202,
+        218
+      ],
+      "file": "../motion_v1/walk_return.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 4,
+      "name": "attack_windup",
+      "source_box": [
+        27,
+        556,
+        362,
+        936
+      ],
+      "ground_anchor": [
+        186,
+        932
+      ],
+      "frame_bbox": [
+        68,
+        76,
+        195,
+        220
+      ],
+      "file": "../motion_v1/attack_windup.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 5,
+      "name": "attack_accelerate",
+      "source_box": [
+        390,
+        606,
+        816,
+        930
+      ],
+      "ground_anchor": [
+        551,
+        930
+      ],
+      "frame_bbox": [
+        67,
+        95,
+        228,
+        218
+      ],
+      "file": "../motion_v1/attack_accelerate.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 6,
+      "name": "attack_impact",
+      "source_box": [
+        759,
+        620,
+        1231,
+        936
+      ],
+      "ground_anchor": [
+        937,
+        932
+      ],
+      "frame_bbox": [
+        61,
+        100,
+        240,
+        220
+      ],
+      "file": "../motion_v1/attack_impact.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 7,
+      "name": "attack_recover",
+      "source_box": [
+        1214,
+        607,
+        1522,
+        936
+      ],
+      "ground_anchor": [
+        1360,
+        933
+      ],
+      "frame_bbox": [
+        73,
+        95,
+        190,
+        219
+      ],
+      "file": "../motion_v1/attack_recover.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 8,
+      "name": "return_lower",
+      "file": "return_lower.png",
+      "source": "generated-recovery-sheet.png",
+      "source_box": [
+        203,
+        55,
+        768,
+        483
+      ],
+      "ground_anchor": [
+        424,
+        481
+      ],
+      "frame_bbox": [
+        55,
+        78,
+        241,
+        219
+      ]
+    },
+    {
+      "index": 9,
+      "name": "return_rotate",
+      "file": "return_rotate.png",
+      "source": "generated-recovery-sheet.png",
+      "source_box": [
+        872,
+        53,
+        1332,
+        488
+      ],
+      "ground_anchor": [
+        1108,
+        486
+      ],
+      "frame_bbox": [
+        50,
+        75,
+        202,
+        218
+      ]
+    },
+    {
+      "index": 10,
+      "name": "return_settle",
+      "file": "return_settle.png",
+      "source": "generated-recovery-sheet.png",
+      "source_box": [
+        231,
+        522,
+        640,
+        975
+      ],
+      "ground_anchor": [
+        428,
+        972
+      ],
+      "frame_bbox": [
+        63,
+        70,
+        198,
+        219
+      ]
+    },
+    {
+      "index": 11,
+      "name": "ready_settled",
+      "file": "ready_settled.png",
+      "source": "generated-recovery-sheet.png",
+      "source_box": [
+        902,
+        535,
+        1311,
+        974
+      ],
+      "ground_anchor": [
+        1086,
+        972
+      ],
+      "frame_bbox": [
+        67,
+        74,
+        202,
+        219
+      ]
+    }
+  ],
+  "move": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "attack": {
+    "windup": 4,
+    "accelerate": 5,
+    "impact": 6,
+    "recover": 7
+  },
+  "notes": [
+    "Eight motion_v1 frames unchanged; four recovery/ready frames appended.",
+    "Last recovery and idle use the same image, avoiding a final atlas swap.",
+    "Full walk/directional/hit/retreat continuity still pending."
+  ],
+  "base_atlas_sha256": "a88d4bcc559ab3a1b9ef18b3cc82d30e706bd7b40adf79afd57cd81bdc6d752f",
+  "idle": 11,
+  "attack_track": [
+    {
+      "phase": "windup",
+      "fraction": 0,
+      "frame": 11
+    },
+    {
+      "phase": "windup",
+      "fraction": 0.2,
+      "frame": 4
+    },
+    {
+      "phase": "windup",
+      "fraction": 0.78,
+      "frame": 5
+    },
+    {
+      "phase": "release",
+      "fraction": 0,
+      "frame": 6
+    },
+    {
+      "phase": "recover",
+      "fraction": 0,
+      "frame": 8
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.32,
+      "frame": 9
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.58,
+      "frame": 10
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.8,
+      "frame": 11
+    }
+  ],
+  "recovery_unfold": {
+    "end_fraction": 0.58,
+    "start_scale_y": 0.86
+  },
+  "recovery_staff_tips": [
+    [
+      236.38,
+      171.22
+    ],
+    [
+      197.84,
+      189.67
+    ],
+    [
+      193.22,
+      188.68
+    ],
+    [
+      197.18,
+      188.68
+    ]
+  ]
+}
