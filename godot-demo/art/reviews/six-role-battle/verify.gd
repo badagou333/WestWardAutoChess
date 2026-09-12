@@ -77,7 +77,7 @@ func run() -> void:
 		actor.play_attack(); actor.tick(actor.impact_delay())
 		check(actor.motion_frame == int(actor.motion_manifest.attack.impact), actor.role + " image matches exact damage release")
 		sprite_coverage[actor.role] = {"move":move_frames.keys(),"attack":attack_frames.keys()}
-	check(sprite_coverage.size() == 4, "Three melee roles and fox use added frames")
+	check(sprite_coverage.size() == 5, "Three melee roles, fox and herbal child use added frames")
 	check(not sprite_coverage.guard_monk.attack.has(7), "Monk no longer inserts old retract before extended recovery")
 	check(not sprite_coverage.wild_hunter.attack.has(7), "Hunter uses continuous new knife recovery")
 	check(not sprite_coverage.bear_lord.attack.has(7), "Bear uses continuous new two-handed club recovery")
@@ -100,6 +100,33 @@ func run() -> void:
 		var socket: Array = cast_fox.motion_manifest.hand_sockets[4]
 		var rendered_origin: Vector2 = cast_fox.position + cast_fox.visual_transform() * Vector2(socket[0] - 128, socket[1] - 226)
 		check(rendered_origin.distance_to(cast_fox.emission_position()) < 0.01, "Fox projectile matches annotated palm in facing %d" % direction)
+	# Herbal palm sockets replace the old horizontal-staff projectile origin.
+	var herbal = scene.heroes[2]
+	for direction in [-1, 1]:
+		scene.strikes.clear(); scene.missiles.clear()
+		var patient = scene.heroes[0]
+		patient.health = patient.max_health - 60
+		herbal.face(herbal.position + Vector2(direction * 200, 0))
+		scene.queue_attack(herbal, patient, true)
+		herbal.tick(herbal.impact_delay() - 0.001); scene._resolve_strikes(0)
+		check(scene.missiles.is_empty() and patient.health == patient.max_health - 60, "Herbal cannot release or heal during windup")
+		herbal.tick(0.0011); scene._resolve_strikes(0)
+		var palm: Array = herbal.motion_manifest.hand_sockets[4]
+		var origin: Vector2 = herbal.position + herbal.visual_transform() * Vector2(palm[0] - 128, palm[1] - 218)
+		check(scene.missiles.size() == 1 and herbal.motion_frame == 4, "Herbal release frame emits one missile")
+		if scene.missiles.size() == 1:
+			check(scene.missiles[0].position.distance_to(origin) < 0.01, "Herbal missile starts on rendered palm in facing %d" % direction)
+		scene._resolve_strikes(0.24)
+		check(patient.health == patient.max_health - 60, "Herbal healing waits for arrival")
+		scene._resolve_strikes(0.02); scene._resolve_strikes(0.5)
+		check(patient.health == patient.max_health - 60 + herbal.damage, "Herbal heals exactly once on arrival")
+		herbal.tick(herbal.Motion.duration(herbal.motion) - herbal.pose_time - 0.001)
+		check(herbal.motion_frame == 0, "Herbal settles onto ready frame before boundary")
+		var before: Transform2D = herbal.visual_transform()
+		herbal.tick(0.002)
+		check(herbal.pose == "idle" and herbal.motion_frame == 0 and before.origin.distance_to(herbal.visual_transform().origin) < 0.01, "Herbal returns to same planted ready pose")
+		herbal.play_attack(); herbal.tick(0)
+		check(herbal.motion_frame == 0, "Herbal next cast starts on identical ready pose")
 	scene._toggle_motion_frames()
 	for actor in scene.actors:
 		check(actor.motion_frame == -1, actor.role + " comparison switch restores original atlas")

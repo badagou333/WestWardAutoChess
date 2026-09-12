@@ -91,6 +91,19 @@
 				3
 			]
 		},
+		"herbal_spirit_child": {
+			"attack": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7
+			],
+			"move": []
+		},
 		"wild_hunter": {
 			"attack": [
 				11,

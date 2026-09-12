@@ -21,11 +21,13 @@ func _init() -> void:
 
 func run() -> void:
 	var fox_only := OS.get_cmdline_user_args().has("--foxfire")
+	var herbal_only := OS.get_cmdline_user_args().has("--herbal")
 	var monk_recovery := OS.get_cmdline_user_args().has("--monk-recovery")
 	var hunter_recovery := OS.get_cmdline_user_args().has("--hunter-recovery")
 	var bear_recovery := OS.get_cmdline_user_args().has("--bear-recovery")
 	var recovery := monk_recovery or hunter_recovery or bear_recovery
 	var roles: Array = ["foxfire_imp"] if fox_only else ROLE_KEYS
+	if herbal_only: roles = ["herbal_spirit_child"]
 	if monk_recovery: roles = ["guard_monk"]
 	if hunter_recovery: roles = ["wild_hunter"]
 	if bear_recovery: roles = ["bear_lord"]
@@ -35,6 +37,9 @@ func run() -> void:
 	if recovery:
 		backdrop.title_before = "BEFORE / motion v1 / 0.5x"
 		backdrop.title_after = "AFTER / recovery v2 / 0.5x"
+	if herbal_only:
+		backdrop.title_before = "BEFORE / single pose / 0.5x"
+		backdrop.title_after = "AFTER / herbal cast / 0.5x"
 	root.add_child(backdrop)
 	var actors := []
 	for row in roles.size():
@@ -49,20 +54,21 @@ func run() -> void:
 			root.add_child(actor); actors.append(actor)
 	var output := "res://art/reviews/six-role-battle/.capture/comparison"
 	if fox_only: output += "-foxfire"
+	if herbal_only: output += "-herbal"
 	if monk_recovery: output += "-monk-recovery"
 	if hunter_recovery: output += "-hunter-recovery"
 	if bear_recovery: output += "-bear-recovery"
 	DirAccess.make_dir_recursive_absolute(output)
 	# Both columns share timing and rendering; only the selected motion assets differ.
 	for index in 96:
-		if index == 6 and not fox_only and not recovery:
+		if index == 6 and not fox_only and not recovery and not herbal_only:
 			for actor in actors: actor.move_to(actor.position + Vector2(44, 0))
 		# The bear needs 40 capture frames at half speed; do not interrupt its recovery.
-		if index == 30 or (index == 62 and not bear_recovery):
+		if index == 30 or (index == 62 and not bear_recovery and not herbal_only):
 			for actor in actors:
 				actor.face(actor.position + Vector2(200, 0)); actor.play_attack()
 		for tick in 5:
-			for actor in actors: actor.tick(1.0 / 240 if recovery else 1.0 / 120)
+			for actor in actors: actor.tick(1.0 / 240 if recovery or herbal_only else 1.0 / 120)
 		await process_frame
 		await RenderingServer.frame_post_draw
 		root.get_texture().get_image().save_png(output + "/%03d.png" % index)

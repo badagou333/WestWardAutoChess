@@ -1,0 +1,329 @@
+{
+  "version": 1,
+  "character": "herbal_spirit_child",
+  "status": "trial_motion_candidate",
+  "source": "generated-sheet.png",
+  "source_sha256": "bb8c2c61b6e468e783c5c7a85b96baacd03e6a01d79b3b1982e21e4abe5c1696",
+  "atlas": "body-atlas.png",
+  "frame_size": [
+    256,
+    256
+  ],
+  "foot_anchor": [
+    128,
+    218
+  ],
+  "source_scale": 0.3141592920353982,
+  "frames": [
+    {
+      "index": 0,
+      "name": "cast_ready",
+      "source_box": [
+        45,
+        33,
+        373,
+        488
+      ],
+      "ground_anchor": [
+        212,
+        482
+      ],
+      "frame_bbox": [
+        76,
+        77,
+        179,
+        220
+      ],
+      "file": "cast_ready.png"
+    },
+    {
+      "index": 1,
+      "name": "cast_lift",
+      "source_box": [
+        426,
+        33,
+        757,
+        488
+      ],
+      "ground_anchor": [
+        596,
+        482
+      ],
+      "frame_bbox": [
+        75,
+        77,
+        179,
+        220
+      ],
+      "file": "cast_lift.png"
+    },
+    {
+      "index": 2,
+      "name": "cast_gather",
+      "source_box": [
+        808,
+        32,
+        1141,
+        488
+      ],
+      "ground_anchor": [
+        980,
+        482
+      ],
+      "frame_bbox": [
+        74,
+        77,
+        179,
+        220
+      ],
+      "file": "cast_gather.png"
+    },
+    {
+      "index": 3,
+      "name": "cast_extend",
+      "source_box": [
+        1187,
+        32,
+        1507,
+        488
+      ],
+      "ground_anchor": [
+        1364,
+        482
+      ],
+      "frame_bbox": [
+        72,
+        77,
+        173,
+        220
+      ],
+      "file": "cast_extend.png"
+    },
+    {
+      "index": 4,
+      "name": "cast_release",
+      "source_box": [
+        44,
+        533,
+        380,
+        988
+      ],
+      "ground_anchor": [
+        213,
+        980
+      ],
+      "frame_bbox": [
+        75,
+        78,
+        181,
+        221
+      ],
+      "file": "cast_release.png"
+    },
+    {
+      "index": 5,
+      "name": "cast_follow",
+      "source_box": [
+        426,
+        532,
+        750,
+        987
+      ],
+      "ground_anchor": [
+        597,
+        980
+      ],
+      "frame_bbox": [
+        74,
+        77,
+        176,
+        220
+      ],
+      "file": "cast_follow.png"
+    },
+    {
+      "index": 6,
+      "name": "cast_retract",
+      "source_box": [
+        808,
+        532,
+        1140,
+        988
+      ],
+      "ground_anchor": [
+        981,
+        980
+      ],
+      "frame_bbox": [
+        74,
+        77,
+        178,
+        220
+      ],
+      "file": "cast_retract.png"
+    },
+    {
+      "index": 7,
+      "name": "cast_lower",
+      "source_box": [
+        1187,
+        533,
+        1518,
+        988
+      ],
+      "ground_anchor": [
+        1365,
+        980
+      ],
+      "frame_bbox": [
+        72,
+        78,
+        176,
+        221
+      ],
+      "file": "cast_lower.png"
+    }
+  ],
+  "move": [],
+  "attack": {
+    "windup": 1,
+    "accelerate": 3,
+    "impact": 4,
+    "recover": 6
+  },
+  "notes": [
+    "Trial cast only; reference identity and demo_v1 are preserved.",
+    "Staff remains planted in the same hand; the free palm releases the existing healing projectile.",
+    "Last recovery, idle and next windup share frame 0 to avoid a loop seam.",
+    "Generated checker is removed by the established authorized matte workflow.",
+    "Existing timing, healing amounts, flight duration and movement/hit/retreat remain unchanged."
+  ],
+  "idle": 0,
+  "attack_track": [
+    {
+      "phase": "windup",
+      "fraction": 0,
+      "frame": 0
+    },
+    {
+      "phase": "windup",
+      "fraction": 0.18,
+      "frame": 1
+    },
+    {
+      "phase": "windup",
+      "fraction": 0.45,
+      "frame": 2
+    },
+    {
+      "phase": "windup",
+      "fraction": 0.78,
+      "frame": 3
+    },
+    {
+      "phase": "release",
+      "fraction": 0,
+      "frame": 4
+    },
+    {
+      "phase": "recover",
+      "fraction": 0,
+      "frame": 5
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.27,
+      "frame": 6
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.55,
+      "frame": 7
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.84,
+      "frame": 0
+    }
+  ],
+  "hand_sockets": [
+    [
+      139.94,
+      169.93
+    ],
+    [
+      130.2,
+      143.23
+    ],
+    [
+      129.57,
+      140.72
+    ],
+    [
+      161.93,
+      137.89
+    ],
+    [
+      171.98,
+      130.66
+    ],
+    [
+      168.84,
+      139.46
+    ],
+    [
+      130.2,
+      141.03
+    ],
+    [
+      138.05,
+      169.62
+    ]
+  ],
+  "hand_source_points": [
+    [
+      250,
+      329
+    ],
+    [
+      603,
+      244
+    ],
+    [
+      985,
+      236
+    ],
+    [
+      1472,
+      227
+    ],
+    [
+      353,
+      702
+    ],
+    [
+      727,
+      730
+    ],
+    [
+      988,
+      735
+    ],
+    [
+      1397,
+      826
+    ]
+  ],
+  "socket_offset": [
+    0,
+    0
+  ],
+  "charge_effect": {
+    "key": "idle_mist",
+    "size": [
+      18,
+      22
+    ],
+    "idle": false
+  }
+}

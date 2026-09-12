@@ -5,6 +5,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent
 suffix = '-foxfire' if '--foxfire' in sys.argv else ''
+if '--herbal' in sys.argv: suffix = '-herbal'
 if '--monk-recovery' in sys.argv: suffix = '-monk-recovery'
 if '--hunter-recovery' in sys.argv: suffix = '-hunter-recovery'
 if '--bear-recovery' in sys.argv: suffix = '-bear-recovery'
@@ -20,6 +21,7 @@ contact = Image.new('RGB',(width*2,height*2))
 samples = [44,48,52,57] if suffix == '-monk-recovery' else ([30,34,36,40] if suffix else [8,14,38,43])
 if suffix == '-hunter-recovery': samples = [41,44,47,52]
 if suffix == '-bear-recovery': samples = [53,59,64,72]
+if suffix == '-herbal': samples = [35,44,53,60]
 for offset, sample in zip([(0,0),(width,0),(0,height),(width,height)], samples):
     contact.paste(frames[sample],offset)
 contact.save(ROOT/('frame-comparison'+suffix+'-contact.png'))

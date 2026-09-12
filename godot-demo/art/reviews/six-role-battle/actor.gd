@@ -143,7 +143,8 @@ func emission_position() -> Vector2:
 
 func motion_flame_socket() -> Vector2:
 	var hand: Array = motion_manifest.hand_sockets[motion_frame]
-	return Vector2(float(hand[0]) - 128, float(hand[1]) - 218 - 8)
+	var offset: Array = motion_manifest.get("socket_offset", [0, -8])
+	return Vector2(float(hand[0]) - 128 + float(offset[0]), float(hand[1]) - 218 + float(offset[1]))
 
 func tick(delta: float) -> void:
 	hit_pulse = maxf(0, hit_pulse - delta)
@@ -274,10 +275,11 @@ func _draw() -> void:
 	if effects_on and vfx != null and not separate_projectile and motion_frame < 0:
 		draw_texture_rect_region(vfx, Rect2(-128, -218, 256, 256), source, tint)
 	if effects_on and motion_frame >= 0 and motion_manifest.has("hand_sockets"):
+		var effect: Dictionary = motion_manifest.get("charge_effect", {"key":"idle_flame", "size":[24,30], "idle":true})
 		var charge := 0.45 if pose == "idle" else clampf(pose_time / impact_delay(), 0.35, 1.0)
-		if pose == "idle" or (pose == "basic_attack" and pose_time < impact_delay()):
-			var size := Vector2(24, 30) * lerpf(0.55, 1.0, charge)
-			draw_texture_rect(effects.idle_flame, Rect2(motion_flame_socket() - size * 0.5, size), false, tint)
+		if (pose == "idle" and effect.idle) or (pose == "basic_attack" and pose_time < impact_delay()):
+			var size := Vector2(effect.size[0], effect.size[1]) * lerpf(0.55, 1.0, charge)
+			draw_texture_rect(effects[effect.key], Rect2(motion_flame_socket() - size * 0.5, size), false, tint)
 	draw_set_transform(Vector2.ZERO)
 	if show_anchor and visual_alpha > 0:
 		draw_line(FOOT - Vector2(5, 0), FOOT + Vector2(5, 0), Color("33b7c8"))
