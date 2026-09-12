@@ -80,7 +80,8 @@ func run() -> void:
 	check(sprite_coverage.size() == 4, "Three melee roles and fox use added frames")
 	check(not sprite_coverage.guard_monk.attack.has(7), "Monk no longer inserts old retract before extended recovery")
 	check(not sprite_coverage.wild_hunter.attack.has(7), "Hunter uses continuous new knife recovery")
-	for melee in [scene.heroes[0], scene.heroes[1]]:
+	check(not sprite_coverage.bear_lord.attack.has(7), "Bear uses continuous new two-handed club recovery")
+	for melee in [scene.heroes[0], scene.heroes[1], scene.enemies[0]]:
 		for direction in [-1,1]:
 			melee.face(melee.position + Vector2(direction * 200,0)); melee.play_attack()
 			melee.tick(melee.Motion.duration(melee.motion) - 0.001)

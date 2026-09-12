@@ -52,7 +52,8 @@ def build_recovery(root, scale, pivots, names, tips, unfold_scale=.86):
                      'notes':['Eight motion_v1 frames unchanged; four recovery/ready frames appended.',
                               'Last recovery and idle use the same image, avoiding a final atlas swap.',
                               'Full walk/directional/hit/retreat continuity still pending.']})
-    tip_key = 'recovery_staff_tips' if root.name == 'guard_monk' else 'recovery_knife_tips'
+    tip_key = {'guard_monk':'recovery_staff_tips', 'wild_hunter':'recovery_knife_tips',
+               'bear_lord':'recovery_club_tips'}[root.name]
     manifest[tip_key] = [[round(128+(t[0]-p[0])*scale,2),round(218+(t[1]-p[1])*scale,2)] for t,p in zip(tips,pivots)]
     (out/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     contact = Image.new('RGB',(1536,568)); draw = ImageDraw.Draw(contact)

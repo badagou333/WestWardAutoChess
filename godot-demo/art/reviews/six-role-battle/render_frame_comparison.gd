@@ -23,10 +23,12 @@ func run() -> void:
 	var fox_only := OS.get_cmdline_user_args().has("--foxfire")
 	var monk_recovery := OS.get_cmdline_user_args().has("--monk-recovery")
 	var hunter_recovery := OS.get_cmdline_user_args().has("--hunter-recovery")
-	var recovery := monk_recovery or hunter_recovery
+	var bear_recovery := OS.get_cmdline_user_args().has("--bear-recovery")
+	var recovery := monk_recovery or hunter_recovery or bear_recovery
 	var roles: Array = ["foxfire_imp"] if fox_only else ROLE_KEYS
 	if monk_recovery: roles = ["guard_monk"]
 	if hunter_recovery: roles = ["wild_hunter"]
+	if bear_recovery: roles = ["bear_lord"]
 	root.content_scale_size = Vector2i(960, 80 + roles.size() * 240)
 	root.size = root.content_scale_size
 	var backdrop := Backdrop.new(); backdrop.rows = roles.size()
@@ -49,12 +51,14 @@ func run() -> void:
 	if fox_only: output += "-foxfire"
 	if monk_recovery: output += "-monk-recovery"
 	if hunter_recovery: output += "-hunter-recovery"
+	if bear_recovery: output += "-bear-recovery"
 	DirAccess.make_dir_recursive_absolute(output)
-	# Both columns use the identical actor implementation and timing, differing only in atlas toggle.
+	# Both columns share timing and rendering; only the selected motion assets differ.
 	for index in 96:
 		if index == 6 and not fox_only and not recovery:
 			for actor in actors: actor.move_to(actor.position + Vector2(44, 0))
-		if index in [30, 62]:
+		# The bear needs 40 capture frames at half speed; do not interrupt its recovery.
+		if index == 30 or (index == 62 and not bear_recovery):
 			for actor in actors:
 				actor.face(actor.position + Vector2(200, 0)); actor.play_attack()
 		for tick in 5:

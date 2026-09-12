@@ -1,0 +1,366 @@
+{
+  "version": 2,
+  "character": "bear_lord",
+  "status": "trial_motion_candidate",
+  "source": "generated-recovery-sheet.png",
+  "source_sha256": "5f1cdd73c4c3ffe57f4a8d6bfc9077a2ed7cf1407eac8f82aa16bb90332ac2f3",
+  "atlas": "body-atlas.png",
+  "frame_size": [
+    256,
+    256
+  ],
+  "foot_anchor": [
+    128,
+    218
+  ],
+  "source_scale": 0.3288888888888889,
+  "frames": [
+    {
+      "index": 0,
+      "name": "walk_contact",
+      "source_box": [
+        48,
+        111,
+        385,
+        468
+      ],
+      "ground_anchor": [
+        171,
+        466
+      ],
+      "frame_bbox": [
+        77,
+        70,
+        218,
+        219
+      ],
+      "file": "../motion_v1/walk_contact.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 1,
+      "name": "walk_pass",
+      "source_box": [
+        418,
+        110,
+        754,
+        468
+      ],
+      "ground_anchor": [
+        566,
+        466
+      ],
+      "frame_bbox": [
+        66,
+        69,
+        206,
+        219
+      ],
+      "file": "../motion_v1/walk_pass.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 2,
+      "name": "walk_opposite",
+      "source_box": [
+        804,
+        110,
+        1149,
+        465
+      ],
+      "ground_anchor": [
+        950,
+        466
+      ],
+      "frame_bbox": [
+        67,
+        69,
+        211,
+        217
+      ],
+      "file": "../motion_v1/walk_opposite.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 3,
+      "name": "walk_return",
+      "source_box": [
+        1190,
+        109,
+        1521,
+        469
+      ],
+      "ground_anchor": [
+        1335,
+        466
+      ],
+      "frame_bbox": [
+        67,
+        69,
+        205,
+        220
+      ],
+      "file": "../motion_v1/walk_return.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 4,
+      "name": "attack_windup",
+      "source_box": [
+        25,
+        536,
+        356,
+        930
+      ],
+      "ground_anchor": [
+        188,
+        923
+      ],
+      "frame_bbox": [
+        60,
+        56,
+        198,
+        221
+      ],
+      "file": "../motion_v1/attack_windup.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 5,
+      "name": "attack_accelerate",
+      "source_box": [
+        397,
+        587,
+        788,
+        923
+      ],
+      "ground_anchor": [
+        570,
+        923
+      ],
+      "frame_bbox": [
+        56,
+        78,
+        219,
+        218
+      ],
+      "file": "../motion_v1/attack_accelerate.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 6,
+      "name": "attack_impact",
+      "source_box": [
+        773,
+        608,
+        1228,
+        918
+      ],
+      "ground_anchor": [
+        948,
+        923
+      ],
+      "frame_bbox": [
+        55,
+        86,
+        245,
+        216
+      ],
+      "file": "../motion_v1/attack_impact.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 7,
+      "name": "attack_recover",
+      "source_box": [
+        1201,
+        597,
+        1519,
+        933
+      ],
+      "ground_anchor": [
+        1334,
+        928
+      ],
+      "frame_bbox": [
+        72,
+        80,
+        205,
+        220
+      ],
+      "file": "../motion_v1/attack_recover.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 8,
+      "name": "club_retract",
+      "file": "club_retract.png",
+      "source": "generated-recovery-sheet.png",
+      "source_box": [
+        190,
+        49,
+        794,
+        474
+      ],
+      "ground_anchor": [
+        415,
+        469
+      ],
+      "frame_bbox": [
+        54,
+        80,
+        253,
+        220
+      ]
+    },
+    {
+      "index": 9,
+      "name": "club_lower",
+      "file": "club_lower.png",
+      "source": "generated-recovery-sheet.png",
+      "source_box": [
+        876,
+        46,
+        1388,
+        475
+      ],
+      "ground_anchor": [
+        1093,
+        469
+      ],
+      "frame_bbox": [
+        57,
+        79,
+        225,
+        220
+      ]
+    },
+    {
+      "index": 10,
+      "name": "return_settle",
+      "file": "return_settle.png",
+      "source": "generated-recovery-sheet.png",
+      "source_box": [
+        201,
+        519,
+        705,
+        971
+      ],
+      "ground_anchor": [
+        420,
+        968
+      ],
+      "frame_bbox": [
+        56,
+        70,
+        222,
+        219
+      ]
+    },
+    {
+      "index": 11,
+      "name": "ready_settled",
+      "file": "ready_settled.png",
+      "source": "generated-recovery-sheet.png",
+      "source_box": [
+        876,
+        517,
+        1378,
+        972
+      ],
+      "ground_anchor": [
+        1098,
+        968
+      ],
+      "frame_bbox": [
+        55,
+        70,
+        220,
+        220
+      ]
+    }
+  ],
+  "move": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "attack": {
+    "windup": 4,
+    "accelerate": 5,
+    "impact": 6,
+    "recover": 7
+  },
+  "notes": [
+    "Eight motion_v1 frames unchanged; four recovery/ready frames appended.",
+    "Last recovery and idle use the same image, avoiding a final atlas swap.",
+    "Full walk/directional/hit/retreat continuity still pending."
+  ],
+  "base_atlas_sha256": "111b6afb63f1cf5f6e80eeac080731ecafe54c04a3bffa0463e136b8f7fa06e3",
+  "idle": 11,
+  "attack_track": [
+    {
+      "phase": "windup",
+      "fraction": 0,
+      "frame": 11
+    },
+    {
+      "phase": "windup",
+      "fraction": 0.2,
+      "frame": 4
+    },
+    {
+      "phase": "windup",
+      "fraction": 0.78,
+      "frame": 5
+    },
+    {
+      "phase": "release",
+      "fraction": 0,
+      "frame": 6
+    },
+    {
+      "phase": "recover",
+      "fraction": 0,
+      "frame": 8
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.32,
+      "frame": 9
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.58,
+      "frame": 10
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.8,
+      "frame": 11
+    }
+  ],
+  "recovery_unfold": {
+    "end_fraction": 0.58,
+    "start_scale_y": 0.96
+  },
+  "recovery_club_tips": [
+    [
+      251.33,
+      164.72
+    ],
+    [
+      223.38,
+      186.76
+    ],
+    [
+      220.75,
+      182.48
+    ],
+    [
+      218.44,
+      181.82
+    ]
+  ]
+}
