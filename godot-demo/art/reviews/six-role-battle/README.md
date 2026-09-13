@@ -17,6 +17,12 @@ Windows 双击本目录 **`launch.cmd`**。它查找 `GODOT_BIN`、PATH 中的 G
 
 这是独立美术测试场景。原主场景、商店、四波流程和正式数据没有替换；测试从真实 Godot 棋盘走格与战斗开始，不是浏览器摆图。
 
+## 2026-09-13 山雀展翼施法过渡
+
+同日山雀续轮：新增 8 张展翼/释放/收翼姿势并默认接入 motion_v1，改善旧准备、腾空出手和站立之间的跳变。既有单枚风刃从新标注的羽尖发射；身体不含重复风刃，也不添加火焰。六角色现合计 60 张新增姿势，三近战有收势、三施法角色有短序列；不是完整双步或全方向动画。详情见 `../../production/sparrow_spirit/motion_v1/README.md`。
+
+新增 `frame-comparison-sparrow.gif` 与采样图，半速左旧右新；更新正常速度实战 GIF、三张棋盘截图、验证 JSON。八帧覆盖、左右羽尖发射、抵达仅伤害一次、末收势/待机/起手同帧通过；六角色专项及原冒烟/四波回归通过，30/60/120 FPS 仍均 20.70 秒且事件计数与上一版相同。深浅底、实机对比与战斗采样完成复核；羽片/头冠细节和旧移动/受击/退场衔接仍待精修。
+
 ## 2026-09-13 药灵童子施法过渡
 
 药灵新增 8 张连续施法姿势并接入试玩：抬手、聚力、伸掌释放、收手回待机。施法期间药杖持续立稳，结束与下一次起手共用准备图；逐帧掌心坐标驱动既有治疗光团，原事件时序、治疗量及飞行时间保持。五名角色累计有 52 张新增姿势，山雀仍待补帧。候选来源、加工和限制见 `../../production/herbal_spirit_child/motion_v1/README.md`。
@@ -81,7 +87,7 @@ Windows 双击本目录 **`launch.cmd`**。它查找 `GODOT_BIN`、PATH 中的 G
 - 已通过实际 OpenGL 渲染导出开场、6.2 秒交战和退场截图，并逐张复核。截图不是浏览器模拟画布。
 - 六角色尺寸可放入当前格子，棍僧/狐火已清理的白底未再出现；近战接触和前后排序可观察。
 - **仍待改善**：暗色手绘角色与明亮棋盘/唐僧占位图差异明显；猎户、药灵的小尺寸细节偏密；姓名默认隐藏已改善遮挡，但相邻血条与角色本身仍可能重叠。
-- **未验收**：三名近战已加连续收势，狐火和药灵各有八帧施法序列；山雀仍用原姿势。新旧图细节衔接、左右腿交替幅度、方向动画和武器端点仍需精修。测试通过不等于已完成正式动画或全部阵型遮挡验收。
+- **未验收**：三名近战已加连续收势，狐火、药灵和山雀各有八帧施法序列。新旧图细节衔接、左右腿交替幅度、方向动画和武器端点仍需精修。测试通过不等于已完成正式动画或全部阵型遮挡验收。
 - 受限运行环境有系统证书/着色器缓存告警，未影响本地 PNG 读取、测试或 OpenGL 截图。本轮没有浏览器自动访问。
 
 ## 复现
@@ -107,6 +113,9 @@ python godot-demo/art/reviews/six-role-battle/pack_frame_comparison.py --bear-re
 godot --path godot-demo --rendering-method gl_compatibility --resolution 960x320 --script res://art/reviews/six-role-battle/render_frame_comparison.gd -- --herbal
 python godot-demo/art/reviews/six-role-battle/pack_frame_comparison.py --herbal
 python godot-demo/art/production/tools/verify_herbal_motion.py
+godot --path godot-demo --rendering-method gl_compatibility --resolution 960x320 --script res://art/reviews/six-role-battle/render_frame_comparison.gd -- --sparrow
+python godot-demo/art/reviews/six-role-battle/pack_frame_comparison.py --sparrow
+python godot-demo/art/production/tools/verify_sparrow_motion.py
 ```
 
-截图：`board-start.png`、`board-combat.png`、`board-retreat.png`；对比采样：`frame-comparison-contact.png` 及各角色专项采样图。原概念图和 `demo_v1` 保留，新资产单独放在 `motion_v1` / `motion_v2`。下一步补山雀施法过渡及完整双步循环，由 06 评估正式整合。
+截图：`board-start.png`、`board-combat.png`、`board-retreat.png`；对比采样：`frame-comparison-contact.png` 及各角色专项采样图。原概念图和 `demo_v1` 保留，新资产单独放在 `motion_v1` / `motion_v2`。下一步完善完整双步循环与新旧动作衔接，由 06 评估正式整合。

@@ -77,7 +77,7 @@ func run() -> void:
 		actor.play_attack(); actor.tick(actor.impact_delay())
 		check(actor.motion_frame == int(actor.motion_manifest.attack.impact), actor.role + " image matches exact damage release")
 		sprite_coverage[actor.role] = {"move":move_frames.keys(),"attack":attack_frames.keys()}
-	check(sprite_coverage.size() == 5, "Three melee roles, fox and herbal child use added frames")
+	check(sprite_coverage.size() == 6, "All six roles use added frames")
 	check(not sprite_coverage.guard_monk.attack.has(7), "Monk no longer inserts old retract before extended recovery")
 	check(not sprite_coverage.wild_hunter.attack.has(7), "Hunter uses continuous new knife recovery")
 	check(not sprite_coverage.bear_lord.attack.has(7), "Bear uses continuous new two-handed club recovery")
@@ -127,6 +127,33 @@ func run() -> void:
 		check(herbal.pose == "idle" and herbal.motion_frame == 0 and before.origin.distance_to(herbal.visual_transform().origin) < 0.01, "Herbal returns to same planted ready pose")
 		herbal.play_attack(); herbal.tick(0)
 		check(herbal.motion_frame == 0, "Herbal next cast starts on identical ready pose")
+	# Sparrow's independent projectile follows the wing, not an old fixed body-frame origin.
+	var sparrow = scene.heroes[3]
+	for direction in [-1, 1]:
+		scene.strikes.clear(); scene.missiles.clear()
+		var target = scene.enemies[0]
+		target.health = target.max_health
+		sparrow.face(sparrow.position + Vector2(direction * 200, 0))
+		scene.queue_attack(sparrow, target, false)
+		sparrow.tick(sparrow.impact_delay() - 0.001); scene._resolve_strikes(0)
+		check(scene.missiles.is_empty() and target.health == target.max_health, "Sparrow windup cannot release or damage")
+		sparrow.tick(0.0011); scene._resolve_strikes(0)
+		var tip: Array = sparrow.motion_manifest.emission_sockets[4]
+		var origin: Vector2 = sparrow.position + sparrow.visual_transform() * Vector2(tip[0] - 128, tip[1] - 218)
+		check(scene.missiles.size() == 1 and sparrow.motion_frame == 4, "Sparrow release frame emits one independent wind blade")
+		if scene.missiles.size() == 1:
+			check(scene.missiles[0].position.distance_to(origin) < 0.01, "Sparrow missile starts at rendered wing tip in facing %d" % direction)
+		scene._resolve_strikes(0.24)
+		check(target.health == target.max_health, "Sparrow damage waits for flight arrival")
+		scene._resolve_strikes(0.02); scene._resolve_strikes(0.5)
+		check(target.health == target.max_health - sparrow.damage, "Sparrow projectile damages once")
+		sparrow.tick(sparrow.Motion.duration(sparrow.motion) - sparrow.pose_time - 0.001)
+		check(sparrow.motion_frame == 0, "Sparrow completes folding onto ready frame")
+		var before: Transform2D = sparrow.visual_transform()
+		sparrow.tick(0.002)
+		check(sparrow.pose == "idle" and sparrow.motion_frame == 0 and before.origin.distance_to(sparrow.visual_transform().origin) < 0.01, "Sparrow return boundary preserves planted origin")
+		sparrow.play_attack(); sparrow.tick(0)
+		check(sparrow.motion_frame == 0, "Sparrow next cast starts on identical ready pose")
 	scene._toggle_motion_frames()
 	for actor in scene.actors:
 		check(actor.motion_frame == -1, actor.role + " comparison switch restores original atlas")

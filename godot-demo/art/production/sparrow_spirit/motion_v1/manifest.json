@@ -1,0 +1,323 @@
+{
+  "version": 1,
+  "character": "sparrow_spirit",
+  "status": "trial_motion_candidate",
+  "source": "generated-sheet.png",
+  "source_sha256": "58405551e5be5ca4f22384a09aeffd6ffcf59f2a41ac09cb98c7abbffb079199",
+  "atlas": "body-atlas.png",
+  "frame_size": [
+    256,
+    256
+  ],
+  "foot_anchor": [
+    128,
+    218
+  ],
+  "source_scale": 0.2810304449648712,
+  "frames": [
+    {
+      "index": 0,
+      "name": "cast_ready",
+      "source_box": [
+        58,
+        80,
+        351,
+        512
+      ],
+      "ground_anchor": [
+        225,
+        502
+      ],
+      "frame_bbox": [
+        81,
+        99,
+        163,
+        220
+      ],
+      "file": "cast_ready.png"
+    },
+    {
+      "index": 1,
+      "name": "cast_lift",
+      "source_box": [
+        431,
+        92,
+        715,
+        513
+      ],
+      "ground_anchor": [
+        583,
+        502
+      ],
+      "frame_bbox": [
+        85,
+        103,
+        165,
+        221
+      ],
+      "file": "cast_lift.png"
+    },
+    {
+      "index": 2,
+      "name": "cast_gather",
+      "source_box": [
+        805,
+        101,
+        1105,
+        513
+      ],
+      "ground_anchor": [
+        952,
+        502
+      ],
+      "frame_bbox": [
+        87,
+        105,
+        171,
+        221
+      ],
+      "file": "cast_gather.png"
+    },
+    {
+      "index": 3,
+      "name": "cast_extend",
+      "source_box": [
+        1176,
+        96,
+        1515,
+        513
+      ],
+      "ground_anchor": [
+        1323,
+        503
+      ],
+      "frame_bbox": [
+        87,
+        104,
+        182,
+        221
+      ],
+      "file": "cast_extend.png"
+    },
+    {
+      "index": 4,
+      "name": "cast_release",
+      "source_box": [
+        22,
+        566,
+        432,
+        973
+      ],
+      "ground_anchor": [
+        176,
+        965
+      ],
+      "frame_bbox": [
+        85,
+        106,
+        200,
+        220
+      ],
+      "file": "cast_release.png"
+    },
+    {
+      "index": 5,
+      "name": "cast_follow",
+      "source_box": [
+        418,
+        566,
+        779,
+        973
+      ],
+      "ground_anchor": [
+        570,
+        963
+      ],
+      "frame_bbox": [
+        85,
+        106,
+        186,
+        220
+      ],
+      "file": "cast_follow.png"
+    },
+    {
+      "index": 6,
+      "name": "cast_retract",
+      "source_box": [
+        812,
+        572,
+        1125,
+        975
+      ],
+      "ground_anchor": [
+        954,
+        963
+      ],
+      "frame_bbox": [
+        88,
+        108,
+        176,
+        221
+      ],
+      "file": "cast_retract.png"
+    },
+    {
+      "index": 7,
+      "name": "cast_lower",
+      "source_box": [
+        1198,
+        565,
+        1485,
+        974
+      ],
+      "ground_anchor": [
+        1345,
+        963
+      ],
+      "frame_bbox": [
+        87,
+        106,
+        168,
+        221
+      ],
+      "file": "cast_lower.png"
+    }
+  ],
+  "move": [],
+  "attack": {
+    "windup": 1,
+    "accelerate": 3,
+    "impact": 4,
+    "recover": 6
+  },
+  "notes": [
+    "Standing wing-cast trial only; two avian wings, no new weapon or formal skill decision.",
+    "An independent existing wind-blade placeholder starts at the leading feather tip on release.",
+    "No attached charge effect or baked projectile on the wing.",
+    "Last recovery, idle and next windup share frame 0.",
+    "Generated neutral checker removed by the established authorized workflow; demo_v1 preserved.",
+    "Uniform source scale; manually marked foot projections are independent of wing span.",
+    "Existing attack timing, damage, projectile travel and old move/hit/retreat remain unchanged."
+  ],
+  "idle": 0,
+  "attack_track": [
+    {
+      "phase": "windup",
+      "fraction": 0,
+      "frame": 0
+    },
+    {
+      "phase": "windup",
+      "fraction": 0.18,
+      "frame": 1
+    },
+    {
+      "phase": "windup",
+      "fraction": 0.45,
+      "frame": 2
+    },
+    {
+      "phase": "windup",
+      "fraction": 0.78,
+      "frame": 3
+    },
+    {
+      "phase": "release",
+      "fraction": 0,
+      "frame": 4
+    },
+    {
+      "phase": "recover",
+      "fraction": 0,
+      "frame": 5
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.28,
+      "frame": 6
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.56,
+      "frame": 7
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.84,
+      "frame": 0
+    }
+  ],
+  "emission_sockets": [
+    [
+      88.09,
+      201.7
+    ],
+    [
+      162.0,
+      183.43
+    ],
+    [
+      167.34,
+      165.17
+    ],
+    [
+      179.43,
+      167.7
+    ],
+    [
+      197.13,
+      157.58
+    ],
+    [
+      184.21,
+      179.78
+    ],
+    [
+      173.81,
+      169.1
+    ],
+    [
+      90.9,
+      204.79
+    ]
+  ],
+  "emission_source_points": [
+    [
+      83,
+      444
+    ],
+    [
+      704,
+      379
+    ],
+    [
+      1092,
+      314
+    ],
+    [
+      1506,
+      324
+    ],
+    [
+      422,
+      750
+    ],
+    [
+      770,
+      827
+    ],
+    [
+      1117,
+      789
+    ],
+    [
+      1213,
+      916
+    ]
+  ],
+  "socket_offset": [
+    0,
+    0
+  ]
+}

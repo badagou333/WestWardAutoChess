@@ -133,18 +133,19 @@ func impact_delay() -> float:
 	return Motion.release(motion)
 
 func emission_position() -> Vector2:
-	if motion_frame >= 0 and motion_manifest.has("hand_sockets"):
-		return position + visual_transform() * motion_flame_socket()
+	if motion_frame >= 0 and (motion_manifest.has("emission_sockets") or motion_manifest.has("hand_sockets")):
+		return position + visual_transform() * motion_effect_socket()
 	var action: Dictionary = manifest.actions.basic_attack
 	if not action.has("spawn_vfx"):
 		return position + FOOT + Vector2(36 * facing, -70)
 	var center: Array = manifest.standalone_vfx[action.spawn_vfx].aligned_center_trial
 	return position + visual_transform() * Vector2(float(center[0]) - 128, float(center[1]) - 218)
 
-func motion_flame_socket() -> Vector2:
-	var hand: Array = motion_manifest.hand_sockets[motion_frame]
+func motion_effect_socket() -> Vector2:
+	var sockets: Array = motion_manifest.get("emission_sockets", motion_manifest.get("hand_sockets", []))
+	var point: Array = sockets[motion_frame]
 	var offset: Array = motion_manifest.get("socket_offset", [0, -8])
-	return Vector2(float(hand[0]) - 128 + float(offset[0]), float(hand[1]) - 218 + float(offset[1]))
+	return Vector2(float(point[0]) - 128 + float(offset[0]), float(point[1]) - 218 + float(offset[1]))
 
 func tick(delta: float) -> void:
 	hit_pulse = maxf(0, hit_pulse - delta)
@@ -279,7 +280,7 @@ func _draw() -> void:
 		var charge := 0.45 if pose == "idle" else clampf(pose_time / impact_delay(), 0.35, 1.0)
 		if (pose == "idle" and effect.idle) or (pose == "basic_attack" and pose_time < impact_delay()):
 			var size := Vector2(effect.size[0], effect.size[1]) * lerpf(0.55, 1.0, charge)
-			draw_texture_rect(effects[effect.key], Rect2(motion_flame_socket() - size * 0.5, size), false, tint)
+			draw_texture_rect(effects[effect.key], Rect2(motion_effect_socket() - size * 0.5, size), false, tint)
 	draw_set_transform(Vector2.ZERO)
 	if show_anchor and visual_alpha > 0:
 		draw_line(FOOT - Vector2(5, 0), FOOT + Vector2(5, 0), Color("33b7c8"))
