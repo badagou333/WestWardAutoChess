@@ -67,7 +67,11 @@ func run() -> void:
 			if actor.pose == "basic_attack" and actor.motion_frame >= 0: attack_frames[actor.motion_frame] = true
 			if actor.pose == "basic_attack" and actor.pose_time < actor.impact_delay():
 				check(actor.motion_frame != int(actor.motion_manifest.attack.impact), actor.role + " impact image never early")
-		check(move_frames.keys().size() == actor.motion_manifest.move.size(), actor.role + " all movement images actually played")
+		var configured_move := {}
+		for index in actor.motion_manifest.move: configured_move[int(index)] = true
+		check(move_frames.keys().size() == configured_move.size(), actor.role + " all movement images actually played")
+		for index in configured_move:
+			check(move_frames.has(index), actor.role + " configured movement frame played: %d" % index)
 		var expected_attack_frames := 4
 		if actor.motion_manifest.has("attack_track"):
 			var configured := {}
@@ -81,6 +85,25 @@ func run() -> void:
 	check(not sprite_coverage.guard_monk.attack.has(7), "Monk no longer inserts old retract before extended recovery")
 	check(not sprite_coverage.wild_hunter.attack.has(7), "Hunter uses continuous new knife recovery")
 	check(not sprite_coverage.bear_lord.attack.has(7), "Bear uses continuous new two-handed club recovery")
+	# Monk departure/arrival use the existing ready image while both swing legs play in between.
+	var walking_monk = scene.heroes[0]
+	for direction in [-1, 1]:
+		for step_index in 3:
+			var destination: Vector2 = walking_monk.position + Vector2(direction * 100, 0)
+			walking_monk.move_to(destination)
+			check(walking_monk.motion_frame == 11, "Monk walk begins from unchanged ready pose")
+			walking_monk.tick(walking_monk.motion.walk * 0.25)
+			check(walking_monk.motion_frame >= 12, "Monk uses appended gait during movement")
+			var move_remaining: float = walking_monk.move_left
+			walking_monk.take_damage(1)
+			check(walking_monk.pose == "move" and walking_monk.move_left == move_remaining, "Monk light hit does not reset gait")
+			walking_monk.tick(move_remaining - 0.001)
+			check(walking_monk.motion_frame == 11, "Monk settles to ready before movement ends")
+			walking_monk.tick(0.002)
+			check(walking_monk.position == destination and walking_monk.pose == "idle" and walking_monk.motion_frame == 11, "Monk repeated steps land exactly in both facings")
+		walking_monk.play_attack(); walking_monk.tick(0)
+		check(walking_monk.motion_frame == 11, "Monk walk-to-attack preserves ready silhouette")
+		walking_monk.tick(walking_monk.Motion.duration(walking_monk.motion))
 	for melee in [scene.heroes[0], scene.heroes[1], scene.enemies[0]]:
 		for direction in [-1,1]:
 			melee.face(melee.position + Vector2(direction * 200,0)); melee.play_attack()

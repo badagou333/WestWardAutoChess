@@ -18,7 +18,7 @@ var manifest: Dictionary
 var body: Texture2D
 var motion_body: Texture2D
 var motion_manifest := {}
-var motion_revision := 2
+var motion_revision := 3
 var use_motion_frames := true
 var motion_frame := -1
 var vfx: Texture2D
@@ -73,9 +73,11 @@ func setup_role(key: String, title: String, stats: Array, enemy := false) -> voi
 				action["body_frame_seconds"] = action.frame_seconds
 	body = ImageTexture.create_from_image(Image.load_from_file(base + manifest.atlases.body))
 	var motion_base := "res://art/production/%s/motion_v1/" % role
-	var revised_base := "res://art/production/%s/motion_v2/" % role
-	if motion_revision >= 2 and FileAccess.file_exists(revised_base + "manifest.json"):
-		motion_base = revised_base
+	for revision in range(motion_revision, 1, -1):
+		var revised_base := "res://art/production/%s/motion_v%d/" % [role, revision]
+		if FileAccess.file_exists(revised_base + "manifest.json"):
+			motion_base = revised_base
+			break
 	if FileAccess.file_exists(motion_base + "manifest.json"):
 		motion_manifest = JSON.parse_string(FileAccess.get_file_as_string(motion_base + "manifest.json"))
 		motion_body = ImageTexture.create_from_image(Image.load_from_file(motion_base + motion_manifest.atlas))

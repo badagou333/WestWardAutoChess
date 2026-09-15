@@ -77,7 +77,7 @@ func _create_review_ui() -> void:
 	var bottom := ColorRect.new(); bottom.position = Vector2(28, 917); bottom.size = Vector2(1864, 139)
 	bottom.color = Color("182831"); ui.add_child(bottom)
 	var instructions := Label.new(); instructions.position = Vector2(52, 937)
-	instructions.text = "观察：步伐和收势是否连贯 · 特效是否跟随手掌/羽尖 · 命中后才扣血 · 退场是否淡出\n药灵童子优先治疗受伤队友或唐僧；未受伤时待机。空格暂停，R 重开，M 切换补帧。\n三名近战补入连续收势，狐火、药灵与山雀补入施法过渡；补帧开关可对比，角色名称可按需显示。"
+	instructions.text = "观察：步伐和收势是否连贯 · 特效是否跟随手掌/羽尖 · 命中后才扣血 · 退场是否淡出\n药灵童子优先治疗受伤队友或唐僧；未受伤时待机。空格暂停，R 重开，M 切换补帧。\n棍僧试接八帧交替迈步；三近战有连续收势，狐火、药灵与山雀有施法过渡。均为试玩候选。"
 	instructions.add_theme_font_size_override("font_size", 20); ui.add_child(instructions)
 
 func reset_trial() -> void:

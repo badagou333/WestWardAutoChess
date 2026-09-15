@@ -1,0 +1,633 @@
+{
+  "version": 3,
+  "character": "guard_monk",
+  "status": "trial_motion_candidate",
+  "source": "generated-walk-sheet.png",
+  "source_sha256": "b33e30be3db73d89f846cd0ce3e35df662bca51397a57f0599677fbb1225d8e9",
+  "atlas": "body-atlas.png",
+  "frame_size": [
+    256,
+    256
+  ],
+  "foot_anchor": [
+    128,
+    218
+  ],
+  "source_scale": 0.3835616438356164,
+  "frames": [
+    {
+      "index": 0,
+      "name": "walk_contact",
+      "source_box": [
+        56,
+        121,
+        368,
+        494
+      ],
+      "ground_anchor": [
+        206,
+        493
+      ],
+      "frame_bbox": [
+        71,
+        77,
+        189,
+        218
+      ],
+      "file": "../motion_v1/walk_contact.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 1,
+      "name": "walk_pass",
+      "source_box": [
+        449,
+        134,
+        749,
+        497
+      ],
+      "ground_anchor": [
+        585,
+        493
+      ],
+      "frame_bbox": [
+        77,
+        82,
+        191,
+        219
+      ],
+      "file": "../motion_v1/walk_pass.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 2,
+      "name": "walk_opposite",
+      "source_box": [
+        806,
+        139,
+        1125,
+        496
+      ],
+      "ground_anchor": [
+        958,
+        494
+      ],
+      "frame_bbox": [
+        70,
+        84,
+        191,
+        219
+      ],
+      "file": "../motion_v1/walk_opposite.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 3,
+      "name": "walk_return",
+      "source_box": [
+        1195,
+        133,
+        1505,
+        498
+      ],
+      "ground_anchor": [
+        1308,
+        497
+      ],
+      "frame_bbox": [
+        85,
+        80,
+        202,
+        218
+      ],
+      "file": "../motion_v1/walk_return.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 4,
+      "name": "attack_windup",
+      "source_box": [
+        27,
+        556,
+        362,
+        936
+      ],
+      "ground_anchor": [
+        186,
+        932
+      ],
+      "frame_bbox": [
+        68,
+        76,
+        195,
+        220
+      ],
+      "file": "../motion_v1/attack_windup.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 5,
+      "name": "attack_accelerate",
+      "source_box": [
+        390,
+        606,
+        816,
+        930
+      ],
+      "ground_anchor": [
+        551,
+        930
+      ],
+      "frame_bbox": [
+        67,
+        95,
+        228,
+        218
+      ],
+      "file": "../motion_v1/attack_accelerate.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 6,
+      "name": "attack_impact",
+      "source_box": [
+        759,
+        620,
+        1231,
+        936
+      ],
+      "ground_anchor": [
+        937,
+        932
+      ],
+      "frame_bbox": [
+        61,
+        100,
+        240,
+        220
+      ],
+      "file": "../motion_v1/attack_impact.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 7,
+      "name": "attack_recover",
+      "source_box": [
+        1214,
+        607,
+        1522,
+        936
+      ],
+      "ground_anchor": [
+        1360,
+        933
+      ],
+      "frame_bbox": [
+        73,
+        95,
+        190,
+        219
+      ],
+      "file": "../motion_v1/attack_recover.png",
+      "source": "../motion_v1/generated-sheet.png"
+    },
+    {
+      "index": 8,
+      "name": "return_lower",
+      "file": "../motion_v2/return_lower.png",
+      "source": "../motion_v2/generated-recovery-sheet.png",
+      "source_box": [
+        203,
+        55,
+        768,
+        483
+      ],
+      "ground_anchor": [
+        424,
+        481
+      ],
+      "frame_bbox": [
+        55,
+        78,
+        241,
+        219
+      ]
+    },
+    {
+      "index": 9,
+      "name": "return_rotate",
+      "file": "../motion_v2/return_rotate.png",
+      "source": "../motion_v2/generated-recovery-sheet.png",
+      "source_box": [
+        872,
+        53,
+        1332,
+        488
+      ],
+      "ground_anchor": [
+        1108,
+        486
+      ],
+      "frame_bbox": [
+        50,
+        75,
+        202,
+        218
+      ]
+    },
+    {
+      "index": 10,
+      "name": "return_settle",
+      "file": "../motion_v2/return_settle.png",
+      "source": "../motion_v2/generated-recovery-sheet.png",
+      "source_box": [
+        231,
+        522,
+        640,
+        975
+      ],
+      "ground_anchor": [
+        428,
+        972
+      ],
+      "frame_bbox": [
+        63,
+        70,
+        198,
+        219
+      ]
+    },
+    {
+      "index": 11,
+      "name": "ready_settled",
+      "file": "../motion_v2/ready_settled.png",
+      "source": "../motion_v2/generated-recovery-sheet.png",
+      "source_box": [
+        902,
+        535,
+        1311,
+        974
+      ],
+      "ground_anchor": [
+        1086,
+        972
+      ],
+      "frame_bbox": [
+        67,
+        74,
+        202,
+        219
+      ]
+    },
+    {
+      "index": 12,
+      "name": "walk_contact_a",
+      "file": "walk_contact_a.png",
+      "source": "generated-walk-sheet.png",
+      "source_box": [
+        49,
+        91,
+        409,
+        456
+      ],
+      "ground_anchor": [
+        225,
+        453
+      ],
+      "frame_bbox": [
+        60,
+        79,
+        198,
+        219
+      ]
+    },
+    {
+      "index": 13,
+      "name": "walk_down_a",
+      "file": "walk_down_a.png",
+      "source": "generated-walk-sheet.png",
+      "source_box": [
+        426,
+        89,
+        762,
+        461
+      ],
+      "ground_anchor": [
+        597,
+        456
+      ],
+      "frame_bbox": [
+        62,
+        77,
+        191,
+        220
+      ]
+    },
+    {
+      "index": 14,
+      "name": "walk_pass_a",
+      "file": "walk_pass_a.png",
+      "source": "generated-walk-sheet.png",
+      "source_box": [
+        803,
+        91,
+        1144,
+        463
+      ],
+      "ground_anchor": [
+        984,
+        458
+      ],
+      "frame_bbox": [
+        59,
+        77,
+        190,
+        220
+      ]
+    },
+    {
+      "index": 15,
+      "name": "walk_up_a",
+      "file": "walk_up_a.png",
+      "source": "generated-walk-sheet.png",
+      "source_box": [
+        1189,
+        90,
+        1522,
+        461
+      ],
+      "ground_anchor": [
+        1372,
+        456
+      ],
+      "frame_bbox": [
+        58,
+        78,
+        186,
+        220
+      ]
+    },
+    {
+      "index": 16,
+      "name": "walk_contact_b",
+      "file": "walk_contact_b.png",
+      "source": "generated-walk-sheet.png",
+      "source_box": [
+        48,
+        548,
+        409,
+        930
+      ],
+      "ground_anchor": [
+        224,
+        924
+      ],
+      "frame_bbox": [
+        60,
+        74,
+        198,
+        221
+      ]
+    },
+    {
+      "index": 17,
+      "name": "walk_down_b",
+      "file": "walk_down_b.png",
+      "source": "generated-walk-sheet.png",
+      "source_box": [
+        431,
+        550,
+        787,
+        926
+      ],
+      "ground_anchor": [
+        602,
+        924
+      ],
+      "frame_bbox": [
+        62,
+        75,
+        199,
+        219
+      ]
+    },
+    {
+      "index": 18,
+      "name": "walk_pass_b",
+      "file": "walk_pass_b.png",
+      "source": "generated-walk-sheet.png",
+      "source_box": [
+        801,
+        546,
+        1157,
+        926
+      ],
+      "ground_anchor": [
+        984,
+        924
+      ],
+      "frame_bbox": [
+        58,
+        73,
+        195,
+        219
+      ]
+    },
+    {
+      "index": 19,
+      "name": "walk_up_b",
+      "file": "walk_up_b.png",
+      "source": "generated-walk-sheet.png",
+      "source_box": [
+        1158,
+        551,
+        1524,
+        927
+      ],
+      "ground_anchor": [
+        1372,
+        924
+      ],
+      "frame_bbox": [
+        46,
+        75,
+        186,
+        219
+      ]
+    }
+  ],
+  "move": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    11
+  ],
+  "attack": {
+    "windup": 4,
+    "accelerate": 5,
+    "impact": 6,
+    "recover": 7
+  },
+  "notes": [
+    "Previous motion_v2 atlas pixels and attack track preserved.",
+    "Eight walk poses appended, alternating screen-left and screen-right swing feet.",
+    "Departure/arrival share ready pose; eight alternating-leg candidate poses play during each board move.",
+    "Foot sliding and uneven swing distance remain; this is not a physically complete gait.",
+    "New walk drawings are trial candidates; not a formal directional-animation acceptance."
+  ],
+  "base_atlas_sha256": "942012ca1ac1f5bea08051509b071c9bb1904ee292bd12c882261602a202b0f1",
+  "idle": 11,
+  "attack_track": [
+    {
+      "phase": "windup",
+      "fraction": 0,
+      "frame": 11
+    },
+    {
+      "phase": "windup",
+      "fraction": 0.2,
+      "frame": 4
+    },
+    {
+      "phase": "windup",
+      "fraction": 0.78,
+      "frame": 5
+    },
+    {
+      "phase": "release",
+      "fraction": 0,
+      "frame": 6
+    },
+    {
+      "phase": "recover",
+      "fraction": 0,
+      "frame": 8
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.32,
+      "frame": 9
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.58,
+      "frame": 10
+    },
+    {
+      "phase": "recover",
+      "fraction": 0.8,
+      "frame": 11
+    }
+  ],
+  "recovery_unfold": {
+    "end_fraction": 0.58,
+    "start_scale_y": 0.86
+  },
+  "recovery_staff_tips": [
+    [
+      236.38,
+      171.22
+    ],
+    [
+      197.84,
+      189.67
+    ],
+    [
+      193.22,
+      188.68
+    ],
+    [
+      197.18,
+      188.68
+    ]
+  ],
+  "base_manifest": "../motion_v2/manifest.json",
+  "walk_source_feet": [
+    [
+      [
+        75,
+        443
+      ],
+      [
+        334,
+        450
+      ]
+    ],
+    [
+      [
+        477,
+        451
+      ],
+      [
+        677,
+        454
+      ]
+    ],
+    [
+      [
+        904,
+        433
+      ],
+      [
+        1020,
+        456
+      ]
+    ],
+    [
+      [
+        1215,
+        444
+      ],
+      [
+        1432,
+        454
+      ]
+    ],
+    [
+      [
+        97,
+        916
+      ],
+      [
+        324,
+        922
+      ]
+    ],
+    [
+      [
+        522,
+        920
+      ],
+      [
+        626,
+        882
+      ]
+    ],
+    [
+      [
+        879,
+        920
+      ],
+      [
+        1104,
+        881
+      ]
+    ],
+    [
+      [
+        1252,
+        920
+      ],
+      [
+        1451,
+        907
+      ]
+    ]
+  ]
+}
