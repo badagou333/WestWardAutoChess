@@ -87,6 +87,26 @@ func run() -> void:
 	check(not sprite_coverage.bear_lord.attack.has(7), "Bear uses continuous new two-handed club recovery")
 	# Monk departure/arrival use the existing ready image while both swing legs play in between.
 	var walking_monk = scene.heroes[0]
+	var previous_ground_error := 0.0
+	var corrected_ground_error := 0.0
+	for direction in [-1, 1]:
+		walking_monk.move_to(walking_monk.position + Vector2(direction * 100, 0))
+		for sample in 120:
+			walking_monk.tick(walking_monk.motion.walk / 120.0)
+			var feet: Array[Vector2] = walking_monk.walk_feet()
+			if walking_monk.pose != "move" or feet.is_empty(): continue
+			for grounded in [false, true]:
+				walking_monk.ground_drawn_walk = grounded
+				var transform: Transform2D = walking_monk.visual_transform()
+				var lowest := -INF
+				for point in feet: lowest = maxf(lowest, (transform * point).y)
+				var error := absf(lowest - walking_monk.FOOT.y)
+				if grounded: corrected_ground_error = maxf(corrected_ground_error, error)
+				else: previous_ground_error = maxf(previous_ground_error, error)
+	walking_monk.ground_drawn_walk = true
+	check(corrected_ground_error < 0.001, "Drawn walk planted paw stays on ground in both facings")
+	check(previous_ground_error > corrected_ground_error + 0.5, "Grounding removes measured procedural foot float")
+	print("MONK_GROUND_CONTACT: previous_max=%.3f corrected_max=%.3f pixels (vertical only)" % [previous_ground_error, corrected_ground_error])
 	for direction in [-1, 1]:
 		for step_index in 3:
 			var destination: Vector2 = walking_monk.position + Vector2(direction * 100, 0)
@@ -188,7 +208,14 @@ func run() -> void:
 		profiles[actor.role] = actor.motion
 		var start: Vector2 = actor.position
 		actor.move_to(start + Vector2(100, 0)); actor.tick(actor.motion.walk * 0.25)
-		check(actor.pose == "move" and actor.visual_transform().origin.y < actor.FOOT.y, actor.role + " step lift")
+		var planted_feet: Array[Vector2] = actor.walk_feet()
+		if actor.ground_drawn_walk and not planted_feet.is_empty():
+			var lowest := -INF
+			for point in planted_feet:
+				lowest = maxf(lowest, (actor.visual_transform() * point).y)
+			check(actor.pose == "move" and absf(lowest - actor.FOOT.y) < 0.001, actor.role + " drawn step stays grounded")
+		else:
+			check(actor.pose == "move" and actor.visual_transform().origin.y < actor.FOOT.y, actor.role + " step lift")
 		actor.tick(actor.motion.walk)
 		check(actor.position == start + Vector2(100, 0), actor.role + " exact landing, no accumulated drift")
 		actor.face(actor.position + Vector2(200, 0)); actor.play_attack(); actor.tick(0.02)

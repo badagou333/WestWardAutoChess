@@ -46,7 +46,9 @@ def build_walk(role, scale, pivots, feet):
         frame = Image.new('RGBA',(256,256)); frame.alpha_composite(small,offset)
         frame.save(out/(NAMES[i]+'.png')); atlas.paste(frame,((base_count+i)*256,0))
         manifest['frames'].append({'index':base_count+i,'name':NAMES[i],'file':NAMES[i]+'.png',
-                                  'source':source.name,'source_box':box,'ground_anchor':pivot,'frame_bbox':frame.getbbox()})
+                                  'source':source.name,'source_box':box,'ground_anchor':pivot,'frame_bbox':frame.getbbox(),
+                                  'feet':[[round((p[0]-box[0])*scale)+offset[0],
+                                           round((p[1]-box[1])*scale)+offset[1]] for p in feet[i]]})
     atlas.save(out/'body-atlas.png')
     assert atlas.crop((0,0,base.width,256)).tobytes() == base.tobytes()
     ready = manifest['idle']

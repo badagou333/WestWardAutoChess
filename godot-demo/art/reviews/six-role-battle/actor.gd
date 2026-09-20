@@ -19,6 +19,7 @@ var body: Texture2D
 var motion_body: Texture2D
 var motion_manifest := {}
 var motion_revision := 3
+var ground_drawn_walk := true
 var use_motion_frames := true
 var motion_frame := -1
 var vfx: Texture2D
@@ -226,6 +227,8 @@ func visual_transform() -> Transform2D:
 		var step_lift := absf(sin(progress * TAU))
 		# Drawn legs already lift: only a small remaining body weight shift is needed.
 		var amount := 0.35 if motion_frame >= 0 else 1.0
+		if ground_drawn_walk and motion_manifest.has("walk_source_feet"):
+			amount = 0.0
 		offset.y = -step_lift * float(motion.lift) * amount
 		angle = 0.025 * facing * sin(progress * TAU) * amount
 		stretch = Vector2(1 + step_lift * 0.012 * amount, 1 - step_lift * 0.016 * amount)
@@ -251,7 +254,26 @@ func visual_transform() -> Transform2D:
 		stretch *= Vector2(1 + landing * 0.18, 1 - landing * 0.18)
 	if hit_pulse > 0 and pose != "retreat":
 		offset.x -= facing * sin(hit_pulse / 0.14 * PI) * 2
-	return Transform2D(angle, stretch * Vector2(facing, 1), 0, FOOT + offset)
+	var result := Transform2D(angle, stretch * Vector2(facing, 1), 0, FOOT + offset)
+	# Drawn planted paws define the ground, not an extra whole-body hop.
+	# This fixes vertical contact only; horizontal stride still depends on the artwork.
+	if ground_drawn_walk and pose == "move" and motion_frame >= 0:
+		var feet := walk_feet()
+		if not feet.is_empty():
+			var lowest := -INF
+			for point in feet:
+				lowest = maxf(lowest, (result * point).y)
+			result.origin.y += FOOT.y - lowest
+	return result
+
+func walk_feet() -> Array[Vector2]:
+	var points: Array[Vector2] = []
+	if motion_frame < 0 or not motion_manifest.has("walk_source_feet"):
+		return points
+	var frame: Dictionary = motion_manifest.frames[motion_frame]
+	for point in frame.get("feet", []):
+		points.append(Vector2(point[0] - 128, point[1] - 218))
+	return points
 
 func ground_offset() -> Vector2:
 	# A melee step carries the contact shadow; hop height must not move the shadow.

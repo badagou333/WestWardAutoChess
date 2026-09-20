@@ -23,7 +23,8 @@ func run() -> void:
 	var fox_only := OS.get_cmdline_user_args().has("--foxfire")
 	var herbal_only := OS.get_cmdline_user_args().has("--herbal")
 	var sparrow_only := OS.get_cmdline_user_args().has("--sparrow")
-	var monk_walk := OS.get_cmdline_user_args().has("--monk-walk")
+	var monk_grounding := OS.get_cmdline_user_args().has("--monk-grounding")
+	var monk_walk := OS.get_cmdline_user_args().has("--monk-walk") or monk_grounding
 	var monk_recovery := OS.get_cmdline_user_args().has("--monk-recovery")
 	var hunter_recovery := OS.get_cmdline_user_args().has("--hunter-recovery")
 	var bear_recovery := OS.get_cmdline_user_args().has("--bear-recovery")
@@ -50,13 +51,17 @@ func run() -> void:
 	if monk_walk:
 		backdrop.title_before = "BEFORE / 4 walk poses / 0.5x"
 		backdrop.title_after = "AFTER / 8-phase walk / 0.5x"
+	if monk_grounding:
+		backdrop.title_before = "BEFORE / extra body hop / 0.5x"
+		backdrop.title_after = "AFTER / planted paw / 0.5x"
 	root.add_child(backdrop)
 	var actors := []
 	for row in roles.size():
 		for column in 2:
 			var actor := Actor.new()
 			if recovery and column == 0: actor.motion_revision = 1
-			if monk_walk and column == 0: actor.motion_revision = 2
+			if monk_walk and not monk_grounding and column == 0: actor.motion_revision = 2
+			if monk_grounding and column == 0: actor.ground_drawn_walk = false
 			actor.setup_role(roles[row], "", [100, 1, 1])
 			actor.use_motion_frames = column == 1 or recovery or monk_walk
 			actor.show_status = false; actor.show_anchor = false
@@ -69,6 +74,7 @@ func run() -> void:
 	if herbal_only: output += "-herbal"
 	if sparrow_only: output += "-sparrow"
 	if monk_walk: output += "-monk-walk"
+	if monk_grounding: output += "-grounding"
 	if monk_recovery: output += "-monk-recovery"
 	if hunter_recovery: output += "-hunter-recovery"
 	if bear_recovery: output += "-bear-recovery"

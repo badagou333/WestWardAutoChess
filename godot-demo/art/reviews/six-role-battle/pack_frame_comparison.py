@@ -8,6 +8,7 @@ suffix = '-foxfire' if '--foxfire' in sys.argv else ''
 if '--herbal' in sys.argv: suffix = '-herbal'
 if '--sparrow' in sys.argv: suffix = '-sparrow'
 if '--monk-walk' in sys.argv: suffix = '-monk-walk'
+if '--monk-grounding' in sys.argv: suffix = '-monk-walk-grounding'
 if '--monk-recovery' in sys.argv: suffix = '-monk-recovery'
 if '--hunter-recovery' in sys.argv: suffix = '-hunter-recovery'
 if '--bear-recovery' in sys.argv: suffix = '-bear-recovery'
@@ -26,6 +27,7 @@ if suffix == '-bear-recovery': samples = [53,59,64,72]
 if suffix == '-herbal': samples = [35,44,53,60]
 if suffix == '-sparrow': samples = [34,40,46,51]
 if suffix == '-monk-walk': samples = [11,20,43,73]
+if suffix == '-monk-walk-grounding': samples = [11,20,43,73]
 for offset, sample in zip([(0,0),(width,0),(0,height),(width,height)], samples):
     contact.paste(frames[sample],offset)
 contact.save(ROOT/('frame-comparison'+suffix+'-contact.png'))
