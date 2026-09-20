@@ -30,6 +30,9 @@ var home_position := Vector2.ZERO
 var haste_time := 0.0
 var skill_casts := 0
 var portrait: Sprite2D
+var presentation
+const Presentation = preload("res://scripts/presentation/character_presentation.gd")
+const RoleVisuals = preload("res://scripts/presentation/role_visuals.gd")
 var idle_phase := 0.0
 
 const HERO_ATLAS = preload("res://art/demo/hero_atlas_keyed.png")
@@ -62,6 +65,13 @@ func setup(new_type: String, new_star := 1) -> void:
 	star = new_star
 	_apply_stats(true)
 	_create_portrait()
+	presentation = Presentation.new()
+	presentation.setup_visual(RoleVisuals.LEGACY_HEROES[unit_type])
+	presentation.show_anchor = false
+	presentation.show_status = false
+	presentation.z_index = -1
+	add_child(presentation)
+	portrait.hide()
 	queue_redraw()
 
 func _create_portrait() -> void:
@@ -81,6 +91,13 @@ func _create_portrait() -> void:
 	idle_phase = randf_range(0.0, TAU)
 
 func _process(delta: float) -> void:
+	if presentation != null:
+		var game = get_parent()
+		if game != null and game.get("battle_paused") == true:
+			return
+		var speed = game.get("battle_speed") if game != null else null
+		presentation.tick(delta * (float(speed) if speed != null else 1.0))
+		presentation.z_index = -1
 	idle_phase += delta * 1.8
 	if haste_time > 0.0:
 		haste_time = max(0.0, haste_time - delta)
@@ -88,6 +105,8 @@ func _process(delta: float) -> void:
 		portrait.position.y = -18.0 + sin(idle_phase) * 2.0
 
 func set_bench_mode(on_bench: bool) -> void:
+	if presentation != null:
+		presentation.scale = Vector2.ONE * (0.48 if on_bench else 1.0)
 	if not is_instance_valid(portrait):
 		return
 	var base_scale := 0.22 if on_bench else 0.30
@@ -131,6 +150,8 @@ func upgrade() -> void:
 	queue_redraw()
 
 func begin_battle() -> void:
+	if presentation != null:
+		presentation.reset_visual()
 	home_position = position
 	home_cell = Vector2i(board_row, board_col)
 	battle_cell = home_cell
@@ -146,6 +167,8 @@ func begin_battle() -> void:
 	queue_redraw()
 
 func end_battle() -> void:
+	if presentation != null:
+		presentation.reset_visual()
 	active_in_battle = false
 	battle_dead = false
 	health = max_health
@@ -164,6 +187,9 @@ func add_mana(amount: float) -> void:
 	queue_redraw()
 
 func play_attack() -> void:
+	if presentation != null:
+		presentation.play_attack()
+		return
 	if not is_instance_valid(portrait):
 		return
 	var rest_scale := portrait.scale
@@ -176,13 +202,18 @@ func take_damage(amount: float) -> bool:
 		return true
 	health = max(0.0, health - amount)
 	add_mana(amount * 0.3)
+	if presentation != null:
+		presentation.play_hit()
 	var tween := create_tween()
 	tween.tween_property(self, "modulate", Color(1.0, 0.45, 0.45), 0.06)
 	tween.tween_property(self, "modulate", Color.WHITE, 0.1)
 	if health <= 0.0:
 		battle_dead = true
 		active_in_battle = false
-		visible = false
+		if presentation != null:
+			presentation.play_retreat()
+		else:
+			visible = false
 	queue_redraw()
 	return battle_dead
 

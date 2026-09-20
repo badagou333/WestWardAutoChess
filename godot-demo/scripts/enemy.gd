@@ -16,6 +16,8 @@ var move_cooldown := 0.0
 var reward := 1
 var dead := false
 var portrait: Sprite2D
+var presentation
+const Presentation = preload("res://scripts/presentation/character_presentation.gd")
 var idle_phase := 0.0
 
 const ENEMY_ATLAS = preload("res://art/demo/enemy_atlas_keyed.png")
@@ -54,15 +56,35 @@ func setup(new_type: String) -> void:
 	portrait.scale = Vector2.ONE * data.scale
 	portrait.z_index = -1
 	add_child(portrait)
+	if enemy_type == "tiger":
+		presentation = Presentation.new()
+		presentation.setup_visual("bear_lord")
+		presentation.show_anchor = false
+		presentation.show_status = false
+		presentation.z_index = -1
+		add_child(presentation)
+		portrait.hide()
 	idle_phase = randf_range(0.0, TAU)
 	queue_redraw()
 
 func _process(delta: float) -> void:
+	if presentation != null:
+		var game = get_parent()
+		if game != null and game.get("battle_paused") == true:
+			return
+		var speed = game.get("battle_speed") if game != null else null
+		presentation.tick(delta * (float(speed) if speed != null else 1.0))
+		presentation.z_index = -1
+		if dead and presentation.visual_alpha <= 0:
+			queue_free()
 	idle_phase += delta * 2.4
 	if is_instance_valid(portrait) and not dead:
 		portrait.position.y = -18.0 - abs(sin(idle_phase)) * 2.0
 
 func play_attack() -> void:
+	if presentation != null:
+		presentation.play_attack()
+		return
 	if not is_instance_valid(portrait):
 		return
 	var rest_scale := portrait.scale
@@ -74,6 +96,8 @@ func take_damage(amount: float) -> void:
 	if dead:
 		return
 	health = max(0.0, health - amount)
+	if presentation != null:
+		presentation.play_hit()
 	var tween := create_tween()
 	tween.tween_property(self, "modulate", Color(1.7, 1.7, 1.7), 0.05)
 	tween.tween_property(self, "modulate", Color.WHITE, 0.08)
@@ -83,6 +107,9 @@ func take_damage(amount: float) -> void:
 	queue_redraw()
 
 func play_death() -> void:
+	if presentation != null:
+		presentation.play_retreat()
+		return
 	var tween := create_tween()
 	tween.set_parallel(true)
 	tween.tween_property(self, "scale", Vector2.ZERO, 0.22)

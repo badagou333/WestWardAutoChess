@@ -314,6 +314,8 @@ func _process_heroes(delta: float) -> void:
 			elif hero.cooldown <= 0.0:
 				hero.cooldown = hero.effective_interval()
 				hero.play_attack()
+				if hero.presentation != null:
+					hero.presentation.face(target.position - hero.position)
 				hero.add_mana(22.0)
 				target.take_damage(hero.damage)
 				_float_text(target.position + Vector2(0, -85), str(int(hero.damage)), Color("fff0b3"))
@@ -357,6 +359,8 @@ func _process_enemies(delta: float) -> void:
 			if enemy.attack_cooldown <= 0.0:
 				enemy.attack_cooldown = enemy.attack_interval
 				enemy.play_attack()
+				if enemy.presentation != null:
+					enemy.presentation.face(adjacent_hero.position - enemy.position)
 				adjacent_hero.take_damage(enemy.damage)
 				_float_text(adjacent_hero.position + Vector2(0, -85), "-%d" % int(enemy.damage), Color("ff7d78"))
 			continue
@@ -412,6 +416,10 @@ func _move_enemy_toward_center(enemy) -> void:
 		_tween_to_cell(enemy, best)
 
 func _tween_to_cell(node: Node2D, cell: Vector2i) -> void:
+	var visual = node.get("presentation")
+	if visual != null:
+		visual.face(_cell_center(cell) - node.position)
+		visual.move_to(Vector2.ZERO)
 	var tween := create_tween()
 	tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(node, "position", _cell_center(cell), 0.20 / battle_speed)
