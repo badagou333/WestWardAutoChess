@@ -17,23 +17,16 @@ const BENCH_SIZE := 8
 const BENCH_START := Vector2(790, 1000)
 const BENCH_STEP := 83.0
 const REFRESH_COST := 2
-const COMBAT_TIME_SCALE := 0.35
+const COMBAT_TIME_SCALE := 1.0
+const CombatEvents = preload("res://scripts/combat/attack_events.gd")
+const DemoUnits = preload("res://scripts/data/demo_units.gd")
 const LEVEL_COSTS := [10, 16, 24, 34, 48, 65, 85]
 const QUALITY_COLORS := {
 	"white": Color("e9e5db"), "green": Color("72d681"), "blue": Color("69b8ff"),
 	"purple": Color("bd82ff"), "gold": Color("ffd45f")
 }
 const QUALITY_NAMES := {"white": "白", "green": "绿", "blue": "蓝", "purple": "紫", "gold": "金"}
-const UNIT_POOLS := {
-	"white": ["rabbit", "crane"], "green": ["deer", "ox"], "blue": ["fox"],
-	"purple": ["fox"], "gold": ["fox"]
-}
-const WAVES := [
-	{"name": "灰鼠试探", "preview": "上方三路 · 灰鼠喽啰 ×3", "units": ["rat", "rat", "rat"], "entries": [Vector2i(0, 1), Vector2i(0, 3), Vector2i(0, 5)]},
-	{"name": "左右夹攻", "preview": "左右两翼 · 灰鼠 ×2 / 山猪 ×2", "units": ["rat", "boar", "rat", "boar"], "entries": [Vector2i(1, 0), Vector2i(1, 6), Vector2i(3, 0), Vector2i(3, 6)]},
-	{"name": "精英来袭", "preview": "四角包围 · 山猪 ×2 / 黑狼精英 ×2", "units": ["boar", "wolf", "boar", "wolf"], "entries": [Vector2i(0, 0), Vector2i(0, 6), Vector2i(4, 0), Vector2i(4, 6)]},
-	{"name": "虎先锋", "preview": "最终波 · 虎先锋 Boss / 灰鼠护卫", "units": ["rat", "tiger"], "entries": [Vector2i(0, 3), Vector2i(4, 3)]}
-]
+const WAVES = preload("res://scripts/data/demo_encounter.gd").WAVES
 
 var state := GameState.PREPARING
 var coins := 10
@@ -58,6 +51,13 @@ var spawn_cooldown := 0.0
 var battle_paused := false
 var battle_speed := 1.0
 var rng := RandomNumberGenerator.new()
+var combat
+var audio_feedback
+var moving: Array = []
+var retiring: Array = []
+var floating: Array = []
+var accumulator := 0.0
+var battle_elapsed := 0.0
 
 var coins_label: Label
 var population_label: Label
@@ -81,11 +81,26 @@ var replay_button: Button
 var background: TextureRect
 
 func _ready() -> void:
+	var font := SystemFont.new()
+	font.font_names = PackedStringArray(["Heiti SC", "Microsoft YaHei", "Noto Sans CJK SC", "Arial Unicode MS"])
+	ThemeDB.fallback_font = font
 	rng.seed = 20260825
+	audio_feedback = preload("res://scripts/presentation/audio_feedback.gd").new()
+	add_child(audio_feedback)
 	_create_background()
 	_create_interface()
 	_create_escort()
 	_initial_shop()
+	escort.set_process(false)
+	combat = CombatEvents.new()
+	combat.z_index = 1900
+	combat.resolved.connect(_apply_combat_event)
+	combat.released.connect(func(): audio_feedback.play_cue("release"))
+	add_child(combat)
+	# UI stays above the foot-sorted battlefield.
+	for child in get_children():
+		if child is Control and child != background:
+			child.z_index += 2000
 	_update_ui()
 	queue_redraw()
 
@@ -116,7 +131,7 @@ func _create_interface() -> void:
 	add_child(top_panel)
 
 	var title := _make_label(Vector2(28, 12), Vector2(310, 58), 30, Color("ffe294"), 31)
-	title.text = "西游护送 · 单战 Demo"
+	title.text = "西游护送 · 四波试玩"
 	coins_label = _make_label(Vector2(365, 17), Vector2(190, 50), 25, Color("ffe16e"), 31)
 	population_label = _make_label(Vector2(550, 17), Vector2(200, 50), 25, Color("cfeeb9"), 31)
 	escort_label = _make_label(Vector2(750, 17), Vector2(280, 50), 25, Color("ffa99c"), 31)
@@ -127,6 +142,23 @@ func _create_interface() -> void:
 	pause_button.pressed.connect(_toggle_pause)
 	speed_button = _make_button(Vector2(1627, 15), Vector2(112, 52), "1×", Color("607b55"), 32)
 	speed_button.pressed.connect(_toggle_speed)
+	var sound_button := _make_button(Vector2(1750,15),Vector2(140,52),"音效：开",Color("607b55"),32)
+	sound_button.pressed.connect(func():
+		audio_feedback.enabled = not audio_feedback.enabled
+		audio_feedback.stop_all()
+		sound_button.text = "音效：开" if audio_feedback.enabled else "音效：关"
+	)
+	var volume := HSlider.new()
+	volume.position = Vector2(1750,70)
+	volume.size = Vector2(140,15)
+	volume.min_value = 0
+	volume.max_value = 1
+	volume.step = 0.05
+	volume.value = 0.35
+	volume.z_index = 32
+	volume.tooltip_text = "音效音量"
+	volume.value_changed.connect(func(value): audio_feedback.level = value)
+	add_child(volume)
 
 	status_label = _make_label(Vector2(520, 92), Vector2(880, 58), 27, Color("fff2c8"), 20)
 	status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -210,6 +242,7 @@ func _make_label(pos: Vector2, label_size: Vector2, font_size: int, color: Color
 	label.position = pos
 	label.size = label_size
 	label.add_theme_font_size_override("font_size", font_size)
+	label.add_theme_font_override("font", ThemeDB.fallback_font)
 	label.add_theme_color_override("font_color", color)
 	label.z_index = layer
 	add_child(label)
@@ -228,6 +261,7 @@ func _make_button(pos: Vector2, button_size: Vector2, text_value: String, accent
 func _style_button(button: Button, accent: Color) -> void:
 	button.focus_mode = Control.FOCUS_NONE
 	button.add_theme_font_size_override("font_size", 20)
+	button.add_theme_font_override("font", ThemeDB.fallback_font)
 	button.add_theme_color_override("font_color", Color("fff4d5"))
 	button.add_theme_color_override("font_hover_color", Color.WHITE)
 	button.add_theme_color_override("font_disabled_color", Color(0.72, 0.68, 0.59, 0.5))
@@ -251,16 +285,63 @@ func _button_box(color: Color, border: Color) -> StyleBoxFlat:
 	return box
 
 func _initial_shop() -> void:
-	shop_types.assign(["rabbit", "rabbit", "rabbit", "crane", "ox"])
+	shop_types.assign(DemoUnits.SHOP)
 
 func _process(delta: float) -> void:
-	if state == GameState.BATTLE_RUNNING and not battle_paused:
-		var wave_delta := delta * battle_speed
-		var combat_delta := wave_delta * COMBAT_TIME_SCALE
-		_process_wave(wave_delta)
-		_process_heroes(combat_delta)
-		_process_enemies(combat_delta)
+	step(delta)
 	_update_ui()
+
+func step(delta: float) -> void:
+	if battle_paused: return
+	accumulator += delta * battle_speed
+	# Fixed clock preserves all elapsed time; no min(delta, 0.05) time loss.
+	while accumulator + 0.00000001 >= 1.0 / 120.0:
+		accumulator -= 1.0 / 120.0
+		_tick(1.0 / 120.0)
+
+func _tick(delta: float) -> void:
+	for hero in heroes: hero.tick_visual(delta)
+	for enemy in enemies + retiring:
+		if is_instance_valid(enemy): enemy.tick_visual(delta)
+	retiring = retiring.filter(func(node): return is_instance_valid(node) and not node.is_queued_for_deletion())
+	escort._process(delta)
+	for move in moving.duplicate():
+		if not CombatEvents.alive(move.node):
+			moving.erase(move)
+			continue
+		move.time += delta
+		move.node.position = move.from.lerp(move.to,smoothstep(0,1,minf(1,move.time/move.duration)))
+		if move.time + 0.00000001 >= move.duration:
+			move.node.position = move.to
+			moving.erase(move)
+	for hero in heroes:
+		if hero.board_row >= 0: hero.z_index = int(hero.position.y + 35)
+		else: hero.z_index = 2030
+	for enemy in enemies:
+		enemy.z_index = int(enemy.position.y + 35)
+	escort.z_index = int(escort.position.y + 35)
+	if state == GameState.BATTLE_RUNNING:
+		battle_elapsed += delta
+		combat.tick(delta)
+		if escort.dead:
+			_finish_battle(false)
+		else:
+			_process_wave(delta)
+			if state == GameState.BATTLE_RUNNING:
+				_process_heroes(delta)
+				_process_enemies(delta)
+	for item in floating.duplicate():
+		item.time += delta
+		item.label.position.y = item.y - item.time * 60
+		item.label.modulate.a = maxf(0,1-item.time/0.7)
+		if item.time >= 0.7:
+			item.label.queue_free()
+			floating.erase(item)
+
+func _is_moving(node) -> bool:
+	for move in moving:
+		if move.node == node: return true
+	return false
 
 func _process_wave(delta: float) -> void:
 	if intermission > 0.0:
@@ -298,82 +379,62 @@ func _spawn_enemy(enemy_type: String, cell: Vector2i) -> void:
 	enemies.append(enemy)
 
 func _process_heroes(delta: float) -> void:
-	for hero in heroes.duplicate():
-		if not is_instance_valid(hero) or not hero.active_in_battle or hero.battle_dead:
-			continue
-		hero.cooldown = max(0.0, hero.cooldown - delta)
-		hero.move_cooldown = max(0.0, hero.move_cooldown - delta)
-		hero.add_mana(delta * 4.0)
-		var target = _nearest_enemy_to_cell(hero.battle_cell)
-		if target == null:
-			continue
-		var distance := _cell_distance(hero.battle_cell, target.battle_cell)
-		if distance <= hero.attack_range_cells:
-			if hero.mana >= hero.max_mana:
-				_cast_skill(hero, target)
-			elif hero.cooldown <= 0.0:
+	for hero in heroes:
+		if not hero.active_in_battle or hero.battle_dead: continue
+		hero.cooldown = maxf(0,hero.cooldown-delta)
+		hero.move_cooldown = maxf(0,hero.move_cooldown-delta)
+		if _is_moving(hero) or hero.presentation.pose == "basic_attack": continue
+		var healing: bool = hero.unit_type == "herbal_spirit_child"
+		var target = _healing_target(hero) if healing else _nearest_enemy_to_cell(hero.battle_cell)
+		if target == null: continue
+		var cell: Vector2i = CENTER_CELL if target == escort else target.battle_cell
+		if _cell_distance(hero.battle_cell,cell) <= hero.attack_range_cells:
+			if hero.cooldown <= 0:
 				hero.cooldown = hero.effective_interval()
-				hero.play_attack()
-				if hero.presentation != null:
-					hero.presentation.face(target.position - hero.position)
-				hero.add_mana(22.0)
-				target.take_damage(hero.damage)
-				_float_text(target.position + Vector2(0, -85), str(int(hero.damage)), Color("fff0b3"))
-		elif hero.move_cooldown <= 0.0:
-			_move_hero_toward(hero, target.battle_cell)
+				combat.request(hero,target,healing,hero.unit_type == "foxfire_imp")
+		elif hero.move_cooldown <= 0:
+			_move_hero_toward(hero,cell)
 
-func _cast_skill(hero, target) -> void:
-	hero.mana = 0.0
-	hero.cooldown = max(0.25, hero.effective_interval() * 0.45)
-	hero.skill_casts += 1
-	hero.play_attack()
-	var power := 2.0 + 0.25 * float(hero.star - 1)
-	match hero.unit_type:
-		"crane":
-			for enemy in enemies.duplicate():
-				if is_instance_valid(enemy) and not enemy.dead and _cell_distance(target.battle_cell, enemy.battle_cell) <= 1:
-					enemy.take_damage(hero.damage * power)
-		"ox":
-			for ally in heroes:
-				if is_instance_valid(ally) and ally.active_in_battle:
-					ally.heal(hero.max_health * 0.12)
-			for enemy in enemies.duplicate():
-				if is_instance_valid(enemy) and not enemy.dead and _cell_distance(hero.battle_cell, enemy.battle_cell) <= 1:
-					enemy.take_damage(hero.damage * 1.7)
-		"fox":
-			for enemy in enemies.duplicate():
-				if is_instance_valid(enemy) and not enemy.dead:
-					enemy.take_damage(hero.damage * (1.15 if hero.star < 3 else 1.65))
-		"rabbit", "deer":
-			target.take_damage(hero.damage * power)
-	_float_text(hero.position + Vector2(0, -100), hero.skill_data().skill1, QUALITY_COLORS[hero.quality])
+func _healing_target(_hero):
+	var result = null
+	var ratio := 1.0
+	for ally in heroes + [escort]:
+		if not CombatEvents.alive(ally): continue
+		if ally != escort and not ally.active_in_battle: continue
+		var current: float = ally.health / ally.max_health
+		if current < ratio:
+			ratio = current
+			result = ally
+	return result
+
+func _apply_combat_event(target, amount: float, healing: bool, event: Dictionary) -> void:
+	audio_feedback.play_cue("heal" if healing else "hit")
+	if healing:
+		target.heal(amount)
+		_float_text(target.position+Vector2(0,-130),"+%d" % int(amount),Color("75eba3"))
+	else:
+		var targets: Array = [target]
+		if event.splash:
+			for enemy in enemies:
+				if enemy != target and CombatEvents.alive(enemy) and _cell_distance(target.battle_cell,enemy.battle_cell) <= 1:
+					targets.append(enemy)
+		for recipient in targets:
+			recipient.take_damage(amount)
+			_float_text(recipient.position+Vector2(0,-130),str(int(amount)),Color("ffd28a"))
 
 func _process_enemies(delta: float) -> void:
 	for enemy in enemies.duplicate():
-		if not is_instance_valid(enemy) or enemy.dead:
-			continue
-		enemy.attack_cooldown = max(0.0, enemy.attack_cooldown - delta)
-		enemy.move_cooldown = max(0.0, enemy.move_cooldown - delta)
-		var adjacent_hero = _adjacent_blocking_hero(enemy.battle_cell)
-		if adjacent_hero != null:
-			if enemy.attack_cooldown <= 0.0:
+		if enemy.dead: continue
+		enemy.attack_cooldown = maxf(0,enemy.attack_cooldown-delta)
+		enemy.move_cooldown = maxf(0,enemy.move_cooldown-delta)
+		if _is_moving(enemy) or (enemy.presentation != null and enemy.presentation.pose == "basic_attack"): continue
+		var target = _adjacent_blocking_hero(enemy.battle_cell)
+		if target == null and _cell_distance(enemy.battle_cell,CENTER_CELL) <= 1: target = escort
+		if target != null:
+			if enemy.attack_cooldown <= 0:
 				enemy.attack_cooldown = enemy.attack_interval
-				enemy.play_attack()
-				if enemy.presentation != null:
-					enemy.presentation.face(adjacent_hero.position - enemy.position)
-				adjacent_hero.take_damage(enemy.damage)
-				_float_text(adjacent_hero.position + Vector2(0, -85), "-%d" % int(enemy.damage), Color("ff7d78"))
-			continue
-		if _cell_distance(enemy.battle_cell, CENTER_CELL) <= 1:
-			if enemy.attack_cooldown <= 0.0:
-				enemy.attack_cooldown = enemy.attack_interval
-				enemy.play_attack()
-				if escort.take_damage(enemy.damage):
-					_finish_battle(false)
-					return
-				_float_text(escort.position + Vector2(0, -95), "-%d" % int(enemy.damage), Color("ff6e68"))
-			continue
-		if enemy.move_cooldown <= 0.0:
+				combat.request(enemy,target)
+		elif enemy.move_cooldown <= 0:
 			_move_enemy_toward_center(enemy)
 
 func _move_hero_toward(hero, target: Vector2i) -> void:
@@ -417,18 +478,20 @@ func _move_enemy_toward_center(enemy) -> void:
 
 func _tween_to_cell(node: Node2D, cell: Vector2i) -> void:
 	var visual = node.get("presentation")
+	var duration: float = node.move_interval
 	if visual != null:
-		visual.face(_cell_center(cell) - node.position)
+		visual.face(_cell_center(cell)-node.position)
 		visual.move_to(Vector2.ZERO)
-	var tween := create_tween()
-	tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(node, "position", _cell_center(cell), 0.20 / battle_speed)
+		duration = visual.motion.walk
+	moving.append({"node":node,"from":node.position,"to":_cell_center(cell),"time":0.0,"duration":duration})
 
 func _on_enemy_defeated(enemy) -> void:
 	if enemy in enemies:
 		enemies.erase(enemy)
 		pending_loot += enemy.reward
 		_float_text(enemy.position + Vector2(0, -110), "+%d 战利品" % enemy.reward, Color("ffe36d"))
+		retiring.append(enemy)
+		audio_feedback.play_cue("retreat")
 		enemy.play_death()
 
 func _nearest_enemy_to_cell(cell: Vector2i):
@@ -463,6 +526,10 @@ func _start_battle() -> void:
 		status_label.text = "请至少部署一名队员再开始"
 		return
 	state = GameState.BATTLE_RUNNING
+	combat.clear(true)
+	moving.clear()
+	accumulator = 0.0
+	battle_elapsed = 0.0
 	pending_loot = 0
 	wave_index = 0
 	intermission = 3.0
@@ -479,6 +546,8 @@ func _finish_battle(victory: bool) -> void:
 	if state != GameState.BATTLE_RUNNING:
 		return
 	state = GameState.RESULT
+	combat.clear()
+	moving.clear()
 	battle_paused = false
 	for enemy in enemies.duplicate():
 		if is_instance_valid(enemy):
@@ -486,20 +555,30 @@ func _finish_battle(victory: bool) -> void:
 	enemies.clear()
 	var percent: float = escort.health / escort.max_health
 	if victory:
+		audio_feedback.play_cue("victory")
 		var stars := 3 if percent >= 0.999 else (2 if percent >= 0.5 else 1)
 		var multiplier := 1.0 if stars == 3 else (0.9 if stars == 2 else 0.8)
 		var payout := int(ceil(float(pending_loot) * multiplier))
 		coins += payout
 		var star_text := "★".repeat(stars) + "☆".repeat(3 - stars)
-		result_label.text = "%s\n\n护送成功 · 唐僧剩余生命 %d%%\n击杀战利品：%d\n星级结算倍率：%d%%\n本关获得金币：%d\n\n击败虎先锋：已记录解锁\n（正式章节中将从下一难起进入商店）" % [star_text, int(round(percent * 100.0)), pending_loot, int(multiplier * 100.0), payout]
+		result_label.text = "%s\n\n护送成功 · 唐僧剩余生命 %d%%\n击杀战利品：%d\n星级结算倍率：%d%%\n本关获得金币：%d\n\n击败熊山君 · 单场试玩完成\n（章节解锁与存档后续接入）" % [star_text, int(round(percent * 100.0)), pending_loot, int(multiplier * 100.0), payout]
 	else:
 		result_label.text = "护送失败\n\n唐僧生命归零\n本次战利品不结算\n\n调整阵型、招募或合成英雄后再试一次"
 	overlay.visible = true
 
 func _restart_demo() -> void:
-	for enemy in enemies.duplicate():
-		if is_instance_valid(enemy):
-			enemy.queue_free()
+	audio_feedback.stop_all()
+	combat.clear(true)
+	moving.clear()
+	for item in floating: item.label.queue_free()
+	floating.clear()
+	for enemy in enemies + retiring:
+		if is_instance_valid(enemy): enemy.queue_free()
+	retiring.clear()
+	battle_paused = false
+	battle_speed = 1.0
+	accumulator = 0.0
+	battle_elapsed = 0.0
 	for hero in heroes.duplicate():
 		if is_instance_valid(hero):
 			hero.queue_free()
@@ -521,7 +600,7 @@ func _restart_demo() -> void:
 	queue_redraw()
 
 func _on_shop_pressed(index: int) -> void:
-	if state != GameState.PREPARING or index >= shop_types.size():
+	if state != GameState.PREPARING or index < 0 or index >= shop_types.size():
 		return
 	var unit_type := shop_types[index]
 	if unit_type.is_empty():
@@ -537,6 +616,7 @@ func _on_shop_pressed(index: int) -> void:
 		status_label.text = "候选区已满"
 		return
 	coins -= cost
+	audio_feedback.play_cue("ui")
 	var hero = HeroScene.new()
 	hero.setup(unit_type)
 	hero.bench_slot = slot
@@ -545,7 +625,7 @@ func _on_shop_pressed(index: int) -> void:
 	hero.position = _bench_position(slot)
 	hero.home_position = hero.position
 	hero.set_bench_mode(true)
-	hero.z_index = 35
+	hero.z_index = 1500
 	add_child(hero)
 	heroes.append(hero)
 	shop_types[index] = ""
@@ -588,16 +668,7 @@ func _on_refresh_pressed() -> void:
 		shop_types.append(_roll_shop_unit())
 
 func _roll_shop_unit() -> String:
-	var roll := rng.randi_range(1, 100)
-	var quality := "white"
-	if population <= 3:
-		quality = "white" if roll <= 55 else ("green" if roll <= 85 else "blue")
-	elif population <= 5:
-		quality = "white" if roll <= 38 else ("green" if roll <= 72 else ("blue" if roll <= 94 else "purple"))
-	else:
-		quality = "white" if roll <= 20 else ("green" if roll <= 50 else ("blue" if roll <= 78 else ("purple" if roll <= 95 else "gold")))
-	var pool: Array = UNIT_POOLS[quality]
-	return pool[rng.randi_range(0, pool.size() - 1)]
+	return DemoUnits.SHOP[rng.randi_range(0,DemoUnits.SHOP.size()-1)]
 
 func _on_level_pressed() -> void:
 	if state != GameState.PREPARING or population >= max_population:
@@ -634,6 +705,7 @@ func _toggle_pause() -> void:
 	if state != GameState.BATTLE_RUNNING:
 		return
 	battle_paused = not battle_paused
+	audio_feedback.set_paused(battle_paused)
 
 func _toggle_speed() -> void:
 	if state != GameState.BATTLE_RUNNING:
@@ -702,6 +774,8 @@ func _end_pointer_action(pos: Vector2) -> void:
 	queue_redraw()
 
 func _place_hero_on_board(hero, cell: Vector2i) -> void:
+	if state != GameState.PREPARING or not _valid_cell(cell) or cell == CENTER_CELL:
+		return
 	var occupant = _hero_at_cell(cell, hero)
 	if occupant != null:
 		var origin_row: int = hero.board_row
@@ -777,10 +851,13 @@ func _clear_selection() -> void:
 
 func _hero_at_position(pos: Vector2):
 	var result = null
-	var best := 60.0
+	var best := INF
 	for hero in heroes:
-		if is_instance_valid(hero) and hero.visible:
-			var distance: float = hero.position.distance_to(pos)
+		if is_instance_valid(hero) and hero.visible and not hero.battle_dead:
+			var on_board: bool = hero.board_row >= 0
+			var bounds := Rect2(hero.position + Vector2(-48,-145),Vector2(96,195)) if on_board else Rect2(hero.position + Vector2(-38,-75),Vector2(76,110))
+			if not bounds.has_point(pos): continue
+			var distance: float = (hero.position+Vector2(0,-50 if on_board else -25)).distance_to(pos)
 			if distance < best:
 				best = distance
 				result = hero
@@ -866,19 +943,16 @@ func _navigation_distance(start: Vector2i, goal: Vector2i) -> int:
 func _float_text(pos: Vector2, content: String, color: Color) -> void:
 	var label := Label.new()
 	label.text = content
+	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	label.position = pos - Vector2(100, 20)
 	label.size = Vector2(200, 40)
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.add_theme_font_size_override("font_size", 19)
 	label.add_theme_color_override("font_color", color)
 	label.add_theme_color_override("font_shadow_color", Color(0.05, 0.02, 0.01, 0.9))
-	label.z_index = 70
+	label.z_index = 1950
 	add_child(label)
-	var tween := create_tween()
-	tween.set_parallel(true)
-	tween.tween_property(label, "position:y", label.position.y - 42, 0.7)
-	tween.tween_property(label, "modulate:a", 0.0, 0.7)
-	tween.chain().tween_callback(label.queue_free)
+	floating.append({"label":label,"time":0.0,"y":label.position.y})
 
 func _update_ui() -> void:
 	coins_label.text = "金币  %d" % coins
@@ -935,8 +1009,8 @@ func _update_ui() -> void:
 		var hero = selected_hero
 		var data: Dictionary = hero.skill_data()
 		var location := "上场" if hero.board_row >= 0 else "候选区"
-		var skill2: String = data.skill2 if hero.star >= 2 else "二星解锁：%s" % data.skill2
-		var skill3: String = data.skill3 if hero.star >= 3 else "三星解锁：%s" % data.skill3
+		var skill2: String = data.skill2
+		var skill3: String = data.skill3
 		info_label.text = "%s  %s\n%s品质 · %d星 · %s\n\n生命  %d    攻击  %d\n攻击距离  %d格\n\n技能：%s\n%s\n%s" % ["★".repeat(hero.star), hero.display_name, QUALITY_NAMES[hero.quality], hero.star, location, int(hero.max_health), int(hero.damage), hero.attack_range_cells, data.skill1, skill2, skill3]
 		var copies := int(pow(3, hero.star - 1))
 		var raw_value: int = hero.cost * copies
@@ -944,7 +1018,7 @@ func _update_ui() -> void:
 		sell_button.text = "出售：返还 %d 金币" % refund
 		lock_button.text = "合成锁定：%s" % ("开" if hero.merge_locked else "关")
 	else:
-		info_label.text = "选择一名队员查看详情\n\n自动战斗规则\n敌人进攻唐僧\n队员最多追击2格\n满能量自动释放技能\n击杀金币战后再结算"
+		info_label.text = "选择一名队员查看详情\n\n自动战斗规则\n敌人进攻唐僧\n队员最多追击2格\n最小技能试玩\n击杀金币战后再结算"
 
 func _draw() -> void:
 	if state == GameState.PREPARING:

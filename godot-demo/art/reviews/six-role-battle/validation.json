@@ -3,7 +3,7 @@
 		"bear_lord": {
 			"basic_attack": 18,
 			"hit": 8,
-			"idle": 19,
+			"idle": 20,
 			"move": 0,
 			"retreat": 1
 		},

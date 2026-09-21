@@ -30,6 +30,12 @@ func _ready() -> void:
 	escort.process_mode = Node.PROCESS_MODE_PAUSABLE
 	escort.z_index = int(escort.position.y + 35)
 	_create_review_ui()
+	combat = CombatEvents.new()
+	combat.z_index = 2000
+	combat.resolved.connect(func(target, amount, healing, _event): apply_hit(target, amount, healing))
+	add_child(combat)
+	strikes = combat.strikes
+	missiles = combat.missiles
 	reset_trial()
 
 func _create_review_ui() -> void:
@@ -85,6 +91,8 @@ func reset_trial() -> void:
 	for actor in actors: actor.queue_free()
 	actors.clear(); heroes.clear(); enemies.clear(); strikes.clear(); missiles.clear(); marks.clear()
 	counts = {"attacks": 0, "projectiles": 0, "hits": 0, "heals": 0, "cancelled": 0}
+	combat.counts = counts
+	combat.clear()
 	elapsed = 0; result_delay = -1
 	escort.reset()
 	state = GameState.BATTLE_RUNNING
@@ -175,46 +183,21 @@ func _process_enemies(delta: float) -> void:
 			_move_enemy_toward_center(enemy)
 
 func queue_attack(actor, target, healing: bool) -> void:
-	actor.face(target.position); actor.play_attack(); counts.attacks += 1
-	strikes.append({"source": actor, "target": target, "serial": actor.attack_serial, "healing": healing, "amount": actor.damage})
+	combat.request(actor,target,healing)
 
 func _target_alive(target) -> bool:
 	return is_instance_valid(target) and not target.dead
 
 func _resolve_strikes(delta: float) -> void:
-	for missile in missiles.duplicate():
-		if not _target_alive(missile.target):
-			missiles.erase(missile); counts.cancelled += 1; continue
-		missile.time += delta
-		var aim: Vector2 = missile.target.position + Vector2(0, -35)
-		missile.position = missile.from.lerp(aim, minf(1, missile.time / 0.25))
-		if missile.time >= 0.25:
-			apply_hit(missile.target, missile.amount, missile.healing)
-			missiles.erase(missile)
-
-	for strike in strikes.duplicate():
-		if not _target_alive(strike.source) or not _target_alive(strike.target) or strike.source.attack_serial != strike.serial or strike.source.pose != "basic_attack":
-			strikes.erase(strike); counts.cancelled += 1; continue
-		if strike.source.pose_time < strike.source.impact_delay(): continue
-		strikes.erase(strike)
-		var action: Dictionary = strike.source.manifest.actions.basic_attack
-		if action.has("spawn_vfx"):
-			var from: Vector2 = strike.source.emission_position()
-			missiles.append({"target": strike.target, "from": from, "position": from, "time": 0.0, "healing": strike.healing, "amount": strike.amount, "texture": strike.source.effects[action.spawn_vfx]})
-			counts.projectiles += 1
-		else:
-			apply_hit(strike.target, strike.amount, strike.healing)
-			strike.source.impact_stop = 0.035
+	combat.tick(delta)
 
 func apply_hit(target, amount: float, healing: bool) -> void:
 	if not _target_alive(target): return
 	if healing:
 		target.heal(amount) if target != escort else _heal_escort(amount)
-		counts.heals += 1
 	else:
-		target.take_damage(amount); counts.hits += 1
+		target.take_damage(amount)
 		if target != escort: target.impact_stop = 0.025
-	marks.append({"position": target.position + Vector2(0, -35), "time": 0.20, "healing": healing})
 
 func _heal_escort(amount: float) -> void:
 	escort.health = minf(escort.max_health, escort.health + amount); escort.queue_redraw()
@@ -270,20 +253,3 @@ func _draw() -> void:
 		for col in range(COLS):
 			draw_rect(Rect2(BOARD_ORIGIN + Vector2(col * CELL_SIZE.x, row * CELL_SIZE.y), CELL_SIZE).grow(-3), Color(0.16, 0.26, 0.26, 0.16), false, 2)
 	# Projectiles are redrawn by a dedicated foreground canvas node below.
-
-func _enter_tree() -> void:
-	var foreground := Node2D.new()
-	foreground.z_index = 2000
-	foreground.draw.connect(func():
-		for missile in missiles:
-			var texture: Texture2D = missile.texture
-			var heading: Vector2 = missile.target.position + Vector2(0, -35) - missile.from
-			foreground.draw_set_transform(missile.position, heading.angle())
-			foreground.draw_texture(texture, -Vector2(texture.get_size()) / 2)
-		foreground.draw_set_transform(Vector2.ZERO)
-		for mark in marks:
-			foreground.draw_arc(mark.position, 15 + (0.2 - mark.time) * 30, 0, TAU, 24, Color("75eba3") if mark.healing else Color("ffd28a"), 2)
-	)
-	add_child(foreground)
-	foreground.set_process(true)
-	foreground.ready.connect(func(): get_tree().process_frame.connect(foreground.queue_redraw))

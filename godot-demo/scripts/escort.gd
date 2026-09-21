@@ -6,6 +6,7 @@ var health := 300.0
 var dead := false
 var portrait: Sprite2D
 var pulse := 0.0
+var hit_time := 0.0
 
 const HERO_ATLAS = preload("res://art/demo/hero_atlas_keyed.png")
 
@@ -25,6 +26,8 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	pulse += delta
+	hit_time = maxf(0,hit_time-delta)
+	modulate = Color(1.0,0.45,0.45) if hit_time > 0 else Color.WHITE
 	if is_instance_valid(portrait):
 		portrait.position.y = -19.0 + sin(pulse * 1.7) * 1.5
 	queue_redraw()
@@ -39,13 +42,16 @@ func take_damage(amount: float) -> bool:
 	if dead:
 		return true
 	health = max(0.0, health - amount)
-	var tween := create_tween()
-	tween.tween_property(self, "modulate", Color(1.0, 0.45, 0.45), 0.06)
-	tween.tween_property(self, "modulate", Color.WHITE, 0.12)
+	hit_time = 0.16
 	if health <= 0.0:
 		dead = true
 	queue_redraw()
 	return dead
+
+func heal(amount: float) -> void:
+	if not dead:
+		health = minf(max_health, health + amount)
+		queue_redraw()
 
 func _draw() -> void:
 	var glow := 48.0 + sin(pulse * 2.0) * 3.0
