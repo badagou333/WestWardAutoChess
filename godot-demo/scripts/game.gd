@@ -315,10 +315,10 @@ func _tick(delta: float) -> void:
 			move.node.position = move.to
 			moving.erase(move)
 	for hero in heroes:
-		if hero.board_row >= 0: hero.z_index = int(hero.position.y + 35)
+		if hero.board_row >= 0: hero.z_index = int(hero.position.y)
 		else: hero.z_index = 2030
 	for enemy in enemies:
-		enemy.z_index = int(enemy.position.y + 35)
+		enemy.z_index = int(enemy.position.y)
 	escort.z_index = int(escort.position.y + 35)
 	if state == GameState.BATTLE_RUNNING:
 		battle_elapsed += delta
@@ -385,7 +385,7 @@ func _process_heroes(delta: float) -> void:
 		hero.move_cooldown = maxf(0,hero.move_cooldown-delta)
 		if _is_moving(hero) or hero.presentation.pose == "basic_attack": continue
 		var healing: bool = hero.unit_type == "herbal_spirit_child"
-		var target = _healing_target(hero) if healing else _nearest_enemy_to_cell(hero.battle_cell)
+		var target = _healing_target(hero) if healing else _reachable_enemy(hero)
 		if target == null: continue
 		var cell: Vector2i = CENTER_CELL if target == escort else target.battle_cell
 		if _cell_distance(hero.battle_cell,cell) <= hero.attack_range_cells:
@@ -402,6 +402,8 @@ func _healing_target(_hero):
 		if not CombatEvents.alive(ally): continue
 		if ally != escort and not ally.active_in_battle: continue
 		var current: float = ally.health / ally.max_health
+		var target_cell: Vector2i = CENTER_CELL if ally == escort else ally.battle_cell
+		if _combat_path(_hero, target_cell, _hero.attack_range_cells, true).is_empty(): continue
 		if current < ratio:
 			ratio = current
 			result = ally
@@ -437,44 +439,61 @@ func _process_enemies(delta: float) -> void:
 		elif enemy.move_cooldown <= 0:
 			_move_enemy_toward_center(enemy)
 
+# Paths end at a free attack/healing position, never on the target.
+# Both ends of an in-flight move are reserved until the actor arrives.
+func _cell_blocked(cell: Vector2i, mover) -> bool:
+	if _hero_at_cell(cell, mover) != null: return true
+	var enemy = _enemy_at_cell(cell)
+	if enemy != null and enemy != mover: return true
+	for move in moving:
+		if move.node != mover and _screen_to_cell(move.from) == cell: return true
+	return false
+
+func _combat_path(mover, target: Vector2i, reach: int, limited: bool) -> Array[Vector2i]:
+	var start: Vector2i = mover.battle_cell
+	var frontier: Array[Vector2i] = [start]
+	var parents := {start: start}
+	while not frontier.is_empty():
+		var cell: Vector2i = frontier.pop_front()
+		if _cell_distance(cell, target) <= reach:
+			var path: Array[Vector2i] = [cell]
+			while cell != start:
+				cell = parents[cell]
+				path.push_front(cell)
+			return path
+		for direction in [Vector2i(0,1),Vector2i(-1,0),Vector2i(1,0),Vector2i(0,-1)]:
+			var next: Vector2i = cell + direction
+			if not _valid_cell(next) or next == CENTER_CELL or parents.has(next): continue
+			if limited and _cell_distance(next, mover.home_cell) > 2: continue
+			if _cell_blocked(next, mover): continue
+			parents[next] = cell
+			frontier.append(next)
+	return []
+
+func _reachable_enemy(hero):
+	var result = null
+	var best := 999
+	for enemy in enemies:
+		if not CombatEvents.alive(enemy): continue
+		var path := _combat_path(hero, enemy.battle_cell, hero.attack_range_cells, true)
+		if not path.is_empty() and path.size() < best:
+			result = enemy
+			best = path.size()
+	return result
+
 func _move_hero_toward(hero, target: Vector2i) -> void:
-	var best: Vector2i = hero.battle_cell
-	var best_distance := _navigation_distance(hero.battle_cell, target)
-	for direction in [Vector2i(0, 1), Vector2i(-1, 0), Vector2i(1, 0), Vector2i(0, -1)]:
-		var candidate: Vector2i = hero.battle_cell + direction
-		if not _valid_cell(candidate) or candidate == CENTER_CELL:
-			continue
-		if _cell_distance(candidate, hero.home_cell) > 2:
-			continue
-		if _hero_at_cell(candidate) != null or _enemy_at_cell(candidate) != null:
-			continue
-		var dist := _navigation_distance(candidate, target)
-		if dist < best_distance:
-			best = candidate
-			best_distance = dist
-	if best != hero.battle_cell:
-		hero.battle_cell = best
+	var path := _combat_path(hero, target, hero.attack_range_cells, true)
+	if path.size() > 1:
+		hero.battle_cell = path[1]
 		hero.move_cooldown = hero.move_interval
-		_tween_to_cell(hero, best)
+		_tween_to_cell(hero, path[1])
 
 func _move_enemy_toward_center(enemy) -> void:
-	var best: Vector2i = enemy.battle_cell
-	var best_distance := _cell_distance(best, CENTER_CELL)
-	for direction in [Vector2i(0, 1), Vector2i(0, -1), Vector2i(1, 0), Vector2i(-1, 0)]:
-		var candidate: Vector2i = enemy.battle_cell + direction
-		if not _valid_cell(candidate) or candidate == CENTER_CELL:
-			continue
-		if _enemy_at_cell(candidate) != null or _hero_at_cell(candidate) != null:
-			continue
-		var dist := _cell_distance(candidate, CENTER_CELL)
-		if dist < best_distance:
-			best = candidate
-			best_distance = dist
-	if best != enemy.battle_cell:
-		enemy.battle_cell = best
+	var path := _combat_path(enemy, CENTER_CELL, 1, false)
+	if path.size() > 1:
+		enemy.battle_cell = path[1]
 		enemy.move_cooldown = enemy.move_interval
-		enemy.z_index = 8 + best.x
-		_tween_to_cell(enemy, best)
+		_tween_to_cell(enemy, path[1])
 
 func _tween_to_cell(node: Node2D, cell: Vector2i) -> void:
 	var visual = node.get("presentation")
@@ -855,7 +874,7 @@ func _hero_at_position(pos: Vector2):
 	for hero in heroes:
 		if is_instance_valid(hero) and hero.visible and not hero.battle_dead:
 			var on_board: bool = hero.board_row >= 0
-			var bounds := Rect2(hero.position + Vector2(-48,-145),Vector2(96,195)) if on_board else Rect2(hero.position + Vector2(-38,-75),Vector2(76,110))
+			var bounds := Rect2(hero.position + Vector2(-48,-180),Vector2(96,205)) if on_board else Rect2(hero.position + Vector2(-38,-75),Vector2(76,110))
 			if not bounds.has_point(pos): continue
 			var distance: float = (hero.position+Vector2(0,-50 if on_board else -25)).distance_to(pos)
 			if distance < best:

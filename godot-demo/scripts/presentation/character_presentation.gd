@@ -2,6 +2,8 @@ extends Node2D
 
 
 const FOOT := Vector2(0, 35)
+# Review scenes retain their legacy origin; main-board actors opt into a foot origin.
+var foot_anchor := FOOT
 const Motion = preload("res://scripts/presentation/motion.gd")
 var motion: Dictionary
 static var texture_cache := {}
@@ -127,7 +129,7 @@ func emission_position() -> Vector2:
 		return position + visual_transform() * motion_effect_socket()
 	var action: Dictionary = manifest.actions.basic_attack
 	if not action.has("spawn_vfx"):
-		return position + FOOT + Vector2(36 * facing, -70)
+		return position + foot_anchor + Vector2(36 * facing, -70)
 	var center: Array = manifest.standalone_vfx[action.spawn_vfx].aligned_center_trial
 	return position + visual_transform() * Vector2(float(center[0]) - 128, float(center[1]) - 218)
 
@@ -153,7 +155,7 @@ func tick(delta: float) -> void:
 		if move_left == 0:
 			landing = 0.12
 	update_frame()
-	z_index = int(round(position.y + FOOT.y))
+	z_index = int(round(position.y + foot_anchor.y))
 	queue_redraw()
 
 func update_frame() -> void:
@@ -243,7 +245,7 @@ func visual_transform() -> Transform2D:
 		offset.x -= facing * sin(hit_pulse / 0.14 * PI) * 2
 	# Facing is a gameplay direction; source orientation only affects drawing.
 	var source_sign := -1.0 if manifest.get("source_facing", "right") == "left" else 1.0
-	var result := Transform2D(angle, stretch * Vector2(facing * source_sign, 1), 0, FOOT + offset)
+	var result := Transform2D(angle, stretch * Vector2(facing * source_sign, 1), 0, foot_anchor + offset)
 	# Drawn planted paws define the ground, not an extra whole-body hop.
 	# This fixes vertical contact only; horizontal stride still depends on the artwork.
 	if ground_drawn_walk and pose == "move" and motion_frame >= 0:
@@ -252,7 +254,7 @@ func visual_transform() -> Transform2D:
 			var lowest := -INF
 			for point in feet:
 				lowest = maxf(lowest, (result * point).y)
-			result.origin.y += FOOT.y - lowest
+			result.origin.y += foot_anchor.y - lowest
 	return result
 
 func walk_feet() -> Array[Vector2]:
@@ -275,9 +277,9 @@ func _draw() -> void:
 		return
 	var flash := maxf(0, (hit_pulse - 0.09) / 0.05) * 0.30
 	var tint := Color(1 + flash, 1 + flash * 0.8, 1 + flash * 0.5, visual_alpha)
-	var airborne := maxf(0, FOOT.y + ground_offset().y - visual_transform().origin.y)
+	var airborne := maxf(0, foot_anchor.y + ground_offset().y - visual_transform().origin.y)
 	var shadow_scale := 1 - airborne * 0.015
-	draw_set_transform(FOOT + ground_offset(), 0, Vector2(shadow_scale, 0.28 * shadow_scale))
+	draw_set_transform(foot_anchor + ground_offset(), 0, Vector2(shadow_scale, 0.28 * shadow_scale))
 	draw_circle(Vector2.ZERO, 25, Color(0.07, 0.06, 0.04, visual_alpha * 0.2))
 	draw_set_transform_matrix(visual_transform())
 	var source := Rect2(frame_index * 256, 0, 256, 256)
@@ -296,5 +298,5 @@ func _draw() -> void:
 			draw_texture_rect(effects[effect.key], Rect2(motion_effect_socket() - size * 0.5, size), false, tint)
 	draw_set_transform(Vector2.ZERO)
 	if show_anchor and visual_alpha > 0:
-		draw_line(FOOT - Vector2(5, 0), FOOT + Vector2(5, 0), Color("33b7c8"))
-		draw_line(FOOT - Vector2(0, 5), FOOT + Vector2(0, 5), Color("33b7c8"))
+		draw_line(foot_anchor - Vector2(5, 0), foot_anchor + Vector2(5, 0), Color("33b7c8"))
+		draw_line(foot_anchor - Vector2(0, 5), foot_anchor + Vector2(0, 5), Color("33b7c8"))
