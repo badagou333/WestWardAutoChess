@@ -1,0 +1,9 @@
+Use case: identity-preserve
+Input image 1 is the approved mountain wolf design reference. Create ONE five-basic-pose character sheet of this exact gray-brown quadruped wolf, maintaining its face, shoulder mane, gray/cream markings, amber eyes, body proportions, paws, one tail and dark hand-painted ink-lined style. Do NOT redesign or add equipment.
+Layout: landscape sheet, equal-size cells in a 3-column by 2-row layout; exactly FIVE wolves, last bottom-right cell empty. Generous clear gaps and outer padding, no overlaps, no grid lines or labels. Same drawing scale and camera in every cell, all heads facing screen-left, complete ears/tails/paws visible.
+Top-left IDLE: approved alert standing pose, grounded four-paw stance.
+Top-middle MOVE: clear leftward trotting stride, diagonal limbs alternating, paws separated and anatomically coherent; one still key pose, no duplicate legs.
+Top-right BASIC ATTACK: low forward lunge toward left, jaws open to bite, hind legs pushing, no victim or projectile.
+Bottom-left HIT: weight recoils backward toward right, head pulled back and ears flattened, still left-facing; off-balance but distinguishable from attack, no blood or wounds.
+Bottom-middle RETREAT: defeated exhausted wolf collapsed low on its belly, legs folded, head lowered toward left, tail resting, no gore; unmistakably lower silhouette than other poses.
+Exactly four legs and one tail per wolf; no humanoid posture, armor, weapons, magic, effects, motion trails, extra animals, text or symbols. GENUINELY TRANSPARENT background with alpha, including between limbs; DO NOT reproduce the reference's gray/brown background halo. No colored haze, backdrop, ground shadow or fake checkerboard. These are five static key poses for a quick Demo, not a complete animation cycle.
