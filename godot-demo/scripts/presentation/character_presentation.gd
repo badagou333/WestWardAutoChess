@@ -241,7 +241,9 @@ func visual_transform() -> Transform2D:
 		stretch *= Vector2(1 + landing * 0.18, 1 - landing * 0.18)
 	if hit_pulse > 0 and pose != "retreat":
 		offset.x -= facing * sin(hit_pulse / 0.14 * PI) * 2
-	var result := Transform2D(angle, stretch * Vector2(facing, 1), 0, FOOT + offset)
+	# Facing is a gameplay direction; source orientation only affects drawing.
+	var source_sign := -1.0 if manifest.get("source_facing", "right") == "left" else 1.0
+	var result := Transform2D(angle, stretch * Vector2(facing * source_sign, 1), 0, FOOT + offset)
 	# Drawn planted paws define the ground, not an extra whole-body hop.
 	# This fixes vertical contact only; horizontal stride still depends on the artwork.
 	if ground_drawn_walk and pose == "move" and motion_frame >= 0:

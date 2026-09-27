@@ -62,3 +62,6 @@ godot --headless --path godot-demo --script res://art/reviews/six-role-battle/ve
 - 后续章节状态与存档从此处扩展；不要求重做动作播放器。
 
 设计基线见 [确认版设计](../docs/CONFIRMED_GAME_DESIGN.md)，开发范围与待办见 [06工作流](../docs/workstreams/06-development.md)。
+# 2026-09-27 山狼接入
+
+第三波山狼已使用新的透明五姿势素材；左右朝向、扑咬、受击及退场已接入共享播放器。移动是单姿势配合程序过渡，并非完整逐帧动画。旧测试战斗数值保持不变，灰鼠与山猪仍为占位美术。

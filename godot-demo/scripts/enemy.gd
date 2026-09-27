@@ -34,7 +34,8 @@ const ATLAS_REGIONS := {
 const ENEMY_DATA := {
 	"rat": {"name": "灰鼠喽啰", "hp": 52.0, "damage": 7.0, "interval": 0.95, "move": 0.58, "reward": 1, "scale": 0.29},
 	"boar": {"name": "山猪喽啰", "hp": 96.0, "damage": 10.0, "interval": 1.1, "move": 0.7, "reward": 1, "scale": 0.30},
-	"wolf": {"name": "黑狼精英", "hp": 155.0, "damage": 14.0, "interval": 0.9, "move": 0.52, "reward": 2, "scale": 0.32},
+	# Preserve prototype combat values; this visual replacement is not a balance approval.
+	"wolf": {"name": "山狼", "hp": 155.0, "damage": 14.0, "interval": 0.9, "move": 0.52, "reward": 2, "scale": 0.32},
 	"bear_lord": {"name": "熊山君", "hp": 400.0, "damage": 22.0, "interval": 1.1, "move": 0.75, "reward": 6, "scale": 0.38}
 }
 
@@ -59,9 +60,9 @@ func setup(new_type: String) -> void:
 	portrait.scale = Vector2.ONE * data.scale
 	portrait.z_index = -1
 	add_child(portrait)
-	if enemy_type == "bear_lord":
+	if enemy_type in ["bear_lord", "wolf"]:
 		presentation = Presentation.new()
-		presentation.setup_visual("bear_lord")
+		presentation.setup_visual("mountain_wolf" if enemy_type == "wolf" else "bear_lord")
 		presentation.show_anchor = false
 		presentation.show_status = false
 		presentation.z_index = -1
@@ -110,5 +111,6 @@ func play_death() -> void:
 func _draw() -> void:
 	var width := 88.0 if enemy_type == "bear_lord" else 66.0
 	var height := -150 if presentation != null else -72
+	if enemy_type == "wolf": height = -88
 	draw_rect(Rect2(-width * 0.5, height, width, 8), Color("45242d"), true)
 	draw_rect(Rect2(-width * 0.5 + 2, height + 2, (width - 4) * health / max_health, 4), Color("f05f67"), true)
