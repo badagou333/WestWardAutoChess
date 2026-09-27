@@ -19,6 +19,9 @@ var portrait: Sprite2D
 var presentation
 const Presentation = preload("res://scripts/presentation/character_presentation.gd")
 var idle_phase := 0.0
+var hit_time := 0.0
+var death_time := 0.0
+var attack_time := 0.0
 
 const ENEMY_ATLAS = preload("res://art/demo/enemy_atlas_keyed.png")
 const ATLAS_REGIONS := {
@@ -26,13 +29,13 @@ const ATLAS_REGIONS := {
 	# The tiger's tall plume crosses the atlas guide; trim the boar cell to avoid bleed.
 	"boar": Rect2(768, 0, 768, 470),
 	"wolf": Rect2(0, 512, 768, 512),
-	"tiger": Rect2(768, 512, 768, 512)
+	"bear_lord": Rect2(768, 512, 768, 512)
 }
 const ENEMY_DATA := {
 	"rat": {"name": "灰鼠喽啰", "hp": 52.0, "damage": 7.0, "interval": 0.95, "move": 0.58, "reward": 1, "scale": 0.29},
 	"boar": {"name": "山猪喽啰", "hp": 96.0, "damage": 10.0, "interval": 1.1, "move": 0.7, "reward": 1, "scale": 0.30},
 	"wolf": {"name": "黑狼精英", "hp": 155.0, "damage": 14.0, "interval": 0.9, "move": 0.52, "reward": 2, "scale": 0.32},
-	"tiger": {"name": "虎先锋", "hp": 240.0, "damage": 16.0, "interval": 1.1, "move": 0.75, "reward": 6, "scale": 0.38}
+	"bear_lord": {"name": "熊山君", "hp": 400.0, "damage": 22.0, "interval": 1.1, "move": 0.75, "reward": 6, "scale": 0.38}
 }
 
 func setup(new_type: String) -> void:
@@ -56,7 +59,7 @@ func setup(new_type: String) -> void:
 	portrait.scale = Vector2.ONE * data.scale
 	portrait.z_index = -1
 	add_child(portrait)
-	if enemy_type == "tiger":
+	if enemy_type == "bear_lord":
 		presentation = Presentation.new()
 		presentation.setup_visual("bear_lord")
 		presentation.show_anchor = false
@@ -67,56 +70,45 @@ func setup(new_type: String) -> void:
 	idle_phase = randf_range(0.0, TAU)
 	queue_redraw()
 
-func _process(delta: float) -> void:
+func tick_visual(delta: float) -> void:
 	if presentation != null:
-		var game = get_parent()
-		if game != null and game.get("battle_paused") == true:
-			return
-		var speed = game.get("battle_speed") if game != null else null
-		presentation.tick(delta * (float(speed) if speed != null else 1.0))
+		presentation.tick(delta)
 		presentation.z_index = -1
-		if dead and presentation.visual_alpha <= 0:
-			queue_free()
-	idle_phase += delta * 2.4
-	if is_instance_valid(portrait) and not dead:
-		portrait.position.y = -18.0 - abs(sin(idle_phase)) * 2.0
+		if dead and presentation.visual_alpha <= 0: queue_free()
+	else:
+		idle_phase += delta * 2.4
+		hit_time = maxf(0,hit_time-delta)
+		attack_time = maxf(0,attack_time-delta)
+		portrait.position.y = -18 - absf(sin(idle_phase))*2
+		portrait.modulate = Color(1.6,1.4,1.2) if hit_time > 0 else Color.WHITE
+		portrait.scale = Vector2.ONE * float(ENEMY_DATA[enemy_type].scale) * (1.1 if attack_time > 0 else 1.0)
+		if dead:
+			death_time += delta
+			modulate.a = maxf(0,1-death_time/0.4)
+			if death_time >= 0.4: queue_free()
+	queue_redraw()
 
 func play_attack() -> void:
-	if presentation != null:
-		presentation.play_attack()
-		return
-	if not is_instance_valid(portrait):
-		return
-	var rest_scale := portrait.scale
-	var tween := create_tween()
-	tween.tween_property(portrait, "scale", rest_scale * 1.1, 0.07)
-	tween.tween_property(portrait, "scale", rest_scale, 0.12).set_trans(Tween.TRANS_BACK)
+	if presentation != null: presentation.play_attack()
+	else: attack_time = 0.12
 
 func take_damage(amount: float) -> void:
-	if dead:
-		return
-	health = max(0.0, health - amount)
-	if presentation != null:
-		presentation.play_hit()
-	var tween := create_tween()
-	tween.tween_property(self, "modulate", Color(1.7, 1.7, 1.7), 0.05)
-	tween.tween_property(self, "modulate", Color.WHITE, 0.08)
-	if health <= 0.0:
+	if dead: return
+	health = maxf(0,health-amount)
+	if health == 0:
 		dead = true
 		defeated.emit(self)
+	elif presentation != null:
+		presentation.play_hit()
+	else:
+		hit_time = 0.1
 	queue_redraw()
 
 func play_death() -> void:
-	if presentation != null:
-		presentation.play_retreat()
-		return
-	var tween := create_tween()
-	tween.set_parallel(true)
-	tween.tween_property(self, "scale", Vector2.ZERO, 0.22)
-	tween.tween_property(self, "modulate:a", 0.0, 0.22)
-	tween.chain().tween_callback(queue_free)
+	if presentation != null: presentation.play_retreat()
 
 func _draw() -> void:
-	var width := 88.0 if enemy_type == "tiger" else 66.0
-	draw_rect(Rect2(-width * 0.5, -72, width, 8), Color("45242d"), true)
-	draw_rect(Rect2(-width * 0.5 + 2, -70, (width - 4) * health / max_health, 4), Color("f05f67"), true)
+	var width := 88.0 if enemy_type == "bear_lord" else 66.0
+	var height := -150 if presentation != null else -72
+	draw_rect(Rect2(-width * 0.5, height, width, 8), Color("45242d"), true)
+	draw_rect(Rect2(-width * 0.5 + 2, height + 2, (width - 4) * health / max_health, 4), Color("f05f67"), true)

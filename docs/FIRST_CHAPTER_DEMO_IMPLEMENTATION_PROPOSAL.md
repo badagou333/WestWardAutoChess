@@ -2,7 +2,7 @@
 
 更新时间：2026-09-20
 维护职责：`06｜程序开发`
-状态：待项目负责人审阅；本文不是已确认设计，不替代 `docs/CONFIRMED_GAME_DESIGN.md`
+状态：负责人已认可 A～D 推荐选项，实施进度见 `docs/workstreams/06-development.md`；具体参数仍为测试值，不替代 `docs/CONFIRMED_GAME_DESIGN.md`
 
 ## 1. 目标与范围
 

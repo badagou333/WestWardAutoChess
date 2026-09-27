@@ -4,6 +4,15 @@ extends Node2D
 const FOOT := Vector2(0, 35)
 const Motion = preload("res://scripts/presentation/motion.gd")
 var motion: Dictionary
+static var texture_cache := {}
+
+static func _texture(path: String) -> Texture2D:
+	if not texture_cache.has(path):
+		if ResourceLoader.exists(path):
+			texture_cache[path] = load(path)
+		else:
+			texture_cache[path] = ImageTexture.create_from_image(Image.load_from_file(path))
+	return texture_cache[path]
 var animation_clock := 0.0
 var attack_serial := 0
 var attack_direction := Vector2.RIGHT
@@ -49,7 +58,7 @@ func setup_visual(key: String) -> void:
 			action["body_frames"] = action.frames
 			if action.has("frame_seconds"):
 				action["body_frame_seconds"] = action.frame_seconds
-	body = ImageTexture.create_from_image(Image.load_from_file(base + manifest.atlases.body))
+	body = _texture(base + manifest.atlases.body)
 	var motion_base := "res://art/production/%s/motion_v1/" % role
 	for revision in range(motion_revision, 1, -1):
 		var revised_base := "res://art/production/%s/motion_v%d/" % [role, revision]
@@ -58,11 +67,11 @@ func setup_visual(key: String) -> void:
 			break
 	if FileAccess.file_exists(motion_base + "manifest.json"):
 		motion_manifest = JSON.parse_string(FileAccess.get_file_as_string(motion_base + "manifest.json"))
-		motion_body = ImageTexture.create_from_image(Image.load_from_file(motion_base + motion_manifest.atlas))
+		motion_body = _texture(motion_base + motion_manifest.atlas)
 	if manifest.atlases.has("vfx"):
-		vfx = ImageTexture.create_from_image(Image.load_from_file(base + manifest.atlases.vfx))
+		vfx = _texture(base + manifest.atlases.vfx)
 	for key_name in manifest.standalone_vfx:
-		effects[key_name] = ImageTexture.create_from_image(Image.load_from_file(base + manifest.standalone_vfx[key_name].file))
+		effects[key_name] = _texture(base + manifest.standalone_vfx[key_name].file)
 	queue_redraw()
 
 func set_pose(value: String) -> void:

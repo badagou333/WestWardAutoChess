@@ -8,7 +8,7 @@ func _render() -> void:
 	root.add_child(game)
 	await process_frame
 
-	var demo_types := ["rabbit", "crane", "ox"]
+	var demo_types := ["guard_monk", "wild_hunter", "herbal_spirit_child"]
 	var demo_cells := [Vector2i(2, 2), Vector2i(1, 3), Vector2i(3, 3)]
 	for i in range(demo_types.size()):
 		var hero = game.HeroScene.new()
@@ -25,7 +25,7 @@ func _render() -> void:
 	game.wave_index = 3
 	game.intermission = 0.0
 	game.pending_loot = 13
-	game._spawn_enemy("tiger", Vector2i(0, 3))
+	game._spawn_enemy("bear_lord", Vector2i(0, 3))
 	game._spawn_enemy("wolf", Vector2i(1, 1))
 	game._spawn_enemy("boar", Vector2i(3, 5))
 	game.battle_paused = true
@@ -38,10 +38,12 @@ func _render() -> void:
 		push_error("PREVIEW_FAILED: 当前显示驱动不支持读取画面")
 		quit(1)
 		return
-	var error := image.save_png("res://preview.png")
+	var output := OS.get_environment("DEMO_PREVIEW_PATH")
+	if output.is_empty(): output = "user://demo-preview.png"
+	var error := image.save_png(output)
 	if error != OK:
 		push_error("PREVIEW_FAILED: %s" % error_string(error))
 		quit(1)
 		return
-	print("PREVIEW_OK: res://preview.png")
+	print("PREVIEW_OK: ", output)
 	quit(0)

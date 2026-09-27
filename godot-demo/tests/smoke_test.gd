@@ -19,13 +19,14 @@ func _run_test() -> void:
 		_fail("初始经济或商店错误")
 		return
 
+	game.shop_types.assign(["guard_monk", "guard_monk", "guard_monk", "sparrow_spirit", "wild_hunter"])
 	for i in range(3):
 		game._on_shop_pressed(i)
 	if game.heroes.size() != 1:
 		_fail("三合一后队员数量错误：%d" % game.heroes.size())
 		return
 	var merged = game.heroes[0]
-	if merged.star != 2 or merged.unit_type != "rabbit" or game.coins != 7:
+	if merged.star != 2 or merged.unit_type != "guard_monk" or game.coins != 7:
 		_fail("自动三合一或招募金币结算错误")
 		return
 
@@ -56,21 +57,25 @@ func _run_test() -> void:
 	var enemy = game.enemies[0]
 	enemy.battle_cell = Vector2i(2, 1)
 	enemy.position = game._cell_center(enemy.battle_cell)
-	merged.mana = merged.max_mana
 	var health_before: float = enemy.health
-	game._cast_skill(merged, enemy)
-	if enemy.health >= health_before or merged.mana != 0.0:
-		_fail("自动技能释放错误")
+	game.combat.request(merged, enemy)
+	if enemy.health != health_before:
+		_fail("起手提前扣血")
 		return
-
+	merged.tick_visual(merged.presentation.impact_delay()+0.001)
+	game.combat.tick(0)
+	if enemy.health >= health_before:
+		_fail("近战命中未结算")
+		return
 	merged.active_in_battle = false
-	game._spawn_enemy("boar", Vector2i(2, 2))
+	game._spawn_enemy("boar", Vector2i(2,2))
 	enemy = game.enemies.back()
 	enemy.attack_cooldown = 0.0
 	var escort_before: float = game.escort.health
 	game._process_enemies(0.1)
+	game.combat.tick(0.2)
 	if game.escort.health >= escort_before:
-		_fail("敌人没有攻击唐僧")
+		_fail("敌人未攻击唐僧")
 		return
 
 	game.coins = 5
