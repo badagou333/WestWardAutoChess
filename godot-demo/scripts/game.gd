@@ -13,6 +13,8 @@ const CELL_SIZE := Vector2(162, 113)
 const ROWS := 5
 const COLS := 7
 const CENTER_CELL := Vector2i(2, 3)
+# Demo tuning, not final balance: defend the escort rather than the spawn cell.
+const DEFENSE_RADIUS := 3
 const BENCH_SIZE := 8
 const BENCH_START := Vector2(790, 1000)
 const BENCH_STEP := 83.0
@@ -464,11 +466,17 @@ func _combat_path(mover, target: Vector2i, reach: int, limited: bool) -> Array[V
 		for direction in [Vector2i(0,1),Vector2i(-1,0),Vector2i(1,0),Vector2i(0,-1)]:
 			var next: Vector2i = cell + direction
 			if not _valid_cell(next) or next == CENTER_CELL or parents.has(next): continue
-			if limited and _cell_distance(next, mover.home_cell) > 2: continue
+			if limited and not _defense_step_allowed(cell, next): continue
 			if _cell_blocked(next, mover): continue
 			parents[next] = cell
 			frontier.append(next)
 	return []
+
+func _defense_step_allowed(current: Vector2i, next: Vector2i) -> bool:
+	var distance := _cell_distance(next, CENTER_CELL)
+	if distance <= DEFENSE_RADIUS: return true
+	# Edge deployments may enter the zone, but cannot chase farther outward.
+	return _cell_distance(current, CENTER_CELL) > DEFENSE_RADIUS and distance < _cell_distance(current, CENTER_CELL)
 
 func _reachable_enemy(hero):
 	var result = null
@@ -1037,7 +1045,7 @@ func _update_ui() -> void:
 		sell_button.text = "出售：返还 %d 金币" % refund
 		lock_button.text = "合成锁定：%s" % ("开" if hero.merge_locked else "关")
 	else:
-		info_label.text = "选择一名队员查看详情\n\n自动战斗规则\n敌人进攻唐僧\n队员最多追击2格\n最小技能试玩\n击杀金币战后再结算"
+		info_label.text = "选择一名队员查看详情\n\n自动战斗规则\n敌人进攻唐僧\n围绕唐僧3格内走位\n边缘队员可向内靠拢\n最小技能试玩\n击杀金币战后再结算"
 
 func _draw() -> void:
 	if state == GameState.PREPARING:
