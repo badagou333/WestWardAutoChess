@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "character": "mountain_wolf",
+  "status": "static_pose_pack_pending_engine_validation",
+  "source": "art/concepts/mountain_wolf/mountain_wolf_action_keypose_sheet_v2.png",
+  "source_sha256": "ae17cdf9b0c2d8201a3ccd9cdac44bd2e0857b7fd2395a51dcc78f206cd8998c",
+  "frame": {
+    "width": 256,
+    "height": 256,
+    "foot_anchor": [
+      128,
+      218
+    ],
+    "display_scale": 1
+  },
+  "source_scale": 0.3,
+  "source_facing": "left",
+  "anchor_method": "Hand annotated ground projection; quadruped support line",
+  "atlases": {
+    "body": "mountain_wolf_demo_body_atlas_v1.png",
+    "columns": 5,
+    "rows": 1
+  },
+  "frames": [
+    {
+      "index": 0,
+      "name": "idle",
+      "body": true,
+      "file": "mountain_wolf_idle_body_v1.png",
+      "source_box": [
+        0,
+        100,
+        500,
+        510
+      ],
+      "source_ground_anchor": [
+        245,
+        487
+      ],
+      "target_bbox": [
+        56,
+        109,
+        204,
+        222
+      ]
+    },
+    {
+      "index": 1,
+      "name": "move",
+      "body": true,
+      "file": "mountain_wolf_move_body_v1.png",
+      "source_box": [
+        500,
+        100,
+        1020,
+        510
+      ],
+      "source_ground_anchor": [
+        750,
+        486
+      ],
+      "target_bbox": [
+        53,
+        113,
+        209,
+        220
+      ]
+    },
+    {
+      "index": 2,
+      "name": "attack_impact",
+      "body": true,
+      "file": "mountain_wolf_attack_impact_body_v1.png",
+      "source_box": [
+        1020,
+        160,
+        1536,
+        510
+      ],
+      "source_ground_anchor": [
+        1270,
+        487
+      ],
+      "target_bbox": [
+        53,
+        126,
+        208,
+        222
+      ]
+    },
+    {
+      "index": 3,
+      "name": "hit",
+      "body": true,
+      "file": "mountain_wolf_hit_body_v1.png",
+      "source_box": [
+        0,
+        550,
+        515,
+        940
+      ],
+      "source_ground_anchor": [
+        245,
+        914
+      ],
+      "target_bbox": [
+        55,
+        116,
+        208,
+        221
+      ]
+    },
+    {
+      "index": 4,
+      "name": "retreat",
+      "body": true,
+      "file": "mountain_wolf_retreat_body_v1.png",
+      "source_box": [
+        515,
+        680,
+        1140,
+        940
+      ],
+      "source_ground_anchor": [
+        795,
+        905
+      ],
+      "target_bbox": [
+        44,
+        155,
+        227,
+        221
+      ]
+    }
+  ],
+  "standalone_vfx": {},
+  "actions": {
+    "idle": {
+      "body_frames": [
+        0
+      ],
+      "loop": true
+    },
+    "move": {
+      "body_frames": [
+        1
+      ],
+      "loop": true
+    },
+    "basic_attack": {
+      "body_frames": [
+        0,
+        2
+      ],
+      "body_frame_seconds": [
+        0.12,
+        0.12
+      ],
+      "return_to": "idle"
+    },
+    "hit": {
+      "body_frames": [
+        3
+      ],
+      "hold_seconds": 0.18,
+      "return_to": "idle"
+    },
+    "retreat": {
+      "body_frames": [
+        4
+      ],
+      "hold_seconds": 0.45,
+      "fade_seconds": 0.25
+    }
+  },
+  "known_limitations": [
+    "Single pose per state; idle reused as attack windup, not continuous animation.",
+    "Source faces left: integration must account for renderer default facing before use.",
+    "Anchor/attack contact and board occupancy require engine validation; no gameplay parameters confirmed."
+  ]
+}
