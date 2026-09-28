@@ -1,0 +1,289 @@
+{
+  "version": 1,
+  "character": "boar",
+  "status": "static_pose_pack_pending_engine_validation",
+  "sources": [
+    {
+      "path": "art/reviews/style-unification-v1/boar-idle-candidate.png",
+      "sha256": "2e0bca8e9dd1ebf214914ef939c9723efd781b638ef97faecb10ab53bd730ebc"
+    },
+    {
+      "path": "art/reviews/style-unification-v1/boar-four-actions.png",
+      "sha256": "546f5ce3f7c6a5087e075c8a401dab09dd9d22c52f3508102e4d7ae64065ee21"
+    }
+  ],
+  "frame": {
+    "width": 256,
+    "height": 256,
+    "foot_anchor": [
+      128,
+      218
+    ],
+    "display_scale": 1
+  },
+  "source_facing": "left",
+  "anchor_method": "Hand annotated biped ground projection; not per-frame bbox centering",
+  "atlases": {
+    "body": "boar_demo_body_atlas_v1.png",
+    "columns": 5,
+    "rows": 1
+  },
+  "frames": [
+    {
+      "index": 0,
+      "name": "idle",
+      "body": true,
+      "file": "boar_idle_body_v1.png",
+      "source_box": [
+        79,
+        67,
+        1221,
+        1101
+      ],
+      "source_polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          1363,
+          0
+        ],
+        [
+          1363,
+          1154
+        ],
+        [
+          0,
+          1154
+        ]
+      ],
+      "source_ground_anchor": [
+        740,
+        1101
+      ],
+      "source_scale": 0.1125,
+      "target_bbox": [
+        54,
+        102,
+        182,
+        218
+      ],
+      "source": "boar-idle-candidate.png"
+    },
+    {
+      "index": 1,
+      "name": "move",
+      "body": true,
+      "file": "boar_move_body_v1.png",
+      "source_box": [
+        31,
+        21,
+        696,
+        528
+      ],
+      "source_polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          710,
+          0
+        ],
+        [
+          710,
+          535
+        ],
+        [
+          0,
+          535
+        ]
+      ],
+      "source_ground_anchor": [
+        490,
+        528
+      ],
+      "source_scale": 0.225,
+      "target_bbox": [
+        25,
+        104,
+        175,
+        218
+      ],
+      "source": "boar-four-actions.png"
+    },
+    {
+      "index": 2,
+      "name": "attack_impact",
+      "body": true,
+      "file": "boar_attack_impact_body_v1.png",
+      "source_box": [
+        718,
+        49,
+        1524,
+        529
+      ],
+      "source_polygon": [
+        [
+          711,
+          0
+        ],
+        [
+          1536,
+          0
+        ],
+        [
+          1536,
+          535
+        ],
+        [
+          711,
+          535
+        ]
+      ],
+      "source_ground_anchor": [
+        1260,
+        528
+      ],
+      "source_scale": 0.225,
+      "target_bbox": [
+        6,
+        110,
+        187,
+        218
+      ],
+      "source": "boar-four-actions.png"
+    },
+    {
+      "index": 3,
+      "name": "hit",
+      "body": true,
+      "file": "boar_hit_body_v1.png",
+      "source_box": [
+        70,
+        538,
+        689,
+        985
+      ],
+      "source_polygon": [
+        [
+          0,
+          536
+        ],
+        [
+          768,
+          536
+        ],
+        [
+          768,
+          1024
+        ],
+        [
+          0,
+          1024
+        ]
+      ],
+      "source_ground_anchor": [
+        480,
+        983
+      ],
+      "source_scale": 0.225,
+      "target_bbox": [
+        36,
+        118,
+        175,
+        219
+      ],
+      "source": "boar-four-actions.png"
+    },
+    {
+      "index": 4,
+      "name": "retreat",
+      "body": true,
+      "file": "boar_retreat_body_v1.png",
+      "source_box": [
+        864,
+        567,
+        1466,
+        976
+      ],
+      "source_polygon": [
+        [
+          769,
+          536
+        ],
+        [
+          1536,
+          536
+        ],
+        [
+          1536,
+          1024
+        ],
+        [
+          769,
+          1024
+        ]
+      ],
+      "source_ground_anchor": [
+        1200,
+        979
+      ],
+      "source_scale": 0.225,
+      "target_bbox": [
+        52,
+        125,
+        187,
+        217
+      ],
+      "source": "boar-four-actions.png"
+    }
+  ],
+  "standalone_vfx": {},
+  "actions": {
+    "idle": {
+      "body_frames": [
+        0
+      ],
+      "loop": true
+    },
+    "move": {
+      "body_frames": [
+        1
+      ],
+      "loop": true
+    },
+    "basic_attack": {
+      "body_frames": [
+        0,
+        2
+      ],
+      "body_frame_seconds": [
+        0.12,
+        0.12
+      ],
+      "return_to": "idle"
+    },
+    "hit": {
+      "body_frames": [
+        3
+      ],
+      "hold_seconds": 0.18,
+      "return_to": "idle"
+    },
+    "retreat": {
+      "body_frames": [
+        4
+      ],
+      "hold_seconds": 0.45,
+      "fade_seconds": 0.25
+    }
+  },
+  "known_limitations": [
+    "Static key poses, not continuous animation or a complete walking cycle.",
+    "Mace ornament and face details drift slightly between generated poses.",
+    "Engine facing, scale, attack contact and transition timing require integration validation.",
+    "Approved painted idle retained; original demo_v1 pack is untouched; engine switch is pending."
+  ]
+}
