@@ -1,0 +1,41 @@
+{
+  "status": "candidate_pending_user_review",
+  "runtime_modified": false,
+  "boar_alpha_extrema": [
+    0,
+    255
+  ],
+  "boar_subject_bbox": [
+    79,
+    67,
+    1221,
+    1101
+  ],
+  "preview_size": [
+    1920,
+    1080
+  ],
+  "boar_preview_height": 165,
+  "reference_hero": "production/guard_monk/demo_v1/guard_monk_idle_v1.png",
+  "engine_grid": {
+    "origin": [
+      398,
+      294
+    ],
+    "cell": [
+      162,
+      113
+    ],
+    "rows": 5,
+    "columns": 7
+  },
+  "limitations": [
+    "Painted grid has perspective and does not align with engine cells.",
+    "Center ring only marks Tang Seng reservation; no new escort art.",
+    "Static composition, not engine screenshot or animation validation."
+  ],
+  "sha256": {
+    "battlefield-candidate.png": "3068143e4ff419df78926627d1c40beb7d4eebf8fc53faeb027727ed046f4979",
+    "boar-idle-candidate.png": "2e0bca8e9dd1ebf214914ef939c9723efd781b638ef97faecb10ab53bd730ebc"
+  }
+}
