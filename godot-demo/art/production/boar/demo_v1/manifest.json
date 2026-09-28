@@ -1,0 +1,309 @@
+{
+  "version": 1,
+  "character": "boar",
+  "status": "static_pose_pack_pending_engine_validation",
+  "sources": [
+    {
+      "path": "art/concepts/mountain_boar/demo_boar_reference_crop.png",
+      "sha256": "c70946a6778900d7d232029cb76f7a84ddf2eb11dd30dbb4a2cf5b46250fdbf7"
+    },
+    {
+      "path": "art/concepts/mountain_boar/demo_boar_action_sheet_v1.png",
+      "sha256": "c5423482a235dc00bf53701d501d95b0a9117732099681fbc0e3b1ac179027b8"
+    },
+    {
+      "path": "art/concepts/mountain_boar/demo_boar_hit_v3.png",
+      "sha256": "3a6bd5af4cf26b57b915894351f3da57f00de36a07df489e2abd4ee480347767"
+    }
+  ],
+  "frame": {
+    "width": 256,
+    "height": 256,
+    "foot_anchor": [
+      128,
+      218
+    ],
+    "display_scale": 1
+  },
+  "source_facing": "left",
+  "anchor_method": "Hand annotated biped ground projection; not per-frame bbox centering",
+  "atlases": {
+    "body": "boar_demo_body_atlas_v1.png",
+    "columns": 5,
+    "rows": 1
+  },
+  "frames": [
+    {
+      "index": 0,
+      "name": "idle",
+      "body": true,
+      "file": "boar_idle_body_v1.png",
+      "source_box": [
+        19,
+        102,
+        514,
+        518
+      ],
+      "source_polygon": [
+        [
+          0,
+          50
+        ],
+        [
+          520,
+          50
+        ],
+        [
+          520,
+          540
+        ],
+        [
+          0,
+          540
+        ]
+      ],
+      "source_ground_anchor": [
+        300,
+        517
+      ],
+      "source_scale": 0.32,
+      "target_bbox": [
+        38,
+        85,
+        196,
+        218
+      ],
+      "source": "demo_boar_action_sheet_v1.png"
+    },
+    {
+      "index": 1,
+      "name": "move",
+      "body": true,
+      "file": "boar_move_body_v1.png",
+      "source_box": [
+        526,
+        99,
+        979,
+        522
+      ],
+      "source_polygon": [
+        [
+          520,
+          50
+        ],
+        [
+          995,
+          50
+        ],
+        [
+          995,
+          370
+        ],
+        [
+          970,
+          370
+        ],
+        [
+          970,
+          540
+        ],
+        [
+          520,
+          540
+        ]
+      ],
+      "source_ground_anchor": [
+        790,
+        519
+      ],
+      "source_scale": 0.32,
+      "target_bbox": [
+        44,
+        84,
+        189,
+        219
+      ],
+      "source": "demo_boar_action_sheet_v1.png"
+    },
+    {
+      "index": 2,
+      "name": "attack_impact",
+      "body": true,
+      "file": "boar_attack_impact_body_v1.png",
+      "source_box": [
+        970,
+        126,
+        1517,
+        537
+      ],
+      "source_polygon": [
+        [
+          995,
+          50
+        ],
+        [
+          1536,
+          50
+        ],
+        [
+          1536,
+          540
+        ],
+        [
+          970,
+          540
+        ],
+        [
+          970,
+          370
+        ],
+        [
+          995,
+          370
+        ]
+      ],
+      "source_ground_anchor": [
+        1350,
+        528
+      ],
+      "source_scale": 0.32,
+      "target_bbox": [
+        6,
+        89,
+        181,
+        221
+      ],
+      "source": "demo_boar_action_sheet_v1.png"
+    },
+    {
+      "index": 3,
+      "name": "hit",
+      "body": true,
+      "file": "boar_hit_body_v1.png",
+      "source_box": [
+        153,
+        84,
+        1027,
+        878
+      ],
+      "source_polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          1604,
+          0
+        ],
+        [
+          1604,
+          981
+        ],
+        [
+          0,
+          981
+        ]
+      ],
+      "source_ground_anchor": [
+        660,
+        875
+      ],
+      "source_scale": 0.16,
+      "target_bbox": [
+        47,
+        91,
+        187,
+        218
+      ],
+      "source": "demo_boar_hit_v3.png"
+    },
+    {
+      "index": 4,
+      "name": "retreat",
+      "body": true,
+      "file": "boar_retreat_body_v1.png",
+      "source_box": [
+        550,
+        619,
+        980,
+        975
+      ],
+      "source_polygon": [
+        [
+          520,
+          560
+        ],
+        [
+          1020,
+          560
+        ],
+        [
+          1020,
+          1000
+        ],
+        [
+          520,
+          1000
+        ]
+      ],
+      "source_ground_anchor": [
+        780,
+        968
+      ],
+      "source_scale": 0.32,
+      "target_bbox": [
+        54,
+        106,
+        192,
+        220
+      ],
+      "source": "demo_boar_action_sheet_v1.png"
+    }
+  ],
+  "standalone_vfx": {},
+  "actions": {
+    "idle": {
+      "body_frames": [
+        0
+      ],
+      "loop": true
+    },
+    "move": {
+      "body_frames": [
+        1
+      ],
+      "loop": true
+    },
+    "basic_attack": {
+      "body_frames": [
+        0,
+        2
+      ],
+      "body_frame_seconds": [
+        0.12,
+        0.12
+      ],
+      "return_to": "idle"
+    },
+    "hit": {
+      "body_frames": [
+        3
+      ],
+      "hold_seconds": 0.18,
+      "return_to": "idle"
+    },
+    "retreat": {
+      "body_frames": [
+        4
+      ],
+      "hold_seconds": 0.45,
+      "fade_seconds": 0.25
+    }
+  },
+  "known_limitations": [
+    "Static key poses, not continuous animation or a complete walking cycle.",
+    "Mace ornament and face details drift slightly between generated poses.",
+    "Engine facing, scale, attack contact and transition timing require integration validation.",
+    "Original existing Demo sprite is untouched; this package is not yet wired into gameplay."
+  ]
+}
