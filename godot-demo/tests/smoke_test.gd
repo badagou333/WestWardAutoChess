@@ -73,6 +73,8 @@ func _run_test() -> void:
 	enemy.attack_cooldown = 0.0
 	var escort_before: float = game.escort.health
 	game._process_enemies(0.1)
+	# Boar now releases damage from its animation clock, like other actors.
+	enemy.tick_visual(enemy.presentation.impact_delay()+0.001)
 	game.combat.tick(0.2)
 	if game.escort.health >= escort_before:
 		_fail("敌人未攻击唐僧")

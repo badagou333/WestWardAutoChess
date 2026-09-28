@@ -60,9 +60,9 @@ func setup(new_type: String) -> void:
 	portrait.scale = Vector2.ONE * data.scale
 	portrait.z_index = -1
 	add_child(portrait)
-	if enemy_type in ["bear_lord", "wolf"]:
+	if enemy_type in ["bear_lord", "wolf", "boar"]:
 		presentation = Presentation.new()
-		presentation.setup_visual("mountain_wolf" if enemy_type == "wolf" else "bear_lord")
+		presentation.setup_visual("mountain_wolf" if enemy_type == "wolf" else enemy_type)
 		presentation.foot_anchor = Vector2.ZERO
 		presentation.show_anchor = false
 		presentation.show_status = false
@@ -113,5 +113,6 @@ func _draw() -> void:
 	var width := 88.0 if enemy_type == "bear_lord" else 66.0
 	var height := -185 if presentation != null else -72
 	if enemy_type == "wolf": height = -123
+	if enemy_type == "boar": height = -148
 	draw_rect(Rect2(-width * 0.5, height, width, 8), Color("45242d"), true)
 	draw_rect(Rect2(-width * 0.5 + 2, height + 2, (width - 4) * health / max_health, 4), Color("f05f67"), true)

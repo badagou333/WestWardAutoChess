@@ -2,6 +2,7 @@ extends RefCounted
 
 # Trial presentation timings, not confirmed balance values. Seconds/pixels/radians.
 const PROFILES := {
+	"boar": {"windup":0.125,"strike":0.10,"recover":0.25,"walk":0.70,"lift":2.0,"reach":32.0,"lean":0.045},
 	"mountain_wolf": {"windup":0.125,"strike":0.10,"recover":0.20,"walk":0.52,"lift":1.5,"reach":42.0,"lean":0.025},
 	"guard_monk": {"windup":0.20,"strike":0.10,"recover":0.24,"walk":0.50,"lift":4.0,"reach":56.0,"lean":0.055},
 	"wild_hunter": {"windup":0.14,"strike":0.08,"recover":0.22,"walk":0.42,"lift":5.0,"reach":70.0,"lean":0.075},
