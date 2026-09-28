@@ -1,0 +1,32 @@
+{
+  "decision_date": "2026-09-29",
+  "authority": "负责人：退场的声音很怪，先不加了，其他的让程序加进去",
+  "status": "授权程序接入，尚未完成游戏内验收",
+  "approved_for_integration": [
+    "guard_monk_attack",
+    "wild_hunter_attack",
+    "sparrow_spirit_attack",
+    "herbal_spirit_child_attack",
+    "foxfire_imp_attack",
+    "rat_attack",
+    "boar_attack",
+    "wolf_attack",
+    "bear_lord_attack",
+    "rat_death",
+    "boar_death",
+    "wolf_death",
+    "bear_lord_death",
+    "shared_hit_flesh",
+    "shared_hit_fur",
+    "shared_hit_armor",
+    "tangseng_hurt_warning"
+  ],
+  "deferred": [
+    "guard_monk_retreat",
+    "wild_hunter_retreat",
+    "sparrow_spirit_retreat",
+    "herbal_spirit_child_retreat",
+    "foxfire_imp_retreat"
+  ],
+  "notes": "仅英雄退场暂缓；怪物死亡属于其余音效继续接入。英雄退场不回退播放旧通用retreat占位音。原始manifest是制作时记录，采用范围以本文件为准。"
+}
