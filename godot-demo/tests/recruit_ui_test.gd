@@ -5,11 +5,33 @@ func check(ok: bool, message: String):
 		failures += 1
 		push_error(message)
 func _initialize(): call_deferred("run")
+func key(game,code: int,echo := false):
+	var event:=InputEventKey.new()
+	event.keycode=code
+	event.pressed=true
+	event.echo=echo
+	game._unhandled_input(event)
 func run():
 	var game = load("res://scenes/main.tscn").instantiate()
 	root.add_child(game)
 	await process_frame
 	game.set_process(false)
+	check(not game.shop_open,"Shop starts collapsed")
+	for control in game.shop_controls: check(not control.visible,"All shop controls hidden")
+	key(game,KEY_1)
+	key(game,KEY_R)
+	check(game.heroes.is_empty() and game.refresh_token==1,"Hidden shop cannot buy or refresh with keys")
+	key(game,KEY_SPACE)
+	check(game.shop_open and game.state==game.GameState.PREPARING,"Space opens shop instead of starting battle")
+	key(game,KEY_SPACE,true)
+	check(game.shop_open,"Held Space does not repeatedly toggle")
+	key(game,KEY_ESCAPE)
+	check(not game.shop_open,"Escape closes shop")
+	game.shop_toggle.pressed.emit()
+	check(game.shop_open,"Button opens shop")
+	check(game.shop_controls[0].mouse_filter==Control.MOUSE_FILTER_STOP,"Popup blocks click-through")
+	game.shop_toggle.pressed.emit()
+	check(not game.shop_open,"Button closes shop")
 	var output:=OS.get_environment("RECRUIT_UI_PREVIEW")
 	if not output.is_empty():
 		for i in range(8): await process_frame
@@ -17,7 +39,7 @@ func run():
 	var all_controls: Array = []
 	all_controls.append_array(game.shop_buttons)
 	all_controls.append_array(game.bench_panels)
-	all_controls.append_array([game.refresh_button,game.level_button])
+	all_controls.append_array([game.refresh_button,game.level_button,game.shop_toggle])
 	for a in range(all_controls.size()):
 		var rect: Rect2 = all_controls[a].get_global_rect()
 		check(Rect2(Vector2.ZERO,Vector2(1920,1080)).encloses(rect),"Control outside viewport")
@@ -30,6 +52,7 @@ func run():
 		check(game._bench_slot_at(game._bench_position(slot))==slot,"Bench hit geometry matches slot")
 		check(game.bench_panels[slot].z_index==2026,"Slots visible above bottom panel")
 	# Purchase, occupied label, sold-out card, deployment and return to last bench slot.
+	key(game,KEY_SPACE)
 	game.shop_buttons[0].pressed.emit()
 	check(game.heroes.size()==1 and game.shop_buttons[0].portrait==null,"Purchase clears sold portrait")
 	check(game.bench_label.text.contains("1 / 8"),"Bench counter updates")
@@ -68,12 +91,20 @@ func run():
 		# Keep five different offers in the screenshot, after testing refresh separately.
 		game.shop_types.assign(game.DemoUnits.SHOP)
 		game._update_ui()
+		game._set_shop_open(false)
 		for i in range(8): await process_frame
 		check(root.get_texture().get_image().save_png(output)==OK,"Screenshot saved")
+		game._set_shop_open(true)
+		for i in range(8): await process_frame
+		check(root.get_texture().get_image().save_png(output.replace(".png","-open.png"))==OK,"Open shop screenshot saved")
 	game.state=game.GameState.BATTLE_RUNNING
+	game._set_shop_open(false)
+	key(game,KEY_SPACE)
+	check(game.shop_open and not game.battle_paused,"Battle Space opens shop without pausing")
 	game._update_ui()
 	check(game.refresh_button.disabled and game.level_button.disabled,"Battle locks economy controls")
 	game._restart_demo()
+	check(not game.shop_open,"Restart restores collapsed shop")
 	check(game.bench_label.text.contains("0 / 8"),"Restart clears bench state")
 	print("RECRUIT_UI: failures=",failures)
 	game.free()

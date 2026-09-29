@@ -18,8 +18,8 @@ const CENTER_CELL := Vector2i(2, 3)
 # Demo tuning, not final balance: defend the escort rather than the spawn cell.
 const DEFENSE_RADIUS := 3
 const BENCH_SIZE := 8
-const BENCH_START := Vector2(886, 1015)
-const BENCH_STEP := 96.0
+const BENCH_START := Vector2(394, 1010)
+const BENCH_STEP := 150.0
 const REFRESH_COST := 2
 const COMBAT_TIME_SCALE := 1.0
 const CombatEvents = preload("res://scripts/combat/attack_events.gd")
@@ -74,6 +74,9 @@ var tip_label: Label
 var shop_buttons: Array[Button] = []
 var bench_panels: Array[Panel] = []
 var bench_label: Label
+var shop_controls: Array[Control] = []
+var shop_toggle: Button
+var shop_open := false
 var refresh_button: Button
 var level_button: Button
 var start_button: Button
@@ -181,38 +184,60 @@ func _create_interface() -> void:
 	bottom_panel.z_index = 25
 	add_child(bottom_panel)
 
-	var shop_title := _make_label(Vector2(20, 877), Vector2(780, 30), 22, Color("ffe3a1"), 31)
-	shop_title.text = "招募商店     1—5 购买 · 悬停查看定位"
+	var shop_back := Panel.new()
+	shop_back.position = Vector2(330,190)
+	shop_back.size = Vector2(1240,253)
+	shop_back.z_index = 34
+	shop_back.add_theme_stylebox_override("panel",_button_box(Color("24251f"),Color("a99261")))
+	shop_back.mouse_filter = Control.MOUSE_FILTER_STOP
+	add_child(shop_back)
+	shop_controls.append(shop_back)
+	var shop_title := _make_label(Vector2(354,204), Vector2(1000,36), 23, Color("ffe3a1"), 36)
+	shop_title.text = "招募商店     1—5 购买 · R 刷新 · 空格收起"
+	shop_controls.append(shop_title)
+	var close_shop := _make_button(Vector2(1508,201),Vector2(42,36),"×",Color("423d30"),36)
+	close_shop.pressed.connect(func(): _set_shop_open(false))
+	shop_controls.append(close_shop)
 	for i in range(5):
 		var button := preload("res://scripts/presentation/shop_card.gd").new()
-		button.position = Vector2(20+i*156,913)
+		button.position = Vector2(354+i*166,264)
 		button.size = Vector2(148,155)
-		button.z_index = 31
+		button.z_index = 36
 		_style_button(button,Color("302c24"))
 		add_child(button)
 		button.pressed.connect(_on_shop_pressed.bind(i))
 		shop_buttons.append(button)
+		shop_controls.append(button)
 
-	refresh_button = _make_button(Vector2(1660, 919), Vector2(238, 62), "", Color("425441"), 31)
+	refresh_button = _make_button(Vector2(1254, 284), Vector2(238, 62), "", Color("425441"), 36)
 	refresh_button.pressed.connect(_on_refresh_pressed)
-	level_button = _make_button(Vector2(1660, 997), Vector2(238, 62), "", Color("424e61"), 31)
+	shop_controls.append(refresh_button)
+	var shop_note := _make_label(Vector2(1235,359),Vector2(290,55),17,Color("b9ac90"),36)
+	shop_note.text = "招募后进入下方替补席\n商店展开不会暂停战斗"
+	shop_note.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	shop_controls.append(shop_note)
+	shop_toggle = _make_button(Vector2(24,941),Vector2(250,70),"",Color("57513a"),31)
+	shop_toggle.pressed.connect(_toggle_shop)
+	level_button = _make_button(Vector2(1660, 965), Vector2(238, 70), "", Color("424e61"), 31)
 	level_button.pressed.connect(_on_level_pressed)
 
-	bench_label = _make_label(Vector2(842,877),Vector2(400,30),22,Color("ffe3a1"),31)
-	tip_label = _make_label(Vector2(1215,880),Vector2(400,26),16,Color("b9ac90"),31)
-	tip_label.text = "拖动上阵 · 三个同名同星自动合成"
+	bench_label = _make_label(Vector2(324,877),Vector2(470,30),22,Color("ffe3a1"),31)
+	tip_label = _make_label(Vector2(1060,880),Vector2(480,26),16,Color("b9ac90"),31)
+	tip_label.text = "拖动棋子上阵 · 三个同名同星自动合成"
 	var action_title := _make_label(Vector2(1660,877),Vector2(238,30),21,Color("ffe3a1"),31)
 	action_title.text = "备战操作"
 	for slot in range(BENCH_SIZE):
-		var panel := Panel.new()
-		panel.position = Vector2(BENCH_START.x+BENCH_STEP*slot-44,916)
-		panel.size = Vector2(88,151)
+		var panel := preload("res://scripts/presentation/bench_tile.gd").new()
+		panel.position = Vector2(BENCH_START.x+BENCH_STEP*slot-71,909)
+		panel.size = Vector2(142,160)
+		panel.add_theme_stylebox_override("panel",StyleBoxEmpty.new())
 		panel.z_index = 26
 		panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		add_child(panel)
 		bench_panels.append(panel)
-		var number := _make_label(panel.position+Vector2(7,4),Vector2(26,24),16,Color("b2a382"),27)
+		var number := _make_label(panel.position+Vector2(7,135),Vector2(26,24),14,Color("b2a382"),27)
 		number.text = str(slot+1)
+	_set_shop_open(false)
 
 	var info_back := ColorRect.new()
 	info_back.position = Vector2(1630, 122)
@@ -257,6 +282,14 @@ func _create_interface() -> void:
 	_style_button(replay_button, Color("b9792d"))
 	replay_button.pressed.connect(_restart_demo)
 	overlay.add_child(replay_button)
+
+func _set_shop_open(value: bool) -> void:
+	shop_open = value and state != GameState.RESULT
+	for control in shop_controls: control.visible = shop_open
+	shop_toggle.text = "收起商店  [空格]" if shop_open else "招募商店  [空格]"
+
+func _toggle_shop() -> void:
+	if dragged_hero == null: _set_shop_open(not shop_open)
 
 func _make_label(pos: Vector2, label_size: Vector2, font_size: int, color: Color, layer := 1) -> Label:
 	var label := Label.new()
@@ -574,6 +607,7 @@ func _start_battle() -> void:
 		status_label.text = "请至少部署一名队员再开始"
 		return
 	state = GameState.BATTLE_RUNNING
+	_set_shop_open(false)
 	combat.clear(true)
 	moving.clear()
 	accumulator = 0.0
@@ -594,6 +628,7 @@ func _finish_battle(victory: bool) -> void:
 	if state != GameState.BATTLE_RUNNING:
 		return
 	state = GameState.RESULT
+	_set_shop_open(false)
 	combat.clear()
 	moving.clear()
 	battle_paused = false
@@ -639,6 +674,7 @@ func _restart_demo() -> void:
 	wave_index = -1
 	intermission = 0.0
 	state = GameState.PREPARING
+	_set_shop_open(false)
 	overlay.visible = false
 	start_button.text = "开始战斗"
 	escort.reset()
@@ -763,16 +799,17 @@ func _toggle_speed() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode >= KEY_1 and event.keycode <= KEY_5:
-			_on_shop_pressed(int(event.keycode - KEY_1))
+			if shop_open: _on_shop_pressed(int(event.keycode - KEY_1))
 		elif event.keycode == KEY_R:
-			_on_refresh_pressed()
+			if shop_open: _on_refresh_pressed()
 		elif event.keycode == KEY_E:
 			_on_level_pressed()
 		elif event.keycode == KEY_SPACE:
-			if state == GameState.PREPARING:
-				_start_battle()
-			else:
-				_toggle_pause()
+			_toggle_shop()
+		elif event.keycode == KEY_ESCAPE and shop_open:
+			_set_shop_open(false)
+		elif event.keycode == KEY_P:
+			_toggle_pause()
 	if state != GameState.PREPARING:
 		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -951,10 +988,10 @@ func _bench_position(slot: int) -> Vector2:
 	return BENCH_START + Vector2(BENCH_STEP * slot, 0)
 
 func _bench_slot_at(pos: Vector2) -> int:
-	if pos.y < 916 or pos.y > 1067:
+	if pos.y < 909 or pos.y > 1069:
 		return -1
 	var slot := int(round((pos.x - BENCH_START.x) / BENCH_STEP))
-	return slot if slot >= 0 and slot < BENCH_SIZE and abs(pos.x - _bench_position(slot).x) <= 44.0 else -1
+	return slot if slot >= 0 and slot < BENCH_SIZE and abs(pos.x - _bench_position(slot).x) <= 71.0 else -1
 
 func _cell_center(cell: Vector2i) -> Vector2:
 	if painted_board: return BoardGeometry.center(cell)
@@ -1041,8 +1078,8 @@ func _update_ui() -> void:
 	for slot in range(bench_panels.size()):
 		var filled := _hero_in_bench(slot) != null
 		if filled: occupied += 1
-		bench_panels[slot].add_theme_stylebox_override("panel",_button_box(Color("38372b") if filled else Color("24271f"),Color("bc9e62") if filled else Color("6c7253")))
-	bench_label.text = "待上场  %d / 8  ·  候选席" % occupied
+		bench_panels[slot].set_occupied(filled)
+	bench_label.text = "替补席  %d / 8  ·  待上场" % occupied
 
 	for i in range(shop_buttons.size()):
 		var button := shop_buttons[i]
