@@ -1,0 +1,7 @@
+{
+  "foxfire_imp_attack": {
+    "path": "res://audio/candidates/foxfire-dwoboyle-v1/foxfire_A_faithful.wav",
+    "decision": "res://audio/candidates/foxfire-dwoboyle-v1/adoption.json",
+    "attribution": "res://CREDITS.md"
+  }
+}

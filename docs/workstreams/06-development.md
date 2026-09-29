@@ -2,6 +2,14 @@
 
 更新时间：2026-09-29
 
+## 狐火攻击采用DWOBoyle改编A版（最新）
+
+- 已完成：依08 adoption.json及负责人“a更好，用a吧”，将foxfire_imp_attack覆盖到foxfire-dwoboyle-v1/foxfire_A_faithful.wav。独立audio/runtime_overrides.json在v1清单之后加载，只能覆盖已启用事件，v1/tools/generate.py重建不会撤销A版选择。其他角色路径不变，英雄退场仍静音，发射时机/音量/音高/限流不变。
+- 署名：新增随游戏交付CREDITS.md，保留DWOBoyle、Fire Ball原页、CC BY 4.0链接、HQ MP3来源限制及单声道/裁尾/淡入淡出/峰值修改说明；README不再称所有声音自制。源音频与08工作流未改。
+- 修改文件：audio/runtime_overrides.json、CREDITS.md、presentation/audio_feedback.gd、tests/audio_integration_test.gd、tests/audio_output_test.gd、README、本记录。
+- 验证：A路径、0.57秒时长、SHA256与08采用清单一致；其他角色仍来自原v1包；音效专项及综合多帧率/倍速战斗回归零失败，推荐阵容结果不变。正常窗口单独播放A并核查引擎输出、暂停及开关音量；不将该技术检查称为人工听感通过。
+- 新确认：A版替换旧合成狐火攻击，B未采用。待确认：游戏内混音听感。阻塞：无接入阻塞。推荐下一步：重启主Demo试听狐火，音色调整交08。待总控同步：第三方素材署名必须随游戏打包保留。
+
 ## 手绘棋盘与painted_v1野猪接入（最新）
 
 - 已完成：主Demo使用style-unification-v1/battlefield-candidate.png，野猪明确选择production/boar/painted_v1；旧背景、demo_v1包完整保留，无重绘或05工作流修改。

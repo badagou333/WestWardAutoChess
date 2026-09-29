@@ -14,7 +14,9 @@ func run():
 	root.add_child(game)
 	game.set_process(false)
 	var sound = game.audio_feedback
-	sound.play_cue("bear_lord_death")
+	var cue := OS.get_environment("AUDIO_TEST_CUE")
+	if cue.is_empty(): cue = "bear_lord_death"
+	check(sound.play_cue(cue),"Requested cue scheduled")
 	await create_timer(0.05).timeout
 	var player = sound.voices[0]
 	check(player.playing,"Real player started")
@@ -38,6 +40,6 @@ func run():
 			check(not sound.enabled and sound.voices.all(func(p):return not p.playing),"UI toggle stops sound")
 			child.pressed.emit()
 			check(sound.enabled,"UI toggle re-enables")
-	print("AUDIO_OUTPUT driver=",AudioServer.get_driver_name()," device=",AudioServer.output_device," peak_db=",peak," failures=",failures,"; not a human listening test")
+	print("AUDIO_OUTPUT cue=",cue," driver=",AudioServer.get_driver_name()," device=",AudioServer.output_device," peak_db=",peak," failures=",failures,"; not a human listening test")
 	game.free()
 	quit(1 if failures else 0)

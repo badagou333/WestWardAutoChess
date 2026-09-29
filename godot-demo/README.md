@@ -35,7 +35,7 @@
 - 普通攻击在动作释放时命中；飞弹和治疗在抵达时结算，每次只结算一次。
 - 唐僧死亡失败；胜利按最终血量评星，结算80%/90%/100%战利品。
 - 失败不发战利品。此单战版本使用完整重开，章节版失败保留经营结果尚未接入。
-- 音效为程序合成的短占位音，支持关闭和调音量；没有加入震屏。
+- 音效使用已采用的角色音效及少量UI占位音，支持关闭和调音量；包含第三方狐火改编素材，署名见CREDITS.md；没有加入震屏。
 
 ## 自动检查
 
@@ -65,6 +65,8 @@ godot --headless --path godot-demo --script res://art/reviews/six-role-battle/ve
 # 2026-09-27 山狼接入
 
 ## 2026-09-29 音效试接
+
+狐火攻击已改用负责人选定的DWOBoyle《Fire Ball》改编A版（0.57秒），保持弹体释放触发。采用路径独立保存在 `audio/runtime_overrides.json`，不受v1合成工具重建覆盖。其余角色不变、英雄退场仍静音。该音频为CC BY 4.0第三方改编，随游戏交付须携带 [CREDITS.md](CREDITS.md) 及原素材包ATTRIBUTION.md，不能称全部音效自制。
 
 本日主棋盘也已切换手绘背景，野猪选择 `production/boar/painted_v1`（旧包保留）。`scripts/presentation/board_geometry.gd` 保存石缝交点标定，点击、拖放、高亮和脚点共享同一透视映射；逻辑仍为5×7，中央唐僧格不变。运行截图见 `tests/painted-board-preview.png`。坐标回归：`godot --headless --path godot-demo --script res://tests/board_geometry_test.gd`。手绘曲线与四边形边界允许少量像素误差，不代表逐像素匹配。
 

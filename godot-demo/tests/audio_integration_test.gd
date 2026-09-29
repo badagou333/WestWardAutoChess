@@ -13,6 +13,13 @@ func run():
 	var sound = game.audio_feedback
 	sound.cue_played.connect(func(key): heard.append(key))
 	check(sound.streams.size()==19,"17 adopted cues plus UI and victory")
+	var fox_path := "res://audio/candidates/foxfire-dwoboyle-v1/foxfire_A_faithful.wav"
+	check(sound.stream_paths.foxfire_imp_attack==fox_path,"Selected A overrides legacy synthesis")
+	check(FileAccess.get_sha256(fox_path)=="aa30009e92190a69ec99a404f047b453606a8f6e79e5a0f4fe3de495a900a7db","A source unchanged")
+	check(absf(sound.streams.foxfire_imp_attack.get_length()-0.57)<0.001,"A duration loaded")
+	check(FileAccess.file_exists("res://CREDITS.md"),"Distribution attribution present")
+	for key in sound.stream_paths:
+		if key != "foxfire_imp_attack": check(sound.stream_paths[key].begins_with(sound.PACK),"Other role assets unchanged")
 	for key in sound.streams:
 		check(sound.streams[key]!=null and sound.streams[key].get_length()>0,"Valid PCM: "+key)
 	check(not sound.play_cue("guard_monk_retreat") and not sound.play_cue("retreat"),"No hero retreat fallback")

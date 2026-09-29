@@ -12,6 +12,7 @@ var level := 0.35:
 		level = clampf(value,0,1)
 		for player in voices: player.volume_db = linear_to_db(maxf(level,0.0001))-6.0
 var streams := {}
+var stream_paths := {}
 var voices: Array[AudioStreamPlayer] = []
 var slots: Array[Dictionary] = []
 var last_played := {}
@@ -27,6 +28,14 @@ func _ready() -> void:
 		if entry.key in adoption.approved_for_integration:
 			var path: String = PACK+entry.file
 			streams[entry.key] = load(path) if ResourceLoader.exists(path) else AudioStreamWAV.load_from_file(path)
+			stream_paths[entry.key] = path
+	# Runtime choices live outside the v1 generator's outputs.
+	var overrides: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://audio/runtime_overrides.json"))
+	for key in overrides:
+		if not streams.has(key): continue # Overrides cannot enable deferred events.
+		var path: String = overrides[key].path
+		streams[key] = load(path) if ResourceLoader.exists(path) else AudioStreamWAV.load_from_file(path)
+		stream_paths[key] = path
 	for key in CUES:
 		var spec: Array = CUES[key]
 		var stream := AudioStreamWAV.new()
