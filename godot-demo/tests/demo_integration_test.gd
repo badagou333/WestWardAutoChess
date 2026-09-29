@@ -17,13 +17,13 @@ func _init() -> void:
 
 func run() -> void:
 	var game = make_game()
-	check(game.coins == 10 and game.population == 3 and game.shop_types.size() == 5,"Initial economy")
+	check(game.coins == 3 and game.population == 3 and game.shop_types.size() == 5,"Initial economy")
 	for key in game.shop_types:
 		check(game.HeroScene.UNIT_DATA[key].quality == "white","One-cost shop")
 	game._on_refresh_pressed()
-	check(game.coins == 10 and game.refresh_token == 0,"Free refresh once")
+	check(game.coins == 3 and game.refresh_token == 0,"Free refresh once")
 	game._on_refresh_pressed()
-	check(game.coins == 8,"Paid refresh")
+	check(game.coins == 1,"Paid refresh")
 	game._restart_demo()
 	game.shop_types.assign(["guard_monk","guard_monk","guard_monk","guard_monk","guard_monk"])
 	game._on_shop_pressed(0)
@@ -34,7 +34,7 @@ func run() -> void:
 	game._on_shop_pressed(2)
 	check(game.heroes.size() == 3,"Locked hero excluded")
 	game._toggle_selected_lock()
-	check(game.heroes.size() == 1 and locked.star == 2 and game.coins == 7,"Unlock triggers exact merge")
+	check(game.heroes.size() == 1 and locked.star == 2 and game.coins == 0,"Unlock triggers exact merge")
 	check(locked.presentation.role == "guard_monk","Merge keeps role")
 	game._begin_pointer_action(locked.position)
 	game.dragging = true
@@ -44,11 +44,12 @@ func run() -> void:
 	check(locked.board_col == 2,"Center cannot be occupied")
 	game._select_hero(locked)
 	game._sell_selected()
-	check(game.coins == 9 and game.heroes.is_empty(),"Two-star refund")
+	check(game.coins == 2 and game.heroes.is_empty(),"Two-star refund")
 	game.coins = 20
 	game._on_level_pressed()
-	check(game.population == 4 and game.coins == 10,"Population cost")
+	check(game.population == 4 and game.coins == 16,"Population cost")
 	game._restart_demo()
+	game.coins = 20
 	for n in range(8):
 		game.shop_types[0] = game.DemoUnits.SHOP[n%5]
 		game._on_shop_pressed(0)
@@ -66,6 +67,7 @@ func run() -> void:
 
 	# Delivery events tested independently of automatic targeting.
 	game = make_game()
+	game.coins = 10
 	for i in range(5): game._on_shop_pressed(i)
 	for hero in game.heroes: hero.active_in_battle = true
 	var fox = game.heroes[4]
@@ -113,7 +115,8 @@ func run() -> void:
 			game._start_battle()
 			game.battle_speed = speed
 			var ticks := 0
-			while game.state == game.GameState.BATTLE_RUNNING and ticks < rate*180:
+			while game.state != game.GameState.RESULT and ticks < rate*180:
+				if game.state == game.GameState.PREPARING: game._start_battle()
 				game.step(1.0/rate)
 				ticks += 1
 				if ticks == rate*5:
@@ -129,7 +132,7 @@ func run() -> void:
 					check(game.battle_elapsed == clock and game.heroes[0].presentation.pose_time == phase and game.heroes[0].position == pos,"Pause freezes clock, movement, pose")
 					game._toggle_pause()
 			check(game.state == game.GameState.RESULT and not game.escort.dead,"Four-wave victory")
-			check(game.wave_index == 3 and game.pending_loot == 20,"Four waves exact rewards")
+			check(game.wave_index == 3 and game.earned_loot == 20 and game.pending_loot == 0,"Four waves exact rewards")
 			check(game.combat.counts.heals > 0 and game.combat.counts.projectiles > 0,"Healer participates")
 			var result := {"hp":game.escort.health,"coins":game.coins,"counts":game.combat.counts.duplicate(),"elapsed":game.battle_elapsed}
 			if reference.is_empty(): reference = result
@@ -140,7 +143,7 @@ func run() -> void:
 			game._finish_battle(true)
 			check(game.coins == reward_coins,"No duplicate victory payout")
 			game._restart_demo()
-			check(game.heroes.is_empty() and game.enemies.is_empty() and game.combat.missiles.is_empty() and game.moving.is_empty() and game.coins == 10 and game.battle_speed == 1 and not game.battle_paused,"Restart clears transient state")
+			check(game.heroes.is_empty() and game.enemies.is_empty() and game.combat.missiles.is_empty() and game.moving.is_empty() and game.coins == 3 and game.battle_speed == 1 and not game.battle_paused,"Restart clears transient state")
 			game.queue_free()
 			await process_frame
 	game = make_game()
@@ -151,7 +154,7 @@ func run() -> void:
 	for tick in range(60*90):
 		game.step(1.0/60)
 		if game.state == game.GameState.RESULT: break
-	check(game.escort.dead and game.state == game.GameState.RESULT and game.coins == 9,"Loss grants no loot")
+	check(game.escort.dead and game.state == game.GameState.RESULT and game.coins == 2,"Loss grants no loot")
 	game.queue_free()
 	await process_frame
 	print("DEMO_INTEGRATION: failures=%d result=%s" % [failures.size(),reference])

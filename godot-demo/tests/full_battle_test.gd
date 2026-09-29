@@ -14,7 +14,8 @@ func _run() -> void:
 		game._place_hero_on_board(game.heroes[i], cells[i])
 	game._start_battle()
 	var ticks := 0
-	while game.state == game.GameState.BATTLE_RUNNING and ticks < 21600:
+	while game.state != game.GameState.RESULT and ticks < 21600:
+		if game.state == game.GameState.PREPARING: game._start_battle()
 		game.step(1.0 / 60)
 		ticks += 1
 	if game.state != game.GameState.RESULT:
@@ -26,12 +27,12 @@ func _run() -> void:
 			print("HERO_STATE: %s dead=%s hp=%.1f casts=%d cell=%s" % [hero.unit_type, hero.battle_dead, hero.health, hero.skill_casts, hero.battle_cell])
 		for enemy in game.enemies:
 			print("ENEMY_STATE: %s hp=%.1f cell=%s" % [enemy.enemy_type, enemy.health, enemy.battle_cell])
-		push_error("FULL_BATTLE_TEST_FAILED: 默认阵容无法完成演示战斗；%.2f秒，战利品%d，波次%d" % [game.battle_elapsed, game.pending_loot, game.wave_index + 1])
+		push_error("FULL_BATTLE_TEST_FAILED: 默认阵容无法完成演示战斗；%.2f秒，战利品%d，波次%d" % [game.battle_elapsed, game.earned_loot, game.wave_index + 1])
 		quit(1)
 		return
-	if game.pending_loot != 20:
-		push_error("FULL_BATTLE_TEST_FAILED: 总战利品应为20，实际%d" % game.pending_loot)
+	if game.earned_loot != 20:
+		push_error("FULL_BATTLE_TEST_FAILED: 总战利品应为20，实际%d" % game.earned_loot)
 		quit(1)
 		return
-	print("FULL_BATTLE_TEST_OK: 默认阵容完成4波Boss战，用时%.1f秒，唐僧剩余%d/%d，战利品%d" % [game.battle_elapsed, int(game.escort.health), int(game.escort.max_health), game.pending_loot])
+	print("FULL_BATTLE_TEST_OK: 默认阵容完成4波Boss战，用时%.1f秒，唐僧剩余%d/%d，战利品%d" % [game.battle_elapsed, int(game.escort.health), int(game.escort.max_health), game.earned_loot])
 	quit(0)

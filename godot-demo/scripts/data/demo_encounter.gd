@@ -1,5 +1,12 @@
 extends RefCounted
 
+# Four-wave playable-demo economy; tuning values, not chapter progression rules.
+const STARTING_COINS := 3
+const LEVEL_COSTS := [4,6,8,10,12,14,16]
+const PREPARATION_FREE_REFRESHES := 1
+const WAVE_HEALTH_SCALE := [1.0,1.15,1.35,1.60]
+const WAVE_DAMAGE_SCALE := [1.0,1.05,1.10,1.20]
+
 # Legacy single-encounter waves; not chapter-one final level data.
 const WAVES := [
 	{"name": "灰鼠试探", "preview": "上方三路 · 灰鼠喽啰 ×3", "units": ["rat", "rat", "rat"], "entries": [Vector2i(0, 1), Vector2i(0, 3), Vector2i(0, 5)]},

@@ -24,7 +24,8 @@ const REFRESH_COST := 2
 const COMBAT_TIME_SCALE := 1.0
 const CombatEvents = preload("res://scripts/combat/attack_events.gd")
 const DemoUnits = preload("res://scripts/data/demo_units.gd")
-const LEVEL_COSTS := [10, 16, 24, 34, 48, 65, 85]
+const Encounter = preload("res://scripts/data/demo_encounter.gd")
+const LEVEL_COSTS = Encounter.LEVEL_COSTS
 const QUALITY_COLORS := {
 	"white": Color("e9e5db"), "green": Color("72d681"), "blue": Color("69b8ff"),
 	"purple": Color("bd82ff"), "gold": Color("ffd45f")
@@ -33,10 +34,10 @@ const QUALITY_NAMES := {"white": "白", "green": "绿", "blue": "蓝", "purple":
 const WAVES = preload("res://scripts/data/demo_encounter.gd").WAVES
 
 var state := GameState.PREPARING
-var coins := 10
+var coins := Encounter.STARTING_COINS
 var population := 3
 var max_population := 10
-var refresh_token := 1
+var refresh_token := Encounter.PREPARATION_FREE_REFRESHES
 var heroes: Array = []
 var enemies: Array = []
 var shop_types: Array[String] = []
@@ -47,6 +48,8 @@ var drag_origin := {}
 var dragging := false
 var press_position := Vector2.ZERO
 var pending_loot := 0
+var earned_loot := 0
+var last_wave_reward := 0
 var wave_index := -1
 var intermission := 0.0
 var spawn_queue: Array[String] = []
@@ -414,8 +417,37 @@ func _process_wave(delta: float) -> void:
 		if wave_index >= WAVES.size() - 1:
 			_finish_battle(true)
 		else:
-			wave_index += 1
-			intermission = 3.0
+			_enter_wave_preparation()
+
+func _settle_wave_loot() -> void:
+	# Preserve the health-based reward rule, applied when each wave is cleared.
+	var ratio: float = escort.health/escort.max_health
+	var multiplier := 1.0 if ratio >= 0.999 else (0.9 if ratio >= 0.5 else 0.8)
+	last_wave_reward = int(ceil(float(pending_loot)*multiplier))
+	coins += last_wave_reward
+	earned_loot += last_wave_reward
+	pending_loot = 0
+
+func _enter_wave_preparation() -> void:
+	if state != GameState.BATTLE_RUNNING: return
+	state = GameState.PREPARING
+	_settle_wave_loot()
+	combat.clear()
+	moving.clear()
+	spawn_queue.clear()
+	spawn_entries.clear()
+	intermission = 0.0
+	battle_paused = false
+	audio_feedback.set_paused(false)
+	for hero in heroes: hero.end_battle()
+	refresh_token = Encounter.PREPARATION_FREE_REFRESHES
+	shop_types.clear()
+	for i in range(5): shop_types.append(_roll_shop_unit())
+	_clear_selection()
+	status_label.text = "第%d波完成 · +%d金币｜队员已恢复，可招募、合成和布阵" % [wave_index+1,last_wave_reward]
+	_set_shop_open(true)
+	_update_ui()
+	queue_redraw()
 
 func _begin_wave() -> void:
 	var wave: Dictionary = WAVES[wave_index]
@@ -426,6 +458,10 @@ func _begin_wave() -> void:
 func _spawn_enemy(enemy_type: String, cell: Vector2i) -> void:
 	var enemy = EnemyScene.new()
 	enemy.setup(enemy_type)
+	if wave_index >= 0 and wave_index < WAVES.size():
+		enemy.max_health *= Encounter.WAVE_HEALTH_SCALE[wave_index]
+		enemy.health = enemy.max_health
+		enemy.damage *= Encounter.WAVE_DAMAGE_SCALE[wave_index]
 	enemy.battle_cell = cell
 	enemy.position = _cell_center(cell)
 	enemy.z_index = 8 + cell.x
@@ -608,16 +644,19 @@ func _start_battle() -> void:
 		return
 	state = GameState.BATTLE_RUNNING
 	_set_shop_open(false)
-	combat.clear(true)
+	var first_wave := wave_index < 0
+	combat.clear(first_wave)
 	moving.clear()
 	accumulator = 0.0
-	battle_elapsed = 0.0
-	pending_loot = 0
-	wave_index = 0
+	if first_wave:
+		battle_elapsed = 0.0
+		pending_loot = 0
+		earned_loot = 0
+		escort.reset()
+	wave_index += 1
 	intermission = 3.0
 	battle_paused = false
-	battle_speed = 1.0
-	escort.reset()
+	audio_feedback.set_paused(false)
 	_clear_selection()
 	for hero in heroes:
 		hero.begin_battle()
@@ -638,21 +677,22 @@ func _finish_battle(victory: bool) -> void:
 	enemies.clear()
 	var percent: float = escort.health / escort.max_health
 	if victory:
+		_settle_wave_loot()
 		audio_feedback.play_cue("victory")
 		var stars := 3 if percent >= 0.999 else (2 if percent >= 0.5 else 1)
-		var multiplier := 1.0 if stars == 3 else (0.9 if stars == 2 else 0.8)
-		var payout := int(ceil(float(pending_loot) * multiplier))
-		coins += payout
 		var star_text := "★".repeat(stars) + "☆".repeat(3 - stars)
-		result_label.text = "%s\n\n护送成功 · 唐僧剩余生命 %d%%\n击杀战利品：%d\n星级结算倍率：%d%%\n本关获得金币：%d\n\n击败熊山君 · 单场试玩完成\n（章节解锁与存档后续接入）" % [star_text, int(round(percent * 100.0)), pending_loot, int(multiplier * 100.0), payout]
+		result_label.text = "%s\n\n四波护送成功 · 唐僧剩余生命 %d%%\n累计战利品：%d金币（已逐波发放）\n最后一波：+%d金币\n剩余金币：%d\n\n击败熊山君 · 本轮试玩完成\n（章节解锁与存档后续接入）" % [star_text,int(round(percent*100.0)),earned_loot,last_wave_reward,coins]
 	else:
-		result_label.text = "护送失败\n\n唐僧生命归零\n本次战利品不结算\n\n调整阵型、招募或合成英雄后再试一次"
+		result_label.text = "第%d波护送失败\n\n唐僧生命归零\n本波%d金币不结算\n此前已获得%d金币\n\n重新挑战将从3金币开始" % [wave_index+1,pending_loot,earned_loot]
 	overlay.visible = true
 
 func _restart_demo() -> void:
 	audio_feedback.stop_all()
 	combat.clear(true)
 	moving.clear()
+	spawn_queue.clear()
+	spawn_entries.clear()
+	spawn_cooldown = 0.0
 	for item in floating: item.label.queue_free()
 	floating.clear()
 	for enemy in enemies + retiring:
@@ -667,15 +707,18 @@ func _restart_demo() -> void:
 			hero.queue_free()
 	heroes.clear()
 	enemies.clear()
-	coins = 10
+	coins = Encounter.STARTING_COINS
 	population = 3
-	refresh_token = 1
+	refresh_token = Encounter.PREPARATION_FREE_REFRESHES
 	pending_loot = 0
+	earned_loot = 0
+	last_wave_reward = 0
 	wave_index = -1
 	intermission = 0.0
 	state = GameState.PREPARING
 	_set_shop_open(false)
 	overlay.visible = false
+	status_label.text = ""
 	start_button.text = "开始战斗"
 	escort.reset()
 	_initial_shop()
@@ -1046,15 +1089,16 @@ func _update_ui() -> void:
 	population_label.text = "人口  %d / %d" % [_deployed_count(), population]
 	escort_label.text = "唐僧  %d / %d" % [int(escort.health), int(escort.max_health)] if is_instance_valid(escort) else "唐僧"
 	loot_label.text = "待结算  %d" % pending_loot
-	wave_label.text = "波次  %d / %d" % [clampi(wave_index + 1, 0, WAVES.size()), WAVES.size()]
+	wave_label.text = "波次  %d / %d" % [clampi(wave_index + (2 if state == GameState.PREPARING else 1),1,WAVES.size()),WAVES.size()]
 	pause_button.text = "继续" if battle_paused else "暂停"
 	speed_button.text = "%d×" % int(battle_speed)
 	pause_button.disabled = state != GameState.BATTLE_RUNNING
 	speed_button.disabled = state != GameState.BATTLE_RUNNING
 
 	if state == GameState.PREPARING:
-		if status_label.text.is_empty() or status_label.text.begins_with("第"):
-			status_label.text = "布置阵型后开始：唐僧位于中央，队员将自动战斗"
+		start_button.text = "开始第%d波" % [wave_index+2]
+		if status_label.text.is_empty():
+			status_label.text = "3金币起步 · 每人1金｜先招募并布阵，再开始第一波"
 	elif state == GameState.BATTLE_RUNNING:
 		if battle_paused:
 			status_label.text = "战斗已暂停"
@@ -1113,7 +1157,7 @@ func _update_ui() -> void:
 		sell_button.text = "出售：返还 %d 金币" % refund
 		lock_button.text = "合成锁定：%s" % ("开" if hero.merge_locked else "关")
 	else:
-		info_label.text = "选择一名队员查看详情\n\n自动战斗规则\n敌人进攻唐僧\n围绕唐僧3格内走位\n边缘队员可向内靠拢\n最小技能试玩\n击杀金币战后再结算"
+		info_label.text = "选择一名队员查看详情\n\n每波胜利后可整备\n金币逐波发放\n队员恢复，唐僧血量保留\n每轮整备免费刷新1次\n围绕唐僧3格内走位\n手动开始下一波"
 
 func _draw() -> void:
 	if state == GameState.PREPARING:

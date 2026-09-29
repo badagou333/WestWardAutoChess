@@ -15,7 +15,7 @@ func _run_test() -> void:
 	if game.population != 3 or game.escort.position != game._cell_center(Vector2i(2, 3)):
 		_fail("初始人口或唐僧中央位置错误")
 		return
-	if game.coins != 10 or game.refresh_token != 1 or game.shop_types.size() != 5:
+	if game.coins != 3 or game.refresh_token != 1 or game.shop_types.size() != 5:
 		_fail("初始经济或商店错误")
 		return
 
@@ -26,7 +26,7 @@ func _run_test() -> void:
 		_fail("三合一后队员数量错误：%d" % game.heroes.size())
 		return
 	var merged = game.heroes[0]
-	if merged.star != 2 or merged.unit_type != "guard_monk" or game.coins != 7:
+	if merged.star != 2 or merged.unit_type != "guard_monk" or game.coins != 0:
 		_fail("自动三合一或招募金币结算错误")
 		return
 
@@ -39,7 +39,7 @@ func _run_test() -> void:
 
 	game.coins = 20
 	game._on_level_pressed()
-	if game.population != 4 or game.coins != 10:
+	if game.population != 4 or game.coins != 16:
 		_fail("升人口价格或结果错误")
 		return
 
@@ -89,7 +89,7 @@ func _run_test() -> void:
 		return
 
 	game._restart_demo()
-	if not game.heroes.is_empty() or not game.enemies.is_empty() or game.coins != 10 or game.population != 3 or game.state != game.GameState.PREPARING:
+	if not game.heroes.is_empty() or not game.enemies.is_empty() or game.coins != 3 or game.population != 3 or game.state != game.GameState.PREPARING:
 		_fail("重新体验没有完整重置")
 		return
 
