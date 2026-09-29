@@ -7,6 +7,15 @@
 
 负责音效风格、事件清单、素材制作与来源记录、试听审核、混音和交付规范。程序接入由06负责；不修改其运行时代码或工作流。跨领域确认交总控同步。候选音效必须标待审，生成与技术检查不等于听感验收。
 
+## 最新反馈：狐火修订仍不满意，调研现成音效库
+
+- 已完成：记录负责人对第二版狐火攻击仍不满意，核查现成素材库产品页与授权说明；没有继续生成、下载、购买或替换素材。
+- 修改文件：仅本工作流。验证结果：联网核对下列官方来源；未试听这些库的素材，不能宣称听感已经符合项目。
+- 新确认事项：本次程序合成狐火攻击未获听感认可；负责人询问现成音效库。待确认事项：选用素材及付费预算；尚未批准采购。
+- 候选来源（2026-09-29查阅）：[Freesound授权说明](https://freesound.org/help/faq/)——优先CC0，CC BY需署名，CC BY-NC不用于商业发行；[Gamemaster Audio Magic and Spell Sounds](https://www.gamemasteraudio.com/product/magic-and-spell-sounds/)——页面标价25美元，422条法术加260条附赠，可试听，标注商业使用与royalty-free；[BOOM Magic](https://www.boomlibrary.com/sound-effects/magic/)——付费，Designed成品清单包含Fire Arrow/Fire Ball的Cast与Hit，可试听；[Kenney Impact Sounds](https://kenney.nl/assets/impact-sounds)——免费CC0，适合补充普通打击，非火球首选。
+- 已找到免费筛选入口：[Magic - Blast or Whoosh / Vrymaa](https://freesound.org/people/Vrymaa/sounds/802725/)与[swish/whoosh / JSilverSound](https://freesound.org/people/JSilverSound/sounds/568834/)，条目标注CC0；仍须试听判定。另[Fireball / NearTheAtmoshphere](https://freesound.org/people/NearTheAtmoshphere/sounds/683179/)为CC0，但作者标注为命中声，不能直接当发射声推荐。
+- 阻塞项：无调研阻塞。推荐下一步（提案）：从免费CC0素材筛少量火焰发射候选试听，必要时再考虑付费成套法术库；正式纳入前记录具体条目、作者、授权及编辑处理。现有运行时文件本批不改，英雄退场继续暂缓。
+
 ## 最新批次：狐火攻击声音修订
 
 - 已完成：依据负责人“不和谐、不像火球发出”的反馈重做狐火攻击，移除下滑纯音，改为短点火、火焰气流与轻微火星碎响；原位更新WAV及合辑、清单、生成工具。
@@ -44,6 +53,8 @@
 06已完成17条采用声音的接入，保留UI和胜利占位音；英雄退场保持无声。默认音量0.35、8路并发，并有音量余量、限幅、优先级和节流；具体实现及验证以06工作流“08音效采用清单接入”为准。程序输出验证不等于扬声器或混战人工听感通过。
 
 ## 待总控同步
+
+- 第二版狐火攻击仍未获负责人听感认可，现成素材库替换为下一步提案，尚未选定或购买。
 
 - 狐火旧攻击音被负责人要求重做，已原位修订并待试听；06此前17条音效试接已完成，本批不改接线。
 
