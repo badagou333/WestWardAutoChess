@@ -48,10 +48,10 @@ var show_name := false
 var effects_on := true
 var events := {"idle": 1, "move": 0, "basic_attack": 0, "hit": 0, "retreat": 0}
 
-func setup_visual(key: String) -> void:
+func setup_visual(key: String, pack := "demo_v1") -> void:
 	role = key
 	motion = Motion.PROFILES[key]
-	var base := "res://art/production/%s/demo_v1/" % role
+	var base := "res://art/production/%s/%s/" % [role,pack]
 	manifest = JSON.parse_string(FileAccess.get_file_as_string(base + "manifest.json"))
 	if manifest.has("atlas"):
 		manifest["atlases"] = {"body": manifest.atlas.file}

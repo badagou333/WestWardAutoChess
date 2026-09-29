@@ -66,6 +66,8 @@ godot --headless --path godot-demo --script res://art/reviews/six-role-battle/ve
 
 ## 2026-09-29 音效试接
 
+本日主棋盘也已切换手绘背景，野猪选择 `production/boar/painted_v1`（旧包保留）。`scripts/presentation/board_geometry.gd` 保存石缝交点标定，点击、拖放、高亮和脚点共享同一透视映射；逻辑仍为5×7，中央唐僧格不变。运行截图见 `tests/painted-board-preview.png`。坐标回归：`godot --headless --path godot-demo --script res://tests/board_geometry_test.gd`。手绘曲线与四边形边界允许少量像素误差，不代表逐像素匹配。
+
 已按 `audio/candidates/v1/adoption.json` 接入17条角色攻击/施法、怪物死亡、共用材质受击及唐僧警示。五名英雄退场保持无声；UI和胜利保留旧音效。近战省略附加材质音以免双重敲击，远程非致命命中使用材质音。右上开关和滑条控制所有试玩音效；暂停冻结声音，2×不变调，重开停止旧声音。
 
 验证命令：`godot --headless --path godot-demo --script res://tests/audio_integration_test.gd` 只验证程序调度；`godot-demo/launch.command --script res://tests/audio_output_test.gd` 在正常窗口播放短音，验证引擎输出和控件。后者不改系统音量/设备，也不等于人工听感验收。请先低音量试听，再比较1×/2×战斗中警示与攻击是否清晰。

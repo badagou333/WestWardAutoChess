@@ -62,7 +62,7 @@ func setup(new_type: String) -> void:
 	add_child(portrait)
 	if enemy_type in ["bear_lord", "wolf", "boar"]:
 		presentation = Presentation.new()
-		presentation.setup_visual("mountain_wolf" if enemy_type == "wolf" else enemy_type)
+		presentation.setup_visual("mountain_wolf" if enemy_type == "wolf" else enemy_type,"painted_v1" if enemy_type == "boar" else "demo_v1")
 		presentation.foot_anchor = Vector2.ZERO
 		presentation.show_anchor = false
 		presentation.show_status = false

@@ -3,7 +3,9 @@ extends Node2D
 const HeroScene = preload("res://scripts/unit.gd")
 const EnemyScene = preload("res://scripts/enemy.gd")
 const EscortScene = preload("res://scripts/escort.gd")
-const BATTLEFIELD_TEXTURE = preload("res://art/demo/temple_battlefield.png")
+const BATTLEFIELD_PATH := "res://art/reviews/style-unification-v1/battlefield-candidate.png"
+const BoardGeometry = preload("res://scripts/presentation/board_geometry.gd")
+var painted_board := false
 
 enum GameState { PREPARING, BATTLE_RUNNING, RESULT }
 
@@ -83,6 +85,7 @@ var replay_button: Button
 var background: TextureRect
 
 func _ready() -> void:
+	painted_board = true
 	var font := SystemFont.new()
 	font.font_names = PackedStringArray(["Heiti SC", "Microsoft YaHei", "Noto Sans CJK SC", "Arial Unicode MS"])
 	ThemeDB.fallback_font = font
@@ -108,7 +111,8 @@ func _ready() -> void:
 
 func _create_background() -> void:
 	background = TextureRect.new()
-	background.texture = BATTLEFIELD_TEXTURE
+	var path := BATTLEFIELD_PATH if painted_board else "res://art/demo/temple_battlefield.png"
+	background.texture = preload("res://scripts/presentation/character_presentation.gd")._texture(path)
 	background.position = Vector2.ZERO
 	background.size = SCREEN_SIZE
 	background.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -195,21 +199,21 @@ func _create_interface() -> void:
 	tip_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 
 	var info_back := ColorRect.new()
-	info_back.position = Vector2(1548, 122)
-	info_back.size = Vector2(358, 372)
+	info_back.position = Vector2(1630, 122)
+	info_back.size = Vector2(280, 372)
 	info_back.color = Color(0.08, 0.05, 0.025, 0.72)
 	info_back.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	info_back.z_index = 24
 	add_child(info_back)
-	info_label = _make_label(Vector2(1558, 132), Vector2(338, 350), 20, Color("fff1cf"), 25)
+	info_label = _make_label(Vector2(1640, 132), Vector2(260, 350), 18, Color("fff1cf"), 25)
 	info_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	info_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 
-	sell_button = _make_button(Vector2(1590, 510), Vector2(274, 54), "出售选中队员", Color("924e42"), 31)
+	sell_button = _make_button(Vector2(1640, 510), Vector2(260, 54), "出售选中队员", Color("924e42"), 31)
 	sell_button.pressed.connect(_sell_selected)
-	lock_button = _make_button(Vector2(1590, 574), Vector2(274, 54), "合成锁定：关", Color("765d90"), 31)
+	lock_button = _make_button(Vector2(1640, 574), Vector2(260, 54), "合成锁定：关", Color("765d90"), 31)
 	lock_button.pressed.connect(_toggle_selected_lock)
-	start_button = _make_button(Vector2(1590, 735), Vector2(274, 98), "开始战斗", Color("bd7627"), 31)
+	start_button = _make_button(Vector2(1640, 735), Vector2(260, 98), "开始战斗", Color("bd7627"), 31)
 	start_button.add_theme_font_size_override("font_size", 27)
 	start_button.pressed.connect(_start_battle)
 
@@ -936,9 +940,11 @@ func _bench_slot_at(pos: Vector2) -> int:
 	return slot if slot >= 0 and slot < BENCH_SIZE and abs(pos.x - _bench_position(slot).x) <= 40.0 else -1
 
 func _cell_center(cell: Vector2i) -> Vector2:
+	if painted_board: return BoardGeometry.center(cell)
 	return BOARD_ORIGIN + Vector2((float(cell.y) + 0.5) * CELL_SIZE.x, (float(cell.x) + 0.5) * CELL_SIZE.y)
 
 func _screen_to_cell(pos: Vector2) -> Vector2i:
+	if painted_board: return BoardGeometry.cell_at(pos)
 	var col := int(floor((pos.x - BOARD_ORIGIN.x) / CELL_SIZE.x))
 	var row := int(floor((pos.y - BOARD_ORIGIN.y) / CELL_SIZE.y))
 	return Vector2i(row, col)
@@ -1056,7 +1062,13 @@ func _draw() -> void:
 				var color := Color(0.25, 0.75, 0.45, 0.055)
 				if cell == CENTER_CELL:
 					color = Color(1.0, 0.67, 0.12, 0.14)
-				draw_rect(rect.grow(-5), color, true)
+				if painted_board:
+					var points := BoardGeometry.polygon(cell)
+					draw_colored_polygon(points,color)
+					points.append(points[0])
+					draw_polyline(points,Color(0.82,0.75,0.57,0.32),1.5,true)
+				else:
+					draw_rect(rect.grow(-5), color, true)
 	for slot in range(BENCH_SIZE):
 		var center := _bench_position(slot)
 		draw_style_box(_button_box(Color(0.18, 0.16, 0.13, 0.92), Color(0.48, 0.43, 0.34)), Rect2(center - Vector2(37, 45), Vector2(74, 90)))
