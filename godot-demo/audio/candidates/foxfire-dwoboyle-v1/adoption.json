@@ -1,0 +1,13 @@
+{
+  "decision_date": "2026-09-29",
+  "authority": "负责人：a更好，用a吧",
+  "event_key": "foxfire_imp_attack",
+  "approved_file": "foxfire_A_faithful.wav",
+  "sha256": "aa30009e92190a69ec99a404f047b453606a8f6e79e5a0f4fe3de495a900a7db",
+  "not_selected": [
+    "foxfire_B_short.wav"
+  ],
+  "attribution_file": "ATTRIBUTION.md",
+  "status": "A版试听通过并授权接入；游戏内混音待验收",
+  "note": "本文件记录采用决定；manifest为制作阶段技术记录。A取代此前程序合成狐火攻击，保持发射时机与英雄退场静音。"
+}

@@ -1,6 +1,8 @@
 # 狐火攻击 · DWOBoyle Fire Ball 改编候选
 
-2026-09-29 · 08｜音效设计 · **待试听，未替换当前运行时素材**。
+2026-09-29 · 08｜音效设计 · **负责人已选择A版，授权06接入；游戏内混音待验收**。
+
+最新决定：负责人明确“a更好，用a吧”。采用 `foxfire_A_faithful.wav`，B版不采用；以 `adoption.json` 为选择清单。下方A/B比较及manifest保留制作记录，后续接入状态以06交接为准。
 
 负责人指定以 [DWOBoyle — Fire Ball](https://freesound.org/people/DWOBoyle/sounds/136696/) 为基础改进。原条目本身为火球投掷设计，使用CC BY 4.0，允许改编并须署名。完整来源与改编说明见 [ATTRIBUTION.md](ATTRIBUTION.md)。
 
