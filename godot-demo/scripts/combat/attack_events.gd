@@ -3,6 +3,7 @@ extends Node2D
 # One release per attack serial. Presentation never changes HP.
 signal resolved(target, amount, healing, source)
 signal released
+signal projectile_released(event: Dictionary)
 var strikes: Array = []
 var missiles: Array = []
 var marks: Array = []
@@ -19,11 +20,14 @@ static func visual(actor):
 func request(actor, target, healing := false, splash := false) -> void:
 	if not alive(actor) or not alive(target): return
 	var view = visual(actor)
+	var source_key = actor.get("unit_type")
+	if source_key == null: source_key = actor.get("enemy_type")
+	if source_key == null: source_key = actor.get("role")
 	actor.play_attack()
 	if view != null:
 		view.face(target.position - actor.position if view != actor else target.position)
 	strikes.append({"source":actor,"target":target,"view":view,"serial":view.attack_serial if view != null else 0,
-		"time":0.0,"amount":actor.damage,"healing":healing,"splash":splash})
+		"source_key":source_key,"time":0.0,"amount":actor.damage,"healing":healing,"splash":splash})
 	counts.attacks += 1
 
 func tick(delta: float) -> void:
@@ -64,6 +68,7 @@ func tick(delta: float) -> void:
 			missiles.append(strike)
 			counts.projectiles += 1
 			released.emit()
+			projectile_released.emit(strike)
 		else:
 			_apply(strike)
 			if view != null: view.impact_stop = 0.035

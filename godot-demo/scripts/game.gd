@@ -97,7 +97,7 @@ func _ready() -> void:
 	combat = CombatEvents.new()
 	combat.z_index = 1900
 	combat.resolved.connect(_apply_combat_event)
-	combat.released.connect(func(): audio_feedback.play_cue("release"))
+	combat.projectile_released.connect(audio_feedback.released)
 	add_child(combat)
 	# UI stays above the foot-sorted battlefield.
 	for child in get_children():
@@ -147,7 +147,6 @@ func _create_interface() -> void:
 	var sound_button := _make_button(Vector2(1750,15),Vector2(140,52),"音效：开",Color("607b55"),32)
 	sound_button.pressed.connect(func():
 		audio_feedback.enabled = not audio_feedback.enabled
-		audio_feedback.stop_all()
 		sound_button.text = "音效：开" if audio_feedback.enabled else "音效：关"
 	)
 	var volume := HSlider.new()
@@ -412,7 +411,7 @@ func _healing_target(_hero):
 	return result
 
 func _apply_combat_event(target, amount: float, healing: bool, event: Dictionary) -> void:
-	audio_feedback.play_cue("heal" if healing else "hit")
+	audio_feedback.resolved_attack(event)
 	if healing:
 		target.heal(amount)
 		_float_text(target.position+Vector2(0,-130),"+%d" % int(amount),Color("75eba3"))
@@ -424,6 +423,7 @@ func _apply_combat_event(target, amount: float, healing: bool, event: Dictionary
 					targets.append(enemy)
 		for recipient in targets:
 			recipient.take_damage(amount)
+			audio_feedback.hit(recipient,event.has("texture"),recipient == escort)
 			_float_text(recipient.position+Vector2(0,-130),str(int(amount)),Color("ffd28a"))
 
 func _process_enemies(delta: float) -> void:
@@ -518,7 +518,7 @@ func _on_enemy_defeated(enemy) -> void:
 		pending_loot += enemy.reward
 		_float_text(enemy.position + Vector2(0, -110), "+%d 战利品" % enemy.reward, Color("ffe36d"))
 		retiring.append(enemy)
-		audio_feedback.play_cue("retreat")
+		audio_feedback.play_cue(enemy.enemy_type+"_death")
 		enemy.play_death()
 
 func _nearest_enemy_to_cell(cell: Vector2i):

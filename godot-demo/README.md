@@ -64,6 +64,12 @@ godot --headless --path godot-demo --script res://art/reviews/six-role-battle/ve
 设计基线见 [确认版设计](../docs/CONFIRMED_GAME_DESIGN.md)，开发范围与待办见 [06工作流](../docs/workstreams/06-development.md)。
 # 2026-09-27 山狼接入
 
+## 2026-09-29 音效试接
+
+已按 `audio/candidates/v1/adoption.json` 接入17条角色攻击/施法、怪物死亡、共用材质受击及唐僧警示。五名英雄退场保持无声；UI和胜利保留旧音效。近战省略附加材质音以免双重敲击，远程非致命命中使用材质音。右上开关和滑条控制所有试玩音效；暂停冻结声音，2×不变调，重开停止旧声音。
+
+验证命令：`godot --headless --path godot-demo --script res://tests/audio_integration_test.gd` 只验证程序调度；`godot-demo/launch.command --script res://tests/audio_output_test.gd` 在正常窗口播放短音，验证引擎输出和控件。后者不改系统音量/设备，也不等于人工听感验收。请先低音量试听，再比较1×/2×战斗中警示与攻击是否清晰。
+
 第三波山狼已使用新的透明五姿势素材；左右朝向、扑咬、受击及退场已接入共享播放器。移动是单姿势配合程序过渡，并非完整逐帧动画。旧测试战斗数值保持不变。
 
 2026-09-28：野猪也已接入五基础姿势，沿用原Demo双足绿金护甲、钉头锤造型；攻击/受击不再仅靠单图缩放变色。仍为关键姿势配合程序过渡，攻击或移动期间受击以闪色反馈为主，不打断动作。灰鼠仍为旧单图占位。
