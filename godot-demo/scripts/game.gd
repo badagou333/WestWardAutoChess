@@ -18,8 +18,8 @@ const CENTER_CELL := Vector2i(2, 3)
 # Demo tuning, not final balance: defend the escort rather than the spawn cell.
 const DEFENSE_RADIUS := 3
 const BENCH_SIZE := 8
-const BENCH_START := Vector2(790, 1000)
-const BENCH_STEP := 83.0
+const BENCH_START := Vector2(886, 1015)
+const BENCH_STEP := 96.0
 const REFRESH_COST := 2
 const COMBAT_TIME_SCALE := 1.0
 const CombatEvents = preload("res://scripts/combat/attack_events.gd")
@@ -72,6 +72,8 @@ var status_label: Label
 var info_label: Label
 var tip_label: Label
 var shop_buttons: Array[Button] = []
+var bench_panels: Array[Panel] = []
+var bench_label: Label
 var refresh_button: Button
 var level_button: Button
 var start_button: Button
@@ -179,24 +181,38 @@ func _create_interface() -> void:
 	bottom_panel.z_index = 25
 	add_child(bottom_panel)
 
-	var shop_title := _make_label(Vector2(20, 878), Vector2(630, 35), 22, Color("ffe3a1"), 31)
-	shop_title.text = "招募商店  ·  数字键 1—5 购买"
+	var shop_title := _make_label(Vector2(20, 877), Vector2(780, 30), 22, Color("ffe3a1"), 31)
+	shop_title.text = "招募商店     1—5 购买 · 悬停查看定位"
 	for i in range(5):
-		var button := _make_button(Vector2(20 + i * 142, 920), Vector2(132, 132), "", Color("765b3d"), 31)
-		button.add_theme_font_size_override("font_size", 18)
+		var button := preload("res://scripts/presentation/shop_card.gd").new()
+		button.position = Vector2(20+i*156,913)
+		button.size = Vector2(148,155)
+		button.z_index = 31
+		_style_button(button,Color("302c24"))
+		add_child(button)
 		button.pressed.connect(_on_shop_pressed.bind(i))
 		shop_buttons.append(button)
 
-	refresh_button = _make_button(Vector2(730, 882), Vector2(176, 64), "", Color("55734a"), 31)
+	refresh_button = _make_button(Vector2(1660, 919), Vector2(238, 62), "", Color("425441"), 31)
 	refresh_button.pressed.connect(_on_refresh_pressed)
-	level_button = _make_button(Vector2(916, 882), Vector2(176, 64), "", Color("536c91"), 31)
+	level_button = _make_button(Vector2(1660, 997), Vector2(238, 62), "", Color("424e61"), 31)
 	level_button.pressed.connect(_on_level_pressed)
 
-	var bench_title := _make_label(Vector2(1110, 882), Vector2(360, 35), 21, Color("d9d4c7"), 31)
-	bench_title.text = "候选区 8格 · 拖动队员上阵"
-	tip_label = _make_label(Vector2(715, 1048), Vector2(760, 28), 15, Color("d8ccb3"), 31)
-	tip_label.text = "准备期可拖动或先点击队员再点击格子；中央唐僧格不可放置。三个同名同星自动合成。"
-	tip_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	bench_label = _make_label(Vector2(842,877),Vector2(400,30),22,Color("ffe3a1"),31)
+	tip_label = _make_label(Vector2(1215,880),Vector2(400,26),16,Color("b9ac90"),31)
+	tip_label.text = "拖动上阵 · 三个同名同星自动合成"
+	var action_title := _make_label(Vector2(1660,877),Vector2(238,30),21,Color("ffe3a1"),31)
+	action_title.text = "备战操作"
+	for slot in range(BENCH_SIZE):
+		var panel := Panel.new()
+		panel.position = Vector2(BENCH_START.x+BENCH_STEP*slot-44,916)
+		panel.size = Vector2(88,151)
+		panel.z_index = 26
+		panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		add_child(panel)
+		bench_panels.append(panel)
+		var number := _make_label(panel.position+Vector2(7,4),Vector2(26,24),16,Color("b2a382"),27)
+		number.text = str(slot+1)
 
 	var info_back := ColorRect.new()
 	info_back.position = Vector2(1630, 122)
@@ -246,6 +262,7 @@ func _make_label(pos: Vector2, label_size: Vector2, font_size: int, color: Color
 	var label := Label.new()
 	label.position = pos
 	label.size = label_size
+	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	label.add_theme_font_size_override("font_size", font_size)
 	label.add_theme_font_override("font", ThemeDB.fallback_font)
 	label.add_theme_color_override("font_color", color)
@@ -934,10 +951,10 @@ func _bench_position(slot: int) -> Vector2:
 	return BENCH_START + Vector2(BENCH_STEP * slot, 0)
 
 func _bench_slot_at(pos: Vector2) -> int:
-	if abs(pos.y - BENCH_START.y) > 55.0:
+	if pos.y < 916 or pos.y > 1067:
 		return -1
 	var slot := int(round((pos.x - BENCH_START.x) / BENCH_STEP))
-	return slot if slot >= 0 and slot < BENCH_SIZE and abs(pos.x - _bench_position(slot).x) <= 40.0 else -1
+	return slot if slot >= 0 and slot < BENCH_SIZE and abs(pos.x - _bench_position(slot).x) <= 44.0 else -1
 
 func _cell_center(cell: Vector2i) -> Vector2:
 	if painted_board: return BoardGeometry.center(cell)
@@ -1020,20 +1037,28 @@ func _update_ui() -> void:
 		level_button.text = "已达最大人口"
 		level_button.disabled = true
 	start_button.disabled = state != GameState.PREPARING or _deployed_count() == 0
+	var occupied := 0
+	for slot in range(bench_panels.size()):
+		var filled := _hero_in_bench(slot) != null
+		if filled: occupied += 1
+		bench_panels[slot].add_theme_stylebox_override("panel",_button_box(Color("38372b") if filled else Color("24271f"),Color("bc9e62") if filled else Color("6c7253")))
+	bench_label.text = "待上场  %d / 8  ·  候选席" % occupied
 
 	for i in range(shop_buttons.size()):
 		var button := shop_buttons[i]
 		if i >= shop_types.size() or shop_types[i].is_empty():
-			button.text = "已售出"
+			button.set_offer("","",0,i)
+			button.tooltip_text = "此位置已招募，刷新可补充商店"
 			button.disabled = true
 			continue
 		var unit_type := shop_types[i]
 		var data: Dictionary = HeroScene.UNIT_DATA[unit_type]
 		var quality: String = data.quality
 		var cost: int = HeroScene.QUALITY_DATA[quality].cost
-		button.text = "%d\n%s\n[%s色]  %d金币\n%s" % [i + 1, data.name, QUALITY_NAMES[quality], cost, data.skill1]
+		button.set_offer(unit_type,data.name,cost,i)
+		button.tooltip_text = "%s · %s品质 · %d金币\n%s\n点击或按 %d 招募至候选席" % [data.name,QUALITY_NAMES[quality],cost,data.skill1,i+1]
 		button.disabled = state != GameState.PREPARING or coins < cost or _free_bench_slot() < 0
-		button.add_theme_stylebox_override("normal", _button_box(QUALITY_COLORS[quality].darkened(0.48), QUALITY_COLORS[quality]))
+		button.add_theme_stylebox_override("normal", _button_box(Color("302c24"), QUALITY_COLORS[quality].darkened(0.4)))
 
 	var has_selection := is_instance_valid(selected_hero)
 	sell_button.visible = has_selection and state == GameState.PREPARING
@@ -1069,6 +1094,3 @@ func _draw() -> void:
 					draw_polyline(points,Color(0.82,0.75,0.57,0.32),1.5,true)
 				else:
 					draw_rect(rect.grow(-5), color, true)
-	for slot in range(BENCH_SIZE):
-		var center := _bench_position(slot)
-		draw_style_box(_button_box(Color(0.18, 0.16, 0.13, 0.92), Color(0.48, 0.43, 0.34)), Rect2(center - Vector2(37, 45), Vector2(74, 90)))

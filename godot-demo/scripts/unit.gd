@@ -58,7 +58,7 @@ func _apply_stats() -> void:
 	queue_redraw()
 
 func set_bench_mode(on_bench: bool) -> void:
-	presentation.scale = Vector2.ONE * (0.48 if on_bench else 1.0)
+	presentation.scale = Vector2.ONE * (0.62 if on_bench else 1.0)
 	presentation.foot_anchor = presentation.FOOT if on_bench else Vector2.ZERO
 	queue_redraw()
 
@@ -130,7 +130,7 @@ func _draw() -> void:
 		draw_rect(Rect2(-38,-163,76,7), Color("40262b"))
 		draw_rect(Rect2(-36,-161,72 * health / max_health,3), Color("66dc75"))
 	if not battle_dead:
-		draw_string(ThemeDB.fallback_font, Vector2(-15*star,25 if board_row >= 0 else 60), "★".repeat(star), HORIZONTAL_ALIGNMENT_CENTER, 30*star,19,Color("ffe56f"))
+		draw_string(ThemeDB.fallback_font, Vector2(-15*star,25 if board_row >= 0 else 43), "★".repeat(star), HORIZONTAL_ALIGNMENT_CENTER, 30*star,19,Color("ffe56f"))
 	if merge_locked:
 		draw_string(ThemeDB.fallback_font, Vector2(22,-45), "锁", HORIZONTAL_ALIGNMENT_LEFT,26,18,Color.WHITE)
 	if selected:
