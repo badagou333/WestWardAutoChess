@@ -70,8 +70,8 @@
       "trigger_proposal": "狐火释放",
       "duration_seconds": 0.4,
       "peak_dbfs": -11.0,
-      "rms_dbfs": -26.08,
-      "sha256": "9c193d2e66a145d4a7afe04498959081df9afd88e6ff6f073967761ef90eebad",
+      "rms_dbfs": -29.05,
+      "sha256": "b23117f2bf868dbaf682c5964117681ee425e417b64e4e9fa188c862088f0803",
       "reel_start_seconds": 3.77
     },
     {

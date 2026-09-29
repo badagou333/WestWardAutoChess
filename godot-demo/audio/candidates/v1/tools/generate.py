@@ -46,7 +46,18 @@ def sound(kind, duration):
         x=noise(n,2500,8500)*env(t,.08,.015)*.13
         for delay,f in [(0,540),(.045,810),(.09,1080)]:
             tt=np.maximum(0,t-delay); x+=np.sin(2*np.pi*f*tt)*env(tt,.14,.003)*.22
-    elif kind=='fire': x=noise(n,250,4200)*env(t,.12,.018)*.35+tone(t,390,120,.18)*.4+noise(n,5000,12000)*env(t,.045)*.10
+    elif kind=='fire':
+        # Fireball revision: ignition -> turbulent air/flame -> soft ember tail.
+        # Two noise draws preserve every subsequent cue's random sequence.
+        body=noise(n,110,1900)
+        air=noise(n,950,6200)
+        launch=env(t,.075,.006)
+        passing=env(t,.090,.016)
+        turbulence=1+.14*np.sin(2*np.pi*37*t)+.09*np.sin(2*np.pi*61*t)
+        ignition=np.exp(-((t-.012)/.005)**2)
+        embers=sum(a*np.exp(-((t-at)/width)**2) for at,width,a in
+                   [(.054,.0018,.08),(.093,.0024,.055),(.143,.0028,.035)])
+        x=body*launch*.62+air*passing*turbulence*.24+air*(ignition*.085+embers)
     elif kind=='scratch': x=noise(n,1800,9000)*env(t,.035)*.35+modes(t,730,False,.035)*.18
     elif kind=='hammer': x=tone(t,145,52,.13)*.65+modes(t,430,True,.10)*.20+noise(n,100,3500)*env(t,.045)*.20
     elif kind=='bite': x=noise(n,500,6500)*env(t,.025)*.30+tone(t,220,95,.055)*.40+beast(t,125,85)*.18
