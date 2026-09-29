@@ -1,0 +1,33 @@
+{
+  "status": "待试听；独立候选，未替换运行时声音",
+  "title": "Fire Ball",
+  "author": "DWOBoyle",
+  "source_page": "https://freesound.org/people/DWOBoyle/sounds/136696/",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "source_kind": "Public HQ MP3 preview; not original WAV",
+  "download_url": "https://cdn.freesound.org/previews/136/136696_2289019-hq.mp3",
+  "source_sha256": "0a8cfaa2a6881b8f41ba0fe5cd4cf855dec8d57fad8932f10269f7e12c0fe246",
+  "decoded_sha256": "d1a4fe0b1f02e8e9098f4cf5f02b026322f34fac9f67b63319aa75934479c269",
+  "format": "44100 Hz, mono, PCM 16-bit",
+  "edits": {
+    "A": "Stereo averaged to mono; nearly silent tail removed; short endpoint fades; peak -11dBFS.",
+    "B": "Mono; 55Hz high-pass; broad -1.5dB at 3.3kHz; gentle 10.5kHz low-pass; source 0.035–0.490s; 65ms tail fade; peak -11dBFS. No new sound layers or pitch/time change."
+  },
+  "entries": [
+    {
+      "file": "foxfire_A_faithful.wav",
+      "duration_seconds": 0.57,
+      "peak_dbfs": -11.000260703669154,
+      "rms_dbfs": -28.811417660657366,
+      "sha256": "aa30009e92190a69ec99a404f047b453606a8f6e79e5a0f4fe3de495a900a7db"
+    },
+    {
+      "file": "foxfire_B_short.wav",
+      "duration_seconds": 0.4549886621315193,
+      "peak_dbfs": -11.000260703669154,
+      "rms_dbfs": -27.646860342201578,
+      "sha256": "e17beca63fcaf23d8b07b60ccf3dc759ee77bf36e55009ae0f06b7baa7ad1eb7"
+    }
+  ]
+}
