@@ -9,6 +9,9 @@ from pathlib import Path
 
 
 REQUIRED_RELEASE_FILES = (
+    "scenes/escort_route.tscn.remap",
+    "scripts/escort_route.gd.remap",
+    "scripts/data/escort_map.gd.remap",
     "scenes/main.tscn.remap",
     "scripts/game.gd.remap",
     "scripts/unit.gd.remap",

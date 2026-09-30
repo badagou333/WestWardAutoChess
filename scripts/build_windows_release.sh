@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 
-VERSION="${1:-0.1.0-playtest.1}"
+VERSION="${1:-0.2.0-playtest.1}"
 case "$VERSION" in
   *[!0-9A-Za-z.-]*|'')
     echo "版本号只能包含字母、数字、点和连字符：$VERSION" >&2

@@ -105,7 +105,8 @@ Codex 应按照 `AGENTS.md` 自动完成提交和推送；以上命令用于人�
 
 - 当前有效原型：`godot-demo/`
 - Godot 项目文件：`godot-demo/project.godot`
-- 主场景：`godot-demo/scenes/main.tscn`
+- 主场景：`godot-demo/scenes/escort_route.tscn`（2026-09-30 起：不规则地图、A→B 护送、战中调度）；入口操作与原型参数以 `godot-demo/README.md` 为准。
+- 旧固定棋盘对照场景：`godot-demo/scenes/main.tscn`，旧自动测试继续针对它；新模式专项为 `tests/escort_route_test.gd`，不得把旧回归通过当作新模式验收。
 - 核心逻辑：`godot-demo/scripts/game.gd`
 - 已确认设计：`docs/CONFIRMED_GAME_DESIGN.md`
 - 第一章梳理：`docs/FIRST_CHAPTER_DESIGN.md`

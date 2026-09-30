@@ -131,9 +131,13 @@ func _create_background() -> void:
 
 func _create_escort() -> void:
 	escort = EscortScene.new()
-	escort.position = _cell_center(CENTER_CELL)
+	escort.position = _cell_center(_escort_cell())
 	escort.z_index = 7
 	add_child(escort)
+
+# Shared combat uses the live escort tile. The legacy scene keeps its fixed center.
+func _escort_cell() -> Vector2i:
+	return CENTER_CELL
 
 func _create_interface() -> void:
 	var top_panel := ColorRect.new()
@@ -478,7 +482,7 @@ func _process_heroes(delta: float) -> void:
 		var healing: bool = hero.unit_type == "herbal_spirit_child"
 		var target = _healing_target(hero) if healing else _reachable_enemy(hero)
 		if target == null: continue
-		var cell: Vector2i = CENTER_CELL if target == escort else target.battle_cell
+		var cell: Vector2i = _escort_cell() if target == escort else target.battle_cell
 		if _cell_distance(hero.battle_cell,cell) <= hero.attack_range_cells:
 			if hero.cooldown <= 0:
 				hero.cooldown = hero.effective_interval()
@@ -493,7 +497,7 @@ func _healing_target(_hero):
 		if not CombatEvents.alive(ally): continue
 		if ally != escort and not ally.active_in_battle: continue
 		var current: float = ally.health / ally.max_health
-		var target_cell: Vector2i = CENTER_CELL if ally == escort else ally.battle_cell
+		var target_cell: Vector2i = _escort_cell() if ally == escort else ally.battle_cell
 		if _combat_path(_hero, target_cell, _hero.attack_range_cells, true).is_empty(): continue
 		if current < ratio:
 			ratio = current
@@ -523,7 +527,7 @@ func _process_enemies(delta: float) -> void:
 		enemy.move_cooldown = maxf(0,enemy.move_cooldown-delta)
 		if _is_moving(enemy) or (enemy.presentation != null and enemy.presentation.pose == "basic_attack"): continue
 		var target = _adjacent_blocking_hero(enemy.battle_cell)
-		if target == null and _cell_distance(enemy.battle_cell,CENTER_CELL) <= 1: target = escort
+		if target == null and _cell_distance(enemy.battle_cell,_escort_cell()) <= 1: target = escort
 		if target != null:
 			if enemy.attack_cooldown <= 0:
 				enemy.attack_cooldown = enemy.attack_interval
@@ -534,6 +538,7 @@ func _process_enemies(delta: float) -> void:
 # Paths end at a free attack/healing position, never on the target.
 # Both ends of an in-flight move are reserved until the actor arrives.
 func _cell_blocked(cell: Vector2i, mover) -> bool:
+	if cell == _escort_cell() and mover != escort: return true
 	if _hero_at_cell(cell, mover) != null: return true
 	var enemy = _enemy_at_cell(cell)
 	if enemy != null and enemy != mover: return true
@@ -555,7 +560,7 @@ func _combat_path(mover, target: Vector2i, reach: int, limited: bool) -> Array[V
 			return path
 		for direction in [Vector2i(0,1),Vector2i(-1,0),Vector2i(1,0),Vector2i(0,-1)]:
 			var next: Vector2i = cell + direction
-			if not _valid_cell(next) or next == CENTER_CELL or parents.has(next): continue
+			if not _valid_cell(next) or next == _escort_cell() or parents.has(next): continue
 			if limited and not _defense_step_allowed(cell, next): continue
 			if _cell_blocked(next, mover): continue
 			parents[next] = cell
@@ -563,10 +568,10 @@ func _combat_path(mover, target: Vector2i, reach: int, limited: bool) -> Array[V
 	return []
 
 func _defense_step_allowed(current: Vector2i, next: Vector2i) -> bool:
-	var distance := _cell_distance(next, CENTER_CELL)
+	var distance := _cell_distance(next, _escort_cell())
 	if distance <= DEFENSE_RADIUS: return true
 	# Edge deployments may enter the zone, but cannot chase farther outward.
-	return _cell_distance(current, CENTER_CELL) > DEFENSE_RADIUS and distance < _cell_distance(current, CENTER_CELL)
+	return _cell_distance(current, _escort_cell()) > DEFENSE_RADIUS and distance < _cell_distance(current, _escort_cell())
 
 func _reachable_enemy(hero):
 	var result = null
@@ -587,7 +592,7 @@ func _move_hero_toward(hero, target: Vector2i) -> void:
 		_tween_to_cell(hero, path[1])
 
 func _move_enemy_toward_center(enemy) -> void:
-	var path := _combat_path(enemy, CENTER_CELL, 1, false)
+	var path := _combat_path(enemy, _escort_cell(), 1, false)
 	if path.size() > 1:
 		enemy.battle_cell = path[1]
 		enemy.move_cooldown = enemy.move_interval
@@ -630,7 +635,7 @@ func _adjacent_blocking_hero(cell: Vector2i):
 		if not is_instance_valid(hero) or not hero.active_in_battle or hero.battle_dead:
 			continue
 		if _cell_distance(cell, hero.battle_cell) <= 1:
-			var dist := _cell_distance(hero.battle_cell, CENTER_CELL)
+			var dist := _cell_distance(hero.battle_cell, _escort_cell())
 			if dist < best_to_escort:
 				best_to_escort = dist
 				result = hero
@@ -878,7 +883,7 @@ func _begin_pointer_action(pos: Vector2) -> void:
 		return
 	if is_instance_valid(selected_hero):
 		var cell := _screen_to_cell(pos)
-		if _valid_cell(cell) and cell != CENTER_CELL:
+		if _valid_cell(cell) and cell != _escort_cell():
 			_place_hero_on_board(selected_hero, cell)
 			return
 	_clear_selection()
@@ -888,7 +893,7 @@ func _end_pointer_action(pos: Vector2) -> void:
 		return
 	if dragging:
 		var cell := _screen_to_cell(pos)
-		if _valid_cell(cell) and cell != CENTER_CELL:
+		if _valid_cell(cell) and cell != _escort_cell():
 			_place_hero_on_board(dragged_hero, cell)
 		else:
 			var slot := _bench_slot_at(pos)
@@ -902,7 +907,7 @@ func _end_pointer_action(pos: Vector2) -> void:
 	queue_redraw()
 
 func _place_hero_on_board(hero, cell: Vector2i) -> void:
-	if state != GameState.PREPARING or not _valid_cell(cell) or cell == CENTER_CELL:
+	if state != GameState.PREPARING or not _valid_cell(cell) or cell == _escort_cell():
 		return
 	var occupant = _hero_at_cell(cell, hero)
 	if occupant != null:
@@ -1062,7 +1067,7 @@ func _navigation_distance(start: Vector2i, goal: Vector2i) -> int:
 		var next_distance: int = distances[current] + 1
 		for direction in [Vector2i(0, 1), Vector2i(0, -1), Vector2i(1, 0), Vector2i(-1, 0)]:
 			var candidate: Vector2i = current + direction
-			if not _valid_cell(candidate) or candidate == CENTER_CELL or distances.has(candidate):
+			if not _valid_cell(candidate) or candidate == _escort_cell() or distances.has(candidate):
 				continue
 			if candidate == goal:
 				return next_distance
