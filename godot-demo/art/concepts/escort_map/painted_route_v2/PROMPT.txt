@@ -1,0 +1,32 @@
+Use case: precise-object-edit / game environment layout expansion.
+Revise the attached 2D hand-drawn Chinese mountain escort battlefield. The user LIKES ITS ART STYLE but says the map is too small with far too few walkable cells. Deliver ONE substantially EXPANDED version, landscape 16:9, target presentation 1920x1080. KEEP the same restrained ochre-gray paving, blue-gray cliffs/water, dark pine trees, crisp drawn outlines and 2D cel-painted mood. No new art style, no low-poly 3D, no characters.
+
+MOST IMPORTANT CHANGE: TRIPLE THE NUMBER OF VISIBLY WALKABLE CELLS and noticeably increase the playable land footprint, not merely zoom into the existing small board. Aim approximately 120 standing cells across an irregular footprint roughly 16 columns by 10 rows instead of the previous small 10x6 envelope. Ground cells smaller and more numerous but clearly readable, uniformly spaced in parallel screen-aligned rows/columns, no vanishing-point taper, no isometric diamond grid. The irregular land perimeter must remain organic, not a big rectangular chessboard.
+
+Replace much of the decorative middle/lower abyss and oversized foreground forest with WALKABLE PAVED TERRAIN. The playable map should occupy roughly 75% of width and 68% of height, with distant scenery relegated to a narrow frame. Pull camera back just enough to see the larger battlefield, while reducing the nonplayable scenic fraction. Leave the narrow top HUD band and bottom bench band calmer and unobstructed. Use medium-low contrast tile interiors so units will remain legible.
+
+PROPOSED CONNECTED FOOTPRINT, 16 columns and 10 rows; # playable, . not playable. Use this as the new intended shape rather than matching the old tile count:
+....######......
+..############..
+.##############.
+################
+######..########
+######..########
+#####....#######
+.#####..#######.
+..############..
+...##########...
+The lower central opening is now much smaller. There are two broad same-elevation land connections around it: a broad northern main passage and a lower bypass reconnecting both wings. All proposed playable surfaces are on ONE gameplay level; cliffs are only off-map scenery. No stairs/elevation buffs, teleportation, hidden passages, new mechanics or bridges requiring a jump.
+
+TACTICAL STRUCTURE:
+- Large lower-left A staging area, with several clear parallel lanes and depth for front-line/interceptor positions and rear support.
+- Left-center open clearing with camp1 beside the main path, not occupying movement tiles.
+- Widened central/northern passage, at least 3 cells across in its narrow portions, with camp2 near the upper-middle junction. Plenty of spare side cells, not a single narrow corridor.
+- Large right upper clearing and camp3; rear/side pockets offer alternate approach/support positions at SAME height, no marked range bonuses.
+- Right lower B exit area by the existing small stone mountain gate, now roomier and clearly accessible.
+- Add the lower connecting bypass around the reduced central ravine for repositioning heroes. Make it plainly connected and wide enough to read as multiple standing cells. Escort's prescribed gold route stays on the upper main path, not on the bypass. This is a map-layout proposal, not an implemented route change.
+
+FOUR ESCORT SEGMENTS only: A → 1 → 2 → 3 → B. Reposition the five small markers as needed for the expanded layout: A lower-left,1 left upper-middle,2 upper-center,3 upper-right,B lower-right. One thin muted-gold continuous right-angle route connects them in that order, traveling up, across the top-middle, then down right. Route branches are NOT gold. Exactly three intermediate numbered camp markers. Small off-path lantern/supply details at the three camps; no additional numbered stops. Keep enemy entry trail mouths along west/north/east/southeast edges with a few small red-orange warning chevrons, but no soldiers or enemies.
+Mark only A,1,2,3,B; no other text.
+
+ENVIRONMENT & UI: Keep trees, boulders, walls, gate pillars and supplies outside playable cells, with low vegetation near feet areas. Reduce cracks and rubble density on ground. Keep decorative cliff faces short enough not to dominate. No tall foreground pine obscuring the larger lower bypass. Around top10% and bottom15% use restrained low-detail scenery for HUD/bench; no rendered UI panels or actual buttons. All continuous grid surfaces readable. No collage, no comparison inset, one complete revised map. This is still a concept candidate; do not draw claims of exact coordinates or grid counts on the image.
