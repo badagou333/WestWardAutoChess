@@ -15,6 +15,14 @@
 
 首次运行由 Godot 导入现有资源；启动器需要本机安装引擎，当前不是免安装发布包。
 
+免安装的 Windows x86_64 试玩包使用仓库根目录的发布脚本生成：
+
+```sh
+./scripts/build_windows_release.sh 0.1.0-playtest.1
+```
+
+构建要求 Godot 4.7.2 与匹配的 Windows Release 导出模板，产物默认写入仓库外发目录 `build/windows/`（已忽略，不提交 Git）。完整发布与 Windows 实机验收步骤见 [`docs/release/WINDOWS_PLAYTEST.md`](../docs/release/WINDOWS_PLAYTEST.md)。
+
 ## 首次体验
 
 1. 初始3金币、3人口；空格展开商店，首轮展示五名不同的一费英雄，后续刷新允许重复。

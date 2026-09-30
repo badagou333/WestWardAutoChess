@@ -1,2 +1,5 @@
 .DS_Store
 .idea/
+/build/
+godot-demo/**/*.import
+godot-demo/**/*.gd.uid

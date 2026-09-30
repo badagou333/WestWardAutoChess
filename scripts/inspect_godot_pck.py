@@ -1,0 +1,114 @@
+#!/usr/bin/env python3
+"""List and validate files stored in an unencrypted Godot 4 PCK."""
+
+from __future__ import annotations
+
+import argparse
+import struct
+from pathlib import Path
+
+
+REQUIRED_RELEASE_FILES = (
+    "scenes/main.tscn.remap",
+    "scripts/game.gd.remap",
+    "scripts/unit.gd.remap",
+    "scripts/enemy.gd.remap",
+    "scripts/presentation/audio_feedback.gd.remap",
+    "art/demo/hero_atlas_keyed.png.import",
+    "art/demo/enemy_atlas_keyed.png.import",
+    "art/reviews/style-unification-v1/battlefield-candidate.png.import",
+    "art/production/guard_monk/demo_v1/manifest.json",
+    "art/production/boar/painted_v1/manifest.json",
+    "audio/runtime_overrides.json",
+    "audio/candidates/foxfire-dwoboyle-v1/foxfire_A_faithful.wav.import",
+)
+
+FORBIDDEN_RELEASE_PREFIXES = (
+    "tests/",
+    "art/concepts/",
+    "art/reviews/six-role-battle/",
+    "art/production/tools/",
+    "audio/candidates/foxfire-dwoboyle-v1/source/",
+)
+
+
+def read_u32(handle) -> int:
+    data = handle.read(4)
+    if len(data) != 4:
+        raise ValueError("PCK ended while reading uint32")
+    return struct.unpack("<I", data)[0]
+
+
+def read_u64(handle) -> int:
+    data = handle.read(8)
+    if len(data) != 8:
+        raise ValueError("PCK ended while reading uint64")
+    return struct.unpack("<Q", data)[0]
+
+
+def list_paths(pck_path: Path) -> list[str]:
+    with pck_path.open("rb") as handle:
+        if handle.read(4) != b"GDPC":
+            raise ValueError("not a Godot PCK (missing GDPC header)")
+        pack_version = read_u32(handle)
+        if pack_version not in (2, 3, 4):
+            raise ValueError(f"unsupported PCK format version: {pack_version}")
+        read_u32(handle)  # Engine major.
+        read_u32(handle)  # Engine minor.
+        read_u32(handle)  # Engine patch.
+        pack_flags = read_u32(handle)
+        read_u64(handle)  # File base.
+        directory_offset = read_u64(handle) if pack_version >= 4 else None
+        handle.seek(16 * 4, 1)  # Reserved words.
+        if pack_flags & 1:
+            raise ValueError("encrypted PCK directories are not supported")
+        if directory_offset is not None:
+            handle.seek(directory_offset)
+        file_count = read_u32(handle)
+        paths: list[str] = []
+        for _ in range(file_count):
+            path_size = read_u32(handle)
+            raw_path = handle.read(path_size)
+            if len(raw_path) != path_size:
+                raise ValueError("PCK ended while reading a path")
+            path = raw_path.rstrip(b"\0").decode("utf-8")
+            read_u64(handle)  # Offset.
+            read_u64(handle)  # Size.
+            if len(handle.read(16)) != 16:
+                raise ValueError("PCK ended while reading MD5")
+            read_u32(handle)  # File flags.
+            paths.append(path)
+        return paths
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("pck", type=Path)
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--release-policy", action="store_true")
+    args = parser.parse_args()
+
+    paths = list_paths(args.pck)
+    listing = "\n".join(paths) + "\n"
+    if args.output:
+        args.output.write_text(listing, encoding="utf-8")
+    else:
+        print(listing, end="")
+
+    if args.release_policy:
+        missing = [item for item in REQUIRED_RELEASE_FILES if item not in paths]
+        forbidden = [
+            item
+            for item in paths
+            if any(item.startswith(prefix) for prefix in FORBIDDEN_RELEASE_PREFIXES)
+        ]
+        if missing:
+            raise SystemExit("PCK missing required files: " + ", ".join(missing))
+        if forbidden:
+            raise SystemExit("PCK contains forbidden files: " + ", ".join(forbidden))
+        print(f"PCK_POLICY_OK files={len(paths)}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
