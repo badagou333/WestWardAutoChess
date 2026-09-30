@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "character": "wild_hunter",
+  "source_facing": "right",
+  "status": "static_new_skin_with_procedural_transitions",
+  "source_sha256": "860753c18ac57aebe950a9cdd7f828e45d8b3787fbdd52586b4b44b0f5811f7a",
+  "frame": {
+    "width": 256,
+    "height": 256,
+    "foot_anchor": [
+      128,
+      218
+    ]
+  },
+  "atlases": {
+    "body": "body-atlas.png"
+  },
+  "standalone_vfx": {},
+  "frames": [
+    {
+      "source": "art/concepts/wild_hunter/nine_sols_archer_v1/wild-hunter-archer-candidate.png",
+      "source_box": [
+        0,
+        0,
+        1216,
+        1294
+      ],
+      "ground": [
+        630,
+        1260
+      ],
+      "scale": 0.082
+    },
+    {
+      "reuse_idle": true
+    },
+    {
+      "reuse_idle": true
+    },
+    {
+      "reuse_idle": true
+    },
+    {
+      "reuse_idle": true
+    }
+  ],
+  "actions": {
+    "idle": {
+      "body_frames": [
+        0
+      ]
+    },
+    "move": {
+      "body_frames": [
+        1
+      ]
+    },
+    "basic_attack": {
+      "body_frames": [
+        2
+      ],
+      "projectile": "arrow"
+    },
+    "hit": {
+      "body_frames": [
+        3
+      ],
+      "hold_seconds": 0.18
+    },
+    "retreat": {
+      "body_frames": [
+        4
+      ],
+      "hold_seconds": 0.35,
+      "fade_seconds": 0.3
+    }
+  },
+  "emission_socket": [
+    38,
+    -62
+  ]
+}

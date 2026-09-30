@@ -9,7 +9,7 @@ func _run() -> void:
 	root.add_child(game)
 	await process_frame
 	game.set_process(false)
-	game.shop_types.assign(["guard_monk","guard_monk","guard_monk","guard_monk","sparrow_spirit"])
+	game.shop_types.assign(["guard_monk","guard_monk","guard_monk"])
 	for index in range(3):
 		game._on_shop_pressed(index)
 	var hero = game.heroes[0]

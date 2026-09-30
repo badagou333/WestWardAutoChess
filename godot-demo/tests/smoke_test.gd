@@ -15,11 +15,11 @@ func _run_test() -> void:
 	if game.population != 3 or game.escort.position != game._cell_center(Vector2i(2, 3)):
 		_fail("初始人口或唐僧中央位置错误")
 		return
-	if game.coins != 3 or game.refresh_token != 1 or game.shop_types.size() != 5:
+	if game.coins != 3 or game.shop_types.size() != 3:
 		_fail("初始经济或商店错误")
 		return
 
-	game.shop_types.assign(["guard_monk", "guard_monk", "guard_monk", "sparrow_spirit", "wild_hunter"])
+	game.shop_types.assign(["guard_monk", "guard_monk", "guard_monk"])
 	for i in range(3):
 		game._on_shop_pressed(i)
 	if game.heroes.size() != 1:

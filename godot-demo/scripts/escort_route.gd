@@ -5,34 +5,40 @@ const RouteMap = preload("res://scripts/data/escort_map.gd")
 var route_index := 0
 var escort_tile := RouteMap.ROUTE[0]
 var escort_clock := 0.0
-var escort_hold := false
 var escort_reason := ""
 var orders := {}
 var command_note := ""
 var note_time := 0.0
-var hold_button: Button
+var transit = preload("res://scripts/combat/friendly_transit.gd").new(self)
 var route_label: Label
 var order_label: Label
 var pointer_hero = null
 var pointer_start := Vector2.ZERO
 
 func _create_background() -> void:
-	# The old painted rectangular board remains only in the legacy comparison scene.
 	background = TextureRect.new()
+	background.texture = preload("res://scripts/presentation/character_presentation.gd")._texture("res://art/production/escort_map/painted_route_v2/background.png")
+	background.size = SCREEN_SIZE
+	background.z_index = -1000
 	background.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(background)
 
 func _create_interface() -> void:
 	super._create_interface()
+	var guide_back := ColorRect.new()
+	guide_back.position = Vector2(8,175)
+	guide_back.size = Vector2(282,545)
+	guide_back.color = Color(0.06,0.09,0.08,0.80)
+	guide_back.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	guide_back.z_index = 24
+	add_child(guide_back)
 	for child in get_children():
 		if child is Label:
 			if child.text == "西游护送 · 四波试玩": child.text = "西游护送 · 行路试炼"
 			if "拖" in child.text: child.text = "选中队员 → 点击地块调动"
-	route_label = _make_label(Vector2(26,185),Vector2(282,110),24,Color("eddbaf"),25)
-	order_label = _make_label(Vector2(26,335),Vector2(282,390),20,Color("b7c9ba"),25)
-	order_label.text = "行路试炼 · 操作\n\n金线：唐僧行进路线\n红格：下一只敌人入口\n绿格：整备可部署范围\n\n左键选人，再点空格移动\n也可拖向目标格 / 右键下令\n队员到位后驻守并自动攻击\nEsc 取消选中队员的移动令\n\nP 暂停，可在暂停时下令\n唐僧被堵会等待，请让路\n每到营地清敌后可整备"
-	hold_button = _make_button(Vector2(1640,651),Vector2(260,62),"唐僧：暂驻",Color("45635c"),31)
-	hold_button.pressed.connect(_toggle_escort_hold)
+	route_label = _make_label(Vector2(22,185),Vector2(260,110),23,Color("eddbaf"),25)
+	order_label = _make_label(Vector2(22,335),Vector2(260,390),19,Color("d4ddce"),25)
+	order_label.text = "行路试炼 · 操作\n\n金线：唐僧行进路线\n红格：下一只敌人入口\n绿格：整备可部署范围\n\n左键选人，再点空格移动\n也可拖向目标格 / 右键下令\n途中可穿队友，落点需空闲\nEsc 取消：先抵达安全落点\n\nP 暂停，可在暂停时下令\n唐僧前格被占才等待让路\n每到营地清敌后可整备"
 
 func _escort_cell() -> Vector2i:
 	return escort_tile
@@ -65,7 +71,6 @@ func _start_battle() -> void:
 		super._start_battle()
 		return
 	orders.clear()
-	escort_hold = false
 	escort_clock = 0.0
 	escort_reason = ""
 	command_note = ""
@@ -91,23 +96,16 @@ func _process_wave(delta: float) -> void:
 				_spawn_enemy(spawn_queue.pop_front(),spawn_entries.pop_front())
 				spawn_cooldown = RouteMap.WARNING_SECONDS
 		return
-	if enemies.is_empty() and route_index == RouteMap.CHECKPOINTS[wave_index] and moving.is_empty():
+	if enemies.is_empty() and route_index == RouteMap.CHECKPOINTS[wave_index] and moving.is_empty() and transit.flights.is_empty():
 		if wave_index == WAVES.size()-1: _finish_battle(true)
 		else: _enter_wave_preparation()
 
 func _advance_escort(delta: float) -> void:
 	escort_reason = "沿金线前进"
 	if _is_moving(escort): return
-	if escort_hold:
-		escort_reason = "暂驻中 · 点击右侧继续行进"
-		return
 	if route_index >= RouteMap.CHECKPOINTS[wave_index]:
 		escort_reason = "已到营地 · 清除剩余敌人"
 		return
-	for enemy in enemies:
-		if not enemy.dead and _cell_distance(enemy.battle_cell,escort_tile) <= 1:
-			escort_reason = "遭遇敌人 · 请回防解围"
-			return
 	var next: Vector2i = RouteMap.ROUTE[route_index+1]
 	if _cell_blocked(next,escort):
 		escort_reason = "前路被占 · 请调走挡路队员"
@@ -124,10 +122,10 @@ func _command_move(hero, cell: Vector2i) -> bool:
 	if not _valid_cell(cell) or cell == escort_tile:
 		_notice("目标不可通行：请选择陆地空格")
 		return false
-	if _cell_blocked(cell,hero):
+	if transit.stop_blocked(cell,hero):
 		_notice("目标被占用，请先让路；不会交换或瞬移")
 		return false
-	if _combat_path(hero,cell,0,false).is_empty():
+	if transit.path(hero,cell).is_empty():
 		_notice("暂时无路可达，请先疏通通道")
 		return false
 	orders[hero] = cell
@@ -152,11 +150,9 @@ func _process_heroes(delta: float) -> void:
 			if hero.battle_cell == destination:
 				orders.erase(hero)
 			else:
-				var path := _combat_path(hero,destination,0,false)
+				var path: Array[Vector2i] = transit.path(hero,destination)
 				if path.size() > 1 and hero.move_cooldown <= 0:
-					hero.battle_cell = path[1]
-					hero.move_cooldown = hero.move_interval
-					_tween_to_cell(hero,path[1])
+					transit.begin(hero,path)
 				# Retain orders during temporary congestion; replan every fixed tick.
 				continue
 		var healing: bool = hero.unit_type == "herbal_spirit_child"
@@ -183,7 +179,7 @@ func _stationary_target(hero, healing: bool):
 	return result
 
 func _move_enemy_toward_center(enemy) -> void:
-	var path := _combat_path(enemy,escort_tile,1,false)
+	var path := _combat_path(enemy,escort_tile,enemy.attack_range_cells,false)
 	if path.is_empty():
 		# A sealed choke must draw enemies toward its defenders, not freeze them
 		# at a distant entrance because the escort itself has no free approach.
@@ -202,7 +198,7 @@ func _apply_combat_event(target, amount: float, healing: bool, event: Dictionary
 	if not event.has("texture") and is_instance_valid(event.source):
 		var source_cell: Vector2i = event.source.battle_cell
 		var target_cell: Vector2i = escort_tile if target == escort else target.battle_cell
-		var reach: int = event.source.attack_range_cells if event.source is EscortHero else 1
+		var reach: int = event.source.attack_range_cells
 		if _cell_distance(source_cell,target_cell) > reach: return
 	super._apply_combat_event(target,amount,healing,event)
 
@@ -245,14 +241,17 @@ func _restart_demo() -> void:
 	route_index = 0
 	escort_tile = RouteMap.ROUTE[0]
 	escort_clock = 0
-	escort_hold = false
+	transit.clear()
 	command_note = ""
 	note_time = 0
 	super._restart_demo()
 	escort.position = _cell_center(escort_tile)
 
-func _toggle_escort_hold() -> void:
-	if state == GameState.BATTLE_RUNNING: escort_hold = not escort_hold
+func _is_moving(node) -> bool:
+	return transit.flights.has(node) or super._is_moving(node)
+
+func _cell_blocked(cell: Vector2i, mover) -> bool:
+	return transit.blocks_enemy(cell) or super._cell_blocked(cell,mover)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if state != GameState.BATTLE_RUNNING:
@@ -283,6 +282,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				pointer_hero = null
 
 func _tick(delta: float) -> void:
+	if state == GameState.BATTLE_RUNNING: transit.tick(delta)
 	super._tick(delta)
 	note_time = maxf(0,note_time-delta)
 	queue_redraw()
@@ -296,8 +296,6 @@ func _update_ui() -> void:
 	super._update_ui()
 	if not is_instance_valid(route_label): return
 	route_label.text = "A 林口 → B 山门\n行程 %d / %d 格\n%s" % [route_index,RouteMap.ROUTE.size()-1,"营地整备" if state == GameState.PREPARING else escort_reason]
-	hold_button.disabled = state != GameState.BATTLE_RUNNING
-	hold_button.text = "唐僧：继续行进" if escort_hold else "唐僧：暂驻"
 	wave_label.text = "路段 %d / 4" % clampi(wave_index+(2 if state == GameState.PREPARING else 1),1,4)
 	if state == GameState.PREPARING:
 		start_button.text = "出发 · 第%d段" % (wave_index+2)
@@ -311,28 +309,17 @@ func _update_ui() -> void:
 		elif not spawn_queue.is_empty():
 			status_label.text = "%s · 红色入口 %.1f秒后出现敌人%s" % [RouteMap.NAMES[wave_index],spawn_cooldown,"（入口被占，等待腾空）" if spawn_cooldown <= 0 else ""]
 		else: status_label.text = "%s · %s" % [RouteMap.NAMES[wave_index],escort_reason]
-		if orders.has(selected_hero) and not _is_moving(selected_hero) and _combat_path(selected_hero,orders[selected_hero],0,false).is_empty():
+		if orders.has(selected_hero) and not _is_moving(selected_hero) and transit.path(selected_hero,orders[selected_hero]).is_empty():
 			status_label.text = "移动路线暂被占用 · 等待让路，或重新指定目标"
 	if not is_instance_valid(selected_hero):
 		info_label.text = "护送目标\n\n唐僧活着到达 B，并清敌\n\n队员驻守指定格，不自动追敌\n实时调度前排拦截、远程支援\n别把队伍留在出发点\n\n营地可招募 / 合成 / 升人口\n英雄恢复，唐僧血量保留"
 
 func _draw() -> void:
-	draw_rect(Rect2(Vector2.ZERO,SCREEN_SIZE),Color("152b2d"))
-	# Muted water contours frame the temporary stone/grass blockout.
-	for i in range(9):
-		draw_arc(Vector2(910,535),330+i*23,0,TAU,90,Color(0.27,0.40,0.37,0.13),1.0,true)
 	for cell in RouteMap.cells():
 		var tile := RouteMap.rect(cell).grow(-2)
-		draw_rect(Rect2(tile.position+Vector2(0,13),tile.size),Color("243b35"))
-		var color := Color("627060") if (cell.x+cell.y)%3 == 0 else Color("586755")
-		if cell in RouteMap.ROUTE: color = Color("827b60")
-		draw_rect(tile,color)
-		draw_rect(tile,Color("81907a"),false,1.0)
-		draw_line(tile.position+Vector2(3,3),tile.position+Vector2(tile.size.x-3,3),color.lightened(0.18),2)
-		if cell not in RouteMap.ROUTE:
-			var tuft := tile.position+Vector2(16+(cell.y%3)*14,18+(cell.x%2)*15)
-			draw_line(tuft,tuft+Vector2(-4,-8),Color("8c9775"),2,true)
-			draw_line(tuft,tuft+Vector2(3,-11),Color("8c9775"),2,true)
+		# Subtle calibrated boundaries identify full playable stones; no painted
+		# blockout hides the expanded terrain and no baked route is drawn twice.
+		draw_rect(tile,Color(0.95,0.88,0.67,0.13),false,1.0)
 		if state == GameState.PREPARING and _can_deploy(cell):
 			draw_rect(tile.grow(-3),Color(0.4,0.82,0.5,0.15))
 		if is_instance_valid(selected_hero) and selected_hero.board_row >= 0:
@@ -343,10 +330,10 @@ func _draw() -> void:
 			draw_rect(tile.grow(-2),Color(0.95,0.94,0.8,0.8),false,2)
 	for i in range(RouteMap.ROUTE.size()-1):
 		draw_line(_cell_center(RouteMap.ROUTE[i]),_cell_center(RouteMap.ROUTE[i+1]),Color(0.93,0.77,0.39,0.5),4,true)
-	for index in [0,3,6,9,12]:
+	for index in [0]+RouteMap.CHECKPOINTS:
 		var point := _cell_center(RouteMap.ROUTE[index])
 		draw_circle(point,14,Color("d2b570"),false,2,true)
-		draw_string(ThemeDB.fallback_font,point+Vector2(-12,36),"A" if index == 0 else ("B" if index == 12 else str(index/3)),HORIZONTAL_ALIGNMENT_CENTER,24,22,Color("fff1b6"))
+		draw_string(ThemeDB.fallback_font,point+Vector2(-12,36),"A" if index == 0 else ("B" if index == RouteMap.CHECKPOINTS[-1] else str(RouteMap.CHECKPOINTS.find(index)+1)),HORIZONTAL_ALIGNMENT_CENTER,24,22,Color("fff1b6"))
 	var warning: Vector2i = Vector2i(-1,-1)
 	if state == GameState.PREPARING:
 		for cell in RouteMap.ENTRIES[mini(wave_index+1,3)]:

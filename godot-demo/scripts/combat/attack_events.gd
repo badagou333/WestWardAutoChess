@@ -54,16 +54,19 @@ func tick(delta: float) -> void:
 		elif strike.time < 0.16: continue
 		strikes.erase(strike)
 		var texture = null
+		var projectile := ""
 		if view != null:
 			var action: Dictionary = view.manifest.actions.basic_attack
+			projectile = str(action.get("projectile", ""))
 			if action.has("spawn_vfx"):
 				texture = view.effects[action.spawn_vfx]
-		if texture != null:
+		if texture != null or not projectile.is_empty():
 			var from: Vector2 = view.emission_position()
 			if view != strike.source: from += strike.source.position
 			strike["from"] = from
 			strike["position"] = from
 			strike["texture"] = texture
+			strike["projectile_kind"] = projectile
 			strike.time = 0.0
 			missiles.append(strike)
 			counts.projectiles += 1
@@ -99,7 +102,24 @@ func _draw() -> void:
 		if not alive(missile.target): continue
 		var heading: Vector2 = missile.target.position + Vector2(0,-35) - missile.from
 		draw_set_transform(missile.position,heading.angle())
-		draw_texture(missile.texture,-Vector2(missile.texture.get_size())/2)
+		if missile.texture != null:
+			draw_texture(missile.texture,-Vector2(missile.texture.get_size())/2)
+		else:
+			match missile.get("projectile_kind", ""):
+				"arrow":
+					draw_line(Vector2(-19,0),Vector2(17,0),Color("d7ba79"),2.5,true)
+					draw_colored_polygon(PackedVector2Array([Vector2(22,0),Vector2(13,-4),Vector2(13,4)]),Color("e9e5d3"))
+					draw_line(Vector2(-19,-4),Vector2(-12,0),Color("d9d4bb"),2,true)
+					draw_line(Vector2(-19,4),Vector2(-12,0),Color("d9d4bb"),2,true)
+				"stone":
+					draw_colored_polygon(PackedVector2Array([Vector2(-5,-3),Vector2(2,-5),Vector2(6,0),Vector2(3,5),Vector2(-5,3)]),Color("aaa58d"))
+				"wind": draw_arc(Vector2.ZERO,12,-1.2,1.2,16,Color("acd9ed"),4,true)
+				"flame":
+					draw_circle(Vector2.ZERO,10,Color("dd653f"))
+					draw_circle(Vector2(3,0),5,Color("ffdda2"))
+				"heal":
+					draw_circle(Vector2.ZERO,9,Color(0.4,0.85,0.65,0.65))
+					draw_circle(Vector2.ZERO,4,Color("dcffdf"))
 	draw_set_transform(Vector2.ZERO)
 	for mark in marks:
 		var color := Color("75eba3") if mark.healing else Color("ffd28a")

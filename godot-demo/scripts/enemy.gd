@@ -10,6 +10,7 @@ var max_health := 55.0
 var health := 55.0
 var damage := 10.0
 var attack_interval := 0.9
+var attack_range_cells := 1
 var move_interval := 0.65
 var attack_cooldown := 0.0
 var move_cooldown := 0.0
@@ -47,6 +48,7 @@ func setup(new_type: String) -> void:
 	health = max_health
 	damage = data.damage
 	attack_interval = data.interval
+	attack_range_cells = 3 if enemy_type == "rat" else 1 # Trial sling range.
 	move_interval = data.move
 	reward = data.reward
 	var atlas_texture := AtlasTexture.new()
@@ -60,9 +62,9 @@ func setup(new_type: String) -> void:
 	portrait.scale = Vector2.ONE * data.scale
 	portrait.z_index = -1
 	add_child(portrait)
-	if enemy_type in ["bear_lord", "wolf", "boar"]:
+	if enemy_type in ["bear_lord", "wolf", "boar", "rat"]:
 		presentation = Presentation.new()
-		presentation.setup_visual("mountain_wolf" if enemy_type == "wolf" else enemy_type,"painted_v1" if enemy_type == "boar" else "demo_v1")
+		presentation.setup_visual({"wolf":"mountain_wolf","rat":"gray_rat"}.get(enemy_type,enemy_type),"nine_sols_v1")
 		presentation.foot_anchor = Vector2.ZERO
 		presentation.show_anchor = false
 		presentation.show_status = false
@@ -111,8 +113,8 @@ func play_death() -> void:
 
 func _draw() -> void:
 	var width := 88.0 if enemy_type == "bear_lord" else 66.0
-	var height := -185 if presentation != null else -72
-	if enemy_type == "wolf": height = -123
-	if enemy_type == "boar": height = -148
+	var height := -150 if enemy_type == "bear_lord" else -110
+	if enemy_type == "wolf": height = -82
+	if enemy_type == "rat": height = -82
 	draw_rect(Rect2(-width * 0.5, height, width, 8), Color("45242d"), true)
 	draw_rect(Rect2(-width * 0.5 + 2, height + 2, (width - 4) * health / max_health, 4), Color("f05f67"), true)

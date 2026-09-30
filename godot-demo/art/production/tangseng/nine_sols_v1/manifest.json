@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "character": "tangseng",
+  "source_facing": "right",
+  "status": "static_new_skin_with_procedural_transitions",
+  "source_sha256": "af565546c634c8477f0b2fe21f23e4b75e6ef4b36d84561501560ce644e4e12b",
+  "frame": {
+    "width": 256,
+    "height": 256,
+    "foot_anchor": [
+      128,
+      218
+    ]
+  },
+  "atlases": {
+    "body": "body-atlas.png"
+  },
+  "standalone_vfx": {},
+  "frames": [
+    {
+      "source": "art/concepts/tangseng/nine_sols_v1/tangseng-nine-sols-candidate.png",
+      "source_box": [
+        0,
+        0,
+        1024,
+        1536
+      ],
+      "ground": [
+        520,
+        1490
+      ],
+      "scale": 0.075
+    },
+    {
+      "reuse_idle": true
+    },
+    {
+      "reuse_idle": true
+    },
+    {
+      "reuse_idle": true
+    },
+    {
+      "reuse_idle": true
+    }
+  ],
+  "actions": {
+    "idle": {
+      "body_frames": [
+        0
+      ]
+    },
+    "move": {
+      "body_frames": [
+        1
+      ]
+    },
+    "basic_attack": {
+      "body_frames": [
+        2
+      ]
+    },
+    "hit": {
+      "body_frames": [
+        3
+      ],
+      "hold_seconds": 0.18
+    },
+    "retreat": {
+      "body_frames": [
+        4
+      ],
+      "hold_seconds": 0.35,
+      "fade_seconds": 0.3
+    }
+  }
+}

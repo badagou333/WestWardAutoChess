@@ -20,7 +20,7 @@ func run():
 	for control in game.shop_controls: check(not control.visible,"All shop controls hidden")
 	key(game,KEY_1)
 	key(game,KEY_R)
-	check(game.heroes.is_empty() and game.refresh_token==1,"Hidden shop cannot buy or refresh with keys")
+	check(game.heroes.is_empty() and game.coins==3,"Hidden shop cannot buy or refresh with keys")
 	key(game,KEY_SPACE)
 	check(game.shop_open and game.state==game.GameState.PREPARING,"Space opens shop instead of starting battle")
 	key(game,KEY_SPACE,true)
@@ -67,7 +67,7 @@ func run():
 	check(hero.bench_slot==7,"Return to last bench slot works")
 	game._on_refresh_pressed()
 	game._update_ui()
-	check(game.refresh_token==0,"Free refresh preserved")
+	check(game.coins==0 and game.shop_types.size()==3,"First refresh charges two and restores three offers")
 	for card in game.shop_buttons: check(card.portrait!=null,"Refresh restores images")
 	game.coins=100
 	game._on_level_pressed()
@@ -88,8 +88,7 @@ func run():
 	check(game.bench_label.text.contains("8 / 8"),"Full bench counter")
 	for card in game.shop_buttons: check(card.disabled,"Full bench prevents purchases")
 	if not output.is_empty():
-		# Keep five different offers in the screenshot, after testing refresh separately.
-		game.shop_types.assign(game.DemoUnits.SHOP)
+		game.shop_types.assign(game.DemoUnits.SHOP.slice(0,3))
 		game._update_ui()
 		game._set_shop_open(false)
 		for i in range(8): await process_frame

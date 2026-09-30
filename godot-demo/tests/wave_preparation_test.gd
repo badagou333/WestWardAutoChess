@@ -18,13 +18,13 @@ func run():
 	check(game.coins==3,"Three-coin start")
 	game._start_battle()
 	check(game.state==game.GameState.PREPARING,"Cannot start empty board")
-	for i in [0,1,3]: game._on_shop_pressed(i)
+	for i in [0,1,2]: game._on_shop_pressed(i)
 	var cells = [Vector2i(2,2),Vector2i(1,3),Vector2i(3,3)]
 	for i in range(3): game._place_hero_on_board(game.heroes[i],cells[i])
 	play_wave(game)
 	check(game.wave_index==0 and game.state==game.GameState.PREPARING,"First clear waits for player")
 	check(game.coins==3 and game.earned_loot==3 and game.pending_loot==0,"First wave reward spendable immediately")
-	check(game.shop_open and game.shop_types.size()==5 and game.refresh_token==1,"Shop refilled with one free refresh")
+	check(game.shop_open and game.shop_types.size()==3,"Camp restocks exactly three offers")
 	check(game.combat.strikes.is_empty() and game.combat.missiles.is_empty() and game.moving.is_empty(),"No old combat pending")
 	var elapsed: float = game.battle_elapsed
 	var hp: float = game.escort.health
@@ -35,9 +35,9 @@ func run():
 	for hero in game.heroes:
 		check(hero.health==hero.max_health and not hero.battle_dead and hero.position==game._cell_center(Vector2i(hero.board_row,hero.board_col)),"Heroes recover and return to saved formation")
 	game._on_refresh_pressed()
-	check(game.coins==3 and game.refresh_token==0,"Wave free refresh")
+	check(game.coins==1,"First refresh costs two")
 	game._on_refresh_pressed()
-	check(game.coins==1,"Extra refresh costs two")
+	check(game.coins==1,"Insufficient gold rejects second refresh")
 	# Controlled stock tests purchase/merge across waves, without injecting gold.
 	game.shop_types[0] = "guard_monk"
 	game._on_shop_pressed(0)

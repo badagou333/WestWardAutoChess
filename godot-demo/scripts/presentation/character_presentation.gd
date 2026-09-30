@@ -50,7 +50,12 @@ var events := {"idle": 1, "move": 0, "basic_attack": 0, "hit": 0, "retreat": 0}
 
 func setup_visual(key: String, pack := "demo_v1") -> void:
 	role = key
-	motion = Motion.PROFILES[key]
+	motion = Motion.PROFILES.get(key, Motion.PROFILES.guard_monk).duplicate()
+	if pack == "nine_sols_v1":
+		use_motion_frames = false
+		motion_body = null
+		motion_manifest.clear()
+		if key in ["wild_hunter", "gray_rat"]: motion.reach = 4.0
 	var base := "res://art/production/%s/%s/" % [role,pack]
 	manifest = JSON.parse_string(FileAccess.get_file_as_string(base + "manifest.json"))
 	if manifest.has("atlas"):
@@ -67,7 +72,7 @@ func setup_visual(key: String, pack := "demo_v1") -> void:
 		if FileAccess.file_exists(revised_base + "manifest.json"):
 			motion_base = revised_base
 			break
-	if FileAccess.file_exists(motion_base + "manifest.json"):
+	if pack != "nine_sols_v1" and FileAccess.file_exists(motion_base + "manifest.json"):
 		motion_manifest = JSON.parse_string(FileAccess.get_file_as_string(motion_base + "manifest.json"))
 		motion_body = _texture(motion_base + motion_manifest.atlas)
 	if manifest.atlases.has("vfx"):
@@ -125,6 +130,9 @@ func impact_delay() -> float:
 	return Motion.release(motion)
 
 func emission_position() -> Vector2:
+	if manifest.has("emission_socket"):
+		var socket := Vector2(manifest.emission_socket[0],manifest.emission_socket[1])
+		return position + foot_anchor + Vector2(socket.x*facing,socket.y)
 	if motion_frame >= 0 and (motion_manifest.has("emission_sockets") or motion_manifest.has("hand_sockets")):
 		return position + visual_transform() * motion_effect_socket()
 	var action: Dictionary = manifest.actions.basic_attack

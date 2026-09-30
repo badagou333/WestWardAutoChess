@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "character": "foxfire_imp",
+  "source_facing": "left",
+  "status": "static_new_skin_with_procedural_transitions",
+  "source_sha256": "873e97b812f7363449efc7981323a7046f5d75ee40dca3d58376ec79b12ff6ae",
+  "frame": {
+    "width": 256,
+    "height": 256,
+    "foot_anchor": [
+      128,
+      218
+    ]
+  },
+  "atlases": {
+    "body": "body-atlas.png"
+  },
+  "standalone_vfx": {},
+  "frames": [
+    {
+      "source": "art/production/foxfire_imp/nine_sols_v1/source-clean.png",
+      "source_box": [
+        0,
+        0,
+        1199,
+        1312
+      ],
+      "ground": [
+        610,
+        1200
+      ],
+      "scale": 0.085
+    },
+    {
+      "reuse_idle": true
+    },
+    {
+      "reuse_idle": true
+    },
+    {
+      "reuse_idle": true
+    },
+    {
+      "reuse_idle": true
+    }
+  ],
+  "actions": {
+    "idle": {
+      "body_frames": [
+        0
+      ]
+    },
+    "move": {
+      "body_frames": [
+        1
+      ]
+    },
+    "basic_attack": {
+      "body_frames": [
+        2
+      ],
+      "projectile": "flame"
+    },
+    "hit": {
+      "body_frames": [
+        3
+      ],
+      "hold_seconds": 0.18
+    },
+    "retreat": {
+      "body_frames": [
+        4
+      ],
+      "hold_seconds": 0.35,
+      "fade_seconds": 0.3
+    }
+  },
+  "emission_socket": [
+    31,
+    -62
+  ]
+}

@@ -39,7 +39,7 @@ func setup(key: String, level := 1) -> void:
 	star = clampi(level, 1, 3)
 	_apply_stats()
 	presentation = Presentation.new()
-	presentation.setup_visual(unit_type)
+	presentation.setup_visual(unit_type,"nine_sols_v1")
 	presentation.show_anchor = false
 	presentation.show_status = false
 	presentation.z_index = -1
@@ -127,8 +127,8 @@ func quality_data() -> Dictionary:
 
 func _draw() -> void:
 	if board_row >= 0 and not battle_dead:
-		draw_rect(Rect2(-38,-163,76,7), Color("40262b"))
-		draw_rect(Rect2(-36,-161,72 * health / max_health,3), Color("66dc75"))
+		draw_rect(Rect2(-28,-113,56,7), Color("40262b"))
+		draw_rect(Rect2(-26,-111,52 * health / max_health,3), Color("66dc75"))
 	if not battle_dead:
 		draw_string(ThemeDB.fallback_font, Vector2(-15*star,25 if board_row >= 0 else 43), "★".repeat(star), HORIZONTAL_ALIGNMENT_CENTER, 30*star,19,Color("ffe56f"))
 	if merge_locked:

@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "character": "boar",
+  "source_facing": "left",
+  "status": "static_new_skin_with_procedural_transitions",
+  "source_sha256": "9193ae3df1fbb49e192ae3442cf8ade44d36bf40ce523f7ea388782a2a54934f",
+  "frame": {
+    "width": 256,
+    "height": 256,
+    "foot_anchor": [
+      128,
+      218
+    ]
+  },
+  "atlases": {
+    "body": "body-atlas.png"
+  },
+  "standalone_vfx": {},
+  "frames": [
+    {
+      "source": "art/concepts/mountain_boar/nine_sols_v1/mountain-boar-nine-sols-candidate.png",
+      "source_box": [
+        0,
+        0,
+        1363,
+        1154
+      ],
+      "ground": [
+        800,
+        1100
+      ],
+      "scale": 0.09
+    },
+    {
+      "reuse_idle": true
+    },
+    {
+      "reuse_idle": true
+    },
+    {
+      "reuse_idle": true
+    },
+    {
+      "reuse_idle": true
+    }
+  ],
+  "actions": {
+    "idle": {
+      "body_frames": [
+        0
+      ]
+    },
+    "move": {
+      "body_frames": [
+        1
+      ]
+    },
+    "basic_attack": {
+      "body_frames": [
+        2
+      ]
+    },
+    "hit": {
+      "body_frames": [
+        3
+      ],
+      "hold_seconds": 0.18
+    },
+    "retreat": {
+      "body_frames": [
+        4
+      ],
+      "hold_seconds": 0.35,
+      "fade_seconds": 0.3
+    }
+  }
+}

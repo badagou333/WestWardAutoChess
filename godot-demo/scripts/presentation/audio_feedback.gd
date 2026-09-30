@@ -109,6 +109,8 @@ func play_cue(key: String, target_id := 0) -> bool:
 	return true
 
 func released(event: Dictionary) -> void:
+	# New bow/sling cues are not delivered by 08 yet: never play old knife audio.
+	if event.get("projectile_kind", "") in ["arrow", "stone"]: return
 	if not event.healing: play_cue(str(event.source_key)+"_attack")
 
 func resolved_attack(event: Dictionary) -> void:

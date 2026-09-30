@@ -5,7 +5,7 @@ func run():
 	root.add_child(game)
 	game.set_process(false)
 	game.audio_feedback.enabled = false
-	for i in [0,1,3]: game._on_shop_pressed(i)
+	for i in [0,1,2]: game._on_shop_pressed(i)
 	var cells = [Vector2i(2,2),Vector2i(1,3),Vector2i(3,3)]
 	for i in range(3): game._place_hero_on_board(game.heroes[i],cells[i])
 	game._start_battle()

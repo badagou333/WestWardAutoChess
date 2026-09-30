@@ -37,7 +37,6 @@ var state := GameState.PREPARING
 var coins := Encounter.STARTING_COINS
 var population := 3
 var max_population := 10
-var refresh_token := Encounter.PREPARATION_FREE_REFRESHES
 var heroes: Array = []
 var enemies: Array = []
 var shop_types: Array[String] = []
@@ -200,15 +199,15 @@ func _create_interface() -> void:
 	add_child(shop_back)
 	shop_controls.append(shop_back)
 	var shop_title := _make_label(Vector2(354,204), Vector2(1000,36), 23, Color("ffe3a1"), 36)
-	shop_title.text = "招募商店     1—5 购买 · R 刷新 · 空格收起"
+	shop_title.text = "招募商店     1—3 购买 · R 刷新（2金）· 空格收起"
 	shop_controls.append(shop_title)
 	var close_shop := _make_button(Vector2(1508,201),Vector2(42,36),"×",Color("423d30"),36)
 	close_shop.pressed.connect(func(): _set_shop_open(false))
 	shop_controls.append(close_shop)
-	for i in range(5):
+	for i in range(Encounter.SHOP_SLOTS):
 		var button := preload("res://scripts/presentation/shop_card.gd").new()
-		button.position = Vector2(354+i*166,264)
-		button.size = Vector2(148,155)
+		button.position = Vector2(354+i*280,264)
+		button.size = Vector2(260,155)
 		button.z_index = 36
 		_style_button(button,Color("302c24"))
 		add_child(button)
@@ -347,7 +346,8 @@ func _button_box(color: Color, border: Color) -> StyleBoxFlat:
 	return box
 
 func _initial_shop() -> void:
-	shop_types.assign(DemoUnits.SHOP)
+	# A usable introductory roster; all five identities remain in the refresh pool.
+	shop_types.assign(["guard_monk", "wild_hunter", "herbal_spirit_child"])
 
 func _process(delta: float) -> void:
 	step(delta)
@@ -444,9 +444,8 @@ func _enter_wave_preparation() -> void:
 	battle_paused = false
 	audio_feedback.set_paused(false)
 	for hero in heroes: hero.end_battle()
-	refresh_token = Encounter.PREPARATION_FREE_REFRESHES
 	shop_types.clear()
-	for i in range(5): shop_types.append(_roll_shop_unit())
+	for i in range(Encounter.SHOP_SLOTS): shop_types.append(_roll_shop_unit())
 	_clear_selection()
 	status_label.text = "第%d波完成 · +%d金币｜队员已恢复，可招募、合成和布阵" % [wave_index+1,last_wave_reward]
 	_set_shop_open(true)
@@ -527,7 +526,12 @@ func _process_enemies(delta: float) -> void:
 		enemy.move_cooldown = maxf(0,enemy.move_cooldown-delta)
 		if _is_moving(enemy) or (enemy.presentation != null and enemy.presentation.pose == "basic_attack"): continue
 		var target = _adjacent_blocking_hero(enemy.battle_cell)
-		if target == null and _cell_distance(enemy.battle_cell,_escort_cell()) <= 1: target = escort
+		if target == null and _cell_distance(enemy.battle_cell,_escort_cell()) <= enemy.attack_range_cells: target = escort
+		if target == null and enemy.attack_range_cells > 1:
+			for hero in heroes:
+				if hero.active_in_battle and not hero.battle_dead and _cell_distance(enemy.battle_cell,hero.battle_cell) <= enemy.attack_range_cells:
+					target = hero
+					break
 		if target != null:
 			if enemy.attack_cooldown <= 0:
 				enemy.attack_cooldown = enemy.attack_interval
@@ -714,7 +718,6 @@ func _restart_demo() -> void:
 	enemies.clear()
 	coins = Encounter.STARTING_COINS
 	population = 3
-	refresh_token = Encounter.PREPARATION_FREE_REFRESHES
 	pending_loot = 0
 	earned_loot = 0
 	last_wave_reward = 0
@@ -732,7 +735,7 @@ func _restart_demo() -> void:
 	queue_redraw()
 
 func _on_shop_pressed(index: int) -> void:
-	if state != GameState.PREPARING or index < 0 or index >= shop_types.size():
+	if state != GameState.PREPARING or index < 0 or index >= mini(Encounter.SHOP_SLOTS,shop_types.size()):
 		return
 	var unit_type := shop_types[index]
 	if unit_type.is_empty():
@@ -788,15 +791,13 @@ func _try_auto_merge(unit_type: String, target_star: int) -> void:
 func _on_refresh_pressed() -> void:
 	if state != GameState.PREPARING:
 		return
-	if refresh_token > 0:
-		refresh_token -= 1
-	elif coins >= REFRESH_COST:
+	if coins >= REFRESH_COST:
 		coins -= REFRESH_COST
 	else:
 		status_label.text = "刷新需要2金币"
 		return
 	shop_types.clear()
-	for i in range(5):
+	for i in range(Encounter.SHOP_SLOTS):
 		shop_types.append(_roll_shop_unit())
 
 func _roll_shop_unit() -> String:
@@ -846,7 +847,7 @@ func _toggle_speed() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
-		if event.keycode >= KEY_1 and event.keycode <= KEY_5:
+		if event.keycode >= KEY_1 and event.keycode <= KEY_3:
 			if shop_open: _on_shop_pressed(int(event.keycode - KEY_1))
 		elif event.keycode == KEY_R:
 			if shop_open: _on_refresh_pressed()
@@ -988,7 +989,7 @@ func _hero_at_position(pos: Vector2):
 	for hero in heroes:
 		if is_instance_valid(hero) and hero.visible and not hero.battle_dead:
 			var on_board: bool = hero.board_row >= 0
-			var bounds := Rect2(hero.position + Vector2(-48,-180),Vector2(96,205)) if on_board else Rect2(hero.position + Vector2(-38,-75),Vector2(76,110))
+			var bounds := Rect2(hero.position + Vector2(-30,-106),Vector2(60,122)) if on_board else Rect2(hero.position + Vector2(-38,-75),Vector2(76,110))
 			if not bounds.has_point(pos): continue
 			var distance: float = (hero.position+Vector2(0,-50 if on_board else -25)).distance_to(pos)
 			if distance < best:
@@ -1113,8 +1114,8 @@ func _update_ui() -> void:
 		else:
 			status_label.text = "第%d波 · %s" % [wave_index + 1, WAVES[wave_index].name]
 
-	refresh_button.text = "免费刷新 ×%d" % refresh_token if refresh_token > 0 else "刷新商店  2金"
-	refresh_button.disabled = state != GameState.PREPARING or (refresh_token == 0 and coins < REFRESH_COST)
+	refresh_button.text = "刷新商店  2金"
+	refresh_button.disabled = state != GameState.PREPARING or coins < REFRESH_COST
 	if population < max_population:
 		var level_cost: int = LEVEL_COSTS[population - 3]
 		level_button.text = "升至%d人口  %d金" % [population + 1, level_cost]
@@ -1162,7 +1163,7 @@ func _update_ui() -> void:
 		sell_button.text = "出售：返还 %d 金币" % refund
 		lock_button.text = "合成锁定：%s" % ("开" if hero.merge_locked else "关")
 	else:
-		info_label.text = "选择一名队员查看详情\n\n每波胜利后可整备\n金币逐波发放\n队员恢复，唐僧血量保留\n每轮整备免费刷新1次\n围绕唐僧3格内走位\n手动开始下一波"
+		info_label.text = "选择一名队员查看详情\n\n每波胜利后可整备\n金币逐波发放\n队员恢复，唐僧血量保留\n刷新2金 · 每轮3候选\n围绕唐僧3格内走位\n手动开始下一波"
 
 func _draw() -> void:
 	if state == GameState.PREPARING:

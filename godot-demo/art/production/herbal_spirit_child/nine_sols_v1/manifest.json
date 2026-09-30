@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "character": "herbal_spirit_child",
+  "source_facing": "right",
+  "status": "keyposes_and_procedural_transitions",
+  "source_sha256": "6494edb07f76656d2bae4571b958909ef9b6d1f9324107df18439b6f61ce0fbf",
+  "frame": {
+    "width": 256,
+    "height": 256,
+    "foot_anchor": [
+      128,
+      218
+    ]
+  },
+  "atlases": {
+    "body": "body-atlas.png"
+  },
+  "standalone_vfx": {},
+  "frames": [
+    {
+      "source": "art/concepts/herbal_spirit_child/nine_sols_v1/herbal-child-nine-sols-candidate.png",
+      "source_box": [
+        0,
+        0,
+        1024,
+        1536
+      ],
+      "ground": [
+        565,
+        1490
+      ],
+      "scale": 0.064
+    },
+    {
+      "source": "art/concepts/herbal_spirit_child/nine_sols_actions_v1/four-action-keyposes.png",
+      "source_box": [
+        60,
+        0,
+        610,
+        636
+      ],
+      "ground": [
+        330,
+        619
+      ],
+      "scale": 0.155
+    },
+    {
+      "source": "art/concepts/herbal_spirit_child/nine_sols_actions_v1/four-action-keyposes.png",
+      "source_box": [
+        620,
+        70,
+        1254,
+        631
+      ],
+      "ground": [
+        884,
+        610
+      ],
+      "scale": 0.155
+    },
+    {
+      "source": "art/concepts/herbal_spirit_child/nine_sols_actions_v1/four-action-keyposes.png",
+      "source_box": [
+        55,
+        635,
+        615,
+        1230
+      ],
+      "ground": [
+        414,
+        1214
+      ],
+      "scale": 0.155
+    },
+    {
+      "source": "art/concepts/herbal_spirit_child/nine_sols_actions_v1/four-action-keyposes.png",
+      "source_box": [
+        720,
+        640,
+        1230,
+        1235
+      ],
+      "ground": [
+        945,
+        1210
+      ],
+      "scale": 0.155
+    }
+  ],
+  "actions": {
+    "idle": {
+      "body_frames": [
+        0
+      ]
+    },
+    "move": {
+      "body_frames": [
+        1
+      ]
+    },
+    "basic_attack": {
+      "body_frames": [
+        2
+      ],
+      "projectile": "heal"
+    },
+    "hit": {
+      "body_frames": [
+        3
+      ],
+      "hold_seconds": 0.18
+    },
+    "retreat": {
+      "body_frames": [
+        4
+      ],
+      "hold_seconds": 0.35,
+      "fade_seconds": 0.3
+    }
+  },
+  "emission_socket": [
+    40,
+    -59
+  ]
+}

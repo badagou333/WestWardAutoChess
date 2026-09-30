@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "character": "sparrow_spirit",
+  "source_facing": "right",
+  "status": "keyposes_and_procedural_transitions",
+  "source_sha256": "fec36ac750ec6219dcc01ab037b54253379a6d03fce6055ae660910512665f0e",
+  "frame": {
+    "width": 256,
+    "height": 256,
+    "foot_anchor": [
+      128,
+      218
+    ]
+  },
+  "atlases": {
+    "body": "body-atlas.png"
+  },
+  "standalone_vfx": {},
+  "frames": [
+    {
+      "source": "art/concepts/sparrow_spirit/nine_sols_v1/sparrow-nine-sols-candidate.png",
+      "source_box": [
+        0,
+        0,
+        1150,
+        1368
+      ],
+      "ground": [
+        600,
+        1280
+      ],
+      "scale": 0.067
+    },
+    {
+      "source": "art/concepts/sparrow_spirit/nine_sols_actions_v1/four-action-keyposes.png",
+      "source_box": [
+        20,
+        35,
+        636,
+        632
+      ],
+      "ground": [
+        380,
+        620
+      ],
+      "scale": 0.148
+    },
+    {
+      "source": "art/concepts/sparrow_spirit/nine_sols_actions_v1/four-action-keyposes.png",
+      "source_box": [
+        646,
+        35,
+        1248,
+        635
+      ],
+      "ground": [
+        885,
+        618
+      ],
+      "scale": 0.148
+    },
+    {
+      "source": "art/concepts/sparrow_spirit/nine_sols_actions_v1/four-action-keyposes.png",
+      "source_box": [
+        40,
+        636,
+        627,
+        1230
+      ],
+      "ground": [
+        401,
+        1208
+      ],
+      "scale": 0.148
+    },
+    {
+      "source": "art/concepts/sparrow_spirit/nine_sols_actions_v1/four-action-keyposes.png",
+      "source_box": [
+        700,
+        730,
+        1160,
+        1230
+      ],
+      "ground": [
+        958,
+        1205
+      ],
+      "scale": 0.148
+    }
+  ],
+  "actions": {
+    "idle": {
+      "body_frames": [
+        0
+      ]
+    },
+    "move": {
+      "body_frames": [
+        1
+      ]
+    },
+    "basic_attack": {
+      "body_frames": [
+        2
+      ],
+      "projectile": "wind"
+    },
+    "hit": {
+      "body_frames": [
+        3
+      ],
+      "hold_seconds": 0.18
+    },
+    "retreat": {
+      "body_frames": [
+        4
+      ],
+      "hold_seconds": 0.35,
+      "fade_seconds": 0.3
+    }
+  },
+  "emission_socket": [
+    34,
+    -49
+  ]
+}

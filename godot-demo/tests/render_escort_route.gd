@@ -6,13 +6,13 @@ func run() -> void:
 	var game = load("res://scenes/escort_route.tscn").instantiate()
 	root.add_child(game)
 	game.set_process(false)
-	for index in [0,2,3]: game._on_shop_pressed(index)
-	var cells := [Vector2i(3,1),Vector2i(5,1),Vector2i(5,2)]
+	for index in range(3): game._on_shop_pressed(index)
+	var cells := [Vector2i(7,1),Vector2i(9,1),Vector2i(9,2)]
 	for i in range(3): game._place_hero_on_board(game.heroes[i],cells[i])
 	game._start_battle()
 	game.step(3.2)
 	game._select_hero(game.heroes[0])
-	game._command_move(game.heroes[0],Vector2i(2,2))
+	game._command_move(game.heroes[0],Vector2i(5,2))
 	game._update_ui()
 	game.queue_redraw()
 	for i in range(8): await process_frame

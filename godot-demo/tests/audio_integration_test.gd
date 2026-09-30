@@ -41,7 +41,8 @@ func run():
 	check(not sound.play_cue("ui"),"Zero volume gates playback")
 	sound.level = 0.35
 	sound.stop_all()
-	for i in [0,3,4]: game._on_shop_pressed(i)
+	game.shop_types.assign(["guard_monk","herbal_spirit_child","foxfire_imp"])
+	for i in range(3): game._on_shop_pressed(i)
 	var monk = game.heroes[0]
 	var healer = game.heroes[1]
 	var fox = game.heroes[2]

@@ -3,7 +3,7 @@ extends RefCounted
 # Four-wave playable-demo economy; tuning values, not chapter progression rules.
 const STARTING_COINS := 3
 const LEVEL_COSTS := [4,6,8,10,12,14,16]
-const PREPARATION_FREE_REFRESHES := 1
+const SHOP_SLOTS := 3
 const WAVE_HEALTH_SCALE := [1.0,1.15,1.35,1.60]
 const WAVE_DAMAGE_SCALE := [1.0,1.05,1.10,1.20]
 

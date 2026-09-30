@@ -16,7 +16,7 @@ func set_offer(key: String, title: String, cost: int, index: int) -> void:
 	portrait = null
 	if not key.is_empty():
 		if not portraits.has(key):
-			var base := "res://art/production/%s/demo_v1/" % key
+			var base := "res://art/production/%s/nine_sols_v1/" % key
 			var manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(base + "manifest.json"))
 			if manifest.has("atlas"):
 				manifest["atlases"] = {"body":manifest.atlas.file}

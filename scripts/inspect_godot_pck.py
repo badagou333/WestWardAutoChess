@@ -12,6 +12,11 @@ REQUIRED_RELEASE_FILES = (
     "scenes/escort_route.tscn.remap",
     "scripts/escort_route.gd.remap",
     "scripts/data/escort_map.gd.remap",
+    "scripts/combat/friendly_transit.gd.remap",
+    "art/production/escort_map/painted_route_v2/background.png.import",
+    "art/production/wild_hunter/nine_sols_v1/manifest.json",
+    "art/production/gray_rat/nine_sols_v1/manifest.json",
+    "art/production/tangseng/nine_sols_v1/idle.png.import",
     "scenes/main.tscn.remap",
     "scripts/game.gd.remap",
     "scripts/unit.gd.remap",
@@ -24,6 +29,10 @@ REQUIRED_RELEASE_FILES = (
     "art/production/boar/painted_v1/manifest.json",
     "audio/runtime_overrides.json",
     "audio/candidates/foxfire-dwoboyle-v1/foxfire_A_faithful.wav.import",
+) + tuple(
+    f"art/production/{role}/nine_sols_v1/{file}"
+    for role in ("guard_monk", "wild_hunter", "herbal_spirit_child", "sparrow_spirit", "foxfire_imp", "bear_lord", "mountain_wolf", "gray_rat", "boar", "tangseng")
+    for file in ("manifest.json", "body-atlas.png.import")
 )
 
 FORBIDDEN_RELEASE_PREFIXES = (

@@ -7,7 +7,7 @@ func _run() -> void:
 	var game = load("res://scenes/main.tscn").instantiate()
 	root.add_child(game)
 	await process_frame
-	for i in [0,1,3]:
+	for i in [0,1,2]:
 		game._on_shop_pressed(i)
 	var cells := [Vector2i(2, 2), Vector2i(1, 3), Vector2i(3, 3)]
 	for i in range(game.heroes.size()):

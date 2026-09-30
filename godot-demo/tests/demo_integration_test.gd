@@ -17,15 +17,15 @@ func _init() -> void:
 
 func run() -> void:
 	var game = make_game()
-	check(game.coins == 3 and game.population == 3 and game.shop_types.size() == 5,"Initial economy")
+	check(game.coins == 3 and game.population == 3 and game.shop_types.size() == 3,"Initial economy")
 	for key in game.shop_types:
 		check(game.HeroScene.UNIT_DATA[key].quality == "white","One-cost shop")
 	game._on_refresh_pressed()
-	check(game.coins == 3 and game.refresh_token == 0,"Free refresh once")
+	check(game.coins == 1,"First refresh charges two")
 	game._on_refresh_pressed()
-	check(game.coins == 1,"Paid refresh")
+	check(game.coins == 1,"Unaffordable refresh rejected")
 	game._restart_demo()
-	game.shop_types.assign(["guard_monk","guard_monk","guard_monk","guard_monk","guard_monk"])
+	game.shop_types.assign(["guard_monk","guard_monk","guard_monk"])
 	game._on_shop_pressed(0)
 	var locked = game.heroes[0]
 	game._select_hero(locked)
@@ -68,7 +68,9 @@ func run() -> void:
 	# Delivery events tested independently of automatic targeting.
 	game = make_game()
 	game.coins = 10
-	for i in range(5): game._on_shop_pressed(i)
+	for key in game.DemoUnits.SHOP:
+		game.shop_types[0] = key
+		game._on_shop_pressed(0)
 	for hero in game.heroes: hero.active_in_battle = true
 	var fox = game.heroes[4]
 	var healer = game.heroes[3]
@@ -109,7 +111,7 @@ func run() -> void:
 	for rate in [30,60,120]:
 		for speed in [1.0,2.0]:
 			game = make_game()
-			for i in [0,1,3]: game._on_shop_pressed(i)
+			for i in [0,1,2]: game._on_shop_pressed(i)
 			var cells := [Vector2i(2,2),Vector2i(1,3),Vector2i(3,3)]
 			for i in range(3): game._place_hero_on_board(game.heroes[i],cells[i])
 			game._start_battle()
@@ -147,7 +149,7 @@ func run() -> void:
 			game.queue_free()
 			await process_frame
 	game = make_game()
-	game._on_shop_pressed(3)
+	game._on_shop_pressed(2)
 	game._place_hero_on_board(game.heroes[0],Vector2i(4,6))
 	game._start_battle()
 	game.escort.health = 1
