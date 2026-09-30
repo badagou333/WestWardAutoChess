@@ -1,0 +1,26 @@
+Use case: stylized-concept / game environment art.
+Create ONE complete landscape environment concept for a Chinese Journey-to-the-West real-time grid escort game. Target composition 1920x1080, 16:9, no cropping. This is a hand-drawn 2D map concept, NOT a final calibrated runtime image.
+
+INPUT ROLES: Image 1 is the CURRENT PROTOTYPE screenshot, for gameplay layout and camera footprint ONLY. Ignore its old character designs, temporary text/UI, rectangular flat-color tiles and pause/hold labels. Image 2 is the approved new badger monk portrait, STYLE REFERENCE ONLY: confident dark hand-drawn lines, clean restrained flat colors, crisp two/three-tone shadow shapes, no gritty noise. Do not place or redraw the monk or any units in the map. Keep terrain less contrasty than that character so game sprites will read.
+
+CAMERA: elevated near-orthographic 3/4 overhead battlefield, screen-horizontal and screen-vertical aligned compressed-square ground cells, all walkable ground on ONE gameplay elevation, no vanishing-point perspective, no isometric diamond rotation. A whole contiguous irregular terrain patch is visible at once. NOT a rectangular chessboard, not an island toy diorama, not low-poly 3D, not pastel chibi, not photorealism.
+
+LAYOUT: preserve the prototype's 37-cell connected nonrectangular footprint, with 10 columns and 6 rows in the bounding grid. Map is roughly centered in x=334..1454 and y=266..794 of a 1920x1080 composition. Existing ground-center pitch is 112 horizontal,88 vertical; these are composition guides only. Walkable cells #, unwalkable surroundings ., top row first:
+......###.
+..#######.
+.#########
+####..####
+####..###.
+.###......
+Do not fill the central lower gap or turn the irregular perimeter into a rectangle. The two central upper rows link the left and right land areas across a short broad stone bridge/pass. Continuous walkable stone/earth ground, subdued straight grid seams visibly suggest discrete standing cells without rigid bright chessboard contrast. No multilevel terraces, stairs on route, railings dividing cells, pits inside walkable tiles, random rocks/trees obstructing cells.
+
+ART THEME: 'Pinewood Pilgrim Road / 松林古道' — warm muted ochre-gray worn paving and compact earth, desaturated moss-green undergrowth, blue-gray ravine/water in the unwalkable central/lower gap, dark slate rock edges, sparse angular ink-contoured pines at the OUTSIDE perimeter, muted aged-brass and russet accents. A small old Chinese mountain gate at the far right near exit, simple weathered stone markers and low wall remnants. No sci-fi machines; borrow only the approved drawing method, not unrelated architecture. All trees/rocks/shrine roofs must stay out of the walkable footprint and not overlap unit-foot areas. Foreground shrubs low. Avoid rich ground patterns that look like units.
+
+ESCORT PATH AND FOUR STAGES: start A in lower-left landing; travel up through the left clearing to first camp, cross the central pass to second camp, proceed up-right to third camp in upper-right clearing, then curve down-right to exit B beside mountain gate. Show ONE thin restrained ochre-gold route line with a few tiny right-angle direction marks, not a glowing river or broad lane. Exactly five small round route markers: A, 1, 2, 3, B, readable but unobtrusive. Use these relative center coordinates in a 1920x1080 composition as anchors: A(502,662), 1(614,486), 2(950,486), 3(1174,398), B(1286,574). These make four escort segments, not five.
+Three intermediate camp locations only. Suggest each camp with a tiny roadside lantern and rolled supplies/bundle OUTSIDE standing cells, not a building on the route. No fourth camp at B. No implied player-controlled waiting/hold mechanism or campfire healing radius.
+
+TACTICAL READABILITY: preserve the broad left clearing and right clearing as room for melee interceptors and rear archer/healer support at the SAME elevation. Central pass should read as two parallel cell-wide lanes so heroes can be repositioned without making it look like a single-file decorative bridge. Exterior narrow trail mouths on west, northwest, north, east and southeast clearly meet the open ground; use tiny muted rust-red boundary chevrons to suggest enemy warning anchors, no monsters or combat. Side pockets only where the # footprint already provides them; do NOT add stairs, shortcut bridges, extra traversable cells, height advantages or range circles.
+
+UI SAFE SPACE: reserve upper approximately 0..130px as quiet dark low-detail canopy/mist for HUD; bottom 865..1080 as a calm dark low-detail earth area for the always-visible reserve bench and toggled recruitment panel; leave left 0..300 and right 1580..1920 visually quiet for side information. No painted buttons, shop cards, portraits, money counters, hotkeys or UI panels. The map occupies central play area and must not hide behind decorative foreground objects. No title or legend; the only text permitted is A, 1, 2, 3, B on the five small markers.
+
+FINAL: one polished cohesive playable-looking full environment art proposal, carefully balanced readable ground versus atmospheric outer scenery. No collage, no alternate maps, no inset portraits, no characters. Painted grid seams and route markers are conceptual overlays, not a guarantee of coordinates.
