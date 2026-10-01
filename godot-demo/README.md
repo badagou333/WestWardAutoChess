@@ -27,6 +27,7 @@ godot --path godot-demo res://scenes/free_escort.tscn
 - 整备时先选队员再点陆地，或拖放至唐僧210像素内的可达位置；落点保留实际坐标、不吸附旧石块中心。同一块旧石面可站多人，只要求脚点间距30像素。地图水面、峡谷、建筑及外岸仍不可走；边缘有角色半径余量，非法点击不会吸附成附近合法点。
 - 无指令时分散跟随护卫；近战主动上前，远程到射程停步。药灵留队伍后侧，只治疗自身射程内最低血比队友/唐僧，不主动追敌。自动目标优先最近且可达，锁定后不随距离小变化频繁换人。
 - 战中左键选人后点地、拖动或右键下移动令，立即接管，包括取消未出手动作；已射出的弹体照常飞行。途中自动接敌、跟随、治疗不会改路或强制停步；新有效令覆盖旧令。到达精确落点后显示“已到达·自动护卫”，再恢复自动。无效/当前无路的点击拒绝并保留原任务；已接受的移动连续3秒无进展，提示“无法抵达·自动护卫”。Esc立即取消并恢复自动，不瞬移。
+- 自由模式战中点其他英雄只切换选择；重复点击当前已选英雄覆盖的合法地面（含脚点上方），会在松开鼠标时下移动令，不再被自身点击框吞掉。按住拖动则以释放位置为目标，按下时不抢先发令；无效落点仍保留原任务。旧格子版点击约定不变。
 - 脚边和侧栏标明跟随（绿）、接战（红）、归队（蓝）、手动（金）。P暂停期间可下令，继续后执行；支持1×/2×。没有新增攻击命令、复杂编队或完整技能。
 - 自动追击有距离和时间双限，目标死亡/越界/超时/持续不可达会归队；该目标有3秒再接战冷却，归队至少1秒且回到唐僧125像素内才重新警戒。
 - 友军移动可互相穿行，停步保持间距；唐僧在友军之间拥有通行优先，不被跟随队伍永久堵死，不推人、不改手动令、不瞬移。短暂视觉重叠是此试验的软碰撞规则，不代表敌人可穿人。敌人身体和地形仍拦截移动；敌人实际堵路时唐僧等待护卫清敌。
@@ -75,6 +76,7 @@ godot --path godot-demo res://scenes/free_escort.tscn
 ```sh
 godot --headless --path godot-demo --script res://tests/free_escort_test.gd
 godot --path godot-demo --script res://tests/free_escort_graphical_test.gd
+godot --path godot-demo --script res://tests/free_escort_selection_input_test.gd
 godot --headless --path godot-demo --script res://tests/escort_route_test.gd
 godot --headless --path godot-demo --script res://tests/nine_sols_assets_test.gd
 godot --headless --path godot-demo --script res://tests/wave_preparation_test.gd
@@ -87,6 +89,8 @@ godot --path godot-demo --script res://tests/route_graphical_input_test.gd
 最后一项必须有图形窗口，通过真实Control输入分发检查商店/快捷键/部署/移动/暂停，截图写到`/tmp/nine-sols-{shop,route,cast}.png`。仅这是程序驱动的图形输入验证，不替代07真人操作验收。
 
 无格子图形测试也必须有窗口，覆盖实际Control输入分发、精确目标/无效点击、暂停、取消和双向切模式，截图写到`/tmp/free-escort-{preparation,manual,combat}.png`。运行时不要同时手动操作该测试窗口。
+
+`free_escort_selection_input_test.gd`是QA-20261001-01永久回归：完整Viewport指针移动/按下/释放，覆盖暂停及运行时当前英雄上方80像素落点、其他英雄选择、两种拖动起点、右键覆盖、无效点保留、按住时取消与手动不被AI抢令，并检查旧格子重复选中行为不变。不直接调用移动命令函数代替点击。
 
 护送专项覆盖通行连通、点击对应、同/对向穿友军、目标竞争、暂停/取消/死亡释放、敌人阻挡、唐僧实占阻挡、清威胁胜败、重开及营地经营。固定合法指令策略首营地买两棍僧合二星，次营地升人口并买狐火；约91.6模拟秒通关，唐僧300/300、累计20金。30/60FPS和120FPS×2最终血量/收益一致，输入采样使时间相差约0.03秒。控制商店库存只验证经营/战斗闭环，不代表随机商店的通关率或难度平衡。
 

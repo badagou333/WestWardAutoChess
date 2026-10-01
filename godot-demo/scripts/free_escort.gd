@@ -13,6 +13,7 @@ var route_label: Label
 var order_label: Label
 var pointer_hero = null
 var pointer_start := Vector2.ZERO
+var pointer_was_selected := false
 var manual_completions := 0
 var auto_engagements := 0
 var debug_navigation := false # QA-only coast overlay, never an actor grid.
@@ -185,21 +186,30 @@ func _unhandled_input(event: InputEvent) -> void:
 				brains[selected_hero] = _new_brain()
 				_notice("已取消 · 自动护卫")
 			pointer_hero = null
+			pointer_was_selected = false
 		else: super._unhandled_input(event)
 	elif event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 			_command_free(selected_hero,event.position)
 		elif event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
+				pointer_hero = null
+				pointer_was_selected = false
 				var clicked = _hero_at_position(event.position)
 				if clicked != null and clicked.active_in_battle:
+					pointer_was_selected = clicked == selected_hero
 					_select_hero(clicked)
 					pointer_hero = clicked
 					pointer_start = event.position
 				else: _command_free(selected_hero,event.position)
 			elif is_instance_valid(pointer_hero):
-				if event.position.distance_to(pointer_start) > 12: _command_free(pointer_hero,event.position)
+				# Defer a repeated selection until release, so its tall hitbox
+				# cannot swallow ground clicks or issue a premature drag command.
+				# A different hero remains selection-only unless actually dragged.
+				if event.position.distance_to(pointer_start) > 12 or pointer_was_selected:
+					_command_free(pointer_hero,event.position)
 				pointer_hero = null
+				pointer_was_selected = false
 
 func _start_battle() -> void:
 	if state == GameState.PREPARING and _deployed_count() > 0:
@@ -443,6 +453,7 @@ func _enter_wave_preparation() -> void:
 			hero.battle_dead = false
 		hero.home_position = hero.position
 	pointer_hero = null
+	pointer_was_selected = false
 	super._enter_wave_preparation()
 	_notice("营地抵达 · +%d金｜可购买、合成、升级与自由部署" % last_wave_reward)
 
@@ -451,6 +462,7 @@ func _finish_battle(victory: bool) -> void:
 	brains.clear()
 	enemy_motion.clear()
 	pointer_hero = null
+	pointer_was_selected = false
 	super._finish_battle(victory)
 	result_label.text += "\n无格子半自动试验 · 非最终平衡"
 
@@ -459,6 +471,7 @@ func _restart_demo() -> void:
 	enemy_motion.clear()
 	route_index = 0
 	pointer_hero = null
+	pointer_was_selected = false
 	manual_completions = 0
 	auto_engagements = 0
 	command_note = ""
