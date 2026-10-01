@@ -39,6 +39,8 @@ func _create_interface() -> void:
 	route_label = _make_label(Vector2(22,185),Vector2(260,110),23,Color("eddbaf"),25)
 	order_label = _make_label(Vector2(22,335),Vector2(260,390),19,Color("d4ddce"),25)
 	order_label.text = "行路试炼 · 操作\n\n金线：唐僧行进路线\n红格：下一只敌人入口\n绿格：整备可部署范围\n\n左键选人，再点空格移动\n也可拖向目标格 / 右键下令\n途中可穿队友，落点需空闲\nEsc 取消：先抵达安全落点\n\nP 暂停，可在暂停时下令\n唐僧前格被占才等待让路\n每到营地清敌后可整备"
+	var experiment := _make_button(Vector2(22,755),Vector2(250,46),"无格子试验（重新开局）",Color("697758"),25)
+	experiment.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/free_escort.tscn"))
 
 func _escort_cell() -> Vector2i:
 	return escort_tile

@@ -9,6 +9,11 @@ from pathlib import Path
 
 
 REQUIRED_RELEASE_FILES = (
+    "scenes/free_escort.tscn.remap",
+    "scripts/free_escort.gd.remap",
+    "scripts/data/free_escort_rules.gd.remap",
+    "scripts/combat/continuous_space.gd.remap",
+    "art/production/escort_map/natural_ground_v1/background.png.import",
     "scenes/escort_route.tscn.remap",
     "scripts/escort_route.gd.remap",
     "scripts/data/escort_map.gd.remap",

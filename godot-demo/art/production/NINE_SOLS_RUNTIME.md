@@ -19,6 +19,7 @@
 | 灰鼠 `gray_rat` | `gray_rat/nine_sols_v1/gray-rat-nine-sols-candidate.png` | 新投石索/石袋造型＋发射石块；无独立甩索逐帧动作 |
 | 山猪 `boar` | `mountain_boar/nine_sols_v1/mountain-boar-nine-sols-candidate.png` | 新双足绿甲持锤造型＋程序过渡，不使用旧painted_v1动作皮肤 |
 | 扩容地图 | `escort_map/painted_route_v2/escort-map-expanded-candidate.png` →05本批清洁衍生图 | `art/production/escort_map/painted_route_v2/background.png`；无烘焙路线标号，由程序绘制 |
+| 无格子试验地图（2026-10-01追加） | 上行已入库清洁运行图→05本轮自然地表衍生图 | `art/production/escort_map/natural_ground_v1/background.png`；仅free_escort试验场景使用，旧格子版底图不替换；来源/边界复核见同目录README |
 
 ## 加工与方向
 
