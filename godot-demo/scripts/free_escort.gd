@@ -8,7 +8,7 @@ var enemy_motion := {}
 var route_index := 0
 var escort_reason := ""
 var command_note := ""
-var note_time := 0.0
+var note_expires_at_msec := 0 # UI wall-clock, independent of pause/battle speed.
 var route_label: Label
 var order_label: Label
 var pointer_hero = null
@@ -60,8 +60,19 @@ func _brain(hero) -> Dictionary:
 
 func _notice(message: String) -> void:
 	command_note = message
-	note_time = 3.0
-	status_label.text = message
+	note_expires_at_msec = Time.get_ticks_msec()+3000
+	_update_ui()
+
+func _clear_notice() -> void:
+	command_note = ""
+	note_expires_at_msec = 0
+
+func _toggle_pause() -> void:
+	var was_paused := battle_paused
+	super._toggle_pause()
+	if battle_paused != was_paused:
+		_clear_notice()
+		_update_ui()
 
 func _range(actor) -> float:
 	return float(actor.attack_range_cells)*Rules.RANGE_UNIT
@@ -215,8 +226,7 @@ func _start_battle() -> void:
 	if state == GameState.PREPARING and _deployed_count() > 0:
 		brains.clear()
 		enemy_motion.clear()
-		command_note = ""
-		note_time = 0
+		_clear_notice()
 	super._start_battle()
 
 func _begin_wave() -> void:
@@ -443,6 +453,7 @@ func _apply_combat_event(target, amount: float, healing: bool, event: Dictionary
 
 func _enter_wave_preparation() -> void:
 	if state != GameState.BATTLE_RUNNING: return
+	_clear_notice()
 	brains.clear()
 	enemy_motion.clear()
 	for hero in heroes:
@@ -459,6 +470,7 @@ func _enter_wave_preparation() -> void:
 
 func _finish_battle(victory: bool) -> void:
 	if state != GameState.BATTLE_RUNNING: return
+	_clear_notice()
 	brains.clear()
 	enemy_motion.clear()
 	pointer_hero = null
@@ -474,29 +486,31 @@ func _restart_demo() -> void:
 	pointer_was_selected = false
 	manual_completions = 0
 	auto_engagements = 0
-	command_note = ""
-	note_time = 0
+	_clear_notice()
 	super._restart_demo()
 	escort.position = Map.center(Map.ROUTE[0])
 
 func _tick(delta: float) -> void:
 	super._tick(delta)
-	note_time = maxf(0,note_time-delta)
 	queue_redraw()
 
 func _update_ui() -> void:
 	super._update_ui()
 	if not is_instance_valid(route_label): return
+	if note_expires_at_msec <= Time.get_ticks_msec(): _clear_notice()
 	if is_instance_valid(selected_hero):
 		info_label.text = info_label.text.replace("攻击距离  %d格" % selected_hero.attack_range_cells,"攻击距离  %.0f像素（试验）" % _range(selected_hero))
 	route_label.text = "A 林口 → B 山门\n无格子 · 半自动试验\n%s" % ("营地整备" if state == GameState.PREPARING else escort_reason)
 	wave_label.text = "路段 %d / 4" % clampi(wave_index+(2 if state == GameState.PREPARING else 1),1,4)
 	if state == GameState.PREPARING:
 		start_button.text = "出发 · 第%d段" % (wave_index+2)
-		status_label.text = command_note if note_time > 0 else "招募后部署在唐僧附近陆地 · 落点自由，需保持间距"
+		status_label.text = command_note if not command_note.is_empty() else "招募后部署在唐僧附近陆地 · 落点自由，需保持间距"
 	elif state == GameState.BATTLE_RUNNING:
 		start_button.text = "自动护卫中"
-		status_label.text = "战术暂停 · 可下令，继续后执行" if battle_paused else (command_note if note_time > 0 else "自动护卫 / 主动接敌 · 手动移动途中绝不抢令")
+		if battle_paused:
+			status_label.text = "已暂停 · " + (command_note if not command_note.is_empty() else "可下令，继续后执行")
+		else:
+			status_label.text = command_note if not command_note.is_empty() else "自动护卫 / 主动接敌 · 手动移动途中绝不抢令"
 	if state == GameState.BATTLE_RUNNING and is_instance_valid(selected_hero) and selected_hero.active_in_battle and not selected_hero.battle_dead:
 		var brain := _brain(selected_hero)
 		info_label.text = "%s\n\n当前：%s\n生命 %d / %d\n射程 %.0f 像素\n\n点击陆地：手动优先\n到达：恢复自动护卫\nEsc：取消并恢复自动\n\n绿：跟随 / 蓝：归队\n红：接战 / 金：手动\n\n距离与速度均为试验参数" % [selected_hero.display_name,brain.mode,int(selected_hero.health),int(selected_hero.max_health),_range(selected_hero)]
