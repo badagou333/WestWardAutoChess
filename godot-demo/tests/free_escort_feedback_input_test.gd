@@ -11,8 +11,6 @@ func run():
 	await frames()
 	await press(KEY_SPACE)
 	await click(game.shop_buttons[0].get_global_rect().get_center())
-	await press(KEY_SPACE)
-	await press(KEY_B)
 	var hero = game.heroes[0]
 	await click(hero.position)
 	await click(game.escort.position+Vector2(70,-20))
@@ -56,6 +54,7 @@ func run():
 	check(game._brain(hero).goal==second_goal and not game.battle_paused,"resume preserves pending command")
 	game.step(0.1)
 	check(hero.position!=frozen,"resumed command executes")
+	await press(KEY_1)
 	await click(Vector2(1000,470))
 	check(visible_text("目标无效") and not visible_text("暂停"),"running rejection remains visible")
 	await create_timer(3.3).timeout

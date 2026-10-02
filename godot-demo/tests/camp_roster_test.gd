@@ -83,7 +83,7 @@ func run() -> void:
 	check(game._swap_with_bench(incoming),"F can exchange with full bench")
 	check(incoming.position==other_at and game.hero_slots[1]==incoming and hunter.bench_slot==7,"incoming inherits exact coordinate and number; outgoing uses incoming bench seat")
 	check(game.heroes.size()==total and game.coins==wallet and game.population==4 and game._deployed_count()==4,"swap conserves copies, currency and population")
-	check(game.swap_source==null and game.carry_hero==null and game.selected_hero==incoming,"swap commits once and clears pending input")
+	check(game.swap_source==null and game.carry_hero==null and game.selected_hero==null,"swap commits once and clears selection and pending input")
 	check(not game._swap_with_bench(hunter),"repeated completion cannot repeat swap")
 	ownership(game)
 	# Begin combat: no automatic return to a previous battle's anchor.
@@ -146,6 +146,7 @@ func progression() -> void:
 				game._select_hero(monk)
 				game._begin_swap()
 				check(game._swap_with_bench(reserve),"natural camp exchanges purchased reserve")
+				game._select_hero(reserve)
 				game._begin_swap()
 				check(game._swap_with_bench(monk),"natural camp exchanges back without extra charge")
 				check(game.coins==wallet-1 and monk.position==position,"exchange pair spends only the original purchase")

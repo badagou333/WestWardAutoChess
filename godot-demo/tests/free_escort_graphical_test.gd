@@ -11,6 +11,10 @@ func click(point: Vector2, button := MOUSE_BUTTON_LEFT):
 	await frames()
 	await super.click(point,button)
 
+func management(opened: bool) -> void:
+	if game.shop_open != opened: await press(KEY_SPACE)
+	check(game.shop_open==opened and game.bench_open==opened,"unified panel state matches requested visibility")
+
 func run():
 	game = load("res://scenes/free_escort.tscn").instantiate()
 	root.add_child(game)
@@ -25,8 +29,6 @@ func run():
 	check(game.heroes.is_empty(),"no hidden fourth slot")
 	for card in game.shop_buttons: await click(card.get_global_rect().get_center())
 	check(game.coins==0 and game.heroes.size()==3,"native three purchases")
-	await press(KEY_SPACE)
-	await press(KEY_B)
 	for i in range(3):
 		await click(game.heroes[i].position)
 		await click(game.escort.position+Vector2(45+i*32,-35))
@@ -41,6 +43,7 @@ func run():
 	var goal := Map.center(Vector2i(5,3))+Vector2(17,8)
 	await click(goal,MOUSE_BUTTON_RIGHT)
 	check(game._brain(hero).mode=="手动" and game._brain(hero).goal==goal,"native paused precise command")
+	await press(KEY_1)
 	await click(Vector2(1020,650),MOUSE_BUTTON_RIGHT)
 	check(game._brain(hero).goal==goal,"native water click retains command")
 	var frozen: Vector2 = hero.position
@@ -50,6 +53,7 @@ func run():
 	await press(KEY_P)
 	game.step(0.5)
 	check(hero.position!=frozen,"native resume")
+	await press(KEY_1)
 	await press(KEY_ESCAPE)
 	check(game._brain(hero).mode=="驻守","native cancel returns to guard")
 	await click(game.speed_button.get_global_rect().get_center())

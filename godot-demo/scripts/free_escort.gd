@@ -20,7 +20,8 @@ var debug_navigation := false # QA-only coast overlay, never an actor grid.
 var guard_anchors := {}
 var hero_slots: Array = [] # Stable 1..9,0 slots; holes are reused on deployment only.
 var bench_open := false
-var bench_toggle: Button
+var roster_hud: Control
+var management_back: Panel
 var carry_hero = null
 var carry_preview: Node2D
 var carry_star := 0
@@ -56,10 +57,9 @@ func _create_interface() -> void:
 		if control is Label and "1—3" in control.text:
 			control.text = "招募商店     点击购买 · 按钮刷新（2金）· 空格收起"
 		elif control is Label and "替补席" in control.text:
-			control.text = "招募后进入后备区（B打开）\n数字键只选择上场英雄"
+			control.text = "招募进入下方后备区\n战斗中仅查看，不可经营"
 	for card in shop_buttons: card.show_hotkey = false
-	bench_toggle = _make_button(Vector2(24,1030),Vector2(250,42),"后备区 [B]",Color("57513a"),31)
-	bench_toggle.pressed.connect(func(): _set_bench_open(not bench_open))
+	_layout_management()
 	var back := ColorRect.new()
 	back.position = Vector2(8,175)
 	back.size = Vector2(282,565)
@@ -69,9 +69,116 @@ func _create_interface() -> void:
 	add_child(back)
 	route_label = _make_label(Vector2(22,185),Vector2(260,110),22,Color("eddbaf"),25)
 	order_label = _make_label(Vector2(22,305),Vector2(260,420),18,Color("d4ddce"),25)
-	order_label.text = "驻守试验 · 非最终玩法\n\n英雄不跟随唐僧，附近接敌\n药灵原地治疗，不追伤员\n1—9 / 0 选人 · 右键移动\nQ / W / E 技能预留（空）\nP 暂停，暂停时可下令\n\n整备 R 下场 · F 原位互换\n按 F 后点击后备英雄\n后备拿起后 · 右键取消\nEsc 取消操作 / 移动指令\nB 后备区 · 空格 商店\n商店刷新只用鼠标按钮\n\n关间只换人，原有站位锁定\n新增名额可在唐僧附近落位\n下一关开战后自由指挥移动"
+	order_label.text = "驻守试验 · 非最终玩法\n\n英雄不跟随唐僧，附近接敌\n药灵原地治疗，不追伤员\n1—9 / 0 选人 · 右键移动\n右键下令后取消选中\nQ / W / E 技能未配置\nP 暂停，暂停时可下令\n\n整备 R 下场 · F 原位互换\nF后点击场上或后备英雄\n左键放置成功后取消选中\n后备拿起后 · 右键取消\nEsc 取消操作 / 移动指令\n空格 经营面板 · B已停用\n\n关间既有位置只能换人\n新增名额可在唐僧附近落位\n开战恢复移动，面板自动收起"
 	var switch := _make_button(Vector2(22,755),Vector2(250,46),"切换格子版（重新开局）",Color("697758"),25)
 	switch.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/escort_route.tscn"))
+
+func _layout_management() -> void:
+	# Reuse existing shop/bench controls; legacy scenes keep their own layout.
+	for child in get_children():
+		if child is ColorRect and child.position == Vector2(0,868):
+			child.position.y = 908
+			child.size.y = 172
+		elif child is Label and child.text == "备战操作": child.hide()
+	management_back = shop_controls[0]
+	for control in shop_controls: control.position.y += 300
+	management_back.position.x = 680
+	management_back.size = Vector2(924,406)
+	shop_controls[1].position.x = 700
+	shop_controls[1].size.x = 820
+	shop_controls[1].add_theme_font_size_override("font_size",20)
+	shop_controls[2].position.x = 1544
+	for index in range(shop_buttons.size()):
+		shop_buttons[index].position.x = 700+232*index
+		shop_buttons[index].size.x = 218
+	refresh_button.position.x = 1410
+	refresh_button.size.x = 176
+	shop_controls.back().position.x = 1400
+	shop_controls.back().size.x = 194
+	shop_controls.back().add_theme_font_size_override("font_size",15)
+	management_back.gui_input.connect(_management_input)
+	for child in get_children():
+		if child is Control and child.is_in_group("bench_controls"):
+			child.position.y -= 170
+			child.z_index = 36 if child is Label else 35
+			if child is Label and child != bench_label and child != tip_label: child.position.y -= 8
+	for slot in range(bench_panels.size()):
+		var panel = bench_panels[slot]
+		for child in get_children():
+			if child is Label and child.is_in_group("bench_controls") and child.text == str(slot+1):
+				child.position = Vector2(687+110*slot,866)
+		panel.position = Vector2(680+110*slot,739)
+		panel.size = Vector2(104,152)
+	bench_label.position = Vector2(700,724)
+	bench_label.size.x = 380
+	tip_label.position = Vector2(1100,727)
+	tip_label.size.x = 480
+	tip_label.text = "点选 / 拖放 · 右键取消 · 同星三合一"
+	shop_toggle.position = Vector2(24,959)
+	shop_toggle.size = Vector2(250,62)
+	shop_toggle.add_theme_font_size_override("font_size",18)
+	level_button.position = Vector2(1640,841)
+	level_button.size = Vector2(260,52)
+	roster_hud = preload("res://scripts/presentation/roster_hud.gd").new()
+	roster_hud.position = Vector2(0,908)
+	roster_hud.size = Vector2(1920,172)
+	roster_hud.z_index = 29 # Toggle remains above it; the full strip swallows map input.
+	roster_hud.mouse_filter = Control.MOUSE_FILTER_STOP
+	add_child(roster_hud)
+	move_child(roster_hud,background.get_index()+1)
+	roster_hud.gui_input.connect(_roster_input)
+
+func _bench_position(slot: int) -> Vector2:
+	return Vector2(732+110*slot,840)
+
+func _bench_slot_at(pos: Vector2) -> int:
+	if not bench_open or pos.y < 739 or pos.y > 891: return -1
+	var slot := int(round((pos.x-732)/110))
+	return slot if slot >= 0 and slot < BENCH_SIZE and absf(pos.x-_bench_position(slot).x) <= 52 else -1
+
+func _roster_input(event: InputEvent) -> void:
+	if state == GameState.RESULT or event is not InputEventMouseButton or event.button_index != MOUSE_BUTTON_LEFT or not event.pressed: return
+	var index := int(floor((event.position.x-300)/130))
+	if index < 0 or index >= max_population or event.position.y < 12 or event.position.y > 160: return
+	if fmod(event.position.x-300,130) > 124: return
+	if is_instance_valid(swap_source):
+		var target = _seat_hero(index)
+		if target != null: _swap_heroes(target)
+	else: _select_number(index)
+	roster_hud.accept_event()
+
+func _management_input(event: InputEvent) -> void:
+	# The panel blocks map input. Only the bench subregion routes to inventory.
+	if event is not InputEventMouseButton or event.button_index != MOUSE_BUTTON_LEFT: return
+	if state != GameState.PREPARING: return
+	var point: Vector2 = event.position+management_back.position
+	if event.pressed:
+		if _bench_slot_at(point) < 0: return
+		_begin_pointer_action(point,true)
+	elif _bench_slot_at(point) >= 0 or _map_input_allowed(point):
+		# GUI mouse capture delivers a bench-origin drag release back here even
+		# outside the panel. Forward only exposed map ground, never another UI.
+		_end_pointer_action(point)
+	management_back.accept_event()
+
+func _map_input_allowed(point: Vector2) -> bool:
+	for control in get_children():
+		if control is Control and control.is_visible_in_tree() and control.mouse_filter != Control.MOUSE_FILTER_IGNORE and control.get_global_rect().has_point(point): return false
+	return true
+
+func _update_roster_hud() -> void:
+	var values: Array = []
+	for index in range(max_population):
+		var hero = _seat_hero(index)
+		if hero == null:
+			values.append({})
+			continue
+		var mode := "整备" if state == GameState.PREPARING else "驻守"
+		if brains.has(hero): mode = brains[hero].mode
+		if hero.battle_dead: mode = "阵亡"
+		values.append({"unit":hero.unit_type,"name":hero.display_name,"star":hero.star,"status":mode,
+			"hp":hero.health,"max_hp":hero.max_health,"dead":hero.battle_dead,"selected":hero == selected_hero})
+	roster_hud.present(values)
 
 func _new_brain() -> Dictionary:
 	return {"mode":"驻守", "target":null, "goal":Vector2.ZERO, "path":PackedVector2Array(),
@@ -227,32 +334,33 @@ func _place_free(hero, point: Vector2) -> bool:
 	queue_redraw()
 	return true
 
-func _begin_pointer_action(pos: Vector2) -> void:
+func _begin_pointer_action(pos: Vector2, bench_only := false) -> void:
 	if state != GameState.PREPARING: return
 	carry_mouse = pos
 	_validate_swap()
 	if is_instance_valid(swap_source):
-		var incoming = _hero_at_position(pos)
-		if incoming != null and incoming.board_row < 0: _swap_with_bench(incoming)
-		else: _notice("请选择后备英雄互换 · Esc取消")
+		var incoming = _hero_in_bench(_bench_slot_at(pos)) if bench_only else _hero_at_position(pos)
+		if incoming != null: _swap_heroes(incoming)
+		else: _notice("请选择另一名场上或后备英雄 · Esc取消")
 		return
 	if is_instance_valid(carry_hero):
 		carry_pressed = true
 		carry_first_press = false
 		carry_origin = pos
 		return
-	var clicked = _hero_at_position(pos)
+	var clicked = _hero_in_bench(_bench_slot_at(pos)) if bench_only else _hero_at_position(pos)
 	if clicked != null:
 		_select_hero(clicked)
 		if not _camp_locked() or clicked.board_row < 0: _start_carry(clicked,pos)
-	elif is_instance_valid(selected_hero) and selected_hero.board_row >= 0: _place_free(selected_hero,pos)
+	elif not bench_only and is_instance_valid(selected_hero) and selected_hero.board_row >= 0:
+		if _place_free(selected_hero,pos): _release_control()
 
 func _end_pointer_action(pos: Vector2) -> void:
 	if not carry_pressed or not is_instance_valid(carry_hero): return
 	var commit := carry_dragged or not carry_first_press
 	carry_pressed = false
 	if commit:
-		if _commit_carry(pos): _cancel_carry()
+		if _commit_carry(pos): _release_control()
 	elif carry_hero.board_row >= 0:
 		# A board hero click only selects it; dragging uses the same transaction.
 		_cancel_carry()
@@ -287,6 +395,13 @@ func _cancel_carry() -> void:
 	carry_pressed = false
 	carry_first_press = false
 	carry_dragged = false
+
+func _release_control() -> void:
+	# Selection/gestures are independent of accepted combat movement orders.
+	_cancel_carry()
+	_cancel_swap()
+	_release_over_ui()
+	_clear_selection()
 
 func _validate_carry() -> void:
 	if carry_hero == null: return
@@ -350,55 +465,83 @@ func _cancel_swap() -> void:
 
 func _validate_swap() -> void:
 	if swap_source == null: return
-	if not is_instance_valid(swap_source) or swap_source not in heroes or state != GameState.PREPARING or not bench_open or swap_source.board_row < 0 or swap_source.star != swap_star:
+	if not is_instance_valid(swap_source) or swap_source not in heroes or state != GameState.PREPARING or not bench_open or swap_source.board_row < 0 or swap_source.battle_dead or swap_source.star != swap_star:
 		_cancel_swap()
 
 func _begin_swap() -> void:
 	if state != GameState.PREPARING:
 		_notice("战斗中不能互换 · 请等待营地整备")
 		return
-	if not is_instance_valid(selected_hero) or selected_hero not in heroes or selected_hero.board_row < 0:
+	if not is_instance_valid(selected_hero) or selected_hero not in heroes or selected_hero.board_row < 0 or selected_hero.battle_dead:
 		_notice("请先选择场上英雄，再按F互换")
 		return
 	_cancel_carry()
 	swap_source = selected_hero
 	swap_star = selected_hero.star
 	_set_bench_open(true)
-	_notice("%s：请选择后备英雄互换 · Esc取消" % selected_hero.display_name)
+	_notice("%s：点击另一名场上或后备英雄互换 · Esc取消" % selected_hero.display_name)
+
+func _swap_heroes(incoming) -> bool:
+	_validate_swap()
+	if not is_instance_valid(swap_source) or not is_instance_valid(incoming) or incoming not in heroes or incoming.battle_dead: return false
+	if incoming == swap_source:
+		_cancel_swap()
+		_notice("已取消互换 · 请选择另一名英雄")
+		return false
+	if incoming.board_row < 0: return _swap_with_bench(incoming)
+	var outgoing = swap_source
+	var first := hero_slots.find(outgoing)
+	var second := hero_slots.find(incoming)
+	if first < 0 or second < 0: return false
+	if _camp_locked() and (not camp_positions.points.has(first) or not camp_positions.points.has(second)): return false
+	var point_a: Vector2 = camp_positions.points[first] if _camp_locked() else outgoing.position
+	var point_b: Vector2 = camp_positions.points[second] if _camp_locked() else incoming.position
+	# All validation precedes this synchronous, non-fallible two-slot commit.
+	_release_control()
+	_deploy_at(outgoing,point_b,second)
+	_deploy_at(incoming,point_a,first)
+	combat.strikes = combat.strikes.filter(func(strike): return strike.source != outgoing and strike.source != incoming)
+	_notice("已交换原位 · %s ↔ %s" % [outgoing.display_name,incoming.display_name])
+	queue_redraw()
+	return true
 
 func _swap_with_bench(incoming) -> bool:
 	_validate_swap()
-	if not is_instance_valid(swap_source) or not is_instance_valid(incoming) or incoming not in heroes or incoming.board_row >= 0: return false
+	if not is_instance_valid(swap_source) or not is_instance_valid(incoming) or incoming not in heroes or incoming.board_row >= 0 or incoming.battle_dead: return false
 	var outgoing = swap_source
 	var seat := hero_slots.find(outgoing)
 	var slot: int = incoming.bench_slot
 	if seat < 0 or slot < 0 or slot >= BENCH_SIZE or _hero_in_bench(slot) != incoming: return false
+	if _camp_locked() and not camp_positions.points.has(seat): return false
 	var point: Vector2 = camp_positions.points[seat] if _camp_locked() else outgoing.position
 	# A full bench is supported: trade the two ownership slots atomically, without
 	# invoking shop/merge/sell or any operation that can consume gold or a copy.
-	_cancel_carry()
-	_cancel_swap()
+	_release_control()
 	incoming.bench_slot = -1
 	_place_hero_on_bench(outgoing,slot)
 	_deploy_at(incoming,point,seat)
-	_select_hero(incoming)
 	_notice("已原位互换 · %s 上场 / %s 下场" % [incoming.display_name,outgoing.display_name])
 	queue_redraw()
 	return true
 
 func _set_bench_open(value: bool) -> void:
-	bench_open = value and state != GameState.RESULT
+	_set_shop_open(value)
+
+func _set_shop_open(value: bool) -> void:
+	super._set_shop_open(value)
+	bench_open = shop_open
 	if not bench_open:
 		_cancel_carry()
 		_cancel_swap()
 		if is_instance_valid(selected_hero) and selected_hero.board_row < 0: _clear_selection()
-	_update_ui()
+	# Also called by the base interface constructor, before all controls exist.
+	if is_instance_valid(route_label): _update_ui()
 
 func _input(event: InputEvent) -> void:
 	# Cancel bench pickup before GUI consumption, including over shop/buttons.
 	# Clear the gesture too, so a later left release cannot deploy the hero.
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed and state == GameState.PREPARING and is_instance_valid(carry_hero) and carry_hero.board_row < 0:
-		_cancel_carry()
+		_release_control()
 		_notice("已取消拿起 · 英雄保留在后备区")
 		get_viewport().set_input_as_handled()
 		return
@@ -461,7 +604,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.keycode >= KEY_0 and event.keycode <= KEY_9:
 			_select_number(9 if event.keycode == KEY_0 else event.keycode-KEY_1)
 		elif event.keycode in [KEY_Q,KEY_W,KEY_E]: pass # Reserved, deliberately no gameplay side effects.
-		elif event.keycode == KEY_B: _set_bench_open(not bench_open)
+		elif event.keycode == KEY_B: pass # Retired; Space toggles the unified panel.
 		elif event.keycode == KEY_R: _withdraw_selected()
 		elif event.keycode == KEY_F: _begin_swap()
 		elif event.keycode == KEY_ESCAPE:
@@ -482,11 +625,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			else: _end_pointer_action(event.position)
 		elif _camp_locked() and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 			_notice("关间站位已锁定 · 开战后可右键移动")
+			_release_control()
+		elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+			_release_control()
 		return
 	if state != GameState.BATTLE_RUNNING: return
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 			_command_free(selected_hero,event.position)
+			_release_control()
 		elif event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
 				pointer_hero = null
@@ -796,6 +943,8 @@ func _restart_demo() -> void:
 
 func _tick(delta: float) -> void:
 	super._tick(delta)
+	for hero in heroes:
+		if hero.board_row < 0: hero.z_index = 2038
 	queue_redraw()
 
 func _update_ui() -> void:
@@ -807,8 +956,9 @@ func _update_ui() -> void:
 		if child is Control and child.is_in_group("bench_controls"): child.visible = bench_open
 	for hero in heroes:
 		if hero.board_row < 0: hero.visible = bench_open
-	bench_toggle.text = ("收起后备 [B]" if bench_open else "后备区 [B]") + "  %d / 8" % (heroes.size()-_deployed_count())
-	bench_toggle.disabled = state == GameState.RESULT
+	shop_toggle.text = ("收起经营面板 [空格]" if shop_open else "经营面板 [空格]")
+	shop_toggle.disabled = state == GameState.RESULT
+	_update_roster_hud()
 	for card in shop_buttons: card.tooltip_text = "点击购买 · 数字键选择上场英雄"
 	if note_expires_at_msec <= Time.get_ticks_msec(): _clear_notice()
 	if is_instance_valid(selected_hero):
@@ -818,7 +968,7 @@ func _update_ui() -> void:
 	if state == GameState.PREPARING:
 		start_button.text = "出发 · 第%d段" % (wave_index+2)
 		var preparation_hint := "关间锁位 · R下场 / F原位互换 · 仅新增名额可另选落点" if _camp_locked() else "招募后部署在唐僧附近陆地 · R下场 / F互换"
-		if is_instance_valid(swap_source): preparation_hint = "%s：点击后备英雄原位互换 · Esc取消" % swap_source.display_name
+		if is_instance_valid(swap_source): preparation_hint = "%s：点击场上或后备英雄原位互换 · Esc取消" % swap_source.display_name
 		status_label.text = command_note if not command_note.is_empty() else preparation_hint
 	elif state == GameState.BATTLE_RUNNING:
 		start_button.text = "驻守接敌中"
@@ -830,9 +980,9 @@ func _update_ui() -> void:
 		var brain := _brain(selected_hero)
 		info_label.text = "%s\n当前：%s\n生命 %d / %d · 射程 %.0f\n\n右键 / 点地：手动优先\n到达：设新驻守点\nEsc：当前合法位置驻守\nQ / W / E：技能空槽\n\n绿：驻守 / 蓝：归位\n红：接战 / 金：手动\n归位点被占：等待，不追敌" % [selected_hero.display_name,brain.mode,int(selected_hero.health),int(selected_hero.max_health),_range(selected_hero)]
 	elif not is_instance_valid(selected_hero):
-		info_label.text = "无格子驻守 · 试验\n\n唐僧活着到达 B，清除威胁\n英雄不会跟随，需手动调队\n近战上前，远程到射程停步\n药灵原地支援\n追击超时 / 超界返回驻守点\n\n1—9 / 0 选人 · 右键移动\nB 后备 · 空格 商店\n\n营地可招募 / 合成 / 升人口\n英雄恢复，唐僧血量保留"
+		info_label.text = "无格子驻守 · 试验\n\n唐僧活着到达 B，清除威胁\n英雄不会跟随，需手动调队\n药灵原地支援\n追击超时 / 超界返回驻守点\n\n1—9 / 0 选人 · 右键移动\n下令后取消选中，移动继续\n空格 统一经营面板\n底栏显示英雄状态和血量\n\n营地可招募 / 合成 / 升人口\n英雄恢复，唐僧血量保留"
 	if state == GameState.PREPARING and is_instance_valid(selected_hero):
-		info_label.text = "%s\n生命 %d / %d · %d星\n\nR：下场（后备须有空位）\nF：与后备原位互换\n后备满也可直接互换\nEsc：取消选择操作\n\n%s\n\nQ / W / E：技能预留" % [selected_hero.display_name,int(selected_hero.health),int(selected_hero.max_health),selected_hero.star,"关间原位锁定，不能搬人\n空圈：可替换的原位\n新增名额可在唐僧附近落位" if _camp_locked() else "首次布阵可自由调整\n部署在唐僧附近陆地"]
+		info_label.text = "%s\n生命 %d / %d · %d星\n\nR：下场（后备须有空位）\nF：与场上 / 后备英雄互换\n后备满也可直接互换\nEsc：取消选择操作\n\n%s\n\nQ / W / E：未配置" % [selected_hero.display_name,int(selected_hero.health),int(selected_hero.max_health),selected_hero.star,"关间只能交换既有位置\n空圈：可替换的原位\n新增名额可在唐僧附近落位" if _camp_locked() else "首次布阵可自由调整\n部署在唐僧附近陆地"]
 
 func _draw() -> void:
 	if _camp_locked():

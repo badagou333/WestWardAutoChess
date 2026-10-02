@@ -25,8 +25,6 @@ func run():
 	await press(KEY_SPACE)
 	await click(game.shop_buttons[0].get_global_rect().get_center())
 	await click(game.shop_buttons[1].get_global_rect().get_center())
-	await press(KEY_SPACE)
-	await press(KEY_B)
 	var hero = game.heroes[0]
 	var other = game.heroes[1]
 	await click(hero.position)
@@ -50,6 +48,7 @@ func run():
 	check(hero.position==frozen,"paused command does not move actor")
 	await click(above,MOUSE_BUTTON_RIGHT)
 	check(game._brain(hero).mode=="手动" and game._brain(hero).goal==above,"same-point right click still works")
+	await press(KEY_1)
 	await press(KEY_ESCAPE)
 	await press(KEY_P)
 	await click(above)
@@ -85,6 +84,7 @@ func run():
 	var right_goal: Vector2 = hero.position+Vector2(-55,-70)
 	await click(right_goal,MOUSE_BUTTON_RIGHT)
 	check(game._brain(hero).goal==right_goal,"right click replaces left/drag order")
+	await press(KEY_1)
 	await press(KEY_ESCAPE)
 	check(game._brain(hero).mode=="驻守" and game.pointer_hero==null,"cancel clears pending pointer and establishes guard")
 	# Starting a drag on a different hero both selects it and moves that hero.

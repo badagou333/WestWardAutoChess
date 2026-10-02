@@ -17,8 +17,6 @@ func run():
 	await frames()
 	await press(KEY_SPACE)
 	for card in game.shop_buttons: await click(card.get_global_rect().get_center())
-	await press(KEY_SPACE)
-	await press(KEY_B)
 	for i in range(3):
 		await click(game.heroes[i].position)
 		await click(game.escort.position+Vector2(50+i*50,-30))
@@ -59,7 +57,6 @@ func run():
 	check(game._deployed_count()==2 and game.heroes.size()==4,"repeated/echo R cannot duplicate withdrawal")
 	await click(game.refresh_button.get_global_rect().get_center())
 	check(game.coins==wallet-2,"mouse refresh still costs two")
-	await press(KEY_SPACE)
 	var extra_point: Vector2 = game.escort.position+Vector2(20,60)
 	await click(monk.position)
 	await click(extra_point)
@@ -67,7 +64,6 @@ func run():
 	var cancelled_bench: Vector2 = monk.position
 	await click(extra_point,MOUSE_BUTTON_RIGHT)
 	check(monk.board_row<0 and game.carry_hero==null and game.carry_preview==null and monk.position==cancelled_bench and game.camp_positions.points[0]==monk_at and "已取消拿起" in game.status_label.text,"camp right click cancels pickup without bypassing lock or moving inventory")
-	await press(KEY_ESCAPE)
 	await pointer(monk.position,"motion")
 	await pointer(monk.position,"press")
 	await pointer(extra_point,"motion")
@@ -88,7 +84,7 @@ func run():
 	await press(KEY_ESCAPE)
 	check(game.swap_source==null and hunter.position==hunter_at and fox.board_row<0,"Escape cancels exchange without ownership change")
 	await press(KEY_F)
-	await press(KEY_B)
+	await press(KEY_SPACE)
 	check(game.swap_source==null and not game.bench_open,"closing bench cancels pending exchange")
 	await press(KEY_F)
 	await press(KEY_3)
@@ -146,6 +142,7 @@ func run():
 	check(game.swap_source==null and snapshot()==before,"R/F do not steal text focus")
 	edit.release_focus()
 	edit.queue_free()
+	await press(KEY_1)
 	await press(KEY_F)
 	await click(game.start_button.get_global_rect().get_center())
 	game.intermission = 999

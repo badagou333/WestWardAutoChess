@@ -14,7 +14,10 @@ func set_offer(key: String, title: String, cost: int, index: int) -> void:
 	caption = title
 	price = cost
 	hotkey_number = index + 1
-	portrait = null
+	portrait = portrait_for(key)
+	queue_redraw()
+
+static func portrait_for(key: String) -> Texture2D:
 	if not key.is_empty():
 		if not portraits.has(key):
 			var base := "res://art/production/%s/nine_sols_v1/" % key
@@ -27,8 +30,8 @@ func set_offer(key: String, title: String, cost: int, index: int) -> void:
 			var columns := atlas.get_width() / 256
 			var sprite := atlas.get_image().get_region(Rect2i((frame % columns)*256,(frame / columns)*256,256,256))
 			portraits[key] = ImageTexture.create_from_image(sprite.get_region(sprite.get_used_rect()))
-		portrait = portraits[key]
-	queue_redraw()
+		return portraits[key]
+	return null
 
 func _draw() -> void:
 	var font := ThemeDB.fallback_font
