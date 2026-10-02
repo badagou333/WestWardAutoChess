@@ -26,7 +26,7 @@ func battle(fps: int, speed: float, intervene: bool) -> Dictionary:
 	recruit(game)
 	game._start_battle()
 	game.battle_speed = speed
-	var next_order := 8.0
+	var next_order := 3.0
 	var camps := 0
 	for frame in range(int(240*fps/speed)):
 		if game.state == game.GameState.RESULT: break
@@ -37,10 +37,13 @@ func battle(fps: int, speed: float, intervene: bool) -> Dictionary:
 			check(game.escort.health>0,"camp keeps escort health")
 			game._start_battle()
 		if intervene and game.battle_elapsed >= next_order:
-			next_order += 12
-			var hero = game.heroes[0]
-			if not hero.battle_dead:
-				var destination: Vector2 = game._near_free(game.escort.position+Vector2(0,65),hero)
+			next_order += 2.0
+			for i in range(game.heroes.size()):
+				var hero = game.heroes[i]
+				if hero.battle_dead or game._brain(hero).mode == "手动": continue
+				# Simulated player issues occasional legal relocation, not auto AI.
+				if hero.position.distance_to(game.escort.position) < 120: continue
+				var destination: Vector2 = game._near_free(game.escort.position+Vector2(30+i*36,-45),hero)
 				if destination != Vector2.INF: game._command_free(hero,destination)
 		game.step(1.0/fps)
 		if "--trace" in OS.get_cmdline_user_args() and game.wave_index==3 and frame%(fps*4)==0:
@@ -49,8 +52,9 @@ func battle(fps: int, speed: float, intervene: bool) -> Dictionary:
 	var result := {"done":game.state==game.GameState.RESULT,"hp":game.escort.health,"route":game.route_index,"wave":game.wave_index,"loot":game.earned_loot,"time":game.battle_elapsed,"camps":camps,"attacks":game.combat.counts.attacks,"engaged":game.auto_engagements,"manual":game.manual_completions}
 	print("FREE_RUN %d x%.1f manual=%s: %s" % [fps,speed,intervene,result])
 	check(result.done,"four-stage run reaches result")
-	check(result.route==25 and result.camps==3,"four-stage loop reaches B with three camps")
-	if intervene: check(result.hp>0 and result.loot==20,"manual intervention can win all four stages")
+	if intervene:
+		check(result.route==25 and result.camps==3,"four-stage loop reaches B with three camps")
+		check(result.hp>0 and result.loot==20,"manual intervention can win all four stages")
 	game.free()
 	return result
 
@@ -66,9 +70,10 @@ func behaviors() -> void:
 	monk.position = center+Vector2(0,60)
 	hunter.position = center+Vector2(-100,0)
 	healer.position = center+Vector2(-80,60)
+	for actor in game.heroes: game.guard_anchors[actor] = actor.position
 	game._spawn_enemy("boar",Vector2i(3,10))
 	var enemy = game.enemies[0]
-	enemy.position = center+Vector2(150,0)
+	enemy.position = center+Vector2(130,0)
 	enemy.health = 100000
 	enemy.max_health = 100000
 	enemy.damage = 0
@@ -95,13 +100,13 @@ func behaviors() -> void:
 	var brain: Dictionary = game._brain(hunter)
 	brain.chase = game.Rules.CHASE_SECONDS+1
 	game.step(0.02)
-	check(brain.mode=="归队" and brain.skip.has(enemy.get_instance_id()),"chase timeout returns and applies retry hysteresis")
+	check(brain.mode=="归位" and brain.skip.has(enemy.get_instance_id()),"chase timeout returns and applies retry hysteresis")
 	brain.mode = "接战"
 	brain.target = enemy
 	brain.chase = 0
 	enemy.position = center+Vector2(400,0)
 	game.step(0.02)
-	check(brain.mode=="归队","leash independently limits chase")
+	check(brain.mode=="归位","leash independently limits chase")
 	game._finish_battle(false)
 	check(game.brains.is_empty() and game.enemy_motion.is_empty(),"result clears AI")
 	game._restart_demo()
@@ -253,8 +258,10 @@ func run() -> void:
 	obstruction()
 	var automatic := battle(60,1,false)
 	var sped := battle(120,2,false)
-	check(automatic.hp>0 and automatic.loot==20,"automatic reference formation completes encounter after shore-corner fix")
+	check(automatic.hp==0 and automatic.manual==0,"stationary formation no longer follows Tang to automatic victory")
 	check(automatic.hp==sped.hp and automatic.loot==sped.loot and automatic.route==sped.route,"fixed-clock auto results")
-	battle(60,1,true)
+	var guided := battle(60,1,true)
+	var guided_fast := battle(120,2,true)
+	check(guided.hp==guided_fast.hp and guided.loot==guided_fast.loot,"fixed-clock commanded results")
 	print("FREE_ESCORT_TEST failures=%d" % failures)
 	quit(1 if failures else 0)

@@ -228,7 +228,9 @@ func _create_interface() -> void:
 	level_button.pressed.connect(_on_level_pressed)
 
 	bench_label = _make_label(Vector2(324,877),Vector2(470,30),22,Color("ffe3a1"),31)
+	bench_label.add_to_group("bench_controls")
 	tip_label = _make_label(Vector2(1060,880),Vector2(480,26),16,Color("b9ac90"),31)
+	tip_label.add_to_group("bench_controls")
 	tip_label.text = "拖动棋子上阵 · 三个同名同星自动合成"
 	var action_title := _make_label(Vector2(1660,877),Vector2(238,30),21,Color("ffe3a1"),31)
 	action_title.text = "备战操作"
@@ -241,7 +243,9 @@ func _create_interface() -> void:
 		panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		add_child(panel)
 		bench_panels.append(panel)
+		panel.add_to_group("bench_controls")
 		var number := _make_label(panel.position+Vector2(7,135),Vector2(26,24),14,Color("b2a382"),27)
+		number.add_to_group("bench_controls")
 		number.text = str(slot+1)
 	_set_shop_open(false)
 

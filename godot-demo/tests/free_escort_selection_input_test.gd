@@ -23,9 +23,10 @@ func run():
 	game.set_process(false)
 	await frames()
 	await press(KEY_SPACE)
-	await press(KEY_1)
-	await press(KEY_2)
+	await click(game.shop_buttons[0].get_global_rect().get_center())
+	await click(game.shop_buttons[1].get_global_rect().get_center())
 	await press(KEY_SPACE)
+	await press(KEY_B)
 	var hero = game.heroes[0]
 	var other = game.heroes[1]
 	await click(hero.position)
@@ -85,7 +86,7 @@ func run():
 	await click(right_goal,MOUSE_BUTTON_RIGHT)
 	check(game._brain(hero).goal==right_goal,"right click replaces left/drag order")
 	await press(KEY_ESCAPE)
-	check(game._brain(hero).mode=="跟随" and game.pointer_hero==null,"cancel clears pending pointer and restores automatic")
+	check(game._brain(hero).mode=="驻守" and game.pointer_hero==null,"cancel clears pending pointer and establishes guard")
 	# Starting a drag on a different hero both selects it and moves that hero.
 	var other_end: Vector2 = other.position+Vector2(-20,65)
 	await pointer(other.position,"motion")
@@ -97,7 +98,7 @@ func run():
 	await pointer(other.position,"press")
 	await press(KEY_ESCAPE)
 	await pointer(other.position+Vector2(0,-80),"release")
-	check(game._brain(other).mode=="跟随" and not game.pointer_was_selected,"cancel during held click prevents release from reviving order")
+	check(game._brain(other).mode=="驻守" and not game.pointer_was_selected,"cancel during held click prevents release from reviving order")
 	game.free()
 	# Preserve the old grid mode's repeat-click selection convention through
 	# the same real Viewport event route, not a direct input-handler invocation.

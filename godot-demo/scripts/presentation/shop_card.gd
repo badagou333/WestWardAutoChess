@@ -5,6 +5,7 @@ var offer := ""
 var caption := ""
 var price := 0
 var hotkey_number := 1
+var show_hotkey := true # Legacy cards retain numeric purchase hints.
 var portrait: Texture2D
 static var portraits := {}
 
@@ -39,7 +40,7 @@ func _draw() -> void:
 		var fit := minf(122.0/portrait.get_width(),87.0/portrait.get_height())
 		var extent := portrait.get_size()*fit
 		draw_texture_rect(portrait,Rect2(Vector2((size.x-extent.x)/2,9+(87-extent.y)),extent),false,shade)
-	draw_string(font,Vector2(10,24),str(hotkey_number),HORIZONTAL_ALIGNMENT_LEFT,20,16,Color("b6a785"))
+	if show_hotkey: draw_string(font,Vector2(10,24),str(hotkey_number),HORIZONTAL_ALIGNMENT_LEFT,20,16,Color("b6a785"))
 	draw_line(Vector2(14,101),Vector2(size.x-14,101),Color("645941"),1)
 	draw_string(font,Vector2(0,123),caption,HORIZONTAL_ALIGNMENT_CENTER,size.x,20,Color("eee5cf"))
 	draw_string(font,Vector2(0,146),"%d 金币" % price,HORIZONTAL_ALIGNMENT_CENTER,size.x,18,Color("ddbd71"))

@@ -17,6 +17,18 @@ var pointer_was_selected := false
 var manual_completions := 0
 var auto_engagements := 0
 var debug_navigation := false # QA-only coast overlay, never an actor grid.
+var guard_anchors := {}
+var hero_slots: Array = [] # Stable 1..9,0 slots; holes are reused on deployment only.
+var bench_open := false
+var bench_toggle: Button
+var carry_hero = null
+var carry_preview: Node2D
+var carry_star := 0
+var carry_pressed := false
+var carry_first_press := false
+var carry_dragged := false
+var carry_origin := Vector2.ZERO
+var carry_mouse := Vector2.ZERO
 
 func _create_background() -> void:
 	super._create_background()
@@ -36,7 +48,15 @@ func _create_interface() -> void:
 	for child in get_children():
 		if child is Label:
 			if child.text == "西游护送 · 四波试玩": child.text = "无格子护送 · 试验"
-			if "拖" in child.text: child.text = "自动护卫 · 手动移动优先"
+			if "拖" in child.text: child.text = "点选拿起 / 拖放 · 三个同名同星自动合成"
+	for control in shop_controls:
+		if control is Label and "1—3" in control.text:
+			control.text = "招募商店     点击购买 · R 刷新（2金）· 空格收起"
+		elif control is Label and "替补席" in control.text:
+			control.text = "招募后进入后备区（B打开）\n数字键只选择上场英雄"
+	for card in shop_buttons: card.show_hotkey = false
+	bench_toggle = _make_button(Vector2(24,1030),Vector2(250,42),"后备区 [B]",Color("57513a"),31)
+	bench_toggle.pressed.connect(func(): _set_bench_open(not bench_open))
 	var back := ColorRect.new()
 	back.position = Vector2(8,175)
 	back.size = Vector2(282,565)
@@ -46,16 +66,20 @@ func _create_interface() -> void:
 	add_child(back)
 	route_label = _make_label(Vector2(22,185),Vector2(260,110),22,Color("eddbaf"),25)
 	order_label = _make_label(Vector2(22,305),Vector2(260,420),18,Color("d4ddce"),25)
-	order_label.text = "对照试验 · 非最终玩法\n\n地面自由落点，不吸附石块\n无敌：跟随唐僧、分散护卫\n遇敌：近战上前，远程停射\n药灵后侧支援，不追敌\n\n选人点地 / 拖动 / 右键下令\n手动途中不被自动行为抢令\n到达后恢复自动护卫\nEsc 取消移动、恢复自动\n\nP 暂停，可在暂停时下令\n唐僧优先通行友军，不推人\n清敌到营地后整备"
+	order_label.text = "驻守试验 · 非最终玩法\n\n英雄不会自动跟随唐僧\n驻守点附近接敌，脱战归位\n药灵原地治疗，不追伤员\n\n1—9 / 0 选上场英雄\n右键 / 点地 / 拖动下令\n到达设新驻守点，手动优先\nEsc 取消指令，就近合法驻守\nQ / W / E 技能预留（空）\n\nB 后备区 · 空格 商店\n后备点选拿起，再点地面放下\nP 暂停，可在暂停时下令\n清敌到营地后整备"
 	var switch := _make_button(Vector2(22,755),Vector2(250,46),"切换格子版（重新开局）",Color("697758"),25)
 	switch.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/escort_route.tscn"))
 
 func _new_brain() -> Dictionary:
-	return {"mode":"跟随", "target":null, "goal":Vector2.ZERO, "path":PackedVector2Array(),
-		"repath":0.0, "think":0.0, "follow_clock":0.0, "blocked":0.0, "chase":0.0, "return_until":0.0, "skip":{}, "moving":false}
+	return {"mode":"驻守", "target":null, "goal":Vector2.ZERO, "path":PackedVector2Array(),
+		"repath":0.0, "think":0.0, "blocked":0.0, "chase":0.0, "skip":{}, "moving":false}
 
 func _brain(hero) -> Dictionary:
-	if not brains.has(hero): brains[hero] = _new_brain()
+	if not brains.has(hero):
+		brains[hero] = _new_brain()
+		brains[hero].anchor = guard_anchors.get(hero,hero.position)
+		brains[hero].last_legal = hero.position
+		if hero.position.distance_to(brains[hero].anchor) >= Rules.RETURN_TOLERANCE: brains[hero].mode = "归位"
 	return brains[hero]
 
 func _notice(message: String) -> void:
@@ -107,25 +131,31 @@ func _near_free(wanted: Vector2, actor, maximum := 150.0) -> Vector2:
 			if _stop_free(point,actor): return point
 	return Vector2.INF
 
-func _heading() -> Vector2:
-	if route_index < Map.ROUTE.size()-1:
-		return (Map.center(Map.ROUTE[route_index+1])-escort.position).normalized()
-	return Vector2.DOWN
+func _establish_guard(hero, message: String) -> void:
+	var brain := _brain(hero)
+	var point: Vector2 = hero.position
+	# Cancellation while traversing a friend must never teleport or overlap-stop.
+	if not _stop_free(point,hero):
+		point = brain.last_legal if _stop_free(brain.last_legal,hero) else _near_free(hero.position,hero)
+		if point == Vector2.INF: point = brain.anchor
+	guard_anchors[hero] = point
+	hero.presentation.reset_visual()
+	combat.strikes = combat.strikes.filter(func(strike): return strike.source != hero)
+	brains.erase(hero)
+	brain = _brain(hero)
+	if hero.position.distance_to(point) >= Rules.RETURN_TOLERANCE: brain.mode = "归位"
+	_notice("%s：%s" % [hero.display_name,message])
 
-func _guard_goal(hero) -> Vector2:
-	var heading := _heading()
-	var index := heroes.find(hero)
-	var offset: Vector2
-	if hero.unit_type == "herbal_spirit_child":
-		offset = -heading*Rules.GUARD_RADIUS+heading.orthogonal()*36.0
-	else:
-		# Alternating shoulders; deeper ranks when population grows.
-		var side := 1.0 if index%2 == 0 else -1.0
-		offset = heading.orthogonal()*side*(48.0+20.0*(index/2))+heading*(38.0-24.0*(index/2))
-	return _near_free(escort.position+offset,hero)
+func _assign_hero_slot(hero) -> void:
+	if hero in hero_slots: return
+	for i in range(hero_slots.size()):
+		if not is_instance_valid(hero_slots[i]) or hero_slots[i] not in heroes or hero_slots[i].board_row < 0:
+			hero_slots[i] = hero
+			return
+	if hero_slots.size() < max_population: hero_slots.append(hero)
 
 func _place_free(hero, point: Vector2) -> bool:
-	if state != GameState.PREPARING or not is_instance_valid(hero): return false
+	if state != GameState.PREPARING or not is_instance_valid(hero) or hero not in heroes: return false
 	if point.distance_to(escort.position) > Rules.DEPLOY_RADIUS or not _stop_free(point,hero):
 		_notice("无法部署：选择唐僧附近陆地，并与队员留出间距")
 		return false
@@ -142,27 +172,129 @@ func _place_free(hero, point: Vector2) -> bool:
 	hero.position = point
 	hero.home_position = point
 	hero.set_bench_mode(false)
+	hero.visible = true
+	guard_anchors[hero] = point
+	brains.erase(hero)
+	_assign_hero_slot(hero)
+	_notice("%s：已部署 · 驻守点已设置" % hero.display_name)
 	queue_redraw()
 	return true
 
 func _begin_pointer_action(pos: Vector2) -> void:
+	if state != GameState.PREPARING: return
+	carry_mouse = pos
+	if is_instance_valid(carry_hero):
+		carry_pressed = true
+		carry_first_press = false
+		carry_origin = pos
+		return
 	var clicked = _hero_at_position(pos)
 	if clicked != null:
 		_select_hero(clicked)
-		dragged_hero = clicked
-		press_position = pos
-		drag_origin = {"row":clicked.board_row,"col":clicked.board_col,"bench":clicked.bench_slot,"position":clicked.position,"z":clicked.z_index}
-	elif is_instance_valid(selected_hero): _place_free(selected_hero,pos)
+		_start_carry(clicked,pos)
+	elif is_instance_valid(selected_hero) and selected_hero.board_row >= 0: _place_free(selected_hero,pos)
 
 func _end_pointer_action(pos: Vector2) -> void:
-	if not is_instance_valid(dragged_hero): return
-	if dragging:
-		var slot := _bench_slot_at(pos)
-		if slot >= 0: _place_hero_on_bench(dragged_hero,slot)
-		elif not _place_free(dragged_hero,pos): _restore_drag_origin(dragged_hero)
-	dragged_hero.dragging = false
-	dragging = false
-	dragged_hero = null
+	if not carry_pressed or not is_instance_valid(carry_hero): return
+	var commit := carry_dragged or not carry_first_press
+	carry_pressed = false
+	if commit:
+		if _commit_carry(pos): _cancel_carry()
+	elif carry_hero.board_row >= 0:
+		# A board hero click only selects it; dragging uses the same transaction.
+		_cancel_carry()
+	carry_dragged = false
+	queue_redraw()
+
+func _start_carry(hero, pos: Vector2) -> void:
+	_cancel_carry()
+	carry_hero = hero
+	carry_star = hero.star
+	carry_pressed = true
+	carry_first_press = true
+	carry_origin = pos
+	carry_mouse = pos
+	carry_preview = preload("res://scripts/presentation/character_presentation.gd").new()
+	carry_preview.setup_visual(hero.unit_type,"nine_sols_v1")
+	carry_preview.show_anchor = false
+	carry_preview.show_status = false
+	carry_preview.foot_anchor = Vector2.ZERO
+	carry_preview.modulate.a = 0.65
+	carry_preview.z_index = 1900 # Below UI, above world; not an inventory/combat actor.
+	carry_preview.position = pos
+	add_child(carry_preview)
+	carry_preview.visible = hero.board_row < 0
+
+func _cancel_carry() -> void:
+	if is_instance_valid(carry_preview):
+		carry_preview.visible = false
+		carry_preview.queue_free()
+	carry_preview = null
+	carry_hero = null
+	carry_pressed = false
+	carry_first_press = false
+	carry_dragged = false
+
+func _validate_carry() -> void:
+	if carry_hero == null: return
+	if not is_instance_valid(carry_hero) or carry_hero not in heroes or state != GameState.PREPARING or (not bench_open and carry_hero.board_row < 0) or carry_hero.star != carry_star:
+		_cancel_carry()
+
+func _commit_carry(pos: Vector2) -> bool:
+	_validate_carry()
+	if not is_instance_valid(carry_hero): return false
+	var slot := _bench_slot_at(pos) if bench_open else -1
+	if slot >= 0:
+		if carry_hero.board_row >= 0 and _hero_in_bench(slot) != null:
+			_notice("后备位置已占用 · 保留拿起预览")
+			return false
+		_place_hero_on_bench(carry_hero,slot)
+		return true
+	return _place_free(carry_hero,pos)
+
+func _place_hero_on_bench(hero, slot: int) -> void:
+	if state != GameState.PREPARING or hero not in heroes or slot < 0 or slot >= BENCH_SIZE: return
+	if hero.board_row >= 0 and _hero_in_bench(slot) != null: return
+	super._place_hero_on_bench(hero,slot)
+	guard_anchors.erase(hero)
+	brains.erase(hero)
+	var index := hero_slots.find(hero)
+	if index >= 0: hero_slots[index] = null
+
+func _set_bench_open(value: bool) -> void:
+	bench_open = value and state != GameState.RESULT
+	if not bench_open:
+		_cancel_carry()
+		if is_instance_valid(selected_hero) and selected_hero.board_row < 0: _clear_selection()
+	_update_ui()
+
+func _input(event: InputEvent) -> void:
+	# Motion/release are observed before GUI consumption, but only unhandled
+	# releases may commit. Releasing on a button must never place through UI.
+	if event is InputEventMouseMotion:
+		carry_mouse = event.position
+		if is_instance_valid(carry_preview):
+			carry_preview.position = carry_mouse
+			if carry_pressed and carry_mouse.distance_to(carry_origin) > 8:
+				carry_dragged = true
+				carry_preview.visible = true
+	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+		call_deferred("_release_over_ui")
+
+func _release_over_ui() -> void:
+	carry_pressed = false
+	carry_dragged = false
+	pointer_hero = null
+	pointer_was_selected = false
+
+func _select_number(index: int) -> void:
+	_cancel_carry()
+	pointer_hero = null
+	pointer_was_selected = false
+	_clear_selection()
+	if index < hero_slots.size():
+		var hero = hero_slots[index]
+		if is_instance_valid(hero) and hero in heroes and hero.board_row >= 0 and not hero.battle_dead: _select_hero(hero)
 	queue_redraw()
 
 func _command_free(hero, point: Vector2) -> bool:
@@ -188,18 +320,30 @@ func _command_free(hero, point: Vector2) -> bool:
 	return true
 
 func _unhandled_input(event: InputEvent) -> void:
-	if state != GameState.BATTLE_RUNNING:
-		super._unhandled_input(event)
-		return
 	if event is InputEventKey:
-		if event.pressed and not event.echo and event.keycode == KEY_ESCAPE:
-			if is_instance_valid(selected_hero):
-				brains[selected_hero] = _new_brain()
-				_notice("已取消 · 自动护卫")
+		var focus := get_viewport().gui_get_focus_owner()
+		if focus is LineEdit or focus is TextEdit: return
+		if not event.pressed or event.echo or state == GameState.RESULT: return
+		if event.keycode >= KEY_0 and event.keycode <= KEY_9:
+			_select_number(9 if event.keycode == KEY_0 else event.keycode-KEY_1)
+		elif event.keycode in [KEY_Q,KEY_W,KEY_E]: pass # Reserved, deliberately no gameplay side effects.
+		elif event.keycode == KEY_B: _set_bench_open(not bench_open)
+		elif event.keycode == KEY_ESCAPE:
+			if is_instance_valid(carry_hero): _cancel_carry()
+			elif state == GameState.BATTLE_RUNNING and is_instance_valid(selected_hero) and selected_hero.active_in_battle and not selected_hero.battle_dead:
+				_establish_guard(selected_hero,"已取消 · 当前合法位置驻守")
+			else: _set_shop_open(false)
 			pointer_hero = null
 			pointer_was_selected = false
 		else: super._unhandled_input(event)
-	elif event is InputEventMouseButton:
+		return
+	if state == GameState.PREPARING:
+		if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed: _begin_pointer_action(event.position)
+			else: _end_pointer_action(event.position)
+		return
+	if state != GameState.BATTLE_RUNNING: return
+	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 			_command_free(selected_hero,event.position)
 		elif event.button_index == MOUSE_BUTTON_LEFT:
@@ -224,6 +368,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _start_battle() -> void:
 	if state == GameState.PREPARING and _deployed_count() > 0:
+		_cancel_carry()
+		bench_open = false
 		brains.clear()
 		enemy_motion.clear()
 		_clear_notice()
@@ -288,6 +434,9 @@ func _travel(actor, brain: Dictionary, destination: Vector2, delta: float, exact
 		return false
 	var waypoint: Vector2 = brain.path[0]
 	var next: Vector2 = actor.position.move_toward(waypoint,Rules.RANGE_UNIT/actor.move_interval*delta)
+	if actor in heroes and brain.mode == "接战" and next.distance_to(brain.anchor) > Rules.LEASH_RADIUS:
+		_return_to_guard(brain)
+		return false
 	if not space.clear(actor.position,next,_opponents(actor)) or (next.distance_to(destination) < Rules.STOP_GAP and not _stop_free(destination,actor)):
 		brain.blocked += delta
 		return false
@@ -314,24 +463,24 @@ func _in_range(actor, target) -> bool:
 
 func _return_to_guard(brain: Dictionary) -> void:
 	if is_instance_valid(brain.target): brain.skip[brain.target.get_instance_id()] = battle_elapsed+Rules.RETRY_SECONDS
-	brain.mode = "归队"
+	brain.mode = "归位"
 	brain.target = null
 	brain.path = PackedVector2Array()
 	brain.repath = 0.0
 	brain.blocked = 0.0
-	brain.return_until = battle_elapsed+1.0
 
 func _acquire(hero, brain: Dictionary) -> void:
 	var candidates := enemies.filter(func(enemy): return CombatEvents.alive(enemy))
 	candidates.sort_custom(func(a,b): return hero.position.distance_squared_to(a.position) < hero.position.distance_squared_to(b.position))
 	for enemy in candidates:
 		if brain.skip.get(enemy.get_instance_id(),0.0) > battle_elapsed: continue
-		if hero.position.distance_to(enemy.position) > Rules.AGGRO_RADIUS or enemy.position.distance_to(escort.position) > Rules.LEASH_RADIUS: continue
+		if enemy.position.distance_to(brain.anchor) > Rules.AGGRO_RADIUS: continue
 		var destination := _attack_point(hero,enemy)
+		if destination != Vector2.INF and destination.distance_to(brain.anchor) > Rules.LEASH_RADIUS: continue
 		if _in_range(hero,enemy) or (destination != Vector2.INF and not space.path(hero.position,destination,_opponents(hero)).is_empty()):
 			brain.target = enemy
 			brain.mode = "接战"
-			brain.chase = 0.0
+			# The whole excursion shares one timer; only a completed return resets it.
 			brain.repath = 0.0
 			brain.blocked = 0.0
 			auto_engagements += 1
@@ -344,26 +493,31 @@ func _process_heroes(delta: float) -> void:
 			continue
 		var brain := _brain(hero)
 		brain.moving = false
+		if _stop_free(hero.position,hero): brain.last_legal = hero.position
 		hero.cooldown = maxf(0,hero.cooldown-delta)
 		if brain.mode == "手动":
 			if _travel(hero,brain,brain.goal,delta,true):
-				brains[hero] = _new_brain()
 				manual_completions += 1
-				_notice("%s：已到达·自动护卫" % hero.display_name)
+				_establish_guard(hero,"已到达 · 更新驻守点")
 			elif brain.blocked >= Rules.UNREACHABLE_SECONDS:
-				brains[hero] = _new_brain()
-				_notice("%s：无法抵达·自动护卫" % hero.display_name)
+				_establish_guard(hero,"无法抵达 · 当前合法位置驻守")
 			continue
 		brain.think -= delta
-		brain.follow_clock -= delta
-		if brain.mode == "归队" and hero.position.distance_to(escort.position) <= Rules.RETURN_RADIUS and battle_elapsed >= brain.return_until:
-			brain.mode = "跟随"
+		if brain.mode == "归位":
+			if _travel(hero,brain,brain.anchor,delta,true):
+				brain.mode = "驻守"
+				brain.chase = 0.0
+				brain.think = 0.4
+			# An occupied/unreachable anchor waits/repaths, never walks to Tang or
+			# acquires another target to chain an excursion across the map.
+			continue
 		if hero.unit_type != "herbal_spirit_child":
 			if brain.mode == "接战":
 				brain.chase += delta
-				if not CombatEvents.alive(brain.target) or brain.chase > Rules.CHASE_SECONDS or hero.position.distance_to(escort.position) > Rules.LEASH_RADIUS or brain.target.position.distance_to(escort.position) > Rules.LEASH_RADIUS or brain.blocked > Rules.UNREACHABLE_SECONDS:
+				if not CombatEvents.alive(brain.target) or brain.chase > Rules.CHASE_SECONDS or hero.position.distance_to(brain.anchor) > Rules.LEASH_RADIUS or brain.target.position.distance_to(brain.anchor) > Rules.LEASH_RADIUS or brain.blocked > Rules.UNREACHABLE_SECONDS:
 					_return_to_guard(brain)
-			if brain.mode == "跟随" and brain.think <= 0:
+					continue
+			if brain.mode == "驻守" and brain.think <= 0:
 				brain.think = 0.4
 				_acquire(hero,brain)
 		if brain.mode == "接战":
@@ -383,12 +537,6 @@ func _process_heroes(delta: float) -> void:
 			if target != null and hero.cooldown <= 0 and hero.presentation.pose != "basic_attack":
 				hero.cooldown = hero.effective_interval()
 				combat.request(hero,target,true)
-		if hero.presentation.pose != "basic_attack":
-			# Follow goals are refreshed at most twice per second, not every pixel.
-			if brain.follow_clock <= 0 or not brain.has("follow_goal"):
-				brain.follow_goal = _guard_goal(hero)
-				brain.follow_clock = 0.5
-			_travel(hero,brain,brain.follow_goal,delta)
 
 func _support_target(hero):
 	var result = null
@@ -453,6 +601,8 @@ func _apply_combat_event(target, amount: float, healing: bool, event: Dictionary
 
 func _enter_wave_preparation() -> void:
 	if state != GameState.BATTLE_RUNNING: return
+	_cancel_carry()
+	bench_open = false
 	_clear_notice()
 	brains.clear()
 	enemy_motion.clear()
@@ -462,6 +612,7 @@ func _enter_wave_preparation() -> void:
 			var revive := _near_free(escort.position,hero,200)
 			if revive != Vector2.INF: hero.position = revive
 			hero.battle_dead = false
+			guard_anchors[hero] = hero.position
 		hero.home_position = hero.position
 	pointer_hero = null
 	pointer_was_selected = false
@@ -470,6 +621,8 @@ func _enter_wave_preparation() -> void:
 
 func _finish_battle(victory: bool) -> void:
 	if state != GameState.BATTLE_RUNNING: return
+	_cancel_carry()
+	bench_open = false
 	_clear_notice()
 	brains.clear()
 	enemy_motion.clear()
@@ -479,6 +632,10 @@ func _finish_battle(victory: bool) -> void:
 	result_label.text += "\n无格子半自动试验 · 非最终平衡"
 
 func _restart_demo() -> void:
+	_cancel_carry()
+	bench_open = false
+	hero_slots.clear()
+	guard_anchors.clear()
 	brains.clear()
 	enemy_motion.clear()
 	route_index = 0
@@ -497,25 +654,33 @@ func _tick(delta: float) -> void:
 func _update_ui() -> void:
 	super._update_ui()
 	if not is_instance_valid(route_label): return
+	_validate_carry()
+	for child in get_children():
+		if child is Control and child.is_in_group("bench_controls"): child.visible = bench_open
+	for hero in heroes:
+		if hero.board_row < 0: hero.visible = bench_open
+	bench_toggle.text = ("收起后备 [B]" if bench_open else "后备区 [B]") + "  %d / 8" % (heroes.size()-_deployed_count())
+	bench_toggle.disabled = state == GameState.RESULT
+	for card in shop_buttons: card.tooltip_text = "点击购买 · 数字键选择上场英雄"
 	if note_expires_at_msec <= Time.get_ticks_msec(): _clear_notice()
 	if is_instance_valid(selected_hero):
 		info_label.text = info_label.text.replace("攻击距离  %d格" % selected_hero.attack_range_cells,"攻击距离  %.0f像素（试验）" % _range(selected_hero))
-	route_label.text = "A 林口 → B 山门\n无格子 · 半自动试验\n%s" % ("营地整备" if state == GameState.PREPARING else escort_reason)
+	route_label.text = "A 林口 → B 山门\n无格子 · 驻守试验\n%s" % ("营地整备" if state == GameState.PREPARING else escort_reason)
 	wave_label.text = "路段 %d / 4" % clampi(wave_index+(2 if state == GameState.PREPARING else 1),1,4)
 	if state == GameState.PREPARING:
 		start_button.text = "出发 · 第%d段" % (wave_index+2)
 		status_label.text = command_note if not command_note.is_empty() else "招募后部署在唐僧附近陆地 · 落点自由，需保持间距"
 	elif state == GameState.BATTLE_RUNNING:
-		start_button.text = "自动护卫中"
+		start_button.text = "驻守接敌中"
 		if battle_paused:
 			status_label.text = "已暂停 · " + (command_note if not command_note.is_empty() else "可下令，继续后执行")
 		else:
-			status_label.text = command_note if not command_note.is_empty() else "自动护卫 / 主动接敌 · 手动移动途中绝不抢令"
+			status_label.text = command_note if not command_note.is_empty() else "驻守点附近接敌 · 不跟随唐僧 · 数字选人，右键移动"
 	if state == GameState.BATTLE_RUNNING and is_instance_valid(selected_hero) and selected_hero.active_in_battle and not selected_hero.battle_dead:
 		var brain := _brain(selected_hero)
-		info_label.text = "%s\n\n当前：%s\n生命 %d / %d\n射程 %.0f 像素\n\n点击陆地：手动优先\n到达：恢复自动护卫\nEsc：取消并恢复自动\n\n绿：跟随 / 蓝：归队\n红：接战 / 金：手动\n\n距离与速度均为试验参数" % [selected_hero.display_name,brain.mode,int(selected_hero.health),int(selected_hero.max_health),_range(selected_hero)]
+		info_label.text = "%s\n当前：%s\n生命 %d / %d · 射程 %.0f\n\n右键 / 点地：手动优先\n到达：设新驻守点\nEsc：当前合法位置驻守\nQ / W / E：技能空槽\n\n绿：驻守 / 蓝：归位\n红：接战 / 金：手动\n归位点被占：等待，不追敌" % [selected_hero.display_name,brain.mode,int(selected_hero.health),int(selected_hero.max_health),_range(selected_hero)]
 	elif not is_instance_valid(selected_hero):
-		info_label.text = "无格子半自动 · 试验\n\n唐僧活着到达 B，清除威胁\n近战上前，远程到射程停步\n药灵留在队伍后侧\n追击超时 / 超界会归队\n\n手动指令始终优先\n到达后自动恢复护卫\n\n营地可招募 / 合成 / 升人口\n英雄恢复，唐僧血量保留"
+		info_label.text = "无格子驻守 · 试验\n\n唐僧活着到达 B，清除威胁\n英雄不会跟随，需手动调队\n近战上前，远程到射程停步\n药灵原地支援\n追击超时 / 超界返回驻守点\n\n1—9 / 0 选人 · 右键移动\nB 后备 · 空格 商店\n\n营地可招募 / 合成 / 升人口\n英雄恢复，唐僧血量保留"
 
 func _draw() -> void:
 	if debug_navigation:
@@ -533,14 +698,18 @@ func _draw() -> void:
 	for hero in heroes:
 		if hero.board_row < 0 or hero.battle_dead: continue
 		var mode := str(brains[hero].mode) if brains.has(hero) else "整备"
-		var color: Color = {"跟随":Color("9ed492"),"整备":Color("9ed492"),"归队":Color("90badf"),"接战":Color("ed9375"),"手动":Color("f2d56b")}[mode]
+		var color: Color = {"驻守":Color("9ed492"),"整备":Color("9ed492"),"归位":Color("90badf"),"接战":Color("ed9375"),"手动":Color("f2d56b")}[mode]
 		draw_arc(hero.position,16,0,TAU,24,color,2,true)
-		draw_string(ThemeDB.fallback_font,hero.position+Vector2(-18,25),mode,HORIZONTAL_ALIGNMENT_LEFT,-1,15,color)
+		var index := hero_slots.find(hero)
+		var number := str((index+1)%10) if index >= 0 else "—"
+		draw_string(ThemeDB.fallback_font,hero.position+Vector2(-26,25),"[%s] %s" % [number,mode],HORIZONTAL_ALIGNMENT_LEFT,-1,15,color)
 		if mode == "手动":
 			draw_line(hero.position,brains[hero].goal,color,1.5,true)
 			draw_arc(brains[hero].goal,10,0,TAU,20,color,2,true)
 	if is_instance_valid(selected_hero) and selected_hero.board_row >= 0:
 		draw_arc(selected_hero.position,_range(selected_hero),0,TAU,80,Color(0.95,0.87,0.55,0.25),1,true)
+		if guard_anchors.has(selected_hero):
+			draw_arc(guard_anchors[selected_hero],11,0,TAU,24,Color("9ed492"),2,true)
 	if not shop_open and state != GameState.RESULT:
 		var mouse := get_global_mouse_position()
 		if space.valid(mouse): draw_arc(mouse,8,0,TAU,16,Color("f4e7ba"),1.5,true)

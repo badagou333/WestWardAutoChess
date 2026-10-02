@@ -7,11 +7,11 @@ const BODY_RADIUS := 10.0
 const OPPONENT_GAP := 26.0
 const STOP_GAP := 30.0
 const DEPLOY_RADIUS := 210.0
-const GUARD_RADIUS := 76.0
+# Both radii are relative to a fixed deployment/manual-arrival anchor, not Tang.
 const AGGRO_RADIUS := 250.0
 const LEASH_RADIUS := 330.0
 const CHASE_SECONDS := 9.0
 const RETRY_SECONDS := 3.0
-const RETURN_RADIUS := 125.0
+const RETURN_TOLERANCE := 0.1
 const UNREACHABLE_SECONDS := 3.0
 const REPATH_SECONDS := 0.45

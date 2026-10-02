@@ -10,8 +10,9 @@ func run():
 	game.set_process(false)
 	await frames()
 	await press(KEY_SPACE)
-	await press(KEY_1)
+	await click(game.shop_buttons[0].get_global_rect().get_center())
 	await press(KEY_SPACE)
+	await press(KEY_B)
 	var hero = game.heroes[0]
 	await click(hero.position)
 	await click(game.escort.position+Vector2(70,-20))
@@ -26,7 +27,7 @@ func run():
 	await click(Vector2(1000,470))
 	check(visible_text("暂停") and visible_text("目标无效") and visible_text("保留原任务"),"QA-02 paused rejection reason remains visible beside pause status")
 	await shot("free-feedback-paused-rejection")
-	check(game._brain(hero).mode=="跟随" and game.battle_paused,"rejection does not change task or unpause")
+	check(game._brain(hero).mode=="驻守" and game.battle_paused,"rejection does not change task or unpause")
 	var first_goal: Vector2 = hero.position+Vector2(0,-80)
 	await click(first_goal)
 	check(visible_text("暂停") and visible_text("手动移动优先") and not visible_text("目标无效"),"paused accepted order replaces rejection visibly")
@@ -51,7 +52,7 @@ func run():
 	await click(second_goal,MOUSE_BUTTON_RIGHT)
 	check(visible_text("暂停") and visible_text("手动移动优先") and game._brain(hero).goal==second_goal,"new paused order refreshes expired feedback")
 	await press(KEY_P)
-	check(not visible_text("暂停") and not visible_text("手动移动优先") and visible_text("自动护卫"),"resume removes stale paused feedback")
+	check(not visible_text("暂停") and not visible_text("手动移动优先") and visible_text("驻守点"),"resume removes stale paused feedback")
 	check(game._brain(hero).goal==second_goal and not game.battle_paused,"resume preserves pending command")
 	game.step(0.1)
 	check(hero.position!=frozen,"resumed command executes")
@@ -59,7 +60,7 @@ func run():
 	check(visible_text("目标无效") and not visible_text("暂停"),"running rejection remains visible")
 	await create_timer(3.3).timeout
 	await frames()
-	check(not visible_text("目标无效") and visible_text("自动护卫"),"running feedback expires without simulation-speed dependency")
+	check(not visible_text("目标无效") and visible_text("驻守点"),"running feedback expires without simulation-speed dependency")
 	await click(hero.position+Vector2(0,-80),MOUSE_BUTTON_RIGHT)
 	check(visible_text("手动移动优先"),"running accepted feedback visible")
 	# Lifecycle is controlled only to enter the camp/restart fixtures; input

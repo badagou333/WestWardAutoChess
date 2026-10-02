@@ -23,11 +23,10 @@ func run():
 	await press(KEY_SPACE)
 	await press(KEY_4)
 	check(game.heroes.is_empty(),"no hidden fourth slot")
-	await press(KEY_1)
-	await press(KEY_2)
-	await press(KEY_3)
+	for card in game.shop_buttons: await click(card.get_global_rect().get_center())
 	check(game.coins==0 and game.heroes.size()==3,"native three purchases")
 	await press(KEY_SPACE)
+	await press(KEY_B)
 	for i in range(3):
 		await click(game.heroes[i].position)
 		await click(game.escort.position+Vector2(45+i*32,-35))
@@ -52,7 +51,7 @@ func run():
 	game.step(0.5)
 	check(hero.position!=frozen,"native resume")
 	await press(KEY_ESCAPE)
-	check(game._brain(hero).mode=="跟随","native cancel returns to guard")
+	check(game._brain(hero).mode=="驻守","native cancel returns to guard")
 	await click(game.speed_button.get_global_rect().get_center())
 	check(game.battle_speed==2,"native double speed")
 	game.intermission = 0
