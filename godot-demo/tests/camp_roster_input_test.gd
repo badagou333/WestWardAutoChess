@@ -64,8 +64,9 @@ func run():
 	await click(monk.position)
 	await click(extra_point)
 	check(game.carry_hero==monk and monk.board_row<0 and "原位" in game.status_label.text,"R then arbitrary point cannot rearrange existing unit")
+	var cancelled_bench: Vector2 = monk.position
 	await click(extra_point,MOUSE_BUTTON_RIGHT)
-	check(monk.board_row<0 and game.carry_hero==monk,"camp right click cannot bypass lock")
+	check(monk.board_row<0 and game.carry_hero==null and game.carry_preview==null and monk.position==cancelled_bench and game.camp_positions.points[0]==monk_at and "已取消拿起" in game.status_label.text,"camp right click cancels pickup without bypassing lock or moving inventory")
 	await press(KEY_ESCAPE)
 	await pointer(monk.position,"motion")
 	await pointer(monk.position,"press")

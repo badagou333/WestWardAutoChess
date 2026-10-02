@@ -28,6 +28,33 @@ func run():
 	check(game.carry_preview.position==Vector2(1000,470) and hero.position==bench_at,"preview follows pointer; source remains in inventory")
 	await click(Vector2(1000,470))
 	check(game.carry_hero==hero and game._deployed_count()==0 and "无法部署" in game.status_label.text,"invalid second click retains preview and explains rejection")
+	before = snapshot()
+	await click(Vector2(1000,470),MOUSE_BUTTON_RIGHT)
+	check(game.carry_hero==null and game.carry_preview==null and hero.bench_slot==0 and hero.position==bench_at and snapshot()==before and "已取消拿起" in game.status_label.text,"right click cancels rejected pickup without inventory or gold changes")
+	await click(game.escort.position+Vector2(60,-25))
+	await click(Vector2(1000,470),MOUSE_BUTTON_RIGHT)
+	check(snapshot()==before and hero.position==bench_at,"cancelled pickup stays cancelled on later ground click or repeated right click")
+	await click(bench_at)
+	await press(KEY_SPACE)
+	await click(game.shop_buttons[0].get_global_rect().get_center(),MOUSE_BUTTON_RIGHT)
+	check(game.carry_hero==null and game.carry_preview==null and snapshot()==before and hero.position==bench_at,"right click over shop UI cancels without purchase or placement")
+	await press(KEY_SPACE)
+	await pointer(bench_at,"press")
+	await pointer(game.escort.position+Vector2(60,-25),"motion")
+	var cancel := InputEventMouseButton.new()
+	cancel.position = game.escort.position+Vector2(60,-25)
+	cancel.button_index = MOUSE_BUTTON_RIGHT
+	cancel.pressed = true
+	cancel.button_mask = MOUSE_BUTTON_MASK_LEFT | MOUSE_BUTTON_MASK_RIGHT
+	root.push_input(cancel,true)
+	await frames()
+	cancel = cancel.duplicate()
+	cancel.pressed = false
+	cancel.button_mask = MOUSE_BUTTON_MASK_LEFT
+	root.push_input(cancel,true)
+	await pointer(game.escort.position+Vector2(60,-25),"release")
+	check(game.carry_hero==null and not game.carry_pressed and snapshot()==before and hero.position==bench_at,"right click during held drag prevents later left release from deploying")
+	await click(bench_at)
 	await press(KEY_ESCAPE)
 	check(game.carry_hero==null and hero.position==bench_at and game.heroes.size()==3,"Escape cancels without inventory change")
 	await click(bench_at)

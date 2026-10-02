@@ -69,7 +69,7 @@ func _create_interface() -> void:
 	add_child(back)
 	route_label = _make_label(Vector2(22,185),Vector2(260,110),22,Color("eddbaf"),25)
 	order_label = _make_label(Vector2(22,305),Vector2(260,420),18,Color("d4ddce"),25)
-	order_label.text = "驻守试验 · 非最终玩法\n\n英雄不跟随唐僧，附近接敌\n药灵原地治疗，不追伤员\n1—9 / 0 选人 · 右键移动\nQ / W / E 技能预留（空）\nP 暂停，暂停时可下令\n\n整备 R 下场 · F 原位互换\n按 F 后点击后备英雄\nEsc 取消操作 / 移动指令\nB 后备区 · 空格 商店\n商店刷新只用鼠标按钮\n\n关间只换人，原有站位锁定\n新增名额可在唐僧附近落位\n下一关开战后自由指挥移动"
+	order_label.text = "驻守试验 · 非最终玩法\n\n英雄不跟随唐僧，附近接敌\n药灵原地治疗，不追伤员\n1—9 / 0 选人 · 右键移动\nQ / W / E 技能预留（空）\nP 暂停，暂停时可下令\n\n整备 R 下场 · F 原位互换\n按 F 后点击后备英雄\n后备拿起后 · 右键取消\nEsc 取消操作 / 移动指令\nB 后备区 · 空格 商店\n商店刷新只用鼠标按钮\n\n关间只换人，原有站位锁定\n新增名额可在唐僧附近落位\n下一关开战后自由指挥移动"
 	var switch := _make_button(Vector2(22,755),Vector2(250,46),"切换格子版（重新开局）",Color("697758"),25)
 	switch.pressed.connect(func(): get_tree().change_scene_to_file("res://scenes/escort_route.tscn"))
 
@@ -395,6 +395,13 @@ func _set_bench_open(value: bool) -> void:
 	_update_ui()
 
 func _input(event: InputEvent) -> void:
+	# Cancel bench pickup before GUI consumption, including over shop/buttons.
+	# Clear the gesture too, so a later left release cannot deploy the hero.
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed and state == GameState.PREPARING and is_instance_valid(carry_hero) and carry_hero.board_row < 0:
+		_cancel_carry()
+		_notice("已取消拿起 · 英雄保留在后备区")
+		get_viewport().set_input_as_handled()
+		return
 	# Motion/release are observed before GUI consumption, but only unhandled
 	# releases may commit. Releasing on a button must never place through UI.
 	if event is InputEventMouseMotion:
