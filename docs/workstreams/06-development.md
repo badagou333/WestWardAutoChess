@@ -2,6 +2,8 @@
 
 ## 2026-10-02 后备英雄右键取消（待07独立验收）
 
+总控同步标记（2026-10-02）：本节d0ee2fd及下节0b5ffbc的负责人确认、交付自测和未验边界已汇总PROJECT_STATE、CONFIRMED_GAME_DESIGN与D-005；旧新增人口待确认不再阻塞。最新D-005四项操作/UI要求另待实现，未把本节自测称独立通过。
+
 - 更新时间：2026-10-02。以干净且与origin/master一致的`0b5ffbc`为基线，落实负责人新增要求：左键拿起场下英雄后，右键取消。
 - 已完成：首次整备和关间拿起后备英雄后，右键清除预览与待释放手势；英雄留在原后备席，不改变金币、库存和场上位置。鼠标在商店按钮上也可取消；按住左键拖动时取消，随后释放不会误部署。界面加入提示，Esc仍可取消；战斗右键移动、F互换规则及旧格子模式不变。
 - 修改文件：`godot-demo/scripts/free_escort.gd`、`tests/free_roster_input_test.gd`、`tests/camp_roster_input_test.gd`（测试路径相对godot-demo）、`godot-demo/README.md`和本工作流。未改共享game.gd、全局记录、美术或07报告。
