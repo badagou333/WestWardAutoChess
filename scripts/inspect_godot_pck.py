@@ -9,6 +9,7 @@ from pathlib import Path
 
 
 REQUIRED_RELEASE_FILES = (
+    "scripts/data/camp_positions.gd.remap",
     "scenes/free_escort.tscn.remap",
     "scripts/free_escort.gd.remap",
     "scripts/data/free_escort_rules.gd.remap",
