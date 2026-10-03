@@ -6,11 +6,11 @@ func run():
 	current_scene = game
 	game.audio_feedback.enabled = false
 	await frames()
-	check(not game.shop_open and not game.bench_open and game.roster_hud.visible,"unified panel initially closed; roster always visible")
+	check(not game.shop_open and game.bench_open and game.roster_hud.visible,"shop initially closed; bench and roster always visible")
 	await press(KEY_B)
-	check(not game.shop_open and not game.bench_open,"B no longer opens any independent panel")
+	check(not game.shop_open and game.bench_open,"B no longer opens any independent panel")
 	await click(game.shop_toggle.get_global_rect().get_center())
-	check(game.shop_open and game.bench_open,"one button opens both shop and bench")
+	check(game.shop_open and game.bench_open,"shop opens above permanent bench")
 	for card in game.shop_buttons: await click(card.get_global_rect().get_center())
 	check(game.heroes.size()==3 and game.coins==0,"three paid offers still consume exactly starting three gold")
 	if game.heroes.size()!=3:
@@ -44,7 +44,7 @@ func run():
 	check(monk.position==a and game.carry_hero==monk,"drag release over blank panel never deploys through it")
 	await press(KEY_ESCAPE)
 	await press(KEY_SPACE)
-	check(not game.shop_open and not game.bench_open and not game.shop_buttons[0].visible and not game.bench_panels[0].visible and game.roster_hud.visible,"Space closes both, leaving roster visible")
+	check(not game.shop_open and game.bench_open and not game.shop_buttons[0].visible and game.bench_panels[0].visible and game.roster_hud.visible,"Space closes only shop, leaving bench and roster visible")
 	# Field exchange: identities/HP follow the actors; number and point follow seat.
 	monk.health = 43
 	hunter.health = 29
@@ -68,8 +68,10 @@ func run():
 	await press(KEY_ESCAPE)
 	check(game.swap_source==null and monk.position==a,"Escape cancels field exchange")
 	await press(KEY_F)
-	await press(KEY_SPACE)
-	check(game.swap_source==null and not game.shop_open,"closing unified panel cancels armed exchange")
+	await management(true)
+	await management(false)
+	check(game.swap_source==game.selected_hero and game.bench_open and not game.shop_open,"shop visibility does not cancel armed exchange")
+	await press(KEY_ESCAPE)
 	await press(KEY_F)
 	await click(monk.position)
 	check(game.swap_source==null and monk.position==a,"clicking source cancels without self-exchange")
@@ -81,7 +83,7 @@ func run():
 		return
 	game.intermission = 999
 	await press(KEY_P)
-	check(not game.shop_open and not game.bench_open and game.roster_hud.visible,"battle starts with unified panel closed and roster present")
+	check(not game.shop_open and game.bench_open and game.roster_hud.visible,"battle starts with shop closed, bench and roster present")
 	await click(monk.position)
 	var goal: Vector2 = a+Vector2(0,-90)
 	await click(goal,MOUSE_BUTTON_RIGHT)
@@ -135,7 +137,7 @@ func run():
 	# Controlled camp transition for revival and merge view-model refresh.
 	game._enter_wave_preparation()
 	await frames()
-	check(game.shop_open and game.bench_open and not game.roster_hud.slots[0].dead and game.roster_hud.slots[0].hp==monk.max_health,"camp opens unified management and refreshes revived hero HP in same stable slot")
+	check(game.shop_open and game.bench_open and not game.roster_hud.slots[0].dead and game.roster_hud.slots[0].hp==monk.max_health,"camp opens shop with permanent bench and refreshes revived hero HP in same stable slot")
 	var points: Dictionary = game.camp_positions.points.duplicate()
 	await press(KEY_1)
 	await press(KEY_F)
@@ -164,7 +166,7 @@ func run():
 	await shot("operation-ui-camp")
 	game._restart_demo()
 	await frames()
-	check(game.hero_slots.is_empty() and game.roster_hud.slots[0].is_empty() and not game.shop_open and not game.bench_open and game.coins==3,"restart resets all panel and roster state")
+	check(game.hero_slots.is_empty() and game.roster_hud.slots[0].is_empty() and not game.shop_open and game.bench_open and game.coins==3,"restart resets all panel and roster state")
 	await finish()
 
 func finish() -> void:

@@ -10,7 +10,7 @@ func run():
 	current_scene = game
 	game.audio_feedback.enabled = false
 	await frames()
-	check(game.is_processing() and not game.bench_open and not game.bench_panels[0].visible and game.shop_toggle.is_visible_in_tree(),"normal frames; bench hidden by default with reachable button")
+	check(game.is_processing() and game.bench_open and game.bench_panels[0].visible and game.shop_toggle.is_visible_in_tree(),"normal frames; bench permanent with separate shop button")
 	await management(true)
 	var before := snapshot()
 	for key in [KEY_1,KEY_2,KEY_3,KEY_Q,KEY_W,KEY_E]: await press(key)
@@ -19,14 +19,17 @@ func run():
 	check(game.coins==0 and game.heroes.size()==3 and game.heroes[0].visible,"mouse buying stores inventory in unified open bench")
 	await management(false)
 	await click(game.shop_toggle.get_global_rect().get_center())
-	check(game.bench_open and game.bench_panels[7].visible and game.heroes[0].visible,"button opens full eight-seat bench")
+	check(game.bench_open and game.bench_panels[7].visible and game.heroes[0].visible,"shop button leaves all eight bench seats visible")
 	var hero = game.heroes[0]
 	var bench_at: Vector2 = hero.position
 	await click(bench_at)
 	check(game.carry_hero==hero and hero.bench_slot==0 and hero.position==bench_at and game._deployed_count()==0,"first release holds preview only, inventory unchanged")
-	await pointer(Vector2(1000,470),"motion")
-	check(game.carry_preview.position==Vector2(1000,470) and hero.position==bench_at,"preview follows pointer; source remains in inventory")
-	await click(Vector2(1000,470))
+	# This exposed invalid point is above the shop's new top edge (y=470).
+	var invalid_point := Vector2(1000,450)
+	check(not game.space.valid(invalid_point),"invalid-ground fixture remains outside walkable land")
+	await pointer(invalid_point,"motion")
+	check(game.carry_preview.position==invalid_point and hero.position==bench_at,"preview follows pointer; source remains in inventory")
+	await click(invalid_point)
 	check(game.carry_hero==hero and game._deployed_count()==0 and "无法部署" in game.status_label.text,"invalid second click retains preview and explains rejection")
 	before = snapshot()
 	await click(Vector2(1000,470),MOUSE_BUTTON_RIGHT)
@@ -59,7 +62,9 @@ func run():
 	check(game.carry_hero==null and hero.position==bench_at and game.heroes.size()==3,"Escape cancels without inventory change")
 	await click(bench_at)
 	await press(KEY_SPACE)
-	check(not game.bench_open and game.carry_hero==null and not hero.visible,"Space closes both panels and cancels")
+	check(game.bench_open and game.carry_hero==hero and hero.visible and not game.shop_open,"Space closes only shop and keeps bench pickup")
+	await click(bench_at,MOUSE_BUTTON_RIGHT)
+	check(game.carry_hero==null,"right click cancels after shop closes")
 	await management(true)
 	await click(bench_at)
 	await press(KEY_9)
@@ -154,7 +159,7 @@ func run():
 	await click(game.start_button.get_global_rect().get_center())
 	game.intermission = 999
 	await press(KEY_P)
-	check(game.battle_paused and not game.bench_open and game.carry_hero==null,"departure clears preview and closes bench")
+	check(game.battle_paused and game.bench_open and not game.shop_open and game.carry_hero==null,"departure clears preview and closes only shop")
 	await press(KEY_2)
 	var goal: Vector2 = other.position+Vector2(0,-70)
 	await click(goal,MOUSE_BUTTON_RIGHT)
@@ -174,10 +179,10 @@ func run():
 	await shot("free-roster-paused-order")
 	game._enter_wave_preparation()
 	await frames()
-	check(game.bench_open and game.shop_open and game.carry_hero==null,"camp opens unified management without stale preview")
+	check(game.bench_open and game.shop_open and game.carry_hero==null,"camp opens shop beside permanent bench without stale preview")
 	game._restart_demo()
 	await frames()
-	check(not game.bench_open and game.hero_slots.is_empty() and game.coins==3,"restart resets roster interaction")
+	check(game.bench_open and game.hero_slots.is_empty() and game.coins==3,"restart resets roster interaction")
 	# Ten-slot setup is controlled test stock/population, not an earned army.
 	game.coins = 30
 	game.population = 10
@@ -202,7 +207,7 @@ func run():
 	await click(game.start_button.get_global_rect().get_center())
 	game.intermission = 999
 	await press(KEY_P)
-	check(game.carry_hero==null and not game.bench_open,"departure with picked inventory cancels preview")
+	check(game.carry_hero==null and game.bench_open and not game.shop_open,"departure with picked inventory cancels preview but preserves bench")
 	await management(true)
 	var deployed: int = game._deployed_count()
 	await click(reserve.position)

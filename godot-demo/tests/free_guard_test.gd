@@ -103,7 +103,7 @@ func run() -> void:
 	game._enter_wave_preparation()
 	check(not monk.battle_dead and game.guard_anchors[monk]==monk.position,"camp revival starts a valid local guard")
 	game._restart_demo()
-	check(game.guard_anchors.is_empty() and game.hero_slots.is_empty() and not game.bench_open,"restart clears anchors, slots and bench")
+	check(game.guard_anchors.is_empty() and game.hero_slots.is_empty() and game.bench_open,"restart clears anchors and slots, retaining permanent bench")
 	game.free()
 	print("FREE_GUARD_TEST failures=",failures)
 	quit(1 if failures else 0)

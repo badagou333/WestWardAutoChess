@@ -2,7 +2,7 @@ extends Control
 ## Read-only view model: never owns heroes, issues commands or advances cooldowns.
 const Portraits = preload("res://scripts/presentation/shop_card.gd")
 var slots: Array = []
-var skills_text := "Q   — / 未配置\nW   — / 未配置\nE   — / 未配置"
+var skills_text := "技能未配置\nQ —    W —    E —"
 
 func present(values: Array) -> void:
 	slots = values
@@ -33,10 +33,9 @@ func _draw() -> void:
 		var ratio: float = clampf(float(slot.hp)/maxf(1.0,float(slot.max_hp)),0,1)
 		draw_rect(Rect2(origin+Vector2(8,115),Vector2(108*ratio,7)),Color("676460") if dead else Color("89bf76"))
 		draw_string(font,origin+Vector2(0,140),"等待复归" if dead else "场上英雄",HORIZONTAL_ALIGNMENT_CENTER,124,13,Color("a89e83"))
-	draw_string(font,Vector2(1640,36),"技能状态 · 尚未配置",HORIZONTAL_ALIGNMENT_LEFT,258,20,Color("dbc694"))
 	var row := 0
 	for line in skills_text.split("\n"):
-		draw_string(font,Vector2(1640,71+row*29),line,HORIZONTAL_ALIGNMENT_LEFT,258,19,Color("bcb5a4"))
+		draw_string(font,Vector2(1640,140+row*24),line,HORIZONTAL_ALIGNMENT_LEFT,258,18,Color("bcb5a4"))
 		row += 1
 
 func _box(fill: Color, border: Color) -> StyleBoxFlat:

@@ -13,7 +13,7 @@ func click(point: Vector2, button := MOUSE_BUTTON_LEFT):
 
 func management(opened: bool) -> void:
 	if game.shop_open != opened: await press(KEY_SPACE)
-	check(game.shop_open==opened and game.bench_open==opened,"unified panel state matches requested visibility")
+	check(game.shop_open==opened and game.bench_open,"shop toggles independently of permanent bench")
 
 func run():
 	game = load("res://scenes/free_escort.tscn").instantiate()
