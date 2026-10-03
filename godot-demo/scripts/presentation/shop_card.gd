@@ -8,6 +8,7 @@ var hotkey_number := 1
 var show_hotkey := true # Legacy cards retain numeric purchase hints.
 var portrait: Texture2D
 static var portraits := {}
+static var idle_bounds := {}
 
 func set_offer(key: String, title: String, cost: int, index: int) -> void:
 	offer = key
@@ -29,7 +30,8 @@ static func portrait_for(key: String) -> Texture2D:
 			var frame: int = manifest.actions.idle.body_frames[0]
 			var columns := atlas.get_width() / 256
 			var sprite := atlas.get_image().get_region(Rect2i((frame % columns)*256,(frame / columns)*256,256,256))
-			portraits[key] = ImageTexture.create_from_image(sprite.get_region(sprite.get_used_rect()))
+			idle_bounds[key] = sprite.get_used_rect()
+			portraits[key] = ImageTexture.create_from_image(sprite.get_region(idle_bounds[key]))
 		return portraits[key]
 	return null
 

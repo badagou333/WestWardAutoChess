@@ -2,6 +2,8 @@ extends "res://scripts/game.gd"
 ## Opt-in continuous-space experiment; legacy scenes do not use this controller.
 const Map = preload("res://scripts/data/escort_map.gd")
 const Rules = preload("res://scripts/data/free_escort_rules.gd")
+const RosterStyle = preload("res://scripts/presentation/roster_style.gd")
+const BenchPortraits = preload("res://scripts/presentation/shop_card.gd")
 var space = preload("res://scripts/combat/continuous_space.gd").new()
 var brains := {}
 var enemy_motion := {}
@@ -86,9 +88,10 @@ func _layout_management() -> void:
 			child.size.y = 172
 		elif child is Label and child.text == "备战操作": child.hide()
 	management_back = shop_controls[0]
-	for control in shop_controls: control.position.y += 280
+	for control in shop_controls: control.position.y += 276
 	management_back.position.x = 680
 	management_back.size = Vector2(924,242)
+	management_back.add_theme_stylebox_override("panel",RosterStyle.box())
 	shop_controls[1].position.x = 700
 	shop_controls[1].size.x = 820
 	shop_controls[1].add_theme_font_size_override("font_size",20)
@@ -105,7 +108,7 @@ func _layout_management() -> void:
 	bench_back.position = Vector2(330,720)
 	bench_back.size = Vector2(1280,180)
 	bench_back.z_index = 34
-	bench_back.add_theme_stylebox_override("panel",_button_box(Color("24251f"),Color("76684c")))
+	bench_back.add_theme_stylebox_override("panel",RosterStyle.box())
 	bench_back.mouse_filter = Control.MOUSE_FILTER_STOP
 	bench_back.add_to_group("bench_controls")
 	add_child(bench_back)
@@ -119,14 +122,21 @@ func _layout_management() -> void:
 		var panel = bench_panels[slot]
 		for child in get_children():
 			if child is Label and child.is_in_group("bench_controls") and child.text == str(slot+1):
-				child.position = Vector2(356+156*slot,866)
+				child.hide() # Flat tiles draw their own quiet seat number.
+				child.remove_from_group("bench_controls")
 		panel.position = Vector2(349+156*slot,739)
 		panel.size = Vector2(142,152)
+		panel.flat_mode = true
+		panel.seat_number = slot+1
 	bench_label.position = Vector2(350,724)
 	bench_label.size.x = 380
+	bench_label.add_theme_font_size_override("font_size",21)
+	bench_label.add_theme_color_override("font_color",RosterStyle.INK)
 	tip_label.position = Vector2(850,727)
 	tip_label.size.x = 720
 	tip_label.text = "点选 / 拖放 · 右键取消 · 同星三合一"
+	tip_label.add_theme_font_size_override("font_size",18)
+	tip_label.add_theme_color_override("font_color",RosterStyle.MUTED)
 	shop_toggle.position = Vector2(24,959)
 	shop_toggle.size = Vector2(250,62)
 	shop_toggle.add_theme_font_size_override("font_size",18)
@@ -145,7 +155,8 @@ func _layout_management() -> void:
 	swap_button = _make_button(Vector2(1776,922),Vector2(124,44),"互换 [F]",Color("67517c"),32)
 	swap_button.toggle_mode = true
 	swap_button.pressed.connect(_begin_swap)
-	action_hint = _make_label(Vector2(1640,975),Vector2(260,66),16,Color("d3c3a0"),32)
+	for button in [shop_toggle,level_button,withdraw_button,swap_button]: RosterStyle.button(button)
+	action_hint = _make_label(Vector2(1640,975),Vector2(260,48),18,RosterStyle.MUTED,32)
 
 func _bench_position(slot: int) -> Vector2:
 	return Vector2(420+156*slot,840)
@@ -510,15 +521,15 @@ func _update_roster_actions() -> void:
 	swap_button.tooltip_text = exchange_reason if swap_button.disabled else "互换 [F]：再点击场上或后备英雄，原位交换；Esc取消。满后备也可互换。"
 	swap_button.set_pressed_no_signal(is_instance_valid(swap_source))
 	if state != GameState.PREPARING:
-		action_hint.text = "战斗中：下场 / 互换不可用\n请等待营地整备\n后备只读，不能部署" if state == GameState.BATTLE_RUNNING else "结算中，不能操作\n请重新开局"
+		action_hint.text = "战斗中：下场 / 互换不可用\n等待营地 · 后备只读" if state == GameState.BATTLE_RUNNING else "结算中，不能操作\n请重新开局"
 	elif is_instance_valid(swap_source):
-		action_hint.text = "互换中：点击另一名英雄\n场上 / 后备均可\nEsc取消 · 不改变位置集合"
+		action_hint.text = "互换中：点场上 / 后备英雄\nEsc取消 · 原位交换"
 	elif not exchange_reason.is_empty():
-		action_hint.text = "请先选择场上英雄\nR退后备 · F选人原位交换\nEsc取消互换"
+		action_hint.text = "请先选择场上英雄\nR退后备 · F原位交换"
 	elif not retreat_reason.is_empty():
-		action_hint.text = "后备已满，不能下场\n仍可F选场上 / 后备互换\nEsc取消互换"
+		action_hint.text = "后备已满，不能下场\n仍可F互换 · Esc取消"
 	else:
-		action_hint.text = "R退到后备 · F原位互换\nF后点场上 / 后备目标\nEsc取消互换"
+		action_hint.text = "R退后备 · F原位互换\nF后点另一英雄 · Esc取消"
 
 func _swap_heroes(incoming) -> bool:
 	_validate_swap()
@@ -983,7 +994,17 @@ func _update_ui() -> void:
 	for child in get_children():
 		if child is Control and child.is_in_group("bench_controls"): child.visible = bench_open
 	for hero in heroes:
-		if hero.board_row < 0: hero.visible = bench_open
+		hero.compact_bench = hero.board_row < 0
+		hero.presentation.show_shadow = hero.board_row >= 0
+		if hero.board_row < 0:
+			hero.visible = bench_open
+			var portrait = BenchPortraits.portrait_for(hero.unit_type)
+			var bounds: Rect2i = BenchPortraits.idle_bounds[hero.unit_type]
+			var fit: float = minf(98.0/portrait.get_height(),122.0/portrait.get_width())
+			hero.presentation.scale = Vector2.ONE*fit
+			# Visible feet, not transparent atlas padding, share one baseline.
+			hero.presentation.foot_anchor = Vector2(0,(862-hero.position.y)/fit-(bounds.end.y-218))
+	for slot in range(bench_panels.size()): bench_panels[slot].present(_hero_in_bench(slot),slot+1)
 	shop_toggle.text = ("收起商店 [空格]" if shop_open else "招募商店 [空格]")
 	shop_toggle.disabled = state == GameState.RESULT
 	_update_roster_hud()

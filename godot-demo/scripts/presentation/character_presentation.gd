@@ -45,6 +45,7 @@ var move_left := 0.0
 var show_anchor := true
 var show_status := true
 var show_name := false
+var show_shadow := true
 var effects_on := true
 var events := {"idle": 1, "move": 0, "basic_attack": 0, "hit": 0, "retreat": 0}
 
@@ -288,7 +289,7 @@ func _draw() -> void:
 	var airborne := maxf(0, foot_anchor.y + ground_offset().y - visual_transform().origin.y)
 	var shadow_scale := 1 - airborne * 0.015
 	draw_set_transform(foot_anchor + ground_offset(), 0, Vector2(shadow_scale, 0.28 * shadow_scale))
-	draw_circle(Vector2.ZERO, 25, Color(0.07, 0.06, 0.04, visual_alpha * 0.2))
+	if show_shadow: draw_circle(Vector2.ZERO, 25, Color(0.07, 0.06, 0.04, visual_alpha * 0.2))
 	draw_set_transform_matrix(visual_transform())
 	var source := Rect2(frame_index * 256, 0, 256, 256)
 	if motion_frame >= 0:

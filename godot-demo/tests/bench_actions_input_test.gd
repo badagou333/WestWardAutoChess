@@ -88,10 +88,27 @@ func run():
 	# Controlled full-inventory fixture; actions themselves still use real input.
 	game.coins = 50
 	for hero in game.heroes: hero.merge_locked = true
+	var kinds := ["guard_monk","wild_hunter","herbal_spirit_child","sparrow_spirit","foxfire_imp"]
+	var stocked := 0
 	while game._free_bench_slot()>=0:
-		game.shop_types[0] = "guard_monk"
+		game.shop_types[0] = kinds[stocked%kinds.size()]
 		game._on_shop_pressed(0)
 		game.heroes.back().merge_locked = true
+		stocked += 1
+	await frames()
+	# New visual sizes must preserve all eight clickable seats and their feet.
+	var full_before := snapshot()
+	for slot in range(8):
+		var stored = game._hero_in_bench(slot)
+		var bounds: Rect2i = game.BenchPortraits.idle_bounds[stored.unit_type]
+		var feet: float = stored.position.y+(stored.presentation.foot_anchor.y+bounds.end.y-218)*stored.presentation.scale.y
+		check(absf(feet-862)<0.1,"mixed reserve feet share baseline %d" % slot)
+		check(stored.compact_bench and not stored.presentation.show_shadow and game.bench_panels[slot].flat_mode,"free-mode flat bench presentation %d" % slot)
+		await click(stored.position)
+		check(game.carry_hero==stored and game.bench_panels[slot].highlighted,"enlarged mixed reserve remains selectable %d" % slot)
+		if slot == 7: await shot("bench-actions-reserve-selected")
+		await click(stored.position,MOUSE_BUTTON_RIGHT)
+		check(game.carry_hero==null and snapshot()==full_before,"selected reserve right cancel preserves full inventory %d" % slot)
 	await press(KEY_1)
 	before = snapshot()
 	check(game.withdraw_button.disabled and not game.swap_button.disabled and "后备已满" in game.action_hint.text,"full bench disables only R and visibly explains F remains available")

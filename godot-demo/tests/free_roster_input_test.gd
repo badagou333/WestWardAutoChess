@@ -17,6 +17,11 @@ func run():
 	check(snapshot()==before and game.selected_hero==null,"numbers never purchase with shop open; empty skills never spend")
 	for card in game.shop_buttons: await click(card.get_global_rect().get_center())
 	check(game.coins==0 and game.heroes.size()==3 and game.heroes[0].visible,"mouse buying stores inventory in unified open bench")
+	if game.heroes.size()!=3:
+		print("FREE_ROSTER_INPUT failures=",failures)
+		game.free()
+		quit(1)
+		return
 	await management(false)
 	await click(game.shop_toggle.get_global_rect().get_center())
 	check(game.bench_open and game.bench_panels[7].visible and game.heroes[0].visible,"shop button leaves all eight bench seats visible")

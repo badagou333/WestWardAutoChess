@@ -32,6 +32,7 @@ var battle_dead := false
 var selected := false
 var dragging := false
 var merge_locked := false
+var compact_bench := false # Free UI renders the bench's badges and selection.
 var presentation
 
 func setup(key: String, level := 1) -> void:
@@ -126,6 +127,7 @@ func quality_data() -> Dictionary:
 	return QUALITY_DATA.white
 
 func _draw() -> void:
+	if board_row < 0 and compact_bench: return
 	if board_row >= 0 and not battle_dead:
 		draw_rect(Rect2(-28,-113,56,7), Color("40262b"))
 		draw_rect(Rect2(-26,-111,52 * health / max_health,3), Color("66dc75"))

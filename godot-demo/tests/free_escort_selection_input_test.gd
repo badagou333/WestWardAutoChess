@@ -1,6 +1,7 @@
 extends "res://tests/free_escort_graphical_test.gd"
 ## QA-20261001-01: real Viewport input, no direct movement-command calls.
 func pointer(point: Vector2, kind: String) -> void:
+	await settle_pointer(point)
 	if kind == "motion":
 		var motion := InputEventMouseMotion.new()
 		motion.position = point

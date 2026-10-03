@@ -21,15 +21,26 @@ func press(code):
 	Input.parse_input_event(event)
 	await frames()
 func click(point: Vector2, button := MOUSE_BUTTON_LEFT):
+	await settle_pointer(point)
 	# push_input routes through actual Control hit testing and unhandled input.
 	var event := InputEventMouseButton.new()
 	event.position=point; event.global_position=point; event.button_index=button; event.pressed=true
+	event.button_mask = MOUSE_BUTTON_MASK_LEFT if button == MOUSE_BUTTON_LEFT else MOUSE_BUTTON_MASK_RIGHT
 	root.push_input(event,true)
 	await frames()
 	event=InputEventMouseButton.new()
 	event.position=point; event.global_position=point; event.button_index=button; event.pressed=false
 	root.push_input(event,true)
 	await frames()
+func settle_pointer(point: Vector2) -> void:
+	# Cocoa delivers warp-generated OS motion asynchronously. Let it settle,
+	# then set the logical pointer immediately before the complete gesture.
+	root.warp_mouse(point)
+	await create_timer(0.05).timeout
+	var motion := InputEventMouseMotion.new()
+	motion.position = point
+	motion.global_position = point
+	root.push_input(motion,true)
 func shot(name: String):
 	game._update_ui(); game.queue_redraw(); await frames()
 	check(root.get_texture().get_image().save_png("/tmp/"+name+".png")==OK,"Screenshot "+name)
