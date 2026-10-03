@@ -7,11 +7,11 @@ var points := {} # stable numeric seat -> exact world position
 func reset() -> void:
 	points.clear()
 
-func capture(slots: Array, heroes: Array) -> void:
-	reset()
+func capture(slots: Array, heroes: Array, blocked: Dictionary = {}) -> void:
+	points = blocked.duplicate() # Permanent losses own seats even without actors.
 	for index in range(slots.size()):
 		var hero = slots[index]
-		if is_instance_valid(hero) and hero in heroes and hero.board_row >= 0:
+		if not blocked.has(index) and is_instance_valid(hero) and hero in heroes and hero.board_row >= 0:
 			record(index,hero.position)
 
 func record(index: int, point: Vector2) -> void:

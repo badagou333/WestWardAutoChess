@@ -101,7 +101,7 @@ func run() -> void:
 	ticks(game,0.02)
 	check(not game.brains.has(monk) and game.hero_slots.find(hunter)==hunter_slot,"death clears brain without renumbering survivors")
 	game._enter_wave_preparation()
-	check(not monk.battle_dead and game.guard_anchors[monk]==monk.position,"camp revival starts a valid local guard")
+	check(monk.battle_dead and monk.run_fallen and game.casualties.contains(monk) and not game.guard_anchors.has(monk),"camp preserves casualty and never recreates its guard")
 	game._restart_demo()
 	check(game.guard_anchors.is_empty() and game.hero_slots.is_empty() and game.bench_open,"restart clears anchors and slots, retaining permanent bench")
 	game.free()

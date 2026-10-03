@@ -777,7 +777,7 @@ func _try_auto_merge(unit_type: String, target_star: int) -> void:
 		return
 	var matches: Array = []
 	for hero in heroes:
-		if is_instance_valid(hero) and hero.unit_type == unit_type and hero.star == target_star and not hero.merge_locked:
+		if is_instance_valid(hero) and _can_manage_hero(hero) and hero.unit_type == unit_type and hero.star == target_star and not hero.merge_locked:
 			matches.append(hero)
 	if matches.size() < 3:
 		return
@@ -818,7 +818,7 @@ func _on_level_pressed() -> void:
 	population += 1
 
 func _sell_selected() -> void:
-	if state != GameState.PREPARING or not is_instance_valid(selected_hero):
+	if state != GameState.PREPARING or not is_instance_valid(selected_hero) or not _can_manage_hero(selected_hero):
 		return
 	var copies := int(pow(3, selected_hero.star - 1))
 	var raw_value: int = selected_hero.cost * copies
@@ -831,12 +831,15 @@ func _sell_selected() -> void:
 	queue_redraw()
 
 func _toggle_selected_lock() -> void:
-	if state != GameState.PREPARING or not is_instance_valid(selected_hero):
+	if state != GameState.PREPARING or not is_instance_valid(selected_hero) or not _can_manage_hero(selected_hero):
 		return
 	selected_hero.merge_locked = not selected_hero.merge_locked
 	selected_hero.queue_redraw()
 	if not selected_hero.merge_locked:
 		_try_auto_merge(selected_hero.unit_type, selected_hero.star)
+
+func _can_manage_hero(hero) -> bool:
+	return not hero.run_fallen
 
 func _toggle_pause() -> void:
 	if state != GameState.BATTLE_RUNNING:

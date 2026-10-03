@@ -1,5 +1,6 @@
 class_name EscortHero
 extends Node2D
+signal fell(hero)
 
 const Catalog = preload("res://scripts/data/demo_units.gd")
 const Presentation = preload("res://scripts/presentation/character_presentation.gd")
@@ -29,6 +30,7 @@ var max_mana := 100.0
 var skill_casts := 0
 var active_in_battle := false
 var battle_dead := false
+var run_fallen := false # Opt-in by free mode; legacy controllers never set it.
 var selected := false
 var dragging := false
 var merge_locked := false
@@ -47,6 +49,7 @@ func setup(key: String, level := 1) -> void:
 	add_child(presentation)
 
 func _apply_stats() -> void:
+	if run_fallen: return
 	var data: Dictionary = UNIT_DATA[unit_type]
 	display_name = data.name
 	var factor: float = [1.0,1.8,3.2][star-1]
@@ -64,11 +67,15 @@ func set_bench_mode(on_bench: bool) -> void:
 	queue_redraw()
 
 func upgrade() -> void:
+	if run_fallen: return
 	if star < 3:
 		star += 1
 		_apply_stats()
 
 func begin_battle() -> void:
+	if run_fallen:
+		_retain_casualty()
+		return
 	home_position = position
 	home_cell = Vector2i(board_row, board_col)
 	battle_cell = home_cell
@@ -84,6 +91,9 @@ func begin_battle() -> void:
 	queue_redraw()
 
 func end_battle() -> void:
+	if run_fallen:
+		_retain_casualty()
+		return
 	active_in_battle = false
 	battle_dead = false
 	health = max_health
@@ -101,24 +111,39 @@ func effective_interval() -> float:
 	return attack_interval
 
 func play_attack() -> void:
+	if run_fallen or battle_dead: return
 	presentation.play_attack()
 
 func take_damage(amount: float) -> bool:
-	if battle_dead: return true
+	if battle_dead or run_fallen: return true
 	health = maxf(0, health - amount)
 	if health == 0:
 		battle_dead = true
 		active_in_battle = false
 		presentation.play_retreat()
+		fell.emit(self) # Synchronous: register before a same-tick camp/result.
 	else:
 		presentation.play_hit()
 	queue_redraw()
 	return battle_dead
 
 func heal(amount: float) -> void:
-	if not battle_dead:
+	if not battle_dead and not run_fallen:
 		health = minf(max_health, health + amount)
 		queue_redraw()
+
+func mark_run_fallen() -> void:
+	run_fallen = true
+	health = 0.0
+	battle_dead = true
+	active_in_battle = false
+	selected = false
+	dragging = false
+	queue_redraw()
+
+func _retain_casualty() -> void:
+	mark_run_fallen()
+	visible = false
 
 func skill_data() -> Dictionary:
 	return UNIT_DATA[unit_type]

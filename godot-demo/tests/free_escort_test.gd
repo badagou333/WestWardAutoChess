@@ -128,7 +128,7 @@ func economy() -> void:
 	game.heroes[2].take_damage(10000)
 	game.pending_loot = 3
 	game._enter_wave_preparation()
-	check(game.coins==3 and not game.heroes[2].battle_dead and game.heroes[2].health==game.heroes[2].max_health,"camp reward and revival")
+	check(game.coins==3 and game.heroes[2].run_fallen and game.heroes[2].health==0 and game.casualties.seats.has(2),"camp reward keeps fallen healer and blocked population")
 	check(monk.position==kept,"camp preserves continuous position")
 	game.shop_types.assign(["guard_monk","guard_monk","foxfire_imp"])
 	game._on_shop_pressed(0)

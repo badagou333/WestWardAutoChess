@@ -7,11 +7,12 @@ signal projectile_released(event: Dictionary)
 var strikes: Array = []
 var missiles: Array = []
 var marks: Array = []
+var respect_run_casualties := false # Only free mode opts into run-wide losses.
 var counts := {"attacks":0,"projectiles":0,"hits":0,"heals":0,"cancelled":0}
 
 static func alive(target) -> bool:
 	if not is_instance_valid(target): return false
-	return target.get("dead") != true and target.get("battle_dead") != true
+	return target.get("dead") != true and target.get("battle_dead") != true and target.get("run_fallen") != true
 
 static func visual(actor):
 	var result = actor.get("presentation")
@@ -32,7 +33,7 @@ func request(actor, target, healing := false, splash := false) -> void:
 
 func tick(delta: float) -> void:
 	for missile in missiles.duplicate():
-		if not alive(missile.target):
+		if not alive(missile.target) or _fallen_source(missile):
 			missiles.erase(missile)
 			counts.cancelled += 1
 			continue
@@ -80,7 +81,7 @@ func tick(delta: float) -> void:
 	queue_redraw()
 
 func _apply(event: Dictionary) -> void:
-	if not alive(event.target): return
+	if not alive(event.target) or _fallen_source(event): return
 	# The host selects splash recipients and applies gameplay effects once.
 	resolved.emit(event.target,event.amount,event.healing,event)
 	if event.healing: counts.heals += 1
@@ -88,6 +89,9 @@ func _apply(event: Dictionary) -> void:
 	var view = visual(event.target)
 	if view != null and not event.healing: view.impact_stop = 0.025
 	marks.append({"position":event.target.position+Vector2(0,-35),"time":0.2,"healing":event.healing})
+
+func _fallen_source(event: Dictionary) -> bool:
+	return respect_run_casualties and is_instance_valid(event.source) and event.source.get("run_fallen") == true
 
 func clear(reset_counts := false) -> void:
 	strikes.clear()

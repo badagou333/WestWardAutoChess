@@ -29,6 +29,11 @@ func run():
 	var bench_at: Vector2 = hero.position
 	await click(bench_at)
 	check(game.carry_hero==hero and hero.bench_slot==0 and hero.position==bench_at and game._deployed_count()==0,"first release holds preview only, inventory unchanged")
+	before = snapshot()
+	await click(bench_at,MOUSE_BUTTON_RIGHT)
+	check(game.selected_hero==null and game.carry_hero==null and game.carry_preview==null and not game.carry_pressed and hero.bench_slot==0 and hero.position==bench_at and snapshot()==before,"immediate right click after selecting reserve cancels selection and gesture without changing inventory")
+	await click(bench_at)
+	check(game.carry_hero==hero,"cancelled reserve can be picked up again normally")
 	# This exposed invalid point is above the shop's new top edge (y=470).
 	var invalid_point := Vector2(1000,450)
 	check(not game.space.valid(invalid_point),"invalid-ground fixture remains outside walkable land")

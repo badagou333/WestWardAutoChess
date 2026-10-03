@@ -102,7 +102,7 @@ func run() -> void:
 	game._restart_demo()
 	check(game.camp_positions.points.is_empty() and game.swap_source==null,"restart clears camp ledger and swap mode")
 	game.free()
-	merge_and_revival()
+	merge_and_casualty()
 	unused_capacity()
 	progression()
 	print("CAMP_ROSTER_TEST failures=",failures)
@@ -177,7 +177,7 @@ func progression() -> void:
 	check(game.coins==3 and game.population==3 and game.camp_positions.points.is_empty(),"victory restart clears camp and economic history")
 	game.free()
 
-func merge_and_revival() -> void:
+func merge_and_casualty() -> void:
 	var game = fresh()
 	game.coins = 30
 	for i in range(3):
@@ -204,12 +204,17 @@ func merge_and_revival() -> void:
 	game.intermission = 999
 	var survivor_at: Vector2 = keeper.position
 	replacement.take_damage(10000)
+	var fallen_at: Vector2 = replacement.position
 	game.escort.position = Map.center(Vector2i(3,8))
 	game._enter_wave_preparation()
-	check(keeper.position==survivor_at,"revival does not move surviving team toward Tang")
-	check(not replacement.battle_dead and replacement.position.distance_to(game.escort.position)<=200 and game.guard_anchors[replacement]==replacement.position,"legacy nearby revival preserved and then locked")
-	var revival_at: Vector2 = replacement.position
-	check(not game._place_free(replacement,revival_at+Vector2(45,0)) and replacement.position==revival_at,"revived hero cannot rearrange in camp")
+	check(keeper.position==survivor_at,"loss does not move surviving team toward Tang")
+	check(replacement.run_fallen and replacement.health==0 and replacement.position==fallen_at and game.casualties.seats.has(1),"camp never revives or relocates the casualty")
+	check(not game._place_free(replacement,fallen_at+Vector2(45,0)),"fallen hero cannot redeploy in camp")
+	game.free()
+	# Keep transient-overlap coverage as an independent living-team fixture.
+	game = camp_fixture()
+	keeper = game.heroes[0]
+	replacement = game.heroes[1]
 	# A transient overlap at wave end must not provoke an automatic team move.
 	game._start_battle()
 	keeper.position = replacement.position

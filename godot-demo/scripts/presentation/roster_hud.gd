@@ -4,10 +4,12 @@ const Portraits = preload("res://scripts/presentation/shop_card.gd")
 const Style = preload("res://scripts/presentation/roster_style.gd")
 const SHORT_NAMES := {"guard_monk":"棍僧","wild_hunter":"猎户","herbal_spirit_child":"药灵","sparrow_spirit":"山雀","foxfire_imp":"狐火"}
 var slots: Array = []
+var capacity := 10
 var skills_text := "Q —    W —    E —\n技能未配置"
 
-func present(values: Array) -> void:
+func present(values: Array, unlocked := 10) -> void:
 	slots = values
+	capacity = unlocked
 	queue_redraw()
 
 func _draw() -> void:
@@ -18,6 +20,7 @@ func _draw() -> void:
 		var slot: Dictionary = slots[i] if i < slots.size() else {}
 		var filled := not slot.is_empty()
 		var dead: bool = slot.get("dead",false)
+		var permanent: bool = slot.get("permanent",false)
 		var selected: bool = slot.get("selected",false)
 		var ink := Style.MUTED if dead else Style.INK
 		var edge := Style.GOLD if selected else (Style.EDGE if filled else Color("3f463c"))
@@ -26,7 +29,7 @@ func _draw() -> void:
 		if selected:
 			draw_colored_polygon(PackedVector2Array([origin+Vector2(55,0),origin+Vector2(69,0),origin+Vector2(62,7)]),Style.GOLD)
 		if not filled:
-			draw_string(font,origin+Vector2(0,83),"空位",HORIZONTAL_ALIGNMENT_CENTER,124,19,Color("777d70"))
+			draw_string(font,origin+Vector2(0,83),"可上场" if i < capacity else "未解锁",HORIZONTAL_ALIGNMENT_CENTER,124,19,Color("777d70"))
 			continue
 		draw_string(font,origin+Vector2(30,24),"★".repeat(slot.star),HORIZONTAL_ALIGNMENT_RIGHT,86,17,Style.MUTED if dead else Style.GOLD)
 		var portrait := Portraits.portrait_for(slot.unit)
@@ -34,15 +37,18 @@ func _draw() -> void:
 			# Upper-body crop of existing idle art; no separate portrait asset.
 			var crop_width := minf(portrait.get_width(),portrait.get_height()*0.64)
 			var crop := Rect2((portrait.get_width()-crop_width)/2,0,crop_width,minf(portrait.get_height(),crop_width*1.12))
-			draw_texture_rect_region(portrait,Rect2(origin+Vector2(7,34),Vector2(54,60)),crop,Color("797e76") if dead else Color.WHITE)
+			if permanent: crop.size.y *= 52.0/60.0
+			draw_texture_rect_region(portrait,Rect2(origin+Vector2(7,34),Vector2(54,52 if permanent else 60)),crop,Color("797e76") if dead else Color.WHITE)
 		draw_string(font,origin+Vector2(66,55),SHORT_NAMES.get(slot.unit,slot.name),HORIZONTAL_ALIGNMENT_LEFT,54,19,ink)
 		draw_string(font,origin+Vector2(66,82),slot.status,HORIZONTAL_ALIGNMENT_LEFT,54,18,Color("c69786") if dead else Style.MUTED)
 		var ratio: float = clampf(float(slot.hp)/maxf(1.0,float(slot.max_hp)),0,1)
 		var low := not dead and ratio <= 0.25
 		var hp_color := Color("e2a68d") if low else ink
-		draw_string(font,origin+Vector2(0,117),"%s%d / %d" % ["! " if low else "",int(slot.hp),int(slot.max_hp)],HORIZONTAL_ALIGNMENT_CENTER,124,19,hp_color)
-		draw_rect(Rect2(origin+Vector2(8,130),Vector2(108,6)),Color("151a15"))
-		draw_rect(Rect2(origin+Vector2(8,130),Vector2(108*ratio,6)),Color("7b8077") if dead else (Color("d29372") if low else Color("9eb88a")))
+		draw_string(font,origin+Vector2(0,106 if permanent else 117),"%s%d / %d" % ["! " if low else "",int(slot.hp),int(slot.max_hp)],HORIZONTAL_ALIGNMENT_CENTER,124,19,hp_color)
+		var bar_y := 117 if permanent else 130
+		draw_rect(Rect2(origin+Vector2(8,bar_y),Vector2(108,6)),Color("151a15"))
+		draw_rect(Rect2(origin+Vector2(8,bar_y),Vector2(108*ratio,6)),Color("7b8077") if dead else (Color("d29372") if low else Color("9eb88a")))
+		if permanent: draw_string(font,origin+Vector2(0,142),"本关不可替补",HORIZONTAL_ALIGNMENT_CENTER,124,18,Style.MUTED)
 		if dead:
 			draw_line(origin+Vector2(43,76),origin+Vector2(55,88),Style.MUTED,2)
 			draw_line(origin+Vector2(55,76),origin+Vector2(43,88),Style.MUTED,2)

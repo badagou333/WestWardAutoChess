@@ -134,21 +134,25 @@ func run():
 	for key in [KEY_Q,KEY_W,KEY_E,KEY_R,KEY_F]: await press(key)
 	check(snapshot()==before and game.swap_source==null,"empty skills and battle R/F have no economy or exchange effects")
 	await shot("operation-ui-battle")
-	# Controlled camp transition for revival and merge view-model refresh.
+	# Controlled camp transition: casualty stays blocked, surviving keeper merges.
 	game._enter_wave_preparation()
 	await frames()
-	check(game.shop_open and game.bench_open and not game.roster_hud.slots[0].dead and game.roster_hud.slots[0].hp==monk.max_health,"camp opens shop with permanent bench and refreshes revived hero HP in same stable slot")
+	check(game.shop_open and game.bench_open and game.roster_hud.slots[0].permanent and game.roster_hud.slots[0].hp==0 and hunter.health==hunter.max_health,"camp retains casualty slot and heals only surviving heroes")
 	var points: Dictionary = game.camp_positions.points.duplicate()
 	await press(KEY_1)
 	await press(KEY_F)
 	await click(hunter.position)
-	check(game.camp_positions.points==points and game.hero_slots[0]==hunter and game.hero_slots[1]==monk,"camp field exchange preserves complete coordinate ledger")
+	check(game.casualties.seats.has(0) and game.camp_positions.points==points and game.hero_slots[0]==monk and game.hero_slots[1]==hunter,"fallen number cannot arm exchange or transfer its coordinate")
+	await press(KEY_2)
+	await press(KEY_F)
+	await click(healer.position)
+	check(game.camp_positions.points==points and game.hero_slots[1]==healer and game.hero_slots[2]==hunter,"surviving field exchange still preserves camp coordinate ledger")
 	game.coins = 10
 	for i in range(2):
-		game.shop_types[0] = "guard_monk"
+		game.shop_types[0] = "wild_hunter"
 		await frames()
 		await click(game.shop_buttons[0].get_global_rect().get_center())
-	check(monk.star==2 and game.roster_hud.slots[1].star==2 and game.roster_hud.slots[1].hp==monk.max_health and game.roster_hud.slots[0].unit==hunter.unit_type,"paid merge refreshes original keeper HP/star without renumbering")
+	check(hunter.star==2 and game.roster_hud.slots[2].star==2 and game.roster_hud.slots[2].hp==hunter.max_health and game.roster_hud.slots[0].unit==monk.unit_type and game.roster_hud.slots[0].permanent,"paid living merge refreshes keeper without consuming or renumbering casualty")
 	# Focus/echo retain both visibility and ownership.
 	var edit := LineEdit.new()
 	edit.position = Vector2(320,830)
