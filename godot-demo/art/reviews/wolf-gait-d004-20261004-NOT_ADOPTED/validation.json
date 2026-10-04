@@ -1,0 +1,165 @@
+{
+  "status": "structure_passed_gait_failed_not_adopted",
+  "pillow": "12.3.0",
+  "source_dimensions": [
+    1536,
+    1024
+  ],
+  "source_alpha_extrema": [
+    0,
+    254
+  ],
+  "new_frame_ids": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "unchanged_pixel_identical_ids": [
+    0,
+    1,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "frame_size": [
+    256,
+    256
+  ],
+  "atlas_size": [
+    3328,
+    256
+  ],
+  "alpha_border_check": true,
+  "atlas_matches_frames": true,
+  "source_paths_exist": true,
+  "body_and_foot_evidence": [
+    {
+      "id": 2,
+      "source_cell": [
+        0,
+        0,
+        768,
+        512
+      ],
+      "source_box_cell_local": [
+        68,
+        48,
+        749,
+        487
+      ],
+      "source_ground_cell_local": [
+        400,
+        486
+      ],
+      "uniform_scale": 0.16,
+      "output_bbox_alpha8": [
+        75,
+        148,
+        184,
+        218
+      ],
+      "foot_anchor": [
+        128,
+        218
+      ]
+    },
+    {
+      "id": 3,
+      "source_cell": [
+        768,
+        0,
+        1536,
+        512
+      ],
+      "source_box_cell_local": [
+        63,
+        47,
+        741,
+        490
+      ],
+      "source_ground_cell_local": [
+        400,
+        489
+      ],
+      "uniform_scale": 0.16,
+      "output_bbox_alpha8": [
+        74,
+        147,
+        182,
+        218
+      ],
+      "foot_anchor": [
+        128,
+        218
+      ]
+    },
+    {
+      "id": 4,
+      "source_cell": [
+        0,
+        512,
+        768,
+        1024
+      ],
+      "source_box_cell_local": [
+        69,
+        26,
+        751,
+        449
+      ],
+      "source_ground_cell_local": [
+        400,
+        448
+      ],
+      "uniform_scale": 0.16,
+      "output_bbox_alpha8": [
+        75,
+        150,
+        184,
+        218
+      ],
+      "foot_anchor": [
+        128,
+        218
+      ]
+    },
+    {
+      "id": 5,
+      "source_cell": [
+        768,
+        512,
+        1536,
+        1024
+      ],
+      "source_box_cell_local": [
+        65,
+        21,
+        734,
+        458
+      ],
+      "source_ground_cell_local": [
+        400,
+        458
+      ],
+      "uniform_scale": 0.16,
+      "output_bbox_alpha8": [
+        74,
+        148,
+        181,
+        218
+      ],
+      "foot_anchor": [
+        128,
+        218
+      ]
+    }
+  ],
+  "diagonal_support_passed": false,
+  "runtime_verified": false,
+  "atlas_sha256": "8492c9eec9767a28bf906b5c01589c8ebab86565dc555a15bb45b561fd746485"
+}
