@@ -1,0 +1,414 @@
+{
+  "schema": "motion-sample-v1-requires-player-adapter",
+  "character": "guard_monk",
+  "status": "prototype_not_runtime_accepted",
+  "source_facing": "right",
+  "frame": {
+    "width": 256,
+    "height": 256,
+    "foot_anchor": [
+      128,
+      218
+    ]
+  },
+  "atlases": {
+    "body": "body-atlas.png"
+  },
+  "frames": [
+    {
+      "id": 0,
+      "name": "idle_base",
+      "source": "../baselines/guard_monk.png",
+      "source_box": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "ground": [
+        128,
+        218
+      ],
+      "scale": 1
+    },
+    {
+      "id": 1,
+      "name": "idle_breath",
+      "source": "../guard-monk-keyposes.png",
+      "source_box": [
+        26,
+        38,
+        331,
+        362
+      ],
+      "ground": [
+        175,
+        351
+      ],
+      "scale": 0.34,
+      "bbox_alpha8": [
+        77,
+        112,
+        181,
+        222
+      ]
+    },
+    {
+      "id": 2,
+      "name": "walk_a",
+      "source": "../guard-monk-gait-keyposes.png",
+      "source_box": [
+        103,
+        17,
+        617,
+        609
+      ],
+      "ground": [
+        363,
+        601
+      ],
+      "scale": 0.185,
+      "bbox_alpha8": [
+        80,
+        110,
+        175,
+        220
+      ]
+    },
+    {
+      "id": 3,
+      "name": "walk_pass_a",
+      "source": "../guard-monk-gait-keyposes.png",
+      "source_box": [
+        764,
+        18,
+        1238,
+        618
+      ],
+      "ground": [
+        975,
+        608
+      ],
+      "scale": 0.185,
+      "bbox_alpha8": [
+        89,
+        109,
+        177,
+        220
+      ]
+    },
+    {
+      "id": 4,
+      "name": "walk_b",
+      "source": "../guard-monk-gait-keyposes.png",
+      "source_box": [
+        131,
+        636,
+        652,
+        1212
+      ],
+      "ground": [
+        379,
+        1203
+      ],
+      "scale": 0.185,
+      "bbox_alpha8": [
+        82,
+        113,
+        178,
+        220
+      ]
+    },
+    {
+      "id": 5,
+      "name": "walk_pass_b",
+      "source": "../guard-monk-gait-keyposes.png",
+      "source_box": [
+        773,
+        636,
+        1238,
+        1216
+      ],
+      "ground": [
+        976,
+        1208
+      ],
+      "scale": 0.185,
+      "bbox_alpha8": [
+        90,
+        112,
+        176,
+        219
+      ]
+    },
+    {
+      "id": 6,
+      "name": "windup",
+      "source": "../guard-monk-keyposes.png",
+      "source_box": [
+        369,
+        398,
+        739,
+        688
+      ],
+      "ground": [
+        525,
+        680
+      ],
+      "scale": 0.34,
+      "bbox_alpha8": [
+        75,
+        122,
+        201,
+        221
+      ]
+    },
+    {
+      "id": 7,
+      "name": "accelerate",
+      "source": "../guard-monk-keyposes.png",
+      "source_box": [
+        743,
+        398,
+        1150,
+        691
+      ],
+      "ground": [
+        894,
+        683
+      ],
+      "scale": 0.34,
+      "bbox_alpha8": [
+        77,
+        121,
+        215,
+        221
+      ]
+    },
+    {
+      "id": 8,
+      "name": "contact",
+      "source": "../guard-monk-keyposes.png",
+      "source_box": [
+        1071,
+        404,
+        1447,
+        689
+      ],
+      "ground": [
+        1235,
+        681
+      ],
+      "scale": 0.34,
+      "bbox_alpha8": [
+        72,
+        124,
+        200,
+        221
+      ]
+    },
+    {
+      "id": 9,
+      "name": "recover",
+      "source": "../guard-monk-keyposes.png",
+      "source_box": [
+        35,
+        717,
+        362,
+        1045
+      ],
+      "ground": [
+        192,
+        1038
+      ],
+      "scale": 0.34,
+      "bbox_alpha8": [
+        75,
+        109,
+        186,
+        221
+      ]
+    },
+    {
+      "id": 10,
+      "name": "hit",
+      "source": "../guard-monk-keyposes.png",
+      "source_box": [
+        378,
+        725,
+        711,
+        1044
+      ],
+      "ground": [
+        529,
+        1037
+      ],
+      "scale": 0.34,
+      "bbox_alpha8": [
+        77,
+        112,
+        190,
+        220
+      ]
+    },
+    {
+      "id": 11,
+      "name": "collapse",
+      "source": "../guard-monk-keyposes.png",
+      "source_box": [
+        732,
+        784,
+        1051,
+        1040
+      ],
+      "ground": [
+        875,
+        1032
+      ],
+      "scale": 0.34,
+      "bbox_alpha8": [
+        79,
+        134,
+        187,
+        221
+      ]
+    },
+    {
+      "id": 12,
+      "name": "dead_rest",
+      "source": "../guard-monk-keyposes.png",
+      "source_box": [
+        1086,
+        818,
+        1421,
+        1053
+      ],
+      "ground": [
+        1245,
+        1030
+      ],
+      "scale": 0.34,
+      "bbox_alpha8": [
+        74,
+        146,
+        188,
+        226
+      ]
+    }
+  ],
+  "actions": {
+    "idle": {
+      "body_frames": [
+        0,
+        1,
+        0
+      ],
+      "body_frame_seconds": [
+        0.55,
+        0.35,
+        0.55
+      ],
+      "loop": true
+    },
+    "move": {
+      "body_frames": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "body_frame_seconds": [
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ],
+      "loop": true
+    },
+    "basic_attack": {
+      "track": [
+        {
+          "frame": 6,
+          "at": 0
+        },
+        {
+          "frame": 7,
+          "at": 0.156
+        },
+        {
+          "frame": 8,
+          "at": 0.235
+        },
+        {
+          "frame": 9,
+          "at": 0.348
+        },
+        {
+          "frame": 0,
+          "at": 0.516
+        }
+      ],
+      "duration_seconds": 0.54,
+      "events": [
+        {
+          "name": "contact",
+          "at": 0.235,
+          "once_per_attack_serial": true
+        }
+      ]
+    },
+    "hit": {
+      "body_frames": [
+        10,
+        0
+      ],
+      "body_frame_seconds": [
+        0.12,
+        0.06
+      ],
+      "hold_seconds": 0.18
+    },
+    "retreat": {
+      "body_frames": [
+        11,
+        12
+      ],
+      "body_frame_seconds": [
+        0.16,
+        0.19
+      ],
+      "hold_seconds": 0.35,
+      "fade_seconds": 0.3,
+      "loop": false,
+      "events": [
+        {
+          "name": "visual_death_start",
+          "at": 0,
+          "gameplay_damage_event": false
+        }
+      ]
+    }
+  },
+  "baseline_presentation": {
+    "windup": 0.2,
+    "strike": 0.1,
+    "recover": 0.24,
+    "release": 0.235,
+    "cycle": 0.5
+  },
+  "contact_socket_candidate": {
+    "frame": 8,
+    "point": [
+      199,
+      153
+    ],
+    "space": "source frame pixels; subtract foot_anchor then mirror by gameplay_facing * source_sign",
+    "not_gameplay_hitbox": true
+  },
+  "layering": "single RGBA body; staff/paws not separate; no VFX",
+  "notes": [
+    "Do not use existing nine_sols_v1 selector unchanged: it ignores these tracks.",
+    "Disable old large whole-body reach/lean/bob; do not change gameplay reach/speed/attack interval.",
+    "Death pose does not implement permanent-death rules."
+  ]
+}

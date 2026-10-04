@@ -1,0 +1,416 @@
+{
+  "schema": "motion-sample-v1-requires-player-adapter",
+  "character": "mountain_wolf",
+  "status": "prototype_not_runtime_accepted",
+  "source_facing": "left",
+  "frame": {
+    "width": 256,
+    "height": 256,
+    "foot_anchor": [
+      128,
+      218
+    ]
+  },
+  "atlases": {
+    "body": "body-atlas.png"
+  },
+  "frames": [
+    {
+      "id": 0,
+      "name": "idle_base",
+      "source": "../baselines/mountain_wolf.png",
+      "source_box": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "ground": [
+        128,
+        218
+      ],
+      "scale": 1
+    },
+    {
+      "id": 1,
+      "name": "idle_breath",
+      "source": "../mountain-wolf-keyposes.png",
+      "source_box": [
+        23,
+        63,
+        372,
+        363
+      ],
+      "ground": [
+        190,
+        355
+      ],
+      "scale": 0.24,
+      "bbox_alpha8": [
+        88,
+        148,
+        172,
+        220
+      ]
+    },
+    {
+      "id": 2,
+      "name": "walk_a",
+      "source": "../mountain-wolf-keyposes.png",
+      "source_box": [
+        363,
+        69,
+        726,
+        357
+      ],
+      "ground": [
+        543,
+        351
+      ],
+      "scale": 0.24,
+      "bbox_alpha8": [
+        85,
+        150,
+        172,
+        219
+      ]
+    },
+    {
+      "id": 3,
+      "name": "walk_pass_a",
+      "source": "../mountain-wolf-keyposes.png",
+      "source_box": [
+        721,
+        77,
+        1081,
+        355
+      ],
+      "ground": [
+        903,
+        350
+      ],
+      "scale": 0.24,
+      "bbox_alpha8": [
+        84,
+        152,
+        170,
+        219
+      ]
+    },
+    {
+      "id": 4,
+      "name": "walk_b",
+      "source": "../mountain-wolf-keyposes.png",
+      "source_box": [
+        1077,
+        70,
+        1439,
+        358
+      ],
+      "ground": [
+        1260,
+        352
+      ],
+      "scale": 0.24,
+      "bbox_alpha8": [
+        84,
+        150,
+        171,
+        219
+      ]
+    },
+    {
+      "id": 5,
+      "name": "walk_pass_b",
+      "source": "../mountain-wolf-keyposes.png",
+      "source_box": [
+        16,
+        419,
+        375,
+        691
+      ],
+      "ground": [
+        188,
+        684
+      ],
+      "scale": 0.24,
+      "bbox_alpha8": [
+        87,
+        154,
+        173,
+        219
+      ]
+    },
+    {
+      "id": 6,
+      "name": "windup",
+      "source": "../mountain-wolf-keyposes.png",
+      "source_box": [
+        363,
+        440,
+        714,
+        687
+      ],
+      "ground": [
+        537,
+        680
+      ],
+      "scale": 0.24,
+      "bbox_alpha8": [
+        86,
+        160,
+        170,
+        219
+      ]
+    },
+    {
+      "id": 7,
+      "name": "accelerate",
+      "source": "../mountain-wolf-keyposes.png",
+      "source_box": [
+        715,
+        449,
+        1084,
+        689
+      ],
+      "ground": [
+        897,
+        681
+      ],
+      "scale": 0.24,
+      "bbox_alpha8": [
+        84,
+        162,
+        173,
+        220
+      ]
+    },
+    {
+      "id": 8,
+      "name": "contact",
+      "source": "../mountain-wolf-keyposes.png",
+      "source_box": [
+        1068,
+        428,
+        1445,
+        682
+      ],
+      "ground": [
+        1248,
+        676
+      ],
+      "scale": 0.24,
+      "bbox_alpha8": [
+        85,
+        158,
+        175,
+        219
+      ]
+    },
+    {
+      "id": 9,
+      "name": "recover",
+      "source": "../mountain-wolf-keyposes.png",
+      "source_box": [
+        20,
+        760,
+        378,
+        1017
+      ],
+      "ground": [
+        190,
+        1010
+      ],
+      "scale": 0.24,
+      "bbox_alpha8": [
+        87,
+        158,
+        173,
+        220
+      ]
+    },
+    {
+      "id": 10,
+      "name": "hit",
+      "source": "../mountain-wolf-keyposes.png",
+      "source_box": [
+        368,
+        745,
+        711,
+        1015
+      ],
+      "ground": [
+        538,
+        1008
+      ],
+      "scale": 0.24,
+      "bbox_alpha8": [
+        87,
+        155,
+        169,
+        220
+      ]
+    },
+    {
+      "id": 11,
+      "name": "collapse",
+      "source": "../mountain-wolf-keyposes.png",
+      "source_box": [
+        714,
+        813,
+        1080,
+        1009
+      ],
+      "ground": [
+        890,
+        1001
+      ],
+      "scale": 0.24,
+      "bbox_alpha8": [
+        86,
+        173,
+        174,
+        220
+      ]
+    },
+    {
+      "id": 12,
+      "name": "dead_rest",
+      "source": "../mountain-wolf-keyposes.png",
+      "source_box": [
+        1080,
+        863,
+        1435,
+        1009
+      ],
+      "ground": [
+        1260,
+        1001
+      ],
+      "scale": 0.24,
+      "bbox_alpha8": [
+        85,
+        185,
+        170,
+        220
+      ]
+    }
+  ],
+  "actions": {
+    "idle": {
+      "body_frames": [
+        0,
+        1,
+        0
+      ],
+      "body_frame_seconds": [
+        0.55,
+        0.35,
+        0.55
+      ],
+      "loop": true
+    },
+    "move": {
+      "body_frames": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "body_frame_seconds": [
+        0.13,
+        0.13,
+        0.13,
+        0.13
+      ],
+      "loop": true
+    },
+    "basic_attack": {
+      "track": [
+        {
+          "frame": 6,
+          "at": 0
+        },
+        {
+          "frame": 7,
+          "at": 0.0975
+        },
+        {
+          "frame": 8,
+          "at": 0.16
+        },
+        {
+          "frame": 9,
+          "at": 0.265
+        },
+        {
+          "frame": 0,
+          "at": 0.405
+        }
+      ],
+      "duration_seconds": 0.425,
+      "events": [
+        {
+          "name": "contact",
+          "at": 0.16,
+          "once_per_attack_serial": true
+        }
+      ]
+    },
+    "hit": {
+      "body_frames": [
+        10,
+        0
+      ],
+      "body_frame_seconds": [
+        0.12,
+        0.06
+      ],
+      "hold_seconds": 0.18
+    },
+    "retreat": {
+      "body_frames": [
+        11,
+        12
+      ],
+      "body_frame_seconds": [
+        0.16,
+        0.19
+      ],
+      "hold_seconds": 0.35,
+      "fade_seconds": 0.3,
+      "loop": false,
+      "events": [
+        {
+          "name": "visual_death_start",
+          "at": 0,
+          "gameplay_damage_event": false
+        }
+      ]
+    }
+  },
+  "baseline_presentation": {
+    "windup": 0.125,
+    "strike": 0.1,
+    "recover": 0.2,
+    "release": 0.16,
+    "cycle": 0.52
+  },
+  "contact_socket_candidate": {
+    "frame": 8,
+    "point": [
+      92,
+      184
+    ],
+    "space": "source frame pixels; subtract foot_anchor then mirror by gameplay_facing * source_sign",
+    "not_gameplay_hitbox": true
+  },
+  "layering": "single RGBA body; staff/paws not separate; no VFX",
+  "notes": [
+    "Do not use existing nine_sols_v1 selector unchanged: it ignores these tracks.",
+    "Disable old large whole-body reach/lean/bob; do not change gameplay reach/speed/attack interval.",
+    "Death pose does not implement permanent-death rules.",
+    "Four-pose gait support-leg alternation remains provisional. Corrective gait sheet NOT USED: last tail touches outer edge.",
+    "Collapse/rest source silhouettes fuse; ownership boundary x=1080 is provisional and needs visual acceptance."
+  ]
+}

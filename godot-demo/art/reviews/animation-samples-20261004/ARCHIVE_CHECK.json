@@ -1,0 +1,26 @@
+{
+  "check": "archive_integrity_only",
+  "date": "2026-10-04",
+  "pillow": "12.3.0",
+  "copied_media_and_prompt_files_byte_identical": 49,
+  "candidates": {
+    "guard_monk": {
+      "frames": 13,
+      "atlas_sha256": "42bc2c3621fec485cb94428900c408ae445a75cf1eca4576a6b56894aab0a291",
+      "frame_atlas_match": true,
+      "transparent_borders": true,
+      "source_paths_exist": true
+    },
+    "wolf_correction_v2/mountain_wolf": {
+      "frames": 13,
+      "atlas_sha256": "895f53f7a2d3ca2fc48ede8fcc5258a584f7ff17b473aa866b193bf3a38c416c",
+      "frame_atlas_match": true,
+      "transparent_borders": true,
+      "source_paths_exist": true
+    }
+  },
+  "wolf_frames_0_through_10_unchanged": true,
+  "runtime_verified": false,
+  "animation_quality_revalidated": false,
+  "new_images_generated": false
+}

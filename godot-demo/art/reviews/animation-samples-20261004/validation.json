@@ -1,0 +1,60 @@
+{
+  "status": "static_package_checks_only",
+  "runtime_verified": false,
+  "roles": {
+    "guard_monk": {
+      "frames": 13,
+      "atlas": [
+        3328,
+        256
+      ],
+      "alpha_border_check": true,
+      "atlas_matches_frames": true,
+      "visible_heights_design_px": [
+        111,
+        110,
+        110,
+        111,
+        107,
+        107,
+        99,
+        100,
+        97,
+        112,
+        108,
+        87,
+        80
+      ],
+      "attack_event_at": 0.235,
+      "webp_frames": 24,
+      "atlas_sha256": "42bc2c3621fec485cb94428900c408ae445a75cf1eca4576a6b56894aab0a291"
+    },
+    "mountain_wolf": {
+      "frames": 13,
+      "atlas": [
+        3328,
+        256
+      ],
+      "alpha_border_check": true,
+      "atlas_matches_frames": true,
+      "visible_heights_design_px": [
+        73,
+        72,
+        69,
+        67,
+        69,
+        65,
+        59,
+        58,
+        61,
+        62,
+        65,
+        47,
+        35
+      ],
+      "attack_event_at": 0.16,
+      "webp_frames": 24,
+      "atlas_sha256": "505f807497ee19b68764ddd6e0b6b6e78df5e7f41232276f36d0e81a0c3fa8e6"
+    }
+  }
+}

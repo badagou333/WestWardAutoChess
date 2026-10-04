@@ -1,0 +1,67 @@
+{
+  "sheet_size": [
+    1254,
+    1254
+  ],
+  "large_alpha_components": 6,
+  "component_boxes": [
+    [
+      55,
+      73,
+      601,
+      443
+    ],
+    [
+      686,
+      78,
+      1209,
+      427
+    ],
+    [
+      63,
+      485,
+      596,
+      844
+    ],
+    [
+      684,
+      485,
+      1221,
+      839
+    ],
+    [
+      49,
+      901,
+      599,
+      1193
+    ],
+    [
+      661,
+      992,
+      1226,
+      1185
+    ]
+  ],
+  "source_death_horizontal_gap_alpha16": 62,
+  "preserved_frame_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "updated_frame_ids": [
+    11,
+    12
+  ],
+  "gait_passed": false,
+  "death_static_isolation_passed": true,
+  "runtime_verified": false,
+  "atlas_sha256": "895f53f7a2d3ca2fc48ede8fcc5258a584f7ff17b473aa866b193bf3a38c416c"
+}
