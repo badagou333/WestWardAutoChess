@@ -114,7 +114,10 @@ def make_input(records):
         "arm_rest":bone_keys(rot=[(0,0),(.3,-2),(.5,5),(1.4,0)]),
         "tail":bone_keys(rot=[(0,0),(.35,-3),(.65,4),(1.4,0)]),
         "scarf":bone_keys(rot=[(0,0),(.3,-4),(.55,7),(.85,-2),(1.4,0)]),
-        "flame":bone_keys(scale=[(0,1,1),(.3,.7,.8),(.48,1.18,1.18),(1.15,1,1),(1.4,1,1)])
+        # Counter the -24 degree combined torso/arm/hand charge tilt so the
+        # flame grows upright away from the ear. Back to zero at release.
+        "flame":bone_keys(rot=[(0,0),(.3,24),(.48,0),(1.4,0)],
+                          scale=[(0,1,1),(.3,.7,.8),(.48,1.18,1.18),(1.15,1,1),(1.4,1,1)])
     },"slots":{"flame":{"alpha":key1([(0,1),(.479,1),(.48,0),(1.05,0),(1.25,1),(1.4,1)])},
                 "projectile":{"alpha":key1([(0,0),(.479,0),(.48,1),(.8,1),(.95,0),(1.4,0)])}},
        "events":[{"time":.48,"name":"release","string":"preview only; no gameplay damage"}]}
@@ -197,12 +200,13 @@ def pose(data,anim,t):
         matrices[b["name"]]=multiply(matrices[b["parent"]],mat) if "parent" in b else mat
     return matrices
 
-def render(data,anim,t,scale=.4):
+def render(data,anim,t,scale=.4,only_slots=None):
     # Independent, limited affine preview of this input. Not a Spine renderer.
     canvas=Image.new("RGBA",(round(1600*scale),round(1420*scale)))
     mats=pose(data,anim,t)
     skins=data["skins"][0]["attachments"]
     for slot in data["slots"]:
+        if only_slots is not None and slot["name"] not in only_slots:continue
         name=slot["name"];part=slot["attachment"];att=skins[name][part]
         im=Image.open(ROOT/f"images/{part}.png").convert("RGBA")
         default=int(slot.get("color","ffffffff")[-2:],16)/255

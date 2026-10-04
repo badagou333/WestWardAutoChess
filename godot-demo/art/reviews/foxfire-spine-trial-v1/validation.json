@@ -509,6 +509,14 @@
       "passed": true
     },
     {
+      "check": "ordered finite keys basic_attack/flame/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field basic_attack/flame/rotate",
+      "passed": true
+    },
+    {
       "check": "ordered finite keys basic_attack/flame/scale",
       "passed": true
     },

@@ -640,6 +640,24 @@
           ]
         },
         "flame": {
+          "rotate": [
+            {
+              "time": 0,
+              "value": 0
+            },
+            {
+              "time": 0.3,
+              "value": 24
+            },
+            {
+              "time": 0.48,
+              "value": 0
+            },
+            {
+              "time": 1.4,
+              "value": 0
+            }
+          ],
           "scale": [
             {
               "time": 0,

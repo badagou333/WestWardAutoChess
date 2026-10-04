@@ -1,0 +1,393 @@
+{
+  "status": "passed",
+  "scope": "External rendered alpha silhouettes only; not native Spine or 05 acceptance.",
+  "change": "Only basic_attack/flame/rotate: 0 at start, +24deg at .30s, 0 at .48s and end",
+  "semantic_rest_unchanged": true,
+  "exact_release_pose_unchanged": true,
+  "exact_start_end_unchanged": true,
+  "measurement": "Euclidean distance between alpha>=8 pixel centers. Distance 1 means adjacent opaque pixels, not a full transparent pixel. Background/visual glow below alpha 8 is not measured.",
+  "times": {
+    "0.28": {
+      "BEFORE e4e0d6d": {
+        "source_scale": {
+          "overlap_pixels": 856,
+          "nearest_opaque_pixel_center_distance": 0.0,
+          "nearest_points_yx": [
+            [
+              282,
+              688
+            ],
+            [
+              282,
+              688
+            ]
+          ],
+          "scale": 1,
+          "alpha_threshold": 8
+        },
+        "game_scale": {
+          "overlap_pixels": 6,
+          "nearest_opaque_pixel_center_distance": 0.0,
+          "nearest_points_yx": [
+            [
+              23,
+              59
+            ],
+            [
+              23,
+              59
+            ]
+          ],
+          "scale": 0.085,
+          "alpha_threshold": 8
+        }
+      },
+      "AFTER charge fix": {
+        "source_scale": {
+          "overlap_pixels": 0,
+          "nearest_opaque_pixel_center_distance": 55.1453,
+          "nearest_points_yx": [
+            [
+              455,
+              660
+            ],
+            [
+              459,
+              605
+            ]
+          ],
+          "scale": 1,
+          "alpha_threshold": 8
+        },
+        "game_scale": {
+          "overlap_pixels": 0,
+          "nearest_opaque_pixel_center_distance": 5.099,
+          "nearest_points_yx": [
+            [
+              38,
+              56
+            ],
+            [
+              39,
+              51
+            ]
+          ],
+          "scale": 0.085,
+          "alpha_threshold": 8
+        }
+      }
+    },
+    "0.3": {
+      "BEFORE e4e0d6d": {
+        "source_scale": {
+          "overlap_pixels": 932,
+          "nearest_opaque_pixel_center_distance": 0.0,
+          "nearest_points_yx": [
+            [
+              294,
+              690
+            ],
+            [
+              294,
+              690
+            ]
+          ],
+          "scale": 1,
+          "alpha_threshold": 8
+        },
+        "game_scale": {
+          "overlap_pixels": 7,
+          "nearest_opaque_pixel_center_distance": 0.0,
+          "nearest_points_yx": [
+            [
+              24,
+              59
+            ],
+            [
+              24,
+              59
+            ]
+          ],
+          "scale": 0.085,
+          "alpha_threshold": 8
+        }
+      },
+      "AFTER charge fix": {
+        "source_scale": {
+          "overlap_pixels": 0,
+          "nearest_opaque_pixel_center_distance": 53.0377,
+          "nearest_points_yx": [
+            [
+              456,
+              662
+            ],
+            [
+              458,
+              609
+            ]
+          ],
+          "scale": 1,
+          "alpha_threshold": 8
+        },
+        "game_scale": {
+          "overlap_pixels": 0,
+          "nearest_opaque_pixel_center_distance": 5.3852,
+          "nearest_points_yx": [
+            [
+              35,
+              56
+            ],
+            [
+              37,
+              51
+            ]
+          ],
+          "scale": 0.085,
+          "alpha_threshold": 8
+        }
+      }
+    }
+  },
+  "game_scale_sweep": [
+    {
+      "time": 0.2,
+      "overlap_pixels": 0,
+      "nearest_opaque_pixel_center_distance": 6.0,
+      "nearest_points_yx": [
+        [
+          38,
+          55
+        ],
+        [
+          38,
+          49
+        ]
+      ],
+      "scale": 0.085,
+      "alpha_threshold": 8
+    },
+    {
+      "time": 0.22,
+      "overlap_pixels": 0,
+      "nearest_opaque_pixel_center_distance": 6.0,
+      "nearest_points_yx": [
+        [
+          38,
+          56
+        ],
+        [
+          38,
+          50
+        ]
+      ],
+      "scale": 0.085,
+      "alpha_threshold": 8
+    },
+    {
+      "time": 0.24,
+      "overlap_pixels": 0,
+      "nearest_opaque_pixel_center_distance": 6.0,
+      "nearest_points_yx": [
+        [
+          38,
+          56
+        ],
+        [
+          38,
+          50
+        ]
+      ],
+      "scale": 0.085,
+      "alpha_threshold": 8
+    },
+    {
+      "time": 0.26,
+      "overlap_pixels": 0,
+      "nearest_opaque_pixel_center_distance": 6.0,
+      "nearest_points_yx": [
+        [
+          38,
+          56
+        ],
+        [
+          38,
+          50
+        ]
+      ],
+      "scale": 0.085,
+      "alpha_threshold": 8
+    },
+    {
+      "time": 0.28,
+      "overlap_pixels": 0,
+      "nearest_opaque_pixel_center_distance": 5.099,
+      "nearest_points_yx": [
+        [
+          38,
+          56
+        ],
+        [
+          39,
+          51
+        ]
+      ],
+      "scale": 0.085,
+      "alpha_threshold": 8
+    },
+    {
+      "time": 0.3,
+      "overlap_pixels": 0,
+      "nearest_opaque_pixel_center_distance": 5.3852,
+      "nearest_points_yx": [
+        [
+          35,
+          56
+        ],
+        [
+          37,
+          51
+        ]
+      ],
+      "scale": 0.085,
+      "alpha_threshold": 8
+    },
+    {
+      "time": 0.32,
+      "overlap_pixels": 0,
+      "nearest_opaque_pixel_center_distance": 6.0,
+      "nearest_points_yx": [
+        [
+          38,
+          56
+        ],
+        [
+          38,
+          50
+        ]
+      ],
+      "scale": 0.085,
+      "alpha_threshold": 8
+    },
+    {
+      "time": 0.34,
+      "overlap_pixels": 0,
+      "nearest_opaque_pixel_center_distance": 6.0828,
+      "nearest_points_yx": [
+        [
+          38,
+          55
+        ],
+        [
+          39,
+          49
+        ]
+      ],
+      "scale": 0.085,
+      "alpha_threshold": 8
+    },
+    {
+      "time": 0.36,
+      "overlap_pixels": 0,
+      "nearest_opaque_pixel_center_distance": 7.2801,
+      "nearest_points_yx": [
+        [
+          38,
+          55
+        ],
+        [
+          40,
+          48
+        ]
+      ],
+      "scale": 0.085,
+      "alpha_threshold": 8
+    },
+    {
+      "time": 0.38,
+      "overlap_pixels": 0,
+      "nearest_opaque_pixel_center_distance": 8.2462,
+      "nearest_points_yx": [
+        [
+          38,
+          55
+        ],
+        [
+          40,
+          47
+        ]
+      ],
+      "scale": 0.085,
+      "alpha_threshold": 8
+    },
+    {
+      "time": 0.4,
+      "overlap_pixels": 0,
+      "nearest_opaque_pixel_center_distance": 8.544,
+      "nearest_points_yx": [
+        [
+          38,
+          54
+        ],
+        [
+          41,
+          46
+        ]
+      ],
+      "scale": 0.085,
+      "alpha_threshold": 8
+    },
+    {
+      "time": 0.42,
+      "overlap_pixels": 0,
+      "nearest_opaque_pixel_center_distance": 9.4868,
+      "nearest_points_yx": [
+        [
+          38,
+          54
+        ],
+        [
+          41,
+          45
+        ]
+      ],
+      "scale": 0.085,
+      "alpha_threshold": 8
+    },
+    {
+      "time": 0.44,
+      "overlap_pixels": 0,
+      "nearest_opaque_pixel_center_distance": 9.8489,
+      "nearest_points_yx": [
+        [
+          38,
+          53
+        ],
+        [
+          42,
+          44
+        ]
+      ],
+      "scale": 0.085,
+      "alpha_threshold": 8
+    },
+    {
+      "time": 0.46,
+      "overlap_pixels": 0,
+      "nearest_opaque_pixel_center_distance": 10.7703,
+      "nearest_points_yx": [
+        [
+          38,
+          53
+        ],
+        [
+          42,
+          43
+        ]
+      ],
+      "scale": 0.085,
+      "alpha_threshold": 8
+    }
+  ],
+  "walk_rigidity_and_idle_move_transition_fixed": false,
+  "native_spine_verified": false
+}
