@@ -1,0 +1,5 @@
+Use case: precise-object-edit
+Asset type: one isolated torso garment attachment for a Spine paper-cut rig.
+Image 1 is the edit target and sole character source. Extract ONLY the original fox's worn outfit torso, including the broad red scarf COLLAR, chest, gold circular belt buckle, waist ties and long charcoal outer robe skirt with ochre edging. Preserve the source's exact width, proportions, folds, colors and left-three-quarter body orientation.
+Remove the head, ears, tail, trailing scarf ribbons, BOTH entire arms/sleeves/hands, ALL trousers, legs, feet and fire. Fill only hidden shoulder and under-arm garment areas so detached sleeves can overlap. Keep source's wide flaring robe-skirt silhouette and diagonal lower hem; the bottom ends at the outer robe hem, with transparent openings beneath it: NO baggy black trouser shapes hanging underneath. Shoulder ends plain dark fabric. No sleeves extending out.
+One single piece centered on real transparent background, close framing with at least 30px transparent margin, no labels/shadow/new decoration. This is the same existing costume, not a redesign.

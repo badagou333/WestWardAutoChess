@@ -1,0 +1,12 @@
+{
+  "generation_tool": "built-in image_gen",
+  "generation_calls": 2,
+  "native_spine_import_verified": false,
+  "files": {
+    "source/original.png": "873e97b812f7363449efc7981323a7046f5d75ee40dca3d58376ec79b12ff6ae",
+    "source/parts-sheet.png": "74c0b3c4647f01dd0c50afa9bbb0a994ae507906855f7d87a93ba6d942ea1ac6",
+    "source/torso-corrected.png": "e83b933a45c7afe4b302a22408ff7c95e8d88a0b0903ff180337e74ad086768c",
+    "source/PROMPT.txt": "ea8aa4b53eb3e3d78106a7f4b2e0fc682083634c5c35529ba6bc2ffccb2e5940",
+    "source/PROMPT-torso.txt": "596eb38b480b6abfbf4400331532a0a381711504c3c2ce210c5059d0449ab3b0"
+  }
+}

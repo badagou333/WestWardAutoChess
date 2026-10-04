@@ -1,0 +1,736 @@
+{
+  "status": "passed",
+  "scope": "External input structural/geometric QA only. NOT native Spine or visual acceptance.",
+  "native_spine_import_verified": false,
+  "native_spine_playback_verified": false,
+  "checks": [
+    {
+      "check": "source unchanged and identical to approved runtime input",
+      "passed": true
+    },
+    {
+      "check": "candidate excluded from Godot import",
+      "passed": true
+    },
+    {
+      "check": "unique parent-first bone root",
+      "passed": true
+    },
+    {
+      "check": "unique parent-first bone torso",
+      "passed": true
+    },
+    {
+      "check": "unique parent-first bone head",
+      "passed": true
+    },
+    {
+      "check": "unique parent-first bone tail",
+      "passed": true
+    },
+    {
+      "check": "unique parent-first bone scarf",
+      "passed": true
+    },
+    {
+      "check": "unique parent-first bone arm_cast",
+      "passed": true
+    },
+    {
+      "check": "unique parent-first bone hand_cast",
+      "passed": true
+    },
+    {
+      "check": "unique parent-first bone arm_rest",
+      "passed": true
+    },
+    {
+      "check": "unique parent-first bone hand_rest",
+      "passed": true
+    },
+    {
+      "check": "unique parent-first bone leg_back",
+      "passed": true
+    },
+    {
+      "check": "unique parent-first bone leg_front",
+      "passed": true
+    },
+    {
+      "check": "unique parent-first bone flame",
+      "passed": true
+    },
+    {
+      "check": "unique parent-first bone projectile",
+      "passed": true
+    },
+    {
+      "check": "unique slot names",
+      "passed": true
+    },
+    {
+      "check": "slot bone exists tail",
+      "passed": true
+    },
+    {
+      "check": "slot bone exists scarf",
+      "passed": true
+    },
+    {
+      "check": "slot bone exists leg_back",
+      "passed": true
+    },
+    {
+      "check": "slot bone exists leg_front",
+      "passed": true
+    },
+    {
+      "check": "slot bone exists arm_cast",
+      "passed": true
+    },
+    {
+      "check": "slot bone exists hand_cast",
+      "passed": true
+    },
+    {
+      "check": "slot bone exists torso",
+      "passed": true
+    },
+    {
+      "check": "slot bone exists arm_rest",
+      "passed": true
+    },
+    {
+      "check": "slot bone exists hand_rest",
+      "passed": true
+    },
+    {
+      "check": "slot bone exists head",
+      "passed": true
+    },
+    {
+      "check": "slot bone exists flame",
+      "passed": true
+    },
+    {
+      "check": "slot bone exists projectile",
+      "passed": true
+    },
+    {
+      "check": "lossless rectangular extraction head",
+      "passed": true
+    },
+    {
+      "check": "transparent margin and opaque content head",
+      "passed": true
+    },
+    {
+      "check": "lossless rectangular extraction torso",
+      "passed": true
+    },
+    {
+      "check": "transparent margin and opaque content torso",
+      "passed": true
+    },
+    {
+      "check": "lossless rectangular extraction tail",
+      "passed": true
+    },
+    {
+      "check": "transparent margin and opaque content tail",
+      "passed": true
+    },
+    {
+      "check": "lossless rectangular extraction arm_cast",
+      "passed": true
+    },
+    {
+      "check": "transparent margin and opaque content arm_cast",
+      "passed": true
+    },
+    {
+      "check": "lossless rectangular extraction hand_cast",
+      "passed": true
+    },
+    {
+      "check": "transparent margin and opaque content hand_cast",
+      "passed": true
+    },
+    {
+      "check": "lossless rectangular extraction arm_rest",
+      "passed": true
+    },
+    {
+      "check": "transparent margin and opaque content arm_rest",
+      "passed": true
+    },
+    {
+      "check": "lossless rectangular extraction hand_rest",
+      "passed": true
+    },
+    {
+      "check": "transparent margin and opaque content hand_rest",
+      "passed": true
+    },
+    {
+      "check": "lossless rectangular extraction leg_back",
+      "passed": true
+    },
+    {
+      "check": "transparent margin and opaque content leg_back",
+      "passed": true
+    },
+    {
+      "check": "lossless rectangular extraction leg_front",
+      "passed": true
+    },
+    {
+      "check": "transparent margin and opaque content leg_front",
+      "passed": true
+    },
+    {
+      "check": "lossless rectangular extraction scarf",
+      "passed": true
+    },
+    {
+      "check": "transparent margin and opaque content scarf",
+      "passed": true
+    },
+    {
+      "check": "lossless rectangular extraction flame",
+      "passed": true
+    },
+    {
+      "check": "transparent margin and opaque content flame",
+      "passed": true
+    },
+    {
+      "check": "skin slot exists tail",
+      "passed": true
+    },
+    {
+      "check": "relative image resolves tail",
+      "passed": true
+    },
+    {
+      "check": "positive attachment dimensions tail",
+      "passed": true
+    },
+    {
+      "check": "skin slot exists scarf",
+      "passed": true
+    },
+    {
+      "check": "relative image resolves scarf",
+      "passed": true
+    },
+    {
+      "check": "positive attachment dimensions scarf",
+      "passed": true
+    },
+    {
+      "check": "skin slot exists leg_back",
+      "passed": true
+    },
+    {
+      "check": "relative image resolves leg_back",
+      "passed": true
+    },
+    {
+      "check": "positive attachment dimensions leg_back",
+      "passed": true
+    },
+    {
+      "check": "skin slot exists leg_front",
+      "passed": true
+    },
+    {
+      "check": "relative image resolves leg_front",
+      "passed": true
+    },
+    {
+      "check": "positive attachment dimensions leg_front",
+      "passed": true
+    },
+    {
+      "check": "skin slot exists arm_cast",
+      "passed": true
+    },
+    {
+      "check": "relative image resolves arm_cast",
+      "passed": true
+    },
+    {
+      "check": "positive attachment dimensions arm_cast",
+      "passed": true
+    },
+    {
+      "check": "skin slot exists hand_cast",
+      "passed": true
+    },
+    {
+      "check": "relative image resolves hand_cast",
+      "passed": true
+    },
+    {
+      "check": "positive attachment dimensions hand_cast",
+      "passed": true
+    },
+    {
+      "check": "skin slot exists torso",
+      "passed": true
+    },
+    {
+      "check": "relative image resolves torso",
+      "passed": true
+    },
+    {
+      "check": "positive attachment dimensions torso",
+      "passed": true
+    },
+    {
+      "check": "skin slot exists arm_rest",
+      "passed": true
+    },
+    {
+      "check": "relative image resolves arm_rest",
+      "passed": true
+    },
+    {
+      "check": "positive attachment dimensions arm_rest",
+      "passed": true
+    },
+    {
+      "check": "skin slot exists hand_rest",
+      "passed": true
+    },
+    {
+      "check": "relative image resolves hand_rest",
+      "passed": true
+    },
+    {
+      "check": "positive attachment dimensions hand_rest",
+      "passed": true
+    },
+    {
+      "check": "skin slot exists head",
+      "passed": true
+    },
+    {
+      "check": "relative image resolves head",
+      "passed": true
+    },
+    {
+      "check": "positive attachment dimensions head",
+      "passed": true
+    },
+    {
+      "check": "skin slot exists flame",
+      "passed": true
+    },
+    {
+      "check": "relative image resolves flame",
+      "passed": true
+    },
+    {
+      "check": "positive attachment dimensions flame",
+      "passed": true
+    },
+    {
+      "check": "skin slot exists projectile",
+      "passed": true
+    },
+    {
+      "check": "relative image resolves projectile",
+      "passed": true
+    },
+    {
+      "check": "positive attachment dimensions projectile",
+      "passed": true
+    },
+    {
+      "check": "animation target exists idle/torso",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys idle/torso/translate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists idle/head",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys idle/head/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field idle/head/rotate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists idle/tail",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys idle/tail/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field idle/tail/rotate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists idle/scarf",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys idle/scarf/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field idle/scarf/rotate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists idle/hand_cast",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys idle/hand_cast/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field idle/hand_cast/rotate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists idle/flame",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys idle/flame/scale",
+      "passed": true
+    },
+    {
+      "check": "loop or return-to-start pose idle",
+      "passed": true
+    },
+    {
+      "check": "animation target exists basic_attack/torso",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys basic_attack/torso/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field basic_attack/torso/rotate",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys basic_attack/torso/translate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists basic_attack/head",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys basic_attack/head/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field basic_attack/head/rotate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists basic_attack/arm_cast",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys basic_attack/arm_cast/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field basic_attack/arm_cast/rotate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists basic_attack/hand_cast",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys basic_attack/hand_cast/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field basic_attack/hand_cast/rotate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists basic_attack/arm_rest",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys basic_attack/arm_rest/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field basic_attack/arm_rest/rotate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists basic_attack/tail",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys basic_attack/tail/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field basic_attack/tail/rotate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists basic_attack/scarf",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys basic_attack/scarf/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field basic_attack/scarf/rotate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists basic_attack/flame",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys basic_attack/flame/scale",
+      "passed": true
+    },
+    {
+      "check": "animation target exists basic_attack/projectile",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys basic_attack/projectile/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field basic_attack/projectile/rotate",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys basic_attack/projectile/translate",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys basic_attack/projectile/scale",
+      "passed": true
+    },
+    {
+      "check": "animation target exists basic_attack/flame",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys basic_attack/flame/alpha",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field basic_attack/flame/alpha",
+      "passed": true
+    },
+    {
+      "check": "animation target exists basic_attack/projectile",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys basic_attack/projectile/alpha",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field basic_attack/projectile/alpha",
+      "passed": true
+    },
+    {
+      "check": "loop or return-to-start pose basic_attack",
+      "passed": true
+    },
+    {
+      "check": "animation target exists move/leg_back",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys move/leg_back/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field move/leg_back/rotate",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys move/leg_back/translate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists move/leg_front",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys move/leg_front/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field move/leg_front/rotate",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys move/leg_front/translate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists move/torso",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys move/torso/translate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists move/head",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys move/head/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field move/head/rotate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists move/arm_cast",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys move/arm_cast/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field move/arm_cast/rotate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists move/arm_rest",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys move/arm_rest/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field move/arm_rest/rotate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists move/tail",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys move/tail/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field move/tail/rotate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists move/scarf",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys move/scarf/rotate",
+      "passed": true
+    },
+    {
+      "check": "4.3 scalar value field move/scarf/rotate",
+      "passed": true
+    },
+    {
+      "check": "animation target exists move/flame",
+      "passed": true
+    },
+    {
+      "check": "ordered finite keys move/flame/scale",
+      "passed": true
+    },
+    {
+      "check": "loop or return-to-start pose move",
+      "passed": true
+    },
+    {
+      "check": "exactly three requested animations",
+      "passed": true
+    },
+    {
+      "check": "single visual release marker",
+      "passed": true
+    },
+    {
+      "check": "projectile begins at palm flame transform",
+      "passed": true
+    },
+    {
+      "check": "proposed stance contact stable leg_back",
+      "passed": true
+    },
+    {
+      "check": "idle feet stationary leg_back",
+      "passed": true
+    },
+    {
+      "check": "proposed stance contact stable leg_front",
+      "passed": true
+    },
+    {
+      "check": "idle feet stationary leg_front",
+      "passed": true
+    },
+    {
+      "check": "preview decodes and duration matches idle",
+      "passed": true
+    },
+    {
+      "check": "preview decodes and duration matches move",
+      "passed": true
+    },
+    {
+      "check": "preview decodes and duration matches basic_attack",
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "idle_endpoint_matrix_error": 0.0,
+    "basic_attack_endpoint_matrix_error": 0.0,
+    "move_endpoint_matrix_error": 0.0,
+    "release_world_matrix_error": 5.551115123125783e-17,
+    "leg_back_stance_world_spread_px": [
+      0.0,
+      0.0
+    ],
+    "leg_front_stance_world_spread_px": [
+      2.842170943040401e-14,
+      0.0
+    ],
+    "idle_gif_frames": 50,
+    "idle_gif_duration_ms": 2000,
+    "move_gif_frames": 25,
+    "move_gif_duration_ms": 1000,
+    "basic_attack_gif_frames": 35,
+    "basic_attack_gif_duration_ms": 1400
+  }
+}

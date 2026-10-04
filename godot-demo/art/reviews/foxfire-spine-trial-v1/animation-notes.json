@@ -1,0 +1,31 @@
+{
+  "origin": "External authored input, NOT saved/exported by Spine Trial",
+  "native_spine_import_verified": false,
+  "durations_seconds": {
+    "idle": 2.0,
+    "basic_attack": 1.4,
+    "move": 1.0
+  },
+  "loop": [
+    "idle",
+    "move"
+  ],
+  "single_play": [
+    "basic_attack"
+  ],
+  "release_time": 0.48,
+  "root_motion": "in-place; engine displacement NOT in input",
+  "move_reference_speed_source_px_per_second": 220,
+  "feet_reference_source_pixels": {
+    "leg_back": [
+      420,
+      1226
+    ],
+    "leg_front": [
+      640,
+      1255
+    ]
+  },
+  "warning": "Timing is a standalone visual proposal, not game attack speed/damage.",
+  "reference_runtime_scale": 0.085
+}

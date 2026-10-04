@@ -1,0 +1,255 @@
+{
+  "head": {
+    "source_file": "source/parts-sheet.png",
+    "source_box": [
+      74,
+      6,
+      366,
+      405
+    ],
+    "pixels": [
+      292,
+      399
+    ],
+    "target": [
+      390,
+      5,
+      345,
+      480
+    ],
+    "pivot": [
+      520,
+      450
+    ]
+  },
+  "torso": {
+    "source_file": "source/torso-corrected.png",
+    "source_box": [
+      139,
+      71,
+      1042,
+      1243
+    ],
+    "pixels": [
+      903,
+      1172
+    ],
+    "target": [
+      265,
+      435,
+      515,
+      655
+    ],
+    "pivot": [
+      520,
+      760
+    ]
+  },
+  "tail": {
+    "source_file": "source/parts-sheet.png",
+    "source_box": [
+      886,
+      38,
+      1212,
+      403
+    ],
+    "pixels": [
+      326,
+      365
+    ],
+    "target": [
+      676,
+      650,
+      435,
+      565
+    ],
+    "pivot": [
+      718,
+      755
+    ]
+  },
+  "arm_cast": {
+    "source_file": "source/parts-sheet.png",
+    "source_box": [
+      113,
+      423,
+      356,
+      715
+    ],
+    "pixels": [
+      243,
+      292
+    ],
+    "target": [
+      225,
+      563,
+      275,
+      333
+    ],
+    "pivot": [
+      458,
+      598
+    ]
+  },
+  "hand_cast": {
+    "source_file": "source/parts-sheet.png",
+    "source_box": [
+      527,
+      492,
+      707,
+      631
+    ],
+    "pixels": [
+      180,
+      139
+    ],
+    "target": [
+      166,
+      499,
+      144,
+      122
+    ],
+    "pivot": [
+      292,
+      592
+    ]
+  },
+  "arm_rest": {
+    "source_file": "source/parts-sheet.png",
+    "source_box": [
+      970,
+      426,
+      1163,
+      710
+    ],
+    "pixels": [
+      193,
+      284
+    ],
+    "target": [
+      570,
+      525,
+      225,
+      393
+    ],
+    "pivot": [
+      615,
+      563
+    ]
+  },
+  "hand_rest": {
+    "source_file": "source/parts-sheet.png",
+    "source_box": [
+      159,
+      777,
+      259,
+      932
+    ],
+    "pixels": [
+      100,
+      155
+    ],
+    "target": [
+      642,
+      782,
+      76,
+      126
+    ],
+    "pivot": [
+      678,
+      808
+    ]
+  },
+  "leg_back": {
+    "source_file": "source/parts-sheet.png",
+    "source_box": [
+      516,
+      707,
+      707,
+      973
+    ],
+    "pixels": [
+      191,
+      266
+    ],
+    "target": [
+      350,
+      930,
+      200,
+      296
+    ],
+    "pivot": [
+      485,
+      945
+    ]
+  },
+  "leg_front": {
+    "source_file": "source/parts-sheet.png",
+    "source_box": [
+      936,
+      712,
+      1109,
+      976
+    ],
+    "pixels": [
+      173,
+      264
+    ],
+    "target": [
+      545,
+      929,
+      160,
+      326
+    ],
+    "pivot": [
+      605,
+      945
+    ]
+  },
+  "scarf": {
+    "source_file": "source/parts-sheet.png",
+    "source_box": [
+      50,
+      1001,
+      423,
+      1229
+    ],
+    "pixels": [
+      373,
+      228
+    ],
+    "target": [
+      650,
+      535,
+      246,
+      198
+    ],
+    "pivot": [
+      664,
+      548
+    ]
+  },
+  "flame": {
+    "source_file": "source/parts-sheet.png",
+    "source_box": [
+      545,
+      975,
+      686,
+      1239
+    ],
+    "pixels": [
+      141,
+      264
+    ],
+    "target": [
+      176,
+      141,
+      160,
+      363
+    ],
+    "pivot": [
+      252,
+      504
+    ]
+  }
+}
