@@ -1,0 +1,2928 @@
+{
+  "engine_fixed_fps": 15,
+  "failures": 0,
+  "fixtures": "one paid monk; hidden normal enemy nodes; nonlethal source isolated from hero AI target list but production strike/visual ticking retained; 14HP target/1HP monk; wave delay only; production damage/interval/root navigation unchanged",
+  "kind": "actual_Godot_Viewport_fixed_step_sampling_not_realtime_or_OS_video",
+  "playback_seconds": 12.067,
+  "sample_fps": 15,
+  "samples": [
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 0,
+      "phase": "待机",
+      "pose": "idle",
+      "pose_time": 0.0416666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 5.40000000000006,
+      "wall_ms": 280
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 1,
+      "phase": "待机",
+      "pose": "idle",
+      "pose_time": 0.108333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 5.46666666666673,
+      "wall_ms": 586
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 2,
+      "phase": "待机",
+      "pose": "idle",
+      "pose_time": 0.175,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 5.5333333333334,
+      "wall_ms": 893
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 3,
+      "phase": "待机",
+      "pose": "idle",
+      "pose_time": 0.241666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 5.60000000000007,
+      "wall_ms": 1184
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 4,
+      "phase": "待机",
+      "pose": "idle",
+      "pose_time": 0.308333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 5.66666666666674,
+      "wall_ms": 1466
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 5,
+      "phase": "待机",
+      "pose": "idle",
+      "pose_time": 0.375,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 5.73333333333341,
+      "wall_ms": 1746
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 6,
+      "phase": "待机",
+      "pose": "idle",
+      "pose_time": 0.441666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 5.80000000000008,
+      "wall_ms": 2023
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 7,
+      "phase": "待机",
+      "pose": "idle",
+      "pose_time": 0.508333333333334,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 5.86666666666675,
+      "wall_ms": 2303
+    },
+    {
+      "facing": 1.0,
+      "frame": 1,
+      "hp": 310.0,
+      "index": 8,
+      "phase": "待机",
+      "pose": "idle",
+      "pose_time": 0.575,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 5.93333333333342,
+      "wall_ms": 2584
+    },
+    {
+      "facing": 1.0,
+      "frame": 1,
+      "hp": 310.0,
+      "index": 9,
+      "phase": "待机",
+      "pose": "idle",
+      "pose_time": 0.641666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 6.00000000000009,
+      "wall_ms": 2866
+    },
+    {
+      "facing": 1.0,
+      "frame": 1,
+      "hp": 310.0,
+      "index": 10,
+      "phase": "待机",
+      "pose": "idle",
+      "pose_time": 0.708333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 6.06666666666676,
+      "wall_ms": 3151
+    },
+    {
+      "facing": 1.0,
+      "frame": 1,
+      "hp": 310.0,
+      "index": 11,
+      "phase": "待机",
+      "pose": "idle",
+      "pose_time": 0.775,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 6.13333333333343,
+      "wall_ms": 3428
+    },
+    {
+      "facing": 1.0,
+      "frame": 1,
+      "hp": 310.0,
+      "index": 12,
+      "phase": "待机",
+      "pose": "idle",
+      "pose_time": 0.841666666666666,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 6.2000000000001,
+      "wall_ms": 3704
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 13,
+      "phase": "待机",
+      "pose": "idle",
+      "pose_time": 0.908333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 6.26666666666677,
+      "wall_ms": 3979
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 14,
+      "phase": "待机",
+      "pose": "idle",
+      "pose_time": 0.974999999999999,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 6.33333333333344,
+      "wall_ms": 4253
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 15,
+      "phase": "向右行走（两循环以上）",
+      "pose": "idle",
+      "pose_time": 0.0,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 6.40000000000011,
+      "wall_ms": 4535
+    },
+    {
+      "facing": 1.0,
+      "frame": 2,
+      "hp": 310.0,
+      "index": 16,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.0583333333333333,
+      "position": [
+        950.734130859375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 6.46666666666678,
+      "wall_ms": 4811
+    },
+    {
+      "facing": 1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 17,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.125,
+      "position": [
+        959.267333984375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 6.53333333333345,
+      "wall_ms": 5088
+    },
+    {
+      "facing": 1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 18,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.191666666666667,
+      "position": [
+        967.800537109375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 6.60000000000012,
+      "wall_ms": 5360
+    },
+    {
+      "facing": 1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 19,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.258333333333333,
+      "position": [
+        976.333740234375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 6.66666666666679,
+      "wall_ms": 5637
+    },
+    {
+      "facing": 1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 20,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.325,
+      "position": [
+        984.866943359375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 6.73333333333346,
+      "wall_ms": 5911
+    },
+    {
+      "facing": 1.0,
+      "frame": 5,
+      "hp": 310.0,
+      "index": 21,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.391666666666667,
+      "position": [
+        993.400146484375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 6.80000000000013,
+      "wall_ms": 6183
+    },
+    {
+      "facing": 1.0,
+      "frame": 5,
+      "hp": 310.0,
+      "index": 22,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.458333333333334,
+      "position": [
+        1001.93334960938,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 6.8666666666668,
+      "wall_ms": 6461
+    },
+    {
+      "facing": 1.0,
+      "frame": 2,
+      "hp": 310.0,
+      "index": 23,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.025,
+      "position": [
+        1010.46655273438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 6.93333333333347,
+      "wall_ms": 6738
+    },
+    {
+      "facing": 1.0,
+      "frame": 2,
+      "hp": 310.0,
+      "index": 24,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.0916666666666667,
+      "position": [
+        1018.99975585938,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 7.00000000000014,
+      "wall_ms": 7011
+    },
+    {
+      "facing": 1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 25,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.158333333333333,
+      "position": [
+        1027.53295898438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 7.06666666666681,
+      "wall_ms": 7284
+    },
+    {
+      "facing": 1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 26,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.225,
+      "position": [
+        1036.06616210938,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 7.13333333333348,
+      "wall_ms": 7562
+    },
+    {
+      "facing": 1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 27,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.291666666666667,
+      "position": [
+        1044.59936523438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 7.20000000000015,
+      "wall_ms": 7844
+    },
+    {
+      "facing": 1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 28,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.358333333333334,
+      "position": [
+        1053.13256835938,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 7.26666666666682,
+      "wall_ms": 8128
+    },
+    {
+      "facing": 1.0,
+      "frame": 5,
+      "hp": 310.0,
+      "index": 29,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.425,
+      "position": [
+        1061.66577148438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 7.33333333333349,
+      "wall_ms": 8414
+    },
+    {
+      "facing": 1.0,
+      "frame": 5,
+      "hp": 310.0,
+      "index": 30,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.491666666666667,
+      "position": [
+        1070.19897460938,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 7.40000000000016,
+      "wall_ms": 8688
+    },
+    {
+      "facing": 1.0,
+      "frame": 2,
+      "hp": 310.0,
+      "index": 31,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.0583333333333333,
+      "position": [
+        1078.73217773438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 7.46666666666683,
+      "wall_ms": 8962
+    },
+    {
+      "facing": 1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 32,
+      "phase": "向右行走（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.125,
+      "position": [
+        1087.26538085938,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 7.5333333333335,
+      "wall_ms": 9233
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 33,
+      "phase": "向右行走（两循环以上）",
+      "pose": "idle",
+      "pose_time": 0.025,
+      "position": [
+        1092.20092773438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 7.60000000000017,
+      "wall_ms": 9507
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 34,
+      "phase": "向右行走（两循环以上）",
+      "pose": "idle",
+      "pose_time": 0.0916666666666667,
+      "position": [
+        1092.20092773438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 7.66666666666684,
+      "wall_ms": 9783
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 35,
+      "phase": "向右行走（两循环以上）",
+      "pose": "idle",
+      "pose_time": 0.158333333333333,
+      "position": [
+        1092.20092773438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 7.73333333333351,
+      "wall_ms": 10075
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 36,
+      "phase": "停步",
+      "pose": "idle",
+      "pose_time": 0.225,
+      "position": [
+        1092.20092773438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 7.80000000000018,
+      "wall_ms": 10353
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 37,
+      "phase": "停步",
+      "pose": "idle",
+      "pose_time": 0.291666666666667,
+      "position": [
+        1092.20092773438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 7.86666666666685,
+      "wall_ms": 10627
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 38,
+      "phase": "停步",
+      "pose": "idle",
+      "pose_time": 0.358333333333334,
+      "position": [
+        1092.20092773438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 7.93333333333352,
+      "wall_ms": 10900
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 39,
+      "phase": "停步",
+      "pose": "idle",
+      "pose_time": 0.425,
+      "position": [
+        1092.20092773438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 8.00000000000019,
+      "wall_ms": 11174
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 40,
+      "phase": "停步",
+      "pose": "idle",
+      "pose_time": 0.491666666666667,
+      "position": [
+        1092.20092773438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 8.06666666666685,
+      "wall_ms": 11450
+    },
+    {
+      "facing": 1.0,
+      "frame": 1,
+      "hp": 310.0,
+      "index": 41,
+      "phase": "停步",
+      "pose": "idle",
+      "pose_time": 0.558333333333334,
+      "position": [
+        1092.20092773438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 8.13333333333351,
+      "wall_ms": 11727
+    },
+    {
+      "facing": 1.0,
+      "frame": 1,
+      "hp": 310.0,
+      "index": 42,
+      "phase": "停步",
+      "pose": "idle",
+      "pose_time": 0.625,
+      "position": [
+        1092.20092773438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 8.20000000000018,
+      "wall_ms": 12007
+    },
+    {
+      "facing": 1.0,
+      "frame": 1,
+      "hp": 310.0,
+      "index": 43,
+      "phase": "停步",
+      "pose": "idle",
+      "pose_time": 0.691666666666667,
+      "position": [
+        1092.20092773438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 8.26666666666684,
+      "wall_ms": 12284
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 44,
+      "phase": "转向左行（两循环以上）",
+      "pose": "idle",
+      "pose_time": 0.0,
+      "position": [
+        1092.20092773438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 8.3333333333335,
+      "wall_ms": 12568
+    },
+    {
+      "facing": -1.0,
+      "frame": 2,
+      "hp": 310.0,
+      "index": 45,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.0583333333333333,
+      "position": [
+        1083.66772460938,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 8.40000000000016,
+      "wall_ms": 12844
+    },
+    {
+      "facing": -1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 46,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.125,
+      "position": [
+        1075.13452148438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 8.46666666666683,
+      "wall_ms": 13124
+    },
+    {
+      "facing": -1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 47,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.191666666666667,
+      "position": [
+        1066.60131835938,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 8.53333333333349,
+      "wall_ms": 13400
+    },
+    {
+      "facing": -1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 48,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.258333333333333,
+      "position": [
+        1058.06811523438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 8.60000000000015,
+      "wall_ms": 13680
+    },
+    {
+      "facing": -1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 49,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.325,
+      "position": [
+        1049.53491210938,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 8.66666666666682,
+      "wall_ms": 13962
+    },
+    {
+      "facing": -1.0,
+      "frame": 5,
+      "hp": 310.0,
+      "index": 50,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.391666666666667,
+      "position": [
+        1041.00170898438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 8.73333333333348,
+      "wall_ms": 14238
+    },
+    {
+      "facing": -1.0,
+      "frame": 5,
+      "hp": 310.0,
+      "index": 51,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.458333333333334,
+      "position": [
+        1032.46850585938,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 8.80000000000014,
+      "wall_ms": 14511
+    },
+    {
+      "facing": -1.0,
+      "frame": 2,
+      "hp": 310.0,
+      "index": 52,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.025,
+      "position": [
+        1023.93530273438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 8.8666666666668,
+      "wall_ms": 14788
+    },
+    {
+      "facing": -1.0,
+      "frame": 2,
+      "hp": 310.0,
+      "index": 53,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.0916666666666667,
+      "position": [
+        1015.40209960938,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 8.93333333333347,
+      "wall_ms": 15064
+    },
+    {
+      "facing": -1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 54,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.158333333333333,
+      "position": [
+        1006.86889648438,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 9.00000000000013,
+      "wall_ms": 15341
+    },
+    {
+      "facing": -1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 55,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.225,
+      "position": [
+        998.335693359375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 9.06666666666679,
+      "wall_ms": 15617
+    },
+    {
+      "facing": -1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 56,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.291666666666667,
+      "position": [
+        989.802490234375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 9.13333333333346,
+      "wall_ms": 15889
+    },
+    {
+      "facing": -1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 57,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.358333333333334,
+      "position": [
+        981.269287109375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 9.20000000000012,
+      "wall_ms": 16169
+    },
+    {
+      "facing": -1.0,
+      "frame": 5,
+      "hp": 310.0,
+      "index": 58,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.425,
+      "position": [
+        972.736083984375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 9.26666666666678,
+      "wall_ms": 16451
+    },
+    {
+      "facing": -1.0,
+      "frame": 5,
+      "hp": 310.0,
+      "index": 59,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.491666666666667,
+      "position": [
+        964.202880859375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 9.33333333333344,
+      "wall_ms": 16726
+    },
+    {
+      "facing": -1.0,
+      "frame": 2,
+      "hp": 310.0,
+      "index": 60,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.0583333333333333,
+      "position": [
+        955.669677734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 9.40000000000011,
+      "wall_ms": 17011
+    },
+    {
+      "facing": -1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 61,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.125,
+      "position": [
+        947.136474609375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 9.46666666666677,
+      "wall_ms": 17295
+    },
+    {
+      "facing": -1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 62,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.191666666666667,
+      "position": [
+        938.603271484375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 9.53333333333343,
+      "wall_ms": 17571
+    },
+    {
+      "facing": -1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 63,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.258333333333333,
+      "position": [
+        930.070068359375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 9.6000000000001,
+      "wall_ms": 17845
+    },
+    {
+      "facing": -1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 64,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.325,
+      "position": [
+        921.536865234375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 9.66666666666676,
+      "wall_ms": 18121
+    },
+    {
+      "facing": -1.0,
+      "frame": 5,
+      "hp": 310.0,
+      "index": 65,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.391666666666667,
+      "position": [
+        913.003662109375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 9.73333333333342,
+      "wall_ms": 18397
+    },
+    {
+      "facing": -1.0,
+      "frame": 5,
+      "hp": 310.0,
+      "index": 66,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.458333333333334,
+      "position": [
+        904.470458984375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 9.80000000000008,
+      "wall_ms": 18667
+    },
+    {
+      "facing": -1.0,
+      "frame": 2,
+      "hp": 310.0,
+      "index": 67,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.025,
+      "position": [
+        895.937255859375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 9.86666666666675,
+      "wall_ms": 18945
+    },
+    {
+      "facing": -1.0,
+      "frame": 2,
+      "hp": 310.0,
+      "index": 68,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.0916666666666667,
+      "position": [
+        887.404052734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 9.93333333333341,
+      "wall_ms": 19218
+    },
+    {
+      "facing": -1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 69,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.158333333333333,
+      "position": [
+        878.870849609375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 10.0000000000001,
+      "wall_ms": 19497
+    },
+    {
+      "facing": -1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 70,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.225,
+      "position": [
+        870.337646484375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 10.0666666666667,
+      "wall_ms": 19774
+    },
+    {
+      "facing": -1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 71,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.291666666666667,
+      "position": [
+        861.804443359375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 10.1333333333334,
+      "wall_ms": 20046
+    },
+    {
+      "facing": -1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 72,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.358333333333334,
+      "position": [
+        853.271240234375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 10.2000000000001,
+      "wall_ms": 20322
+    },
+    {
+      "facing": -1.0,
+      "frame": 5,
+      "hp": 310.0,
+      "index": 73,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.425,
+      "position": [
+        844.738037109375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 10.2666666666667,
+      "wall_ms": 20598
+    },
+    {
+      "facing": -1.0,
+      "frame": 2,
+      "hp": 310.0,
+      "index": 74,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.0583333333333333,
+      "position": [
+        827.671630859375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 10.4000000000001,
+      "wall_ms": 20897
+    },
+    {
+      "facing": -1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 75,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.125,
+      "position": [
+        819.138427734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 10.4666666666667,
+      "wall_ms": 21173
+    },
+    {
+      "facing": -1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 76,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.191666666666667,
+      "position": [
+        810.605224609375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 10.5333333333334,
+      "wall_ms": 21455
+    },
+    {
+      "facing": -1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 77,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.258333333333333,
+      "position": [
+        802.072021484375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 10.6,
+      "wall_ms": 21732
+    },
+    {
+      "facing": -1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 78,
+      "phase": "转向左行（两循环以上）",
+      "pose": "move",
+      "pose_time": 0.325,
+      "position": [
+        793.538818359375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 10.6666666666667,
+      "wall_ms": 22005
+    },
+    {
+      "facing": -1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 79,
+      "phase": "转向左行（两循环以上）",
+      "pose": "idle",
+      "pose_time": 0.05,
+      "position": [
+        792.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 10.7333333333334,
+      "wall_ms": 22282
+    },
+    {
+      "facing": -1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 80,
+      "phase": "转向左行（两循环以上）",
+      "pose": "idle",
+      "pose_time": 0.116666666666667,
+      "position": [
+        792.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 10.8,
+      "wall_ms": 22565
+    },
+    {
+      "facing": -1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 81,
+      "phase": "停步 / 转向",
+      "pose": "idle",
+      "pose_time": 0.183333333333333,
+      "position": [
+        792.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 10.8666666666667,
+      "wall_ms": 22845
+    },
+    {
+      "facing": -1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 82,
+      "phase": "停步 / 转向",
+      "pose": "idle",
+      "pose_time": 0.25,
+      "position": [
+        792.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 10.9333333333334,
+      "wall_ms": 23122
+    },
+    {
+      "facing": -1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 83,
+      "phase": "停步 / 转向",
+      "pose": "idle",
+      "pose_time": 0.316666666666667,
+      "position": [
+        792.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 11.0,
+      "wall_ms": 23398
+    },
+    {
+      "facing": -1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 84,
+      "phase": "停步 / 转向",
+      "pose": "idle",
+      "pose_time": 0.383333333333334,
+      "position": [
+        792.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 11.0666666666667,
+      "wall_ms": 23676
+    },
+    {
+      "facing": -1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 85,
+      "phase": "停步 / 转向",
+      "pose": "idle",
+      "pose_time": 0.450000000000001,
+      "position": [
+        792.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 11.1333333333333,
+      "wall_ms": 23956
+    },
+    {
+      "facing": -1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 86,
+      "phase": "停步 / 转向",
+      "pose": "idle",
+      "pose_time": 0.516666666666667,
+      "position": [
+        792.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 11.2,
+      "wall_ms": 24231
+    },
+    {
+      "facing": -1.0,
+      "frame": 1,
+      "hp": 310.0,
+      "index": 87,
+      "phase": "停步 / 转向",
+      "pose": "idle",
+      "pose_time": 0.583333333333334,
+      "position": [
+        792.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 11.2666666666667,
+      "wall_ms": 24511
+    },
+    {
+      "facing": -1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 88,
+      "phase": "向右回到原位",
+      "pose": "idle",
+      "pose_time": 0.0,
+      "position": [
+        792.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 11.3333333333333,
+      "wall_ms": 24790
+    },
+    {
+      "facing": 1.0,
+      "frame": 2,
+      "hp": 310.0,
+      "index": 89,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.0583333333333333,
+      "position": [
+        800.734130859375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 11.4,
+      "wall_ms": 25066
+    },
+    {
+      "facing": 1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 90,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.125,
+      "position": [
+        809.267333984375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 11.4666666666667,
+      "wall_ms": 25343
+    },
+    {
+      "facing": 1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 91,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.191666666666667,
+      "position": [
+        817.800537109375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 11.5333333333333,
+      "wall_ms": 25619
+    },
+    {
+      "facing": 1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 92,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.258333333333333,
+      "position": [
+        826.333740234375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 11.6,
+      "wall_ms": 25901
+    },
+    {
+      "facing": 1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 93,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.325,
+      "position": [
+        834.866943359375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 11.6666666666666,
+      "wall_ms": 26188
+    },
+    {
+      "facing": 1.0,
+      "frame": 5,
+      "hp": 310.0,
+      "index": 94,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.391666666666667,
+      "position": [
+        843.400146484375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 11.7333333333333,
+      "wall_ms": 26468
+    },
+    {
+      "facing": 1.0,
+      "frame": 5,
+      "hp": 310.0,
+      "index": 95,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.458333333333334,
+      "position": [
+        851.933349609375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 11.8,
+      "wall_ms": 26743
+    },
+    {
+      "facing": 1.0,
+      "frame": 2,
+      "hp": 310.0,
+      "index": 96,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.025,
+      "position": [
+        860.466552734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 11.8666666666666,
+      "wall_ms": 27020
+    },
+    {
+      "facing": 1.0,
+      "frame": 2,
+      "hp": 310.0,
+      "index": 97,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.0916666666666667,
+      "position": [
+        868.999755859375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 11.9333333333333,
+      "wall_ms": 27293
+    },
+    {
+      "facing": 1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 98,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.158333333333333,
+      "position": [
+        877.532958984375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 12.0,
+      "wall_ms": 27570
+    },
+    {
+      "facing": 1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 99,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.225,
+      "position": [
+        886.066162109375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 12.0666666666666,
+      "wall_ms": 27846
+    },
+    {
+      "facing": 1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 100,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.291666666666667,
+      "position": [
+        894.599365234375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 12.1333333333333,
+      "wall_ms": 28120
+    },
+    {
+      "facing": 1.0,
+      "frame": 4,
+      "hp": 310.0,
+      "index": 101,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.358333333333334,
+      "position": [
+        903.132568359375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 12.1999999999999,
+      "wall_ms": 28401
+    },
+    {
+      "facing": 1.0,
+      "frame": 5,
+      "hp": 310.0,
+      "index": 102,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.425,
+      "position": [
+        911.665771484375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 12.2666666666666,
+      "wall_ms": 28685
+    },
+    {
+      "facing": 1.0,
+      "frame": 5,
+      "hp": 310.0,
+      "index": 103,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.491666666666667,
+      "position": [
+        920.198974609375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 12.3333333333333,
+      "wall_ms": 28963
+    },
+    {
+      "facing": 1.0,
+      "frame": 2,
+      "hp": 310.0,
+      "index": 104,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.0583333333333333,
+      "position": [
+        928.732177734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 12.3999999999999,
+      "wall_ms": 29242
+    },
+    {
+      "facing": 1.0,
+      "frame": 3,
+      "hp": 310.0,
+      "index": 105,
+      "phase": "向右回到原位",
+      "pose": "move",
+      "pose_time": 0.125,
+      "position": [
+        937.265380859375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 12.4666666666666,
+      "wall_ms": 29519
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 106,
+      "phase": "向右回到原位",
+      "pose": "idle",
+      "pose_time": 0.025,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 12.5333333333333,
+      "wall_ms": 29799
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 107,
+      "phase": "向右回到原位",
+      "pose": "idle",
+      "pose_time": 0.0916666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 12.5999999999999,
+      "wall_ms": 30077
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 108,
+      "phase": "向右回到原位",
+      "pose": "idle",
+      "pose_time": 0.158333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 12.6666666666666,
+      "wall_ms": 30350
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 109,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "idle",
+      "pose_time": 0.225,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 12.7333333333333,
+      "wall_ms": 30632
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 110,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "idle",
+      "pose_time": 0.291666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 12.7999999999999,
+      "wall_ms": 30907
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 111,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "idle",
+      "pose_time": 0.358333333333334,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 0,
+      "simulation_time": 12.8666666666666,
+      "wall_ms": 31189
+    },
+    {
+      "facing": 1.0,
+      "frame": 6,
+      "hp": 310.0,
+      "index": 112,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "basic_attack",
+      "pose_time": 0.0166666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 12.9333333333332,
+      "wall_ms": 31469
+    },
+    {
+      "facing": 1.0,
+      "frame": 6,
+      "hp": 310.0,
+      "index": 113,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "basic_attack",
+      "pose_time": 0.0833333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 12.9999999999999,
+      "wall_ms": 31748
+    },
+    {
+      "facing": 1.0,
+      "frame": 6,
+      "hp": 310.0,
+      "index": 114,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "basic_attack",
+      "pose_time": 0.15,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 13.0666666666666,
+      "wall_ms": 32061
+    },
+    {
+      "facing": 1.0,
+      "frame": 7,
+      "hp": 310.0,
+      "index": 115,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "basic_attack",
+      "pose_time": 0.216666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 13.1333333333332,
+      "wall_ms": 32379
+    },
+    {
+      "facing": 1.0,
+      "frame": 8,
+      "hp": 310.0,
+      "index": 116,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "basic_attack",
+      "pose_time": 0.248333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 13.1999999999999,
+      "wall_ms": 32664
+    },
+    {
+      "facing": 1.0,
+      "frame": 8,
+      "hp": 310.0,
+      "index": 117,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "basic_attack",
+      "pose_time": 0.315,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 13.2666666666666,
+      "wall_ms": 32962
+    },
+    {
+      "facing": 1.0,
+      "frame": 9,
+      "hp": 310.0,
+      "index": 118,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "basic_attack",
+      "pose_time": 0.381666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 13.3333333333332,
+      "wall_ms": 33274
+    },
+    {
+      "facing": 1.0,
+      "frame": 9,
+      "hp": 310.0,
+      "index": 119,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "basic_attack",
+      "pose_time": 0.448333333333334,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 13.3999999999999,
+      "wall_ms": 33572
+    },
+    {
+      "facing": 1.0,
+      "frame": 9,
+      "hp": 310.0,
+      "index": 120,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "basic_attack",
+      "pose_time": 0.515000000000001,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 13.4666666666665,
+      "wall_ms": 33877
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 121,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "idle",
+      "pose_time": 0.0416666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 13.5333333333332,
+      "wall_ms": 34162
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 122,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "idle",
+      "pose_time": 0.108333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 13.5999999999999,
+      "wall_ms": 34439
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 123,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "idle",
+      "pose_time": 0.175,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 13.6666666666665,
+      "wall_ms": 34723
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 124,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "idle",
+      "pose_time": 0.241666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 13.7333333333332,
+      "wall_ms": 35013
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 125,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "idle",
+      "pose_time": 0.308333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 13.7999999999999,
+      "wall_ms": 35289
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 126,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "idle",
+      "pose_time": 0.375,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 13.8666666666665,
+      "wall_ms": 35569
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 127,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "idle",
+      "pose_time": 0.441666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 13.9333333333332,
+      "wall_ms": 35851
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 128,
+      "phase": "一次普攻 · 隐藏14HP测试靶",
+      "pose": "idle",
+      "pose_time": 0.508333333333334,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 13.9999999999998,
+      "wall_ms": 36129
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 129,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "idle",
+      "pose_time": 0.0,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 14.0666666666665,
+      "wall_ms": 36409
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 130,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "idle",
+      "pose_time": 0.0666666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 14.1333333333332,
+      "wall_ms": 36687
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 310.0,
+      "index": 131,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "idle",
+      "pose_time": 0.133333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 14.1999999999998,
+      "wall_ms": 36965
+    },
+    {
+      "facing": 1.0,
+      "frame": 10,
+      "hp": 300.0,
+      "index": 132,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "hit",
+      "pose_time": 0.00833333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 14.2666666666665,
+      "wall_ms": 37251
+    },
+    {
+      "facing": 1.0,
+      "frame": 10,
+      "hp": 300.0,
+      "index": 133,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "hit",
+      "pose_time": 0.075,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 14.3333333333332,
+      "wall_ms": 37531
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 300.0,
+      "index": 134,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "hit",
+      "pose_time": 0.141666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 14.3999999999998,
+      "wall_ms": 37810
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 300.0,
+      "index": 135,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "idle",
+      "pose_time": 0.025,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 14.4666666666665,
+      "wall_ms": 38096
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 300.0,
+      "index": 136,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "idle",
+      "pose_time": 0.0916666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 14.5333333333331,
+      "wall_ms": 38373
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 300.0,
+      "index": 137,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "idle",
+      "pose_time": 0.158333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 14.5999999999998,
+      "wall_ms": 38651
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 300.0,
+      "index": 138,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "idle",
+      "pose_time": 0.225,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 14.6666666666665,
+      "wall_ms": 38937
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 300.0,
+      "index": 139,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "idle",
+      "pose_time": 0.291666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 14.7333333333331,
+      "wall_ms": 39214
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 300.0,
+      "index": 140,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "idle",
+      "pose_time": 0.358333333333334,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 14.7999999999998,
+      "wall_ms": 39496
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 300.0,
+      "index": 141,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "idle",
+      "pose_time": 0.425,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 14.8666666666665,
+      "wall_ms": 39772
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 300.0,
+      "index": 142,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "idle",
+      "pose_time": 0.491666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 14.9333333333331,
+      "wall_ms": 40049
+    },
+    {
+      "facing": 1.0,
+      "frame": 1,
+      "hp": 300.0,
+      "index": 143,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "idle",
+      "pose_time": 0.558333333333334,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 14.9999999999998,
+      "wall_ms": 40327
+    },
+    {
+      "facing": 1.0,
+      "frame": 1,
+      "hp": 300.0,
+      "index": 144,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "idle",
+      "pose_time": 0.625,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 15.0666666666665,
+      "wall_ms": 40611
+    },
+    {
+      "facing": 1.0,
+      "frame": 1,
+      "hp": 300.0,
+      "index": 145,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "idle",
+      "pose_time": 0.691666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 15.1333333333331,
+      "wall_ms": 40885
+    },
+    {
+      "facing": 1.0,
+      "frame": 1,
+      "hp": 300.0,
+      "index": 146,
+      "phase": "非致命受击 · 隔离隐藏攻击源",
+      "pose": "idle",
+      "pose_time": 0.758333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 15.1999999999998,
+      "wall_ms": 41166
+    },
+    {
+      "facing": 1.0,
+      "frame": 0,
+      "hp": 1.0,
+      "index": 147,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "idle",
+      "pose_time": 0.0,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 1,
+      "simulation_time": 15.2666666666664,
+      "wall_ms": 41450
+    },
+    {
+      "facing": 1.0,
+      "frame": 6,
+      "hp": 1.0,
+      "index": 148,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "basic_attack",
+      "pose_time": 0.0583333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 15.3333333333331,
+      "wall_ms": 41727
+    },
+    {
+      "facing": 1.0,
+      "frame": 6,
+      "hp": 1.0,
+      "index": 149,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "basic_attack",
+      "pose_time": 0.125,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 15.3999999999998,
+      "wall_ms": 42009
+    },
+    {
+      "facing": 1.0,
+      "frame": 11,
+      "hp": 0.0,
+      "index": 150,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "retreat",
+      "pose_time": 0.00833333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 15.4666666666664,
+      "wall_ms": 42293
+    },
+    {
+      "facing": 1.0,
+      "frame": 11,
+      "hp": 0.0,
+      "index": 151,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "retreat",
+      "pose_time": 0.075,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 15.5333333333331,
+      "wall_ms": 42578
+    },
+    {
+      "facing": 1.0,
+      "frame": 11,
+      "hp": 0.0,
+      "index": 152,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "retreat",
+      "pose_time": 0.141666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 15.5999999999998,
+      "wall_ms": 42864
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 153,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "retreat",
+      "pose_time": 0.208333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 15.6666666666664,
+      "wall_ms": 43141
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 154,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "retreat",
+      "pose_time": 0.275,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 15.7333333333331,
+      "wall_ms": 43427
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 155,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "retreat",
+      "pose_time": 0.341666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 15.7999999999997,
+      "wall_ms": 43713
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 156,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "retreat",
+      "pose_time": 0.408333333333334,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 15.8666666666664,
+      "wall_ms": 43992
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 157,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "retreat",
+      "pose_time": 0.475000000000001,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 15.9333333333331,
+      "wall_ms": 44275
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 158,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "retreat",
+      "pose_time": 0.541666666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 15.9999999999997,
+      "wall_ms": 44586
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 159,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "retreat",
+      "pose_time": 0.608333333333334,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 16.0666666666664,
+      "wall_ms": 44924
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 160,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "retreat",
+      "pose_time": 0.675,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 16.1333333333331,
+      "wall_ms": 45232
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 161,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "retreat",
+      "pose_time": 0.741666666666666,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 16.1999999999997,
+      "wall_ms": 45520
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 162,
+      "phase": "真实伤害致死 · 1HP伤员夹具",
+      "pose": "retreat",
+      "pose_time": 0.808333333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 16.2666666666664,
+      "wall_ms": 45853
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 163,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 0.874999999999999,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 16.333333333333,
+      "wall_ms": 46142
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 164,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 0.941666666666666,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 16.3999999999997,
+      "wall_ms": 46422
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 165,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 1.00833333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 16.4666666666664,
+      "wall_ms": 46715
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 166,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 1.075,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 16.533333333333,
+      "wall_ms": 47007
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 167,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 1.14166666666667,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 16.5999999999997,
+      "wall_ms": 47300
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 168,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 1.20833333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 16.6666666666664,
+      "wall_ms": 47681
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 169,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 1.275,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 16.733333333333,
+      "wall_ms": 47983
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 170,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 1.34166666666666,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 16.7999999999997,
+      "wall_ms": 48266
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 171,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 1.40833333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 16.8666666666664,
+      "wall_ms": 48556
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 172,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 1.475,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 16.933333333333,
+      "wall_ms": 48844
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 173,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 1.54166666666666,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 16.9999999999997,
+      "wall_ms": 49146
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 174,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 1.60833333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 17.0666666666663,
+      "wall_ms": 49426
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 175,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 1.675,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 17.133333333333,
+      "wall_ms": 49717
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 176,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 1.74166666666666,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 17.1999999999997,
+      "wall_ms": 50008
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 177,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 1.80833333333333,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 17.2666666666663,
+      "wall_ms": 50293
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 178,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 1.875,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 17.333333333333,
+      "wall_ms": 50581
+    },
+    {
+      "facing": 1.0,
+      "frame": 12,
+      "hp": 0.0,
+      "index": 179,
+      "phase": "阵亡保留，不回待机",
+      "pose": "retreat",
+      "pose_time": 1.94166666666666,
+      "position": [
+        942.200927734375,
+        345.462280273438
+      ],
+      "serial": 2,
+      "simulation_time": 17.3999999999997,
+      "wall_ms": 50866
+    }
+  ],
+  "simulation_started": 5.40000000000006,
+  "size": [
+    1280,
+    720
+  ],
+  "wall_elapsed_ms": 50889,
+  "requested_seconds": 12,
+  "assembled_playback": {
+    "format": "WebP",
+    "duration_ms": 12067,
+    "nominal_fps": 15,
+    "loop": 1,
+    "lossless": true,
+    "source_sample_count": 180,
+    "long_sample_gaps": [
+      {
+        "after_index": 73,
+        "seconds": 0.13333333333340036
+      }
+    ],
+    "simulation_gap_min": 0.06666666666659893,
+    "simulation_gap_max": 0.13333333333340036,
+    "frame_counts": {
+      "0": 56,
+      "1": 13,
+      "2": 15,
+      "3": 20,
+      "4": 18,
+      "5": 15,
+      "6": 5,
+      "7": 1,
+      "8": 2,
+      "9": 3,
+      "10": 2,
+      "11": 3,
+      "12": 27
+    }
+  }
+}

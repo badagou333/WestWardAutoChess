@@ -5,6 +5,11 @@ const FOOT := Vector2(0, 35)
 # Review scenes retain their legacy origin; main-board actors opt into a foot origin.
 var foot_anchor := FOOT
 const Motion = preload("res://scripts/presentation/motion.gd")
+const SampleTrack = preload("res://scripts/presentation/motion_sample_track.gd")
+var sample_track: RefCounted
+var sample_body: Texture2D
+var motion_sample_enabled := false
+var sample_walk_time := 0.0 # Continuous across free-space half-second walk segments.
 var motion: Dictionary
 static var texture_cache := {}
 
@@ -90,6 +95,20 @@ func set_pose(value: String) -> void:
 	events[value] += 1
 	update_frame()
 
+func set_motion_sample(enabled: bool) -> bool:
+	# Keep the current skin, clocks, serial and death state; no reset or gameplay write.
+	if role != "guard_monk": return false
+	if enabled:
+		if sample_track == null: sample_track = SampleTrack.new()
+		if not sample_track.compatible(role,impact_delay(),Motion.duration(motion)):
+			push_error("Monk sample does not match the production attack clock")
+			return false
+		if sample_body == null: sample_body = _texture(SampleTrack.BASE+sample_track.manifest.atlases.body)
+	motion_sample_enabled = enabled
+	update_frame()
+	queue_redraw()
+	return true
+
 func play_attack() -> void:
 	attack_serial += 1
 	set_pose("basic_attack")
@@ -113,6 +132,7 @@ func reset_visual() -> void:
 	hit_pulse = 0.0
 	hit_cooldown = 0.0
 	visual_alpha = 1.0
+	sample_walk_time = 0.0
 	position = Vector2.ZERO
 	set_pose("idle")
 
@@ -131,6 +151,8 @@ func impact_delay() -> float:
 	return Motion.release(motion)
 
 func emission_position() -> Vector2:
+	if motion_sample_enabled:
+		return position+visual_transform()*sample_track.contact_offset()
 	if manifest.has("emission_socket"):
 		var socket := Vector2(manifest.emission_socket[0],manifest.emission_socket[1])
 		return position + foot_anchor + Vector2(socket.x*facing,socket.y)
@@ -156,6 +178,7 @@ func tick(delta: float) -> void:
 		impact_stop -= frozen
 		delta -= frozen
 	animation_clock += delta
+	if pose == "move": sample_walk_time += delta
 	landing = maxf(0, landing - delta)
 	pose_time += delta
 	if move_left > 0:
@@ -169,6 +192,20 @@ func tick(delta: float) -> void:
 
 func update_frame() -> void:
 	motion_frame = -1
+	if motion_sample_enabled:
+		frame_index = sample_track.frame_at(pose,pose_time,sample_walk_time)
+		visual_alpha = 1.0
+		# Same lifecycle/attack duration as the legacy player. The track has no events.
+		if pose == "basic_attack" and pose_time >= Motion.duration(motion):
+			set_pose("move" if move_left > 0 else "idle")
+		elif pose == "hit" and pose_time >= float(manifest.actions.hit.hold_seconds):
+			set_pose("move" if move_left > 0 else "idle")
+		elif pose == "move" and move_left <= 0:
+			set_pose("idle")
+		elif pose == "retreat":
+			var retreat: Dictionary = sample_track.manifest.actions.retreat
+			visual_alpha = clampf(1-(pose_time-float(retreat.hold_seconds))/float(retreat.fade_seconds),0,1)
+		return
 	var action: Dictionary = manifest.actions[pose]
 	frame_index = int(action.body_frames[0])
 	visual_alpha = 1.0
@@ -213,6 +250,10 @@ func update_frame() -> void:
 		visual_alpha = clampf(1 - (pose_time - float(action.hold_seconds)) / float(action.fade_seconds), 0, 1)
 
 func visual_transform() -> Transform2D:
+	if motion_sample_enabled:
+		var source_sign := -1.0 if sample_track.manifest.source_facing == "left" else 1.0
+		# Drawn steps/weapon motion replace legacy reach/lean/bob, never add to them.
+		return Transform2D(0,Vector2(facing*source_sign,1),0,foot_anchor)
 	var offset := Vector2.ZERO
 	var stretch := Vector2.ONE
 	var angle := 0.0
@@ -276,6 +317,7 @@ func walk_feet() -> Array[Vector2]:
 	return points
 
 func ground_offset() -> Vector2:
+	if motion_sample_enabled: return Vector2.ZERO
 	# A melee step carries the contact shadow; hop height must not move the shadow.
 	if pose == "basic_attack":
 		return attack_direction * float(motion.reach) * Motion.attack_weight(pose_time, motion)
@@ -292,7 +334,9 @@ func _draw() -> void:
 	if show_shadow: draw_circle(Vector2.ZERO, 25, Color(0.07, 0.06, 0.04, visual_alpha * 0.2))
 	draw_set_transform_matrix(visual_transform())
 	var source := Rect2(frame_index * 256, 0, 256, 256)
-	if motion_frame >= 0:
+	if motion_sample_enabled:
+		draw_texture_rect_region(sample_body,Rect2(-128,-218,256,256),source,tint)
+	elif motion_frame >= 0:
 		draw_texture_rect_region(motion_body, Rect2(-128, -218, 256, 256), Rect2(motion_frame * 256, 0, 256, 256), tint)
 	else:
 		draw_texture_rect_region(body, Rect2(-128, -218, 256, 256), source, tint)

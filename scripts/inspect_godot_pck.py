@@ -9,6 +9,11 @@ from pathlib import Path
 
 
 REQUIRED_RELEASE_FILES = (
+    "scenes/monk_animation_trial.tscn.remap",
+    "scripts/monk_animation_trial.gd.remap",
+    "scripts/presentation/motion_sample_track.gd.remap",
+    "art/reviews/animation-samples-20261004/guard_monk/manifest.json",
+    "art/reviews/animation-samples-20261004/guard_monk/body-atlas.png.import",
     "scripts/data/run_casualties.gd.remap",
     "scripts/presentation/roster_style.gd.remap",
     "scripts/presentation/roster_hud.gd.remap",

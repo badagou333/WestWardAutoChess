@@ -12,6 +12,31 @@ godot --path godot-demo
 
 启动器需要本机安装引擎。旧 `scenes/main.tscn` 固定棋盘保留作对照；经营规则与角色素材共用新版，不再保留旧免费券/五候选玩法。
 
+## 棍僧动画样板试接（2026-10-04，待05/07审核）
+
+Mac双击`launch-monk-trial.command`，或在仓库根目录运行：
+
+```sh
+godot --path godot-demo res://scenes/monk_animation_trial.tscn
+```
+
+这是独立的无格子战场入口，初始3金币与原四段流程不变；只给护寺棍僧启用归档13帧候选。左侧“棍僧样板 · 切换旧版”按钮随时对照当前production/nine_sols_v1旧动画，不重新开局，不改变位置、指令、攻击序号/时钟、血量、人口、金币或阵亡。切回旧版不是旧造型motion包。新购买/合成保留者及拿起预览遵循当前选择，重开创建新局但保留本入口的表现选项；切到格子模式仍按原约定重新开局，返回普通无格子入口不默认启用样板。原入口与原资源不替换，山狼仍用现行版。
+
+`presentation/motion_sample_track.gd`明确适配motion-sample-v1：待机0/1/0按各帧时长，移动2/3/4/5每拍0.125秒，相位不随寻路小步重置；攻击6/7/8/9/0共0.54秒，第8帧对齐既有0.235秒命中时钟，轨道不另发伤害；受击10/0，死亡11/12后淡出，不循环。启用样板关闭旧整图前冲/摇摆/弹跳，根节点仍由既有寻路驱动；只做镜像和原有命中闪色/短顿帧，不重构其他角色。正式伤害、攻速、射程、永久阵亡、营地经营不变。
+
+候选有衣纹、脸型、握点/棍长透视差异，脚步承重与滑步质量待05真实游戏尺寸动态评审；程序时序通过不等于动画已验收。截图为正常逐帧720p窗口中的明确夹具，位于`tests/free-escort-runtime/monk-trial-20261004-{walk-left,contact-new,contact-old,death}.png`；接触新旧图在同一暂停时刻切换，不是拼接示意图。高HP被动敌人、1HP伤员及加速营地为测试边界，不是自然试玩战果。普通入口仍是本README以下的双模式试验。
+
+动态证据：`tests/free-escort-runtime/monk-trial-20261004-runtime.webp`与同名JSON。1280×720原视口、180张真实引擎帧、12.067秒、名义15fps；步行中第73→74张间隔133毫秒，其余约67毫秒，按实测模拟时钟播放，未补帧。实际采样耗时50.889秒，**不是实时/OS录像**：使用[Godot固定帧率输出](https://docs.godotengine.org/en/stable/tutorials/animation/creating_movies.html)，原生产`_process`驱动寻路与战斗，每张强制实际视口绘制；不是离线摆姿势循环。只购一名棍僧，延迟无关波次、隐藏敌人、14HP靶和1HP伤员；非致命攻击源仅从英雄AI目标列表隔离，保留原敌人表现时钟/攻击事件，避免攻击优先规则遮住受击10帧。原攻速、伤害、射程、角色比例与根导航不改。覆盖左右至少两走路循环、停步/转向、6—9攻击、10受击、11/12退场；接触有原命中数字但没有怪物/队友挡住握点和脚。05此前四张静态图仅限定预检，无新明确必修；此短片仍待动态视觉复核，07仍须新提交独立运行验收。
+
+重采样需独占测试鼠标，在仓库根目录先创建新的`/tmp/monk-runtime-review.*`目录，再运行：
+
+```sh
+godot --path godot-demo --write-movie /tmp/monk-runtime-review.NEW/engine.avi --fixed-fps 15 --script res://tests/monk_animation_trial_capture_test.gd -- --capture-dir=/tmp/monk-runtime-review.NEW
+python3 scripts/assemble_monk_trial_capture.py /tmp/monk-runtime-review.NEW /tmp/monk-review.webp
+```
+
+第二条需要Pillow；审阅使用原视口PNG合成的WebP，临时AVI的窗口尺寸/帧数不作为证据。JSON保留逐帧位置、方向、姿势、HP、攻击序号和模拟/真实时钟。原PNG/失败试采样不入发布包。
+
 ## 无格子驻守试验（2026-10-03）
 
 Mac双击`launch-free.command`，或执行：
@@ -89,6 +114,8 @@ godot --path godot-demo res://scenes/free_escort.tscn
 ```sh
 godot --headless --path godot-demo --script res://tests/free_escort_test.gd
 godot --headless --path godot-demo --script res://tests/free_guard_test.gd
+godot --headless --path godot-demo --script res://tests/monk_animation_trial_test.gd
+godot --path godot-demo --script res://tests/monk_animation_trial_input_test.gd
 godot --headless --path godot-demo --script res://tests/run_casualties_test.gd
 godot --path godot-demo --script res://tests/run_casualties_input_test.gd
 godot --headless --path godot-demo --script res://tests/operation_roster_test.gd
