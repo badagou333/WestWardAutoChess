@@ -29,6 +29,8 @@ D-20261004-005：狐火小妖独立小样。读取AGENTS、PROJECT_STATE、DECIS
 
 ## 待总控同步
 
+总控同步标记（2026-10-04 D-005部分交付）：e4e0d6d/7ac1af1外部拆层与三动作输入、自检及原生阻塞已汇总PROJECT_STATE/D-005；05在6cf1edf限定复核关闭贴耳，其他步态/过渡限制未关闭。下文等待05为专项交付时状态，不把外部输入称原生工程或任务全部完成。
+
 - 2026-10-04本次修稿：仅定向修正普攻蓄力贴耳，外部179项及同帧间隙/连续性检查通过，证据`godot-demo/art/reviews/foxfire-spine-trial-v1/qa-charge-fix/before-after-028-030.png`与同目录clearance.json；等待05复核。步态/切换与原生GUI阻塞保持，不宣称正式动画通过。下方177项为初批历史。
 
 - 2026-10-04：狐火拆层与三动作**外部输入候选**已完成，入口`godot-demo/art/reviews/foxfire-spine-trial-v1/review.html`，合法待导入数据为同目录`foxfire-external-4.3.json`。原生GUI阻塞未解除，不能记为实际Spine绑定/播放完成。11部件/13骨骼/12槽、177项外部检查通过；比例/衣纹漂移、刚性腿袖及动作切换待05复核。无新设计确认，未改变现有Demo。
