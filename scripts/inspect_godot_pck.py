@@ -9,6 +9,10 @@ from pathlib import Path
 
 
 REQUIRED_RELEASE_FILES = (
+    "art/boards/formation_trial_v1/board-courtyard.png.import",
+    "scripts/presentation/board_trial_style.gd.remap",
+    "scripts/presentation/board_trial_hero.gd.remap",
+    "scripts/presentation/board_trial_enemy.gd.remap",
     "scenes/board_trial.tscn.remap",
     "scripts/board_trial.gd.remap",
     "scripts/board_trial_core.gd.remap",
@@ -55,6 +59,7 @@ REQUIRED_RELEASE_FILES = (
 )
 
 FORBIDDEN_RELEASE_PREFIXES = (
+    "art/boards/formation_trial_v1/review/",
     "art/reviews/foxfire-spine-trial-",
     "art/reviews/wolf-gait-d004-",
     "tests/",

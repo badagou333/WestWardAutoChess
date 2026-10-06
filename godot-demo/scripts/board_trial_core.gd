@@ -48,7 +48,4 @@ func heal(amount: float) -> void:
 	if not dead: health = minf(max_health,health+amount)
 
 func _draw() -> void:
-	if dead: return
-	draw_rect(Rect2(-28,-113,56,7),Color("40262b"))
-	draw_rect(Rect2(-26,-111,52*health/max_health,3),Color("66dc75"))
-	draw_string(ThemeDB.fallback_font,Vector2(-12,25),"唐",HORIZONTAL_ALIGNMENT_LEFT,-1,18,Color("fff0aa"))
+	pass # Trial-only HUD is a separate top layer; body and foot anchor are unchanged.

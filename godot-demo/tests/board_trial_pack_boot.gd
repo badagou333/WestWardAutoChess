@@ -13,6 +13,8 @@ func run() -> void:
 		game.set_process(false)
 		game.audio_feedback.enabled = false
 		if name=="board_trial":
+			check(game.BACKGROUND.get_size()==Vector2(1672,941),"pack contains full courtyard background")
+			check(game.BOARD_RECT==Rect2(220,190,1320,714),"pack keeps exact logical board geometry")
 			check(game.Config.COLS==12 and game.Config.ROWS==7 and game.actors.size()==12,"pack includes independent grid/config/fixed actors")
 			check(game._record("tangseng").node.presentation.body!=null,"pack contains production core texture")
 			game.start_battle()

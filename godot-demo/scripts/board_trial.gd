@@ -2,12 +2,15 @@ extends Node2D
 ## Standalone fixed-roster trial. No inherited shop, wave, escort or run ledger.
 const Config = preload("res://scripts/data/board_trial_config.gd")
 const Space = preload("res://scripts/combat/board_trial_space.gd")
-const Hero = preload("res://scripts/unit.gd")
-const Enemy = preload("res://scripts/enemy.gd")
+const Hero = preload("res://scripts/presentation/board_trial_hero.gd")
+const Enemy = preload("res://scripts/presentation/board_trial_enemy.gd")
 const Core = preload("res://scripts/board_trial_core.gd")
 const Events = preload("res://scripts/combat/attack_events.gd")
 const Audio = preload("res://scripts/presentation/audio_feedback.gd")
-const Style = preload("res://scripts/presentation/roster_style.gd")
+const Style = preload("res://scripts/presentation/board_trial_style.gd")
+const BACKGROUND = preload("res://art/boards/formation_trial_v1/board-courtyard.png")
+const CANVAS := Rect2(0,0,1920,1080)
+const BOARD_RECT := Rect2(Config.ORIGIN,Vector2(Config.COLS,Config.ROWS)*Config.CELL)
 enum Phase { DEPLOY, BATTLE, RESULT }
 var phase := Phase.DEPLOY
 var actors: Array[Dictionary] = [] # Fixed IDs and update order; no freed-node ledger.
@@ -36,6 +39,7 @@ var speed_button: Button
 var withdraw_button: Button
 var roster_buttons: Array[Button] = []
 var formation_buttons: Array[Button] = []
+var board_overlay: Node2D
 var message := "战前仅左6列部署 · 点击名单选人，再点格子；占格交换，拖动调整，右键取消"
 
 func _ready() -> void:
@@ -104,6 +108,12 @@ func _register(id: String, key: String, node, friendly: bool, cell: Vector2i) ->
 	node.visible = Config.valid(cell)
 	node.position = Config.center(cell) if Config.valid(cell) else Vector2.ZERO
 	node.z_index = int(node.position.y)
+	var hud := Style.new()
+	hud.friendly = friendly
+	hud.caption = ("唐" if key=="tangseng" else "★") if friendly else id
+	hud.z_as_relative = false
+	hud.z_index = 2000
+	node.add_child(hud)
 	if friendly and key!="tangseng":
 		node.board_row = cell.y
 		node.board_col = cell.x
@@ -319,6 +329,7 @@ func _process(delta: float) -> void:
 			if is_instance_valid(actor.node): actor.node.tick_visual(delta)
 	_update_ui()
 	queue_redraw()
+	board_overlay.queue_redraw()
 
 func step(delta: float) -> void:
 	if phase!=Phase.BATTLE or paused: return
@@ -471,6 +482,15 @@ func _unhandled_input(event: InputEvent) -> void:
 		if pointer_drag and event.position.distance_to(pointer_origin)>8: place(selected,cell)
 		pointer_drag = false
 
+func _panel(rect: Rect2) -> void:
+	var panel := Panel.new()
+	panel.position = rect.position
+	panel.size = rect.size
+	panel.add_theme_stylebox_override("panel",Style.box())
+	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	panel.z_index = 2000
+	add_child(panel)
+
 func _label(at: Vector2, size: Vector2, font := 20) -> Label:
 	var label := Label.new()
 	label.position = at
@@ -498,12 +518,21 @@ func _button(at: Vector2, size: Vector2, caption: String, action: Callable) -> B
 	return button
 
 func _create_ui() -> void:
+	board_overlay = Node2D.new()
+	board_overlay.z_index = 1998
+	board_overlay.draw.connect(_draw_overlay)
+	add_child(board_overlay)
+	_panel(Rect2(14,6,1150,54))
+	_panel(Rect2(214,77,1326,64))
+	_panel(Rect2(12,244,198,666))
+	_panel(Rect2(1557,176,354,734))
+	_panel(Rect2(1557,1011,348,52))
 	title_label = _label(Vector2(22,12),Vector2(1150,38),26)
-	status_label = _label(Vector2(220,73),Vector2(1330,76),19)
+	status_label = _label(Vector2(226,81),Vector2(1308,56),20)
 	status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	info_label = _label(Vector2(18,250),Vector2(186,654),19)
+	info_label = _label(Vector2(18,250),Vector2(186,654),20)
 	info_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	enemies_label = _label(Vector2(1563,182),Vector2(342,714),19)
+	enemies_label = _label(Vector2(1563,182),Vector2(342,714),20)
 	enemies_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	start_button = _button(Vector2(1545,22),Vector2(150,52),"开始战斗",start_battle)
 	retry_button = _button(Vector2(1705,22),Vector2(195,52),"重试布阵",retry)
@@ -516,7 +545,7 @@ func _create_ui() -> void:
 		var key: String = Config.FRIENDS[index]
 		roster_buttons.append(_button(Vector2(220+index*220,960),Vector2(212,93),"",func(): select(key)))
 	withdraw_button = _button(Vector2(1563,960),Vector2(335,45),"撤下选中 [R]",withdraw)
-	_label(Vector2(1563,1015),Vector2(335,42),19).text = "本原型无技能 / 商店 / 营地"
+	_label(Vector2(1563,1015),Vector2(335,42),20).text = "本原型无技能 / 商店 / 营地"
 
 func _update_ui() -> void:
 	if not is_instance_valid(status_label) or actors.is_empty(): return
@@ -550,23 +579,53 @@ func _update_ui() -> void:
 		lines += "%s %s · (%d,%d)\nHP %d/%d · 攻%.0f · 距%d\n%.2fs · %s\n" % [enemy.id,enemy.name,enemy.anchor.x+1,enemy.anchor.y+1,int(_hp(enemy)),int(enemy.hp_max),enemy.damage,enemy.reach,enemy.interval,enemy.mode]
 	enemies_label.text = lines
 
-func _draw() -> void:
-	draw_rect(Rect2(Vector2.ZERO,Vector2(1920,1080)),Color("181d19"))
+func range_cells() -> Array[Vector2i]:
+	var result: Array[Vector2i] = []
+	var actor := _record(selected)
+	if actor.is_empty() or not _active(actor): return result
 	for row in range(Config.ROWS):
 		for col in range(Config.COLS):
 			var cell := Vector2i(col,row)
-			var rect := Rect2(Config.ORIGIN+Vector2(cell)*Config.CELL,Config.CELL)
-			draw_rect(rect,Color("303d32") if col<6 else Color("3f3330"))
-			draw_rect(rect,Style.EDGE,false,1)
-			draw_string(ThemeDB.fallback_font,rect.position+Vector2(6,20),"%d,%d" % [col+1,row+1],HORIZONTAL_ALIGNMENT_LEFT,-1,16,Style.MUTED)
-	draw_line(Config.ORIGIN+Vector2(Config.DEPLOY_COLS*Config.CELL.x,0),Config.ORIGIN+Vector2(Config.DEPLOY_COLS*Config.CELL.x,Config.ROWS*Config.CELL.y),Style.GOLD,3)
+			if Config.distance(actor.cell,cell)<=actor.reach: result.append(cell)
+	return result
+
+func hover_cell() -> Vector2i:
+	return Config.cell_at(get_global_mouse_position())
+
+func _draw() -> void:
+	draw_texture_rect(BACKGROUND,CANVAS,false)
+	if phase==Phase.DEPLOY:
+		draw_rect(Rect2(Config.ORIGIN,Vector2(Config.DEPLOY_COLS*Config.CELL.x,BOARD_RECT.size.y)),Color(0.267,0.451,0.420,0.047))
+		draw_rect(Rect2(Config.ORIGIN+Vector2(Config.DEPLOY_COLS*Config.CELL.x,0),Vector2((Config.COLS-Config.DEPLOY_COLS)*Config.CELL.x,BOARD_RECT.size.y)),Color(0.537,0.282,0.216,0.035))
+	for cell in range_cells():
+		draw_rect(Rect2(Config.ORIGIN+Vector2(cell)*Config.CELL,Config.CELL),Color(0.459,0.651,0.714,0.09))
+	var hovered := hover_cell()
+	if Config.valid(hovered):
+		draw_rect(Rect2(Config.ORIGIN+Vector2(hovered)*Config.CELL,Config.CELL),Color(0.925,0.882,0.725,0.10))
+	for col in range(Config.COLS+1):
+		var at := Config.ORIGIN+Vector2(col*Config.CELL.x,0)
+		draw_line(at,at+Vector2(0,BOARD_RECT.size.y),Color(0.212,0.220,0.184,0.40),1.5)
+	for row in range(Config.ROWS+1):
+		var at := Config.ORIGIN+Vector2(0,row*Config.CELL.y)
+		draw_line(at,at+Vector2(BOARD_RECT.size.x,0),Color(0.212,0.220,0.184,0.40),1.5)
+	draw_rect(BOARD_RECT,Color(0.690,0.592,0.369,0.95),false,3)
+	var mid := Config.ORIGIN+Vector2(Config.DEPLOY_COLS*Config.CELL.x,0)
+	draw_dashed_line(mid,mid+Vector2(0,BOARD_RECT.size.y),Color(0.855,0.722,0.408,0.75 if phase==Phase.DEPLOY else 0.18),3,9)
+	for entry in actors:
+		if entry.friendly and _active(entry) and entry.key=="guard_monk": draw_arc(Config.center(entry.anchor),20,0,TAU,32,Color(0.27,0.45,0.42,0.7),2)
+
+func _draw_overlay() -> void:
+	# Edge-only highlights above bodies, never an opaque fill over the art/actors.
+	for cell in range_cells():
+		board_overlay.draw_rect(Rect2(Config.ORIGIN+Vector2(cell)*Config.CELL+Vector2(2,2),Config.CELL-Vector2(4,4)),Color(0.459,0.651,0.714,0.6),false,1)
 	var actor := _record(selected)
 	if not actor.is_empty() and _active(actor):
-		for row in range(Config.ROWS):
-			for col in range(Config.COLS):
-				var cell := Vector2i(col,row)
-				if Config.distance(actor.cell,cell)<=actor.reach:
-					draw_rect(Rect2(Config.ORIGIN+Vector2(cell)*Config.CELL,Config.CELL),Color(0.8,0.75,0.4,0.12))
-		draw_arc(actor.node.position,34,0,TAU,40,Style.GOLD,3)
-	for entry in actors:
-		if entry.friendly and _active(entry) and entry.key=="guard_monk": draw_arc(Config.center(entry.anchor),20,0,TAU,32,Color("809379"),2)
+		board_overlay.draw_rect(Rect2(Config.ORIGIN+Vector2(actor.cell)*Config.CELL+Vector2(2,2),Config.CELL-Vector2(4,4)),Style.GOLD,false,3)
+	var hovered := hover_cell()
+	if Config.valid(hovered):
+		var rect := Rect2(Config.ORIGIN+Vector2(hovered)*Config.CELL+Vector2(3,3),Config.CELL-Vector2(6,6))
+		var invalid: bool = phase==Phase.DEPLOY and not actor.is_empty() and actor.friendly and hovered.x>=Config.DEPLOY_COLS
+		board_overlay.draw_rect(rect,Color("c96653") if invalid else Color("ece1b9"),false,2)
+		if invalid:
+			board_overlay.draw_line(rect.position+Vector2(8,8),rect.position+Vector2(22,22),Color("c96653"),2)
+			board_overlay.draw_line(rect.position+Vector2(22,8),rect.position+Vector2(8,22),Color("c96653"),2)

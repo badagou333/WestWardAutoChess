@@ -52,7 +52,7 @@ func shot(name: String) -> void:
 	game.queue_redraw()
 	await frames()
 	RenderingServer.force_draw(false)
-	check(root.get_texture().get_image().save_png("/tmp/board-trial-20261007-"+name+".png")==OK,"actual viewport capture "+name)
+	check(root.get_texture().get_image().save_png("/tmp/board-art-20261007-"+name+".png")==OK,"actual art viewport capture "+name)
 func await_result() -> void:
 	var began := Time.get_ticks_msec()
 	while game.phase==game.Phase.BATTLE and Time.get_ticks_msec()-began<25000: await process_frame
@@ -65,6 +65,38 @@ func run() -> void:
 	game.audio_feedback.enabled = false
 	await frames()
 	check(game.is_processing() and game.deployment.size()==6,"normal frames / no three-person limit")
+	check(game.BACKGROUND.get_size()==Vector2(1672,941) and game.BOARD_RECT==Rect2(220,190,1320,714),"full art texture and original exact geometry")
+	# Complete viewport gestures through every drawn cell; no image-derived hit grid.
+	for row in range(Config.ROWS):
+		for col in range(Config.COLS):
+			var cell := Vector2i(col,row)
+			game.select("tangseng")
+			var before: Dictionary = game.deployment.duplicate()
+			await click(Config.center(cell))
+			check(game.hover_cell()==cell,"hover/drawn grid and pointer agree at all 84 centers")
+			check(game.deployment.tangseng==cell if col<6 else game.deployment==before,"84-cell actual gesture accepts only left half")
+			if col==6: check("部署失败" in game.status_label.text,"invalid highlight has text reason, not color alone")
+		print("BOARD_ART_ROW ",row+1," passed gesture checks")
+	await click(game.formation_buttons[0].get_global_rect().get_center())
+	await click(Config.center(Vector2i(0,0)),MOUSE_BUTTON_RIGHT)
+	await shot("deploy")
+	# Resize native window without moving logical grid, foot points or hover/range.
+	for size in [Vector2i(960,540),Vector2i(1440,810)]:
+		root.size = size
+		await frames()
+		for cell in [Vector2i(0,0),Vector2i(11,0),Vector2i(0,6),Vector2i(11,6)]:
+			await settle(Config.center(cell))
+			check(game.hover_cell()==cell,"resized corner hover remains at logical cell")
+		game.select("tangseng")
+		await click(Config.center(Vector2i(5,6)))
+		check(game.deployment.tangseng==Vector2i(5,6),"resize sixth-column gesture accepted")
+		await click(Config.center(Vector2i(6,6)))
+		check(game.deployment.tangseng==Vector2i(5,6),"resize seventh-column gesture rejected")
+		await click(Config.ORIGIN-Vector2(1,1))
+		check(game.deployment.tangseng==Vector2i(5,6),"resize outside top-left leaves deployment intact")
+		await click(game.formation_buttons[0].get_global_rect().get_center())
+	root.size = Vector2i(1280,720)
+	await frames()
 	var initial: Dictionary = game.deployment.duplicate()
 	await click(game.roster_buttons[0].get_global_rect().get_center())
 	await click(Config.center(Vector2i(6,3)))
@@ -90,7 +122,9 @@ func run() -> void:
 	await click(game.formation_buttons[0].get_global_rect().get_center())
 	await click(game.roster_buttons[4].get_global_rect().get_center())
 	check("治疗" in game.info_label.text and "射程 3" in game.info_label.text,"selected healer reports real treatment/range")
-	await shot("deploy")
+	check(game.range_cells().all(func(cell): return Config.distance(game._record("herbal_spirit_child").cell,cell)<=3),"range highlight uses real Manhattan cells")
+	check(game.range_cells().size()==25,"interior radius-three diamond has exactly 25 cells")
+	await shot("selected")
 	# All important UI regions remain usable inside the 1920 logical / 720p view.
 	check(game.roster_buttons.back().get_global_rect().end.x<game.withdraw_button.position.x,"roster and action areas do not overlap")
 	check(game.info_label.position.y>game.formation_buttons.back().get_global_rect().end.y,"selection details do not overlap formation buttons")
@@ -112,6 +146,10 @@ func run() -> void:
 	check(game.speed==2 and game.paused,"speed toggle preserves pause")
 	await shot("paused")
 	await click(game.pause_button.get_global_rect().get_center())
+	var began := Time.get_ticks_msec()
+	while game.phase==game.Phase.BATTLE and game.elapsed<4.0 and Time.get_ticks_msec()-began<8000: await process_frame
+	check(game.phase==game.Phase.BATTLE and game.metrics.damage.size()>0,"capture actual mixed battle with resolved damage")
+	await shot("battle")
 	await await_result()
 	check(game.victory and game.result_count==1,"natural A normal-frame victory settled once")
 	await shot("victory")
