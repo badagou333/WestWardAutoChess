@@ -1,0 +1,133 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "check": "idle identical in QA input",
+      "passed": true
+    },
+    {
+      "check": "basic_attack identical in QA input",
+      "passed": true
+    },
+    {
+      "check": "move identical in QA input",
+      "passed": true
+    },
+    {
+      "check": "move_start identical in QA input",
+      "passed": true
+    },
+    {
+      "check": "move_stop identical in QA input",
+      "passed": true
+    },
+    {
+      "check": "move_start endpoint matches neutral",
+      "passed": true
+    },
+    {
+      "check": "move_stop endpoint matches neutral",
+      "passed": true
+    },
+    {
+      "check": "qa_switches endpoint matches neutral",
+      "passed": true
+    },
+    {
+      "check": "leg_back no foldover in twenty switches",
+      "passed": true
+    },
+    {
+      "check": "leg_back no discontinuity over 2 game pixels per 60Hz step",
+      "passed": true
+    },
+    {
+      "check": "leg_back sole stays planted",
+      "passed": true
+    },
+    {
+      "check": "leg_front no foldover in twenty switches",
+      "passed": true
+    },
+    {
+      "check": "leg_front no discontinuity over 2 game pixels per 60Hz step",
+      "passed": true
+    },
+    {
+      "check": "leg_front sole stays planted",
+      "passed": true
+    },
+    {
+      "check": "idle preview exact duration",
+      "passed": true
+    },
+    {
+      "check": "move preview exact duration",
+      "passed": true
+    },
+    {
+      "check": "basic_attack preview exact duration",
+      "passed": true
+    },
+    {
+      "check": "idle projectile explicitly hidden",
+      "passed": true
+    },
+    {
+      "check": "move projectile explicitly hidden",
+      "passed": true
+    },
+    {
+      "check": "attack unchanged torso",
+      "passed": true
+    },
+    {
+      "check": "attack unchanged head",
+      "passed": true
+    },
+    {
+      "check": "attack unchanged arm_cast",
+      "passed": true
+    },
+    {
+      "check": "attack unchanged hand_cast",
+      "passed": true
+    },
+    {
+      "check": "attack unchanged arm_rest",
+      "passed": true
+    },
+    {
+      "check": "attack unchanged tail",
+      "passed": true
+    },
+    {
+      "check": "attack unchanged scarf",
+      "passed": true
+    },
+    {
+      "check": "attack unchanged flame",
+      "passed": true
+    },
+    {
+      "check": "attack unchanged projectile",
+      "passed": true
+    },
+    {
+      "check": "attack slot alpha unchanged",
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "move_start_seam_error": 0.0,
+    "move_stop_seam_error": 0.0,
+    "qa_switches_seam_error": 3.543577508740714e-16,
+    "leg_back_transition_min_area_ratio": 0.23730293989485232,
+    "leg_back_transition_max_vertex_step_game_px": 0.9482770662634407,
+    "leg_back_sole_stance_drift_source_px": 0.004121368230421751,
+    "leg_front_transition_min_area_ratio": 0.3854113269204539,
+    "leg_front_transition_max_vertex_step_game_px": 0.9712881124051811,
+    "leg_front_sole_stance_drift_source_px": 0.004255727040501256
+  },
+  "input_sha256": "7d2703d9063b068eda205e240b9b770ff6258449c82863afae97a1f6fc776654"
+}

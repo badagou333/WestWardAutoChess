@@ -1,0 +1,150 @@
+{
+  "status": "passed",
+  "scope": "Independent geometry QA, not native capture or final visual acceptance",
+  "checks": [
+    {
+      "check": "head and upper body attachments unchanged",
+      "passed": true
+    },
+    {
+      "check": "attack event timing unchanged",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone root",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone torso",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone head",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone tail",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone scarf",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone arm_cast",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone hand_cast",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone arm_rest",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone hand_rest",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone leg_back",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone leg_front",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone flame",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone projectile",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone leg_back_calf",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone leg_back_foot",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone leg_front_calf",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone leg_front_foot",
+      "passed": true
+    },
+    {
+      "check": "idle exact loop/return pose",
+      "passed": true
+    },
+    {
+      "check": "move exact loop/return pose",
+      "passed": true
+    },
+    {
+      "check": "basic_attack exact loop/return pose",
+      "passed": true
+    },
+    {
+      "check": "idle/move boundary all bones match",
+      "passed": true
+    },
+    {
+      "check": "leg_back bind shape preserves original art",
+      "passed": true
+    },
+    {
+      "check": "leg_back planted foot drift below 0.1 source pixel",
+      "passed": true
+    },
+    {
+      "check": "leg_back articulated knee exceeds 15 degrees",
+      "passed": true
+    },
+    {
+      "check": "leg_back no mesh foldover through walk",
+      "passed": true
+    },
+    {
+      "check": "leg_front bind shape preserves original art",
+      "passed": true
+    },
+    {
+      "check": "leg_front planted foot drift below 0.1 source pixel",
+      "passed": true
+    },
+    {
+      "check": "leg_front articulated knee exceeds 15 degrees",
+      "passed": true
+    },
+    {
+      "check": "leg_front no mesh foldover through walk",
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "idle_seam_matrix_error": 0.0,
+    "move_seam_matrix_error": 0.0,
+    "basic_attack_seam_matrix_error": 0.0,
+    "idle_move_start_error": 0.0,
+    "leg_back_bind_error": 5.812432846141746e-08,
+    "leg_back_stance_spread_source_px": [
+      0.0022854351078933632,
+      0.004120840514289625
+    ],
+    "leg_back_knee_range_deg": 32.3068915,
+    "leg_back_min_triangle_area_ratio": 0.23730291914604343,
+    "leg_front_bind_error": 1.2451999964468996e-07,
+    "leg_front_stance_spread_source_px": [
+      0.0020573661083176376,
+      0.004255252198504422
+    ],
+    "leg_front_knee_range_deg": 36.015097000000004,
+    "leg_front_min_triangle_area_ratio": 0.3854113247292596
+  }
+}

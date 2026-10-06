@@ -1,0 +1,376 @@
+{
+  "duration": 24.999999999999993,
+  "mix_seconds": 0.2,
+  "switches": 20,
+  "scope": "Baked local-transform mixer exercise; actual runtime mixer must be checked on integration",
+  "segments": [
+    {
+      "at": 0,
+      "animation": "idle",
+      "start": 0,
+      "duration": 0.4,
+      "mix_from": null
+    },
+    {
+      "at": 0.4,
+      "animation": "move",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "idle",
+        0.4
+      ]
+    },
+    {
+      "at": 0.6,
+      "animation": "idle",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "move",
+        0.2
+      ]
+    },
+    {
+      "at": 0.8,
+      "animation": "idle",
+      "start": 0.2,
+      "duration": 0.4,
+      "mix_from": null
+    },
+    {
+      "at": 1.2,
+      "animation": "basic_attack",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "idle",
+        0.6
+      ]
+    },
+    {
+      "at": 1.4,
+      "animation": "basic_attack",
+      "start": 0.2,
+      "duration": 1.2,
+      "mix_from": null
+    },
+    {
+      "at": 2.6,
+      "animation": "idle",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "basic_attack",
+        1.4
+      ]
+    },
+    {
+      "at": 2.8,
+      "animation": "idle",
+      "start": 0.2,
+      "duration": 1.8,
+      "mix_from": null
+    },
+    {
+      "at": 4.6,
+      "animation": "idle",
+      "start": 0,
+      "duration": 0.4,
+      "mix_from": null
+    },
+    {
+      "at": 5.0,
+      "animation": "move",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "idle",
+        0.4
+      ]
+    },
+    {
+      "at": 5.2,
+      "animation": "move",
+      "start": 0.2,
+      "duration": 0.2,
+      "mix_from": null
+    },
+    {
+      "at": 5.4,
+      "animation": "idle",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "move",
+        0.4
+      ]
+    },
+    {
+      "at": 5.6,
+      "animation": "idle",
+      "start": 0.2,
+      "duration": 0.4,
+      "mix_from": null
+    },
+    {
+      "at": 6.0,
+      "animation": "basic_attack",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "idle",
+        0.6
+      ]
+    },
+    {
+      "at": 6.2,
+      "animation": "basic_attack",
+      "start": 0.2,
+      "duration": 1.2,
+      "mix_from": null
+    },
+    {
+      "at": 7.4,
+      "animation": "idle",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "basic_attack",
+        1.4
+      ]
+    },
+    {
+      "at": 7.6,
+      "animation": "idle",
+      "start": 0.2,
+      "duration": 1.8,
+      "mix_from": null
+    },
+    {
+      "at": 9.4,
+      "animation": "idle",
+      "start": 0,
+      "duration": 0.4,
+      "mix_from": null
+    },
+    {
+      "at": 9.8,
+      "animation": "move",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "idle",
+        0.4
+      ]
+    },
+    {
+      "at": 10.0,
+      "animation": "move",
+      "start": 0.2,
+      "duration": 0.39999999999999997,
+      "mix_from": null
+    },
+    {
+      "at": 10.4,
+      "animation": "idle",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "move",
+        0.6
+      ]
+    },
+    {
+      "at": 10.6,
+      "animation": "idle",
+      "start": 0.2,
+      "duration": 0.4,
+      "mix_from": null
+    },
+    {
+      "at": 11.0,
+      "animation": "basic_attack",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "idle",
+        0.6
+      ]
+    },
+    {
+      "at": 11.2,
+      "animation": "basic_attack",
+      "start": 0.2,
+      "duration": 1.2,
+      "mix_from": null
+    },
+    {
+      "at": 12.4,
+      "animation": "idle",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "basic_attack",
+        1.4
+      ]
+    },
+    {
+      "at": 12.6,
+      "animation": "idle",
+      "start": 0.2,
+      "duration": 1.8,
+      "mix_from": null
+    },
+    {
+      "at": 14.4,
+      "animation": "idle",
+      "start": 0,
+      "duration": 0.4,
+      "mix_from": null
+    },
+    {
+      "at": 14.8,
+      "animation": "move",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "idle",
+        0.4
+      ]
+    },
+    {
+      "at": 15.0,
+      "animation": "move",
+      "start": 0.2,
+      "duration": 0.6000000000000001,
+      "mix_from": null
+    },
+    {
+      "at": 15.6,
+      "animation": "idle",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "move",
+        0.8
+      ]
+    },
+    {
+      "at": 15.8,
+      "animation": "idle",
+      "start": 0.2,
+      "duration": 0.4,
+      "mix_from": null
+    },
+    {
+      "at": 16.2,
+      "animation": "basic_attack",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "idle",
+        0.6
+      ]
+    },
+    {
+      "at": 16.4,
+      "animation": "basic_attack",
+      "start": 0.2,
+      "duration": 1.2,
+      "mix_from": null
+    },
+    {
+      "at": 17.6,
+      "animation": "idle",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "basic_attack",
+        1.4
+      ]
+    },
+    {
+      "at": 17.8,
+      "animation": "idle",
+      "start": 0.2,
+      "duration": 1.8,
+      "mix_from": null
+    },
+    {
+      "at": 19.6,
+      "animation": "idle",
+      "start": 0,
+      "duration": 0.4,
+      "mix_from": null
+    },
+    {
+      "at": 20.0,
+      "animation": "move",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "idle",
+        0.4
+      ]
+    },
+    {
+      "at": 20.2,
+      "animation": "move",
+      "start": 0.2,
+      "duration": 0.8,
+      "mix_from": null
+    },
+    {
+      "at": 21.0,
+      "animation": "idle",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "move",
+        1
+      ]
+    },
+    {
+      "at": 21.2,
+      "animation": "idle",
+      "start": 0.2,
+      "duration": 0.4,
+      "mix_from": null
+    },
+    {
+      "at": 21.6,
+      "animation": "basic_attack",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "idle",
+        0.6
+      ]
+    },
+    {
+      "at": 21.8,
+      "animation": "basic_attack",
+      "start": 0.2,
+      "duration": 1.2,
+      "mix_from": null
+    },
+    {
+      "at": 23.0,
+      "animation": "idle",
+      "start": 0,
+      "duration": 0.2,
+      "mix_from": [
+        "basic_attack",
+        1.4
+      ]
+    },
+    {
+      "at": 23.2,
+      "animation": "idle",
+      "start": 0.2,
+      "duration": 1.8,
+      "mix_from": null
+    }
+  ]
+}
