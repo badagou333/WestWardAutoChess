@@ -1,8 +1,7 @@
 {
   "status": "passed",
   "scope": "External input structural/geometric QA only. NOT native Spine or visual acceptance.",
-  "native_spine_import_verified": false,
-  "native_spine_playback_verified": false,
+  "native_verification_record": "NATIVE_ALIGNMENT_20261007.md",
   "checks": [
     {
       "check": "source unchanged and identical to approved runtime input",
@@ -217,6 +216,14 @@
       "passed": true
     },
     {
+      "check": "editor image dimensions match PNG tail",
+      "passed": true
+    },
+    {
+      "check": "explicit scale produces intended size tail",
+      "passed": true
+    },
+    {
       "check": "skin slot exists scarf",
       "passed": true
     },
@@ -226,6 +233,14 @@
     },
     {
       "check": "positive attachment dimensions scarf",
+      "passed": true
+    },
+    {
+      "check": "editor image dimensions match PNG scarf",
+      "passed": true
+    },
+    {
+      "check": "explicit scale produces intended size scarf",
       "passed": true
     },
     {
@@ -241,6 +256,14 @@
       "passed": true
     },
     {
+      "check": "editor image dimensions match PNG leg_back",
+      "passed": true
+    },
+    {
+      "check": "explicit scale produces intended size leg_back",
+      "passed": true
+    },
+    {
       "check": "skin slot exists leg_front",
       "passed": true
     },
@@ -250,6 +273,14 @@
     },
     {
       "check": "positive attachment dimensions leg_front",
+      "passed": true
+    },
+    {
+      "check": "editor image dimensions match PNG leg_front",
+      "passed": true
+    },
+    {
+      "check": "explicit scale produces intended size leg_front",
       "passed": true
     },
     {
@@ -265,6 +296,14 @@
       "passed": true
     },
     {
+      "check": "editor image dimensions match PNG arm_cast",
+      "passed": true
+    },
+    {
+      "check": "explicit scale produces intended size arm_cast",
+      "passed": true
+    },
+    {
       "check": "skin slot exists hand_cast",
       "passed": true
     },
@@ -274,6 +313,14 @@
     },
     {
       "check": "positive attachment dimensions hand_cast",
+      "passed": true
+    },
+    {
+      "check": "editor image dimensions match PNG hand_cast",
+      "passed": true
+    },
+    {
+      "check": "explicit scale produces intended size hand_cast",
       "passed": true
     },
     {
@@ -289,6 +336,14 @@
       "passed": true
     },
     {
+      "check": "editor image dimensions match PNG torso",
+      "passed": true
+    },
+    {
+      "check": "explicit scale produces intended size torso",
+      "passed": true
+    },
+    {
       "check": "skin slot exists arm_rest",
       "passed": true
     },
@@ -298,6 +353,14 @@
     },
     {
       "check": "positive attachment dimensions arm_rest",
+      "passed": true
+    },
+    {
+      "check": "editor image dimensions match PNG arm_rest",
+      "passed": true
+    },
+    {
+      "check": "explicit scale produces intended size arm_rest",
       "passed": true
     },
     {
@@ -313,6 +376,14 @@
       "passed": true
     },
     {
+      "check": "editor image dimensions match PNG hand_rest",
+      "passed": true
+    },
+    {
+      "check": "explicit scale produces intended size hand_rest",
+      "passed": true
+    },
+    {
       "check": "skin slot exists head",
       "passed": true
     },
@@ -322,6 +393,14 @@
     },
     {
       "check": "positive attachment dimensions head",
+      "passed": true
+    },
+    {
+      "check": "editor image dimensions match PNG head",
+      "passed": true
+    },
+    {
+      "check": "explicit scale produces intended size head",
       "passed": true
     },
     {
@@ -337,6 +416,14 @@
       "passed": true
     },
     {
+      "check": "editor image dimensions match PNG flame",
+      "passed": true
+    },
+    {
+      "check": "explicit scale produces intended size flame",
+      "passed": true
+    },
+    {
       "check": "skin slot exists projectile",
       "passed": true
     },
@@ -346,6 +433,22 @@
     },
     {
       "check": "positive attachment dimensions projectile",
+      "passed": true
+    },
+    {
+      "check": "editor image dimensions match PNG projectile",
+      "passed": true
+    },
+    {
+      "check": "explicit scale produces intended size projectile",
+      "passed": true
+    },
+    {
+      "check": "alignment fix preserves rig and all animation keys",
+      "passed": true
+    },
+    {
+      "check": "alignment fix preserves attachment offsets and effective sizes",
       "passed": true
     },
     {

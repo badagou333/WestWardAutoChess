@@ -2,6 +2,8 @@
 
 更新时间：2026-10-05。结论：已通过受支持的 Computer Use 入口实际操作 Spine 4.3.26 Trial，导入当前狐火 JSON，并播放 idle、basic_attack、move。桌面接入阻塞已解除；正式动画验收与游戏运行接入仍是后续工作。
 
+2026-10-07更正：本记录证明接入和播放可用，但当时漏检贴图尺寸，不能视作头身对位通过。该问题已在[尺寸修正复验](NATIVE_ALIGNMENT_20261007.md)解决；当前素材状态以新记录为准。
+
 ## 本机固定入口
 
 - 应用：`/Users/leqiong/Applications/SpineTrial-Codex.app`

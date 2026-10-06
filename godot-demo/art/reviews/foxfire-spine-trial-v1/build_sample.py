@@ -93,10 +93,14 @@ def make_input(records):
     for name in ORDER+["projectile"]:
         part="flame" if name=="projectile" else name
         x,y,w,h=records[part]["target"];px,py=pivots[name]
+        iw,ih=records[part]["pixels"]
         slots.append({"name":name,"bone":name,"attachment":part,
                       "color":"ffffff00" if name=="projectile" else "ffffffff"})
         attachments[name]={part:{"type":"region","path":part,
-                                "x":x+w/2-px,"y":py-y-h/2,"width":w,"height":h}}
+                                "x":x+w/2-px,"y":py-y-h/2,
+                                # Editor uses the loaded PNG dimensions. Keep
+                                # those dimensions and express size via SRT.
+                                "width":iw,"height":ih,"scaleX":w/iw,"scaleY":h/ih}}
     idle={"bones":{
         "torso":bone_keys(trans=[(0,0,0),(.5,0,3),(1,0,0),(1.5,0,-2),(2,0,0)]),
         "head":bone_keys(rot=[(0,0),(.6,-1),(1.3,.6),(2,0)]),
@@ -164,7 +168,7 @@ def make_input(records):
     write("foxfire-external-4.3.json",data)
     write("animation-notes.json",{
         "origin":"External authored input, NOT saved/exported by Spine Trial",
-        "native_spine_import_verified":False,
+        "native_verification_record":"NATIVE_ALIGNMENT_20261007.md",
         "durations_seconds":DURATIONS,"loop":["idle","move"],"single_play":["basic_attack"],
         "release_time":.48,"root_motion":"in-place; engine displacement NOT in input",
         "move_reference_speed_source_px_per_second":220,
@@ -214,8 +218,9 @@ def render(data,anim,t,scale=.4,only_slots=None):
         opacity=sample(keys,t,"value",default)
         if opacity<=0:continue
         # Image pixel coordinates -> attachment space -> bone -> preview pixels.
-        local=[att["width"]/im.width,0,0,-att["height"]/im.height,
-               att["x"]-att["width"]/2,att["y"]+att["height"]/2]
+        w=att["width"]*att.get("scaleX",1);h=att["height"]*att.get("scaleY",1)
+        local=[w/im.width,0,0,-h/im.height,
+               att["x"]-w/2,att["y"]+h/2]
         m=multiply([scale,0,0,-scale,850*scale,1320*scale],multiply(mats[slot["bone"]],local))
         a,b,c,d,x,y=m;det=a*d-b*c
         inv=(d/det,-c/det,(c*y-d*x)/det,-b/det,a/det,(b*x-a*y)/det)
@@ -241,7 +246,7 @@ def make_previews(data):
             bg=Image.new("RGB",im.size,"#dfd8c8");bg.paste(im,(0,0),im)
             d=ImageDraw.Draw(bg)
             d.text((12,10),f"EXTERNAL INPUT PREVIEW / {anim}",fill="#332b23",font=font)
-            d.text((12,32),"Not captured in Spine. Native playback unverified.",fill="#332b23",font=font)
+            d.text((12,32),"Not captured in Spine. Native QA: see report.",fill="#332b23",font=font)
             frames.append(bg)
         # GIF inspection copy; originals retain alpha. No Trial export involved.
         frames[0].save(ROOT/f"external-{anim}.gif",save_all=True,append_images=frames[1:],

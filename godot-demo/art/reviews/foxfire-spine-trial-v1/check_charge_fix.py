@@ -9,6 +9,15 @@ before=json.loads((FOLDER/"before-input.json").read_text())
 after=json.loads((ROOT/"foxfire-external-4.3.json").read_text())
 comparison=copy.deepcopy(after)
 del comparison["animations"]["basic_attack"]["bones"]["flame"]["rotate"]
+# Normalize the editor-compatible size representation introduced on 2026-10-07.
+# Still reject any change to effective attachment size or other data.
+for sn,attachments in comparison["skins"][0]["attachments"].items():
+    for name,a in attachments.items():
+        old=before["skins"][0]["attachments"][sn][name]
+        for dimension,scale in [("width","scaleX"),("height","scaleY")]:
+            effective=a[dimension]*a.pop(scale,1)
+            assert math.isclose(effective,old[dimension],abs_tol=1e-9)
+            a[dimension]=old[dimension]
 assert comparison==before, "Scope expanded beyond the single flame rotation track"
 assert pose(before,"basic_attack",.48)==pose(after,"basic_attack",.48)
 assert pose(before,"basic_attack",0)==pose(after,"basic_attack",0)

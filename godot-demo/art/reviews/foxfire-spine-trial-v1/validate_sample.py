@@ -36,6 +36,22 @@ for skin in data["skins"]:
         for name,a in attachments.items():
             check("relative image resolves "+sn,not Path(a["path"]).is_absolute() and (ROOT/"images"/(a["path"]+".png")).exists())
             check("positive attachment dimensions "+sn,a["width"]>0 and a["height"]>0)
+            rec=layout[a["path"]]
+            check("editor image dimensions match PNG "+sn,[a["width"],a["height"]]==rec["pixels"])
+            check("explicit scale produces intended size "+sn,
+                  math.isclose(a["width"]*a.get("scaleX",1),rec["target"][2]) and
+                  math.isclose(a["height"]*a.get("scaleY",1),rec["target"][3]))
+# Imported dimensions must change without changing the authored rig or motion.
+baseline=json.loads((ROOT/"qa-alignment-fix/before-input.json").read_text())
+check("alignment fix preserves rig and all animation keys",
+      {k:v for k,v in data.items() if k!="skins"}==
+      {k:v for k,v in baseline.items() if k!="skins"})
+check("alignment fix preserves attachment offsets and effective sizes",all(
+    a["x"]==baseline["skins"][0]["attachments"][sn][name]["x"] and
+    a["y"]==baseline["skins"][0]["attachments"][sn][name]["y"] and
+    math.isclose(a["width"]*a["scaleX"],baseline["skins"][0]["attachments"][sn][name]["width"]) and
+    math.isclose(a["height"]*a["scaleY"],baseline["skins"][0]["attachments"][sn][name]["height"])
+    for sn,attachments in data["skins"][0]["attachments"].items() for name,a in attachments.items()))
 for anim,clip in data["animations"].items():
     for typ in ["bones","slots"]:
         for name,tracks in clip.get(typ,{}).items():
@@ -83,7 +99,7 @@ for name in ["idle","move","basic_attack"]:
     check("preview decodes and duration matches "+name,total==round(DURATIONS[name]*1000))
 report={"status":"passed" if all(c["passed"] for c in checks) else "failed",
         "scope":"External input structural/geometric QA only. NOT native Spine or visual acceptance.",
-        "native_spine_import_verified":False,"native_spine_playback_verified":False,
+        "native_verification_record":"NATIVE_ALIGNMENT_20261007.md",
         "checks":checks,"metrics":metrics}
 (ROOT/"validation.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n")
 print(report["status"],len(checks),"checks")
