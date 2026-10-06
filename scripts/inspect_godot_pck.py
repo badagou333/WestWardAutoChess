@@ -9,6 +9,11 @@ from pathlib import Path
 
 
 REQUIRED_RELEASE_FILES = (
+    "scenes/board_trial.tscn.remap",
+    "scripts/board_trial.gd.remap",
+    "scripts/board_trial_core.gd.remap",
+    "scripts/combat/board_trial_space.gd.remap",
+    "scripts/data/board_trial_config.gd.remap",
     "scenes/monk_animation_trial.tscn.remap",
     "scripts/monk_animation_trial.gd.remap",
     "scripts/presentation/motion_sample_track.gd.remap",
@@ -50,6 +55,8 @@ REQUIRED_RELEASE_FILES = (
 )
 
 FORBIDDEN_RELEASE_PREFIXES = (
+    "art/reviews/foxfire-spine-trial-",
+    "art/reviews/wolf-gait-d004-",
     "tests/",
     "art/concepts/",
     "art/reviews/six-role-battle/",
