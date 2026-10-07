@@ -45,14 +45,17 @@ godot --path godot-demo res://scenes/board_trial.tscn
 
 完整逐角色输出、攻击时刻及首次接敌/命中见`tests/board-trial-runtime/board-trial-comparisons.json`；例如A猎户0.758秒接E1、狐火0.758秒接E2；B唐僧0.758秒先接E1，敌狼1.583秒接唐僧；C猎户/山雀0.008秒分别接E1/E2。这只证明三份固定夹具有差异，不代替真人策略乐趣或随机平衡验收。
 
-验证入口（最后一条必须独占窗口/鼠标，保持正常生产逐帧，不是人工OS鼠标验收）：
+验证入口（后两条须串行独占窗口/鼠标，保持正常生产逐帧，不是人工OS鼠标验收）：
 
 ```sh
 godot --headless --path godot-demo --script res://tests/board_trial_test.gd
 godot --headless --path godot-demo --script res://tests/board_trial_ai_test.gd
 godot --headless --path godot-demo --script res://tests/board_trial_facing_test.gd
+godot --path godot-demo --script res://tests/board_trial_modal_input_test.gd
 godot --path godot-demo --script res://tests/board_trial_input_test.gd
 ```
+
+QA-20261007-UI2-01定向修复：07在`caefd76`发现帮助打开时全局右键仍先取消底层选择，旧作者输入专项没有覆盖这条路径，不能以当时零失败称全面隔离。现在帮助可见时先把鼠标交给帮助GUI，不执行全局取消，并在未处理输入入口补防漏；自己的关闭按钮/Esc可用，关闭后原右键取消、数字键/R与暂停锁阵保持。新增模态专项覆盖960×540/1280×720/1440×810各部署和暂停六组，内外左/右/中键/滚轮/侧键/完整拖动、遮住的卡片/按钮、快捷键、关闭和恢复；选择/详情/部署/提示/拖动/时钟/阶段/暂停/倍速有完整不变断言。修复作者自测与原07复现均通过，独立关闭仍交07，不代改其报告。新源码定向包为`/tmp/board-ui-v2-modal-fix-20261007.pck`，257项与包内五入口/A阵通过；本次不改布局、素材、朝向或战斗，不替换下述四图。
 
 基础四图`board-trial-20261007-*`与D-002三图`board-art-20261007-*`保留为历史，不能称新UI截图。最新实际1280×720四图：`tests/board-trial-runtime/board-ui-v2-20261007-{deploy,selected,battle,victory}.png`（媒体目录.gdignore，不入运行包），测试额外输出`/tmp/board-ui-v2-20261007-{paused,defeat}.png`。本轮六卡真实HP/头像及三类敌情/具体敌人、敌我R权限、帮助遮挡、实时目标编号/状态、结果六人统计/关闭重开、84格/左6列、960×540/1440×810四角和6/7列/框外对齐、点放交换拖放取消、暂停锁阵/自然A胜B败/重试均零失败。朝向专项检查最终绘图矩阵/source镜像、左右/竖向动作、左治疗/归位、空闲和重试恢复、真实缩放发射点及不动脚点；完整三阵JSON与dc56036沿用基础证据逐字一致。旧格子/自由核心定向回归通过。仍是程序Viewport注入，不是人工OS鼠标、Windows或任意DPI通过；05/07新一轮复核待执行。
 

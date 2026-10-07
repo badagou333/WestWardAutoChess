@@ -465,9 +465,12 @@ func toggle_pause() -> void:
 	audio_feedback.set_paused(paused)
 
 func _input(event: InputEvent) -> void:
-	if is_instance_valid(ui) and ui.help_layer.visible and event is InputEventKey:
-		if event.pressed and event.keycode==KEY_ESCAPE: ui.toggle_help()
-		get_viewport().set_input_as_handled()
+	if is_instance_valid(ui) and ui.help_layer.visible:
+		if event is InputEventKey:
+			if event.pressed and event.keycode==KEY_ESCAPE: ui.toggle_help()
+			get_viewport().set_input_as_handled()
+		# Let the modal GUI receive mouse gestures, including its close button.
+		# Never run global cancel/selection before the STOP-filtered help layer.
 		return
 	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_RIGHT and event.pressed:
 		selected = ""
@@ -476,6 +479,9 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 func _unhandled_input(event: InputEvent) -> void:
+	if is_instance_valid(ui) and ui.help_layer.visible:
+		get_viewport().set_input_as_handled()
+		return # Defensive fallback: no modal event may reach the board actions.
 	if event is InputEventKey and event.pressed and not event.echo:
 		var focus := get_viewport().gui_get_focus_owner()
 		if focus is LineEdit or focus is TextEdit: return
