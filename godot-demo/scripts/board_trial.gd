@@ -460,6 +460,13 @@ func select(id: String) -> void:
 	_update_ui()
 	queue_redraw()
 
+func _place_from_input(cell: Vector2i) -> void:
+	# Data-level place remains selection-neutral; only a successful user drop
+	# releases control. Clearing here also prevents release from committing twice.
+	if place(selected,cell):
+		pointer_origin = Vector2.ZERO
+		select("")
+
 func toggle_pause() -> void:
 	if phase!=Phase.BATTLE: return
 	paused = not paused
@@ -496,7 +503,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if not event is InputEventMouseButton or event.button_index!=MOUSE_BUTTON_LEFT: return
 	var cell := Config.cell_at(event.position)
-	if not Config.valid(cell): return
+	if not Config.valid(cell):
+		if not event.pressed: pointer_drag = false # Failed off-board drop ends gesture, not selection.
+		return
 	var occupant := _occupant(cell)
 	if phase!=Phase.DEPLOY:
 		if event.pressed:
@@ -509,10 +518,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		if not occupant.is_empty() and occupant.friendly and (selected.is_empty() or selected==occupant.id):
 			select(occupant.id)
 			pointer_drag = true
-		elif not selected.is_empty(): place(selected,cell)
+		elif not selected.is_empty(): _place_from_input(cell)
 		elif not occupant.is_empty(): select(occupant.id)
 	else:
-		if pointer_drag and event.position.distance_to(pointer_origin)>8: place(selected,cell)
+		if pointer_drag and event.position.distance_to(pointer_origin)>8: _place_from_input(cell)
 		pointer_drag = false
 
 func _create_ui() -> void:

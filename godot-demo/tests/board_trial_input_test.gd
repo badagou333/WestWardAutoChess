@@ -48,6 +48,7 @@ func press(code: Key) -> void:
 	root.push_input(event,true)
 	await frames()
 func shot(name: String) -> void:
+	if "--no-capture" in OS.get_cmdline_user_args(): return
 	game._update_ui()
 	game.queue_redraw()
 	await frames()
@@ -121,6 +122,8 @@ func run() -> void:
 		game.select("tangseng")
 		await click(Config.center(Vector2i(5,6)))
 		check(game.deployment.tangseng==Vector2i(5,6),"resize sixth-column gesture accepted")
+		check(game.selected.is_empty() and not game.pointer_drag and game.range_cells().is_empty(),"successful sixth-column input releases control/range")
+		await click(game.roster_buttons[0].get_global_rect().get_center())
 		await click(Config.center(Vector2i(6,6)))
 		check(game.deployment.tangseng==Vector2i(5,6),"resize seventh-column gesture rejected")
 		await click(Config.ORIGIN-Vector2(1,1))
@@ -140,6 +143,8 @@ func run() -> void:
 	await click(game.roster_buttons[0].get_global_rect().get_center())
 	await click(Config.center(initial.guard_monk))
 	check(game.deployment.tangseng==initial.guard_monk and game.deployment.guard_monk==Vector2i(5,6),"UI occupied cell atomically swaps both friends")
+	check(game.selected.is_empty() and not game.pointer_drag and game.range_cells().is_empty(),"successful swap clears control, never auto-selects other friend")
+	await click(game.roster_buttons[0].get_global_rect().get_center())
 	await press(KEY_R)
 	check(not game.deployment.has("tangseng"),"UI R withdraws Tang without deletion")
 	await click(game.start_button.get_global_rect().get_center())
