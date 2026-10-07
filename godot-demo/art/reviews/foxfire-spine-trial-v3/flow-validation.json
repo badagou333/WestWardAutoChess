@@ -1,0 +1,506 @@
+{
+  "status": "passed",
+  "scope": "Fixed, authored qa_flow only; not a general runtime mixer, arbitrary interruption test, native capture, or visual acceptance.",
+  "source_sha256": "695992bbdfeb09019fe1a33c112ff1f75be8d9b3f72bc91442670b0314d2767b",
+  "qa_sha256": "d8a911e98ed187aba68e4c1cf8133f64b890536c1eb4b7555d9dd6db2cc70607",
+  "duration": 12.6,
+  "state_changes": 12,
+  "checks": [
+    {
+      "check": "idle unmodified in QA input",
+      "passed": true
+    },
+    {
+      "check": "move unmodified in QA input",
+      "passed": true
+    },
+    {
+      "check": "basic_attack unmodified in QA input",
+      "passed": true
+    },
+    {
+      "check": "move_start unmodified in QA input",
+      "passed": true
+    },
+    {
+      "check": "move_stop unmodified in QA input",
+      "passed": true
+    },
+    {
+      "check": "same setup rig and attachments",
+      "passed": true
+    },
+    {
+      "check": "declared state-change count is accurate",
+      "passed": true,
+      "actual": 12
+    },
+    {
+      "check": "declared flow duration is accurate",
+      "passed": true
+    },
+    {
+      "check": "segment 0 idle preserves source poses",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 0 idle preserves flame visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 0 idle preserves projectile visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 1 move_start preserves source poses",
+      "passed": true,
+      "actual": 5.978225146918703e-06
+    },
+    {
+      "check": "segment 1 move_start preserves flame visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 1 move_start preserves projectile visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "boundary 1 idle to move_start has matching pose",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 2 move preserves source poses",
+      "passed": true,
+      "actual": 5.60278564876171e-07
+    },
+    {
+      "check": "segment 2 move preserves flame visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 2 move preserves projectile visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "boundary 2 move_start to move has matching pose",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 3 move preserves source poses",
+      "passed": true,
+      "actual": 5.602784938218974e-07
+    },
+    {
+      "check": "segment 3 move preserves flame visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 3 move preserves projectile visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "boundary 3 move to move has matching pose",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 4 move_stop preserves source poses",
+      "passed": true,
+      "actual": 7.922346938471492e-06
+    },
+    {
+      "check": "segment 4 move_stop preserves flame visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 4 move_stop preserves projectile visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "boundary 4 move to move_stop has matching pose",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 5 idle preserves source poses",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 5 idle preserves flame visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 5 idle preserves projectile visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "boundary 5 move_stop to idle has matching pose",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 6 basic_attack preserves source poses",
+      "passed": true,
+      "actual": 4.023979727207916e-08
+    },
+    {
+      "check": "segment 6 basic_attack preserves flame visibility",
+      "passed": true,
+      "actual": 1.2499975365898308e-07
+    },
+    {
+      "check": "segment 6 basic_attack preserves projectile visibility",
+      "passed": true,
+      "actual": 2.942091015256665e-15
+    },
+    {
+      "check": "boundary 6 idle to basic_attack has matching pose",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 7 idle preserves source poses",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 7 idle preserves flame visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 7 idle preserves projectile visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "boundary 7 basic_attack to idle has matching pose",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 8 idle preserves source poses",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 8 idle preserves flame visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 8 idle preserves projectile visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "boundary 8 idle to idle has matching pose",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 9 move_start preserves source poses",
+      "passed": true,
+      "actual": 5.978225090075284e-06
+    },
+    {
+      "check": "segment 9 move_start preserves flame visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 9 move_start preserves projectile visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "boundary 9 idle to move_start has matching pose",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 10 move preserves source poses",
+      "passed": true,
+      "actual": 5.602788064607012e-07
+    },
+    {
+      "check": "segment 10 move preserves flame visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 10 move preserves projectile visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "boundary 10 move_start to move has matching pose",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 11 move preserves source poses",
+      "passed": true,
+      "actual": 5.60278465400188e-07
+    },
+    {
+      "check": "segment 11 move preserves flame visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 11 move preserves projectile visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "boundary 11 move to move has matching pose",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 12 move_stop preserves source poses",
+      "passed": true,
+      "actual": 7.922346867417218e-06
+    },
+    {
+      "check": "segment 12 move_stop preserves flame visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 12 move_stop preserves projectile visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "boundary 12 move to move_stop has matching pose",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 13 idle preserves source poses",
+      "passed": true,
+      "actual": 2.2737367544323206e-13
+    },
+    {
+      "check": "segment 13 idle preserves flame visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 13 idle preserves projectile visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "boundary 13 move_stop to idle has matching pose",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 14 basic_attack preserves source poses",
+      "passed": true,
+      "actual": 4.023968358524144e-08
+    },
+    {
+      "check": "segment 14 basic_attack preserves flame visibility",
+      "passed": true,
+      "actual": 1.2499974477719888e-07
+    },
+    {
+      "check": "segment 14 basic_attack preserves projectile visibility",
+      "passed": true,
+      "actual": 5.88418203051333e-15
+    },
+    {
+      "check": "boundary 14 idle to basic_attack has matching pose",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 15 idle preserves source poses",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 15 idle preserves flame visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "segment 15 idle preserves projectile visibility",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "boundary 15 basic_attack to idle has matching pose",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "whole authored flow loops without a pose jump",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "tail visible flow mesh retains area",
+      "passed": true,
+      "actual": 0.9435507093131698,
+      "criterion": "visible-material area ratio > .35"
+    },
+    {
+      "check": "tail has no large inter-frame mesh jump",
+      "passed": true,
+      "actual": 0.8802708759057573,
+      "criterion": "< 2 game pixels per 60 Hz step at .085 source scale"
+    },
+    {
+      "check": "leg_back visible flow mesh retains area",
+      "passed": true,
+      "actual": 0.49189534369596843,
+      "criterion": "visible-material area ratio > .35"
+    },
+    {
+      "check": "leg_back has no large inter-frame mesh jump",
+      "passed": true,
+      "actual": 1.418300347501533,
+      "criterion": "< 2 game pixels per 60 Hz step at .085 source scale"
+    },
+    {
+      "check": "leg_front visible flow mesh retains area",
+      "passed": true,
+      "actual": 0.5232569417344336,
+      "criterion": "visible-material area ratio > .35"
+    },
+    {
+      "check": "leg_front has no large inter-frame mesh jump",
+      "passed": true,
+      "actual": 1.4650395971312025,
+      "criterion": "< 2 game pixels per 60 Hz step at .085 source scale"
+    },
+    {
+      "check": "torso visible flow mesh retains area",
+      "passed": true,
+      "actual": 0.948147209014636,
+      "criterion": "visible-material area ratio > .35"
+    },
+    {
+      "check": "torso has no large inter-frame mesh jump",
+      "passed": true,
+      "actual": 0.6186956493776905,
+      "criterion": "< 2 game pixels per 60 Hz step at .085 source scale"
+    },
+    {
+      "check": "leg_back contact never materially penetrates ground",
+      "passed": true,
+      "actual": -0.01967076891781261,
+      "criterion": "> -.25 source pixel in its own perspective lane"
+    },
+    {
+      "check": "leg_back planted contact is stable across authored state changes",
+      "passed": true,
+      "actual": 0.019670454535592796,
+      "criterion": "< .3 source pixel with explicitly accumulated walk-only displacement"
+    },
+    {
+      "check": "leg_back paw facing stays consistent throughout flow",
+      "passed": true,
+      "actual": -98.37740048446176
+    },
+    {
+      "check": "leg_front contact never materially penetrates ground",
+      "passed": true,
+      "actual": -0.022641029318657246,
+      "criterion": "> -.25 source pixel in its own perspective lane"
+    },
+    {
+      "check": "leg_front planted contact is stable across authored state changes",
+      "passed": true,
+      "actual": 0.02264083204492895,
+      "criterion": "< .3 source pixel with explicitly accumulated walk-only displacement"
+    },
+    {
+      "check": "leg_front paw facing stays consistent throughout flow",
+      "passed": true,
+      "actual": -107.13237476586139
+    },
+    {
+      "check": "authored flow never lifts both feet together",
+      "passed": true,
+      "actual": 0.011341041393559681
+    },
+    {
+      "check": "flow preserves exact source event times",
+      "passed": true,
+      "actual": [
+        [
+          4.88,
+          "release"
+        ],
+        [
+          11.18,
+          "release"
+        ]
+      ]
+    },
+    {
+      "check": "fire release at 4.88s has matching world transforms",
+      "passed": true,
+      "actual": 4.2738975025713444e-08
+    },
+    {
+      "check": "fire release at 4.88s preserves alpha handoff",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "fire release at 11.18s has matching world transforms",
+      "passed": true,
+      "actual": 4.2738975025713444e-08
+    },
+    {
+      "check": "fire release at 11.18s preserves alpha handoff",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "input files unchanged during flow check",
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "max_source_pose_error": 7.922346938471492e-06,
+    "max_boundary_matrix_error": 0.0,
+    "tail_flow_min_visible_area_ratio": 0.9435507093131698,
+    "tail_max_60hz_visible_vertex_step_game_px": 0.8802708759057573,
+    "leg_back_flow_min_visible_area_ratio": 0.49189534369596843,
+    "leg_back_max_60hz_visible_vertex_step_game_px": 1.418300347501533,
+    "leg_front_flow_min_visible_area_ratio": 0.5232569417344336,
+    "leg_front_max_60hz_visible_vertex_step_game_px": 1.4650395971312025,
+    "torso_flow_min_visible_area_ratio": 0.948147209014636,
+    "torso_max_60hz_visible_vertex_step_game_px": 0.6186956493776905,
+    "actual_contact_image_pixels": [
+      304,
+      1502
+    ],
+    "leg_back_flow_visible_stance_drift_source_px": 0.019670454535592796,
+    "leg_front_flow_visible_stance_drift_source_px": 0.02264083204492895
+  }
+}

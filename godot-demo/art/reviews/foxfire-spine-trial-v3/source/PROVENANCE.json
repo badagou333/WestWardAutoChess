@@ -1,0 +1,135 @@
+{
+  "date": "2026-10-07",
+  "scope": "independent v3 candidate; original production assets unchanged",
+  "prompt": "source/PROMPT-leg.txt",
+  "references": [
+    {
+      "file": "../foxfire-spine-trial-v1/images/leg_front.png",
+      "sha256": "dd333c1cd136853906bdfd3b7796ffba94ec23b5b9cf8808febf4b9a6c52b31d"
+    },
+    {
+      "file": "../foxfire-spine-trial-v1/images/leg_back.png",
+      "sha256": "cdea92032364accde6105eeb1c819496406fcf155c5c73552718eea7f14b4da5"
+    }
+  ],
+  "images": [
+    {
+      "file": "images/arm_cast.png",
+      "sha256": "90a5809baac3da578929801344d4f8996324d58588817d2149e8bdac17b34245",
+      "source": "../foxfire-spine-trial-v1/images/arm_cast.png",
+      "changed": false
+    },
+    {
+      "file": "images/arm_rest.png",
+      "sha256": "248848284ffff9d09189777f0649af76c22bf7289d1ff0692d486dc30093103f",
+      "source": "../foxfire-spine-trial-v1/images/arm_rest.png",
+      "changed": false
+    },
+    {
+      "file": "images/flame.png",
+      "sha256": "184c3b4a391cb265ba544833570e107ce9c65f9ab28be88e2e37911790ad597d",
+      "source": "../foxfire-spine-trial-v1/images/flame.png",
+      "changed": false
+    },
+    {
+      "file": "images/hand_cast.png",
+      "sha256": "cb71494de538b81f3933b92536498f1c24002115c2ba539229a9fb0e6f642be2",
+      "source": "../foxfire-spine-trial-v1/images/hand_cast.png",
+      "changed": false
+    },
+    {
+      "file": "images/hand_rest.png",
+      "sha256": "8e29bbad737205484d8fb6f79ad39703cfe21f4ccbe010fe1b61f83eb23269e5",
+      "source": "../foxfire-spine-trial-v1/images/hand_rest.png",
+      "changed": false
+    },
+    {
+      "file": "images/head.png",
+      "sha256": "c572e41b8ac1d9ca0153d034da1b3b5c7cae8f81faf67c9f43f4aa8e83e6c431",
+      "source": "../foxfire-spine-trial-v1/images/head.png",
+      "changed": false
+    },
+    {
+      "file": "images/leg-left.png",
+      "sha256": "89c8af91f9fa2e5bef88ef826956408507c271ea0d6afcf95c7da99efee43c48",
+      "source": "built-in image_gen.imagegen; original output preserved byte-for-byte",
+      "dimensions": [
+        1014,
+        1550
+      ],
+      "references": [
+        "../foxfire-spine-trial-v1/images/leg_front.png",
+        "../foxfire-spine-trial-v1/images/leg_back.png"
+      ],
+      "usage": "shared by near/far leg; no mirror; far slot tint dadadaff"
+    },
+    {
+      "file": "images/scarf.png",
+      "sha256": "d2005a143932e198d8ffc6cc296e58ee07226facb1123431ffe9b5c45c93e0a2",
+      "source": "../foxfire-spine-trial-v1/images/scarf.png",
+      "changed": false
+    },
+    {
+      "file": "images/tail.png",
+      "sha256": "41202a2df896d3b33e9b7bd4e9bca6b19917a2ee5cdecbcc7333985701ab6610",
+      "source": "../foxfire-spine-trial-v1/images/tail.png",
+      "changed": false
+    },
+    {
+      "file": "images/torso.png",
+      "sha256": "a43816902652b3fd4e1fbe0ae6b5fec69ba8dcb2d992213791d36cb60794a3b2",
+      "source": "../foxfire-spine-trial-v1/images/torso.png",
+      "changed": false
+    }
+  ],
+  "preview_original_geometry_sha256": "6cb41bf6c32a10944c977576a63f0960717d26da4bb63fff9876c593e83ec797",
+  "preview_final_input_sha256": "695992bbdfeb09019fe1a33c112ff1f75be8d9b3f72bc91442670b0314d2767b",
+  "preview_equivalence": "metadata-equivalence.json",
+  "media": [
+    {
+      "file": "comparison-v2-v3.gif",
+      "sha256": "0d79f84fe4e001a23c09d42c0cda847bfaa69a01068185fdcb8c4710cb13c52d",
+      "bytes": 3673950
+    },
+    {
+      "file": "external-basic_attack.gif",
+      "sha256": "0ebc073ee12d00146e036402d30a5520ea4a2145d1572208f366cd1e1923b1a8",
+      "bytes": 2947180
+    },
+    {
+      "file": "external-flow.gif",
+      "sha256": "de282ee17104787c2bd7ffcb7ced96de6a7c98337321f63944e6a1ffd3ac7ebf",
+      "bytes": 5192108
+    },
+    {
+      "file": "external-idle.gif",
+      "sha256": "3eebade5ad3fb74395ba6a340c7227a815959ccf3a516abfaf920dc726ec301f",
+      "bytes": 5066432
+    },
+    {
+      "file": "external-move-slow.gif",
+      "sha256": "8b29f5248b677ba378fe342fd5f317bfbec7d6a7d58406c7fdd93ab7ec8bd36c",
+      "bytes": 1422270
+    },
+    {
+      "file": "external-move.gif",
+      "sha256": "69dd9a23735b3c77b314b41d8709696b3571f0eb7359d5d4b2004ca1a10cd0b8",
+      "bytes": 2387901
+    },
+    {
+      "file": "external-walk-ground.gif",
+      "sha256": "f6dec674465757810158eb786c4b567f90413ac8c1465bd5c714d08368d7db5f",
+      "bytes": 4753698
+    },
+    {
+      "file": "qa-game-scale.png",
+      "sha256": "5fb7e2a392628f8bb42400348c72eddefa452d251bf2974fd0f6abcea02b47a9",
+      "bytes": 327838
+    },
+    {
+      "file": "qa-walk-contact.png",
+      "sha256": "9835b924b9773627e52747c00da13b760dcce2df04a7c2ba8d39096663ae6042",
+      "bytes": 617062
+    }
+  ]
+}

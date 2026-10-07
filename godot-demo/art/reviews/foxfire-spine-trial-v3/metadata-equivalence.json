@@ -1,0 +1,70 @@
+{
+  "scope": "Editor-only mesh edges added; all pre-existing main/QA JSON fields are semantically identical. Existing external preview pixels remain applicable because UVs, triangles, weighted vertices, bones, slots and animations are unchanged.",
+  "before_sha256": {
+    "foxfire-v3.json": "6cb41bf6c32a10944c977576a63f0960717d26da4bb63fff9876c593e83ec797",
+    "foxfire-v3-qa.json": "ddf73118e8d1f17c5d637bdb1a9cceb11148ed5f81a90dbbed6a8da728fe882c",
+    "rig-notes.json": "098c1379bf45929936fe6f758933b0dd4119e5423eed5c73d9c01afbe47ab79f",
+    "flow-sequence.json": "9ad5684428ff8a9cf0fd331f588868169eb49d69e957aeb3de1cd2604bf835e2"
+  },
+  "after_sha256": {
+    "foxfire-v3.json": "695992bbdfeb09019fe1a33c112ff1f75be8d9b3f72bc91442670b0314d2767b",
+    "foxfire-v3-qa.json": "d8a911e98ed187aba68e4c1cf8133f64b890536c1eb4b7555d9dd6db2cc70607",
+    "rig-notes.json": "098c1379bf45929936fe6f758933b0dd4119e5423eed5c73d9c01afbe47ab79f",
+    "flow-sequence.json": "9ad5684428ff8a9cf0fd331f588868169eb49d69e957aeb3de1cd2604bf835e2"
+  },
+  "equivalence_checks": {
+    "foxfire-v3.json_only_edges_changed": true,
+    "foxfire-v3-qa.json_only_edges_changed": true,
+    "rig_notes_byte_unchanged": true,
+    "flow_sequence_byte_unchanged": true
+  },
+  "main_rebuild_deterministic": true,
+  "flow_rebuild_byte_deterministic": true,
+  "meshes": [
+    {
+      "slot": "tail",
+      "vertices": 91,
+      "hull_vertices": 36,
+      "unique_edges": 234,
+      "boundary_edges": 36,
+      "internal_edges": 198,
+      "edges_use_even_xy_offsets": true,
+      "hull_matches_first_vertices": true
+    },
+    {
+      "slot": "leg_back",
+      "vertices": 135,
+      "hull_vertices": 44,
+      "unique_edges": 358,
+      "boundary_edges": 44,
+      "internal_edges": 314,
+      "edges_use_even_xy_offsets": true,
+      "hull_matches_first_vertices": true
+    },
+    {
+      "slot": "leg_front",
+      "vertices": 135,
+      "hull_vertices": 44,
+      "unique_edges": 358,
+      "boundary_edges": 44,
+      "internal_edges": 314,
+      "edges_use_even_xy_offsets": true,
+      "hull_matches_first_vertices": true
+    },
+    {
+      "slot": "torso",
+      "vertices": 91,
+      "hull_vertices": 36,
+      "unique_edges": 234,
+      "boundary_edges": 36,
+      "internal_edges": 198,
+      "edges_use_even_xy_offsets": true,
+      "hull_matches_first_vertices": true
+    }
+  ],
+  "sources": [
+    "https://us.esotericsoftware.com/spine-json-format",
+    "https://raw.githubusercontent.com/EsotericSoftware/spine-runtimes/4.3/examples/spineboy/export/spineboy-pro.json",
+    "https://en.esotericsoftware.com/forum/d/10552-nonessential-data-consequences"
+  ]
+}

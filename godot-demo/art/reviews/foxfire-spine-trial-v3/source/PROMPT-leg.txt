@@ -1,0 +1,8 @@
+Date: 2026-10-07
+Tool: built-in image_gen.imagegen
+Operation: edit with two references, transparent_background=true
+Reference 1 (edit target): ../../foxfire-spine-trial-v1/images/leg_front.png
+Reference 2 (direction/style reference): ../../foxfire-spine-trial-v1/images/leg_back.png
+Final original output: ../images/leg-left.png (copied byte-for-byte, no raster repaint or crop)
+
+Use case: precise-object-edit. Asset type: one isolated RGBA leg sprite for the existing foxfire character's bone animation. Image 1 is the edit target (near/front leg); Image 2 is only a direction/style reference (far/back leg). Fix Image 1 so its paw points toward screen LEFT, matching Image 2, a clear left-facing three-quarter side view, toes to the left and heel to the right. Make the leg relaxed and almost vertical in its neutral rig pose, with a modest natural knee bend, not crouched or bow-legged. Keep the same charcoal baggy martial-arts trouser design, angular hand-painted dark fabric folds, gathered ankle cuff, dark brown ankle fur, cream paw toes and black claws, same bold dark outlines. Preserve the character identity/materials/style; no new decoration. Keep consistent proportions: trousers about 72% of total sprite height, ankle/paw about 28%; slim ankle with paw extending left, flat sole. Single complete leg only from rounded concealed upper thigh to entire paw, centered with transparent margins, tall composition. No second leg, body, ground, shadow, text, labels, checkerboard, or background; true transparent background. Foot must visibly point LEFT, not toward camera or right. Both foot and trouser must remain connected as one sprite, top ends covered naturally for hidden hip overlap.

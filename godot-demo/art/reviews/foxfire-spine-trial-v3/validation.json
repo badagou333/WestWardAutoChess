@@ -1,0 +1,1104 @@
+{
+  "status": "passed",
+  "scope": "Independent visible-material geometry QA only; not native Spine capture, visual acceptance, or runtime integration acceptance.",
+  "input_sha256": "695992bbdfeb09019fe1a33c112ff1f75be8d9b3f72bc91442670b0314d2767b",
+  "checks": [
+    {
+      "check": "parent-first unique bone root",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone pelvis",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone torso",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone head",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone tail",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone scarf",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone arm_cast",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone hand_cast",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone arm_rest",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone hand_rest",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone leg_back",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone leg_front",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone flame",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone projectile",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone leg_back_calf",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone leg_back_foot",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone leg_back_knee",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone leg_front_calf",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone leg_front_foot",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone leg_front_knee",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone coat_hem",
+      "passed": true
+    },
+    {
+      "check": "parent-first unique bone tail_tip",
+      "passed": true
+    },
+    {
+      "check": "visible material anchor toe",
+      "passed": true,
+      "actual": 253,
+      "criterion": "alpha >= 128"
+    },
+    {
+      "check": "visible material anchor heel",
+      "passed": true,
+      "actual": 253,
+      "criterion": "alpha >= 128"
+    },
+    {
+      "check": "visible material anchor sole",
+      "passed": true,
+      "actual": 253,
+      "criterion": "alpha >= 128"
+    },
+    {
+      "check": "visible material anchor contact",
+      "passed": true,
+      "actual": 216,
+      "criterion": "alpha >= 128"
+    },
+    {
+      "check": "leg_back visible toe points left throughout walk",
+      "passed": true,
+      "actual": -98.31178269360494,
+      "criterion": "toe.x - heel.x < -30 source pixels"
+    },
+    {
+      "check": "leg_back visible anchors remain planted in moving reference",
+      "passed": true,
+      "actual": 0.024087855425001692,
+      "criterion": "< .25 source pixel"
+    },
+    {
+      "check": "leg_back visible contact never penetrates ground",
+      "passed": true,
+      "actual": -0.0240878083978302,
+      "criterion": "> -.25 source pixel relative to own depth lane"
+    },
+    {
+      "check": "leg_back visible swing clearance",
+      "passed": true,
+      "actual": 51.22724588749134,
+      "criterion": "25..65 source pixels"
+    },
+    {
+      "check": "leg_front visible toe points left throughout walk",
+      "passed": true,
+      "actual": -107.10761173389248,
+      "criterion": "toe.x - heel.x < -30 source pixels"
+    },
+    {
+      "check": "leg_front visible anchors remain planted in moving reference",
+      "passed": true,
+      "actual": 0.02264119372666329,
+      "criterion": "< .25 source pixel"
+    },
+    {
+      "check": "leg_front visible contact never penetrates ground",
+      "passed": true,
+      "actual": -0.02264103165732323,
+      "criterion": "> -.25 source pixel relative to own depth lane"
+    },
+    {
+      "check": "leg_front visible swing clearance",
+      "passed": true,
+      "actual": 51.82391727284465,
+      "criterion": "25..65 source pixels"
+    },
+    {
+      "check": "visible feet exchange fore-aft order",
+      "passed": true,
+      "actual": [
+        -103.54114720404868,
+        115.82274288607053
+      ],
+      "criterion": "both < -20 and > +20 source pixels"
+    },
+    {
+      "check": "at least one visible foot remains grounded throughout walk",
+      "passed": true,
+      "actual": 1.4049455643316833e-07,
+      "criterion": "minimum of two contact heights < .25 source pixel"
+    },
+    {
+      "check": "tail normalized skinning weights",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "tail nondegenerate rest triangles",
+      "passed": true
+    },
+    {
+      "check": "tail visible triangles do not fold in idle",
+      "passed": true,
+      "actual": 0.9493962846553121,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "tail visible material avoids severe area collapse in idle",
+      "passed": true,
+      "actual": [
+        0.9493962846553121,
+        1.0432614728345586
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "tail visible triangles do not fold in move",
+      "passed": true,
+      "actual": 0.9435377448624301,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "tail visible material avoids severe area collapse in move",
+      "passed": true,
+      "actual": [
+        0.9435377448624301,
+        1.0548890506090973
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "tail visible triangles do not fold in basic_attack",
+      "passed": true,
+      "actual": 0.9470753330589383,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "tail visible material avoids severe area collapse in basic_attack",
+      "passed": true,
+      "actual": [
+        0.9470753330589383,
+        1.0451904273210466
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "tail visible triangles do not fold in move_start",
+      "passed": true,
+      "actual": 0.9596789455581949,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "tail visible material avoids severe area collapse in move_start",
+      "passed": true,
+      "actual": [
+        0.9596789455581949,
+        1.044805268053995
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "tail visible triangles do not fold in move_stop",
+      "passed": true,
+      "actual": 0.9596789455581949,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "tail visible material avoids severe area collapse in move_stop",
+      "passed": true,
+      "actual": [
+        0.9596789455581949,
+        1.044805268053995
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "leg_back normalized skinning weights",
+      "passed": true,
+      "actual": 1.000000082740371e-09
+    },
+    {
+      "check": "leg_back nondegenerate rest triangles",
+      "passed": true
+    },
+    {
+      "check": "leg_back visible triangles do not fold in idle",
+      "passed": true,
+      "actual": 0.9753300697736662,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "leg_back visible material avoids severe area collapse in idle",
+      "passed": true,
+      "actual": [
+        0.9753300697736662,
+        1.0256717245025428
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "leg_back visible triangles do not fold in move",
+      "passed": true,
+      "actual": 0.4910548651683046,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "leg_back visible material avoids severe area collapse in move",
+      "passed": true,
+      "actual": [
+        0.4910548651683046,
+        1.5862439258575414
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "leg_back visible triangles do not fold in basic_attack",
+      "passed": true,
+      "actual": 0.884750008421724,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "leg_back visible material avoids severe area collapse in basic_attack",
+      "passed": true,
+      "actual": [
+        0.884750008421724,
+        1.040856682124332
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "leg_back visible triangles do not fold in move_start",
+      "passed": true,
+      "actual": 0.5745347055755293,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "leg_back visible material avoids severe area collapse in move_start",
+      "passed": true,
+      "actual": [
+        0.5745347055755293,
+        1.1491999478916322
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "leg_back visible triangles do not fold in move_stop",
+      "passed": true,
+      "actual": 0.5224158930464236,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "leg_back visible material avoids severe area collapse in move_stop",
+      "passed": true,
+      "actual": [
+        0.5224158930464236,
+        1.175013747348831
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "leg_front normalized skinning weights",
+      "passed": true,
+      "actual": 1.000000082740371e-09
+    },
+    {
+      "check": "leg_front nondegenerate rest triangles",
+      "passed": true
+    },
+    {
+      "check": "leg_front visible triangles do not fold in idle",
+      "passed": true,
+      "actual": 0.977327111837458,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "leg_front visible material avoids severe area collapse in idle",
+      "passed": true,
+      "actual": [
+        0.977327111837458,
+        1.0235165244250408
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "leg_front visible triangles do not fold in move",
+      "passed": true,
+      "actual": 0.5224670848663988,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "leg_front visible material avoids severe area collapse in move",
+      "passed": true,
+      "actual": [
+        0.5224670848663988,
+        1.5286142284082673
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "leg_front visible triangles do not fold in basic_attack",
+      "passed": true,
+      "actual": 0.894072508325498,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "leg_front visible material avoids severe area collapse in basic_attack",
+      "passed": true,
+      "actual": [
+        0.894072508325498,
+        1.037723105816454
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "leg_front visible triangles do not fold in move_start",
+      "passed": true,
+      "actual": 0.7038845089874469,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "leg_front visible material avoids severe area collapse in move_start",
+      "passed": true,
+      "actual": [
+        0.7038845089874469,
+        1.497759129138424
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "leg_front visible triangles do not fold in move_stop",
+      "passed": true,
+      "actual": 0.7071489924622691,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "leg_front visible material avoids severe area collapse in move_stop",
+      "passed": true,
+      "actual": [
+        0.7071489924622691,
+        1.5224476258627515
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "torso normalized skinning weights",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "torso nondegenerate rest triangles",
+      "passed": true
+    },
+    {
+      "check": "torso visible triangles do not fold in idle",
+      "passed": true,
+      "actual": 0.9919009274018254,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "torso visible material avoids severe area collapse in idle",
+      "passed": true,
+      "actual": [
+        0.9919009274018254,
+        1.0080933400807297
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "torso visible triangles do not fold in move",
+      "passed": true,
+      "actual": 0.9481284285008404,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "torso visible material avoids severe area collapse in move",
+      "passed": true,
+      "actual": [
+        0.9481284285008404,
+        1.0516562279062942
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "torso visible triangles do not fold in basic_attack",
+      "passed": true,
+      "actual": 0.9676154370297901,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "torso visible material avoids severe area collapse in basic_attack",
+      "passed": true,
+      "actual": [
+        0.9676154370297901,
+        1.038785756010001
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "torso visible triangles do not fold in move_start",
+      "passed": true,
+      "actual": 0.9798045397413034,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "torso visible material avoids severe area collapse in move_start",
+      "passed": true,
+      "actual": [
+        0.9798045397413034,
+        1.0162490252929577
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "torso visible triangles do not fold in move_stop",
+      "passed": true,
+      "actual": 0.9798045397413034,
+      "criterion": "signed visible-material triangle area ratio > .05"
+    },
+    {
+      "check": "torso visible material avoids severe area collapse in move_stop",
+      "passed": true,
+      "actual": [
+        0.9798045397413034,
+        1.0162490252929577
+      ],
+      "criterion": "area ratio .35..2 (geometric warning threshold, not a shape-quality guarantee)"
+    },
+    {
+      "check": "leg_back remains reachable with fixed lengths",
+      "passed": true,
+      "actual": {
+        "reach_margin": 6.816725774366034,
+        "length_error": 2.842170943040401e-14
+      }
+    },
+    {
+      "check": "leg_back knee branch never reverses",
+      "passed": true,
+      "actual": 7560.081659697595
+    },
+    {
+      "check": "leg_front remains reachable with fixed lengths",
+      "passed": true,
+      "actual": {
+        "reach_margin": 7.724875783766095,
+        "length_error": 2.842170943040401e-14
+      }
+    },
+    {
+      "check": "leg_front knee branch never reverses",
+      "passed": true,
+      "actual": 9142.568892036395
+    },
+    {
+      "check": "idle pose returns without seam",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "idle visible foot velocity has no material loop jump",
+      "passed": true,
+      "actual": 0.008450331953617295,
+      "criterion": "< 15 source pixels/second, allowing piecewise-linear baking error"
+    },
+    {
+      "check": "move pose returns without seam",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "move visible foot velocity has no material loop jump",
+      "passed": true,
+      "actual": 0.21677815517014137,
+      "criterion": "< 15 source pixels/second, allowing piecewise-linear baking error"
+    },
+    {
+      "check": "basic_attack pose returns without seam",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "basic_attack visible foot velocity has no material loop jump",
+      "passed": true,
+      "actual": 0.002517710804082679,
+      "criterion": "< 15 source pixels/second, allowing piecewise-linear baking error"
+    },
+    {
+      "check": "released fire begins at identical world transform",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "single release event agrees with handoff",
+      "passed": true,
+      "actual": [
+        0.48
+      ]
+    },
+    {
+      "check": "fire alpha handoff has no flash or disappearance",
+      "passed": true,
+      "actual": 0.0
+    },
+    {
+      "check": "hand fire off and projectile on at release",
+      "passed": true
+    },
+    {
+      "check": "idle explicitly hides projectile",
+      "passed": true
+    },
+    {
+      "check": "move explicitly hides projectile",
+      "passed": true
+    },
+    {
+      "check": "move_start explicitly hides projectile",
+      "passed": true
+    },
+    {
+      "check": "move_stop explicitly hides projectile",
+      "passed": true
+    },
+    {
+      "check": "input remained unchanged during QA",
+      "passed": true
+    }
+  ],
+  "metrics": {
+    "landmark_image_pixels": {
+      "hip": [
+        650,
+        70
+      ],
+      "knee": [
+        440,
+        740
+      ],
+      "ankle": [
+        600,
+        1240
+      ],
+      "toe": [
+        255,
+        1425
+      ],
+      "heel": [
+        681,
+        1362
+      ],
+      "sole": [
+        405,
+        1450
+      ],
+      "contact": [
+        304,
+        1502
+      ]
+    },
+    "leg_back_visible_stance_drift_source_px": 0.024087855425001692,
+    "leg_back_contact_height_range_source_px": [
+      -0.0240878083978302,
+      51.22724588749134
+    ],
+    "leg_front_visible_stance_drift_source_px": 0.02264119372666329,
+    "leg_front_contact_height_range_source_px": [
+      -0.02264103165732323,
+      51.82391727284465
+    ],
+    "contact_fore_aft_difference_range": [
+      -103.54114720404868,
+      115.82274288607053
+    ],
+    "tail_visible_triangle_areas": {
+      "idle": {
+        "min_area_ratio": 0.9493962846553121,
+        "max_area_ratio": 1.0432614728345586,
+        "worst_time": 0.7666666666666666,
+        "worst_triangle_index": 95,
+        "worst_triangle_image_pixels": [
+          [
+            326.0,
+            212.91666666666663
+          ],
+          [
+            271.6666666666667,
+            243.33333333333337
+          ],
+          [
+            326.0,
+            243.33333333333337
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.4943181818181818
+      },
+      "move": {
+        "min_area_ratio": 0.9435377448624301,
+        "max_area_ratio": 1.0548890506090973,
+        "worst_time": 0.448,
+        "worst_triangle_index": 95,
+        "worst_triangle_image_pixels": [
+          [
+            326.0,
+            212.91666666666663
+          ],
+          [
+            271.6666666666667,
+            243.33333333333337
+          ],
+          [
+            326.0,
+            243.33333333333337
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.4943181818181818
+      },
+      "basic_attack": {
+        "min_area_ratio": 0.9470753330589383,
+        "max_area_ratio": 1.0451904273210466,
+        "worst_time": 0.7333333333333333,
+        "worst_triangle_index": 95,
+        "worst_triangle_image_pixels": [
+          [
+            326.0,
+            212.91666666666663
+          ],
+          [
+            271.6666666666667,
+            243.33333333333337
+          ],
+          [
+            326.0,
+            243.33333333333337
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.4943181818181818
+      },
+      "move_start": {
+        "min_area_ratio": 0.9596789455581949,
+        "max_area_ratio": 1.044805268053995,
+        "worst_time": 0.68,
+        "worst_triangle_index": 86,
+        "worst_triangle_image_pixels": [
+          [
+            54.33333333333334,
+            212.91666666666663
+          ],
+          [
+            54.33333333333334,
+            243.33333333333337
+          ],
+          [
+            108.66666666666669,
+            212.91666666666663
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.11941964285714286
+      },
+      "move_stop": {
+        "min_area_ratio": 0.9596789455581949,
+        "max_area_ratio": 1.044805268053995,
+        "worst_time": 0.0,
+        "worst_triangle_index": 86,
+        "worst_triangle_image_pixels": [
+          [
+            54.33333333333334,
+            212.91666666666663
+          ],
+          [
+            54.33333333333334,
+            243.33333333333337
+          ],
+          [
+            108.66666666666669,
+            212.91666666666663
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.11941964285714286
+      }
+    },
+    "tail_material_triangle_count": 115,
+    "leg_back_visible_triangle_areas": {
+      "idle": {
+        "min_area_ratio": 0.9753300697736662,
+        "max_area_ratio": 1.0256717245025428,
+        "worst_time": 1.8,
+        "worst_triangle_index": 61,
+        "worst_triangle_image_pixels": [
+          [
+            957.0,
+            389.99999999999994
+          ],
+          [
+            830.0,
+            510.0
+          ],
+          [
+            957.0,
+            510.0
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.18579234972677597
+      },
+      "move": {
+        "min_area_ratio": 0.4910548651683046,
+        "max_area_ratio": 1.5862439258575414,
+        "worst_time": 0.34844444444444445,
+        "worst_triangle_index": 77,
+        "worst_triangle_image_pixels": [
+          [
+            957.0,
+            510.0
+          ],
+          [
+            830.0,
+            620.0
+          ],
+          [
+            957.0,
+            620.0
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.5379242911021093
+      },
+      "basic_attack": {
+        "min_area_ratio": 0.884750008421724,
+        "max_area_ratio": 1.040856682124332,
+        "worst_time": 0.48333333333333334,
+        "worst_triangle_index": 114,
+        "worst_triangle_image_pixels": [
+          [
+            156.0,
+            849.9999999999999
+          ],
+          [
+            156.0,
+            919.9999999999999
+          ],
+          [
+            300.0,
+            849.9999999999999
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.09550453405363689
+      },
+      "move_start": {
+        "min_area_ratio": 0.5745347055755293,
+        "max_area_ratio": 1.1491999478916322,
+        "worst_time": 0.215609756097561,
+        "worst_triangle_index": 114,
+        "worst_triangle_image_pixels": [
+          [
+            156.0,
+            849.9999999999999
+          ],
+          [
+            156.0,
+            919.9999999999999
+          ],
+          [
+            300.0,
+            849.9999999999999
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.09550453405363689
+      },
+      "move_stop": {
+        "min_area_ratio": 0.5224158930464236,
+        "max_area_ratio": 1.175013747348831,
+        "worst_time": 0.1326829268292683,
+        "worst_triangle_index": 114,
+        "worst_triangle_image_pixels": [
+          [
+            156.0,
+            849.9999999999999
+          ],
+          [
+            156.0,
+            919.9999999999999
+          ],
+          [
+            300.0,
+            849.9999999999999
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.09550453405363689
+      }
+    },
+    "leg_back_material_triangle_count": 117,
+    "leg_front_visible_triangle_areas": {
+      "idle": {
+        "min_area_ratio": 0.977327111837458,
+        "max_area_ratio": 1.0235165244250408,
+        "worst_time": 1.8,
+        "worst_triangle_index": 61,
+        "worst_triangle_image_pixels": [
+          [
+            957.0,
+            389.99999999999994
+          ],
+          [
+            830.0,
+            510.0
+          ],
+          [
+            957.0,
+            510.0
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.18579234972677597
+      },
+      "move": {
+        "min_area_ratio": 0.5224670848663988,
+        "max_area_ratio": 1.5286142284082673,
+        "worst_time": 0.9042962962962963,
+        "worst_triangle_index": 61,
+        "worst_triangle_image_pixels": [
+          [
+            957.0,
+            389.99999999999994
+          ],
+          [
+            830.0,
+            510.0
+          ],
+          [
+            957.0,
+            510.0
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.18579234972677597
+      },
+      "basic_attack": {
+        "min_area_ratio": 0.894072508325498,
+        "max_area_ratio": 1.037723105816454,
+        "worst_time": 0.48333333333333334,
+        "worst_triangle_index": 114,
+        "worst_triangle_image_pixels": [
+          [
+            156.0,
+            849.9999999999999
+          ],
+          [
+            156.0,
+            919.9999999999999
+          ],
+          [
+            300.0,
+            849.9999999999999
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.09550453405363689
+      },
+      "move_start": {
+        "min_area_ratio": 0.7038845089874469,
+        "max_area_ratio": 1.497759129138424,
+        "worst_time": 0.5141463414634146,
+        "worst_triangle_index": 108,
+        "worst_triangle_image_pixels": [
+          [
+            830.0,
+            740.0
+          ],
+          [
+            830.0,
+            849.9999999999999
+          ],
+          [
+            957.0,
+            740.0
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.5557434813248767
+      },
+      "move_stop": {
+        "min_area_ratio": 0.7071489924622691,
+        "max_area_ratio": 1.5224476258627515,
+        "worst_time": 0.3482926829268293,
+        "worst_triangle_index": 139,
+        "worst_triangle_image_pixels": [
+          [
+            830.0,
+            919.9999999999999
+          ],
+          [
+            700.0,
+            1000.0
+          ],
+          [
+            830.0,
+            1000.0
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.003510716925351072
+      }
+    },
+    "leg_front_material_triangle_count": 117,
+    "torso_visible_triangle_areas": {
+      "idle": {
+        "min_area_ratio": 0.9919009274018254,
+        "max_area_ratio": 1.0080933400807297,
+        "worst_time": 1.8,
+        "worst_triangle_index": 96,
+        "worst_triangle_image_pixels": [
+          [
+            0.0,
+            781.3333333333334
+          ],
+          [
+            0.0,
+            879.0
+          ],
+          [
+            150.5,
+            781.3333333333334
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.3822434875066454
+      },
+      "move": {
+        "min_area_ratio": 0.9481284285008404,
+        "max_area_ratio": 1.0516562279062942,
+        "worst_time": 0.9125925925925926,
+        "worst_triangle_index": 96,
+        "worst_triangle_image_pixels": [
+          [
+            0.0,
+            781.3333333333334
+          ],
+          [
+            0.0,
+            879.0
+          ],
+          [
+            150.5,
+            781.3333333333334
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.3822434875066454
+      },
+      "basic_attack": {
+        "min_area_ratio": 0.9676154370297901,
+        "max_area_ratio": 1.038785756010001,
+        "worst_time": 0.3333333333333333,
+        "worst_triangle_index": 96,
+        "worst_triangle_image_pixels": [
+          [
+            0.0,
+            781.3333333333334
+          ],
+          [
+            0.0,
+            879.0
+          ],
+          [
+            150.5,
+            781.3333333333334
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.3822434875066454
+      },
+      "move_start": {
+        "min_area_ratio": 0.9798045397413034,
+        "max_area_ratio": 1.0162490252929577,
+        "worst_time": 0.68,
+        "worst_triangle_index": 96,
+        "worst_triangle_image_pixels": [
+          [
+            0.0,
+            781.3333333333334
+          ],
+          [
+            0.0,
+            879.0
+          ],
+          [
+            150.5,
+            781.3333333333334
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.3822434875066454
+      },
+      "move_stop": {
+        "min_area_ratio": 0.9798045397413034,
+        "max_area_ratio": 1.0162490252929577,
+        "worst_time": 0.0,
+        "worst_triangle_index": 96,
+        "worst_triangle_image_pixels": [
+          [
+            0.0,
+            781.3333333333334
+          ],
+          [
+            0.0,
+            879.0
+          ],
+          [
+            150.5,
+            781.3333333333334
+          ]
+        ],
+        "worst_triangle_opaque_fraction": 0.3822434875066454
+      }
+    },
+    "torso_material_triangle_count": 106,
+    "leg_back_min_reach_margin": 6.816725774366034,
+    "leg_front_min_reach_margin": 7.724875783766095,
+    "idle_visible_foot_seam_velocity_delta_source_px_per_s": 0.008450331953617295,
+    "move_visible_foot_seam_velocity_delta_source_px_per_s": 0.21677815517014137,
+    "basic_attack_visible_foot_seam_velocity_delta_source_px_per_s": 0.002517710804082679
+  },
+  "findings": [
+    "The authored sole anchor is inside the paw rather than on the lowest contact contour; QA additionally follows an alpha-derived contact point."
+  ]
+}

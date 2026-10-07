@@ -1,0 +1,103 @@
+{
+  "duration": 12.6,
+  "switches": 12,
+  "scope": "Two authored start/walk/stop/attack sequences; not a runtime crossfade or arbitrary interrupt test.",
+  "segments": [
+    {
+      "at": 0,
+      "animation": "idle",
+      "duration": 0.4,
+      "hold_neutral": true
+    },
+    {
+      "at": 0.4,
+      "animation": "move_start",
+      "duration": 0.68,
+      "hold_neutral": false
+    },
+    {
+      "at": 1.08,
+      "animation": "move",
+      "duration": 1.12,
+      "hold_neutral": false
+    },
+    {
+      "at": 2.2,
+      "animation": "move",
+      "duration": 1.12,
+      "hold_neutral": false
+    },
+    {
+      "at": 3.32,
+      "animation": "move_stop",
+      "duration": 0.68,
+      "hold_neutral": false
+    },
+    {
+      "at": 4.0,
+      "animation": "idle",
+      "duration": 0.4,
+      "hold_neutral": true
+    },
+    {
+      "at": 4.4,
+      "animation": "basic_attack",
+      "duration": 1.4,
+      "hold_neutral": false
+    },
+    {
+      "at": 5.8,
+      "animation": "idle",
+      "duration": 0.5,
+      "hold_neutral": true
+    },
+    {
+      "at": 6.3,
+      "animation": "idle",
+      "duration": 0.4,
+      "hold_neutral": true
+    },
+    {
+      "at": 6.7,
+      "animation": "move_start",
+      "duration": 0.68,
+      "hold_neutral": false
+    },
+    {
+      "at": 7.38,
+      "animation": "move",
+      "duration": 1.12,
+      "hold_neutral": false
+    },
+    {
+      "at": 8.5,
+      "animation": "move",
+      "duration": 1.12,
+      "hold_neutral": false
+    },
+    {
+      "at": 9.62,
+      "animation": "move_stop",
+      "duration": 0.68,
+      "hold_neutral": false
+    },
+    {
+      "at": 10.3,
+      "animation": "idle",
+      "duration": 0.4,
+      "hold_neutral": true
+    },
+    {
+      "at": 10.7,
+      "animation": "basic_attack",
+      "duration": 1.4,
+      "hold_neutral": false
+    },
+    {
+      "at": 12.1,
+      "animation": "idle",
+      "duration": 0.5,
+      "hold_neutral": true
+    }
+  ]
+}

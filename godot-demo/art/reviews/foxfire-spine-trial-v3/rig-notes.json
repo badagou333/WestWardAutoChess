@@ -1,0 +1,101 @@
+{
+  "origin": "Externally authored input, not saved/exported from Spine Trial",
+  "cycle_seconds": 1.12,
+  "stance_fraction": 0.62,
+  "stride_source_px": 136.0,
+  "speed_source_px_per_second": 195.85253456221199,
+  "lift_source_px": 48.0,
+  "durations": {
+    "idle": 2.4,
+    "move": 1.12,
+    "basic_attack": 1.4,
+    "move_start": 0.68,
+    "move_stop": 0.68
+  },
+  "legs": {
+    "leg_back": {
+      "rect": [
+        425,
+        911,
+        190,
+        312
+      ],
+      "phase": 0.5,
+      "hip": [
+        -67.82147315855184,
+        336.56637168141594
+      ],
+      "knee": [
+        -117.63420724094885,
+        194.26548672566378
+      ],
+      "ankle": [
+        -79.68164794007487,
+        88.07079646017701
+      ],
+      "a1": -109.29270927292531,
+      "a2": -70.33379125761805,
+      "l1": 150.7675374076058,
+      "l2": 112.77282029846123
+    },
+    "leg_front": {
+      "rect": [
+        428,
+        915,
+        207,
+        340
+      ],
+      "phase": 0,
+      "hip": [
+        -54.337078651685374,
+        331.89925119128657
+      ],
+      "knee": [
+        -108.60674157303373,
+        176.82777399591555
+      ],
+      "ankle": [
+        -67.25842696629218,
+        61.10279101429546
+      ],
+      "a1": -109.28828385657329,
+      "a2": -70.33828861360915,
+      "l1": 164.29351585851234,
+      "l2": 122.89001101356585
+    }
+  },
+  "visible_landmarks_image_px": {
+    "hip": [
+      650,
+      70
+    ],
+    "knee": [
+      440,
+      740
+    ],
+    "ankle": [
+      600,
+      1240
+    ],
+    "toe": [
+      255,
+      1425
+    ],
+    "heel": [
+      681,
+      1362
+    ],
+    "sole": [
+      405,
+      1450
+    ]
+  },
+  "art_alpha_bounds": [
+    156,
+    35,
+    957,
+    1504
+  ],
+  "art_sha256": "89c8af91f9fa2e5bef88ef826956408507c271ea0d6afcf95c7da99efee43c48",
+  "geometry_note": "Independent contact walk. Idle does not have to equal move[0]. Complete paw rigid below texture y=1100. Landmarks must be verified opaque."
+}
