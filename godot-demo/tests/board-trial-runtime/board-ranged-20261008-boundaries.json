@@ -1,0 +1,2589 @@
+{
+	"coordinate_base": 0,
+	"failures": 0,
+	"fixture_hp": 10000,
+	"foxfire_splash": {
+		"adjacent_hp_loss": 20.0,
+		"attack_times": [
+			0.00833333333333333
+		],
+		"damage": 40.0,
+		"fixture_hp": 10000,
+		"kind": "live_ability_fixture",
+		"primary_hp_loss": 20.0,
+		"rat_cooldown": 10,
+		"seconds": 0.808333333333333
+	},
+	"isolated_boundaries": true,
+	"live_AI_state_fixture": true,
+	"reports": [
+		{
+			"attack_times": [
+				0.00833333333333333,
+				1.125,
+				2.84166666666666,
+				4.55833333333335,
+				5.40833333333339,
+				6.25833333333343,
+				7.10833333333348,
+				7.95833333333352,
+				8.80833333333347,
+				9.65833333333343,
+				10.5083333333334,
+				11.3583333333333
+			],
+			"cell": [
+				6,
+				5
+			],
+			"damage": 264.0,
+			"departure": 0.591666666666667,
+			"fps": 30,
+			"hp_loss": 264.0,
+			"key": "wild_hunter",
+			"max_anchor_distance": 7,
+			"max_column": 6,
+			"moves": [
+				{
+					"from": [
+						7,
+						0
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 0.00833333333333333,
+					"to": [
+						7,
+						1
+					]
+				},
+				{
+					"from": [
+						7,
+						1
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 0.591666666666667,
+					"to": [
+						7,
+						2
+					]
+				},
+				{
+					"from": [
+						4,
+						0
+					],
+					"id": "wild_hunter",
+					"target": "E5",
+					"time": 0.7,
+					"to": [
+						4,
+						1
+					]
+				},
+				{
+					"from": [
+						7,
+						2
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 1.175,
+					"to": [
+						7,
+						3
+					]
+				},
+				{
+					"from": [
+						4,
+						1
+					],
+					"id": "wild_hunter",
+					"target": "E5",
+					"time": 1.56666666666666,
+					"to": [
+						4,
+						2
+					]
+				},
+				{
+					"from": [
+						7,
+						3
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 1.75833333333333,
+					"to": [
+						7,
+						4
+					]
+				},
+				{
+					"from": [
+						4,
+						2
+					],
+					"id": "wild_hunter",
+					"target": "E5",
+					"time": 1.99166666666666,
+					"to": [
+						4,
+						3
+					]
+				},
+				{
+					"from": [
+						7,
+						4
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 2.34166666666666,
+					"to": [
+						7,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						3
+					],
+					"id": "wild_hunter",
+					"target": "E5",
+					"time": 2.41666666666666,
+					"to": [
+						4,
+						4
+					]
+				},
+				{
+					"from": [
+						7,
+						5
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 2.92499999999999,
+					"to": [
+						8,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						4
+					],
+					"id": "wild_hunter",
+					"target": "E5",
+					"time": 3.28333333333332,
+					"to": [
+						4,
+						5
+					]
+				},
+				{
+					"from": [
+						8,
+						5
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 3.50833333333332,
+					"to": [
+						9,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						5
+					],
+					"id": "wild_hunter",
+					"target": "E5",
+					"time": 3.70833333333332,
+					"to": [
+						5,
+						5
+					]
+				},
+				{
+					"from": [
+						5,
+						5
+					],
+					"id": "wild_hunter",
+					"target": "E5",
+					"time": 4.13333333333333,
+					"to": [
+						6,
+						5
+					]
+				}
+			],
+			"resolved_amounts": [
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0
+			],
+			"seconds": 12.0,
+			"settled": 4.55833333333335,
+			"shots": [
+				{
+					"cell": [
+						4,
+						0
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 0.00833333333333333
+				},
+				{
+					"cell": [
+						4,
+						1
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 1.125
+				},
+				{
+					"cell": [
+						4,
+						4
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 2.84166666666666
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 4.09166666666666
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 4.55833333333335
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 5.04166666666671
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 5.40833333333339
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 5.99166666666675
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 6.25833333333343
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 6.9416666666668
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 7.10833333333348
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 7.89166666666685
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 7.95833333333352
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 8.80833333333347
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 8.84166666666681
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 9.65833333333343
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 9.79166666666675
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 10.5083333333334
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 10.7416666666667
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 11.3583333333333
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 11.6916666666666
+				}
+			],
+			"speed": 1,
+			"target_cell": [
+				9,
+				5
+			]
+		},
+		{
+			"attack_times": [
+				0.00833333333333333,
+				1.125,
+				2.84166666666666,
+				4.55833333333335,
+				5.40833333333339,
+				6.25833333333343,
+				7.10833333333348,
+				7.95833333333352,
+				8.80833333333347,
+				9.65833333333343,
+				10.5083333333334,
+				11.3583333333333
+			],
+			"cell": [
+				6,
+				5
+			],
+			"damage": 264.0,
+			"departure": 0.591666666666667,
+			"fps": 120,
+			"hp_loss": 264.0,
+			"key": "wild_hunter",
+			"max_anchor_distance": 7,
+			"max_column": 6,
+			"moves": [
+				{
+					"from": [
+						7,
+						0
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 0.00833333333333333,
+					"to": [
+						7,
+						1
+					]
+				},
+				{
+					"from": [
+						7,
+						1
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 0.591666666666667,
+					"to": [
+						7,
+						2
+					]
+				},
+				{
+					"from": [
+						4,
+						0
+					],
+					"id": "wild_hunter",
+					"target": "E5",
+					"time": 0.7,
+					"to": [
+						4,
+						1
+					]
+				},
+				{
+					"from": [
+						7,
+						2
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 1.175,
+					"to": [
+						7,
+						3
+					]
+				},
+				{
+					"from": [
+						4,
+						1
+					],
+					"id": "wild_hunter",
+					"target": "E5",
+					"time": 1.56666666666666,
+					"to": [
+						4,
+						2
+					]
+				},
+				{
+					"from": [
+						7,
+						3
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 1.75833333333333,
+					"to": [
+						7,
+						4
+					]
+				},
+				{
+					"from": [
+						4,
+						2
+					],
+					"id": "wild_hunter",
+					"target": "E5",
+					"time": 1.99166666666666,
+					"to": [
+						4,
+						3
+					]
+				},
+				{
+					"from": [
+						7,
+						4
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 2.34166666666666,
+					"to": [
+						7,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						3
+					],
+					"id": "wild_hunter",
+					"target": "E5",
+					"time": 2.41666666666666,
+					"to": [
+						4,
+						4
+					]
+				},
+				{
+					"from": [
+						7,
+						5
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 2.92499999999999,
+					"to": [
+						8,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						4
+					],
+					"id": "wild_hunter",
+					"target": "E5",
+					"time": 3.28333333333332,
+					"to": [
+						4,
+						5
+					]
+				},
+				{
+					"from": [
+						8,
+						5
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 3.50833333333332,
+					"to": [
+						9,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						5
+					],
+					"id": "wild_hunter",
+					"target": "E5",
+					"time": 3.70833333333332,
+					"to": [
+						5,
+						5
+					]
+				},
+				{
+					"from": [
+						5,
+						5
+					],
+					"id": "wild_hunter",
+					"target": "E5",
+					"time": 4.13333333333333,
+					"to": [
+						6,
+						5
+					]
+				}
+			],
+			"resolved_amounts": [
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0,
+				22.0
+			],
+			"seconds": 12.0,
+			"settled": 4.55833333333335,
+			"shots": [
+				{
+					"cell": [
+						4,
+						0
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 0.00833333333333333
+				},
+				{
+					"cell": [
+						4,
+						1
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 1.125
+				},
+				{
+					"cell": [
+						4,
+						4
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 2.84166666666666
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 4.09166666666666
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 4.55833333333335
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 5.04166666666671
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 5.40833333333339
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 5.99166666666675
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 6.25833333333343
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 6.9416666666668
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 7.10833333333348
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 7.89166666666685
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 7.95833333333352
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 8.80833333333347
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 8.84166666666681
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 9.65833333333343
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 9.79166666666675
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 10.5083333333334
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 10.7416666666667
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "wild_hunter",
+					"range": 3,
+					"target": "E5",
+					"time": 11.3583333333333
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 11.6916666666666
+				}
+			],
+			"speed": 2,
+			"target_cell": [
+				9,
+				5
+			]
+		},
+		{
+			"attack_times": [
+				0.00833333333333333,
+				1.69166666666666,
+				4.05833333333332,
+				5.02500000000004,
+				5.95000000000009,
+				6.87500000000013,
+				7.80000000000018,
+				8.72500000000015,
+				9.65000000000009,
+				10.575,
+				11.5
+			],
+			"cell": [
+				6,
+				5
+			],
+			"damage": 187.0,
+			"departure": 0.591666666666667,
+			"fps": 30,
+			"hp_loss": 187.0,
+			"key": "sparrow_spirit",
+			"max_anchor_distance": 7,
+			"max_column": 6,
+			"moves": [
+				{
+					"from": [
+						7,
+						0
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 0.00833333333333333,
+					"to": [
+						7,
+						1
+					]
+				},
+				{
+					"from": [
+						7,
+						1
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 0.591666666666667,
+					"to": [
+						7,
+						2
+					]
+				},
+				{
+					"from": [
+						4,
+						0
+					],
+					"id": "sparrow_spirit",
+					"target": "E5",
+					"time": 0.758333333333333,
+					"to": [
+						4,
+						1
+					]
+				},
+				{
+					"from": [
+						7,
+						2
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 1.175,
+					"to": [
+						7,
+						3
+					]
+				},
+				{
+					"from": [
+						4,
+						1
+					],
+					"id": "sparrow_spirit",
+					"target": "E5",
+					"time": 1.225,
+					"to": [
+						4,
+						2
+					]
+				},
+				{
+					"from": [
+						7,
+						3
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 1.75833333333333,
+					"to": [
+						7,
+						4
+					]
+				},
+				{
+					"from": [
+						4,
+						2
+					],
+					"id": "sparrow_spirit",
+					"target": "E5",
+					"time": 2.19166666666666,
+					"to": [
+						4,
+						3
+					]
+				},
+				{
+					"from": [
+						7,
+						4
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 2.34166666666666,
+					"to": [
+						7,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						3
+					],
+					"id": "sparrow_spirit",
+					"target": "E5",
+					"time": 2.65833333333333,
+					"to": [
+						4,
+						4
+					]
+				},
+				{
+					"from": [
+						7,
+						5
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 2.92499999999999,
+					"to": [
+						8,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						4
+					],
+					"id": "sparrow_spirit",
+					"target": "E5",
+					"time": 3.12499999999999,
+					"to": [
+						4,
+						5
+					]
+				},
+				{
+					"from": [
+						8,
+						5
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 3.50833333333332,
+					"to": [
+						9,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						5
+					],
+					"id": "sparrow_spirit",
+					"target": "E5",
+					"time": 3.59166666666666,
+					"to": [
+						5,
+						5
+					]
+				},
+				{
+					"from": [
+						5,
+						5
+					],
+					"id": "sparrow_spirit",
+					"target": "E5",
+					"time": 4.55833333333335,
+					"to": [
+						6,
+						5
+					]
+				}
+			],
+			"resolved_amounts": [
+				17.0,
+				17.0,
+				17.0,
+				17.0,
+				17.0,
+				17.0,
+				17.0,
+				17.0,
+				17.0,
+				17.0,
+				17.0
+			],
+			"seconds": 12.0,
+			"settled": 5.02500000000004,
+			"shots": [
+				{
+					"cell": [
+						4,
+						0
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 0.00833333333333333
+				},
+				{
+					"cell": [
+						4,
+						2
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 1.69166666666666
+				},
+				{
+					"cell": [
+						5,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 4.05833333333332
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 4.09166666666666
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 5.02500000000004
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 5.04166666666671
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 5.95000000000009
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 5.99166666666675
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 6.87500000000013
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 6.9416666666668
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 7.80000000000018
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 7.89166666666685
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 8.72500000000015
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 8.84166666666681
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 9.65000000000009
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 9.79166666666675
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 10.575
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 10.7416666666667
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 11.5
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 11.6916666666666
+				}
+			],
+			"speed": 1,
+			"target_cell": [
+				9,
+				5
+			]
+		},
+		{
+			"attack_times": [
+				0.00833333333333333,
+				1.69166666666666,
+				4.05833333333332,
+				5.02500000000004,
+				5.95000000000009,
+				6.87500000000013,
+				7.80000000000018,
+				8.72500000000015,
+				9.65000000000009,
+				10.575,
+				11.5
+			],
+			"cell": [
+				6,
+				5
+			],
+			"damage": 187.0,
+			"departure": 0.591666666666667,
+			"fps": 120,
+			"hp_loss": 187.0,
+			"key": "sparrow_spirit",
+			"max_anchor_distance": 7,
+			"max_column": 6,
+			"moves": [
+				{
+					"from": [
+						7,
+						0
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 0.00833333333333333,
+					"to": [
+						7,
+						1
+					]
+				},
+				{
+					"from": [
+						7,
+						1
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 0.591666666666667,
+					"to": [
+						7,
+						2
+					]
+				},
+				{
+					"from": [
+						4,
+						0
+					],
+					"id": "sparrow_spirit",
+					"target": "E5",
+					"time": 0.758333333333333,
+					"to": [
+						4,
+						1
+					]
+				},
+				{
+					"from": [
+						7,
+						2
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 1.175,
+					"to": [
+						7,
+						3
+					]
+				},
+				{
+					"from": [
+						4,
+						1
+					],
+					"id": "sparrow_spirit",
+					"target": "E5",
+					"time": 1.225,
+					"to": [
+						4,
+						2
+					]
+				},
+				{
+					"from": [
+						7,
+						3
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 1.75833333333333,
+					"to": [
+						7,
+						4
+					]
+				},
+				{
+					"from": [
+						4,
+						2
+					],
+					"id": "sparrow_spirit",
+					"target": "E5",
+					"time": 2.19166666666666,
+					"to": [
+						4,
+						3
+					]
+				},
+				{
+					"from": [
+						7,
+						4
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 2.34166666666666,
+					"to": [
+						7,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						3
+					],
+					"id": "sparrow_spirit",
+					"target": "E5",
+					"time": 2.65833333333333,
+					"to": [
+						4,
+						4
+					]
+				},
+				{
+					"from": [
+						7,
+						5
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 2.92499999999999,
+					"to": [
+						8,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						4
+					],
+					"id": "sparrow_spirit",
+					"target": "E5",
+					"time": 3.12499999999999,
+					"to": [
+						4,
+						5
+					]
+				},
+				{
+					"from": [
+						8,
+						5
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 3.50833333333332,
+					"to": [
+						9,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						5
+					],
+					"id": "sparrow_spirit",
+					"target": "E5",
+					"time": 3.59166666666666,
+					"to": [
+						5,
+						5
+					]
+				},
+				{
+					"from": [
+						5,
+						5
+					],
+					"id": "sparrow_spirit",
+					"target": "E5",
+					"time": 4.55833333333335,
+					"to": [
+						6,
+						5
+					]
+				}
+			],
+			"resolved_amounts": [
+				17.0,
+				17.0,
+				17.0,
+				17.0,
+				17.0,
+				17.0,
+				17.0,
+				17.0,
+				17.0,
+				17.0,
+				17.0
+			],
+			"seconds": 12.0,
+			"settled": 5.02500000000004,
+			"shots": [
+				{
+					"cell": [
+						4,
+						0
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 0.00833333333333333
+				},
+				{
+					"cell": [
+						4,
+						2
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 1.69166666666666
+				},
+				{
+					"cell": [
+						5,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 4.05833333333332
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 4.09166666666666
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 5.02500000000004
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 5.04166666666671
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 5.95000000000009
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 5.99166666666675
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 6.87500000000013
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 6.9416666666668
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 7.80000000000018
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 7.89166666666685
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 8.72500000000015
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 8.84166666666681
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 9.65000000000009
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 9.79166666666675
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 10.575
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 10.7416666666667
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "sparrow_spirit",
+					"range": 3,
+					"target": "E5",
+					"time": 11.5
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 11.6916666666666
+				}
+			],
+			"speed": 2,
+			"target_cell": [
+				9,
+				5
+			]
+		},
+		{
+			"attack_times": [
+				0.00833333333333333,
+				1.70833333333333,
+				4.00833333333332,
+				5.25833333333338,
+				6.50833333333345,
+				7.75833333333351,
+				9.00833333333346,
+				10.2583333333334,
+				11.5083333333333
+			],
+			"cell": [
+				6,
+				5
+			],
+			"damage": 160.0,
+			"departure": 0.591666666666667,
+			"fps": 30,
+			"hp_loss": 160.0,
+			"key": "foxfire_imp",
+			"max_anchor_distance": 7,
+			"max_column": 6,
+			"moves": [
+				{
+					"from": [
+						7,
+						0
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 0.00833333333333333,
+					"to": [
+						7,
+						1
+					]
+				},
+				{
+					"from": [
+						7,
+						1
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 0.591666666666667,
+					"to": [
+						7,
+						2
+					]
+				},
+				{
+					"from": [
+						4,
+						0
+					],
+					"id": "foxfire_imp",
+					"target": "E5",
+					"time": 0.608333333333334,
+					"to": [
+						4,
+						1
+					]
+				},
+				{
+					"from": [
+						7,
+						2
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 1.175,
+					"to": [
+						7,
+						3
+					]
+				},
+				{
+					"from": [
+						4,
+						1
+					],
+					"id": "foxfire_imp",
+					"target": "E5",
+					"time": 1.28333333333333,
+					"to": [
+						4,
+						2
+					]
+				},
+				{
+					"from": [
+						7,
+						3
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 1.75833333333333,
+					"to": [
+						7,
+						4
+					]
+				},
+				{
+					"from": [
+						4,
+						2
+					],
+					"id": "foxfire_imp",
+					"target": "E5",
+					"time": 2.30833333333333,
+					"to": [
+						4,
+						3
+					]
+				},
+				{
+					"from": [
+						7,
+						4
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 2.34166666666666,
+					"to": [
+						7,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						3
+					],
+					"id": "foxfire_imp",
+					"target": "E5",
+					"time": 2.73333333333333,
+					"to": [
+						4,
+						4
+					]
+				},
+				{
+					"from": [
+						7,
+						5
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 2.92499999999999,
+					"to": [
+						8,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						4
+					],
+					"id": "foxfire_imp",
+					"target": "E5",
+					"time": 3.15833333333332,
+					"to": [
+						4,
+						5
+					]
+				},
+				{
+					"from": [
+						8,
+						5
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 3.50833333333332,
+					"to": [
+						9,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						5
+					],
+					"id": "foxfire_imp",
+					"target": "E5",
+					"time": 3.58333333333332,
+					"to": [
+						5,
+						5
+					]
+				},
+				{
+					"from": [
+						5,
+						5
+					],
+					"id": "foxfire_imp",
+					"target": "E5",
+					"time": 4.60833333333335,
+					"to": [
+						6,
+						5
+					]
+				}
+			],
+			"resolved_amounts": [
+				20.0,
+				20.0,
+				20.0,
+				20.0,
+				20.0,
+				20.0,
+				20.0,
+				20.0
+			],
+			"seconds": 12.0,
+			"settled": 5.03333333333337,
+			"shots": [
+				{
+					"cell": [
+						4,
+						0
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 0.00833333333333333
+				},
+				{
+					"cell": [
+						4,
+						2
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 1.70833333333333
+				},
+				{
+					"cell": [
+						5,
+						5
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 4.00833333333332
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 4.09166666666666
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 5.04166666666671
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 5.25833333333338
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 5.99166666666675
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 6.50833333333345
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 6.9416666666668
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 7.75833333333351
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 7.89166666666685
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 8.84166666666681
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 9.00833333333346
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 9.79166666666675
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 10.2583333333334
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 10.7416666666667
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 11.5083333333333
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 11.6916666666666
+				}
+			],
+			"speed": 1,
+			"target_cell": [
+				9,
+				5
+			]
+		},
+		{
+			"attack_times": [
+				0.00833333333333333,
+				1.70833333333333,
+				4.00833333333332,
+				5.25833333333338,
+				6.50833333333345,
+				7.75833333333351,
+				9.00833333333346,
+				10.2583333333334,
+				11.5083333333333
+			],
+			"cell": [
+				6,
+				5
+			],
+			"damage": 160.0,
+			"departure": 0.591666666666667,
+			"fps": 120,
+			"hp_loss": 160.0,
+			"key": "foxfire_imp",
+			"max_anchor_distance": 7,
+			"max_column": 6,
+			"moves": [
+				{
+					"from": [
+						7,
+						0
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 0.00833333333333333,
+					"to": [
+						7,
+						1
+					]
+				},
+				{
+					"from": [
+						7,
+						1
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 0.591666666666667,
+					"to": [
+						7,
+						2
+					]
+				},
+				{
+					"from": [
+						4,
+						0
+					],
+					"id": "foxfire_imp",
+					"target": "E5",
+					"time": 0.608333333333334,
+					"to": [
+						4,
+						1
+					]
+				},
+				{
+					"from": [
+						7,
+						2
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 1.175,
+					"to": [
+						7,
+						3
+					]
+				},
+				{
+					"from": [
+						4,
+						1
+					],
+					"id": "foxfire_imp",
+					"target": "E5",
+					"time": 1.28333333333333,
+					"to": [
+						4,
+						2
+					]
+				},
+				{
+					"from": [
+						7,
+						3
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 1.75833333333333,
+					"to": [
+						7,
+						4
+					]
+				},
+				{
+					"from": [
+						4,
+						2
+					],
+					"id": "foxfire_imp",
+					"target": "E5",
+					"time": 2.30833333333333,
+					"to": [
+						4,
+						3
+					]
+				},
+				{
+					"from": [
+						7,
+						4
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 2.34166666666666,
+					"to": [
+						7,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						3
+					],
+					"id": "foxfire_imp",
+					"target": "E5",
+					"time": 2.73333333333333,
+					"to": [
+						4,
+						4
+					]
+				},
+				{
+					"from": [
+						7,
+						5
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 2.92499999999999,
+					"to": [
+						8,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						4
+					],
+					"id": "foxfire_imp",
+					"target": "E5",
+					"time": 3.15833333333332,
+					"to": [
+						4,
+						5
+					]
+				},
+				{
+					"from": [
+						8,
+						5
+					],
+					"id": "E5",
+					"target": "tangseng",
+					"time": 3.50833333333332,
+					"to": [
+						9,
+						5
+					]
+				},
+				{
+					"from": [
+						4,
+						5
+					],
+					"id": "foxfire_imp",
+					"target": "E5",
+					"time": 3.58333333333332,
+					"to": [
+						5,
+						5
+					]
+				},
+				{
+					"from": [
+						5,
+						5
+					],
+					"id": "foxfire_imp",
+					"target": "E5",
+					"time": 4.60833333333335,
+					"to": [
+						6,
+						5
+					]
+				}
+			],
+			"resolved_amounts": [
+				20.0,
+				20.0,
+				20.0,
+				20.0,
+				20.0,
+				20.0,
+				20.0,
+				20.0
+			],
+			"seconds": 12.0,
+			"settled": 5.03333333333337,
+			"shots": [
+				{
+					"cell": [
+						4,
+						0
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 0.00833333333333333
+				},
+				{
+					"cell": [
+						4,
+						2
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 1.70833333333333
+				},
+				{
+					"cell": [
+						5,
+						5
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 4.00833333333332
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 4.09166666666666
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 5.04166666666671
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 5.25833333333338
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 5.99166666666675
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 6.50833333333345
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 6.9416666666668
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 7.75833333333351
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 7.89166666666685
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 8.84166666666681
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 9.00833333333346
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 9.79166666666675
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 10.2583333333334
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 10.7416666666667
+				},
+				{
+					"cell": [
+						6,
+						5
+					],
+					"id": "foxfire_imp",
+					"range": 3,
+					"target": "E5",
+					"time": 11.5083333333333
+				},
+				{
+					"cell": [
+						9,
+						5
+					],
+					"id": "E5",
+					"range": 3,
+					"target": "tangseng",
+					"time": 11.6916666666666
+				}
+			],
+			"speed": 2,
+			"target_cell": [
+				9,
+				5
+			]
+		}
+	],
+	"rule": "ranged-pursuit-d20261008-001",
+	"stationary_holder_core_cooldown": 100
+}

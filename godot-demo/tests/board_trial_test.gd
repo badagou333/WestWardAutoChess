@@ -24,7 +24,13 @@ func ownership(game) -> void:
 			held[cell] = actor.id
 		if actor.friendly and actor.key=="guard_monk":
 			for cell in cells: check(Config.distance(actor.anchor,cell)<=Config.LEASH,"monk stays in original anchor radius")
-		elif actor.friendly: check(actor.cell==actor.anchor and actor.move.is_empty(),"core/ranged/healer stay at deployment")
+		elif actor.friendly and actor.key in ["tangseng","herbal_spirit_child"]:
+			check(actor.cell==actor.anchor and actor.move.is_empty(),"core/healer stay at deployment")
+		elif actor.friendly:
+			check(actor.key in ["wild_hunter","sparrow_spirit","foxfire_imp"],"only the three ranged damage heroes are exempt from stationary/monk constraints")
+			check(cells.all(func(cell): return Config.valid(cell)),"mobile ranged source/destination remain inside the full legal board")
+			if not actor.move.is_empty():
+				check(actor.move.from==actor.cell and Config.distance(actor.cell,actor.move.to)==1,"mobile ranged reserves one legal four-neighbor segment, not a teleport")
 func simulate(key: String, fps: int, speed: int) -> Dictionary:
 	var game = fresh()
 	game.load_formation(key)

@@ -14,6 +14,7 @@ const BACKGROUND = preload("res://art/boards/formation_trial_v2/board-courtyard.
 const BACKGROUND_RECT := Rect2(0,-12,1920,1128)
 const CANVAS := Rect2(0,0,1920,1080)
 const BOARD_RECT := Rect2(Config.ORIGIN,Vector2(Config.COLS,Config.ROWS)*Config.CELL)
+const RANGED_RULE := "ranged-pursuit-d20261008-001"
 enum Phase { DEPLOY, BATTLE, RESULT }
 var phase := Phase.DEPLOY
 var actors: Array[Dictionary] = [] # Fixed IDs and update order; no freed-node ledger.
@@ -217,11 +218,14 @@ func _path(actor: Dictionary, goal: Vector2i, reach: int) -> Array[Vector2i]:
 	var limited: bool = actor.friendly and actor.key=="guard_monk"
 	return Space.path(actor.cell,goal,reach,func(cell): return not _occupant(cell,actor.id).is_empty(),actor.anchor,Config.LEASH if limited else -1)
 
+func _mobile_ranged(actor: Dictionary) -> bool:
+	return actor.friendly and actor.key in ["wild_hunter","sparrow_spirit","foxfire_imp"]
+
 func _target_legal(actor: Dictionary, target: Dictionary) -> bool:
 	if not _active(target) or actor.friendly==target.friendly: return false
 	if actor.friendly and actor.key=="guard_monk":
 		return Config.distance(actor.anchor,target.cell)<=Config.AGGRO
-	elif actor.friendly:
+	elif actor.friendly and not _mobile_ranged(actor):
 		return Config.distance(actor.cell,target.cell)<=actor.reach
 	return not _path(actor,target.cell,actor.reach).is_empty()
 
@@ -231,7 +235,7 @@ func _best_target(actor: Dictionary) -> Dictionary:
 	for target in actors:
 		if not _target_legal(actor,target): continue
 		var distance: int = Config.distance(actor.cell,target.cell)
-		if not actor.friendly or actor.key=="guard_monk":
+		if not actor.friendly or actor.key=="guard_monk" or _mobile_ranged(actor):
 			var path := _path(actor,target.cell,actor.reach)
 			if path.is_empty(): continue
 			distance = path.size()-1
@@ -265,7 +269,7 @@ func _attack(actor: Dictionary, target: Dictionary, healing := false) -> void:
 func _move(actor: Dictionary, next: Vector2i) -> bool:
 	if not _active(actor) or not Config.valid(next) or not actor.move.is_empty(): return false
 	if Config.distance(actor.cell,next)!=1 or not _occupant(next,actor.id).is_empty(): return false
-	if actor.friendly and Config.distance(actor.anchor,next)>Config.LEASH: return false
+	if actor.friendly and not _mobile_ranged(actor) and Config.distance(actor.anchor,next)>Config.LEASH: return false
 	actor.move = {"from":actor.cell,"to":next,"time":0.0,"duration":actor.walk}
 	if Melee.applies(actor):
 		actor.move_serial += 1
@@ -327,7 +331,7 @@ func _brain(actor: Dictionary, delta: float) -> void:
 		return
 	actor.mode = "接敌 → "+target.id
 	if Config.distance(actor.cell,target.cell)<=actor.reach: _attack(actor,target)
-	elif not actor.friendly:
+	elif not actor.friendly or _mobile_ranged(actor):
 		var path := _path(actor,target.cell,actor.reach)
 		if path.size()>1: _move(actor,path[1])
 
@@ -457,7 +461,7 @@ func report() -> Dictionary:
 	var fallen: Array[String] = []
 	for actor in actors:
 		if actor.friendly and Config.valid(actor.anchor) and not _alive(actor): fallen.append(actor.id)
-	return {"config":Config.VERSION,"melee_rule":Melee.RULE,"phase":phase,"victory":victory,"seconds":elapsed,
+	return {"config":Config.VERSION,"melee_rule":Melee.RULE,"ranged_rule":RANGED_RULE,"phase":phase,"victory":victory,"seconds":elapsed,
 		"tangseng_hp":_hp(_record("tangseng")),"fallen":fallen,"result_count":result_count,"metrics":metrics.duplicate(true)}
 
 func _notice(value: String) -> void:

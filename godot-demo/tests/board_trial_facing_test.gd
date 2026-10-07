@@ -79,8 +79,9 @@ func run() -> void:
 	side(game,monk,1,"idle after returning")
 	game.free()
 	game = fresh()
-	isolate(game,["wild_hunter","tangseng","E1"])
-	game._set_cell(game._record("E1"),Vector2i(11,6))
+	# A distant enemy is now reachable by the hunter. Use an actually empty
+	# opposing roster to preserve the real no-target/default-facing assertion.
+	isolate(game,["wild_hunter","tangseng"])
 	var hunter: Dictionary = game._record("wild_hunter")
 	hunter.node.presentation.facing = -1
 	hunter.node.presentation.attack_direction = Vector2.LEFT
