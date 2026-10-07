@@ -4,6 +4,7 @@ var releases: Array[Dictionary] = []
 func side(game, actor: Dictionary, expected: float, label: String) -> void:
 	var view = actor.node.presentation
 	var source := -1.0 if view.manifest.get("source_facing","right")=="left" else 1.0
+	if actor.key=="herbal_spirit_child" and view.frame_index==0: source = -1.0 # Actual pixels, not the incorrect shared idle tag.
 	check(view.facing==expected and signf(view.visual_transform().x.x)==expected*source,label+" uses one source mirror in final rendering matrix")
 	check(actor.node.position==Config.center(actor.cell),label+" keeps exact root foot point")
 	check(view.position==Vector2.ZERO and view.foot_anchor==Vector2.ZERO,label+" never offsets local foot anchor")

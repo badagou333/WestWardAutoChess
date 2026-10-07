@@ -25,7 +25,7 @@ func run() -> void:
 	check(game._move(monk,path[1]),"first adjacent move claimed")
 	check(not game._occupant(monk.cell,"E2").is_empty() and not game._occupant(monk.move.to,"E2").is_empty(),"moving monk reserves source and destination")
 	check(not game._move(second,monk.move.to),"occupied destination cannot be double claimed")
-	# Return never resets the anchor or selects another enemy before arrival.
+	# D-004 replaces forced return: death retargets from the current grid cell.
 	monk.cell = monk.move.to
 	monk.node.position = Config.center(monk.cell)
 	monk.move = {}
@@ -35,7 +35,7 @@ func run() -> void:
 	enemy.node.take_damage(enemy.hp_max)
 	monk.think = 0
 	game._brain(monk,Config.STEP)
-	check(monk.anchor==Vector2i(5,3) and monk.target.is_empty() and monk.mode=="归位" and monk.move.to==monk.anchor,"dead target returns to original anchor before retargeting")
+	check(monk.anchor==Vector2i(5,3) and monk.target=="E2" and not monk.mode.begins_with("归位"),"dead target chooses reachable E2 from current cell without forced return")
 	game.free()
 	game = fresh()
 	monk = game._record("guard_monk")

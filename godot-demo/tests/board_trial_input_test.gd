@@ -74,7 +74,7 @@ func run() -> void:
 		check(game.selected==actor.id and game.ui.card_portraits[index].texture!=null,"all six native card selections use actual production portraits")
 		check(game.ui.card_hp[index].text=="%d / %d" % [game._hp(actor),actor.hp_max],"cards bind real HP")
 		check(game.ui.card_bars[index].size.y==5 and game.ui.card_portraits[index].region.size.x<=70,"thin HP meters and actual head crops retain intended logical size")
-		var mirror: bool = actor.node.presentation.manifest.get("source_facing","right")=="left"
+		var mirror: bool = actor.key=="herbal_spirit_child" or actor.node.presentation.manifest.get("source_facing","right")=="left"
 		check(game.ui.card_portraits[index].mirrored==mirror,"portraits use one source-dependent right-facing mirror")
 	for index in range(3):
 		await click(game.ui.enemy_names[index].get_parent().get_global_rect().get_center())
@@ -201,7 +201,13 @@ func run() -> void:
 	await shot("battle")
 	await await_result()
 	check(game.victory and game.result_count==1,"natural A normal-frame victory settled once")
-	check(game.ui.result_panel.visible and "合计伤害 606" in game.ui.result_label.text and "治疗 202" in game.ui.result_label.text and "阵亡 0人" in game.ui.result_label.text,"real A result keeps actual damage/heal/loss statistics")
+	var total_damage := 0.0
+	var total_healing := 0.0
+	for actor in game.actors:
+		if actor.friendly:
+			total_damage += game.metrics.damage.get(actor.id,0)
+			total_healing += game.metrics.healing.get(actor.id,0)
+	check(game.ui.result_panel.visible and "合计伤害 %.0f" % total_damage in game.ui.result_label.text and "治疗 %.0f" % total_healing in game.ui.result_label.text and "阵亡 %d人" % game.report().fallen.size() in game.ui.result_label.text,"real A result keeps actual NEW-rule damage/heal/loss statistics")
 	check(game.ui.result_label.get_minimum_size().y<=425,"actual complete six-person result text fits panel")
 	check(game.ui.enemy_counts.all(func(item): return "存活 0 / 2"==item.text),"enemy summary live count reaches zero")
 	await shot("victory")

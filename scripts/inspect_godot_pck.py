@@ -9,6 +9,8 @@ from pathlib import Path
 
 
 REQUIRED_RELEASE_FILES = (
+    "scripts/combat/board_trial_melee.gd.remap",
+    "scripts/presentation/board_trial_healer_view.gd.remap",
     "art/boards/formation_trial_v2/board-courtyard.png.import",
     "scripts/presentation/board_trial_ui.gd.remap",
     "scripts/presentation/board_trial_portrait.gd.remap",

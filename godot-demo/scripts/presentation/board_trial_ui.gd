@@ -186,7 +186,7 @@ func create_help() -> void:
 	label(Rect2(30,24,540,43),30,window).text = "布阵与战斗规则"
 	var text := label(Rect2(30,87,540,535),22,window)
 	text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	text.text = "战前：1—6或头像选人；左半6列可部署。\n左键放置、拖动调整；已部署友军可交换。\nR撤下（不是出售）；右键 / Esc取消。\n唐僧必须部署，其他队员可选择不上场。\n\n战中：自动战斗；P暂停、1× / 2×。\n暂停也不能移动、交换、撤下或补阵亡位。\n唐僧、远程、治疗驻留；棍僧有限接敌。\n棍僧警戒3格、活动2格，失目标先归位。\n四向寻路，不穿单位，曼哈顿射程无弹道遮挡。\n无目标朝向对侧，行动按实际目标转身。\n\n唐僧存活且全敌清除才胜利；唐僧死亡失败。\n同一步双方全灭也失败。本场死亡不可复活。\n重试恢复双方全员及上次开战前站位。\n本关无商店 / 人口限制 / 主动技能。"
+	text.text = "战前：1—6或头像选人；左半6列可部署。\n左键放置、拖动调整；已部署友军可交换。\nR撤下（不是出售）；右键 / Esc取消。\n唐僧必须部署，其他队员可选择不上场。\n\n战中：自动战斗；P暂停、1× / 2×。\n暂停也不能移动、交换、撤下或补阵亡位。\n唐僧、远程、治疗驻留；棍僧有限接敌。\n棍僧警戒3格、活动2格，锁定近敌。\n四向寻路，不穿单位，曼哈顿射程无弹道遮挡。\n短堵等原目标，无可接敌才归位。\n无目标朝向对侧，行动按实际目标转身。\n\n唐僧存活且全敌清除才胜利；唐僧死亡失败。\n同一步双方全灭也失败。本场死亡不可复活。\n重试恢复双方全员及上次开战前站位。\n本关无商店 / 人口限制 / 主动技能。"
 	help_close = button(Rect2(180,640,240,52),"知道了 / Esc",toggle_help,window)
 	help_layer.hide()
 
@@ -228,7 +228,7 @@ func refresh() -> void:
 		card_bars[index].value = 100*game._hp(actor)/actor.hp_max
 		card_states[index].text = state(actor)
 		roster_buttons[index].add_theme_stylebox_override("normal",Style.box(Style.FILL,Style.GOLD if game.selected==actor.id else Style.EDGE,2 if game.selected==actor.id else 1))
-		if card_portraits[index].role.is_empty(): card_portraits[index].setup(actor.key,actor.node.presentation.manifest.get("source_facing","right")=="left",true)
+		if card_portraits[index].role.is_empty(): card_portraits[index].setup(actor.key,Portrait.idle_source_left(actor.key,actor.node.presentation.manifest),true)
 	var alive_count := 0
 	for index in range(3):
 		var key: String = ["wolf","boar","rat"][index]
@@ -250,7 +250,7 @@ func refresh() -> void:
 		selected_role.text = "或点选上方敌情"
 		info_label.text = "点选队员或敌情\n查看实时属性与状态。"
 	else:
-		selected_portrait.setup(actor.key,actor.node.presentation.manifest.get("source_facing","right")=="left",actor.friendly)
+		selected_portrait.setup(actor.key,Portrait.idle_source_left(actor.key,actor.node.presentation.manifest),actor.friendly)
 		selected_name.text = actor.name
 		selected_role.text = "友军 · "+("治疗" if actor.key=="herbal_spirit_child" else "近战" if actor.reach==1 else "远程") if actor.friendly else "敌军 · "+actor.id
 		selected_hp.text = "生命   %d / %d" % [game._hp(actor),actor.hp_max]

@@ -2,6 +2,7 @@ extends Node2D
 ## Standalone fixed-roster trial. No inherited shop, wave, escort or run ledger.
 const Config = preload("res://scripts/data/board_trial_config.gd")
 const Space = preload("res://scripts/combat/board_trial_space.gd")
+const Melee = preload("res://scripts/combat/board_trial_melee.gd")
 const Hero = preload("res://scripts/presentation/board_trial_hero.gd")
 const Enemy = preload("res://scripts/presentation/board_trial_enemy.gd")
 const Core = preload("res://scripts/board_trial_core.gd")
@@ -124,6 +125,7 @@ func _register(id: String, key: String, node, friendly: bool, cell: Vector2i) ->
 		node.board_col = cell.x
 	actors.append({"id":id,"key":key,"node":node,"friendly":friendly,"cell":cell,"anchor":cell,
 		"dead":false,"target":"","mode":"驻留","think":0.0,"cooldown":0.0,"move":{},
+		"route":[],"route_goal":Vector2i(-1,-1),"blocked":false,"blocked_elapsed":0.0,"progress_time":-1.0,
 		"hp_max":node.max_health,"damage":node.damage,"interval":node.attack_interval,
 		"reach":node.attack_range_cells,"walk":node.move_interval,"name":node.display_name})
 
@@ -188,6 +190,7 @@ func start_battle() -> bool:
 		if actor.friendly and actor.key!="tangseng" and Config.valid(actor.cell): actor.node.begin_battle()
 		actor.anchor = actor.cell
 		actor.target = ""
+		if actor.friendly and actor.key=="guard_monk": Melee.release(actor)
 		actor.cooldown = 0.0
 		actor.think = 0.0
 		actor.mode = "驻留"
@@ -216,7 +219,7 @@ func _path(actor: Dictionary, goal: Vector2i, reach: int) -> Array[Vector2i]:
 func _target_legal(actor: Dictionary, target: Dictionary) -> bool:
 	if not _active(target) or actor.friendly==target.friendly: return false
 	if actor.friendly and actor.key=="guard_monk":
-		if Config.distance(actor.anchor,target.cell)>Config.AGGRO: return false
+		return Config.distance(actor.anchor,target.cell)<=Config.AGGRO
 	elif actor.friendly:
 		return Config.distance(actor.cell,target.cell)<=actor.reach
 	return not _path(actor,target.cell,actor.reach).is_empty()
@@ -227,7 +230,10 @@ func _best_target(actor: Dictionary) -> Dictionary:
 	for target in actors:
 		if not _target_legal(actor,target): continue
 		var distance: int = Config.distance(actor.cell,target.cell)
-		if not actor.friendly or actor.key=="guard_monk": distance = _path(actor,target.cell,actor.reach).size()-1
+		if not actor.friendly or actor.key=="guard_monk":
+			var path := _path(actor,target.cell,actor.reach)
+			if path.is_empty(): continue
+			distance = path.size()-1
 		if distance<score or (distance==score and (best.is_empty() or target.id<best.id)):
 			best = target
 			score = distance
@@ -284,13 +290,11 @@ func _return(actor: Dictionary) -> void:
 func _brain(actor: Dictionary, delta: float) -> void:
 	actor.cooldown = maxf(0,actor.cooldown-delta)
 	actor.think -= delta
+	if actor.friendly and actor.key=="guard_monk":
+		Melee.tick(self,actor,delta)
+		return
 	if not actor.move.is_empty() or actor.node.presentation.pose=="basic_attack": return
-	var melee: bool = actor.friendly and actor.key=="guard_monk"
 	var target := _record(actor.target)
-	if melee and not actor.target.is_empty() and not _active(target):
-		actor.mode = "归位"
-		actor.target = ""
-		actor.think = 0
 	if actor.think>0.00000001:
 		# SCAN throttles path/target searches, never the original attack cooldown.
 		if actor.cooldown<=0.00000001:
@@ -302,9 +306,6 @@ func _brain(actor: Dictionary, delta: float) -> void:
 				_attack(actor,target)
 		return
 	actor.think = Config.SCAN
-	if melee and actor.mode.begins_with("归位"):
-		_return(actor)
-		return
 	if actor.key=="herbal_spirit_child":
 		target = _healing_target(actor)
 		actor.target = target.get("id","")
@@ -312,18 +313,14 @@ func _brain(actor: Dictionary, delta: float) -> void:
 		if not target.is_empty(): _attack(actor,target,true)
 		return
 	if not _target_legal(actor,target):
-		if melee and not actor.target.is_empty():
-			_return(actor)
-			return
 		target = _best_target(actor)
 	actor.target = target.get("id","")
 	if target.is_empty():
 		actor.mode = "无可达目标" if not actor.friendly else "等待 / 超射程"
-		if melee and actor.cell!=actor.anchor: _return(actor)
 		return
 	actor.mode = "接敌 → "+target.id
 	if Config.distance(actor.cell,target.cell)<=actor.reach: _attack(actor,target)
-	elif not actor.friendly or melee:
+	elif not actor.friendly:
 		var path := _path(actor,target.cell,actor.reach)
 		if path.size()>1: _move(actor,path[1])
 
@@ -353,6 +350,10 @@ func _tick(delta: float) -> void:
 		if not _active(actor) or actor.move.is_empty(): continue
 		actor.move.time += delta
 		actor.node.position = Config.center(actor.move.from).lerp(Config.center(actor.move.to),minf(1,actor.move.time/actor.move.duration))
+		if actor.friendly and actor.key=="guard_monk":
+			actor.blocked_elapsed = 0.0
+			actor.blocked = false
+			actor.progress_time = elapsed
 		if actor.move.time+0.00000001>=actor.move.duration:
 			actor.cell = actor.move.to
 			actor.node.position = Config.center(actor.cell)
@@ -445,7 +446,7 @@ func report() -> Dictionary:
 	var fallen: Array[String] = []
 	for actor in actors:
 		if actor.friendly and Config.valid(actor.anchor) and not _alive(actor): fallen.append(actor.id)
-	return {"config":Config.VERSION,"phase":phase,"victory":victory,"seconds":elapsed,
+	return {"config":Config.VERSION,"melee_rule":Melee.RULE,"phase":phase,"victory":victory,"seconds":elapsed,
 		"tangseng_hp":_hp(_record("tangseng")),"fallen":fallen,"result_count":result_count,"metrics":metrics.duplicate(true)}
 
 func _notice(value: String) -> void:

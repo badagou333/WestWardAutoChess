@@ -10,6 +10,7 @@ const STEP := 1.0/120.0
 const SCAN := 0.25
 const AGGRO := 3
 const LEASH := 2
+const LONG_BLOCK_SECONDS := 2.0 # D-004 prototype safety release; all old stats unchanged.
 const ENEMY_HP_FACTOR := 1.0
 const ENEMY_DAMAGE_FACTOR := 1.0
 const CORE := {"hp":300.0,"damage":6.0,"interval":1.2,"range":3}

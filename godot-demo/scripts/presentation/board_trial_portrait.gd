@@ -11,6 +11,10 @@ var region := Rect2()
 var mirrored := false
 var role := ""
 
+static func idle_source_left(key: String, manifest: Dictionary) -> bool:
+	# Actual idle pixels are the oracle for this one erroneous shared metadata tag.
+	return key=="herbal_spirit_child" or manifest.get("source_facing","right")=="left"
+
 func setup(key: String, source_left: bool, friendly: bool) -> void:
 	var next_role: String = {"wolf":"mountain_wolf","rat":"gray_rat"}.get(key,key)
 	var next_mirror := source_left if friendly else not source_left
