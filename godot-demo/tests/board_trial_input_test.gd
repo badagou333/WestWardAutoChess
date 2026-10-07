@@ -52,7 +52,7 @@ func shot(name: String) -> void:
 	game.queue_redraw()
 	await frames()
 	RenderingServer.force_draw(false)
-	check(root.get_texture().get_image().save_png("/tmp/board-art-20261007-"+name+".png")==OK,"actual art viewport capture "+name)
+	check(root.get_texture().get_image().save_png("/tmp/board-ui-v2-20261007-"+name+".png")==OK,"actual new UI viewport capture "+name)
 func await_result() -> void:
 	var began := Time.get_ticks_msec()
 	while game.phase==game.Phase.BATTLE and Time.get_ticks_msec()-began<25000: await process_frame
@@ -66,6 +66,36 @@ func run() -> void:
 	await frames()
 	check(game.is_processing() and game.deployment.size()==6,"normal frames / no three-person limit")
 	check(game.BACKGROUND.get_size()==Vector2(1672,941) and game.BOARD_RECT==Rect2(220,190,1320,714),"full art texture and original exact geometry")
+	check(game.BACKGROUND_RECT==Rect2(0,-12,1920,1128),"only v2 background uses calibrated crop mapping")
+	check(game.ui.card_portraits.size()==6 and game.ui.enemy_portraits.size()==3 and game.ui.enemy_buttons.size()==6,"six real avatars, three enemy types and six specific inspection buttons")
+	for index in range(6):
+		await click(game.roster_buttons[index].get_global_rect().get_center())
+		var actor: Dictionary = game._record(game.Config.FRIENDS[index])
+		check(game.selected==actor.id and game.ui.card_portraits[index].texture!=null,"all six native card selections use actual production portraits")
+		check(game.ui.card_hp[index].text=="%d / %d" % [game._hp(actor),actor.hp_max],"cards bind real HP")
+		check(game.ui.card_bars[index].size.y==5 and game.ui.card_portraits[index].region.size.x<=70,"thin HP meters and actual head crops retain intended logical size")
+		var mirror: bool = actor.node.presentation.manifest.get("source_facing","right")=="left"
+		check(game.ui.card_portraits[index].mirrored==mirror,"portraits use one source-dependent right-facing mirror")
+	for index in range(3):
+		await click(game.ui.enemy_names[index].get_parent().get_global_rect().get_center())
+		check(game._record(game.selected).key==["wolf","boar","rat"][index] and not game.withdraw_button.visible,"all three real type rows inspect that enemy type")
+	await click(game.roster_buttons[5].get_global_rect().get_center())
+	check("攻击 20" in game.info_label.text and "1.25秒" in game.info_label.text and not "防御" in game.info_label.text,"fox details use real configuration, never concept statistics")
+	var modal_before: Dictionary = game.deployment.duplicate()
+	await click(game.ui.help_button.get_global_rect().get_center())
+	check(game.ui.help_layer.visible,"actual help opens")
+	await click(game.start_button.get_global_rect().get_center())
+	await click(game.roster_buttons[0].get_global_rect().get_center())
+	await click(Config.center(Vector2i(0,0)))
+	await press(KEY_R)
+	check(game.deployment==modal_before and game.phase==game.Phase.DEPLOY and game.selected=="foxfire_imp","help consumes covered mouse and gameplay keys without deployment")
+	await press(KEY_ESCAPE)
+	check(not game.ui.help_layer.visible,"Esc closes help without game action")
+	await click(game.ui.enemy_buttons[5].get_global_rect().get_center())
+	check(game.selected=="E6" and not game.withdraw_button.visible and "攻击 7" in game.info_label.text,"specific enemy inspection exposes attributes, never friendly withdraw")
+	await press(KEY_R)
+	check(game.deployment==modal_before,"enemy inspection R cannot withdraw a friendly")
+	await click(Config.center(Vector2i(0,0)),MOUSE_BUTTON_RIGHT)
 	# Complete viewport gestures through every drawn cell; no image-derived hit grid.
 	for row in range(Config.ROWS):
 		for col in range(Config.COLS):
@@ -84,6 +114,7 @@ func run() -> void:
 	for size in [Vector2i(960,540),Vector2i(1440,810)]:
 		root.size = size
 		await frames()
+		check(game.ui.card_names.all(func(item): return item.get_minimum_size().x<=126) and game.ui.result_label.get_minimum_size().y<=425,"resized logical UI remains inside own panels")
 		for cell in [Vector2i(0,0),Vector2i(11,0),Vector2i(0,6),Vector2i(11,6)]:
 			await settle(Config.center(cell))
 			check(game.hover_cell()==cell,"resized corner hover remains at logical cell")
@@ -127,7 +158,9 @@ func run() -> void:
 	await shot("selected")
 	# All important UI regions remain usable inside the 1920 logical / 720p view.
 	check(game.roster_buttons.back().get_global_rect().end.x<game.withdraw_button.position.x,"roster and action areas do not overlap")
-	check(game.info_label.position.y>game.formation_buttons.back().get_global_rect().end.y,"selection details do not overlap formation buttons")
+	check(game.info_label.get_global_rect().end.y<game.start_button.position.y,"right detail text stays clear of primary action")
+	check(game.ui.card_names.all(func(item): return item.get_minimum_size().x<=126),"all six names fit real avatar cards")
+	check(game.info_label.get_minimum_size().y<=231,"selected real detail wraps inside right rail")
 	print("BOARD_PREVIEW_LAYOUT min=",game.enemies_label.get_minimum_size()," rect=",game.enemies_label.get_global_rect()," lines=",game.enemies_label.get_line_count())
 	check(game.enemies_label.get_minimum_size().y<=714,"all six enemy previews fit sidebar vertically")
 	await click(game.start_button.get_global_rect().get_center())
@@ -136,6 +169,17 @@ func run() -> void:
 	check(game.paused,"native keyboard pause")
 	var snapshot: Dictionary = game.deployment.duplicate()
 	var elapsed: float = game.elapsed
+	for size in [Vector2i(960,540),Vector2i(1440,810),Vector2i(1280,720)]:
+		root.size = size
+		await frames()
+		await click(game.roster_buttons[1].get_global_rect().get_center())
+		await click(Config.center(Vector2i(0,0)))
+		check(game.hover_cell()==Vector2i(0,0) and game.deployment==snapshot and game.elapsed==elapsed and game.paused,"all three window sizes preserve paused clock/grid and locked deployment")
+	await click(game.ui.help_button.get_global_rect().get_center())
+	await press(KEY_P)
+	await press(KEY_R)
+	await press(KEY_ESCAPE)
+	check(game.paused and game.elapsed==elapsed and game.deployment==snapshot and not game.ui.help_layer.visible,"paused help blocks gameplay keys and closes without resuming")
 	await click(game.roster_buttons[1].get_global_rect().get_center())
 	await click(Config.center(Vector2i(0,0)))
 	await click(Config.center(Vector2i(2,2)),MOUSE_BUTTON_RIGHT)
@@ -149,10 +193,22 @@ func run() -> void:
 	var began := Time.get_ticks_msec()
 	while game.phase==game.Phase.BATTLE and game.elapsed<4.0 and Time.get_ticks_msec()-began<8000: await process_frame
 	check(game.phase==game.Phase.BATTLE and game.metrics.damage.size()>0,"capture actual mixed battle with resolved damage")
+	await click(game.roster_buttons[1].get_global_rect().get_center())
+	var observed: Dictionary = game._record("guard_monk")
+	var actual_target: Dictionary = game._record(observed.target)
+	check(game.ui.selected_hp.text=="生命   %d / %d" % [game._hp(observed),observed.hp_max] and "状态 接敌" in game.info_label.text,"selected battle actor exposes actual changing HP and AI state")
+	check(not actual_target.is_empty() and actual_target.id in game.info_label.text,"real current target is identified, not a placeholder or static enemy class")
 	await shot("battle")
 	await await_result()
 	check(game.victory and game.result_count==1,"natural A normal-frame victory settled once")
+	check(game.ui.result_panel.visible and "合计伤害 606" in game.ui.result_label.text and "治疗 202" in game.ui.result_label.text and "阵亡 0人" in game.ui.result_label.text,"real A result keeps actual damage/heal/loss statistics")
+	check(game.ui.result_label.get_minimum_size().y<=425,"actual complete six-person result text fits panel")
+	check(game.ui.enemy_counts.all(func(item): return "存活 0 / 2"==item.text),"enemy summary live count reaches zero")
 	await shot("victory")
+	await click(game.ui.result_close.get_global_rect().get_center())
+	check(not game.ui.result_panel.visible,"result can close for board inspection")
+	await click(game.start_button.get_global_rect().get_center())
+	check(game.ui.result_panel.visible,"primary action reopens real result, never starts another battle")
 	await click(game.retry_button.get_global_rect().get_center())
 	check(game.phase==game.Phase.DEPLOY and game.deployment==snapshot and game.elapsed==0,"native retry restores pre-battle cells/clock")
 	await click(game.formation_buttons[1].get_global_rect().get_center())
@@ -160,6 +216,7 @@ func run() -> void:
 	await click(game.speed_button.get_global_rect().get_center())
 	await await_result()
 	check(not game.victory and game._record("tangseng").node.dead,"normal B produces real core death, not fixture HP")
+	check("唐僧阵亡" in game.ui.result_label.text and "阵亡 1人" in game.ui.result_label.text and "治疗 0" in game.ui.result_label.text,"real failure reason and fallen statistics remain accessible")
 	await shot("defeat")
 	for index in range(game.roster_buttons.size()-1):
 		check(game.roster_buttons[index].get_global_rect().end.x<=game.roster_buttons[index+1].position.x,"battle status text never enlarges one card over its neighbour")

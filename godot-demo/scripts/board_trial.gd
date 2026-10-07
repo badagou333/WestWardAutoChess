@@ -8,7 +8,9 @@ const Core = preload("res://scripts/board_trial_core.gd")
 const Events = preload("res://scripts/combat/attack_events.gd")
 const Audio = preload("res://scripts/presentation/audio_feedback.gd")
 const Style = preload("res://scripts/presentation/board_trial_style.gd")
-const BACKGROUND = preload("res://art/boards/formation_trial_v1/board-courtyard.png")
+const UI = preload("res://scripts/presentation/board_trial_ui.gd")
+const BACKGROUND = preload("res://art/boards/formation_trial_v2/board-courtyard.png")
+const BACKGROUND_RECT := Rect2(0,-12,1920,1128)
 const CANVAS := Rect2(0,0,1920,1080)
 const BOARD_RECT := Rect2(Config.ORIGIN,Vector2(Config.COLS,Config.ROWS)*Config.CELL)
 enum Phase { DEPLOY, BATTLE, RESULT }
@@ -40,6 +42,7 @@ var withdraw_button: Button
 var roster_buttons: Array[Button] = []
 var formation_buttons: Array[Button] = []
 var board_overlay: Node2D
+var ui
 var message := "战前仅左6列部署 · 点击名单选人，再点格子；占格交换，拖动调整，右键取消"
 
 func _ready() -> void:
@@ -49,6 +52,7 @@ func _ready() -> void:
 	combat = Events.new()
 	add_child(combat)
 	combat.resolved.connect(_resolve)
+	combat.projectile_released.connect(_projectile_origin)
 	audio_feedback = Audio.new()
 	add_child(audio_feedback)
 	combat.projectile_released.connect(audio_feedback.released)
@@ -108,6 +112,7 @@ func _register(id: String, key: String, node, friendly: bool, cell: Vector2i) ->
 	node.visible = Config.valid(cell)
 	node.position = Config.center(cell) if Config.valid(cell) else Vector2.ZERO
 	node.z_index = int(node.position.y)
+	_default_face(node,friendly)
 	var hud := Style.new()
 	hud.friendly = friendly
 	hud.caption = ("唐" if key=="tangseng" else "★") if friendly else id
@@ -128,7 +133,7 @@ func load_formation(key: String) -> void:
 	for index in range(Config.FRIENDS.size()):
 		deployment[Config.FRIENDS[index]] = Config.FORMATIONS[key][index]-Vector2i.ONE
 	_reset_roster()
-	message = "已载入%s阵 · 敌阵和属性不变 · 本批配置 %s" % [key,Config.VERSION]
+	message = "已载入%s阵 · 敌阵和属性不变" % key
 
 func place(id: String, cell: Vector2i) -> bool:
 	if phase!=Phase.DEPLOY:
@@ -157,6 +162,7 @@ func _set_cell(actor: Dictionary, cell: Vector2i) -> void:
 	actor.node.position = Config.center(cell) if Config.valid(cell) else Vector2.ZERO
 	actor.node.z_index = int(actor.node.position.y)
 	actor.node.visible = Config.valid(cell)
+	_default_face(actor.node,actor.friendly)
 	if actor.friendly and actor.key!="tangseng":
 		actor.node.board_row = cell.y
 		actor.node.board_col = cell.x
@@ -330,6 +336,8 @@ func _process(delta: float) -> void:
 	_update_ui()
 	queue_redraw()
 	board_overlay.queue_redraw()
+	for actor in actors:
+		if _active(actor) and actor.target.is_empty() and actor.move.is_empty() and actor.node.presentation.pose=="idle": _default_face(actor.node,actor.friendly)
 
 func step(delta: float) -> void:
 	if phase!=Phase.BATTLE or paused: return
@@ -366,7 +374,21 @@ func _tick(delta: float) -> void:
 		if _active(actor):
 			actor.node.z_index = int(actor.node.position.y)
 			_brain(actor,delta)
+			if actor.target.is_empty() and actor.move.is_empty() and actor.node.presentation.pose=="idle": _default_face(actor.node,actor.friendly)
 	_settle()
+
+func _default_face(node, friendly: bool) -> void:
+	node.presentation.facing = 1.0 if friendly else -1.0
+	node.presentation.attack_direction = Vector2.RIGHT if friendly else Vector2.LEFT
+
+func _projectile_origin(event: Dictionary) -> void:
+	# Local visual-only adapter: scale the existing parent-space socket to the
+	# combat canvas. It never changes release, aim, contact time or damage.
+	var view = event.view
+	if view==null: return
+	var point: Vector2 = combat.to_local(view.get_parent().to_global(view.emission_position()))
+	event.from = point
+	event.position = point
 
 func _by_node(node) -> Dictionary:
 	for actor in actors:
@@ -443,6 +465,10 @@ func toggle_pause() -> void:
 	audio_feedback.set_paused(paused)
 
 func _input(event: InputEvent) -> void:
+	if is_instance_valid(ui) and ui.help_layer.visible and event is InputEventKey:
+		if event.pressed and event.keycode==KEY_ESCAPE: ui.toggle_help()
+		get_viewport().set_input_as_handled()
+		return
 	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_RIGHT and event.pressed:
 		selected = ""
 		pointer_drag = false
@@ -482,102 +508,19 @@ func _unhandled_input(event: InputEvent) -> void:
 		if pointer_drag and event.position.distance_to(pointer_origin)>8: place(selected,cell)
 		pointer_drag = false
 
-func _panel(rect: Rect2) -> void:
-	var panel := Panel.new()
-	panel.position = rect.position
-	panel.size = rect.size
-	panel.add_theme_stylebox_override("panel",Style.box())
-	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	panel.z_index = 2000
-	add_child(panel)
-
-func _label(at: Vector2, size: Vector2, font := 20) -> Label:
-	var label := Label.new()
-	label.position = at
-	label.size = size
-	label.add_theme_font_size_override("font_size",font)
-	label.add_theme_font_override("font",ThemeDB.fallback_font)
-	label.add_theme_color_override("font_color",Style.INK)
-	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	label.z_index = 2001
-	add_child(label)
-	return label
-
-func _button(at: Vector2, size: Vector2, caption: String, action: Callable) -> Button:
-	var button := Button.new()
-	button.position = at
-	button.size = size
-	button.text = caption
-	button.focus_mode = Control.FOCUS_NONE
-	button.add_theme_font_size_override("font_size",20)
-	button.add_theme_font_override("font",ThemeDB.fallback_font)
-	Style.button(button)
-	button.pressed.connect(action)
-	button.z_index = 2002
-	add_child(button)
-	return button
-
 func _create_ui() -> void:
 	board_overlay = Node2D.new()
-	board_overlay.z_index = 1998
+	board_overlay.z_index = 1
 	board_overlay.draw.connect(_draw_overlay)
 	add_child(board_overlay)
-	_panel(Rect2(14,6,1150,54))
-	_panel(Rect2(214,77,1326,64))
-	_panel(Rect2(12,244,198,666))
-	_panel(Rect2(1557,176,354,734))
-	_panel(Rect2(1557,1011,348,52))
-	title_label = _label(Vector2(22,12),Vector2(1150,38),26)
-	status_label = _label(Vector2(226,81),Vector2(1308,56),20)
-	status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	info_label = _label(Vector2(18,250),Vector2(186,654),20)
-	info_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	enemies_label = _label(Vector2(1563,182),Vector2(342,714),20)
-	enemies_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	start_button = _button(Vector2(1545,22),Vector2(150,52),"开始战斗",start_battle)
-	retry_button = _button(Vector2(1705,22),Vector2(195,52),"重试布阵",retry)
-	pause_button = _button(Vector2(1180,22),Vector2(160,52),"暂停 [P]",toggle_pause)
-	speed_button = _button(Vector2(1350,22),Vector2(180,52),"速度 1×",func(): speed = 3-speed)
-	for index in range(3):
-		var key: String = ["A","B","C"][index]
-		formation_buttons.append(_button(Vector2(18,93+index*48),Vector2(186,40),"站位样例 "+key,func(): load_formation(key)))
-	for index in range(Config.FRIENDS.size()):
-		var key: String = Config.FRIENDS[index]
-		roster_buttons.append(_button(Vector2(220+index*220,960),Vector2(212,93),"",func(): select(key)))
-	withdraw_button = _button(Vector2(1563,960),Vector2(335,45),"撤下选中 [R]",withdraw)
-	_label(Vector2(1563,1015),Vector2(335,42),20).text = "本原型无技能 / 商店 / 营地"
+	ui = UI.new()
+	add_child(ui)
+	ui.setup(self)
+	for field in ["title_label","status_label","info_label","enemies_label","start_button","retry_button","pause_button","speed_button","withdraw_button","roster_buttons","formation_buttons"]:
+		set(field,ui.get(field))
 
 func _update_ui() -> void:
-	if not is_instance_valid(status_label) or actors.is_empty(): return
-	title_label.text = "12×7 布阵对照 · %s · 唐僧 %d/300 · %.1fs" % [["部署","自动战斗","胜利" if victory else "失败"][phase],int(_hp(_record("tangseng"))),elapsed]
-	status_label.text = ("已暂停 · " if paused else "")+message
-	start_button.disabled = phase!=Phase.DEPLOY
-	retry_button.disabled = phase==Phase.DEPLOY
-	pause_button.disabled = phase!=Phase.BATTLE
-	pause_button.text = "继续 [P]" if paused else "暂停 [P]"
-	speed_button.disabled = phase!=Phase.BATTLE
-	speed_button.text = "速度 %d×" % speed
-	withdraw_button.disabled = phase!=Phase.DEPLOY or selected.is_empty() or not _record(selected).get("friendly",false)
-	for button in formation_buttons: button.disabled = phase!=Phase.DEPLOY
-	for index in range(roster_buttons.size()):
-		var actor := _record(Config.FRIENDS[index])
-		var state_text := "已部署" if Config.valid(actor.cell) else "待部署"
-		if not _alive(actor): state_text = "阵亡"
-		elif phase!=Phase.DEPLOY:
-			state_text = "等待"
-			for short in ["接敌","归位","治疗"]:
-				if actor.mode.begins_with(short): state_text = short
-		roster_buttons[index].text = "[%d] %s\n%d/%d · %s" % [index+1,actor.name,int(_hp(actor)),int(actor.hp_max),state_text]
-		roster_buttons[index].add_theme_color_override("font_color",Style.GOLD if selected==actor.id else Style.INK)
-	var actor := _record(selected)
-	info_label.text = "战前布阵\n列1—6 / 行1—7\n\n选名单后点格子\n占格原子交换\n也可拖动已部署者\n右键/Esc取消\nR撤下（非出售）\n\n战中只自动战斗\nP暂停 / 1×·2×\n暂停不解除锁阵\n\n近战锚点警戒3格\n活动半径2格\n远程/药灵驻留\n无目标不会追全图"
-	if not actor.is_empty():
-		info_label.text = "%s [%s]\nHP %d/%d\n%s %.0f · %.2fs\n射程 %d格\n格位 %s\n目标 %s\n状态 %s\n\n曼哈顿射程\n无弹道遮挡\n近战固定锚点\n不穿任何单位\n\n战前仅左6列\n战中合法AI可跨线\n本关死亡不补位\n重试恢复全员" % [actor.name,actor.id,int(_hp(actor)),int(actor.hp_max),"治疗" if actor.key=="herbal_spirit_child" else "攻击",actor.damage,actor.interval,actor.reach,str(actor.cell+Vector2i.ONE) if Config.valid(actor.cell) else "未部署",actor.target if not actor.target.is_empty() else "无",actor.mode]
-	var lines := "公开固定敌阵 · %s\n目标：最短可达攻击路径\n合法目标保持 · 同分按ID\n格位均为(列,行)，从1开始\n\n" % Config.VERSION
-	for enemy in actors:
-		if enemy.friendly: continue
-		lines += "%s %s · (%d,%d)\nHP %d/%d · 攻%.0f · 距%d\n%.2fs · %s\n" % [enemy.id,enemy.name,enemy.anchor.x+1,enemy.anchor.y+1,int(_hp(enemy)),int(enemy.hp_max),enemy.damage,enemy.reach,enemy.interval,enemy.mode]
-	enemies_label.text = lines
+	if is_instance_valid(ui): ui.refresh()
 
 func range_cells() -> Array[Vector2i]:
 	var result: Array[Vector2i] = []
@@ -593,7 +536,7 @@ func hover_cell() -> Vector2i:
 	return Config.cell_at(get_global_mouse_position())
 
 func _draw() -> void:
-	draw_texture_rect(BACKGROUND,CANVAS,false)
+	draw_texture_rect(BACKGROUND,BACKGROUND_RECT,false)
 	if phase==Phase.DEPLOY:
 		draw_rect(Rect2(Config.ORIGIN,Vector2(Config.DEPLOY_COLS*Config.CELL.x,BOARD_RECT.size.y)),Color(0.267,0.451,0.420,0.047))
 		draw_rect(Rect2(Config.ORIGIN+Vector2(Config.DEPLOY_COLS*Config.CELL.x,0),Vector2((Config.COLS-Config.DEPLOY_COLS)*Config.CELL.x,BOARD_RECT.size.y)),Color(0.537,0.282,0.216,0.035))

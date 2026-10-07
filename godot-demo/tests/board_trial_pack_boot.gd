@@ -14,6 +14,10 @@ func run() -> void:
 		game.audio_feedback.enabled = false
 		if name=="board_trial":
 			check(game.BACKGROUND.get_size()==Vector2(1672,941),"pack contains full courtyard background")
+			check(game.BACKGROUND_RECT==Rect2(0,-12,1920,1128),"pack includes v2-only background mapping")
+			check(game.ui.card_portraits.all(func(item): return item.texture!=null and item.cropped.get_size()==item.region.size),"pack actually loads all six cropped current production portraits")
+			check(game.ui.enemy_portraits.all(func(item): return item.texture!=null),"pack actually loads three enemy type portraits")
+			check(game.actors.all(func(actor): return actor.node.presentation.facing==(1 if actor.friendly else -1)),"pack starts with confirmed default army directions")
 			check(game.BOARD_RECT==Rect2(220,190,1320,714),"pack keeps exact logical board geometry")
 			check(game.Config.COLS==12 and game.Config.ROWS==7 and game.actors.size()==12,"pack includes independent grid/config/fixed actors")
 			check(game._record("tangseng").node.presentation.body!=null,"pack contains production core texture")

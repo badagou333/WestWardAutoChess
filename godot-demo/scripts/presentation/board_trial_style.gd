@@ -1,10 +1,10 @@
 extends Node2D
 ## Trial-only palette and actor HUD. No combat, animation or hit-test ownership.
-const INK := Color("f1e5cd")
-const MUTED := Color("c6bca5")
-const EDGE := Color("766e56")
-const GOLD := Color("f6cf71")
-const FILL := Color(0.141,0.157,0.133,0.92)
+const INK := Color("f0eadc")
+const MUTED := Color("b6c9c0")
+const EDGE := Color("657c7b")
+const GOLD := Color("d8af6c")
+const FILL := Color(0.090,0.165,0.188,0.96)
 const RANGE := Color("75a6b6")
 var friendly := true
 var caption := ""
@@ -23,9 +23,9 @@ static func button(control: Button) -> void:
 	control.add_theme_color_override("font_pressed_color",INK)
 	control.add_theme_color_override("font_disabled_color",MUTED.darkened(0.22))
 	control.add_theme_stylebox_override("normal",box())
-	control.add_theme_stylebox_override("hover",box(Color("30352f"),GOLD,2))
-	control.add_theme_stylebox_override("pressed",box(Color("3b3b2e"),GOLD,2))
-	control.add_theme_stylebox_override("disabled",box(Color("242822"),EDGE.darkened(0.25)))
+	control.add_theme_stylebox_override("hover",box(Color("294047"),GOLD,2))
+	control.add_theme_stylebox_override("pressed",box(Color("33484a"),GOLD,2))
+	control.add_theme_stylebox_override("disabled",box(Color("172a30"),EDGE.darkened(0.25)))
 
 func _process(_delta: float) -> void: queue_redraw()
 

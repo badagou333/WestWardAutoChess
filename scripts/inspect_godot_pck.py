@@ -9,7 +9,10 @@ from pathlib import Path
 
 
 REQUIRED_RELEASE_FILES = (
-    "art/boards/formation_trial_v1/board-courtyard.png.import",
+    "art/boards/formation_trial_v2/board-courtyard.png.import",
+    "scripts/presentation/board_trial_ui.gd.remap",
+    "scripts/presentation/board_trial_portrait.gd.remap",
+    "scripts/presentation/board_trial_meter.gd.remap",
     "scripts/presentation/board_trial_style.gd.remap",
     "scripts/presentation/board_trial_hero.gd.remap",
     "scripts/presentation/board_trial_enemy.gd.remap",
@@ -53,12 +56,17 @@ REQUIRED_RELEASE_FILES = (
     "audio/runtime_overrides.json",
     "audio/candidates/foxfire-dwoboyle-v1/foxfire_A_faithful.wav.import",
 ) + tuple(
+    f"art/production/{role}/nine_sols_v1/idle.png.import"
+    for role in ("guard_monk", "wild_hunter", "sparrow_spirit", "herbal_spirit_child", "foxfire_imp", "mountain_wolf", "boar", "gray_rat")
+) + tuple(
     f"art/production/{role}/nine_sols_v1/{file}"
     for role in ("guard_monk", "wild_hunter", "herbal_spirit_child", "sparrow_spirit", "foxfire_imp", "bear_lord", "mountain_wolf", "gray_rat", "boar", "tangseng")
     for file in ("manifest.json", "body-atlas.png.import")
 )
 
 FORBIDDEN_RELEASE_PREFIXES = (
+    "art/boards/formation_trial_v2/review/",
+    "art/reviews/formation-ui-v2/",
     "art/boards/formation_trial_v1/review/",
     "art/reviews/foxfire-spine-trial-",
     "art/reviews/wolf-gait-d004-",
