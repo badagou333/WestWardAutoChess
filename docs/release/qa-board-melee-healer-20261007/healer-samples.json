@@ -1,0 +1,82 @@
+{
+	"failures": 0,
+	"releases": [
+		{
+			"foot": "(605.0, 547.0)",
+			"frame": 2,
+			"from": "(633.8, 504.52)",
+			"side": 1,
+			"time": 0.316666666666667
+		},
+		{
+			"foot": "(605.0, 547.0)",
+			"frame": 2,
+			"from": "(576.2, 504.52)",
+			"side": -1,
+			"time": 0.316666666666667
+		}
+	],
+	"samples": [
+		{
+			"basis": -1.00294327735901,
+			"frame": 0,
+			"hp": 100.0,
+			"logical": 1.0,
+			"side": 1,
+			"stage": "起手",
+			"time": 0.075
+		},
+		{
+			"basis": 0.999687492847443,
+			"frame": 2,
+			"hp": 100.0,
+			"logical": 1.0,
+			"side": 1,
+			"stage": "接触",
+			"time": 0.316666666666667
+		},
+		{
+			"basis": -0.999989449977875,
+			"frame": 0,
+			"hp": 124.0,
+			"logical": 1.0,
+			"side": 1,
+			"stage": "收势",
+			"time": 0.591666666666667
+		},
+		{
+			"basis": 1.00294327735901,
+			"frame": 0,
+			"hp": 100.0,
+			"logical": -1.0,
+			"side": -1,
+			"stage": "起手",
+			"time": 0.075
+		},
+		{
+			"basis": -0.999687492847443,
+			"frame": 2,
+			"hp": 100.0,
+			"logical": -1.0,
+			"side": -1,
+			"stage": "接触",
+			"time": 0.316666666666667
+		},
+		{
+			"basis": 0.999989449977875,
+			"frame": 0,
+			"hp": 124.0,
+			"logical": -1.0,
+			"side": -1,
+			"stage": "收势",
+			"time": 0.591666666666667
+		}
+	],
+	"source_frames": {
+		"0": "left_verified",
+		"1": "right_verified",
+		"2": "right_verified",
+		"3": "right_retained",
+		"4": "ambiguous_retained"
+	}
+}
