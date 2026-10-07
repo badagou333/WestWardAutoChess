@@ -5,6 +5,7 @@ var samples := []
 var release_samples := []
 
 func capture(name: String) -> void:
+	if "--no-capture" in OS.get_cmdline_user_args(): return
 	game._update_ui()
 	game.queue_redraw()
 	await frames()

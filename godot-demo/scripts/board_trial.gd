@@ -126,6 +126,7 @@ func _register(id: String, key: String, node, friendly: bool, cell: Vector2i) ->
 	actors.append({"id":id,"key":key,"node":node,"friendly":friendly,"cell":cell,"anchor":cell,
 		"dead":false,"target":"","mode":"驻留","think":0.0,"cooldown":0.0,"move":{},
 		"route":[],"route_goal":Vector2i(-1,-1),"blocked":false,"blocked_elapsed":0.0,"progress_time":-1.0,
+		"handoff":{},"move_serial":0,"move_completed":0,
 		"hp_max":node.max_health,"damage":node.damage,"interval":node.attack_interval,
 		"reach":node.attack_range_cells,"walk":node.move_interval,"name":node.display_name})
 
@@ -190,7 +191,7 @@ func start_battle() -> bool:
 		if actor.friendly and actor.key!="tangseng" and Config.valid(actor.cell): actor.node.begin_battle()
 		actor.anchor = actor.cell
 		actor.target = ""
-		if actor.friendly and actor.key=="guard_monk": Melee.release(actor)
+		if Melee.applies(actor): Melee.release(actor)
 		actor.cooldown = 0.0
 		actor.think = 0.0
 		actor.mode = "驻留"
@@ -266,6 +267,9 @@ func _move(actor: Dictionary, next: Vector2i) -> bool:
 	if Config.distance(actor.cell,next)!=1 or not _occupant(next,actor.id).is_empty(): return false
 	if actor.friendly and Config.distance(actor.anchor,next)>Config.LEASH: return false
 	actor.move = {"from":actor.cell,"to":next,"time":0.0,"duration":actor.walk}
+	if Melee.applies(actor):
+		actor.move_serial += 1
+		actor.handoff = {}
 	actor.node.presentation.face(Config.center(next)-actor.node.position)
 	actor.node.presentation.move_to(Vector2.ZERO)
 	return true
@@ -292,6 +296,9 @@ func _brain(actor: Dictionary, delta: float) -> void:
 	actor.think -= delta
 	if actor.friendly and actor.key=="guard_monk":
 		Melee.tick(self,actor,delta)
+		return
+	if Melee.applies(actor):
+		Melee.tick_enemy(self,actor)
 		return
 	if not actor.move.is_empty() or actor.node.presentation.pose=="basic_attack": return
 	var target := _record(actor.target)
@@ -358,6 +365,9 @@ func _tick(delta: float) -> void:
 			actor.cell = actor.move.to
 			actor.node.position = Config.center(actor.cell)
 			actor.move = {}
+			if Melee.applies(actor):
+				actor.move_completed = actor.move_serial
+				actor.think = 0.0 # Segment boundary: range/handoff before the next move.
 	# Dead sources cannot complete pending effects in this trial; legacy untouched.
 	combat.strikes = combat.strikes.filter(func(event): return Events.alive(event.source) and Events.alive(event.target))
 	combat.missiles = combat.missiles.filter(func(event): return Events.alive(event.source) and Events.alive(event.target))
@@ -368,6 +378,7 @@ func _tick(delta: float) -> void:
 		actor.mode = "阵亡"
 		actor.target = ""
 		actor.move = {}
+		if Melee.applies(actor): Melee.release(actor)
 		if is_instance_valid(actor.node) and not actor.friendly:
 			actor.node.play_death()
 			audio_feedback.play_cue(actor.key+"_death")
