@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "status": "clean_background_ready_for_06_integration_not_runtime_verified",
+  "asset": {
+    "path": "board-courtyard.png",
+    "width": 1672,
+    "height": 941,
+    "mode": "RGB",
+    "sha256": "dca324956dfe9e4119e3b36515cec745135448a0ef6b03f933913016253637a9",
+    "tool": "builtin_imagegen",
+    "tool_output": "exec-5f9fece1-154e-4049-9437-7af3bdc62655.png",
+    "unchanged_tool_output": true
+  },
+  "provenance": [
+    {
+      "role": "approved_direction_only",
+      "path": "../../reviews/formation-ui-v2/ui-concept.png",
+      "sha256": "9178f08442d65a12ea10df60eb5d21cb1c3d95db9cbbf39941ca2ab4b1615679"
+    },
+    {
+      "role": "first_pass_not_adopted",
+      "path": "review/first-pass-not-adopted.png",
+      "sha256": "1eb083d223d0b4ed767101496f77827760153387f0d3d87c0599c1ebbe4d7d0c",
+      "tool_output": "exec-9c4e7bb4-dcaf-4762-8e51-03a4af7c2302.png",
+      "prompt": "review/PROMPT.txt"
+    },
+    {
+      "role": "one_targeted_repair",
+      "path": "board-courtyard.png",
+      "prompt": "review/REPAIR_PROMPT.txt"
+    }
+  ],
+  "geometry": {
+    "canvas": [
+      1920,
+      1080
+    ],
+    "grid_origin": [
+      220,
+      190
+    ],
+    "grid_cell": [
+      110,
+      102
+    ],
+    "grid_columns": 12,
+    "grid_rows": 7,
+    "deploy_columns": 6,
+    "board_rect": [
+      220,
+      190,
+      1320,
+      714
+    ],
+    "divider_x": 880,
+    "art_safe_rect": [
+      200,
+      170,
+      1360,
+      754
+    ]
+  },
+  "background_mapping": {
+    "draw_rect": [
+      0,
+      -12,
+      1920,
+      1128
+    ],
+    "clip_rect": [
+      0,
+      0,
+      1920,
+      1080
+    ],
+    "mapping": "axis_aligned_nonuniform_full_source_to_draw_rect_then_canvas_clip",
+    "not_full_image_visible": true,
+    "source_grid_bounds": [
+      191.583333,
+      168.512411,
+      1341.083333,
+      764.14539
+    ],
+    "logical_crop_top_bottom": [
+      12,
+      36
+    ],
+    "note": "Only background uses this transform. Board, UI, units, input and camera retain existing geometry."
+  },
+  "ui_safe_zones": {
+    "left_rect": [
+      0,
+      170,
+      196,
+      734
+    ],
+    "right_rect": [
+      1572,
+      160,
+      348,
+      920
+    ],
+    "bottom_rect": [
+      220,
+      944,
+      1320,
+      136
+    ],
+    "top_rect": [
+      0,
+      0,
+      1920,
+      145
+    ]
+  },
+  "runtime_layers": [
+    "background",
+    "grid_and_deploy_divider",
+    "selection_and_range",
+    "units_and_shadows",
+    "projectiles_and_effects",
+    "unit_health",
+    "ui_panels_and_real_portraits",
+    "live_text_and_buttons"
+  ],
+  "source_facing": {
+    "tangseng": "right",
+    "guard_monk": "right",
+    "wild_hunter": "right",
+    "sparrow_spirit": "right",
+    "herbal_spirit_child": "right",
+    "foxfire_imp": "left",
+    "mountain_wolf": "left",
+    "boar": "left",
+    "gray_rat": "right"
+  },
+  "validation": {
+    "source_integrity": "checked",
+    "offline_geometry": "checked_at_1280x720",
+    "runtime_integration": false,
+    "godot_run": false,
+    "pck_packaging": false,
+    "independent_qa": false
+  }
+}
