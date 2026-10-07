@@ -37,7 +37,10 @@ func simulate(key: String, fps: int, speed: int) -> Dictionary:
 	var report: Dictionary = game.report()
 	check(game.phase==game.Phase.RESULT,"natural battle reaches result, never timeout victory")
 	check(game.result_count==1,"natural result settled exactly once")
-	check(game.metrics.damage.get("tangseng",0)>0,"weak core contributes real ranged damage")
+	# D-007 may keep every enemy outside Tang's range in A. Damage is no longer
+	# guaranteed by deployment; exercise the real weak attack in its own fixture.
+	var core: Dictionary = game._record("tangseng")
+	check(core.cell==core.anchor and core.move.is_empty(),"core stays deployed even when enemy pursuit never brings a target in range")
 	print("BOARD_COMPARISON ",key," fps=",fps," speed=",speed," ",JSON.stringify(report))
 	# Retry returns to the START snapshot, not combat cells, and resets every clock.
 	var snapshot: Dictionary = game.start_deployment.duplicate()
@@ -47,11 +50,34 @@ func simulate(key: String, fps: int, speed: int) -> Dictionary:
 	check(game.combat.strikes.is_empty() and game.combat.missiles.is_empty(),"retry has no pending strikes/missiles")
 	game.free()
 	return report
+func core_attack_fixture() -> void:
+	var game = fresh()
+	for actor in game.actors:
+		if actor.id not in ["tangseng","E5"]:
+			actor.node.take_damage(actor.hp_max)
+			actor.dead = true
+	var core: Dictionary = game._record("tangseng")
+	var rat: Dictionary = game._record("E5")
+	game._set_cell(core,Vector2i(0,3))
+	game._set_cell(rat,Vector2i(3,3))
+	var initial_hp: float = rat.node.health
+	game.start_battle()
+	while game.elapsed<3.0:
+		game.step(Config.STEP)
+		ownership(game)
+	var damage: float = game.metrics.damage.get("tangseng",0)
+	check(damage>0,"weak core contributes real ranged damage")
+	check(is_equal_approx(initial_hp-rat.node.health,damage) and is_equal_approx(fmod(damage,Config.CORE.damage),0),"live range-three fixture applies original Tang damage exactly")
+	var times: Array = game.metrics.attack_times.get("tangseng",[])
+	check(times.size()>=2 and core.move.is_empty() and rat.move.is_empty(),"both real ranged brains engage without a movement/frozen-target workaround")
+	for index in range(1,times.size()): check(is_equal_approx(times[index]-times[index-1],Config.CORE.interval),"weak core retains original attack interval")
+	game.free()
 func comparable(report: Dictionary) -> Dictionary:
 	var result := report.duplicate(true)
 	result.erase("seconds")
 	return result
 func run() -> void:
+	core_attack_fixture()
 	var game = fresh()
 	var before: Dictionary = game.deployment.duplicate()
 	check(Config.center(Vector2i(5,6))==Vector2(825,853),"column/row projection is not transposed")

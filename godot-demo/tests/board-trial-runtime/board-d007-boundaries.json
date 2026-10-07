@@ -1,0 +1,306 @@
+{
+	"coordinate_base": 0,
+	"dynamic": [
+		{
+			"blocker_completed": 1,
+			"blocker_serial": 2,
+			"cached_remaining_cost": 5,
+			"current": [
+				6,
+				1
+			],
+			"first_boundary": 0.525000000000001,
+			"fps": 30,
+			"fresh_cost": 3,
+			"id": "E1",
+			"next": [
+				6,
+				0
+			],
+			"route": [
+				[
+					6,
+					1
+				],
+				[
+					6,
+					0
+				],
+				[
+					5,
+					0
+				],
+				[
+					4,
+					0
+				]
+			],
+			"same_target": "guard_monk",
+			"speed": 1
+		},
+		{
+			"blocker_completed": 1,
+			"blocker_serial": 2,
+			"cached_remaining_cost": 5,
+			"current": [
+				6,
+				1
+			],
+			"first_boundary": 0.525000000000001,
+			"fps": 120,
+			"fresh_cost": 3,
+			"id": "E1",
+			"next": [
+				6,
+				0
+			],
+			"route": [
+				[
+					6,
+					1
+				],
+				[
+					6,
+					0
+				],
+				[
+					5,
+					0
+				],
+				[
+					4,
+					0
+				]
+			],
+			"same_target": "guard_monk",
+			"speed": 2
+		},
+		{
+			"blocker_completed": 1,
+			"blocker_serial": 2,
+			"cached_remaining_cost": 5,
+			"current": [
+				6,
+				1
+			],
+			"first_boundary": 0.525000000000001,
+			"fps": 30,
+			"fresh_cost": 3,
+			"id": "E2",
+			"next": [
+				6,
+				0
+			],
+			"route": [
+				[
+					6,
+					1
+				],
+				[
+					6,
+					0
+				],
+				[
+					5,
+					0
+				],
+				[
+					4,
+					0
+				]
+			],
+			"same_target": "guard_monk",
+			"speed": 1
+		},
+		{
+			"blocker_completed": 1,
+			"blocker_serial": 2,
+			"cached_remaining_cost": 5,
+			"current": [
+				6,
+				1
+			],
+			"first_boundary": 0.525000000000001,
+			"fps": 120,
+			"fresh_cost": 3,
+			"id": "E2",
+			"next": [
+				6,
+				0
+			],
+			"route": [
+				[
+					6,
+					1
+				],
+				[
+					6,
+					0
+				],
+				[
+					5,
+					0
+				],
+				[
+					4,
+					0
+				]
+			],
+			"same_target": "guard_monk",
+			"speed": 2
+		},
+		{
+			"blocker_completed": 1,
+			"blocker_serial": 2,
+			"cached_remaining_cost": 5,
+			"current": [
+				6,
+				1
+			],
+			"first_boundary": 0.7,
+			"fps": 30,
+			"fresh_cost": 3,
+			"id": "E3",
+			"next": [
+				6,
+				0
+			],
+			"route": [
+				[
+					6,
+					1
+				],
+				[
+					6,
+					0
+				],
+				[
+					5,
+					0
+				],
+				[
+					4,
+					0
+				]
+			],
+			"same_target": "guard_monk",
+			"speed": 1
+		},
+		{
+			"blocker_completed": 1,
+			"blocker_serial": 2,
+			"cached_remaining_cost": 5,
+			"current": [
+				6,
+				1
+			],
+			"first_boundary": 0.7,
+			"fps": 120,
+			"fresh_cost": 3,
+			"id": "E3",
+			"next": [
+				6,
+				0
+			],
+			"route": [
+				[
+					6,
+					1
+				],
+				[
+					6,
+					0
+				],
+				[
+					5,
+					0
+				],
+				[
+					4,
+					0
+				]
+			],
+			"same_target": "guard_monk",
+			"speed": 2
+		},
+		{
+			"blocker_completed": 1,
+			"blocker_serial": 2,
+			"cached_remaining_cost": 5,
+			"current": [
+				6,
+				1
+			],
+			"first_boundary": 0.7,
+			"fps": 30,
+			"fresh_cost": 3,
+			"id": "E4",
+			"next": [
+				6,
+				0
+			],
+			"route": [
+				[
+					6,
+					1
+				],
+				[
+					6,
+					0
+				],
+				[
+					5,
+					0
+				],
+				[
+					4,
+					0
+				]
+			],
+			"same_target": "guard_monk",
+			"speed": 1
+		},
+		{
+			"blocker_completed": 1,
+			"blocker_serial": 2,
+			"cached_remaining_cost": 5,
+			"current": [
+				6,
+				1
+			],
+			"first_boundary": 0.7,
+			"fps": 120,
+			"fresh_cost": 3,
+			"id": "E4",
+			"next": [
+				6,
+				0
+			],
+			"route": [
+				[
+					6,
+					1
+				],
+				[
+					6,
+					0
+				],
+				[
+					5,
+					0
+				],
+				[
+					4,
+					0
+				]
+			],
+			"same_target": "guard_monk",
+			"speed": 2
+		}
+	],
+	"dynamic_cooldown_fixture": 100.0,
+	"failures": 0,
+	"isolated_boundaries": true,
+	"road_release_opponents_AI_live": true,
+	"rule": "melee-pursuit-d007"
+}

@@ -6,7 +6,11 @@ func check(ok: bool, label: String) -> void:
 	if not ok:
 		failures += 1
 		push_error(label)
-func _initialize() -> void: call_deferred("run")
+func _initialize() -> void:
+	# Keep native pointer gestures on screen; centered macOS windows can extend
+	# below the desktop. This affects tests only, never production picking.
+	root.position = Vector2i(80,80)
+	call_deferred("run")
 func frames() -> void:
 	for i in range(3): await process_frame
 func settle(point: Vector2) -> void:
@@ -227,7 +231,14 @@ func run() -> void:
 	await click(game.speed_button.get_global_rect().get_center())
 	await await_result()
 	check(not game.victory and game._record("tangseng").node.dead,"normal B produces real core death, not fixture HP")
-	check("唐僧阵亡" in game.ui.result_label.text and "阵亡 1人" in game.ui.result_label.text and "治疗 0" in game.ui.result_label.text,"real failure reason and fallen statistics remain accessible")
+	total_damage = 0.0
+	total_healing = 0.0
+	for actor in game.actors:
+		if actor.friendly:
+			total_damage += game.metrics.damage.get(actor.id,0)
+			total_healing += game.metrics.healing.get(actor.id,0)
+	# D-007 B now has real healing; validate its actual full result, not old zero.
+	check("唐僧阵亡" in game.ui.result_label.text and "阵亡 %d人" % game.report().fallen.size() in game.ui.result_label.text and "合计伤害 %.0f" % total_damage in game.ui.result_label.text and "治疗 %.0f" % total_healing in game.ui.result_label.text,"real failure reason and fallen statistics remain accessible")
 	await shot("defeat")
 	for index in range(game.roster_buttons.size()-1):
 		check(game.roster_buttons[index].get_global_rect().end.x<=game.roster_buttons[index+1].position.x,"battle status text never enlarges one card over its neighbour")

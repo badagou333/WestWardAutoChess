@@ -1,7 +1,7 @@
 extends RefCounted
 ## Board-only melee activity handoff. Guard lock rules and enemy selection stay distinct.
 const Config = preload("res://scripts/data/board_trial_config.gd")
-const RULE := "melee-handoff-d006"
+const RULE := "melee-pursuit-d007"
 
 static func applies(actor: Dictionary) -> bool:
 	return (actor.friendly and actor.key=="guard_monk") or (not actor.friendly and actor.key in ["wolf","boar"])
@@ -64,16 +64,37 @@ static func tick_enemy(game, actor: Dictionary) -> void:
 		actor.mode = "接敌 → "+target.id
 		game._attack(actor,target)
 		return
-	if valid and boundary_wait(game,actor,target): return
+	# An actually adjacent ally is a legal attack NOW, not a prediction. Keep a
+	# hittable old lock above; otherwise stable ID picks among current neighbors.
+	var neighbor := {}
+	for candidate in game.actors:
+		if candidate.friendly==actor.friendly or not game._active(candidate): continue
+		if Config.distance(actor.cell,candidate.cell)>actor.reach: continue
+		if neighbor.is_empty() or candidate.id<neighbor.id: neighbor = candidate
+	if not neighbor.is_empty():
+		release(actor) # Never changes the original attack cooldown.
+		actor.target = neighbor.id
+		actor.mode = "接敌 → "+neighbor.id
+		game._attack(actor,neighbor)
+		return
+	var waiting: bool = valid and boundary_wait(game,actor,target)
 	if not valid and not actor.handoff.is_empty():
 		actor.handoff = {}
 		actor.think = 0.0
 	if actor.think>0.00000001: return
 	actor.think = Config.SCAN
-	if not valid:
-		target = game._best_target(actor)
+	# Compare BOTH targets using fresh reachable attack costs, never a stale
+	# cached cost or straight-line distance. Equal cost preserves the old lock.
+	var fresh: Array = game._path(actor,target.cell,actor.reach) if valid else []
+	var candidate: Dictionary = game._best_target(actor)
+	var candidate_path: Array = game._path(actor,candidate.cell,actor.reach) if not candidate.is_empty() else []
+	var changed: bool = not valid or (not candidate_path.is_empty() and candidate_path.size()<fresh.size())
+	if changed:
 		release(actor)
+		target = candidate
 		actor.target = target.get("id","")
+		fresh = candidate_path
+		waiting = false
 	if target.is_empty():
 		actor.mode = "无可达目标"
 		return
@@ -81,8 +102,17 @@ static func tick_enemy(game, actor: Dictionary) -> void:
 	if Config.distance(actor.cell,target.cell)<=actor.reach:
 		game._attack(actor,target)
 		return
-	if not valid and boundary_wait(game,actor,target): return
-	route_to(game,actor,target)
+	# Same-target shortening must not cancel an observed activity; only a real
+	# target change binds the new target's current activity. Completion consumed
+	# above cannot be rebound to its next activity in this same simulation step.
+	if changed: waiting = boundary_wait(game,actor,target)
+	if actor.route.size()>1 and actor.route[1]==actor.cell: actor.route.pop_front()
+	if not route_valid(game,actor,target) or (not fresh.is_empty() and fresh.size()<actor.route.size()):
+		actor.route = fresh
+		actor.route_goal = target.cell
+	if waiting:
+		actor.mode = "格段交接 → "+target.id
+		return
 	if actor.route.size()>1: game._move(actor,actor.route[1])
 
 static func tick(game, actor: Dictionary, delta: float) -> void:
