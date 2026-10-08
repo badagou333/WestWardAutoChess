@@ -20,6 +20,8 @@ func run() -> void:
 			check(game.actors.all(func(actor): return actor.node.presentation.facing==(1 if actor.friendly else -1)),"pack starts with confirmed default army directions")
 			check(game.BOARD_RECT==Rect2(220,190,1320,714),"pack keeps exact logical board geometry")
 			check(game.Config.COLS==12 and game.Config.ROWS==7 and game.actors.size()==12,"pack includes independent grid/config/fixed actors")
+			check(game.Config.VERSION=="board-v2-uniform-move" and is_equal_approx(game.Config.MOVE_SECONDS_PER_CELL,0.5),"pack contains the uniform movement config revision")
+			check(game.actors.all(func(actor): return actor.walk==game.Config.MOVE_SECONDS_PER_CELL and actor.node.move_interval==game.Config.MOVE_SECONDS_PER_CELL),"pack uses one movement duration for every friendly and enemy actor")
 			check(game._record("tangseng").node.presentation.body!=null,"pack contains production core texture")
 			game.start_battle()
 			while game.phase==game.Phase.BATTLE and game.elapsed<60: game.step(1.0/60)

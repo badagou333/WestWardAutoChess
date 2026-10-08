@@ -3,7 +3,7 @@ extends "res://tests/board_trial_ai_test.gd"
 ## Decisions use production _brain; real completion/renewal uses production _tick.
 const Melee = preload("res://scripts/combat/board_trial_melee.gd")
 const ROLES := ["guard_monk","E1","E3"]
-const ORIGINAL := {"guard_monk":{"hp":310.0,"damage":14.0,"interval":1.15,"walk":0.50},"E1":{"hp":155.0,"damage":14.0,"interval":0.90,"walk":0.52},"E3":{"hp":96.0,"damage":10.0,"interval":1.10,"walk":0.70}}
+const ORIGINAL := {"guard_monk":{"hp":310.0,"damage":14.0,"interval":1.15},"E1":{"hp":155.0,"damage":14.0,"interval":0.90},"E3":{"hp":96.0,"damage":10.0,"interval":1.10}}
 var evidence := []
 var guard_road_reports := []
 
@@ -35,7 +35,8 @@ func route(ctx: Dictionary, cells: Array) -> Array:
 func close_case(ctx: Dictionary, label: String) -> void:
 	var source: Dictionary = ctx.source
 	var original: Dictionary = ORIGINAL[ctx.role]
-	check(source.damage==original.damage and source.node.damage==original.damage and source.interval==original.interval and source.walk==original.walk and source.reach==1,ctx.role+" original melee stats remain unchanged in "+label)
+	check(source.damage==original.damage and source.node.damage==original.damage and source.interval==original.interval and source.reach==1,ctx.role+" original damage/attack interval/reach remain unchanged in "+label)
+	check(source.walk==Config.MOVE_SECONDS_PER_CELL and source.node.move_interval==Config.MOVE_SECONDS_PER_CELL,ctx.role+" uses shared trial movement duration in "+label)
 	check(source.hp_max==original.hp and source.node.max_health==original.hp,ctx.role+" original maximum HP remains unchanged in "+label)
 	evidence.append({"role":ctx.role,"mirrored":ctx.mirror,"case":label,"target":source.target,"cell":[source.cell.x,source.cell.y],"next":str(source.move.get("to","")),"cooldown":source.cooldown,"route_cost":source.route.size()-1,"handoff":source.handoff.duplicate(true)})
 	ctx.game.free()

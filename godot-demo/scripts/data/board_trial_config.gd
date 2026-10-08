@@ -1,12 +1,13 @@
 extends RefCounted
 ## D-20261007-001 / 01 a9f81fe. Prototype only; never changes legacy catalogs.
-const VERSION := "board-v1-base"
+const VERSION := "board-v2-uniform-move"
 const COLS := 12
 const ROWS := 7
 const DEPLOY_COLS := 6
 const ORIGIN := Vector2(220,190)
 const CELL := Vector2(110,102)
 const STEP := 1.0/120.0
+const MOVE_SECONDS_PER_CELL := 0.5 # Shared by every actor in this trial; not an attack interval.
 const SCAN := 0.25
 const AGGRO := 3
 const LEASH := 2

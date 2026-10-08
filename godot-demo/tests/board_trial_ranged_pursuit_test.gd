@@ -236,7 +236,8 @@ func live_departure_and_pursuit(key: String, fps: int, sim_speed: int) -> Dictio
 	check(not game.moves.filter(func(row): return row.id=="E5").is_empty(),key+" opponent really moves under its existing live gray-rat brain")
 	check(source.target=="E5" and source.move.is_empty() and target.move.is_empty() and Config.distance(source.cell,target.cell)<=3,key+" live same-target pursuit ends in real range3 cooldown/attack dwell without return")
 	var expected: Dictionary = Catalog.HEROES[key]
-	check(source.damage==expected.damage and source.node.damage==expected.damage and source.interval==expected.interval and source.walk==expected.move and source.reach==3,key+" original damage/interval/walk/reach data unchanged")
+	check(source.damage==expected.damage and source.node.damage==expected.damage and source.interval==expected.interval and source.reach==3,key+" original damage/attack interval/reach data unchanged")
+	check(source.walk==Config.MOVE_SECONDS_PER_CELL and source.node.move_interval==Config.MOVE_SECONDS_PER_CELL,key+" uses shared trial movement duration")
 	var damage: float = game.metrics.damage.get(key,0)
 	var actual_loss: float = (10000.0-target.node.health)+(10000.0-holder.node.health)
 	check(damage>0 and is_equal_approx(damage,actual_loss) and is_equal_approx(fmod(damage,source.damage),0),key+" actual resolved HP loss uses original per-hit damage, including genuine fox splash if adjacent")

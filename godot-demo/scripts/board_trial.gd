@@ -110,6 +110,8 @@ func _reset_roster() -> void:
 	queue_redraw()
 
 func _register(id: String, key: String, node, friendly: bool, cell: Vector2i) -> void:
+	# Trial movement is a shared board rule, independent of legacy unit catalogs.
+	node.move_interval = Config.MOVE_SECONDS_PER_CELL
 	node.scale = Vector2.ONE*0.72
 	node.visible = Config.valid(cell)
 	node.position = Config.center(cell) if Config.valid(cell) else Vector2.ZERO
