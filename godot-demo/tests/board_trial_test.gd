@@ -22,15 +22,13 @@ func ownership(game) -> void:
 		for cell in cells:
 			check(not held.has(cell),"every live source/destination has unique owner")
 			held[cell] = actor.id
-		if actor.friendly and actor.key=="guard_monk":
-			for cell in cells: check(Config.distance(actor.anchor,cell)<=Config.LEASH,"monk stays in original anchor radius")
-		elif actor.friendly and actor.key in ["tangseng","herbal_spirit_child"]:
+		if actor.friendly and actor.key in ["tangseng","herbal_spirit_child"]:
 			check(actor.cell==actor.anchor and actor.move.is_empty(),"core/healer stay at deployment")
 		elif actor.friendly:
-			check(actor.key in ["wild_hunter","sparrow_spirit","foxfire_imp"],"only the three ranged damage heroes are exempt from stationary/monk constraints")
-			check(cells.all(func(cell): return Config.valid(cell)),"mobile ranged source/destination remain inside the full legal board")
+			check(actor.key in ["guard_monk","wild_hunter","sparrow_spirit","foxfire_imp"],"only the four combat heroes are exempt from Tang/healer stationary constraints")
+			check(cells.all(func(cell): return Config.valid(cell)),"mobile hero source/destination remain inside the full legal board")
 			if not actor.move.is_empty():
-				check(actor.move.from==actor.cell and Config.distance(actor.cell,actor.move.to)==1,"mobile ranged reserves one legal four-neighbor segment, not a teleport")
+				check(actor.move.from==actor.cell and Config.distance(actor.cell,actor.move.to)==1,"mobile hero reserves one legal four-neighbor segment, not a teleport")
 func simulate(key: String, fps: int, speed: int) -> Dictionary:
 	var game = fresh()
 	game.load_formation(key)

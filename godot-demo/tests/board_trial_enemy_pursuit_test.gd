@@ -171,9 +171,8 @@ func exclusions() -> void:
 	monk.target = "E1"
 	monk.route = [Vector2i(3,3),Vector2i(3,2),Vector2i(4,2),Vector2i(4,3)]
 	monk.route_goal = Vector2i(5,3)
-	var old_route: Array = monk.route.duplicate()
 	game._brain(monk,Config.STEP)
-	check(monk.target=="E1" and monk.route==old_route and monk.move.to==Vector2i(3,2),"guard keeps own valid detour and alive lock despite fresh shortcut/adjacent alternate enemy")
+	check(monk.target=="E2" and monk.move.is_empty() and monk.route.is_empty(),"guard now shares the real adjacent-enemy contact policy instead of old permanent guard lock/detour")
 	game.free()
 	game = fixture("E5",["guard_monk","foxfire_imp"])
 	var rat: Dictionary = game._record("E5")

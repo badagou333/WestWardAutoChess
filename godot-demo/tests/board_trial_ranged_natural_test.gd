@@ -53,7 +53,7 @@ func signature(state: Array) -> String:
 
 func observe(game) -> void:
 	var current := sample(game)
-	ownership(game) # Unique source/destination, guard LEASH, Tang/healer stationary.
+	ownership(game) # Unique source/destination, legal hero segments, Tang/healer stationary.
 	for index in current.size():
 		var old: Dictionary = game.previous[index]
 		var now: Dictionary = current[index]

@@ -71,12 +71,21 @@ func run() -> void:
 	game.start_battle()
 	monk.cell = Vector2i(6,3)
 	monk.node.position = Config.center(monk.cell)
-	monk.mode = "归位"
-	game._return(monk)
-	check(monk.node.presentation.facing==-1 and monk.move.to==monk.anchor,"actual left return faces its anchor, not locked right")
-	for frame in range(120): game._tick(Config.STEP)
-	check(monk.cell==monk.anchor and monk.move.is_empty() and monk.target.is_empty(),"return completes without target or anchor drift")
-	side(game,monk,1,"idle after returning")
+	# Actual left movement still faces the destination; automatic return to an
+	# old deployment anchor is a historical D-004 rule, not current pursuit.
+	check(game._move(monk,monk.cell+Vector2i(-1,0)),"actual legal left segment starts without an automatic-return rule")
+	check(monk.node.presentation.facing==-1 and monk.move.to==monk.anchor,"actual left movement faces its destination, not locked right")
+	while monk.cell!=monk.anchor and game.elapsed<1: game._tick(Config.STEP)
+	check(monk.cell==monk.anchor and monk.node.position==Config.center(monk.cell),"issued left segment commits exact destination before subsequent pursuit")
+	game.free()
+	game = fresh()
+	isolate(game,["guard_monk","tangseng"])
+	monk = game._record("guard_monk")
+	monk.node.presentation.facing = -1
+	game.start_battle()
+	game._tick(Config.STEP)
+	check(monk.move.is_empty() and monk.target.is_empty(),"current no-target guard idles instead of seeking its historical anchor")
+	side(game,monk,1,"no-target guard idle")
 	game.free()
 	game = fresh()
 	# A distant enemy is now reachable by the hunter. Use an actually empty

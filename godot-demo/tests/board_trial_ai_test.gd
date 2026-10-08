@@ -21,7 +21,7 @@ func run() -> void:
 	check(game._best_target(monk).id==target,"target selection independent of storage order")
 	game.actors.reverse()
 	var path: Array = game._path(monk,enemy.cell,1)
-	check(path.back()==Vector2i(7,3) and path.all(func(cell): return Config.distance(cell,monk.anchor)<=2),"legal melee path crosses middle without exceeding anchor radius")
+	check(path.back()==Vector2i(7,3) and path.all(func(cell): return Config.valid(cell)) and Config.distance(path.back(),enemy.cell)==1,"legal melee path crosses middle and ends in the real range-one attack position")
 	check(game._move(monk,path[1]),"first adjacent move claimed")
 	check(not game._occupant(monk.cell,"E2").is_empty() and not game._occupant(monk.move.to,"E2").is_empty(),"moving monk reserves source and destination")
 	check(not game._move(second,monk.move.to),"occupied destination cannot be double claimed")

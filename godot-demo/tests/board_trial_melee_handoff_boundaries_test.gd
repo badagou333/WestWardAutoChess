@@ -62,7 +62,7 @@ func cooldown_fixtures() -> void:
 		for index in range(300): game._brain(source,Config.STEP)
 		check(source.target==target.id and source.move.is_empty() and source.node.presentation.pose=="idle",id+" real range-one attack position remains occupied during cooldown wait")
 		check(source.handoff.is_empty(),id+" range-one dwell clears obsolete handoff")
-		if id=="guard_monk": check(source.blocked_elapsed==0 and not source.blocked,"cooldown dwelling is never monk long obstruction")
+		check(source.blocked_elapsed==1.9 and source.blocked,"obsolete guard-block fields do not control or accrue shared melee cooldown policy")
 		check(game.metrics.attack_times.get(id,[]).is_empty(),id+" no early attack bypasses original cooldown")
 		game.free()
 
@@ -94,7 +94,7 @@ func wait_and_pause_fixtures() -> void:
 	var source: Dictionary = game._record("guard_monk")
 	var target: Dictionary = game._record("E1")
 	for index in range(300): game._brain(source,Config.STEP)
-	check(source.target=="E1" and source.move.is_empty() and source.blocked_elapsed==1.5,"isolated observed-segment wait does not charge or release monk long-block clock")
+	check(source.target=="E1" and source.move.is_empty() and source.blocked_elapsed==1.5,"isolated observed-segment wait keeps the real target/activity and ignores obsolete guard-block fields")
 	var elapsed: float = game.elapsed
 	var movement: Dictionary = target.move.duplicate(true)
 	var handoff: Dictionary = source.handoff.duplicate(true)
@@ -141,7 +141,7 @@ func cancelled_activity_fixture() -> void:
 		game.free()
 
 func cancellation_fixtures() -> void:
-	for reason in ["mutual","death","aggro"]:
+	for reason in ["mutual","death","departed"]:
 		var game = waiting_game()
 		var source: Dictionary = game._record("guard_monk")
 		var target: Dictionary = game._record("E1")
@@ -154,8 +154,10 @@ func cancellation_fixtures() -> void:
 		check(source.handoff.is_empty(),reason+" production target invalidation/lock release clears handoff immediately")
 		if reason=="mutual":
 			check(source.target==target.id and not source.move.is_empty(),"loss of mutuality resumes original same-target chase")
+		elif reason=="death":
+			check(source.target.is_empty() and source.move.is_empty() and source.cell==source.anchor,"dead last enemy clears waiting and stays at current cell; no automatic-return policy")
 		else:
-			check(source.target.is_empty() and source.move.is_empty() and source.cell==source.anchor,reason+" falls back to original monk release/anchor dwell")
+			check(source.target==target.id and not source.move.is_empty(),"target leaving historical AGGRO is still reachable, so shared melee resumes actual pursuit")
 		game.free()
 	var game = waiting_game()
 	var source: Dictionary = game._record("guard_monk")

@@ -1,4 +1,7 @@
 extends "res://tests/board_trial_ai_test.gd"
+## HISTORICAL D-004 fixed-anchor/lock/long-block fixtures. Use original D-004
+## sources for this archive; D-20261008-002 explicitly supersedes those rules.
+## Current safe activities/CD/pausing/retry remain tested by the unified suites.
 var traces := {}
 
 func fixture():

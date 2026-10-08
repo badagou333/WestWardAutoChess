@@ -1,0 +1,1191 @@
+{
+	"cases": [
+		{
+			"case": "range_current_priority",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "",
+			"role": "guard_monk",
+			"route_cost": -1,
+			"target": "E3"
+		},
+		{
+			"case": "adjacent_stable_ID",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "",
+			"role": "guard_monk",
+			"route_cost": -1,
+			"target": "E1"
+		},
+		{
+			"case": "strictly_shorter_target",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "guard_monk",
+			"route_cost": 1,
+			"target": "E1"
+		},
+		{
+			"case": "equal_fresh_cost_not_cache_cost",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "guard_monk",
+			"route_cost": 1,
+			"target": "E3"
+		},
+		{
+			"case": "route_shorter",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "guard_monk",
+			"route_cost": 2,
+			"target": "E3"
+		},
+		{
+			"case": "route_equal",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "guard_monk",
+			"route_cost": 2,
+			"target": "E3"
+		},
+		{
+			"case": "route_trim",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "guard_monk",
+			"route_cost": 2,
+			"target": "E3"
+		},
+		{
+			"case": "route_invalid",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "guard_monk",
+			"route_cost": 2,
+			"target": "E3"
+		},
+		{
+			"case": "death_current_cell_reselection",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "guard_monk",
+			"route_cost": 1,
+			"target": "E1"
+		},
+		{
+			"case": "no_path_current_cell_SCAN_retry",
+			"cell": [
+				0,
+				0
+			],
+			"cooldown": 9.73333333333335,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(1, 0)",
+			"role": "guard_monk",
+			"route_cost": 7,
+			"target": "E1"
+		},
+		{
+			"case": "move_finish_before_target_release",
+			"cell": [
+				4,
+				3
+			],
+			"cooldown": 9.4916666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "",
+			"role": "guard_monk",
+			"route_cost": -1,
+			"target": "E1"
+		},
+		{
+			"case": "attack_finish_before_target_release",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 0.591666666666669,
+			"handoff": {},
+			"mirrored": false,
+			"next": "",
+			"role": "guard_monk",
+			"route_cost": -1,
+			"target": "E1"
+		},
+		{
+			"case": "observed_complete_same_tick_renewal",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.98333333333333,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(3, 2)",
+			"role": "guard_monk",
+			"route_cost": 2,
+			"target": "E1"
+		},
+		{
+			"case": "range_current_priority",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "",
+			"role": "guard_monk",
+			"route_cost": -1,
+			"target": "E3"
+		},
+		{
+			"case": "adjacent_stable_ID",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "",
+			"role": "guard_monk",
+			"route_cost": -1,
+			"target": "E1"
+		},
+		{
+			"case": "strictly_shorter_target",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "guard_monk",
+			"route_cost": 1,
+			"target": "E1"
+		},
+		{
+			"case": "equal_fresh_cost_not_cache_cost",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "guard_monk",
+			"route_cost": 1,
+			"target": "E3"
+		},
+		{
+			"case": "route_shorter",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "guard_monk",
+			"route_cost": 2,
+			"target": "E3"
+		},
+		{
+			"case": "route_equal",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "guard_monk",
+			"route_cost": 2,
+			"target": "E3"
+		},
+		{
+			"case": "route_trim",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "guard_monk",
+			"route_cost": 2,
+			"target": "E3"
+		},
+		{
+			"case": "route_invalid",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "guard_monk",
+			"route_cost": 2,
+			"target": "E3"
+		},
+		{
+			"case": "death_current_cell_reselection",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "guard_monk",
+			"route_cost": 1,
+			"target": "E1"
+		},
+		{
+			"case": "no_path_current_cell_SCAN_retry",
+			"cell": [
+				11,
+				0
+			],
+			"cooldown": 9.73333333333335,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(10, 0)",
+			"role": "guard_monk",
+			"route_cost": 7,
+			"target": "E1"
+		},
+		{
+			"case": "move_finish_before_target_release",
+			"cell": [
+				7,
+				3
+			],
+			"cooldown": 9.4916666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "",
+			"role": "guard_monk",
+			"route_cost": -1,
+			"target": "E1"
+		},
+		{
+			"case": "attack_finish_before_target_release",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 0.591666666666669,
+			"handoff": {},
+			"mirrored": true,
+			"next": "",
+			"role": "guard_monk",
+			"route_cost": -1,
+			"target": "E1"
+		},
+		{
+			"case": "observed_complete_same_tick_renewal",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.98333333333333,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "guard_monk",
+			"route_cost": 2,
+			"target": "E1"
+		},
+		{
+			"case": "range_current_priority",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "",
+			"role": "E1",
+			"route_cost": -1,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "adjacent_stable_ID",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "",
+			"role": "E1",
+			"route_cost": -1,
+			"target": "foxfire_imp"
+		},
+		{
+			"case": "strictly_shorter_target",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E1",
+			"route_cost": 1,
+			"target": "guard_monk"
+		},
+		{
+			"case": "equal_fresh_cost_not_cache_cost",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E1",
+			"route_cost": 1,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_shorter",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E1",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_equal",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E1",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_trim",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E1",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_invalid",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E1",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "death_current_cell_reselection",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E1",
+			"route_cost": 1,
+			"target": "guard_monk"
+		},
+		{
+			"case": "no_path_current_cell_SCAN_retry",
+			"cell": [
+				0,
+				0
+			],
+			"cooldown": 9.73333333333335,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(1, 0)",
+			"role": "E1",
+			"route_cost": 7,
+			"target": "guard_monk"
+		},
+		{
+			"case": "move_finish_before_target_release",
+			"cell": [
+				4,
+				3
+			],
+			"cooldown": 9.4666666666667,
+			"handoff": {
+				"segment": 2,
+				"target": "guard_monk"
+			},
+			"mirrored": false,
+			"next": "",
+			"role": "E1",
+			"route_cost": 1,
+			"target": "guard_monk"
+		},
+		{
+			"case": "attack_finish_before_target_release",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 0.458333333333335,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(3, 4)",
+			"role": "E1",
+			"route_cost": 2,
+			"target": "foxfire_imp"
+		},
+		{
+			"case": "observed_complete_same_tick_renewal",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.98333333333333,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E1",
+			"route_cost": 2,
+			"target": "guard_monk"
+		},
+		{
+			"case": "range_current_priority",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "",
+			"role": "E1",
+			"route_cost": -1,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "adjacent_stable_ID",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "",
+			"role": "E1",
+			"route_cost": -1,
+			"target": "foxfire_imp"
+		},
+		{
+			"case": "strictly_shorter_target",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E1",
+			"route_cost": 1,
+			"target": "guard_monk"
+		},
+		{
+			"case": "equal_fresh_cost_not_cache_cost",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E1",
+			"route_cost": 1,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_shorter",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E1",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_equal",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E1",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_trim",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E1",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_invalid",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E1",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "death_current_cell_reselection",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E1",
+			"route_cost": 1,
+			"target": "guard_monk"
+		},
+		{
+			"case": "no_path_current_cell_SCAN_retry",
+			"cell": [
+				11,
+				0
+			],
+			"cooldown": 9.73333333333335,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(10, 0)",
+			"role": "E1",
+			"route_cost": 7,
+			"target": "guard_monk"
+		},
+		{
+			"case": "move_finish_before_target_release",
+			"cell": [
+				7,
+				3
+			],
+			"cooldown": 9.4666666666667,
+			"handoff": {
+				"segment": 2,
+				"target": "guard_monk"
+			},
+			"mirrored": true,
+			"next": "",
+			"role": "E1",
+			"route_cost": 1,
+			"target": "guard_monk"
+		},
+		{
+			"case": "attack_finish_before_target_release",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 0.458333333333335,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(8, 4)",
+			"role": "E1",
+			"route_cost": 2,
+			"target": "foxfire_imp"
+		},
+		{
+			"case": "observed_complete_same_tick_renewal",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.98333333333333,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E1",
+			"route_cost": 2,
+			"target": "guard_monk"
+		},
+		{
+			"case": "range_current_priority",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "",
+			"role": "E3",
+			"route_cost": -1,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "adjacent_stable_ID",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "",
+			"role": "E3",
+			"route_cost": -1,
+			"target": "foxfire_imp"
+		},
+		{
+			"case": "strictly_shorter_target",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E3",
+			"route_cost": 1,
+			"target": "guard_monk"
+		},
+		{
+			"case": "equal_fresh_cost_not_cache_cost",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E3",
+			"route_cost": 1,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_shorter",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E3",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_equal",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E3",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_trim",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E3",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_invalid",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E3",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "death_current_cell_reselection",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E3",
+			"route_cost": 1,
+			"target": "guard_monk"
+		},
+		{
+			"case": "no_path_current_cell_SCAN_retry",
+			"cell": [
+				0,
+				0
+			],
+			"cooldown": 9.73333333333335,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(1, 0)",
+			"role": "E3",
+			"route_cost": 7,
+			"target": "guard_monk"
+		},
+		{
+			"case": "move_finish_before_target_release",
+			"cell": [
+				4,
+				3
+			],
+			"cooldown": 9.29166666666671,
+			"handoff": {
+				"segment": 2,
+				"target": "guard_monk"
+			},
+			"mirrored": false,
+			"next": "",
+			"role": "E3",
+			"route_cost": 1,
+			"target": "guard_monk"
+		},
+		{
+			"case": "attack_finish_before_target_release",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 0.608333333333335,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(3, 4)",
+			"role": "E3",
+			"route_cost": 2,
+			"target": "foxfire_imp"
+		},
+		{
+			"case": "observed_complete_same_tick_renewal",
+			"cell": [
+				3,
+				3
+			],
+			"cooldown": 9.98333333333333,
+			"handoff": {},
+			"mirrored": false,
+			"next": "(4, 3)",
+			"role": "E3",
+			"route_cost": 2,
+			"target": "guard_monk"
+		},
+		{
+			"case": "range_current_priority",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "",
+			"role": "E3",
+			"route_cost": -1,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "adjacent_stable_ID",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "",
+			"role": "E3",
+			"route_cost": -1,
+			"target": "foxfire_imp"
+		},
+		{
+			"case": "strictly_shorter_target",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E3",
+			"route_cost": 1,
+			"target": "guard_monk"
+		},
+		{
+			"case": "equal_fresh_cost_not_cache_cost",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E3",
+			"route_cost": 1,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_shorter",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E3",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_equal",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E3",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_trim",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E3",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "route_invalid",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E3",
+			"route_cost": 2,
+			"target": "wild_hunter"
+		},
+		{
+			"case": "death_current_cell_reselection",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.99166666666667,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E3",
+			"route_cost": 1,
+			"target": "guard_monk"
+		},
+		{
+			"case": "no_path_current_cell_SCAN_retry",
+			"cell": [
+				11,
+				0
+			],
+			"cooldown": 9.73333333333335,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(10, 0)",
+			"role": "E3",
+			"route_cost": 7,
+			"target": "guard_monk"
+		},
+		{
+			"case": "move_finish_before_target_release",
+			"cell": [
+				7,
+				3
+			],
+			"cooldown": 9.29166666666671,
+			"handoff": {
+				"segment": 2,
+				"target": "guard_monk"
+			},
+			"mirrored": true,
+			"next": "",
+			"role": "E3",
+			"route_cost": 1,
+			"target": "guard_monk"
+		},
+		{
+			"case": "attack_finish_before_target_release",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 0.608333333333335,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(8, 4)",
+			"role": "E3",
+			"route_cost": 2,
+			"target": "foxfire_imp"
+		},
+		{
+			"case": "observed_complete_same_tick_renewal",
+			"cell": [
+				8,
+				3
+			],
+			"cooldown": 9.98333333333333,
+			"handoff": {},
+			"mirrored": true,
+			"next": "(7, 3)",
+			"role": "E3",
+			"route_cost": 2,
+			"target": "guard_monk"
+		}
+	],
+	"coordinate_base": 0,
+	"failures": 0,
+	"fixture": "three original-stat roles, mirrored equal-state isolated boundaries; real _brain/_tick; not natural deployment evidence",
+	"guard_road_release_live_AI": [
+		{
+			"blocker_current": [
+				5,
+				1
+			],
+			"boundary": 0.500000000000001,
+			"current": [
+				6,
+				1
+			],
+			"fps": 30,
+			"fresh_cost": 3,
+			"next": [
+				6,
+				0
+			],
+			"old_remaining_cost": 5,
+			"route": [
+				[
+					6,
+					1
+				],
+				[
+					6,
+					0
+				],
+				[
+					5,
+					0
+				],
+				[
+					4,
+					0
+				]
+			],
+			"speed": 1,
+			"target": "E1"
+		},
+		{
+			"blocker_current": [
+				5,
+				1
+			],
+			"boundary": 0.500000000000001,
+			"current": [
+				6,
+				1
+			],
+			"fps": 120,
+			"fresh_cost": 3,
+			"next": [
+				6,
+				0
+			],
+			"old_remaining_cost": 5,
+			"route": [
+				[
+					6,
+					1
+				],
+				[
+					6,
+					0
+				],
+				[
+					5,
+					0
+				],
+				[
+					4,
+					0
+				]
+			],
+			"speed": 2,
+			"target": "E1"
+		}
+	],
+	"road_fixture_cooldown": 100,
+	"rule": "melee-unified-d20261008-002"
+}

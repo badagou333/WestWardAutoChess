@@ -227,17 +227,25 @@ func run() -> void:
 	await click(game.retry_button.get_global_rect().get_center())
 	check(game.phase==game.Phase.DEPLOY and game.deployment==snapshot and game.elapsed==0,"native retry restores pre-battle cells/clock")
 	await click(game.formation_buttons[1].get_global_rect().get_center())
+	# Full B now legitimately wins under the approved active-guard strategy.
+	# Keep actual failure/HP/stat UI coverage with a legal exposed core-alone
+	# deployment, without weakening HP/damage or bypassing production combat.
+	for key in Config.FRIENDS:
+		if key=="tangseng": continue
+		game.select(key)
+		game.withdraw()
+	check(game.deployment.size()==1 and game.deployment.has("tangseng"),"legal optional-roster fixture retains real exposed Tang for failure UI")
 	await click(game.start_button.get_global_rect().get_center())
 	await click(game.speed_button.get_global_rect().get_center())
 	await await_result()
-	check(not game.victory and game._record("tangseng").node.dead,"normal B produces real core death, not fixture HP")
+	check(not game.victory and game._record("tangseng").node.dead,"legal exposed core-alone deployment produces real core death, not fixture HP")
 	total_damage = 0.0
 	total_healing = 0.0
 	for actor in game.actors:
 		if actor.friendly:
 			total_damage += game.metrics.damage.get(actor.id,0)
 			total_healing += game.metrics.healing.get(actor.id,0)
-	# D-007 B now has real healing; validate its actual full result, not old zero.
+	# Validate actual full statistics, not historical B healing/death premises.
 	check("唐僧阵亡" in game.ui.result_label.text and "阵亡 %d人" % game.report().fallen.size() in game.ui.result_label.text and "合计伤害 %.0f" % total_damage in game.ui.result_label.text and "治疗 %.0f" % total_healing in game.ui.result_label.text,"real failure reason and fallen statistics remain accessible")
 	await shot("defeat")
 	for index in range(game.roster_buttons.size()-1):

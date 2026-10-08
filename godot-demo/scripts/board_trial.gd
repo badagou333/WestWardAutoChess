@@ -215,17 +215,14 @@ func _occupant(cell: Vector2i, excluded := "") -> Dictionary:
 	return {}
 
 func _path(actor: Dictionary, goal: Vector2i, reach: int) -> Array[Vector2i]:
-	var limited: bool = actor.friendly and actor.key=="guard_monk"
-	return Space.path(actor.cell,goal,reach,func(cell): return not _occupant(cell,actor.id).is_empty(),actor.anchor,Config.LEASH if limited else -1)
+	return Space.path(actor.cell,goal,reach,func(cell): return not _occupant(cell,actor.id).is_empty())
 
 func _mobile_ranged(actor: Dictionary) -> bool:
 	return actor.friendly and actor.key in ["wild_hunter","sparrow_spirit","foxfire_imp"]
 
 func _target_legal(actor: Dictionary, target: Dictionary) -> bool:
 	if not _active(target) or actor.friendly==target.friendly: return false
-	if actor.friendly and actor.key=="guard_monk":
-		return Config.distance(actor.anchor,target.cell)<=Config.AGGRO
-	elif actor.friendly and not _mobile_ranged(actor):
+	if actor.friendly and not Melee.applies(actor) and not _mobile_ranged(actor):
 		return Config.distance(actor.cell,target.cell)<=actor.reach
 	return not _path(actor,target.cell,actor.reach).is_empty()
 
@@ -269,7 +266,7 @@ func _attack(actor: Dictionary, target: Dictionary, healing := false) -> void:
 func _move(actor: Dictionary, next: Vector2i) -> bool:
 	if not _active(actor) or not Config.valid(next) or not actor.move.is_empty(): return false
 	if Config.distance(actor.cell,next)!=1 or not _occupant(next,actor.id).is_empty(): return false
-	if actor.friendly and not _mobile_ranged(actor) and Config.distance(actor.anchor,next)>Config.LEASH: return false
+	if actor.friendly and not Melee.applies(actor) and not _mobile_ranged(actor) and Config.distance(actor.anchor,next)>Config.LEASH: return false
 	actor.move = {"from":actor.cell,"to":next,"time":0.0,"duration":actor.walk}
 	if Melee.applies(actor):
 		actor.move_serial += 1
@@ -278,31 +275,11 @@ func _move(actor: Dictionary, next: Vector2i) -> bool:
 	actor.node.presentation.move_to(Vector2.ZERO)
 	return true
 
-func _return(actor: Dictionary) -> void:
-	actor.mode = "归位"
-	actor.target = ""
-	if actor.cell==actor.anchor:
-		actor.mode = "驻留"
-		return
-	var path := _path(actor,actor.anchor,0)
-	if path.size()>1:
-		_move(actor,path[1])
-		return
-	var blocker := _occupant(actor.anchor,actor.id)
-	if not blocker.is_empty() and not blocker.friendly:
-		path = _path(actor,blocker.cell,actor.reach)
-		if Config.distance(actor.cell,blocker.cell)<=actor.reach: _attack(actor,blocker)
-		elif path.size()>1: _move(actor,path[1])
-	actor.mode = "归位等待" if actor.move.is_empty() else "归位"
-
 func _brain(actor: Dictionary, delta: float) -> void:
 	actor.cooldown = maxf(0,actor.cooldown-delta)
 	actor.think -= delta
-	if actor.friendly and actor.key=="guard_monk":
-		Melee.tick(self,actor,delta)
-		return
 	if Melee.applies(actor):
-		Melee.tick_enemy(self,actor)
+		Melee.tick(self,actor)
 		return
 	if not actor.move.is_empty() or actor.node.presentation.pose=="basic_attack": return
 	var target := _record(actor.target)
@@ -361,10 +338,6 @@ func _tick(delta: float) -> void:
 		if not _active(actor) or actor.move.is_empty(): continue
 		actor.move.time += delta
 		actor.node.position = Config.center(actor.move.from).lerp(Config.center(actor.move.to),minf(1,actor.move.time/actor.move.duration))
-		if actor.friendly and actor.key=="guard_monk":
-			actor.blocked_elapsed = 0.0
-			actor.blocked = false
-			actor.progress_time = elapsed
 		if actor.move.time+0.00000001>=actor.move.duration:
 			actor.cell = actor.move.to
 			actor.node.position = Config.center(actor.cell)
@@ -585,8 +558,6 @@ func _draw() -> void:
 	draw_rect(BOARD_RECT,Color(0.690,0.592,0.369,0.95),false,3)
 	var mid := Config.ORIGIN+Vector2(Config.DEPLOY_COLS*Config.CELL.x,0)
 	draw_dashed_line(mid,mid+Vector2(0,BOARD_RECT.size.y),Color(0.855,0.722,0.408,0.75 if phase==Phase.DEPLOY else 0.18),3,9)
-	for entry in actors:
-		if entry.friendly and _active(entry) and entry.key=="guard_monk": draw_arc(Config.center(entry.anchor),20,0,TAU,32,Color(0.27,0.45,0.42,0.7),2)
 
 func _draw_overlay() -> void:
 	# Edge-only highlights above bodies, never an opaque fill over the art/actors.
