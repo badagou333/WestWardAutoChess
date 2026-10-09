@@ -1,5 +1,14 @@
 # 06｜程序开发
 
+## 2026-10-09 Dota自走棋源码与可复用实现调研（未引入代码）
+
+- 更新时间/范围：2026-10-09。负责人问原版Dota2自走棋寻路是否开源、能否照抄；基线`28c73c3`、Local干净、fetch后远端0/0。本轮网页只读核作者发行页、第三方镜像、实际寻路函数及许可证，记录本工作流；不下载/执行游戏包、不解密、不克隆项目、不修改程序/01/全局或查看媒体。
+- 原版与镜像：未找到Drodo官方维护并明确许可复用的完整移动/寻路源码，不据此断言绝对从未公开。[原作者Workshop发行页](https://steamcommunity.com/sharedfiles/filedetails/?id=1613886175)确认原游戏；[customgamessourcecode/AutoChess](https://github.com/customgamessourcecode/AutoChess)上传者明确自述与原作者无关、从订阅VPK提取、仅教育目的。[QFunnn/dota2-customs](https://github.com/QFunnn/dota2-customs)也明确是提取工具，列原Workshop ID及dota-auto-chess分支；其main MIT署名是2026 QFunnn，不能作为Drodo授权全部游戏代码的证明。公开可见与许可复用须分开核对，依据[GitHub官方许可说明](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)。
+- 找到的具体技术证据：QFunnn分支中[addon_game_mode.lua](https://raw.githubusercontent.com/QFunnn/dota2-customs/refs/heads/dota-auto-chess/scripts/vscripts/addon_game_mode.lua)标为2026-08-09提取构建；FindPath段构建8×8占用表，读取_G.unit标记障碍、清起点，通过Pathfinder的JPS模式取路并返回起点之后的节点。仅确认该提取快照中的这一函数，未核官方当前版本一致性、全部调用链及占格释放/多人仲裁/攻击目标规则；不能把一个辅助函数当成整套已验证战斗AI，也不能说原版采用我们此前提议的WHCA*/PIBT。
+- 明确开源的基础库：[Yonaba/Jumper](https://github.com/Yonaba/Jumper)为纯Lua网格寻路库、MIT许可，作者说明支持JPS等搜索并要求保留版权/许可。镜像中的调用接口与其示例一致，是可继续追溯的线索；未成功取得镜像pathfinder实现本体，故不声称逐文件身份或该副本许可已确认。复用时应从原作者明确授权版本取代码并保留通知，不从不明镜像转授权。Jumper本身不是完整自走棋交通系统；当前Godot/GDScript需语言和执行模型适配，不能只复制Lua片段便完成接入。
+- 同类项目只读筛选：辅助核[Godot教学自走棋](https://github.com/guladam/godot_autobattler_course)为MIT，真实四向AStarGrid2D/追击/攻击/堵塞状态，但起步即释放源格，堵塞主要重试，不满足当前双端整段锁；[PokemonAutoChess](https://github.com/keldaanCommunity/pokemonAutoChess)有实际服务端攻位枚举/A*与动态目标处理，GPLv3、8×6/八方向及立即逻辑移格，也非本项目的现成区间协调模块。未找到已核成熟、宽松许可且可原样替换当前约束的整套实现；不凭名字、热度或MIT徽标宣称可直接照搬，更不把UI插件/阵容编辑器当战斗源码。
+- 结论/待总控同步/下一步：可以研究原版可观察行为及公开提取快照的局部结构，当前证据不足以授权原版游戏代码直接进入本仓库；许可明确的基础库可按其条件复用，完整移动流程仍须适配。建议下一步围绕选敌、攻位、占格提交/释放、目标移动与堵塞处理核完整流程再做对照；此前WHCA*仍是本项目候选提案，不因本次找到JPS便确认替换BFS或宣称多人冲突已解决。本轮无新玩法确认、代码引入或运行测试，完成来源交叉核对与文档差异检查；仅自有工作流按持续授权提交推送。
+
 ## 2026-10-09 同速后的路线规划方案（讨论提案，未实施）
 
 - 更新时间/范围：2026-10-09。负责人要求统一时间后重新梳理路线规划；基线`e20c995`，Local干净、fetch后HEAD/origin0/0。本轮核当前规划/近战/执行链路、已归档同速证据及原作者资料，形成以下提案；仅修改本工作流，不跑新游戏、不查看媒体、不改代码/01/全局。已完成的0.50秒统一速度与本提案的寻路重构分别记录。
