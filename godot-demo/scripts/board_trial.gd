@@ -8,7 +8,7 @@ const Hero = preload("res://scripts/presentation/board_trial_hero.gd")
 const Enemy = preload("res://scripts/presentation/board_trial_enemy.gd")
 const Core = preload("res://scripts/board_trial_core.gd")
 const Events = preload("res://scripts/combat/attack_events.gd")
-const Audio = preload("res://scripts/presentation/audio_feedback.gd")
+const Audio = preload("res://scripts/presentation/board_trial_audio.gd")
 const Style = preload("res://scripts/presentation/board_trial_style.gd")
 const UI = preload("res://scripts/presentation/board_trial_ui.gd")
 const BACKGROUND = preload("res://art/boards/formation_trial_v2/board-courtyard.png")
@@ -523,22 +523,26 @@ func _resolve(target, amount: float, healing: bool, event: Dictionary) -> void:
 	var source := _by_node(event.source)
 	var recipient := _by_node(target)
 	if not _active(source) or not _active(recipient): return
-	audio_feedback.resolved_attack(event)
 	if healing:
 		var before: float = target.health
 		target.heal(amount)
-		metrics.healing[source.id] = metrics.healing.get(source.id,0.0)+target.health-before
+		var effective: float=target.health-before
+		metrics.healing[source.id] = metrics.healing.get(source.id,0.0)+effective
+		audio_feedback.role_applied(event,effective)
 	else:
 		var victims: Array[Dictionary] = [recipient]
 		if event.splash:
 			for actor in actors:
 				if actor.id!=recipient.id and not actor.friendly and _active(actor) and Config.distance(actor.cell,recipient.cell)<=1: victims.append(actor)
+		var effective := 0.0
 		for victim in victims:
 			var before := _hp(victim)
 			victim.node.take_damage(amount)
 			metrics.damage[source.id] = metrics.damage.get(source.id,0.0)+before-_hp(victim)
-			audio_feedback.hit(victim.node,event.has("texture"),victim.key=="tangseng")
+			effective+=before-_hp(victim)
+			audio_feedback.hit_event(victim.node,event.has("texture"),victim.key=="tangseng",event,before-_hp(victim))
 			if not metrics.first_hit.has(source.id): metrics.first_hit[source.id] = {"target":victim.id,"time":elapsed}
+		audio_feedback.role_applied(event,effective)
 	queue_redraw()
 
 func _settle() -> void:

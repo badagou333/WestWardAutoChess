@@ -2,6 +2,8 @@
 
 默认入口仍是格子版`scenes/escort_route.tscn`；新增无格子半自动**对照试验**`scenes/free_escort.tscn`，不是最终玩法替换。两版共用十个新版角色、四段遭遇、三个营地和经营系统。当前仍是可玩原型，不是完整第一章；未实现章节存档、完整英雄技能或连续逐帧动画。
 
+当前完整分发包含棋盘猎户的Robinhood76新声（CC BY-NC 4.0），**仅供本次非商业试玩**。这不是商用许可；未来商业版须换源或取得许可，其他素材仍分别按原CC0/CC BY许可。完整署名随[CREDITS.md](CREDITS.md)及[棋盘音效声明](audio/runtime/board-selected-20261009/ATTRIBUTION.md)分发，不只保留在候选目录。
+
 ## 启动
 
 需要 Godot 4.7.2 Standard（Compatibility 渲染）。Mac 双击 `launch.command`，Windows 双击 `launch.cmd`，或在仓库根目录运行：
@@ -21,6 +23,28 @@ godot --path godot-demo res://scenes/board_trial.tscn
 ```
 
 独立入口，不替换默认护送；仅一关、公开固定敌阵，无经营/营地/人口上限/主动技能。默认为加强六怪＋一只现有熊山君，棍僧默认采用此前无棋盘试接的13帧样板；左侧“对照选项”可战前选择原六怪／强化六怪／强化＋熊，棍僧新旧显示可在部署、战斗、暂停、结果阶段切换。切换显示不重新开局或改变战斗，敌人配置开战后锁定，重试保留配置及显示选项。请自行关闭旧试玩窗口再重开此入口，旧进程不会自动更新。未采用05独立棋盘预览、山狼失败稿或狐火Spine候选，没有制作新媒体或Boss技能。本批作者无窗口自测已完成，图形输入/实际像素和05/07独立验收仍待安排。
+
+### D006 · 当前棋盘声音（2026-10-09，无窗口技术交付，听感待验）
+
+本入口专用`board-selected-noncommercial-20261009`声表；8个原选WAV映射9个行为，棍僧/熊共Qat，狐火保持A，药灵用新版，猎户必须用已确认第2段。精确素材参数唯一权威为[08 HANDOFF](audio/candidates/selected-20261009/HANDOFF.md)，运行副本/来源/许可在[audio/runtime/board-selected-20261009/](audio/runtime/board-selected-20261009/manifest.json)，旧v1/候选/备份及旧入口默认声音不改。左侧“声音：开/关”和音量条控制全部新旧声音；顶栏标非商业试玩，“帮助→声音署名”查看完整第三方声明。实际输入和显示可读性未作图形验收。
+
+唯一主声时机：棍僧/熊/狼/猪实际正伤害；猎户/山雀/狐火实际发射；灰鼠实际投石正伤害（发射无主声）；药灵实际恢复HP>0；唐僧不新增主声。实例ID＋攻击请求时固化、随事件携带的serial去重，晚到弹道不读当前新serial；同serial的两狼、棍熊共文件不互吞，溅射多目标/重复回调不重复。选表攻击不叠旧主声/材质层；唐伤警、原死亡/UI/胜利及未替换唐攻击材质保持，未虚构原棋盘不存在的失败/UI触发。静音/零音量/暂停/容量丢弃也消费本事件，不在恢复时补播；重试清账本/尾声，保音量与开关，2×不变调变速。
+
+并发策略：原8条非替换反馈音轨保留，另8条主声音轨，合计16，均受同一开关/音量/暂停与原限幅器控制。山狼完整2.415669秒，不裁尾、不变速；同单位后续攻击可用空槽叠尾。主声满8槽时丢新声，不抢断已有主尾，也不占/抢UI、死亡、唐警池，无延迟队列。`stats/audit`记录请求/播放调度/重复/静音/暂停/丢弃/过期，primary抢占数为0；无窗口极速推进自然局的拥挤计数受真实墙钟影响，**不是实机丢音率或混战听感结论**。药灵原非零首帧2948/32768可能点击，保原选哈希，真人聆听仍待。
+
+8 WAV完整文件SHA与08选版逐字节一致；本批8个`.wav.import`明确保存无压缩PCM/不单声化/不改率/不修剪/不归一化/不循环，跨机器沿用，不让Godot默认压缩改变选声。最终PCK只存导入sample而非原WAV头，因此包内核对加载的16-bit/44.1kHz/通道/完整帧数与PCM SHA，原WAV SHA作为清单来源记录，不能冒称包内原WAV文件哈希已读。首包压缩导致18项格式/PCM失败，修导入配置后source/PCK各8资产、19语义反例、熊A/R两调度4自然局全部通过，完整游戏report与D002原证据一致；旧声音回归通过。证据见`tests/board-trial-runtime/board-audio-20261009-{source,pack,material-license}.json`，首次失效日志/首包失败报告保留。
+
+最终临时`/tmp/board-audio-20261009-final.pck`实际291项，载入新profile/8声音、可见用途文字及完整署名；只显式`--usage noncommercial`通过资源/许可策略，默认commercial及篡改猎户路径/哈希或扩其他NC均拒绝。未来Windows构建脚本也默认commercial拒本声音，只本次非商业用途显式`RELEASE_USAGE=noncommercial`；本轮未生成EXE/ZIP/发行包。候选HQ源/参考/备份不入包；原已授权v1/狐火运行资源为保持旧入口而继续在包中。未打开GUI、试听、录音或测实际设备/峰值；事件/无损/用途通过不等于游戏听感、07独立、旧D002/D003视觉/P3或Windows通过。
+
+```sh
+godot --headless --path godot-demo --script res://tests/board_trial_audio_test.gd
+python3 scripts/verify_board_audio.py --mode noncommercial
+godot --headless --path godot-demo --export-pack "Windows x86_64 Release" /tmp/board-audio-20261009-final.pck
+python3 scripts/inspect_godot_pck.py /tmp/board-audio-20261009-final.pck --release-policy --usage noncommercial --output /tmp/board-audio-20261009-final-pack-files.txt
+godot --headless --main-pack /tmp/board-audio-20261009-final.pck --script /absolute/repo/godot-demo/tests/board_trial_audio_test.gd -- --baseline=/absolute/repo/godot-demo/tests/board-trial-runtime/board-balance-20261009-natural.json --output=/tmp/board-audio-20261009-pack.json
+```
+
+### 既有D004与玩法／动画说明
 
 2026-10-09 D004待机朝向小修：熊山君atlas0实际源左，却被整套manifest的right标签误镜像成右；仅当前棋盘`board_trial_bear_view.gd`在实际取0帧时修正绘图X轴，包含攻击起手/收势用0帧的阶段。开场/无目标等待/重试逻辑敌方向左，0帧正确显示左向；实际目标在右时仍可转右，不锁死方向。1—4帧原变换、逻辑facing、脚点/socket、所有时钟/数值/寻路与旧模式不改。敌情/详情头像修前也实际镜像，且无窗口逐字节核实idle.png与atlas0完全相同，因此同一缺陷的两处头像按原生左源显示；未重画或改共享manifest。18帧/朝向矩阵、4真实移动/攻击/暂停/死亡重试活动与熊A/R两局完整报告均通过，包内同一专项也通过；A18.617秒/唐148、R25.417秒/唐168与原D002完整report一致。当前临时包为`/tmp/board-bear-facing-20261009.pck`，实际269项含新适配，资源策略通过；紧凑证据`tests/board-trial-runtime/board-bear-facing-20261009-{source,pack}.json`。只看过授权的一张源atlas，无图形窗口/鼠标/截图，几何与源像素事实不冒充实机连续视觉验收；待07本小修独立复核，原GUI/05视觉/P3待验保持。
 
@@ -226,7 +250,7 @@ godot --path godot-demo --script res://tests/board_trial_input_test.gd
 
 ```sh
 godot --headless --path godot-demo --export-pack "Windows x86_64 Release" /tmp/board-balance-20261009.pck
-python3 scripts/inspect_godot_pck.py /tmp/board-balance-20261009.pck --release-policy --output /tmp/board-balance-20261009-pack-files.txt
+python3 scripts/inspect_godot_pck.py /tmp/board-balance-20261009.pck --release-policy --usage noncommercial --output /tmp/board-balance-20261009-pack-files.txt
 godot --headless --main-pack /tmp/board-balance-20261009.pck --script /absolute/repo/godot-demo/tests/board_trial_pack_boot.gd
 godot --headless --main-pack /tmp/board-balance-20261009.pck --script /absolute/repo/godot-demo/tests/board_trial_profile_pack_test.gd -- /absolute/repo/godot-demo/tests/board-trial-runtime/board-balance-20261009-natural.json
 ```

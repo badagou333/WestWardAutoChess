@@ -1,0 +1,113 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+ERROR: actual selected stream retains PCM16/44100/channels guard_monk
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:103)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: decoded runtime/PCK PCM equals independently manifested source PCM guard_monk
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:108)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: actual selected stream retains PCM16/44100/channels wild_hunter
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:103)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: decoded runtime/PCK PCM equals independently manifested source PCM wild_hunter
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:108)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: actual selected stream retains PCM16/44100/channels sparrow_spirit
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:103)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: decoded runtime/PCK PCM equals independently manifested source PCM sparrow_spirit
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:108)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: actual selected stream retains PCM16/44100/channels herbal_spirit_child
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:103)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: decoded runtime/PCK PCM equals independently manifested source PCM herbal_spirit_child
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:108)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: actual selected stream retains PCM16/44100/channels foxfire_imp
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:103)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: decoded runtime/PCK PCM equals independently manifested source PCM foxfire_imp
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:108)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: actual selected stream retains PCM16/44100/channels rat
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:103)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: decoded runtime/PCK PCM equals independently manifested source PCM rat
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:108)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: actual selected stream retains PCM16/44100/channels boar
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:103)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: decoded runtime/PCK PCM equals independently manifested source PCM boar
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:108)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: actual selected stream retains PCM16/44100/channels wolf
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:103)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: decoded runtime/PCK PCM equals independently manifested source PCM wolf
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:108)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: actual selected stream retains PCM16/44100/channels bear_lord
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:103)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+ERROR: decoded runtime/PCK PCM equals independently manifested source PCM bear_lord
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:28)
+       [1] verify_assets (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:108)
+       [2] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_audio_test.gd:382)
+BOARD_AUDIO assets=8 semantic_cases=19 natural_runs=4 failures=18

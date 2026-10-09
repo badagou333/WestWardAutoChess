@@ -43,6 +43,10 @@ const ENEMY_TYPES := ["wolf","boar","rat","bear_lord"]
 var enemy_rows: Array[Button] = []
 var profile_choice: OptionButton
 var animation_toggle: Button
+var audio_button: Button
+var audio_volume: HSlider
+var credits_panel: Control
+var usage_label: Label
 var notice_timer := 0.0
 var last_notice := ""
 var last_phase := -1
@@ -108,7 +112,8 @@ func setup(host) -> void:
 	portrait(Rect2(44,30,74,82)).setup("tangseng",false,true)
 	title_label = label(Rect2(139,33,250,40),32)
 	title_label.text = "西游护送"
-	label(Rect2(139,81,250,30),20).text = "松庭 · 单关试炼"
+	usage_label=label(Rect2(139,81,250,30),20)
+	usage_label.text = "松庭 · 非商业试玩"
 	core_hp = label(Rect2(422,45,236,32))
 	core_bar = bar(Rect2(422,89,216,7))
 	phase_label = label(Rect2(738,32,390,45),34)
@@ -139,6 +144,19 @@ func setup(host) -> void:
 	animation_toggle=button(Rect2(32,555,154,48),"",func(): game.set_monk_sample(not game.monk_sample_enabled))
 	animation_toggle.add_theme_font_size_override("font_size",18)
 	animation_toggle.tooltip_text="只切棍僧显示，保留战斗、动作时钟和命中事件。"
+	audio_button=button(Rect2(32,613,154,38),"",func(): game.audio_feedback.enabled=not game.audio_feedback.enabled)
+	audio_button.add_theme_font_size_override("font_size",18)
+	label(Rect2(32,664,154,26),18).text="音量"
+	audio_volume=HSlider.new()
+	audio_volume.position=Vector2(32,697)
+	audio_volume.size=Vector2(154,22)
+	audio_volume.min_value=0
+	audio_volume.max_value=1
+	audio_volume.step=0.05
+	audio_volume.value=game.audio_feedback.level
+	audio_volume.focus_mode=Control.FOCUS_NONE
+	audio_volume.value_changed.connect(func(value): game.audio_feedback.level=value)
+	add_child(audio_volume)
 	panel(Rect2(26,740,168,171))
 	label(Rect2(32,748,160,109),20).text = "1—6 选择队员\n左键放置 / 拖动\nR 撤下\n右键 / Esc 取消"
 	button(Rect2(32,863,154,40),"布阵规则",toggle_help)
@@ -208,9 +226,27 @@ func create_help() -> void:
 	text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	text.text = "战前：1—6或头像选人；左半6列可部署。\n左键放置、拖动调整；已部署友军可交换。\nR撤下（不是出售）；右键 / Esc取消。\n唐僧必须部署，其他队员可选择不上场。\n\n战中：自动战斗；P暂停、1× / 2×。\n暂停也不能移动、交换、撤下或补阵亡位。\n唐僧、药灵驻留；远程输出自动接敌。\n棍僧与狼、猪同策略，全棋盘主动接敌。\n四向寻路，不穿单位，曼哈顿射程无弹道遮挡。\n近战射程1；可攻击时按原冷却驻留。\n无目标朝向对侧，行动按实际目标转身。\n\n唐僧存活且全敌清除才胜利；唐僧死亡失败。\n同一步双方全灭也失败。本场死亡不可复活。\n重试恢复双方全员及上次开战前站位。\n本关无商店 / 人口限制 / 主动技能。"
 	help_close = button(Rect2(180,640,240,52),"知道了 / Esc",toggle_help,window)
+	button(Rect2(30,640,136,52),"声音署名",func(): credits_panel.show(),window)
+	credits_panel=panel(Rect2(600,170,720,724),help_layer)
+	credits_panel.z_index=1
+	label(Rect2(30,24,660,43),28,credits_panel).text="第三方音效 · 仅非商业试玩"
+	var scroll:=ScrollContainer.new()
+	scroll.position=Vector2(30,82)
+	scroll.size=Vector2(660,538)
+	credits_panel.add_child(scroll)
+	var credits:=Label.new()
+	credits.custom_minimum_size.x=640
+	credits.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	credits.add_theme_font_size_override("font_size",18)
+	credits.text=FileAccess.get_file_as_string(game.audio_feedback.RUNTIME+"ATTRIBUTION.md")
+	scroll.add_child(credits)
+	button(Rect2(240,640,240,52),"返回规则",func(): credits_panel.hide(),credits_panel)
+	credits_panel.hide()
 	help_layer.hide()
 
-func toggle_help() -> void: help_layer.visible = not help_layer.visible
+func toggle_help() -> void:
+	help_layer.visible = not help_layer.visible
+	if not help_layer.visible: credits_panel.hide()
 
 func create_result() -> void:
 	result_panel = panel(Rect2(555,278,820,550))
@@ -240,6 +276,8 @@ func refresh() -> void:
 	profile_choice.disabled=game.phase!=game.Phase.DEPLOY
 	profile_choice.select(game.Config.ENEMY_PROFILES.find(game.enemy_profile))
 	animation_toggle.text="棍僧：新版" if game.monk_sample_enabled else "棍僧：旧版"
+	audio_button.text="声音：开" if game.audio_feedback.enabled else "声音：关"
+	audio_volume.set_value_no_signal(game.audio_feedback.level)
 	if last_notice!=game.message:
 		last_notice = game.message
 		notice_timer = 4

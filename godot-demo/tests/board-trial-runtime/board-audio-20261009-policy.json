@@ -1,0 +1,17 @@
+{
+  "scope": "D006 bounded package/license policy, not listening",
+  "pck": "/tmp/board-audio-20261009-final.pck",
+  "pck_sha256": "a731e8f55692071542b8f7d6cd091fb7b83247e04dd5cbd11619ba1ae2f7c3d9",
+  "actual_files": 291,
+  "noncommercial_package_policy_exit": 0,
+  "default_commercial_package_policy_exit": 1,
+  "mutations_rejected": [
+    "commercial usage",
+    "selected hunter SHA changed",
+    "selected hunter runtime file path changed",
+    "another asset changed to CC BY-NC 4.0"
+  ],
+  "original_headers_in_pck": false,
+  "imported_pcm_verified_in_godot_report": "board-audio-20261009-pack.json",
+  "failures": 0
+}

@@ -1,0 +1,2211 @@
+{
+	"asset_count": 8,
+	"assets": [
+		{
+			"asset": "monk_bear_whack",
+			"duration": 0.44124716553288,
+			"original_wav_available": false,
+			"original_wav_sha256": "56502597d09207bc3b4acc3f866ef685eb5a4306852e2f16b89889cc666d4fde",
+			"path": "res://audio/runtime/board-selected-20261009/wav/monk_bear_whack.wav",
+			"pcm_sha256": "e6ef5d40de75641540ffe93ade706cae4b9acb2ba54630c6219f4f0a9d7c516b",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		},
+		{
+			"asset": "hunter_launch_02_noncommercial",
+			"duration": 0.129977324263039,
+			"original_wav_available": false,
+			"original_wav_sha256": "6936dbe90b719c90d1dfa8900fc1736ca1bda035b767931d00e67e94027ac9a7",
+			"path": "res://audio/runtime/board-selected-20261009/wav/hunter_launch_02.wav",
+			"pcm_sha256": "a3794c6046ba332e676552af7f00a0585ae1e022d43be67a68efd817a9c97b4c",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		},
+		{
+			"asset": "sparrow_attack",
+			"duration": 0.51,
+			"original_wav_available": false,
+			"original_wav_sha256": "32f3ba8d0c0f48572f5d410202e53add1e675934ec0d2f0a52f11f34f86ee995",
+			"path": "res://audio/runtime/board-selected-20261009/wav/sparrow_attack_first.wav",
+			"pcm_sha256": "21e3311c99c47fa722fac0fa72ffa6d2bfad4bca8ced732d9f902f69365e911d",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		},
+		{
+			"asset": "healer_new",
+			"duration": 0.904761904761905,
+			"original_wav_available": false,
+			"original_wav_sha256": "3a40ab16654b2be18d4888976833984b6f13057897b11c643aec001f7fa2c894",
+			"path": "res://audio/runtime/board-selected-20261009/wav/healer_new_full.wav",
+			"pcm_sha256": "074ef01a4521e6e787a6a61c056eb7a3dfbc50e8343ae198ba8df43b345c74ac",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		},
+		{
+			"asset": "foxfire_A",
+			"duration": 0.57,
+			"original_wav_available": false,
+			"original_wav_sha256": "aa30009e92190a69ec99a404f047b453606a8f6e79e5a0f4fe3de495a900a7db",
+			"path": "res://audio/runtime/board-selected-20261009/wav/foxfire_A_faithful.wav",
+			"pcm_sha256": "9eaea132428e9a6398145bc9e8c4d3257b94300655cbf95f21792cf1638af515",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		},
+		{
+			"asset": "rat_attack",
+			"duration": 0.2,
+			"original_wav_available": false,
+			"original_wav_sha256": "7b1461f9f572778ab1b58bb5d746b50775087b74abbc160d53620121cc012f94",
+			"path": "res://audio/runtime/board-selected-20261009/wav/rat_attack_second.wav",
+			"pcm_sha256": "cc43fb6dfa162828e8462cf18dec50b0798b122c3a5d9bb21ca0d655dd08d157",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		},
+		{
+			"asset": "boar_attack_full",
+			"duration": 0.386666666666667,
+			"original_wav_available": false,
+			"original_wav_sha256": "73258a27856e1b5453e4bbec55555b9fc574b1d522c74ec9c1ac157283fe56c3",
+			"path": "res://audio/runtime/board-selected-20261009/wav/boar_attack_full.wav",
+			"pcm_sha256": "16283242247125286883fabd207b294dc9ada282bf245cb59df326994d5d36d3",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		},
+		{
+			"asset": "wolf_attack_full",
+			"duration": 2.41566893424036,
+			"original_wav_available": false,
+			"original_wav_sha256": "087c1e90d04801ad1d732df2e8b2df45efda00c54362e0e29ea34db3ad0026f2",
+			"path": "res://audio/runtime/board-selected-20261009/wav/wolf_attack_full.wav",
+			"pcm_sha256": "fc0d8531258b2ae4c69e2926095c5fc85bb4979acf0a2aed71ba3ca0a8aa3030",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		}
+	],
+	"cases": [
+		{
+			"actual_hp_delta": -14.0,
+			"audit": [
+				{
+					"key": "guard_monk_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 70430754787,
+					"source_key": "guard_monk",
+					"trigger": "melee_damage_applied"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 0,
+			"primary_count": 1,
+			"role": "guard_monk",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": -22.0,
+			"audit": [
+				{
+					"key": "wild_hunter_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 88902469581,
+					"source_key": "wild_hunter",
+					"trigger": "projectile_launched"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 1,
+			"primary_count": 1,
+			"role": "wild_hunter",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": -17.0,
+			"audit": [
+				{
+					"key": "sparrow_spirit_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 107256743856,
+					"source_key": "sparrow_spirit",
+					"trigger": "projectile_launched"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 1,
+			"primary_count": 1,
+			"role": "sparrow_spirit",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": 24.0,
+			"audit": [
+				{
+					"key": "herbal_spirit_child_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 125627795358,
+					"source_key": "herbal_spirit_child",
+					"trigger": "positive_healing_applied"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 1,
+			"primary_count": 1,
+			"role": "herbal_spirit_child",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": -20.0,
+			"audit": [
+				{
+					"key": "foxfire_imp_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 144099510153,
+					"source_key": "foxfire_imp",
+					"trigger": "projectile_launched"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 1,
+			"primary_count": 1,
+			"role": "foxfire_imp",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": -9.0,
+			"audit": [
+				{
+					"key": "rat_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 163141650515,
+					"source_key": "rat",
+					"trigger": "projectile_damage_applied"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 1,
+			"primary_count": 1,
+			"role": "rat",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": -12.0,
+			"audit": [
+				{
+					"key": "boar_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 181042939766,
+					"source_key": "boar",
+					"trigger": "melee_damage_applied"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 0,
+			"primary_count": 1,
+			"role": "boar",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": -17.0,
+			"audit": [
+				{
+					"key": "wolf_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 198944229380,
+					"source_key": "wolf",
+					"trigger": "melee_damage_applied"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 0,
+			"primary_count": 1,
+			"role": "wolf",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": -20.0,
+			"audit": [
+				{
+					"key": "bear_lord_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 218187695969,
+					"source_key": "bear_lord",
+					"trigger": "melee_damage_applied"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 0,
+			"primary_count": 1,
+			"role": "bear_lord",
+			"serial": 1
+		},
+		{
+			"case": "delayed_serial_duplicates",
+			"later_presentation_serial": 2,
+			"serial": 1,
+			"stats": {
+				"direct_primary_rejected": 0,
+				"dropped": 0,
+				"duplicates": 2,
+				"expired": 0,
+				"invalid": 0,
+				"muted": 0,
+				"paused": 0,
+				"played": 1,
+				"preempted": 0,
+				"requested": 3
+			}
+		},
+		{
+			"case": "two_wolf_instances",
+			"heard": [
+				{
+					"key": "wolf_attack",
+					"time": 0.166666666666667
+				},
+				{
+					"key": "wolf_attack",
+					"time": 0.166666666666667
+				}
+			],
+			"source_ids": [
+				253654730683,
+				253822502814
+			],
+			"stats": {
+				"direct_primary_rejected": 0,
+				"dropped": 0,
+				"duplicates": 0,
+				"expired": 0,
+				"invalid": 0,
+				"muted": 0,
+				"paused": 0,
+				"played": 2,
+				"preempted": 0,
+				"requested": 2
+			}
+		},
+		{
+			"case": "shared_file_instances",
+			"heard": [
+				{
+					"key": "guard_monk_attack",
+					"time": 0.241666666666667
+				},
+				{
+					"key": "bear_lord_attack",
+					"time": 0.416666666666667
+				}
+			],
+			"source_ids": [
+				271035926569,
+				272898197309
+			],
+			"stats": {
+				"direct_primary_rejected": 0,
+				"dropped": 0,
+				"duplicates": 0,
+				"expired": 0,
+				"invalid": 0,
+				"muted": 0,
+				"paused": 0,
+				"played": 2,
+				"preempted": 0,
+				"requested": 2
+			}
+		},
+		{
+			"case": "full_health_heal",
+			"healing": 0.0,
+			"primary_count": 0
+		},
+		{
+			"actual_damage": 40.0,
+			"case": "real_fox_splash",
+			"primary_count": 1
+		},
+		{
+			"case": "mute_pause_pool_death_retry",
+			"legacy_capacity": 8,
+			"primary_capacity": 8,
+			"stats_before_retry": {
+				"direct_primary_rejected": 1,
+				"dropped": 1,
+				"duplicates": 3,
+				"expired": 9,
+				"invalid": 1,
+				"muted": 2,
+				"paused": 1,
+				"played": 2,
+				"preempted": 0,
+				"requested": 9
+			}
+		},
+		{
+			"case": "preserved_nonreplaced_cues",
+			"heard": [
+				{
+					"key": "tangseng_hurt_warning"
+				},
+				{
+					"key": "shared_hit_armor"
+				},
+				{
+					"key": "ui"
+				},
+				{
+					"key": "victory"
+				},
+				{
+					"key": "bear_lord_death"
+				}
+			]
+		},
+		{
+			"applied_count": 0,
+			"case": "real_projectile_source_death",
+			"primary_count": 0
+		},
+		{
+			"applied_count": 0,
+			"case": "real_projectile_target_death",
+			"primary_count": 0
+		},
+		{
+			"actual_damage": 5.0,
+			"case": "real_lethal_melee",
+			"primary_count": 1
+		}
+	],
+	"failures": 0,
+	"headless_is_scheduling_not_listening": true,
+	"natural_count": 4,
+	"naturals": [
+		{
+			"audio_stats": {
+				"direct_primary_rejected": 0,
+				"dropped": 117,
+				"duplicates": 0,
+				"expired": 6,
+				"invalid": 0,
+				"muted": 0,
+				"paused": 0,
+				"played": 14,
+				"preempted": 0,
+				"requested": 131
+			},
+			"formation": "A",
+			"fps": 30,
+			"report": {
+				"config": "board-v5-bear",
+				"enemy_parameters": [
+					{
+						"damage": 17.0,
+						"hp": 180.0,
+						"id": "E1",
+						"initial_cell": [
+							8,
+							2
+						],
+						"interval": 0.9,
+						"key": "wolf",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 17.0,
+						"hp": 180.0,
+						"id": "E2",
+						"initial_cell": [
+							8,
+							6
+						],
+						"interval": 0.9,
+						"key": "wolf",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 12.0,
+						"hp": 120.0,
+						"id": "E3",
+						"initial_cell": [
+							9,
+							3
+						],
+						"interval": 1.1,
+						"key": "boar",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 12.0,
+						"hp": 120.0,
+						"id": "E4",
+						"initial_cell": [
+							9,
+							5
+						],
+						"interval": 1.1,
+						"key": "boar",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 9.0,
+						"hp": 65.0,
+						"id": "E5",
+						"initial_cell": [
+							11,
+							2
+						],
+						"interval": 0.95,
+						"key": "rat",
+						"range": 3,
+						"walk": 0.5
+					},
+					{
+						"damage": 9.0,
+						"hp": 65.0,
+						"id": "E6",
+						"initial_cell": [
+							11,
+							6
+						],
+						"interval": 0.95,
+						"key": "rat",
+						"range": 3,
+						"walk": 0.5
+					},
+					{
+						"damage": 20.0,
+						"hp": 280.0,
+						"id": "E7",
+						"initial_cell": [
+							10,
+							4
+						],
+						"interval": 1.2,
+						"key": "bear_lord",
+						"range": 1,
+						"walk": 0.5
+					}
+				],
+				"enemy_profile": "bear",
+				"fallen": [
+					"foxfire_imp"
+				],
+				"melee_rule": "melee-stepwise-20261009",
+				"metrics": {
+					"attack_times": {
+						"E1": [
+							1.00833333333333,
+							1.90833333333333,
+							2.80833333333333,
+							3.70833333333332
+						],
+						"E2": [
+							1.00833333333333,
+							1.90833333333333,
+							2.80833333333333,
+							3.70833333333332,
+							4.60833333333335,
+							6.57500000000012,
+							7.47500000000016,
+							8.37500000000017,
+							9.27500000000011
+						],
+						"E3": [
+							1.00833333333333,
+							2.52499999999999,
+							3.62499999999999,
+							4.72500000000002,
+							5.82500000000008
+						],
+						"E4": [
+							1.50833333333333,
+							2.77499999999999,
+							3.87499999999999,
+							5.27500000000005,
+							6.37500000000011,
+							7.47500000000016,
+							8.57500000000015,
+							9.67500000000009,
+							10.775,
+							11.875,
+							12.9749999999999
+						],
+						"E5": [
+							1.50833333333333,
+							2.45833333333333,
+							3.40833333333332,
+							4.35833333333334,
+							5.30833333333339,
+							6.25833333333343,
+							7.20833333333348,
+							8.15833333333351,
+							9.10833333333346,
+							10.0583333333334,
+							11.0083333333333,
+							11.9583333333333
+						],
+						"E6": [
+							1.50833333333333,
+							2.45833333333333,
+							3.40833333333332,
+							4.35833333333334,
+							5.90000000000008,
+							6.85000000000013,
+							7.80000000000018,
+							8.75000000000014,
+							9.70000000000009,
+							10.65,
+							11.6,
+							12.5499999999999,
+							13.4999999999999,
+							14.4499999999998
+						],
+						"E7": [
+							4.00833333333332,
+							6.8666666666668,
+							8.06666666666685,
+							9.26666666666678,
+							10.4666666666667,
+							11.6666666666666,
+							12.8666666666666,
+							14.0666666666665,
+							15.2666666666664,
+							16.4666666666664,
+							17.6666666666663
+						],
+						"foxfire_imp": [
+							0.508333333333334,
+							1.75833333333333,
+							3.00833333333333,
+							4.25833333333333
+						],
+						"guard_monk": [
+							1.75833333333333,
+							2.90833333333333,
+							4.05833333333332,
+							5.20833333333338,
+							6.35833333333344,
+							7.5083333333335,
+							8.65833333333348,
+							9.93333333333341,
+							11.0833333333333,
+							12.2333333333333,
+							13.3833333333332,
+							14.5333333333331,
+							16.0749999999997,
+							17.2249999999997,
+							18.3749999999996
+						],
+						"herbal_spirit_child": [
+							1.175,
+							2.37499999999999,
+							3.57499999999999,
+							4.77500000000003,
+							5.97500000000009,
+							7.17500000000015,
+							8.37500000000017,
+							9.5750000000001,
+							10.775,
+							11.975,
+							13.1749999999999,
+							14.3749999999998,
+							15.5749999999998,
+							16.7749999999997,
+							17.9749999999996
+						],
+						"sparrow_spirit": [
+							1.00833333333333,
+							1.93333333333333,
+							2.85833333333333,
+							3.78333333333332,
+							4.70833333333336,
+							5.6333333333334,
+							6.55833333333345,
+							7.4833333333335,
+							8.4083333333335,
+							9.33333333333344,
+							10.2583333333334,
+							11.1833333333333,
+							12.1083333333333,
+							13.0333333333332,
+							14.2833333333332,
+							15.2083333333331,
+							16.1333333333331,
+							17.058333333333,
+							17.983333333333
+						],
+						"tangseng": [
+							2.75833333333333,
+							3.95833333333332,
+							5.15833333333338,
+							6.35833333333344,
+							7.5583333333335,
+							8.75833333333348,
+							9.95833333333341,
+							11.1583333333333,
+							12.3583333333333,
+							13.5583333333332,
+							14.7583333333331,
+							15.9583333333331,
+							17.158333333333,
+							18.3583333333329
+						],
+						"wild_hunter": [
+							0.508333333333334,
+							1.35833333333333,
+							2.20833333333333,
+							3.05833333333333,
+							3.90833333333332,
+							4.75833333333336,
+							5.6083333333334,
+							6.45833333333344,
+							7.30833333333349,
+							8.15833333333351,
+							9.00833333333346,
+							9.85833333333341,
+							10.7083333333334,
+							11.5583333333333,
+							12.4999999999999,
+							13.3499999999999,
+							14.2916666666665,
+							15.1416666666664,
+							15.9916666666664,
+							16.8416666666664,
+							17.6916666666663,
+							18.5416666666663
+						]
+					},
+					"damage": {
+						"E1": 68.0,
+						"E2": 124.0,
+						"E3": 60.0,
+						"E4": 132.0,
+						"E5": 99.0,
+						"E6": 108.0,
+						"E7": 220.0,
+						"foxfire_imp": 100.0,
+						"guard_monk": 176.0,
+						"sparrow_spirit": 277.0,
+						"tangseng": 72.0,
+						"wild_hunter": 385.0
+					},
+					"first_engagement": {
+						"E1": {
+							"healing": false,
+							"target": "guard_monk",
+							"time": 1.00833333333333
+						},
+						"E2": {
+							"healing": false,
+							"target": "foxfire_imp",
+							"time": 1.00833333333333
+						},
+						"E3": {
+							"healing": false,
+							"target": "guard_monk",
+							"time": 1.00833333333333
+						},
+						"E4": {
+							"healing": false,
+							"target": "guard_monk",
+							"time": 1.50833333333333
+						},
+						"E5": {
+							"healing": false,
+							"target": "wild_hunter",
+							"time": 1.50833333333333
+						},
+						"E6": {
+							"healing": false,
+							"target": "foxfire_imp",
+							"time": 1.50833333333333
+						},
+						"E7": {
+							"healing": false,
+							"target": "foxfire_imp",
+							"time": 4.00833333333332
+						},
+						"foxfire_imp": {
+							"healing": false,
+							"target": "E2",
+							"time": 0.508333333333334
+						},
+						"guard_monk": {
+							"healing": false,
+							"target": "E1",
+							"time": 1.75833333333333
+						},
+						"herbal_spirit_child": {
+							"healing": true,
+							"target": "guard_monk",
+							"time": 1.175
+						},
+						"sparrow_spirit": {
+							"healing": false,
+							"target": "E1",
+							"time": 1.00833333333333
+						},
+						"tangseng": {
+							"healing": false,
+							"target": "E3",
+							"time": 2.75833333333333
+						},
+						"wild_hunter": {
+							"healing": false,
+							"target": "E1",
+							"time": 0.508333333333334
+						}
+					},
+					"first_hit": {
+						"E1": {
+							"target": "guard_monk",
+							"time": 1.175
+						},
+						"E2": {
+							"target": "foxfire_imp",
+							"time": 1.2
+						},
+						"E3": {
+							"target": "guard_monk",
+							"time": 1.175
+						},
+						"E4": {
+							"target": "guard_monk",
+							"time": 1.675
+						},
+						"E5": {
+							"target": "wild_hunter",
+							"time": 2.0
+						},
+						"E6": {
+							"target": "foxfire_imp",
+							"time": 2.0
+						},
+						"E7": {
+							"target": "foxfire_imp",
+							"time": 4.40000000000001
+						},
+						"foxfire_imp": {
+							"target": "E2",
+							"time": 1.03333333333333
+						},
+						"guard_monk": {
+							"target": "E1",
+							"time": 2.0
+						},
+						"sparrow_spirit": {
+							"target": "E1",
+							"time": 1.475
+						},
+						"tangseng": {
+							"target": "E3",
+							"time": 3.18333333333332
+						},
+						"wild_hunter": {
+							"target": "E1",
+							"time": 0.933333333333332
+						}
+					},
+					"healing": {
+						"herbal_spirit_child": 360.0
+					}
+				},
+				"phase": 2,
+				"ranged_rule": "ranged-step-target-20261009",
+				"result_count": 1,
+				"seconds": 18.6166666666663,
+				"tangseng_hp": 148.0,
+				"victory": true
+			},
+			"semantic_audit_rows": 131,
+			"speed": 1
+		},
+		{
+			"audio_stats": {
+				"direct_primary_rejected": 0,
+				"dropped": 115,
+				"duplicates": 0,
+				"expired": 8,
+				"invalid": 0,
+				"muted": 0,
+				"paused": 0,
+				"played": 16,
+				"preempted": 0,
+				"requested": 131
+			},
+			"formation": "A",
+			"fps": 120,
+			"report": {
+				"config": "board-v5-bear",
+				"enemy_parameters": [
+					{
+						"damage": 17.0,
+						"hp": 180.0,
+						"id": "E1",
+						"initial_cell": [
+							8,
+							2
+						],
+						"interval": 0.9,
+						"key": "wolf",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 17.0,
+						"hp": 180.0,
+						"id": "E2",
+						"initial_cell": [
+							8,
+							6
+						],
+						"interval": 0.9,
+						"key": "wolf",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 12.0,
+						"hp": 120.0,
+						"id": "E3",
+						"initial_cell": [
+							9,
+							3
+						],
+						"interval": 1.1,
+						"key": "boar",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 12.0,
+						"hp": 120.0,
+						"id": "E4",
+						"initial_cell": [
+							9,
+							5
+						],
+						"interval": 1.1,
+						"key": "boar",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 9.0,
+						"hp": 65.0,
+						"id": "E5",
+						"initial_cell": [
+							11,
+							2
+						],
+						"interval": 0.95,
+						"key": "rat",
+						"range": 3,
+						"walk": 0.5
+					},
+					{
+						"damage": 9.0,
+						"hp": 65.0,
+						"id": "E6",
+						"initial_cell": [
+							11,
+							6
+						],
+						"interval": 0.95,
+						"key": "rat",
+						"range": 3,
+						"walk": 0.5
+					},
+					{
+						"damage": 20.0,
+						"hp": 280.0,
+						"id": "E7",
+						"initial_cell": [
+							10,
+							4
+						],
+						"interval": 1.2,
+						"key": "bear_lord",
+						"range": 1,
+						"walk": 0.5
+					}
+				],
+				"enemy_profile": "bear",
+				"fallen": [
+					"foxfire_imp"
+				],
+				"melee_rule": "melee-stepwise-20261009",
+				"metrics": {
+					"attack_times": {
+						"E1": [
+							1.00833333333333,
+							1.90833333333333,
+							2.80833333333333,
+							3.70833333333332
+						],
+						"E2": [
+							1.00833333333333,
+							1.90833333333333,
+							2.80833333333333,
+							3.70833333333332,
+							4.60833333333335,
+							6.57500000000012,
+							7.47500000000016,
+							8.37500000000017,
+							9.27500000000011
+						],
+						"E3": [
+							1.00833333333333,
+							2.52499999999999,
+							3.62499999999999,
+							4.72500000000002,
+							5.82500000000008
+						],
+						"E4": [
+							1.50833333333333,
+							2.77499999999999,
+							3.87499999999999,
+							5.27500000000005,
+							6.37500000000011,
+							7.47500000000016,
+							8.57500000000015,
+							9.67500000000009,
+							10.775,
+							11.875,
+							12.9749999999999
+						],
+						"E5": [
+							1.50833333333333,
+							2.45833333333333,
+							3.40833333333332,
+							4.35833333333334,
+							5.30833333333339,
+							6.25833333333343,
+							7.20833333333348,
+							8.15833333333351,
+							9.10833333333346,
+							10.0583333333334,
+							11.0083333333333,
+							11.9583333333333
+						],
+						"E6": [
+							1.50833333333333,
+							2.45833333333333,
+							3.40833333333332,
+							4.35833333333334,
+							5.90000000000008,
+							6.85000000000013,
+							7.80000000000018,
+							8.75000000000014,
+							9.70000000000009,
+							10.65,
+							11.6,
+							12.5499999999999,
+							13.4999999999999,
+							14.4499999999998
+						],
+						"E7": [
+							4.00833333333332,
+							6.8666666666668,
+							8.06666666666685,
+							9.26666666666678,
+							10.4666666666667,
+							11.6666666666666,
+							12.8666666666666,
+							14.0666666666665,
+							15.2666666666664,
+							16.4666666666664,
+							17.6666666666663
+						],
+						"foxfire_imp": [
+							0.508333333333334,
+							1.75833333333333,
+							3.00833333333333,
+							4.25833333333333
+						],
+						"guard_monk": [
+							1.75833333333333,
+							2.90833333333333,
+							4.05833333333332,
+							5.20833333333338,
+							6.35833333333344,
+							7.5083333333335,
+							8.65833333333348,
+							9.93333333333341,
+							11.0833333333333,
+							12.2333333333333,
+							13.3833333333332,
+							14.5333333333331,
+							16.0749999999997,
+							17.2249999999997,
+							18.3749999999996
+						],
+						"herbal_spirit_child": [
+							1.175,
+							2.37499999999999,
+							3.57499999999999,
+							4.77500000000003,
+							5.97500000000009,
+							7.17500000000015,
+							8.37500000000017,
+							9.5750000000001,
+							10.775,
+							11.975,
+							13.1749999999999,
+							14.3749999999998,
+							15.5749999999998,
+							16.7749999999997,
+							17.9749999999996
+						],
+						"sparrow_spirit": [
+							1.00833333333333,
+							1.93333333333333,
+							2.85833333333333,
+							3.78333333333332,
+							4.70833333333336,
+							5.6333333333334,
+							6.55833333333345,
+							7.4833333333335,
+							8.4083333333335,
+							9.33333333333344,
+							10.2583333333334,
+							11.1833333333333,
+							12.1083333333333,
+							13.0333333333332,
+							14.2833333333332,
+							15.2083333333331,
+							16.1333333333331,
+							17.058333333333,
+							17.983333333333
+						],
+						"tangseng": [
+							2.75833333333333,
+							3.95833333333332,
+							5.15833333333338,
+							6.35833333333344,
+							7.5583333333335,
+							8.75833333333348,
+							9.95833333333341,
+							11.1583333333333,
+							12.3583333333333,
+							13.5583333333332,
+							14.7583333333331,
+							15.9583333333331,
+							17.158333333333,
+							18.3583333333329
+						],
+						"wild_hunter": [
+							0.508333333333334,
+							1.35833333333333,
+							2.20833333333333,
+							3.05833333333333,
+							3.90833333333332,
+							4.75833333333336,
+							5.6083333333334,
+							6.45833333333344,
+							7.30833333333349,
+							8.15833333333351,
+							9.00833333333346,
+							9.85833333333341,
+							10.7083333333334,
+							11.5583333333333,
+							12.4999999999999,
+							13.3499999999999,
+							14.2916666666665,
+							15.1416666666664,
+							15.9916666666664,
+							16.8416666666664,
+							17.6916666666663,
+							18.5416666666663
+						]
+					},
+					"damage": {
+						"E1": 68.0,
+						"E2": 124.0,
+						"E3": 60.0,
+						"E4": 132.0,
+						"E5": 99.0,
+						"E6": 108.0,
+						"E7": 220.0,
+						"foxfire_imp": 100.0,
+						"guard_monk": 176.0,
+						"sparrow_spirit": 277.0,
+						"tangseng": 72.0,
+						"wild_hunter": 385.0
+					},
+					"first_engagement": {
+						"E1": {
+							"healing": false,
+							"target": "guard_monk",
+							"time": 1.00833333333333
+						},
+						"E2": {
+							"healing": false,
+							"target": "foxfire_imp",
+							"time": 1.00833333333333
+						},
+						"E3": {
+							"healing": false,
+							"target": "guard_monk",
+							"time": 1.00833333333333
+						},
+						"E4": {
+							"healing": false,
+							"target": "guard_monk",
+							"time": 1.50833333333333
+						},
+						"E5": {
+							"healing": false,
+							"target": "wild_hunter",
+							"time": 1.50833333333333
+						},
+						"E6": {
+							"healing": false,
+							"target": "foxfire_imp",
+							"time": 1.50833333333333
+						},
+						"E7": {
+							"healing": false,
+							"target": "foxfire_imp",
+							"time": 4.00833333333332
+						},
+						"foxfire_imp": {
+							"healing": false,
+							"target": "E2",
+							"time": 0.508333333333334
+						},
+						"guard_monk": {
+							"healing": false,
+							"target": "E1",
+							"time": 1.75833333333333
+						},
+						"herbal_spirit_child": {
+							"healing": true,
+							"target": "guard_monk",
+							"time": 1.175
+						},
+						"sparrow_spirit": {
+							"healing": false,
+							"target": "E1",
+							"time": 1.00833333333333
+						},
+						"tangseng": {
+							"healing": false,
+							"target": "E3",
+							"time": 2.75833333333333
+						},
+						"wild_hunter": {
+							"healing": false,
+							"target": "E1",
+							"time": 0.508333333333334
+						}
+					},
+					"first_hit": {
+						"E1": {
+							"target": "guard_monk",
+							"time": 1.175
+						},
+						"E2": {
+							"target": "foxfire_imp",
+							"time": 1.2
+						},
+						"E3": {
+							"target": "guard_monk",
+							"time": 1.175
+						},
+						"E4": {
+							"target": "guard_monk",
+							"time": 1.675
+						},
+						"E5": {
+							"target": "wild_hunter",
+							"time": 2.0
+						},
+						"E6": {
+							"target": "foxfire_imp",
+							"time": 2.0
+						},
+						"E7": {
+							"target": "foxfire_imp",
+							"time": 4.40000000000001
+						},
+						"foxfire_imp": {
+							"target": "E2",
+							"time": 1.03333333333333
+						},
+						"guard_monk": {
+							"target": "E1",
+							"time": 2.0
+						},
+						"sparrow_spirit": {
+							"target": "E1",
+							"time": 1.475
+						},
+						"tangseng": {
+							"target": "E3",
+							"time": 3.18333333333332
+						},
+						"wild_hunter": {
+							"target": "E1",
+							"time": 0.933333333333332
+						}
+					},
+					"healing": {
+						"herbal_spirit_child": 360.0
+					}
+				},
+				"phase": 2,
+				"ranged_rule": "ranged-step-target-20261009",
+				"result_count": 1,
+				"seconds": 18.6166666666663,
+				"tangseng_hp": 148.0,
+				"victory": true
+			},
+			"semantic_audit_rows": 131,
+			"speed": 2
+		},
+		{
+			"audio_stats": {
+				"direct_primary_rejected": 0,
+				"dropped": 143,
+				"duplicates": 0,
+				"expired": 6,
+				"invalid": 0,
+				"muted": 0,
+				"paused": 0,
+				"played": 14,
+				"preempted": 0,
+				"requested": 157
+			},
+			"formation": "R",
+			"fps": 30,
+			"report": {
+				"config": "board-v5-bear",
+				"enemy_parameters": [
+					{
+						"damage": 17.0,
+						"hp": 180.0,
+						"id": "E1",
+						"initial_cell": [
+							8,
+							2
+						],
+						"interval": 0.9,
+						"key": "wolf",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 17.0,
+						"hp": 180.0,
+						"id": "E2",
+						"initial_cell": [
+							8,
+							6
+						],
+						"interval": 0.9,
+						"key": "wolf",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 12.0,
+						"hp": 120.0,
+						"id": "E3",
+						"initial_cell": [
+							9,
+							3
+						],
+						"interval": 1.1,
+						"key": "boar",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 12.0,
+						"hp": 120.0,
+						"id": "E4",
+						"initial_cell": [
+							9,
+							5
+						],
+						"interval": 1.1,
+						"key": "boar",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 9.0,
+						"hp": 65.0,
+						"id": "E5",
+						"initial_cell": [
+							11,
+							2
+						],
+						"interval": 0.95,
+						"key": "rat",
+						"range": 3,
+						"walk": 0.5
+					},
+					{
+						"damage": 9.0,
+						"hp": 65.0,
+						"id": "E6",
+						"initial_cell": [
+							11,
+							6
+						],
+						"interval": 0.95,
+						"key": "rat",
+						"range": 3,
+						"walk": 0.5
+					},
+					{
+						"damage": 20.0,
+						"hp": 280.0,
+						"id": "E7",
+						"initial_cell": [
+							10,
+							4
+						],
+						"interval": 1.2,
+						"key": "bear_lord",
+						"range": 1,
+						"walk": 0.5
+					}
+				],
+				"enemy_profile": "bear",
+				"fallen": [
+					"guard_monk",
+					"sparrow_spirit",
+					"foxfire_imp"
+				],
+				"melee_rule": "melee-stepwise-20261009",
+				"metrics": {
+					"attack_times": {
+						"E1": [
+							1.00833333333333,
+							1.90833333333333,
+							2.80833333333333,
+							3.70833333333332
+						],
+						"E2": [
+							1.50833333333333,
+							2.40833333333333,
+							3.30833333333332,
+							4.20833333333333,
+							5.10833333333338,
+							6.00833333333342,
+							8.66666666666682,
+							9.56666666666676,
+							10.4666666666667,
+							11.3666666666667,
+							12.2666666666666,
+							13.1666666666666,
+							14.0666666666665,
+							14.9666666666665,
+							15.8666666666664,
+							16.7666666666664,
+							17.6666666666663,
+							18.5666666666663
+						],
+						"E3": [
+							2.00833333333333,
+							3.10833333333332,
+							4.20833333333333,
+							5.30833333333339,
+							6.40833333333344
+						],
+						"E4": [
+							2.00833333333333,
+							3.10833333333332,
+							4.20833333333333,
+							5.30833333333339,
+							6.50000000000011,
+							7.60000000000017,
+							8.70000000000015,
+							9.80000000000008
+						],
+						"E5": [
+							1.50833333333333,
+							2.45833333333333,
+							3.40833333333332,
+							4.35833333333334,
+							5.30833333333339,
+							6.25833333333343,
+							7.20833333333348,
+							8.15833333333351,
+							9.10833333333346,
+							10.0583333333334,
+							11.0083333333333,
+							13.5499999999999,
+							14.4999999999998,
+							15.4499999999998,
+							16.3999999999997,
+							17.3499999999997,
+							18.2999999999996,
+							19.2499999999995,
+							20.1999999999995,
+							21.1499999999994,
+							22.0999999999994
+						],
+						"E6": [
+							2.00833333333333,
+							2.95833333333333,
+							3.90833333333332,
+							4.85833333333336,
+							5.80833333333341,
+							8.35000000000017,
+							9.30000000000011,
+							10.2500000000001,
+							11.2,
+							12.15,
+							13.0999999999999,
+							14.0499999999998,
+							14.9999999999998,
+							15.9499999999997,
+							16.8999999999997,
+							17.8499999999996,
+							18.7999999999996,
+							19.7499999999995,
+							20.6999999999995,
+							21.6499999999994,
+							22.5999999999994,
+							23.5499999999993,
+							24.4999999999993
+						],
+						"E7": [
+							2.00833333333333,
+							3.20833333333332,
+							4.40833333333334,
+							5.6083333333334,
+							7.46666666666683,
+							8.66666666666682,
+							9.86666666666675,
+							11.0666666666667,
+							12.9499999999999,
+							14.1499999999998,
+							15.3499999999998,
+							16.5499999999997,
+							17.7499999999996,
+							18.9499999999996
+						],
+						"foxfire_imp": [
+							1.00833333333333,
+							2.25833333333333,
+							3.50833333333332,
+							4.75833333333336
+						],
+						"guard_monk": [
+							1.00833333333333,
+							2.15833333333333,
+							3.30833333333332,
+							4.45833333333334,
+							5.6083333333334,
+							6.75833333333346,
+							7.90833333333352,
+							9.05833333333346,
+							10.2083333333334,
+							11.3583333333333
+						],
+						"herbal_spirit_child": [
+							1.675,
+							2.87499999999999,
+							4.07499999999999,
+							5.27500000000005,
+							6.47500000000011,
+							7.79166666666684,
+							8.9916666666668,
+							10.1916666666667,
+							11.3916666666667,
+							12.5916666666666,
+							13.7916666666665,
+							14.9916666666665,
+							16.1916666666664,
+							17.3916666666663,
+							18.5916666666663,
+							19.7916666666662,
+							20.9916666666661,
+							22.191666666666,
+							23.391666666666,
+							24.5916666666659
+						],
+						"sparrow_spirit": [
+							0.508333333333334,
+							1.43333333333333,
+							2.35833333333333,
+							3.28333333333332,
+							4.20833333333333,
+							5.13333333333338,
+							6.05833333333342
+						],
+						"tangseng": [
+							6.50833333333345,
+							7.70833333333351,
+							8.90833333333347,
+							10.1083333333334,
+							11.3083333333333,
+							12.5083333333333,
+							13.7083333333332,
+							14.9083333333331,
+							16.1083333333331,
+							17.308333333333,
+							18.5083333333329
+						],
+						"wild_hunter": [
+							0.508333333333334,
+							1.35833333333333,
+							2.20833333333333,
+							3.05833333333333,
+							3.90833333333332,
+							4.75833333333336,
+							5.6083333333334,
+							6.45833333333344,
+							7.30833333333349,
+							8.25000000000017,
+							9.10000000000012,
+							9.95000000000008,
+							10.8,
+							11.65,
+							12.4999999999999,
+							13.3499999999999,
+							14.1999999999998,
+							15.0499999999998,
+							15.8999999999997,
+							16.7499999999997,
+							17.5999999999996,
+							18.4499999999996,
+							19.2999999999995,
+							20.1499999999995,
+							20.9999999999994,
+							21.8499999999994,
+							23.291666666666,
+							24.1416666666659,
+							24.9916666666659
+						]
+					},
+					"damage": {
+						"E1": 68.0,
+						"E2": 306.0,
+						"E3": 60.0,
+						"E4": 92.0,
+						"E5": 171.0,
+						"E6": 198.0,
+						"E7": 257.0,
+						"foxfire_imp": 110.0,
+						"guard_monk": 118.0,
+						"sparrow_spirit": 119.0,
+						"tangseng": 59.0,
+						"wild_hunter": 604.0
+					},
+					"first_engagement": {
+						"E1": {
+							"healing": false,
+							"target": "guard_monk",
+							"time": 1.00833333333333
+						},
+						"E2": {
+							"healing": false,
+							"target": "sparrow_spirit",
+							"time": 1.50833333333333
+						},
+						"E3": {
+							"healing": false,
+							"target": "guard_monk",
+							"time": 2.00833333333333
+						},
+						"E4": {
+							"healing": false,
+							"target": "foxfire_imp",
+							"time": 2.00833333333333
+						},
+						"E5": {
+							"healing": false,
+							"target": "guard_monk",
+							"time": 1.50833333333333
+						},
+						"E6": {
+							"healing": false,
+							"target": "sparrow_spirit",
+							"time": 2.00833333333333
+						},
+						"E7": {
+							"healing": false,
+							"target": "foxfire_imp",
+							"time": 2.00833333333333
+						},
+						"foxfire_imp": {
+							"healing": false,
+							"target": "E1",
+							"time": 1.00833333333333
+						},
+						"guard_monk": {
+							"healing": false,
+							"target": "E1",
+							"time": 1.00833333333333
+						},
+						"herbal_spirit_child": {
+							"healing": true,
+							"target": "sparrow_spirit",
+							"time": 1.675
+						},
+						"sparrow_spirit": {
+							"healing": false,
+							"target": "E2",
+							"time": 0.508333333333334
+						},
+						"tangseng": {
+							"healing": false,
+							"target": "E4",
+							"time": 6.50833333333345
+						},
+						"wild_hunter": {
+							"healing": false,
+							"target": "E1",
+							"time": 0.508333333333334
+						}
+					},
+					"first_hit": {
+						"E1": {
+							"target": "guard_monk",
+							"time": 1.175
+						},
+						"E2": {
+							"target": "sparrow_spirit",
+							"time": 1.675
+						},
+						"E3": {
+							"target": "guard_monk",
+							"time": 2.17499999999999
+						},
+						"E4": {
+							"target": "foxfire_imp",
+							"time": 2.17499999999999
+						},
+						"E5": {
+							"target": "guard_monk",
+							"time": 2.0
+						},
+						"E6": {
+							"target": "sparrow_spirit",
+							"time": 2.49999999999999
+						},
+						"E7": {
+							"target": "foxfire_imp",
+							"time": 2.39999999999999
+						},
+						"foxfire_imp": {
+							"target": "E1",
+							"time": 1.53333333333333
+						},
+						"guard_monk": {
+							"target": "E1",
+							"time": 1.275
+						},
+						"sparrow_spirit": {
+							"target": "E2",
+							"time": 0.974999999999999
+						},
+						"tangseng": {
+							"target": "E4",
+							"time": 6.93333333333347
+						},
+						"wild_hunter": {
+							"target": "E1",
+							"time": 0.933333333333332
+						}
+					},
+					"healing": {
+						"herbal_spirit_child": 413.0
+					}
+				},
+				"phase": 2,
+				"ranged_rule": "ranged-step-target-20261009",
+				"result_count": 1,
+				"seconds": 25.4166666666659,
+				"tangseng_hp": 168.0,
+				"victory": true
+			},
+			"semantic_audit_rows": 157,
+			"speed": 1
+		},
+		{
+			"audio_stats": {
+				"direct_primary_rejected": 0,
+				"dropped": 142,
+				"duplicates": 0,
+				"expired": 7,
+				"invalid": 0,
+				"muted": 0,
+				"paused": 0,
+				"played": 15,
+				"preempted": 0,
+				"requested": 157
+			},
+			"formation": "R",
+			"fps": 120,
+			"report": {
+				"config": "board-v5-bear",
+				"enemy_parameters": [
+					{
+						"damage": 17.0,
+						"hp": 180.0,
+						"id": "E1",
+						"initial_cell": [
+							8,
+							2
+						],
+						"interval": 0.9,
+						"key": "wolf",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 17.0,
+						"hp": 180.0,
+						"id": "E2",
+						"initial_cell": [
+							8,
+							6
+						],
+						"interval": 0.9,
+						"key": "wolf",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 12.0,
+						"hp": 120.0,
+						"id": "E3",
+						"initial_cell": [
+							9,
+							3
+						],
+						"interval": 1.1,
+						"key": "boar",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 12.0,
+						"hp": 120.0,
+						"id": "E4",
+						"initial_cell": [
+							9,
+							5
+						],
+						"interval": 1.1,
+						"key": "boar",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 9.0,
+						"hp": 65.0,
+						"id": "E5",
+						"initial_cell": [
+							11,
+							2
+						],
+						"interval": 0.95,
+						"key": "rat",
+						"range": 3,
+						"walk": 0.5
+					},
+					{
+						"damage": 9.0,
+						"hp": 65.0,
+						"id": "E6",
+						"initial_cell": [
+							11,
+							6
+						],
+						"interval": 0.95,
+						"key": "rat",
+						"range": 3,
+						"walk": 0.5
+					},
+					{
+						"damage": 20.0,
+						"hp": 280.0,
+						"id": "E7",
+						"initial_cell": [
+							10,
+							4
+						],
+						"interval": 1.2,
+						"key": "bear_lord",
+						"range": 1,
+						"walk": 0.5
+					}
+				],
+				"enemy_profile": "bear",
+				"fallen": [
+					"guard_monk",
+					"sparrow_spirit",
+					"foxfire_imp"
+				],
+				"melee_rule": "melee-stepwise-20261009",
+				"metrics": {
+					"attack_times": {
+						"E1": [
+							1.00833333333333,
+							1.90833333333333,
+							2.80833333333333,
+							3.70833333333332
+						],
+						"E2": [
+							1.50833333333333,
+							2.40833333333333,
+							3.30833333333332,
+							4.20833333333333,
+							5.10833333333338,
+							6.00833333333342,
+							8.66666666666682,
+							9.56666666666676,
+							10.4666666666667,
+							11.3666666666667,
+							12.2666666666666,
+							13.1666666666666,
+							14.0666666666665,
+							14.9666666666665,
+							15.8666666666664,
+							16.7666666666664,
+							17.6666666666663,
+							18.5666666666663
+						],
+						"E3": [
+							2.00833333333333,
+							3.10833333333332,
+							4.20833333333333,
+							5.30833333333339,
+							6.40833333333344
+						],
+						"E4": [
+							2.00833333333333,
+							3.10833333333332,
+							4.20833333333333,
+							5.30833333333339,
+							6.50000000000011,
+							7.60000000000017,
+							8.70000000000015,
+							9.80000000000008
+						],
+						"E5": [
+							1.50833333333333,
+							2.45833333333333,
+							3.40833333333332,
+							4.35833333333334,
+							5.30833333333339,
+							6.25833333333343,
+							7.20833333333348,
+							8.15833333333351,
+							9.10833333333346,
+							10.0583333333334,
+							11.0083333333333,
+							13.5499999999999,
+							14.4999999999998,
+							15.4499999999998,
+							16.3999999999997,
+							17.3499999999997,
+							18.2999999999996,
+							19.2499999999995,
+							20.1999999999995,
+							21.1499999999994,
+							22.0999999999994
+						],
+						"E6": [
+							2.00833333333333,
+							2.95833333333333,
+							3.90833333333332,
+							4.85833333333336,
+							5.80833333333341,
+							8.35000000000017,
+							9.30000000000011,
+							10.2500000000001,
+							11.2,
+							12.15,
+							13.0999999999999,
+							14.0499999999998,
+							14.9999999999998,
+							15.9499999999997,
+							16.8999999999997,
+							17.8499999999996,
+							18.7999999999996,
+							19.7499999999995,
+							20.6999999999995,
+							21.6499999999994,
+							22.5999999999994,
+							23.5499999999993,
+							24.4999999999993
+						],
+						"E7": [
+							2.00833333333333,
+							3.20833333333332,
+							4.40833333333334,
+							5.6083333333334,
+							7.46666666666683,
+							8.66666666666682,
+							9.86666666666675,
+							11.0666666666667,
+							12.9499999999999,
+							14.1499999999998,
+							15.3499999999998,
+							16.5499999999997,
+							17.7499999999996,
+							18.9499999999996
+						],
+						"foxfire_imp": [
+							1.00833333333333,
+							2.25833333333333,
+							3.50833333333332,
+							4.75833333333336
+						],
+						"guard_monk": [
+							1.00833333333333,
+							2.15833333333333,
+							3.30833333333332,
+							4.45833333333334,
+							5.6083333333334,
+							6.75833333333346,
+							7.90833333333352,
+							9.05833333333346,
+							10.2083333333334,
+							11.3583333333333
+						],
+						"herbal_spirit_child": [
+							1.675,
+							2.87499999999999,
+							4.07499999999999,
+							5.27500000000005,
+							6.47500000000011,
+							7.79166666666684,
+							8.9916666666668,
+							10.1916666666667,
+							11.3916666666667,
+							12.5916666666666,
+							13.7916666666665,
+							14.9916666666665,
+							16.1916666666664,
+							17.3916666666663,
+							18.5916666666663,
+							19.7916666666662,
+							20.9916666666661,
+							22.191666666666,
+							23.391666666666,
+							24.5916666666659
+						],
+						"sparrow_spirit": [
+							0.508333333333334,
+							1.43333333333333,
+							2.35833333333333,
+							3.28333333333332,
+							4.20833333333333,
+							5.13333333333338,
+							6.05833333333342
+						],
+						"tangseng": [
+							6.50833333333345,
+							7.70833333333351,
+							8.90833333333347,
+							10.1083333333334,
+							11.3083333333333,
+							12.5083333333333,
+							13.7083333333332,
+							14.9083333333331,
+							16.1083333333331,
+							17.308333333333,
+							18.5083333333329
+						],
+						"wild_hunter": [
+							0.508333333333334,
+							1.35833333333333,
+							2.20833333333333,
+							3.05833333333333,
+							3.90833333333332,
+							4.75833333333336,
+							5.6083333333334,
+							6.45833333333344,
+							7.30833333333349,
+							8.25000000000017,
+							9.10000000000012,
+							9.95000000000008,
+							10.8,
+							11.65,
+							12.4999999999999,
+							13.3499999999999,
+							14.1999999999998,
+							15.0499999999998,
+							15.8999999999997,
+							16.7499999999997,
+							17.5999999999996,
+							18.4499999999996,
+							19.2999999999995,
+							20.1499999999995,
+							20.9999999999994,
+							21.8499999999994,
+							23.291666666666,
+							24.1416666666659,
+							24.9916666666659
+						]
+					},
+					"damage": {
+						"E1": 68.0,
+						"E2": 306.0,
+						"E3": 60.0,
+						"E4": 92.0,
+						"E5": 171.0,
+						"E6": 198.0,
+						"E7": 257.0,
+						"foxfire_imp": 110.0,
+						"guard_monk": 118.0,
+						"sparrow_spirit": 119.0,
+						"tangseng": 59.0,
+						"wild_hunter": 604.0
+					},
+					"first_engagement": {
+						"E1": {
+							"healing": false,
+							"target": "guard_monk",
+							"time": 1.00833333333333
+						},
+						"E2": {
+							"healing": false,
+							"target": "sparrow_spirit",
+							"time": 1.50833333333333
+						},
+						"E3": {
+							"healing": false,
+							"target": "guard_monk",
+							"time": 2.00833333333333
+						},
+						"E4": {
+							"healing": false,
+							"target": "foxfire_imp",
+							"time": 2.00833333333333
+						},
+						"E5": {
+							"healing": false,
+							"target": "guard_monk",
+							"time": 1.50833333333333
+						},
+						"E6": {
+							"healing": false,
+							"target": "sparrow_spirit",
+							"time": 2.00833333333333
+						},
+						"E7": {
+							"healing": false,
+							"target": "foxfire_imp",
+							"time": 2.00833333333333
+						},
+						"foxfire_imp": {
+							"healing": false,
+							"target": "E1",
+							"time": 1.00833333333333
+						},
+						"guard_monk": {
+							"healing": false,
+							"target": "E1",
+							"time": 1.00833333333333
+						},
+						"herbal_spirit_child": {
+							"healing": true,
+							"target": "sparrow_spirit",
+							"time": 1.675
+						},
+						"sparrow_spirit": {
+							"healing": false,
+							"target": "E2",
+							"time": 0.508333333333334
+						},
+						"tangseng": {
+							"healing": false,
+							"target": "E4",
+							"time": 6.50833333333345
+						},
+						"wild_hunter": {
+							"healing": false,
+							"target": "E1",
+							"time": 0.508333333333334
+						}
+					},
+					"first_hit": {
+						"E1": {
+							"target": "guard_monk",
+							"time": 1.175
+						},
+						"E2": {
+							"target": "sparrow_spirit",
+							"time": 1.675
+						},
+						"E3": {
+							"target": "guard_monk",
+							"time": 2.17499999999999
+						},
+						"E4": {
+							"target": "foxfire_imp",
+							"time": 2.17499999999999
+						},
+						"E5": {
+							"target": "guard_monk",
+							"time": 2.0
+						},
+						"E6": {
+							"target": "sparrow_spirit",
+							"time": 2.49999999999999
+						},
+						"E7": {
+							"target": "foxfire_imp",
+							"time": 2.39999999999999
+						},
+						"foxfire_imp": {
+							"target": "E1",
+							"time": 1.53333333333333
+						},
+						"guard_monk": {
+							"target": "E1",
+							"time": 1.275
+						},
+						"sparrow_spirit": {
+							"target": "E2",
+							"time": 0.974999999999999
+						},
+						"tangseng": {
+							"target": "E4",
+							"time": 6.93333333333347
+						},
+						"wild_hunter": {
+							"target": "E1",
+							"time": 0.933333333333332
+						}
+					},
+					"healing": {
+						"herbal_spirit_child": 413.0
+					}
+				},
+				"phase": 2,
+				"ranged_rule": "ranged-step-target-20261009",
+				"result_count": 1,
+				"seconds": 25.4166666666659,
+				"tangseng_hp": 168.0,
+				"victory": true
+			},
+			"semantic_audit_rows": 157,
+			"speed": 2
+		}
+	],
+	"profile": "board-selected-noncommercial-20261009",
+	"semantic_case_count": 19
+}

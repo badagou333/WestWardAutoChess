@@ -15,6 +15,7 @@ PROJECT_DIR="$ROOT_DIR/godot-demo"
 OUTPUT_DIR="${OUTPUT_DIR:-$ROOT_DIR/build/windows}"
 GODOT_BIN="${GODOT_BIN:-godot}"
 PRESET="Windows x86_64 Release"
+RELEASE_USAGE="${RELEASE_USAGE:-commercial}"
 PACKAGE_NAME="西游护送-${VERSION}-windows-x86_64"
 ZIP_PATH="$OUTPUT_DIR/${PACKAGE_NAME}.zip"
 
@@ -40,6 +41,7 @@ if [ "${ALLOW_DIRTY:-0}" != "1" ]; then
 fi
 
 SOURCE_COMMIT=$(git -C "$ROOT_DIR" rev-parse HEAD)
+python3 "$SCRIPT_DIR/verify_board_audio.py" --mode "$RELEASE_USAGE"
 BUILD_UTC=$(date -u '+%Y-%m-%dT%H:%M:%SZ')
 TEMP_DIR=$(mktemp -d "${TMPDIR:-/tmp}/journey-escort-win.XXXXXX")
 trap 'rm -rf "$TEMP_DIR"' EXIT HUP INT TERM
@@ -52,7 +54,7 @@ echo "使用 $GODOT_VERSION 导出 Windows x86_64 Release..."
 test -f "$STAGE_DIR/JourneyEscort.exe"
 test -f "$STAGE_DIR/JourneyEscort.pck"
 file "$STAGE_DIR/JourneyEscort.exe" | grep -q 'PE32+ executable.*x86-64'
-python3 "$SCRIPT_DIR/inspect_godot_pck.py" "$STAGE_DIR/JourneyEscort.pck" --release-policy --output "$TEMP_DIR/pck-files.txt"
+python3 "$SCRIPT_DIR/inspect_godot_pck.py" "$STAGE_DIR/JourneyEscort.pck" --release-policy --usage "$RELEASE_USAGE" --output "$TEMP_DIR/pck-files.txt"
 
 PCK_SMOKE_OUTPUT="$TEMP_DIR/pck-smoke.stdout"
 "$GODOT_BIN" --headless --main-pack "$STAGE_DIR/JourneyEscort.pck" --quit-after 3 --log-file "$TEMP_DIR/pck-smoke.log" >"$PCK_SMOKE_OUTPUT" 2>&1
@@ -68,6 +70,8 @@ cp "$PROJECT_DIR/release/windows/反馈模板.txt" "$STAGE_DIR/"
 cp "$PROJECT_DIR/release/windows/GODOT_ENGINE_LICENSE.txt" "$STAGE_DIR/"
 cp "$PROJECT_DIR/CREDITS.md" "$STAGE_DIR/第三方音频署名.md"
 cp "$PROJECT_DIR/audio/candidates/foxfire-dwoboyle-v1/ATTRIBUTION.md" "$STAGE_DIR/第三方音频完整声明.md"
+cp "$PROJECT_DIR/audio/runtime/board-selected-20261009/ATTRIBUTION.md" "$STAGE_DIR/棋盘新音效完整声明.md"
+cp "$PROJECT_DIR/audio/runtime/board-selected-20261009/USE.md" "$STAGE_DIR/非商业用途限制.md"
 
 (
   cd "$STAGE_DIR"
@@ -83,6 +87,7 @@ cp "$PROJECT_DIR/audio/candidates/foxfire-dwoboyle-v1/ATTRIBUTION.md" "$STAGE_DI
   echo "源提交：$SOURCE_COMMIT"
   echo "构建时间（UTC）：$BUILD_UTC"
   echo "Windows 实机状态：待验证"
+  echo "用途：$RELEASE_USAGE（含猎户CC BY-NC 4.0，本版仅非商业试玩）"
   echo
   echo "EXE 与 PCK 校验值见 SHA256SUMS.txt；整个 ZIP 的校验值见 ZIP 同目录的 .sha256 文件。"
 } > "$STAGE_DIR/版本信息.txt"

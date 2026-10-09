@@ -2,4 +2,5 @@
 .idea/
 /build/
 godot-demo/**/*.import
+!godot-demo/audio/runtime/board-selected-20261009/wav/*.wav.import
 godot-demo/**/*.gd.uid
