@@ -1,6 +1,6 @@
 {
   "authority": "D-20261009-006; 00 delivery stage on baseline 1fbed6f",
-  "status": "08素材交付；待00审核/06运行接入/07独立验收",
+  "status": "08完整已选素材交付；含NC，仅非商业试玩；待00审核/06接入/07验收",
   "sample_rate": 44100,
   "sample_width_bytes": 2,
   "entries": [
@@ -142,19 +142,24 @@
       "prior_manifest": "../foxfire-dwoboyle-v1/manifest.json"
     },
     {
-      "id": "hunter_old_fallback",
-      "file": "wav/hunter_old_fallback.wav",
+      "id": "hunter_launch_02_noncommercial",
+      "file": "noncommercial/wav/hunter_launch_02.wav",
       "mode": "copy_exact",
-      "input": "../v1/wav/wild_hunter_attack.wav",
-      "input_sha256": "6c067f0acdc52428e7e258ace8980aeb526e2f5513f2ee0bef0d582e781aa768",
-      "source_id": null,
-      "source_title": "v1 project-generated hunter attack",
-      "author": "本项目08音效制作流程",
-      "source_page": null,
-      "license": "project-generated (existing v1 asset; no external source)",
-      "license_url": null,
-      "source_kind": "unchanged project-generated fallback",
-      "changes": "Exact copy of existing v1 file. New Robinhood76 selection excluded pending license-use decision."
+      "input": "../../../../docs/audio-references/noncommercial/hunter-robinhood76-v1/hunter_launch_02.wav",
+      "input_sha256": "6936dbe90b719c90d1dfa8900fc1736ca1bda035b767931d00e67e94027ac9a7",
+      "source_id": "126464",
+      "source_title": "02658 single arrows.wav",
+      "author": "Robinhood76",
+      "source_page": "https://freesound.org/people/Robinhood76/sounds/126464/",
+      "license": "CC BY-NC 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "license_checked": "2026-10-09",
+      "raw_source": "../../../../docs/audio-references/noncommercial/hunter-robinhood76-v1/source/126464_321967-hq.mp3",
+      "source_sha256": "ceb5376c84103bb455f47b063bf930c5da3caf9721b915586567b58bb85c4e29",
+      "download_url": "https://cdn.freesound.org/previews/126/126464_321967-hq.mp3",
+      "source_kind": "Public HQ MP3 preview; not original authenticated WAV download",
+      "changes": "Selected second launch only, source 1.955–2.085s; 2ms fade-in/12ms fade-out; peak -11dBFS. Existing selected WAV copied byte-for-byte. No new trim, pitch/time changes or layers.",
+      "prior_manifest": "../../../../docs/audio-references/noncommercial/hunter-robinhood76-v1/manifest.json"
     }
   ],
   "roles": [
@@ -170,7 +175,7 @@
       "role": "wild_hunter",
       "label": "山野猎户",
       "event_key": "wild_hunter_attack",
-      "asset": "hunter_old_fallback",
+      "asset": "hunter_launch_02_noncommercial",
       "recommended_trigger": "projectile_launched",
       "plays_per_attack_max": 1
     },
@@ -283,13 +288,21 @@
       "sha256": "96e1b82cbf5a7ac2b6cf64ac138f1a1cf12ed0d76ca1c4264ecc4ae1d4cb9f9b"
     }
   ],
-  "hunter_pending": {
+  "usage_restriction": {
+    "contains_nc": true,
+    "permitted_delivery_use": "仅非商业试玩",
+    "authority_quote": "仅非商业试玩也用新声",
+    "authority_record": "2026-10-09负责人在00直接回复，由00转达08；待总控同步",
+    "commercial_permission_obtained": false,
+    "commercial_release_requires": "替换猎户来源或另获商用许可；不得全局放开NC"
+  },
+  "hunter_noncommercial_selection": {
     "source_id": "126464",
     "reference_path": "docs/audio-references/noncommercial/hunter-robinhood76-v1/hunter_launch_02.wav",
     "sha256": "6936dbe90b719c90d1dfa8900fc1736ca1bda035b767931d00e67e94027ac9a7",
     "license": "CC BY-NC 4.0",
     "commercial_permission_obtained": false,
-    "default_delivery": "hunter_old_fallback",
-    "status": "许可用途选择待负责人；不复制NC素材进默认交付/运行/包"
+    "status": "负责人确认本次仅非商业试玩也用新声；商用仍未许可",
+    "selected_delivery": "noncommercial/wav/hunter_launch_02.wav"
   }
 }

@@ -11,5 +11,8 @@
   "listening_status": "第二段已获负责人选择",
   "license": "CC BY-NC 4.0",
   "commercial_permission_obtained": false,
-  "runtime_status": "未接入；保留为非商业试听选定版，商业许可未解决"
+  "runtime_status": "D006已交第2段非商业试玩素材，待06接入；不代表已运行",
+  "authority_quote": "仅非商业试玩也用新声",
+  "usage_scope": "本次明确非商业试玩；不得商用",
+  "delivery_path": "godot-demo/audio/candidates/selected-20261009/noncommercial/wav/hunter_launch_02.wav"
 }

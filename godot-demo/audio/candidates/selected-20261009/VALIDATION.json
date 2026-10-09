@@ -46,19 +46,19 @@
       "reused_exactly": true
     },
     {
-      "id": "hunter_old_fallback",
-      "sha256": "6c067f0acdc52428e7e258ace8980aeb526e2f5513f2ee0bef0d582e781aa768",
+      "id": "hunter_launch_02_noncommercial",
+      "sha256": "6936dbe90b719c90d1dfa8900fc1736ca1bda035b767931d00e67e94027ac9a7",
       "format_frames_peak_endpoints": "passed",
       "reused_exactly": true
     }
   ],
   "role_count": 9,
   "file_count": 8,
-  "external_source_count": 7,
+  "external_source_count": 8,
   "backup_hashes_verified": 10,
   "reproduction": "byte-identical WAV and manifest",
   "links": "all local links resolve",
-  "hunter_nc": "reference hash verified outside delivery; no NC audio copied",
+  "hunter_nc": "only selected shot 2 copied exactly to noncommercial partition; package marked noncommercial only, no commercial permission",
   "limitations": [
     "药灵已选文件首帧非零2948/32768；原样复用，启动点击待听感验证",
     "山狼完整2.415669秒，连续/多单位重叠待运行验证",

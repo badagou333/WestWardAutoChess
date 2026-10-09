@@ -11,13 +11,15 @@ def read(p):
 m=json.loads((P/'manifest.json').read_text());assets={a['id']:a for a in m['assets']}
 assert len(assets)==8 and len(m['roles'])==9
 assert len({r['role'] for r in m['roles']})==9
-assert len([a for a in assets.values() if a['source_id']])==7
-assert all(a['license']!='CC BY-NC 4.0' for a in assets.values())
-assert {p.name for p in (P/'wav').glob('*')}=={Path(a['file']).name for a in assets.values()}
+assert len([a for a in assets.values() if a['source_id']])==8
+assert [a['id'] for a in assets.values() if a['license']=='CC BY-NC 4.0']==['hunter_launch_02_noncommercial']
+assert m['usage_restriction']['contains_nc'] and not m['usage_restriction']['commercial_permission_obtained']
+assert m['usage_restriction']['authority_quote']=='仅非商业试玩也用新声'
+assert {str(p.relative_to(P)) for folder in ['wav','noncommercial/wav'] for p in (P/folder).glob('*.wav')}=={a['file'] for a in assets.values()}
 assert {r['asset'] for r in m['roles']}==set(assets)
 assert [r['asset'] for r in m['roles'] if r['role'] in ('guard_monk','bear_lord')]==['monk_bear_whack']*2
 for r in m['roles']:assert r['plays_per_attack_max']==1
-assert next(r for r in m['roles'] if r['role']=='wild_hunter')['asset']=='hunter_old_fallback'
+assert next(r for r in m['roles'] if r['role']=='wild_hunter')['asset']=='hunter_launch_02_noncommercial'
 checks=[]
 for a in assets.values():
     out=P/a['file'];x=read(out)
@@ -39,12 +41,14 @@ for f in ['index.html','HANDOFF.md','ATTRIBUTION.md']:
     for link in links:
         if link=='VALIDATION.json':continue # this report is produced after successful checks
         if not link.startswith(('http://','https://','#')):assert (P/link).is_file(),link
-before={p:sha(p) for p in [P/'manifest.json',*(P/'wav').glob('*.wav')]}
+before={p:sha(p) for p in [P/'manifest.json',*[P/a['file'] for a in assets.values()]]}
 subprocess.run([sys.executable,str(P/'tools/build.py')],check=True,capture_output=True)
 assert all(sha(p)==h for p,h in before.items())
-nc=m['hunter_pending'];root=P.parents[3]
+nc=m['hunter_noncommercial_selection'];root=P.parents[3]
 ref=root/nc['reference_path'];assert sha(ref)==nc['sha256']
-assert nc['sha256'] not in [sha(p) for p in P.rglob('*') if p.is_file()]
-report={'date':'2026-10-09','scope':'08素材技术自检；非独立/游戏内/人工听感验收','result':'passed_with_documented_limitations','assets':checks,'role_count':9,'file_count':8,'external_source_count':7,'backup_hashes_verified':len(m['backups']),'reproduction':'byte-identical WAV and manifest','links':'all local links resolve','hunter_nc':'reference hash verified outside delivery; no NC audio copied','limitations':['药灵已选文件首帧非零2948/32768；原样复用，启动点击待听感验证','山狼完整2.415669秒，连续/多单位重叠待运行验证','公开HQ预览并非原始无损下载','未运行游戏、GUI、静音暂停倍速死亡重试、最终PCK或独立验收']}
+assert (P/nc['selected_delivery']).read_bytes()==ref.read_bytes()
+assert not any(sha(p)==nc['sha256'] for p in (P/'wav').glob('*.wav'))
+assert len(list((P/'noncommercial/wav').glob('*.wav')))==1
+report={'date':'2026-10-09','scope':'08素材技术自检；非独立/游戏内/人工听感验收','result':'passed_with_documented_limitations','assets':checks,'role_count':9,'file_count':8,'external_source_count':8,'backup_hashes_verified':len(m['backups']),'reproduction':'byte-identical WAV and manifest','links':'all local links resolve','hunter_nc':'only selected shot 2 copied exactly to noncommercial partition; package marked noncommercial only, no commercial permission','limitations':['药灵已选文件首帧非零2948/32768；原样复用，启动点击待听感验证','山狼完整2.415669秒，连续/多单位重叠待运行验证','公开HQ预览并非原始无损下载','未运行游戏、GUI、静音暂停倍速死亡重试、最终PCK或独立验收']}
 (P/'VALIDATION.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-print('PASS: 9 roles, 8 WAV, 7 external sources, 10 backup hashes, links, exact rebuild, NC isolation; limitations recorded')
+print('PASS: 9 roles, 8 WAV, 8 external sources, 10 backup hashes, links, exact rebuild, NC partition and use restriction; limitations recorded')

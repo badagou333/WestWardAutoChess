@@ -65,6 +65,13 @@
 - 修改：Stereo averaged to mono; nearly silent tail removed; short endpoint fades; peak -11dBFS.
 - 本交付未施加额外版权限制；CC BY素材的本次改编按同版本CC BY提供。CC0素材按原CC0保留。
 
-## 项目旧声占位
+## 02658 single arrows.wav — Robinhood76（仅非商业用途）
 
-`wav/hunter_old_fallback.wav` 为既有v1项目合成音频，本次原样复制。不包含Robinhood76的CC BY-NC参考素材，也不包含未来剑声。
+- 成品：`noncommercial/wav/hunter_launch_02.wav`，本次仅非商业试玩采用。
+- 作者：Robinhood76
+- 来源：https://freesound.org/people/Robinhood76/sounds/126464/
+- 许可：[CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)（核对日期2026-10-09），没有另获商用许可。
+- 修改：取第二次发射前段1.955～2.085秒，去除后续命中，2ms淡入/12ms淡出，峰值约-11dBFS。本轮只复制已选文件，未改切点、变调、变速或叠层。
+- 改编按CC BY-NC 4.0提供，改编者为本项目08音效制作流程；原作者不为本项目背书。
+
+**本套交付含CC BY-NC素材，整体仅供本次非商业试玩。** 其余素材仍各按上列原许可；不得将此用途确认当商用许可或全局放开NC。后续商业版本须换来源或取得另行商用许可。
