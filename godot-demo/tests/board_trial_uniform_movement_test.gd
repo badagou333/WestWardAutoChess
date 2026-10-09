@@ -1,5 +1,5 @@
 extends "res://tests/board_trial_ranged_natural_test.gd"
-## Uniform tile speed only. Fixtures below are NOT natural combat/balance evidence.
+## Legacy twelve-actor/ten-mover speed regression, NOT default-bear balance evidence.
 const HeroCatalog = preload("res://scripts/data/demo_units.gd")
 const EnemyCatalog = preload("res://scripts/enemy.gd")
 const UNIFORM_MOVERS := ["guard_monk","wild_hunter","sparrow_spirit","foxfire_imp","E1","E2","E3","E4","E5","E6"]
@@ -18,7 +18,8 @@ class MotionFixtureGame extends "res://scripts/board_trial.gd":
 	func _brain(_actor: Dictionary, _delta: float) -> void: pass
 
 func assert_uniform_roster(game, label: String) -> void:
-	check(game.actors.size()==12,"uniform roster retains twelve actors "+label)
+	check(game.enemy_profile=="legacy" and game.actors.size()==12,"explicit legacy uniform roster retains twelve actors "+label)
+	check(game.report().config==Config.version_for("legacy"),"uniform fixture reports its actual legacy profile version "+label)
 	var count := 0
 	for actor in game.actors:
 		if actor.id in UNIFORM_MOVERS:
@@ -89,6 +90,7 @@ func roster_lifecycle() -> void:
 
 func movement_fixture(id: String, vertical: bool) -> void:
 	var game=MotionFixtureGame.new()
+	game.enemy_profile="legacy"
 	root.add_child(game)
 	game.set_process(false)
 	game.audio_feedback.enabled=false
@@ -134,7 +136,7 @@ func movement_fixture(id: String, vertical: bool) -> void:
 	game.free()
 
 func run() -> void:
-	check(Config.VERSION=="board-v4-step-target" and is_equal_approx(Config.MOVE_SECONDS_PER_CELL,0.5),"current step-target config retains the shared 0.5-second movement default")
+	check(Config.VERSION=="board-v5-bear" and Config.version_for("legacy")=="board-v5-legacy" and is_equal_approx(Config.MOVE_SECONDS_PER_CELL,0.5),"current profile-aware config retains the shared 0.5-second movement default")
 	roster_lifecycle()
 	for id in UNIFORM_MOVERS:
 		movement_fixture(id,false)
@@ -155,7 +157,7 @@ func run() -> void:
 	var file:=FileAccess.open("/tmp/board-uniform-movement-20261009.json",FileAccess.WRITE)
 	check(file!=null,"independent uniform movement report opens")
 	if file!=null:
-		file.store_string(JSON.stringify({"config":Config.VERSION,"move_seconds_per_cell":Config.MOVE_SECONDS_PER_CELL,"mobile_ids":UNIFORM_MOVERS,
+		file.store_string(JSON.stringify({"config":Config.version_for("legacy"),"enemy_profile":"legacy","scope":"legacy_twelve_actor_ten_mover_speed_regression","move_seconds_per_cell":Config.MOVE_SECONDS_PER_CELL,"mobile_ids":UNIFORM_MOVERS,
 			"natural_kind":"all_12_production_AI_no_stat_or_brain_overrides","comparisons":current_reports,"cases":compact_cases,
 			"isolated_motion_fixtures":fixture_evidence,"failures":failures},"\t"))
 	print("BOARD_UNIFORM_MOVEMENT natural=7 isolated_motion=",fixture_evidence.size()," failures=",failures)

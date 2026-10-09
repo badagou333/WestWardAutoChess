@@ -213,6 +213,8 @@ func clock_snapshot(game) -> Dictionary:
 
 func live_departure_and_pursuit(key: String, fps: int, sim_speed: int) -> Dictionary:
 	var game = AuditedBoard.new()
+	# Preserve the original exact-stat pursuit fixture, not default-bear balance.
+	game.enemy_profile = "legacy"
 	root.add_child(game)
 	game.set_process(false)
 	game.audio_feedback.enabled = false
@@ -325,6 +327,6 @@ func run() -> void:
 		reports.append(first)
 		reports.append(second)
 	var output := FileAccess.open("/tmp/board-ranged-20261008-boundaries.json",FileAccess.WRITE)
-	output.store_string(JSON.stringify({"coordinate_base":0,"config":Config.VERSION,"rule":"ranged-step-target-20261009","isolated_boundaries":true,"live_AI_state_fixture":true,"fixture_hp":10000,"stationary_holder_core_cooldown":100,"reports":reports,"foxfire_splash":splash_evidence,"failures":failures},"\t"))
+	output.store_string(JSON.stringify({"coordinate_base":0,"config":Config.version_for("legacy"),"enemy_profile":"legacy","scope":"legacy_exact_stat_technical_fixtures","rule":"ranged-step-target-20261009","isolated_boundaries":true,"live_AI_state_fixture":true,"fixture_hp":10000,"stationary_holder_core_cooldown":100,"reports":reports,"foxfire_splash":splash_evidence,"failures":failures},"\t"))
 	print("BOARD_TRIAL_RANGED_PURSUIT isolated_boundaries=true live_AI_fixture=true failures=",failures)
 	quit(1 if failures else 0)

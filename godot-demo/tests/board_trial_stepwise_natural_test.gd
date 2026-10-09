@@ -40,6 +40,7 @@ class StepwiseTraceGame extends "res://scripts/board_trial.gd":
 
 func fresh():
 	var game=StepwiseTraceGame.new()
+	game.enemy_profile="legacy"
 	root.add_child(game)
 	game.set_process(false)
 	game.audio_feedback.enabled=false
@@ -103,7 +104,7 @@ func stepwise_natural(key: String, fps: int, sim_speed: int, pause_once: bool) -
 	return result
 
 func run() -> void:
-	check(Config.VERSION=="board-v4-step-target","natural stepwise suite requires the actual new production version")
+	check(Config.VERSION=="board-v5-bear" and Config.version_for("legacy")=="board-v5-legacy","legacy natural stepwise suite requires the current profile-aware version")
 	for key in CASE_KEYS:
 		var first:=stepwise_natural(key,30,1,false)
 		var repeated:=stepwise_natural(key,120,2,true)
@@ -117,7 +118,7 @@ func run() -> void:
 	check(comparisons.size()==7 and stepwise_cases.size()==7,"all seven complete natural cases ran, no early success")
 	var file:=FileAccess.open("/tmp/board-step-target-20261009-natural.json",FileAccess.WRITE)
 	check(file!=null,"independent natural stepwise evidence opens")
-	if file!=null: file.store_string(JSON.stringify({"config":Config.VERSION,"public_schedules":[[30,1],[120,2]],"paused_repeat":true,
+	if file!=null: file.store_string(JSON.stringify({"config":Config.version_for("legacy"),"enemy_profile":"legacy","scope":"legacy_twelve_actor_technical_comparison_not_default_bear_balance","public_schedules":[[30,1],[120,2]],"paused_repeat":true,
 		"every_STEP_invariants":true,"no_historical_result_assertions":true,"comparisons":comparisons,"cases":stepwise_cases,"failures":failures},"\t"))
 	print("BOARD_STEPWISE_NATURAL natural=",comparisons.size()," failures=",failures)
 	quit(1 if failures else 0)

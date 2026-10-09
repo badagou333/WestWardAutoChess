@@ -146,9 +146,9 @@ func idle_case(role: String, flipped: bool) -> void:
 	close_target_case(ctx,"idle_without_landing",{"kept":old_id,"newcomer":ctx.near.id,"no_landing":true})
 
 func run() -> void:
-	check(Config.VERSION=="board-v4-step-target","target suite requires the new actual production version")
+	check(Config.VERSION=="board-v5-bear" and Config.version_for("legacy")=="board-v5-legacy","target fixtures require the current profile-aware production version")
 	var probe=fresh()
-	check(probe.RANGED_RULE=="ranged-step-target-20261009" and probe.actors.all(func(actor): return not actor.step_retarget),"new ranged rule tag and default pending flags are real")
+	check(probe.enemy_profile=="legacy" and probe.report().config==Config.version_for("legacy") and probe.RANGED_RULE=="ranged-step-target-20261009" and probe.actors.all(func(actor): return not actor.step_retarget),"explicit legacy fixture retains the real ranged tag/default pending flags")
 	probe.free()
 	for role in TARGET_ROLES:
 		for flipped in [false,true]:
@@ -157,7 +157,7 @@ func run() -> void:
 	check(target_evidence.size()==60,"all five ranged actors mirrored through six target boundary cases completed")
 	var file:=FileAccess.open("/tmp/board-step-target-20261009-boundaries.json",FileAccess.WRITE)
 	check(file!=null,"independent landing target evidence opens")
-	if file!=null: file.store_string(JSON.stringify({"config":Config.VERSION,"rule":"ranged-step-target-20261009","coordinate_base":1,
+	if file!=null: file.store_string(JSON.stringify({"config":Config.version_for("legacy"),"enemy_profile":"legacy","scope":"legacy_exact_stat_landing_target_fixtures","rule":"ranged-step-target-20261009","coordinate_base":1,
 		"kind":"isolated_real_movement_one_driven_brain_not_natural_combat","cases":target_evidence,"failures":failures},"\t"))
 	print("BOARD_STEP_TARGET_BOUNDARIES cases=",target_evidence.size()," failures=",failures)
 	quit(1 if failures else 0)

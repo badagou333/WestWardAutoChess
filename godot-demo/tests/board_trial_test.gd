@@ -1,4 +1,6 @@
 extends SceneTree
+# Historical twelve-actor technical fixtures explicitly use the legacy profile.
+# Default bear/profile balance coverage lives in the independent D002 suite.
 const Config = preload("res://scripts/data/board_trial_config.gd")
 var failures := 0
 var comparisons := []
@@ -9,6 +11,7 @@ func check(ok: bool, label: String) -> void:
 func _initialize() -> void: call_deferred("run")
 func fresh():
 	var game = load("res://scenes/board_trial.tscn").instantiate()
+	game.enemy_profile = "legacy"
 	root.add_child(game)
 	game.set_process(false)
 	game.audio_feedback.enabled = false
@@ -32,13 +35,14 @@ func ownership(game) -> void:
 func simulate(key: String, fps: int, speed: int) -> Dictionary:
 	var game = fresh()
 	game.load_formation(key)
-	check(game.actors.size()==12 and game.deployment.size()==6,"fixed six friends/six advertised enemies, no population cap")
+	check(game.enemy_profile=="legacy" and game.actors.size()==12 and game.deployment.size()==6,"explicit legacy fixture has six friends/six enemies, no population cap")
 	check(game.start_battle(),"formation starts")
 	game.speed = speed
 	while game.phase==game.Phase.BATTLE and game.elapsed<180:
 		game.step(1.0/fps)
 		ownership(game)
 	var report: Dictionary = game.report()
+	check(report.enemy_profile=="legacy" and report.config==Config.version_for("legacy"),"legacy report identifies its actual profile/version")
 	check(game.phase==game.Phase.RESULT,"natural battle reaches result, never timeout victory")
 	check(game.result_count==1,"natural result settled exactly once")
 	# D-007 may keep every enemy outside Tang's range in A. Damage is no longer
@@ -137,6 +141,6 @@ func run() -> void:
 		var second := simulate(key,120,2)
 		check(comparable(first)==comparable(second) and is_equal_approx(first.seconds,second.seconds),"same layout deterministic across fps/2x "+key)
 	var file := FileAccess.open("/tmp/board-trial-comparisons.json",FileAccess.WRITE)
-	file.store_string(JSON.stringify({"config":Config.VERSION,"comparisons":comparisons,"failures":failures},"\t"))
+	file.store_string(JSON.stringify({"config":Config.version_for("legacy"),"enemy_profile":"legacy","scope":"historical_twelve_actor_technical_fixtures_not_default_balance","comparisons":comparisons,"failures":failures},"\t"))
 	print("BOARD_TRIAL_TEST failures=",failures)
 	quit(1 if failures else 0)

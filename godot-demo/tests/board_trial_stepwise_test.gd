@@ -1,5 +1,5 @@
 extends "res://tests/board_trial_ai_test.gd"
-## Isolated state/queue fixtures, NOT natural combat or balance conclusions.
+## Legacy-profile isolated state/queue fixtures, NOT default-bear balance conclusions.
 const Stepwise = preload("res://scripts/combat/board_trial_stepwise.gd")
 const MOVERS := ["guard_monk","wild_hunter","sparrow_spirit","foxfire_imp","E1","E2","E3","E4","E5","E6"]
 var evidence := []
@@ -12,6 +12,7 @@ class BoundaryGame extends "res://scripts/board_trial.gd":
 
 func context(role := "guard_monk", extra: Array = []) -> Dictionary:
 	var game=BoundaryGame.new()
+	game.enemy_profile="legacy"
 	root.add_child(game)
 	game.set_process(false)
 	game.audio_feedback.enabled=false
@@ -229,7 +230,7 @@ func activity_waits() -> void:
 	close_case(ctx,"sealed_corner_death_and_retry")
 
 func run() -> void:
-	check(Config.VERSION=="board-v4-step-target","stepwise tests require the actual new production version")
+	check(Config.VERSION=="board-v5-bear" and Config.version_for("legacy")=="board-v5-legacy","stepwise fixtures require the current profile-aware production version")
 	all_mobile_and_static()
 	fresh_attack_position()
 	complete_route_not_greedy()
@@ -238,6 +239,6 @@ func run() -> void:
 	check(evidence.size()==26,"all twenty-six isolated stepwise cases completed")
 	var file:=FileAccess.open("/tmp/board-stepwise-20261009-boundaries.json",FileAccess.WRITE)
 	check(file!=null,"independent stepwise boundary evidence opens")
-	if file!=null: file.store_string(JSON.stringify({"config":Config.VERSION,"kind":"isolated_state_and_queue_fixtures_not_natural_combat","coordinate_base":1,"cases":evidence,"failures":failures},"\t"))
+	if file!=null: file.store_string(JSON.stringify({"config":Config.version_for("legacy"),"enemy_profile":"legacy","kind":"isolated_state_and_queue_fixtures_not_default_bear_natural_combat","coordinate_base":1,"cases":evidence,"failures":failures},"\t"))
 	print("BOARD_STEPWISE_BOUNDARIES cases=",evidence.size()," failures=",failures)
 	quit(1 if failures else 0)

@@ -51,13 +51,91 @@ func press(code: Key) -> void:
 	event.pressed = false
 	root.push_input(event,true)
 	await frames()
+func choose_profile(index: int) -> void:
+	# Exercise the real OptionButton popup with complete keyboard events, never
+	# emit item_selected or invoke set_enemy_profile as a substitute for GUI input.
+	var previous: int=game.ui.profile_choice.selected
+	var point: Vector2=game.ui.profile_choice.get_global_rect().get_center()
+	await settle(point)
+	# Keep the release in the same focused gesture: ordinary click() calls
+	# settle again, which would refocus the root after a native popup has opened.
+	var gesture:=InputEventMouseButton.new()
+	gesture.position=point
+	gesture.global_position=point
+	gesture.button_index=MOUSE_BUTTON_LEFT
+	gesture.button_mask=MOUSE_BUTTON_MASK_LEFT
+	gesture.pressed=true
+	root.push_input(gesture,true)
+	await process_frame
+	gesture=gesture.duplicate()
+	gesture.button_mask=0
+	gesture.pressed=false
+	root.push_input(gesture,true)
+	await frames()
+	var popup: PopupMenu=game.ui.profile_choice.get_popup()
+	check(popup.visible,"real enemy-profile popup opens during deployment")
+	if not popup.visible: return
+	popup.grab_focus()
+	await frames()
+	var direction: Key=KEY_DOWN if index>previous else KEY_UP
+	for offset in range(absi(index-previous)):
+		var event:=InputEventKey.new()
+		event.keycode=direction
+		event.pressed=true
+		popup.push_input(event,true)
+		await frames()
+		event=event.duplicate()
+		event.pressed=false
+		popup.push_input(event,true)
+		await frames()
+	var accept:=InputEventKey.new()
+	accept.keycode=KEY_ENTER
+	accept.pressed=true
+	popup.push_input(accept,true)
+	await frames()
+	accept=accept.duplicate()
+	accept.pressed=false
+	root.push_input(accept,true)
+	await frames()
+func check_profile(profile: String) -> void:
+	var report: Dictionary=game.report()
+	var specs: Array=Config.enemy_specs(profile)
+	check(game.enemy_profile==profile and report.enemy_profile==profile and report.config==Config.version_for(profile),"actual selected profile/version reported "+profile)
+	check(game.actors.size()==Config.FRIENDS.size()+specs.size() and report.enemy_parameters.size()==specs.size(),"profile rebuilds actual actor/parameter counts "+profile)
+	for index in specs.size():
+		var actor: Dictionary=game._record("E%d" % (index+1))
+		var stats: Dictionary=Config.enemy_stats(specs[index][0],profile)
+		var parameter: Dictionary=report.enemy_parameters[index]
+		check(actor.key==specs[index][0] and actor.hp_max==stats.hp and actor.damage==stats.damage and actor.interval==stats.interval and actor.reach==stats.range,"actual enemy stats bind selected profile "+profile+" "+actor.id)
+		check(parameter.id==actor.id and parameter.key==actor.key and parameter.hp==stats.hp and parameter.damage==stats.damage and parameter.interval==stats.interval and parameter.range==stats.range and parameter.walk==0.5 and parameter.initial_cell==[specs[index][1].x,specs[index][1].y],"reported parameter table matches selected profile "+profile+" "+actor.id)
+	check(game.ui.enemy_rows[3].is_visible_in_tree()==(profile=="bear"),"bear inspection row follows actual profile membership")
+	check(game.monk_sample_enabled and game._record("guard_monk").node.presentation.motion_sample_enabled,"profile rebuild preserves the default board monk sample")
+func check_enemy_summary() -> void:
+	for index in range(game.ui.ENEMY_TYPES.size()):
+		var kind: String=game.ui.ENEMY_TYPES[index]
+		var members: Array=game.actors.filter(func(actor): return not actor.friendly and actor.key==kind)
+		if members.is_empty(): continue
+		var living: int=members.filter(func(actor): return game._alive(actor)).size()
+		check(game.ui.enemy_counts[index].text=="存活 %d / %d" % [living,members.size()],"enemy summary binds actual live/total count "+kind)
+func check_result() -> void:
+	var report: Dictionary=game.report()
+	check(game.phase==game.Phase.RESULT and game.result_count==1 and report.enemy_profile=="bear" and report.config==Config.version_for("bear"),"default-bear normal frames settle one actual profiled Result")
+	var core: Dictionary=game._record("tangseng")
+	var enemies: Array=game.actors.filter(func(actor): return not actor.friendly)
+	if game.victory:
+		check(game._alive(core) and enemies.all(func(actor): return not game._alive(actor)) and "唐僧存活且全敌清除" in game.ui.result_label.text,"actual victory requires living Tang and every enemy cleared")
+	else:
+		check(not game._alive(core) and "唐僧阵亡" in game.ui.result_label.text,"actual failure reports real Tang death")
+	check(game.ui.profile_choice.disabled,"result never unlocks enemy-profile changes")
+	check_enemy_summary()
+	print("BOARD_INPUT_RESULT ",JSON.stringify(report))
 func shot(name: String) -> void:
 	if "--no-capture" in OS.get_cmdline_user_args(): return
 	game._update_ui()
 	game.queue_redraw()
 	await frames()
 	RenderingServer.force_draw(false)
-	check(root.get_texture().get_image().save_png("/tmp/board-ui-v2-20261007-"+name+".png")==OK,"actual new UI viewport capture "+name)
+	check(root.get_texture().get_image().save_png("/tmp/board-d002-20261009-"+name+".png")==OK,"actual default-bear UI viewport capture "+name)
 func await_result() -> void:
 	var began := Time.get_ticks_msec()
 	while game.phase==game.Phase.BATTLE and Time.get_ticks_msec()-began<25000: await process_frame
@@ -72,18 +150,26 @@ func run() -> void:
 	check(game.is_processing() and game.deployment.size()==6,"normal frames / no three-person limit")
 	check(game.BACKGROUND.get_size()==Vector2(1672,941) and game.BOARD_RECT==Rect2(220,190,1320,714),"full art texture and original exact geometry")
 	check(game.BACKGROUND_RECT==Rect2(0,-12,1920,1128),"only v2 background uses calibrated crop mapping")
-	check(game.ui.card_portraits.size()==6 and game.ui.enemy_portraits.size()==3 and game.ui.enemy_buttons.size()==6,"six real avatars, three enemy types and six specific inspection buttons")
+	check(game.ui.card_portraits.size()==6 and game.ui.enemy_portraits.size()==4 and game.ui.enemy_buttons.size()==7,"six real avatars, four enemy types and seven specific inspection buttons")
+	check(Config.VERSION=="board-v5-bear" and game.enemy_profile=="bear" and game.actors.size()==13,"input test keeps the genuine default-bear thirteen-actor roster")
+	check_profile("bear")
 	for index in range(6):
 		await click(game.roster_buttons[index].get_global_rect().get_center())
 		var actor: Dictionary = game._record(game.Config.FRIENDS[index])
 		check(game.selected==actor.id and game.ui.card_portraits[index].texture!=null,"all six native card selections use actual production portraits")
 		check(game.ui.card_hp[index].text=="%d / %d" % [game._hp(actor),actor.hp_max],"cards bind real HP")
 		check(game.ui.card_bars[index].size.y==5 and game.ui.card_portraits[index].region.size.x<=70,"thin HP meters and actual head crops retain intended logical size")
-		var mirror: bool = actor.key=="herbal_spirit_child" or actor.node.presentation.manifest.get("source_facing","right")=="left"
+		var mirror: bool = actor.key=="herbal_spirit_child" or actor.visual_manifest.get("source_facing","right")=="left"
 		check(game.ui.card_portraits[index].mirrored==mirror,"portraits use one source-dependent right-facing mirror")
-	for index in range(3):
+	for index in range(4):
 		await click(game.ui.enemy_names[index].get_parent().get_global_rect().get_center())
-		check(game._record(game.selected).key==["wolf","boar","rat"][index] and not game.withdraw_button.visible,"all three real type rows inspect that enemy type")
+		check(game._record(game.selected).key==["wolf","boar","rat","bear_lord"][index] and not game.withdraw_button.visible,"all four real type rows inspect their actual enemy type")
+	var profile_deployment: Dictionary=game.deployment.duplicate()
+	for index in range(Config.ENEMY_PROFILES.size()):
+		await choose_profile(index)
+		check_profile(Config.ENEMY_PROFILES[index])
+		check(game.deployment==profile_deployment and game.phase==game.Phase.DEPLOY,"real deployment profile switching preserves friendly layout")
+	check_enemy_summary()
 	await click(game.roster_buttons[5].get_global_rect().get_center())
 	check("攻击 20" in game.info_label.text and "1.25秒" in game.info_label.text and not "防御" in game.info_label.text,"fox details use real configuration, never concept statistics")
 	var modal_before: Dictionary = game.deployment.duplicate()
@@ -97,9 +183,14 @@ func run() -> void:
 	await press(KEY_ESCAPE)
 	check(not game.ui.help_layer.visible,"Esc closes help without game action")
 	await click(game.ui.enemy_buttons[5].get_global_rect().get_center())
-	check(game.selected=="E6" and not game.withdraw_button.visible and "攻击 7" in game.info_label.text,"specific enemy inspection exposes attributes, never friendly withdraw")
+	check(game.selected=="E6" and not game.withdraw_button.visible and "攻击 %.0f" % Config.enemy_stats("rat",game.enemy_profile).damage in game.info_label.text,"specific rat inspection exposes actual profile attributes, never friendly withdraw")
 	await press(KEY_R)
 	check(game.deployment==modal_before,"enemy inspection R cannot withdraw a friendly")
+	await click(game.ui.enemy_buttons[6].get_global_rect().get_center())
+	check(game.selected=="E7" and game._record("E7").key=="bear_lord" and not game.withdraw_button.visible,"actual E7 button inspects the default bear, never a friendly")
+	check(game.ui.selected_hp.text=="生命   280 / 280" and "攻击 20" in game.info_label.text and "射程 1格" in game.info_label.text and "1.20秒" in game.info_label.text,"bear details use exact board HP/damage/range/interval rather than shared catalog values")
+	await press(KEY_R)
+	check(game.deployment==modal_before,"bear inspection R never withdraws a friendly")
 	await click(Config.center(Vector2i(0,0)),MOUSE_BUTTON_RIGHT)
 	# Complete viewport gestures through every drawn cell; no image-derived hit grid.
 	for row in range(Config.ROWS):
@@ -171,13 +262,16 @@ func run() -> void:
 	check(game.ui.card_names.all(func(item): return item.get_minimum_size().x<=126),"all six names fit real avatar cards")
 	check(game.info_label.get_minimum_size().y<=231,"selected real detail wraps inside right rail")
 	print("BOARD_PREVIEW_LAYOUT min=",game.enemies_label.get_minimum_size()," rect=",game.enemies_label.get_global_rect()," lines=",game.enemies_label.get_line_count())
-	check(game.enemies_label.get_minimum_size().y<=714,"all six enemy previews fit sidebar vertically")
+	check(game.enemies_label.get_minimum_size().y<=714,"all seven enemy previews fit sidebar vertically")
 	await click(game.start_button.get_global_rect().get_center())
 	check(game.phase==game.Phase.BATTLE,"native start enters actual process battle")
+	check(game.ui.profile_choice.disabled and not game.set_enemy_profile("legacy") and game.enemy_profile=="bear","battle locks profile both in UI and mutation API")
 	await press(KEY_P)
 	check(game.paused,"native keyboard pause")
 	var snapshot: Dictionary = game.deployment.duplicate()
 	var elapsed: float = game.elapsed
+	await click(game.ui.profile_choice.get_global_rect().get_center())
+	check(game.ui.profile_choice.disabled and not game.ui.profile_choice.get_popup().visible and not game.set_enemy_profile("normal") and game.enemy_profile=="bear" and game.elapsed==elapsed,"paused battle profile gesture cannot open/change roster or advance clock")
 	for size in [Vector2i(960,540),Vector2i(1440,810),Vector2i(1280,720)]:
 		root.size = size
 		await frames()
@@ -205,11 +299,11 @@ func run() -> void:
 	await click(game.roster_buttons[1].get_global_rect().get_center())
 	var observed: Dictionary = game._record("guard_monk")
 	var actual_target: Dictionary = game._record(observed.target)
-	check(game.ui.selected_hp.text=="生命   %d / %d" % [game._hp(observed),observed.hp_max] and "状态 接敌" in game.info_label.text,"selected battle actor exposes actual changing HP and AI state")
-	check(not actual_target.is_empty() and actual_target.id in game.info_label.text,"real current target is identified, not a placeholder or static enemy class")
+	check(game.ui.selected_hp.text=="生命   %d / %d" % [game._hp(observed),observed.hp_max] and "状态 "+game.ui.state(observed) in game.info_label.text,"selected battle actor exposes actual changing HP and current AI/death state")
+	check(actual_target.id in game.info_label.text if not actual_target.is_empty() else "目标 无" in game.info_label.text,"details identify actual current target, or truthfully show none")
 	await shot("battle")
 	await await_result()
-	check(game.victory and game.result_count==1,"natural A normal-frame victory settled once")
+	check_result()
 	var total_damage := 0.0
 	var total_healing := 0.0
 	for actor in game.actors:
@@ -218,16 +312,18 @@ func run() -> void:
 			total_healing += game.metrics.healing.get(actor.id,0)
 	check(game.ui.result_panel.visible and "合计伤害 %.0f" % total_damage in game.ui.result_label.text and "治疗 %.0f" % total_healing in game.ui.result_label.text and "阵亡 %d人" % game.report().fallen.size() in game.ui.result_label.text,"real A result keeps actual NEW-rule damage/heal/loss statistics")
 	check(game.ui.result_label.get_minimum_size().y<=425,"actual complete six-person result text fits panel")
-	check(game.ui.enemy_counts.all(func(item): return "存活 0 / 2"==item.text),"enemy summary live count reaches zero")
-	await shot("victory")
+	if game.victory: check(game.ui.enemy_counts[3].text=="存活 0 / 1","actual victory clears the single bear as well as six regular enemies")
+	await shot("result-default")
 	await click(game.ui.result_close.get_global_rect().get_center())
 	check(not game.ui.result_panel.visible,"result can close for board inspection")
 	await click(game.start_button.get_global_rect().get_center())
 	check(game.ui.result_panel.visible,"primary action reopens real result, never starts another battle")
 	await click(game.retry_button.get_global_rect().get_center())
 	check(game.phase==game.Phase.DEPLOY and game.deployment==snapshot and game.elapsed==0,"native retry restores pre-battle cells/clock")
+	check(not game.ui.profile_choice.disabled,"retry unlocks deployment profile selection")
+	check_profile("bear")
 	await click(game.formation_buttons[1].get_global_rect().get_center())
-	# Full B now legitimately wins under the approved active-guard strategy.
+	# Do not assume a historical full-B outcome after profile/strategy changes.
 	# Keep actual failure/HP/stat UI coverage with a legal exposed core-alone
 	# deployment, without weakening HP/damage or bypassing production combat.
 	for key in Config.FRIENDS:
@@ -238,6 +334,7 @@ func run() -> void:
 	await click(game.start_button.get_global_rect().get_center())
 	await click(game.speed_button.get_global_rect().get_center())
 	await await_result()
+	check_result()
 	check(not game.victory and game._record("tangseng").node.dead,"legal exposed core-alone deployment produces real core death, not fixture HP")
 	total_damage = 0.0
 	total_healing = 0.0
@@ -255,7 +352,7 @@ func run() -> void:
 	# No skill/economy keys change the fixed roster or phase.
 	var before: Dictionary = game.deployment.duplicate()
 	for key in [KEY_Q,KEY_W,KEY_E,KEY_SPACE]: await press(key)
-	check(game.deployment==before and game.actors.size()==12 and game.phase==game.Phase.DEPLOY,"unused keys have no skill/shop side effects")
+	check(game.deployment==before and game.enemy_profile=="bear" and game.actors.size()==13 and game.phase==game.Phase.DEPLOY,"unused keys have no skill/shop/default-bear-roster side effects")
 	print("BOARD_TRIAL_INPUT failures=",failures)
 	game.free()
 	quit(1 if failures else 0)

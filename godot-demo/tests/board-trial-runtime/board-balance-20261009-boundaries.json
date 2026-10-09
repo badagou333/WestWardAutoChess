@@ -1,0 +1,386 @@
+{
+	"cases": [
+		{
+			"actors": 12,
+			"case": "roster",
+			"profile": "legacy",
+			"report": {
+				"config": "board-v5-legacy",
+				"enemy_parameters": [
+					{
+						"damage": 14.0,
+						"hp": 155.0,
+						"id": "E1",
+						"initial_cell": [
+							8,
+							2
+						],
+						"interval": 0.9,
+						"key": "wolf",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 14.0,
+						"hp": 155.0,
+						"id": "E2",
+						"initial_cell": [
+							8,
+							6
+						],
+						"interval": 0.9,
+						"key": "wolf",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 10.0,
+						"hp": 96.0,
+						"id": "E3",
+						"initial_cell": [
+							9,
+							3
+						],
+						"interval": 1.1,
+						"key": "boar",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 10.0,
+						"hp": 96.0,
+						"id": "E4",
+						"initial_cell": [
+							9,
+							5
+						],
+						"interval": 1.1,
+						"key": "boar",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 7.0,
+						"hp": 52.0,
+						"id": "E5",
+						"initial_cell": [
+							11,
+							2
+						],
+						"interval": 0.95,
+						"key": "rat",
+						"range": 3,
+						"walk": 0.5
+					},
+					{
+						"damage": 7.0,
+						"hp": 52.0,
+						"id": "E6",
+						"initial_cell": [
+							11,
+							6
+						],
+						"interval": 0.95,
+						"key": "rat",
+						"range": 3,
+						"walk": 0.5
+					}
+				],
+				"enemy_profile": "legacy",
+				"fallen": [],
+				"melee_rule": "melee-stepwise-20261009",
+				"metrics": {
+					"attack_times": {},
+					"damage": {},
+					"first_engagement": {},
+					"first_hit": {},
+					"healing": {}
+				},
+				"phase": 0,
+				"ranged_rule": "ranged-step-target-20261009",
+				"result_count": 0,
+				"seconds": 0.0,
+				"tangseng_hp": 300.0,
+				"victory": false
+			}
+		},
+		{
+			"actors": 12,
+			"case": "roster",
+			"profile": "normal",
+			"report": {
+				"config": "board-v5-normal",
+				"enemy_parameters": [
+					{
+						"damage": 17.0,
+						"hp": 180.0,
+						"id": "E1",
+						"initial_cell": [
+							8,
+							2
+						],
+						"interval": 0.9,
+						"key": "wolf",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 17.0,
+						"hp": 180.0,
+						"id": "E2",
+						"initial_cell": [
+							8,
+							6
+						],
+						"interval": 0.9,
+						"key": "wolf",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 12.0,
+						"hp": 120.0,
+						"id": "E3",
+						"initial_cell": [
+							9,
+							3
+						],
+						"interval": 1.1,
+						"key": "boar",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 12.0,
+						"hp": 120.0,
+						"id": "E4",
+						"initial_cell": [
+							9,
+							5
+						],
+						"interval": 1.1,
+						"key": "boar",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 9.0,
+						"hp": 65.0,
+						"id": "E5",
+						"initial_cell": [
+							11,
+							2
+						],
+						"interval": 0.95,
+						"key": "rat",
+						"range": 3,
+						"walk": 0.5
+					},
+					{
+						"damage": 9.0,
+						"hp": 65.0,
+						"id": "E6",
+						"initial_cell": [
+							11,
+							6
+						],
+						"interval": 0.95,
+						"key": "rat",
+						"range": 3,
+						"walk": 0.5
+					}
+				],
+				"enemy_profile": "normal",
+				"fallen": [],
+				"melee_rule": "melee-stepwise-20261009",
+				"metrics": {
+					"attack_times": {},
+					"damage": {},
+					"first_engagement": {},
+					"first_hit": {},
+					"healing": {}
+				},
+				"phase": 0,
+				"ranged_rule": "ranged-step-target-20261009",
+				"result_count": 0,
+				"seconds": 0.0,
+				"tangseng_hp": 300.0,
+				"victory": false
+			}
+		},
+		{
+			"actors": 13,
+			"case": "roster",
+			"profile": "bear",
+			"report": {
+				"config": "board-v5-bear",
+				"enemy_parameters": [
+					{
+						"damage": 17.0,
+						"hp": 180.0,
+						"id": "E1",
+						"initial_cell": [
+							8,
+							2
+						],
+						"interval": 0.9,
+						"key": "wolf",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 17.0,
+						"hp": 180.0,
+						"id": "E2",
+						"initial_cell": [
+							8,
+							6
+						],
+						"interval": 0.9,
+						"key": "wolf",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 12.0,
+						"hp": 120.0,
+						"id": "E3",
+						"initial_cell": [
+							9,
+							3
+						],
+						"interval": 1.1,
+						"key": "boar",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 12.0,
+						"hp": 120.0,
+						"id": "E4",
+						"initial_cell": [
+							9,
+							5
+						],
+						"interval": 1.1,
+						"key": "boar",
+						"range": 1,
+						"walk": 0.5
+					},
+					{
+						"damage": 9.0,
+						"hp": 65.0,
+						"id": "E5",
+						"initial_cell": [
+							11,
+							2
+						],
+						"interval": 0.95,
+						"key": "rat",
+						"range": 3,
+						"walk": 0.5
+					},
+					{
+						"damage": 9.0,
+						"hp": 65.0,
+						"id": "E6",
+						"initial_cell": [
+							11,
+							6
+						],
+						"interval": 0.95,
+						"key": "rat",
+						"range": 3,
+						"walk": 0.5
+					},
+					{
+						"damage": 20.0,
+						"hp": 280.0,
+						"id": "E7",
+						"initial_cell": [
+							10,
+							4
+						],
+						"interval": 1.2,
+						"key": "bear_lord",
+						"range": 1,
+						"walk": 0.5
+					}
+				],
+				"enemy_profile": "bear",
+				"fallen": [],
+				"melee_rule": "melee-stepwise-20261009",
+				"metrics": {
+					"attack_times": {},
+					"damage": {},
+					"first_engagement": {},
+					"first_hit": {},
+					"healing": {}
+				},
+				"phase": 0,
+				"ranged_rule": "ranged-step-target-20261009",
+				"result_count": 0,
+				"seconds": 0.0,
+				"tangseng_hp": 300.0,
+				"victory": false
+			}
+		},
+		{
+			"case": "profile_change_lifecycle",
+			"profile": "normal"
+		},
+		{
+			"case": "bear_movement",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"mirrored": false,
+			"seconds": 0.508333333333334
+		},
+		{
+			"case": "bear_movement",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"mirrored": true,
+			"seconds": 0.508333333333334
+		},
+		{
+			"actual_damage": 40.0,
+			"attack_times": [
+				0.25,
+				1.45
+			],
+			"case": "bear_damage_cadence",
+			"recipient_hp": 270.0
+		},
+		{
+			"case": "bear_receives_original_hit",
+			"remaining_hp": 266.0
+		},
+		{
+			"case": "bear_attack_activity",
+			"cooldown": 0.366666666666669,
+			"replacement": "foxfire_imp"
+		},
+		{
+			"actors": 13,
+			"case": "bear_death_and_retry"
+		},
+		{
+			"case": "core_failure_with_bear"
+		}
+	],
+	"failures": 0,
+	"kind": "isolated_runtime_boundaries_not_natural_balance",
+	"profiles": [
+		"legacy",
+		"normal",
+		"bear"
+	],
+	"scope": "D-20261009-002"
+}

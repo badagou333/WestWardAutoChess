@@ -39,6 +39,10 @@ var enemy_names: Array[Label] = []
 var enemy_counts: Array[Label] = []
 var enemy_buttons: Array[Button] = []
 var enemy_portraits: Array = []
+const ENEMY_TYPES := ["wolf","boar","rat","bear_lord"]
+var enemy_rows: Array[Button] = []
+var profile_choice: OptionButton
+var animation_toggle: Button
 var notice_timer := 0.0
 var last_notice := ""
 var last_phase := -1
@@ -121,20 +125,35 @@ func setup(host) -> void:
 	for index in range(3):
 		var key: String = ["A","B","C"][index]
 		formation_buttons.append(button(Rect2(32,237+index*62,154,50),key+"  样例",func(): game.load_formation(key)))
+	panel(Rect2(26,435,168,224))
+	label(Rect2(32,443,156,31),22).text="对照选项"
+	profile_choice=OptionButton.new()
+	profile_choice.position=Vector2(32,484)
+	profile_choice.size=Vector2(154,46)
+	profile_choice.focus_mode=Control.FOCUS_NONE
+	profile_choice.add_theme_font_size_override("font_size",18)
+	Style.button(profile_choice)
+	for value in ["原六怪","强化六怪","强化＋熊"]: profile_choice.add_item(value)
+	profile_choice.item_selected.connect(func(index): game.set_enemy_profile(game.Config.ENEMY_PROFILES[index]))
+	add_child(profile_choice)
+	animation_toggle=button(Rect2(32,555,154,48),"",func(): game.set_monk_sample(not game.monk_sample_enabled))
+	animation_toggle.add_theme_font_size_override("font_size",18)
+	animation_toggle.tooltip_text="只切棍僧显示，保留战斗、动作时钟和命中事件。"
 	panel(Rect2(26,740,168,171))
 	label(Rect2(32,748,160,109),20).text = "1—6 选择队员\n左键放置 / 拖动\nR 撤下\n右键 / Esc 取消"
 	button(Rect2(32,863,154,40),"布阵规则",toggle_help)
 	panel(Rect2(1572,176,314,274))
 	enemies_label = label(Rect2(1590,188,278,34),24)
-	for index in range(3):
-		var key: String = ["wolf","boar","rat"][index]
-		var row := button(Rect2(1588,233+index*68,282,60),"",func(): inspect_type(key))
-		enemy_portraits.append(portrait(Rect2(5,4,52,52),row))
-		enemy_names.append(label(Rect2(66,3,127,27),22,row))
-		enemy_counts.append(label(Rect2(66,32,134,24),18,row))
-		for member in range(2):
+	for index in range(ENEMY_TYPES.size()):
+		var key: String = ENEMY_TYPES[index]
+		var row := button(Rect2(1588,231+index*52,282,48),"",func(): inspect_type(key))
+		enemy_rows.append(row)
+		enemy_portraits.append(portrait(Rect2(5,3,42,42),row))
+		enemy_names.append(label(Rect2(55,1,136,24),20,row))
+		enemy_counts.append(label(Rect2(55,25,136,21),16,row))
+		for member in range(1 if key=="bear_lord" else 2):
 			var id := "E%d" % (1+index*2+member)
-			var specific := button(Rect2(200+member*39,15,36,30),id,func(): game.select(id),row)
+			var specific := button(Rect2(200+member*39,9,36,30),id,func(): game.select(id),row)
 			specific.add_theme_font_size_override("font_size",18)
 			enemy_buttons.append(specific)
 	panel(Rect2(1572,467,314,437))
@@ -168,6 +187,7 @@ func setup(host) -> void:
 
 func inspect_type(key: String) -> void:
 	var members: Array = game.actors.filter(func(actor): return not actor.friendly and actor.key==key)
+	if members.is_empty(): return
 	var index := members.find(game._record(game.selected))
 	game.select(members[(index+1)%members.size()].id)
 
@@ -217,6 +237,9 @@ func refresh() -> void:
 	speed_button.disabled = game.phase!=game.Phase.BATTLE
 	speed_button.text = "%d×" % game.speed
 	for control in formation_buttons: control.disabled = game.phase!=game.Phase.DEPLOY
+	profile_choice.disabled=game.phase!=game.Phase.DEPLOY
+	profile_choice.select(game.Config.ENEMY_PROFILES.find(game.enemy_profile))
+	animation_toggle.text="棍僧：新版" if game.monk_sample_enabled else "棍僧：旧版"
 	if last_notice!=game.message:
 		last_notice = game.message
 		notice_timer = 4
@@ -228,17 +251,19 @@ func refresh() -> void:
 		card_bars[index].value = 100*game._hp(actor)/actor.hp_max
 		card_states[index].text = state(actor)
 		roster_buttons[index].add_theme_stylebox_override("normal",Style.box(Style.FILL,Style.GOLD if game.selected==actor.id else Style.EDGE,2 if game.selected==actor.id else 1))
-		if card_portraits[index].role.is_empty(): card_portraits[index].setup(actor.key,Portrait.idle_source_left(actor.key,actor.node.presentation.manifest),true)
+		if card_portraits[index].role.is_empty(): card_portraits[index].setup(actor.key,Portrait.idle_source_left(actor.key,actor.visual_manifest),true)
 	var alive_count := 0
-	for index in range(3):
-		var key: String = ["wolf","boar","rat"][index]
+	for index in range(ENEMY_TYPES.size()):
+		var key: String = ENEMY_TYPES[index]
 		var members: Array = game.actors.filter(func(actor): return not actor.friendly and actor.key==key)
+		enemy_rows[index].visible=not members.is_empty()
+		if members.is_empty(): continue
 		var living := members.filter(func(actor): return game._alive(actor)).size()
 		alive_count += living
-		enemy_names[index].text = ["山狼","山猪","灰鼠"][index]
+		enemy_names[index].text = ["山狼","山猪","灰鼠","熊山君"][index]
 		enemy_counts[index].text = "存活 %d / %d" % [living,members.size()]
-		if enemy_portraits[index].role.is_empty(): enemy_portraits[index].setup(key,members[0].node.presentation.manifest.get("source_facing","right")=="left",false)
-	enemies_label.text = "敌情 · 存活 %d / 6" % alive_count
+		if enemy_portraits[index].role.is_empty(): enemy_portraits[index].setup(key,members[0].visual_manifest.get("source_facing","right")=="left",false)
+	enemies_label.text = "敌情 · 存活 %d / %d" % [alive_count,game.actors.filter(func(item): return not item.friendly).size()]
 	var actor: Dictionary = game._record(game.selected)
 	withdraw_button.visible = not actor.is_empty() and actor.friendly
 	withdraw_button.disabled = game.phase!=game.Phase.DEPLOY or actor.is_empty() or not game.Config.valid(actor.get("cell",Vector2i(-1,-1)))
@@ -250,7 +275,7 @@ func refresh() -> void:
 		selected_role.text = "或点选上方敌情"
 		info_label.text = "点选队员或敌情\n查看实时属性与状态。"
 	else:
-		selected_portrait.setup(actor.key,Portrait.idle_source_left(actor.key,actor.node.presentation.manifest),actor.friendly)
+		selected_portrait.setup(actor.key,Portrait.idle_source_left(actor.key,actor.visual_manifest),actor.friendly)
 		selected_name.text = actor.name
 		selected_role.text = "友军 · "+("治疗" if actor.key=="herbal_spirit_child" else "近战" if actor.reach==1 else "远程") if actor.friendly else "敌军 · "+actor.id
 		selected_hp.text = "生命   %d / %d" % [game._hp(actor),actor.hp_max]

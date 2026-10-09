@@ -4,7 +4,8 @@ const REGIONS := {
 	"tangseng":Rect2(102,103,55,64),"guard_monk":Rect2(107,107,62,64),
 	"wild_hunter":Rect2(95,111,62,60),"sparrow_spirit":Rect2(108,128,50,61),
 	"herbal_spirit_child":Rect2(103,119,57,60),"foxfire_imp":Rect2(104,113,50,60),
-	"mountain_wolf":Rect2(73,144,70,61),"boar":Rect2(91,113,65,68),"gray_rat":Rect2(92,143,65,64)}
+	"mountain_wolf":Rect2(73,144,70,61),"boar":Rect2(91,113,65,68),"gray_rat":Rect2(92,143,65,64),
+	"bear_lord":Rect2(103,75,56,67)}
 var texture: Texture2D
 var cropped: AtlasTexture
 var region := Rect2()

@@ -4,7 +4,7 @@ const Config = preload("res://scripts/data/board_trial_config.gd")
 const RULE := "melee-stepwise-20261009"
 
 static func applies(actor: Dictionary) -> bool:
-	return (actor.friendly and actor.key=="guard_monk") or (not actor.friendly and actor.key in ["wolf","boar"])
+	return (actor.friendly and actor.key=="guard_monk") or (not actor.friendly and actor.key in ["wolf","boar","bear_lord"])
 
 static func release(actor: Dictionary) -> void:
 	actor.target = ""

@@ -1,5 +1,6 @@
 extends "res://tests/board_trial_ai_test.gd"
-## Five unchanged deployments, all twelve production brains, no historical media.
+## Legacy-profile technical comparison: five deployments, twelve real brains.
+## This is not default-bear/D002 balance coverage; no historical media is read.
 const MOBILE := ["wild_hunter","sparrow_spirit","foxfire_imp"]
 const VIDEO := [Vector2i(1,4),Vector2i(6,4),Vector2i(1,3),Vector2i(1,5),Vector2i(2,4),Vector2i(3,4)]
 const VIDEO_D007 := [Vector2i(2,4),Vector2i(4,4),Vector2i(2,3),Vector2i(3,4),Vector2i(1,4),Vector2i(2,5)]
@@ -18,6 +19,7 @@ class TraceGame extends "res://scripts/board_trial.gd":
 
 func fresh():
 	var game = TraceGame.new()
+	game.enemy_profile = "legacy"
 	root.add_child(game)
 	game.set_process(false)
 	game.audio_feedback.enabled = false
@@ -126,10 +128,10 @@ func run() -> void:
 		current_reports.append({"formation":key,"report":first})
 	var old: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://tests/board-trial-runtime/board-d007-comparisons.json"))
 	var file := FileAccess.open("/tmp/board-ranged-20261008-comparisons.json",FileAccess.WRITE)
-	file.store_string(JSON.stringify({"config":Config.VERSION,"ranged_rule":"ranged-pursuit-d20261008-001",
+	file.store_string(JSON.stringify({"config":Config.version_for("legacy"),"enemy_profile":"legacy","scope":"legacy_twelve_actor_technical_comparison","ranged_rule":"ranged-step-target-20261009",
 		"baseline_d007":old.comparisons,"comparisons":current_reports,"failures":failures},"\t"))
 	file = FileAccess.open("/tmp/board-ranged-20261008-natural-traces.json",FileAccess.WRITE)
-	file.store_string(JSON.stringify({"ranged_rule":"ranged-pursuit-d20261008-001","public_schedules":[[30,1],[120,2]],
+	file.store_string(JSON.stringify({"config":Config.version_for("legacy"),"enemy_profile":"legacy","scope":"legacy_twelve_actor_technical_comparison","ranged_rule":"ranged-step-target-20261009","public_schedules":[[30,1],[120,2]],
 		"paused_repeat":true,"cases":cases,"failures":failures}))
 	print("BOARD_RANGED_NATURAL natural=5 failures=",failures)
 	quit(1 if failures else 0)

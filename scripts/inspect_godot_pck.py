@@ -12,6 +12,7 @@ REQUIRED_RELEASE_FILES = (
     "scripts/combat/board_trial_melee.gd.remap",
     "scripts/combat/board_trial_stepwise.gd.remap",
     "scripts/presentation/board_trial_healer_view.gd.remap",
+    "scripts/presentation/board_trial_monk_view.gd.remap",
     "art/boards/formation_trial_v2/board-courtyard.png.import",
     "scripts/presentation/board_trial_ui.gd.remap",
     "scripts/presentation/board_trial_portrait.gd.remap",
@@ -60,7 +61,7 @@ REQUIRED_RELEASE_FILES = (
     "audio/candidates/foxfire-dwoboyle-v1/foxfire_A_faithful.wav.import",
 ) + tuple(
     f"art/production/{role}/nine_sols_v1/idle.png.import"
-    for role in ("guard_monk", "wild_hunter", "sparrow_spirit", "herbal_spirit_child", "foxfire_imp", "mountain_wolf", "boar", "gray_rat")
+    for role in ("guard_monk", "wild_hunter", "sparrow_spirit", "herbal_spirit_child", "foxfire_imp", "mountain_wolf", "boar", "gray_rat", "bear_lord")
 ) + tuple(
     f"art/production/{role}/nine_sols_v1/{file}"
     for role in ("guard_monk", "wild_hunter", "herbal_spirit_child", "sparrow_spirit", "foxfire_imp", "bear_lord", "mountain_wolf", "gray_rat", "boar", "tangseng")

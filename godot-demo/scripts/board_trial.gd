@@ -32,6 +32,8 @@ var collecting_steps := false
 var step_requests: Array[Dictionary] = []
 var victory := false
 var result_count := 0
+var enemy_profile := Config.DEFAULT_ENEMY_PROFILE
+var monk_sample_enabled := true
 var metrics := {}
 var combat
 var audio_feedback
@@ -92,13 +94,17 @@ func _reset_roster() -> void:
 		add_child(node)
 		if key!="tangseng": node.set_bench_mode(false)
 		_register(key,key,node,true,deployment.get(key,Vector2i(-1,-1)))
-	for index in range(Config.ENEMIES.size()):
-		var spec: Array = Config.ENEMIES[index]
+	var enemy_specs: Array=Config.enemy_specs(enemy_profile)
+	for index in range(enemy_specs.size()):
+		var spec: Array = enemy_specs[index]
 		var node = Enemy.new()
 		node.setup(spec[0])
-		node.max_health *= Config.ENEMY_HP_FACTOR
+		var stats: Dictionary=Config.enemy_stats(spec[0],enemy_profile)
+		node.max_health = stats.hp
 		node.health = node.max_health
-		node.damage *= Config.ENEMY_DAMAGE_FACTOR
+		node.damage = stats.damage
+		node.attack_interval = stats.interval
+		node.attack_range_cells = stats.range
 		add_child(node)
 		_register("E%d" % (index+1),spec[0],node,false,spec[1]-Vector2i.ONE)
 	selected = ""
@@ -117,6 +123,7 @@ func _reset_roster() -> void:
 func _register(id: String, key: String, node, friendly: bool, cell: Vector2i) -> void:
 	# Trial movement is a shared board rule, independent of legacy unit catalogs.
 	node.move_interval = Config.MOVE_SECONDS_PER_CELL
+	if key=="guard_monk": node.presentation.set_motion_sample(monk_sample_enabled)
 	node.scale = Vector2.ONE*0.72
 	node.visible = Config.valid(cell)
 	node.position = Config.center(cell) if Config.valid(cell) else Vector2.ZERO
@@ -138,6 +145,7 @@ func _register(id: String, key: String, node, friendly: bool, cell: Vector2i) ->
 		"step_age":-1.0,"step_hint":Vector2i(-1,-1),"step_target":"",
 		"step_wait":{},"step_wait_reason":"","step_serial":0,"step_completed":0,
 		"step_retarget":false,
+		"visual_manifest":node.presentation.manifest,
 		"hp_max":node.max_health,"damage":node.damage,"interval":node.attack_interval,
 		"reach":node.attack_range_cells,"walk":node.move_interval,"name":node.display_name})
 
@@ -148,6 +156,20 @@ func load_formation(key: String) -> void:
 		deployment[Config.FRIENDS[index]] = Config.FORMATIONS[key][index]-Vector2i.ONE
 	_reset_roster()
 	message = "已载入%s阵 · 敌阵和属性不变" % key
+
+func set_enemy_profile(profile: String) -> bool:
+	if phase!=Phase.DEPLOY or profile not in Config.ENEMY_PROFILES: return false
+	if profile==enemy_profile: return true
+	enemy_profile=profile
+	_reset_roster()
+	_notice({"legacy":"原六怪对照","normal":"强化六怪","bear":"强化六怪＋熊山君"}[profile])
+	return true
+
+func set_monk_sample(enabled: bool) -> void:
+	monk_sample_enabled=enabled
+	var monk: Dictionary=_record("guard_monk")
+	if not monk.is_empty() and is_instance_valid(monk.node): monk.node.presentation.set_motion_sample(enabled)
+	if ui!=null: ui.refresh()
 
 func place(id: String, cell: Vector2i) -> bool:
 	if phase!=Phase.DEPLOY:
@@ -547,7 +569,13 @@ func report() -> Dictionary:
 	var fallen: Array[String] = []
 	for actor in actors:
 		if actor.friendly and Config.valid(actor.anchor) and not _alive(actor): fallen.append(actor.id)
-	return {"config":Config.VERSION,"melee_rule":Melee.RULE,"ranged_rule":RANGED_RULE,"phase":phase,"victory":victory,"seconds":elapsed,
+	var parameters := []
+	var specs: Array=Config.enemy_specs(enemy_profile)
+	for index in specs.size():
+		var stats: Dictionary=Config.enemy_stats(specs[index][0],enemy_profile)
+		parameters.append({"id":"E%d" % (index+1),"key":specs[index][0],"hp":stats.hp,"damage":stats.damage,
+			"interval":stats.interval,"range":stats.range,"walk":Config.MOVE_SECONDS_PER_CELL,"initial_cell":[specs[index][1].x,specs[index][1].y]})
+	return {"config":Config.version_for(enemy_profile),"enemy_profile":enemy_profile,"enemy_parameters":parameters,"melee_rule":Melee.RULE,"ranged_rule":RANGED_RULE,"phase":phase,"victory":victory,"seconds":elapsed,
 		"tangseng_hp":_hp(_record("tangseng")),"fallen":fallen,"result_count":result_count,"metrics":metrics.duplicate(true)}
 
 func _notice(value: String) -> void:
