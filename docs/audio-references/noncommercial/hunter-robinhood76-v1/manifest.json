@@ -1,0 +1,45 @@
+{
+  "status": "NONCOMMERCIAL REFERENCE ONLY; commercial permission unresolved; not approved for game integration",
+  "source_title": "02658 single arrows.wav",
+  "author": "Robinhood76",
+  "source_page": "https://freesound.org/people/Robinhood76/sounds/126464/",
+  "license": "CC BY-NC 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "checked_date": "2026-10-09",
+  "source_kind": "Public HQ MP3 preview; not original authenticated WAV download",
+  "download_url": "https://cdn.freesound.org/previews/126/126464_321967-hq.mp3",
+  "source_sha256": "ceb5376c84103bb455f47b063bf930c5da3caf9721b915586567b58bb85c4e29",
+  "decoded_sha256": "7c85328dd40083cb85066d37304901cbdab1da7a1b12cdf03caddc93e5f05a4f",
+  "source_duration": 5.041360544217687,
+  "format": "44100Hz stereo 16bit PCM WAV",
+  "changes": "Extract first launch transient of each of three shots before later impact; 2ms fade in/12ms fade out; peak -11dBFS. No pitch/time change or synthesized layers.",
+  "entries": [
+    {
+      "file": "hunter_launch_01.wav",
+      "source_start": 0.27,
+      "source_end": 0.425,
+      "later_impact_transient_approx": 0.49,
+      "duration": 0.15498866213151927,
+      "peak_dbfs": -11.000260703669154,
+      "sha256": "dfa227ee585f765b9a3061f3d81216c142361af4e6ae86d415ff75ffe92298f0"
+    },
+    {
+      "file": "hunter_launch_02.wav",
+      "source_start": 1.955,
+      "source_end": 2.085,
+      "later_impact_transient_approx": 2.12,
+      "duration": 0.12997732426303854,
+      "peak_dbfs": -11.000260703669154,
+      "sha256": "6936dbe90b719c90d1dfa8900fc1736ca1bda035b767931d00e67e94027ac9a7"
+    },
+    {
+      "file": "hunter_launch_03.wav",
+      "source_start": 3.465,
+      "source_end": 3.615,
+      "later_impact_transient_approx": 4.25,
+      "duration": 0.15002267573696146,
+      "peak_dbfs": -11.000260703669154,
+      "sha256": "c06b2120a466d2b4d7cead465947207c4610ec08b2c3b2275ee31ba6ec146321"
+    }
+  ]
+}
