@@ -1,5 +1,15 @@
 # 06｜程序开发
 
+## 2026-10-09 D004 熊山君待机帧局部朝向修复（作者无窗口定向验证完成，待07复核）
+
+- 更新时间/范围：2026-10-09，00放行`62c4b39`，开始Local干净、master/origin 0/0，fetch确认无新差异。只读最新D004/06及直接程序；只查看授权的一张`bear_lord/nine_sols_v1/body-atlas.png`，确认0帧源左。既有manifest整套right标签与开场逻辑facing−1导致0帧物理右向；不据此将1—4帧统一改向，不修改PNG/shared manifest/shared Presentation、旧模式、D002数值/配置版本或寻路/选敌/胜败。
+- 已完成：新增board-only `board_trial_bear_view.gd`（RULE `bear-frame0-source-left-d004`），BoardEnemy.setup只在熊初始化时替换View并保foot_anchor0/HUD/层级。visual_transform先取原实现，仅bear实际frame_index0且motion_frame<0翻绘图X基列，保Y/origin、逻辑facing/attack_direction/socket、所有动作/伤害时钟；不是按pose==idle硬判，原攻击前0.102秒/后0.718秒起使用0帧的起手/收势也正确适配。开场/无目标等待/换阵/重试0帧显示朝左，有右侧实际行动目标时仍逻辑/画面右向；非0帧沿原变换，不固定全程左或双镜像。
+- 头像条件核实/待总控同步：00交接“默认不镜像”与运行事实有冲突，修前敌情和选中熊头像都实际mirrored=true；无窗口原始像素逐字节核实idle.png与atlas0完全相同，且最终source/PCK导入纹理也验证一致，证明同一左源/right标签缺陷影响两处头像，满足D004条件修复授权。只给本棋盘Portrait.idle_source_left加入bear，敌情行共用该helper，保原裁切/纹理/其他头像，当前两个敌方头像保原生左源不镜像；未查看第二张图片/改素材，不把mirror flag单独当视觉验收证据。
+- 定向验证：新增standalone `tests/board_trial_bear_facing_test.gd`，最终source及实际PCK各完整执行18帧/左右矩阵、4真实活动、2自然局，failures0且数量断言通过。矩阵含idle/呼吸、move1、攻击起手0/攻击2/收势0、hit3、retreat4，核只0帧X翻/脚点Y和origin/socket/播放字段不变，所有其他12演员原变换（含原药灵例外/棍僧新样板）保持，实际legacy bear仍用共享View/原矩阵。四活动为熊左右实际0.25半格/0.50落格及唯一双端占用、左右真实攻击按0.25/1.45秒起攻两次原20伤害/棍270HP、暂停冻结、真死亡释放/淡出free后详情缓存、重试正确新View/默认左；隔离杀其他Actor明确是夹具，不当自然难度证据。
+- 战果/包：只复跑当前熊A/R真实全AI自然局，完整report/参数/metrics/攻击时刻与已提交D002原报告逐字段相等：A18.616667秒胜/唐148/狐亡、R25.416667胜/唐168/棍雀狐亡；未调数值或硬保结果，未重跑无关24/27/60全套。最终临时`/tmp/board-bear-facing-20261009.pck` SHA256 `f254949659bcadacef12ba3b01228e7a682b9ee675d30682ed66352f4905bb0c`，实际269项资源策略通过（新adapter gd remap/gdc增加2），包内实际生成新BearView/RULE、全部定向活动和两完整自然report通过，测试/证据/Spine不入包。必要source/pack JSON与清单已保存，不强保旧267项或只看资源列表当行为通过。
+- 修改文件/失败：本批16自有文件：BearView、BoardEnemy、Portrait、UI四程序及inspect_godot_pck、README/本工作流、新定向测试、source/pack两JSON、1包清单、5必要首次/最终日志（`tests/board-trial-runtime/board-bear-facing-20261009-*`）；未写全局/其他工作流或共享素材。首次临时像素核对在SceneTree._initialize未等ready触发audio_feedback Nil，停止仅该自启headless CLI、改deferred后实际证明同源/两镜像；首轮专项错误在DEPLOY调用retry（本应无操作）与英雄不存在的dead字段导致5失败/脚本提前返回，不当通过，修成真实换阵reset及take_damage原API、保全部核心断言后完整source/pack通过。首次与最终日志保留，最终专项/导出无script/解析/资源错误，原macOS证书/编辑器设置权限日志仍保留。
+- 新确认/未验/阻塞/下一步：只落实负责人D004局部朝向要求，无新增美术/动作方向/玩法决定。辅助只读审查生命周期/变换与同源头像条件，无生产必修。当前没有代码阻塞；窗口/鼠标许可依旧待负责人回答，无GUI、截图/连续采样，不将一张源图＋几何矩阵称实机像素/动画质量全部通过，也不关闭D002/D003旧滑步/握距/P3/正常输入/05视觉/Windows限制。按持续授权仅提交本批自有文件推Gitee，交干净Local/Git给00，再由00放行07短独立复核与负责人重启体验，不自行唤醒05/07、生成媒体或开新批。
+
 总控同步标记（2026-10-09 D002/D003无窗口收束）：c6c56d0实现与07独立3da136e无窗口限定通过、三配置/新旧显示/267项包及GUI待许可已汇总PROJECT_STATE和两决策。下文待总控同步已接收，无本阶段生产必修；正常输入/当前视觉/独立全验与正式平衡未完成，旧视觉/P3不关闭。当前已派发阶段收束后巡检暂停等负责人许可，剩余图形采样须00正式放行，不自行恢复窗口测试或新批次。
 
 ## 2026-10-09 D002/D003 敌人强化＋熊山君／棍僧样板迁移（无窗口阶段交接，图形与独立验收待安排）

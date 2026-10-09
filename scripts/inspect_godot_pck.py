@@ -12,6 +12,7 @@ REQUIRED_RELEASE_FILES = (
     "scripts/combat/board_trial_melee.gd.remap",
     "scripts/combat/board_trial_stepwise.gd.remap",
     "scripts/presentation/board_trial_healer_view.gd.remap",
+    "scripts/presentation/board_trial_bear_view.gd.remap",
     "scripts/presentation/board_trial_monk_view.gd.remap",
     "art/boards/formation_trial_v2/board-courtyard.png.import",
     "scripts/presentation/board_trial_ui.gd.remap",

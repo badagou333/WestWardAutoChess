@@ -1,0 +1,51 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+ERROR: retry left-source idle is physically left with logical enemy facing -1
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_bear_facing_test.gd:17)
+       [1] defaults (res://tests/board_trial_bear_facing_test.gd:65)
+       [2] geometry (res://tests/board_trial_bear_facing_test.gd:101)
+       [3] run (res://tests/board_trial_bear_facing_test.gd:182)
+SCRIPT ERROR: Invalid assignment of property or key 'dead' with value of type 'bool' on a base object of type 'Node2D (board_trial_hero.gd)'.
+   at: isolate (res://tests/board_trial_bear_facing_test.gd:108)
+   GDScript backtrace (most recent call first):
+       [0] isolate (res://tests/board_trial_bear_facing_test.gd:108)
+       [1] action (res://tests/board_trial_bear_facing_test.gd:118)
+       [2] run (res://tests/board_trial_bear_facing_test.gd:183)
+ERROR: actual bear damage/HP unchanged, not just rendered frame
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_bear_facing_test.gd:17)
+       [1] action (res://tests/board_trial_bear_facing_test.gd:134)
+       [2] run (res://tests/board_trial_bear_facing_test.gd:183)
+ERROR: actual bear death still releases combat and gives one true victory
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_bear_facing_test.gd:17)
+       [1] action (res://tests/board_trial_bear_facing_test.gd:144)
+       [2] run (res://tests/board_trial_bear_facing_test.gd:183)
+SCRIPT ERROR: Invalid assignment of property or key 'dead' with value of type 'bool' on a base object of type 'Node2D (board_trial_hero.gd)'.
+   at: isolate (res://tests/board_trial_bear_facing_test.gd:108)
+   GDScript backtrace (most recent call first):
+       [0] isolate (res://tests/board_trial_bear_facing_test.gd:108)
+       [1] action (res://tests/board_trial_bear_facing_test.gd:118)
+       [2] run (res://tests/board_trial_bear_facing_test.gd:184)
+       [3] action (res://tests/board_trial_bear_facing_test.gd:155)
+ERROR: actual bear damage/HP unchanged, not just rendered frame
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_bear_facing_test.gd:17)
+       [1] action (res://tests/board_trial_bear_facing_test.gd:134)
+       [2] run (res://tests/board_trial_bear_facing_test.gd:184)
+       [3] action (res://tests/board_trial_bear_facing_test.gd:155)
+ERROR: actual bear death still releases combat and gives one true victory
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_bear_facing_test.gd:17)
+       [1] action (res://tests/board_trial_bear_facing_test.gd:144)
+       [2] run (res://tests/board_trial_bear_facing_test.gd:184)
+       [3] action (res://tests/board_trial_bear_facing_test.gd:155)
+BOARD_BEAR_FACING matrices=18 activities=2 natural=2 failures=5

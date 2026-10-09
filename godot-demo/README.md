@@ -22,6 +22,8 @@ godot --path godot-demo res://scenes/board_trial.tscn
 
 独立入口，不替换默认护送；仅一关、公开固定敌阵，无经营/营地/人口上限/主动技能。默认为加强六怪＋一只现有熊山君，棍僧默认采用此前无棋盘试接的13帧样板；左侧“对照选项”可战前选择原六怪／强化六怪／强化＋熊，棍僧新旧显示可在部署、战斗、暂停、结果阶段切换。切换显示不重新开局或改变战斗，敌人配置开战后锁定，重试保留配置及显示选项。请自行关闭旧试玩窗口再重开此入口，旧进程不会自动更新。未采用05独立棋盘预览、山狼失败稿或狐火Spine候选，没有制作新媒体或Boss技能。本批作者无窗口自测已完成，图形输入/实际像素和05/07独立验收仍待安排。
 
+2026-10-09 D004待机朝向小修：熊山君atlas0实际源左，却被整套manifest的right标签误镜像成右；仅当前棋盘`board_trial_bear_view.gd`在实际取0帧时修正绘图X轴，包含攻击起手/收势用0帧的阶段。开场/无目标等待/重试逻辑敌方向左，0帧正确显示左向；实际目标在右时仍可转右，不锁死方向。1—4帧原变换、逻辑facing、脚点/socket、所有时钟/数值/寻路与旧模式不改。敌情/详情头像修前也实际镜像，且无窗口逐字节核实idle.png与atlas0完全相同，因此同一缺陷的两处头像按原生左源显示；未重画或改共享manifest。18帧/朝向矩阵、4真实移动/攻击/暂停/死亡重试活动与熊A/R两局完整报告均通过，包内同一专项也通过；A18.617秒/唐148、R25.417秒/唐168与原D002完整report一致。当前临时包为`/tmp/board-bear-facing-20261009.pck`，实际269项含新适配，资源策略通过；紧凑证据`tests/board-trial-runtime/board-bear-facing-20261009-{source,pack}.json`。只看过授权的一张源atlas，无图形窗口/鼠标/截图，几何与源像素事实不冒充实机连续视觉验收；待07本小修独立复核，原GUI/05视觉/P3待验保持。
+
 表现采用说明：唯一运行底图`art/boards/formation_trial_v2/board-courtyard.png`（1672×941）映射到`Rect(0,-12,1920,1128)`，画布裁到1920×1080；仅背景纵向拉伸/裁剪，棋盘、角色及输入不动。旧v1保留，不把生成概念整图用作UI。底图来源、映射与样式权威见[05 v2交接](art/boards/formation_trial_v2/README.md)和`integration.json`；程序独立UI/真实头像裁切/细血量条在`scripts/presentation/board_trial_{ui,portrait,meter}.gd`，配色及场上HUD在`board_trial_style.gd`。头像只裁当前production/idle.png，不采用错误人脸/漂移头像/虚构防御或概念数值。重要正文22—24、次级18—20逻辑像素。
 
 界面：顶栏为唐僧实时HP、阶段、计时、暂停/倍速/帮助；左窄A/B/C、对照选项和短键鼠提示；右上按所选配置显示三／四类敌情动态数量，点类型可轮看同类，E1—E6及熊E7可直接看具体单位，右下显示选中实时HP/攻或疗/间隔/射程/目标编号/格位/状态，仅己方战前显示可用R撤下。底部六个真实头像卡含编号/姓名/HP细条/部署或战斗状态，右下主开始/次重试；结果后主按钮查看战果，完整六人伤害/治疗/阵亡统计可关闭并重开。帮助按需展开，遮挡时不向棋盘/按钮透传鼠标或部署键，Esc关闭；不强制暂停自动战斗。操作失败原因短时在棋盘下方显示，不常驻版本号或大段规则。原点放/拖放/交换/取消语义保持。
@@ -68,7 +70,7 @@ D-004药灵例外由实际像素而非错误shared manifest/right决定：atlas0
 
 棍僧样板只取`art/reviews/animation-samples-20261004/guard_monk/{manifest.json,body-atlas.png}`：3328×256、13个256格、源右、脚点(128,218)，当前演员0.72/脚底原点不改。idle0/1/0，walk2—5各0.125秒与真实0.50格段同步，attack6—9/0、hit10/0、death11/12单次淡出；共享攻击0.54秒、0.235秒接触阈值/帧8及每serial一次14伤害不改。专用board monk view适配真实格段与hitstop后的步态，切换不重建View、不消费姿势边界或重置时钟。6组真实活动夹具和三配置ABC的9组旧/新/120FPS×2＋暂停反复切换、共27自然局完整战果相同，见[动画技术报告](tests/board-trial-runtime/board-monk-sample-20261009.json)。
 
-最终临时PCK实际包含熊idle和13帧样板、新View/标签，267项资源策略通过、五入口启动通过；包内三配置A/B/C/R旧/新显示共24局完整报告与源码一致，含暂停/切换/重试与熊死亡节点释放后的详情，见[包内运行报告](tests/board-trial-runtime/board-balance-20261009-pack.json)。这些是作者无窗口运行，不是渲染/视觉或07独立通过。当前GUI许可仍等待负责人本人回答，未开图形窗口、采截图/连续片段或执行已适配的输入专项；旧支撑脚滑移、握距/站姿跳变及review WebP导入P3未关闭，05实机视觉、07本提交独立验收、真人手感与Windows仍待。详情/参数正确不证明新布局可读性已通过。
+D002/D003当批最终临时PCK实际包含熊idle和13帧样板、新View/标签，267项资源策略通过、五入口启动通过；包内三配置A/B/C/R旧/新显示共24局完整报告与源码一致，含暂停/切换/重试与熊死亡节点释放后的详情，见[包内运行报告](tests/board-trial-runtime/board-balance-20261009-pack.json)。随后07在3da136e独立无窗口阶段通过，不是渲染/视觉或整体验收通过；新D004包项数以上方实际清单为准。当前GUI许可仍等待负责人本人回答，未开图形窗口、采截图/连续片段或执行已适配的输入专项；旧支撑脚滑移、握距/站姿跳变及review WebP导入P3未关闭，05实机视觉、正常输入、真人手感与Windows仍待。详情/参数正确不证明新布局可读性已通过。
 
 ### 历史D001：落格换敌（以下为旧六怪原数值证据）
 
@@ -197,6 +199,7 @@ D-007初阵依次唐僧(2,4)、棍僧(4,4)、猎户(2,3)、山雀(3,4)、药灵(
 验证入口（所有图形专项须串行独占窗口/鼠标，保持正常生产逐帧，非人工OS验收）：
 
 ```sh
+godot --headless --path godot-demo --script res://tests/board_trial_bear_facing_test.gd
 godot --headless --path godot-demo --script res://tests/board_trial_enemy_profiles_test.gd
 godot --headless --path godot-demo --script res://tests/board_trial_balance_20261009_test.gd
 godot --headless --path godot-demo --script res://tests/board_trial_monk_sample_test.gd

@@ -262,7 +262,7 @@ func refresh() -> void:
 		alive_count += living
 		enemy_names[index].text = ["山狼","山猪","灰鼠","熊山君"][index]
 		enemy_counts[index].text = "存活 %d / %d" % [living,members.size()]
-		if enemy_portraits[index].role.is_empty(): enemy_portraits[index].setup(key,members[0].visual_manifest.get("source_facing","right")=="left",false)
+		if enemy_portraits[index].role.is_empty(): enemy_portraits[index].setup(key,Portrait.idle_source_left(key,members[0].visual_manifest),false)
 	enemies_label.text = "敌情 · 存活 %d / %d" % [alive_count,game.actors.filter(func(item): return not item.friendly).size()]
 	var actor: Dictionary = game._record(game.selected)
 	withdraw_button.visible = not actor.is_empty() and actor.friendly
