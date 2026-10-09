@@ -134,7 +134,7 @@ func movement_fixture(id: String, vertical: bool) -> void:
 	game.free()
 
 func run() -> void:
-	check(Config.VERSION=="board-v2-uniform-move" and is_equal_approx(Config.MOVE_SECONDS_PER_CELL,0.5),"uniform movement has its independent configuration version and 0.5-second default")
+	check(Config.VERSION=="board-v3-stepwise" and is_equal_approx(Config.MOVE_SECONDS_PER_CELL,0.5),"current stepwise config retains the shared 0.5-second movement default")
 	roster_lifecycle()
 	for id in UNIFORM_MOVERS:
 		movement_fixture(id,false)

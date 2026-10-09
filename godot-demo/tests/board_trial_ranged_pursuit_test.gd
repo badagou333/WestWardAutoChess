@@ -25,15 +25,24 @@ class AuditedBoard:
 		if actor.id!=observed_key and actor.id!="E5": return
 		if not before_move.is_empty() and (actor.move!=before_move or actor.target!=before_target): violations.append(actor.id+" changes its in-flight move/target in brain")
 		if before_pose=="basic_attack" and actor.target!=before_target: violations.append(actor.id+" changes target during attack activity")
-		if before_move.is_empty() and not actor.move.is_empty():
-			if Config.distance(actor.move.from,actor.move.to)!=1 or not Config.valid(actor.move.to): violations.append(actor.id+" issues non-neighbor/outside move")
-			if not _occupant(actor.move.to,actor.id).is_empty(): violations.append(actor.id+" claims another body's reservation")
-			moves.append({"time":elapsed,"id":actor.id,"from":[actor.move.from.x,actor.move.from.y],"to":[actor.move.to.x,actor.move.to.y],"target":actor.target})
 		if metrics.attack_times.get(actor.id,[]).size()>before_attacks:
 			var target: Dictionary = _record(actor.target)
 			var distance: int = Config.distance(actor.cell,target.cell) if _active(target) else -1
 			if not actor.move.is_empty() or distance<0 or distance>actor.reach: violations.append(actor.id+" attacks outside real range or during a move")
 			shots.append({"time":elapsed,"id":actor.id,"target":actor.target,"range":distance,"cell":[actor.cell.x,actor.cell.y]})
+	func _move(actor: Dictionary, next: Vector2i) -> bool:
+		# A production tick now commits collected requests after ALL brains.
+		# Audit the actual commit rather than assuming the brain starts movement.
+		var before_move: Dictionary = actor.move.duplicate(true)
+		var owner_before: Dictionary = _occupant(next,actor.id)
+		var committed: bool = super._move(actor,next)
+		if not committed or (actor.id!=observed_key and actor.id!="E5"): return committed
+		if not before_move.is_empty(): violations.append(actor.id+" replaces an in-flight segment during movement commit")
+		if Config.distance(actor.move.from,actor.move.to)!=1 or not Config.valid(actor.move.to): violations.append(actor.id+" issues non-neighbor/outside move")
+		if not owner_before.is_empty(): violations.append(actor.id+" claims another body's reservation")
+		if not _occupant(actor.move.to,actor.id).is_empty(): violations.append(actor.id+" destination is shared after movement commit")
+		moves.append({"time":elapsed,"id":actor.id,"from":[actor.move.from.x,actor.move.from.y],"to":[actor.move.to.x,actor.move.to.y],"target":actor.target})
+		return committed
 	func _resolve(target, amount: float, healing: bool, event: Dictionary) -> void:
 		var source: Dictionary = _by_node(event.source)
 		if not source.is_empty() and source.id==observed_key and not healing: resolved_amounts.append(amount)

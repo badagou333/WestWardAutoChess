@@ -2,6 +2,7 @@ extends "res://tests/board_trial_ai_test.gd"
 ## Isolated D-007 decisions plus an independent LIVE-AI road-release fixture.
 ## Does not replace full twelve-actor natural-deployment evidence.
 const Melee = preload("res://scripts/combat/board_trial_melee.gd")
+const Stepwise = preload("res://scripts/combat/board_trial_stepwise.gd")
 const ENEMY_IDS := ["E1","E2","E3","E4"]
 var dynamic_reports := []
 
@@ -102,7 +103,7 @@ func strict_cost_and_scan() -> void:
 		check(game._path(enemy,Vector2i(5,3),1).size()==2 and game._path(enemy,Vector2i(3,5),1).size()==2,"both real fresh attack costs are one, stale cache cost is three")
 		game._brain(enemy,Config.STEP)
 		check(enemy.target=="wild_hunter",id+" equal fresh cost keeps old target even though alternative has smaller ID and stale cache is longer")
-		check(enemy.route==[Vector2i(3,3),Vector2i(4,3)],id+" same-target stale detour is separately shortened without tie target switch")
+		check(enemy.route.is_empty() and enemy.move.get("to")==Vector2i(4,3),id+" same-target stale detour cannot constrain the current optimal first step")
 		game.free()
 
 func route_comparisons() -> void:
@@ -116,16 +117,14 @@ func route_comparisons() -> void:
 			elif kind=="trim": enemy.route = [Vector2i(2,3),Vector2i(3,3),Vector2i(4,3),Vector2i(5,3)]
 			else: enemy.route = [Vector2i(3,3),Vector2i(3,4)]
 			enemy.route_goal = target.cell
-			var cached: Array = enemy.route.duplicate()
-			var fresh_route: Array = game._path(enemy,target.cell,enemy.reach)
-			if kind=="trim": cached.pop_front()
+			# Historical caches are deliberate input, not an expected current route.
+			var options: Array = Stepwise.candidates(game,enemy,target)
+			check(not options.is_empty(),id+" route "+kind+" has current optimal first-step candidates")
 			if kind=="invalid": check(not Melee.route_valid(game,enemy,target),id+" invalid short cached endpoint really is outside attack range")
 			game._brain(enemy,Config.STEP)
 			check(enemy.target==target.id,id+" route "+kind+" test cannot be hidden by target replacement")
-			if kind in ["equal","trim"]:
-				check(enemy.route==cached and enemy.move.to==Vector2i(4,3),id+" "+kind+" keeps valid equally short non-BFS-first route after completed-prefix trim")
-			else:
-				check(enemy.route==fresh_route and enemy.move.to==Vector2i(4,3),id+" "+kind+" replaces route with true fresh attack route")
+			check(enemy.route.is_empty() and enemy.route_goal==Vector2i(-1,-1),id+" "+kind+" historical endpoint is cleared at current decision")
+			check(not enemy.move.is_empty() and not options.is_empty() and enemy.move.get("to")==options[0].cell,id+" "+kind+" commits latest complete-search best first step")
 			game.free()
 
 func handoff_policy() -> void:
@@ -203,23 +202,23 @@ func dynamic_road_release(id: String, fps: int, sim_speed: int) -> Dictionary:
 	enemy.route = initial_route.duplicate()
 	enemy.route_goal = target.cell
 	game._brain(enemy,Config.STEP)
-	check(enemy.target==target.id and enemy.move.to==Vector2i(6,1),id+" first real segment follows detour while road is reserved")
+	var waited: Dictionary=enemy.step_wait.duplicate(true)
+	check(enemy.target==target.id and enemy.move.is_empty() and waited=={"blocker":blocker.id,"serial":blocker.step_serial},id+" waits for actual road-source release instead of taking the slower historical detour")
 	game.speed = sim_speed
 	# Every surviving actor's actual _brain runs in each production _tick.
 	# No target/opponent is stopped, overwritten, or ticked only on demand here.
-	while enemy.move_completed<1 and game.phase==game.Phase.BATTLE and game.elapsed<3:
+	while enemy.move.is_empty() and game.phase==game.Phase.BATTLE and game.elapsed<3:
 		game.step(1.0/fps)
 		ownership(game)
-	var old_remaining: Array = initial_route.slice(1)
-	var probe: Dictionary = enemy.duplicate(false)
-	probe.route = old_remaining
 	var fresh_route: Array = game._path(enemy,target.cell,enemy.reach)
-	check(enemy.move_completed==1 and enemy.cell==Vector2i(6,1),id+" real enemy completes only its first segment before road-shortening inspection")
+	check(enemy.move_completed==0 and enemy.cell==Vector2i(6,0) and enemy.move.get("to")==Vector2i(5,0),id+" first actual enemy segment starts directly into the truly released source")
 	check(blocker.move_completed>=1 and blocker.move_serial>=2,"road blocker completes observed segment and keeps running its own movement AI")
 	check(target.cell==Vector2i(3,0) and target.target==holder.id and game._best_target(enemy).id==target.id,"same live target is still best; changing target cannot hide shortening failure")
-	check(Melee.route_valid(game,probe,target) and old_remaining.size()==6,"five-step remaining old route is still physically valid after road release")
-	check(fresh_route.size()==4 and enemy.route==fresh_route and enemy.move.to==Vector2i(6,0),id+" live road release strictly shortens same-target valid cache from five to three steps")
-	var report := {"id":id,"fps":fps,"speed":sim_speed,"same_target":enemy.target,"first_boundary":game.elapsed-float(enemy.move.time),"current":[enemy.cell.x,enemy.cell.y],"next":[enemy.move.to.x,enemy.move.to.y],"cached_remaining_cost":old_remaining.size()-1,"fresh_cost":fresh_route.size()-1,"route":enemy.route.map(func(cell): return [cell.x,cell.y]),"blocker_completed":blocker.move_completed,"blocker_serial":blocker.move_serial}
+	check(is_equal_approx(game.elapsed-float(enemy.move.get("time",0.0)),Config.MOVE_SECONDS_PER_CELL) and blocker.step_completed==waited.serial,id+" source release wakes waiting enemy at the real 0.5-second boundary")
+	check(fresh_route.size()==3 and enemy.route.is_empty(),id+" live road release creates the current direct two-step attack route without cached-endpoint commitment")
+	check(game._occupant(enemy.cell,blocker.id).id==enemy.id and game._occupant(Vector2i(5,0),blocker.id).id==enemy.id,id+" direct committed segment preserves both endpoint locks")
+	var issued_to: Vector2i=enemy.move.get("to",enemy.cell)
+	var report := {"id":id,"fps":fps,"speed":sim_speed,"same_target":enemy.target,"first_boundary":game.elapsed-float(enemy.move.get("time",0.0)),"current":[enemy.cell.x,enemy.cell.y],"next":[issued_to.x,issued_to.y],"old_static_cost":initial_route.size()-1,"fresh_cost":fresh_route.size()-1,"waited":waited,"route":enemy.route.map(func(cell): return [cell.x,cell.y]),"blocker_completed":blocker.move_completed,"blocker_serial":blocker.move_serial}
 	game.free()
 	return report
 

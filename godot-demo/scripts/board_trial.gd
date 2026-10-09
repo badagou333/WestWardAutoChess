@@ -3,6 +3,7 @@ extends Node2D
 const Config = preload("res://scripts/data/board_trial_config.gd")
 const Space = preload("res://scripts/combat/board_trial_space.gd")
 const Melee = preload("res://scripts/combat/board_trial_melee.gd")
+const Stepwise = preload("res://scripts/combat/board_trial_stepwise.gd")
 const Hero = preload("res://scripts/presentation/board_trial_hero.gd")
 const Enemy = preload("res://scripts/presentation/board_trial_enemy.gd")
 const Core = preload("res://scripts/board_trial_core.gd")
@@ -27,6 +28,8 @@ var paused := false
 var speed := 1
 var elapsed := 0.0
 var accumulator := 0.0
+var collecting_steps := false
+var step_requests: Array[Dictionary] = []
 var victory := false
 var result_count := 0
 var metrics := {}
@@ -81,6 +84,8 @@ func _reset_roster() -> void:
 	for actor in actors:
 		if is_instance_valid(actor.node): actor.node.free()
 	actors.clear()
+	step_requests.clear()
+	collecting_steps = false
 	for key in Config.FRIENDS:
 		var node = Core.new() if key=="tangseng" else Hero.new()
 		if key!="tangseng": node.setup(key)
@@ -130,6 +135,8 @@ func _register(id: String, key: String, node, friendly: bool, cell: Vector2i) ->
 		"dead":false,"target":"","mode":"驻留","think":0.0,"cooldown":0.0,"move":{},
 		"route":[],"route_goal":Vector2i(-1,-1),"blocked":false,"blocked_elapsed":0.0,"progress_time":-1.0,
 		"handoff":{},"move_serial":0,"move_completed":0,
+		"step_age":-1.0,"step_hint":Vector2i(-1,-1),"step_target":"",
+		"step_wait":{},"step_wait_reason":"","step_serial":0,"step_completed":0,
 		"hp_max":node.max_health,"damage":node.damage,"interval":node.attack_interval,
 		"reach":node.attack_range_cells,"walk":node.move_interval,"name":node.display_name})
 
@@ -219,14 +226,26 @@ func _occupant(cell: Vector2i, excluded := "") -> Dictionary:
 func _path(actor: Dictionary, goal: Vector2i, reach: int) -> Array[Vector2i]:
 	return Space.path(actor.cell,goal,reach,func(cell): return not _occupant(cell,actor.id).is_empty())
 
+func _pursuit_path(actor: Dictionary, target: Dictionary) -> Array[Vector2i]:
+	var path := _path(actor,target.cell,actor.reach)
+	if not path.is_empty(): return path
+	# A blocked live activity is temporary, rather than an invalid combat lock.
+	var options := Stepwise.candidates(self,actor,target)
+	if not options.is_empty(): return options[0].path
+	var empty: Array[Vector2i]=[]
+	return empty
+
 func _mobile_ranged(actor: Dictionary) -> bool:
 	return actor.friendly and actor.key in ["wild_hunter","sparrow_spirit","foxfire_imp"]
+
+func _step_mobile(actor: Dictionary) -> bool:
+	return Melee.applies(actor) or _mobile_ranged(actor) or (not actor.friendly and actor.key=="rat")
 
 func _target_legal(actor: Dictionary, target: Dictionary) -> bool:
 	if not _active(target) or actor.friendly==target.friendly: return false
 	if actor.friendly and not Melee.applies(actor) and not _mobile_ranged(actor):
 		return Config.distance(actor.cell,target.cell)<=actor.reach
-	return not _path(actor,target.cell,actor.reach).is_empty()
+	return not _pursuit_path(actor,target).is_empty()
 
 func _best_target(actor: Dictionary) -> Dictionary:
 	var best := {}
@@ -235,7 +254,7 @@ func _best_target(actor: Dictionary) -> Dictionary:
 		if not _target_legal(actor,target): continue
 		var distance: int = Config.distance(actor.cell,target.cell)
 		if not actor.friendly or actor.key=="guard_monk" or _mobile_ranged(actor):
-			var path := _path(actor,target.cell,actor.reach)
+			var path := _pursuit_path(actor,target)
 			if path.is_empty(): continue
 			distance = path.size()-1
 		if distance<score or (distance==score and (best.is_empty() or target.id<best.id)):
@@ -258,6 +277,7 @@ func _healing_target(actor: Dictionary) -> Dictionary:
 	return candidates[0] if not candidates.is_empty() else {}
 
 func _attack(actor: Dictionary, target: Dictionary, healing := false) -> void:
+	_clear_step_request(actor)
 	if actor.cooldown>0.00000001 or actor.node.presentation.pose=="basic_attack": return
 	actor.cooldown = actor.interval
 	combat.request(actor.node,target.node,healing,actor.key=="foxfire_imp")
@@ -266,16 +286,71 @@ func _attack(actor: Dictionary, target: Dictionary, healing := false) -> void:
 	if not metrics.first_engagement.has(actor.id): metrics.first_engagement[actor.id] = {"target":target.id,"time":elapsed,"healing":healing}
 
 func _move(actor: Dictionary, next: Vector2i) -> bool:
-	if not _active(actor) or not Config.valid(next) or not actor.move.is_empty(): return false
+	if not _active(actor) or not Config.valid(next) or not actor.move.is_empty() or actor.node.presentation.pose=="basic_attack": return false
 	if Config.distance(actor.cell,next)!=1 or not _occupant(next,actor.id).is_empty(): return false
 	if actor.friendly and not Melee.applies(actor) and not _mobile_ranged(actor) and Config.distance(actor.anchor,next)>Config.LEASH: return false
 	actor.move = {"from":actor.cell,"to":next,"time":0.0,"duration":actor.walk}
+	actor.step_serial += 1
 	if Melee.applies(actor):
 		actor.move_serial += 1
 		actor.handoff = {}
 	actor.node.presentation.face(Config.center(next)-actor.node.position)
 	actor.node.presentation.move_to(Vector2.ZERO)
 	return true
+
+func _clear_step_request(actor: Dictionary) -> void:
+	actor.step_age = -1.0
+	actor.step_wait = {}
+	actor.step_wait_reason = ""
+
+func _request_step(actor: Dictionary) -> void:
+	if not _active(actor) or not _step_mobile(actor) or not actor.move.is_empty() or actor.node.presentation.pose=="basic_attack": return
+	var target: Dictionary=_record(actor.target)
+	if not _active(target) or Config.distance(actor.cell,target.cell)<=actor.reach: return
+	if actor.step_target!=target.id:
+		_clear_step_request(actor)
+		actor.step_hint=Vector2i(-1,-1)
+		actor.step_target=target.id
+	if actor.step_age<0: actor.step_age=elapsed
+	for pending in step_requests:
+		if pending.actor.id==actor.id: return
+	step_requests.append({"actor":actor,"target":target,"options":Stepwise.candidates(self,actor,target)})
+	if not collecting_steps: _dispatch_steps() # Explicit single-brain boundary calls.
+
+func _dispatch_steps() -> void:
+	step_requests.sort_custom(func(a,b):
+		return a.actor.step_age<b.actor.step_age if a.actor.step_age!=b.actor.step_age else a.actor.id<b.actor.id)
+	# Mutual waiting must see activities that existed before THIS batch, not a
+	# new segment just committed by an earlier winner in the request order.
+	for request in step_requests:
+		request.handoff=Melee.applies(request.actor) and Melee.boundary_wait(self,request.actor,request.target)
+	for request in step_requests:
+		var actor: Dictionary=request.actor
+		var target: Dictionary=request.target
+		if not _active(actor) or not _step_mobile(actor) or not _active(target) or actor.target!=target.id or not actor.move.is_empty() or actor.node.presentation.pose=="basic_attack": continue
+		if Config.distance(actor.cell,target.cell)<=actor.reach:
+			_attack(actor,target)
+			continue
+		# All target intents have been formed before deciding mutual handoffs.
+		if request.handoff:
+			actor.step_wait_reason="接战格段交接"
+			continue
+		var committed := false
+		var wait := {}
+		for option in request.options:
+			if not _occupant(option.cell,actor.id).is_empty():
+				if wait.is_empty() and not option.wait.is_empty(): wait=option.wait
+				continue
+			if not _move(actor,option.cell): continue
+			actor.step_hint=option.path[2] if option.path.size()>2 else Vector2i(-1,-1)
+			_clear_step_request(actor)
+			committed=true
+			break
+		if not committed:
+			actor.step_wait=wait
+			actor.step_wait_reason="等待在途源格释放" if not wait.is_empty() else ("下一格竞争" if not request.options.is_empty() else "当前无通路")
+			actor.mode=actor.step_wait_reason+" → "+actor.target
+	step_requests.clear()
 
 func _brain(actor: Dictionary, delta: float) -> void:
 	actor.cooldown = maxf(0,actor.cooldown-delta)
@@ -306,13 +381,15 @@ func _brain(actor: Dictionary, delta: float) -> void:
 		target = _best_target(actor)
 	actor.target = target.get("id","")
 	if target.is_empty():
+		_clear_step_request(actor)
+		actor.step_target=""
+		actor.step_hint=Vector2i(-1,-1)
 		actor.mode = "无可达目标" if not actor.friendly else "等待 / 超射程"
 		return
 	actor.mode = "接敌 → "+target.id
 	if Config.distance(actor.cell,target.cell)<=actor.reach: _attack(actor,target)
 	elif not actor.friendly or _mobile_ranged(actor):
-		var path := _path(actor,target.cell,actor.reach)
-		if path.size()>1: _move(actor,path[1])
+		_request_step(actor)
 
 func _process(delta: float) -> void:
 	step(delta)
@@ -344,9 +421,10 @@ func _tick(delta: float) -> void:
 			actor.cell = actor.move.to
 			actor.node.position = Config.center(actor.cell)
 			actor.move = {}
+			actor.step_completed = actor.step_serial
+			actor.think = 0.0 # Every mobile role re-evaluates on its own landing.
 			if Melee.applies(actor):
 				actor.move_completed = actor.move_serial
-				actor.think = 0.0 # Segment boundary: range/handoff before the next move.
 	# Dead sources cannot complete pending effects in this trial; legacy untouched.
 	combat.strikes = combat.strikes.filter(func(event): return Events.alive(event.source) and Events.alive(event.target))
 	combat.missiles = combat.missiles.filter(func(event): return Events.alive(event.source) and Events.alive(event.target))
@@ -357,15 +435,28 @@ func _tick(delta: float) -> void:
 		actor.mode = "阵亡"
 		actor.target = ""
 		actor.move = {}
+		_clear_step_request(actor)
 		if Melee.applies(actor): Melee.release(actor)
 		if is_instance_valid(actor.node) and not actor.friendly:
 			actor.node.play_death()
 			audio_feedback.play_cue(actor.key+"_death")
+	collecting_steps = true
 	for actor in actors:
 		if _active(actor):
+			if not actor.handoff.is_empty():
+				var opponent: Dictionary=_record(actor.handoff.target)
+				if not _active(opponent) or opponent.move.is_empty() or opponent.move_completed>=actor.handoff.segment or opponent.target!=actor.id:
+					actor.think=0.0
+			if not actor.step_wait.is_empty():
+				var holder: Dictionary=_record(actor.step_wait.blocker)
+				if not _active(holder) or holder.move.is_empty() or holder.step_completed>=actor.step_wait.serial:
+					actor.step_wait={}
+					actor.think=0.0
 			actor.node.z_index = int(actor.node.position.y)
 			_brain(actor,delta)
 			if actor.target.is_empty() and actor.move.is_empty() and actor.node.presentation.pose=="idle": _default_face(actor.node,actor.friendly)
+	collecting_steps = false
+	_dispatch_steps()
 	_settle()
 
 func _default_face(node, friendly: bool) -> void:

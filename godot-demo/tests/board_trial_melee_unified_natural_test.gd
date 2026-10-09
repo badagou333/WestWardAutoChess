@@ -1,5 +1,7 @@
 extends "res://tests/board_trial_ranged_natural_test.gd"
 ## Current six natural cases; original fixed-anchor reports remain immutable.
+## Historical D-20261008-002 report runner. Current stepwise production uses
+## board_trial_stepwise_natural_test.gd; do not label its results with this old tag.
 const DELAY := [Vector2i(2,4),Vector2i(1,5),Vector2i(2,2),Vector2i(3,4),Vector2i(1,4),Vector2i(2,6)]
 var active_key := ""
 var pursuit := {}

@@ -1,6 +1,6 @@
 extends RefCounted
 ## D-20261007-001 / 01 a9f81fe. Prototype only; never changes legacy catalogs.
-const VERSION := "board-v2-uniform-move"
+const VERSION := "board-v3-stepwise"
 const COLS := 12
 const ROWS := 7
 const DEPLOY_COLS := 6

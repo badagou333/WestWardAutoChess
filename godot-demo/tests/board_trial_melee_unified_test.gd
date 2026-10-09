@@ -2,6 +2,7 @@ extends "res://tests/board_trial_ai_test.gd"
 ## D-20261008-002 mirrored equal-state boundary fixtures, not natural deployment runs.
 ## Decisions use production _brain; real completion/renewal uses production _tick.
 const Melee = preload("res://scripts/combat/board_trial_melee.gd")
+const Stepwise = preload("res://scripts/combat/board_trial_stepwise.gd")
 const ROLES := ["guard_monk","E1","E3"]
 const ORIGINAL := {"guard_monk":{"hp":310.0,"damage":14.0,"interval":1.15},"E1":{"hp":155.0,"damage":14.0,"interval":0.90},"E3":{"hp":96.0,"damage":10.0,"interval":1.10}}
 var evidence := []
@@ -74,7 +75,7 @@ func fresh_cost_and_routes(role: String, mirrored: bool) -> void:
 	ctx.source.route_goal = ctx.old.cell
 	check(ctx.near.id<ctx.old.id and ctx.game._path(ctx.source,ctx.old.cell,1).size()==2 and ctx.game._path(ctx.source,ctx.near.cell,1).size()==2,role+" equal fresh cost candidate has smaller ID and stale current cache is longer")
 	ctx.game._brain(ctx.source,Config.STEP)
-	check(ctx.source.target==ctx.old.id and ctx.source.route.size()==2,role+" equal fresh cost keeps old lock while independently shortening its detour")
+	check(ctx.source.target==ctx.old.id and ctx.source.route.is_empty() and ctx.source.move.get("to")==point(Vector2i(4,3),mirrored),role+" equal fresh target cost keeps old lock while stale route cannot constrain the optimal first step")
 	close_case(ctx,"equal_fresh_cost_not_cache_cost")
 	for kind in ["shorter","equal","trim","invalid"]:
 		ctx = context(role,mirrored)
@@ -88,13 +89,14 @@ func fresh_cost_and_routes(role: String, mirrored: bool) -> void:
 		else: cells = [Vector2i(3,3),Vector2i(3,4)]
 		ctx.source.route = route(ctx,cells)
 		ctx.source.route_goal = ctx.old.cell
-		var kept: Array = ctx.source.route.duplicate()
-		if kind=="trim": kept.pop_front()
-		var fresh_route: Array = ctx.game._path(ctx.source,ctx.old.cell,1)
+		# These intentionally injected pre-stepwise caches exercise migration:
+		# old endpoints never override the latest complete attack-position search.
+		var options: Array = Stepwise.candidates(ctx.game,ctx.source,ctx.old)
+		check(not options.is_empty(),role+" "+kind+" has a reachable current attack-position route")
 		ctx.game._brain(ctx.source,Config.STEP)
 		check(ctx.source.target==ctx.old.id,role+" route-only "+kind+" cannot be hidden by target replacement")
-		check(ctx.source.route==(kept if kind in ["equal","trim"] else fresh_route),role+" "+kind+" follows strict shorter/equal/trim/invalid cached-route rule")
-		check(not ctx.source.move.is_empty(),role+" cached route remains movable beyond old anchor2")
+		check(ctx.source.route.is_empty() and ctx.source.route_goal==Vector2i(-1,-1),role+" "+kind+" discards historical cached attack endpoint")
+		check(not ctx.source.move.is_empty() and not options.is_empty() and ctx.source.move.get("to")==options[0].cell,role+" "+kind+" commits current best legal first step beyond old anchor2")
 		close_case(ctx,"route_"+kind)
 
 func no_path_and_death(role: String, mirrored: bool) -> void:
@@ -181,8 +183,8 @@ func observed_segment(role: String, mirrored: bool) -> void:
 	close_case(ctx,"observed_complete_same_tick_renewal")
 
 func guard_road_release(fps: int, sim_speed: int) -> Dictionary:
-	# Live same-target fixture: a hunter really frees its reserved source before
-	# guard completes one original-speed segment, then dwells at real range3.
+	# Live same-target fixture: waiting for the hunter's actual source release
+	# reaches a current attack position sooner than taking the old static detour.
 	# All five survivors keep their production brains; CD100 is isolation only.
 	var game = fresh()
 	game.start_battle()
@@ -203,21 +205,21 @@ func guard_road_release(fps: int, sim_speed: int) -> Dictionary:
 	source.route=initial.duplicate()
 	source.route_goal=target.cell
 	game._brain(source,Config.STEP)
-	check(source.move.to==Vector2i(6,1),"guard starts the actual valid detour before release")
+	var waited: Dictionary=source.step_wait.duplicate(true)
+	check(source.target==target.id and source.move.is_empty() and waited=={"blocker":blocker.id,"serial":blocker.step_serial},"guard waits on actual hunter source release rather than the slower six-step detour")
 	game.speed=sim_speed
-	while source.move_completed<1 and game.phase==game.Phase.BATTLE and game.elapsed<2:
+	while source.move.is_empty() and game.phase==game.Phase.BATTLE and game.elapsed<2:
 		game.step(1.0/fps)
 		ownership(game)
-	var remaining: Array=initial.slice(1)
-	var copy: Dictionary=source.duplicate(false)
-	copy.route=remaining
 	var fresh_path: Array=game._path(source,target.cell,1)
 	check(blocker.cell==Vector2i(5,1) and blocker.move.is_empty() and blocker.target==target.id,"hunter completes its real segment and original ranged AI legally dwells, not frozen")
 	check(source.target==target.id and target.target==holder.id and target.cell==Vector2i(3,0),"same live enemy remains best and holds its actual range-one cooldown position")
-	check(Melee.route_valid(game,copy,target) and remaining.size()==6,"guard old remaining five-step detour stays physically valid after release")
-	check(source.cell==Vector2i(6,1) and fresh_path.size()==4 and source.route==fresh_path and source.move.to==Vector2i(6,0),"guard independently shortens same-target valid cache from five to three steps after actual road release")
-	var result := {"fps":fps,"speed":sim_speed,"boundary":game.elapsed-float(source.move.time),"target":source.target,
-		"current":[source.cell.x,source.cell.y],"next":[source.move.to.x,source.move.to.y],"old_remaining_cost":remaining.size()-1,"fresh_cost":fresh_path.size()-1,
+	check(blocker.step_completed==waited.serial and is_equal_approx(game.elapsed-float(source.move.get("time",0.0)),Config.MOVE_SECONDS_PER_CELL),"guard starts at actual half-second source release, not early or after another SCAN")
+	check(source.cell==Vector2i(6,0) and fresh_path.size()==3 and source.route.is_empty() and source.move.get("to")==Vector2i(5,0),"guard freshly chooses direct first step after release instead of retaining the historical detour")
+	check(game._occupant(source.cell,blocker.id).id==source.id and game._occupant(Vector2i(5,0),blocker.id).id==source.id,"new direct movement owns both endpoints for the full segment")
+	var issued_to: Vector2i=source.move.get("to",source.cell)
+	var result := {"fps":fps,"speed":sim_speed,"boundary":game.elapsed-float(source.move.get("time",0.0)),"target":source.target,
+		"current":[source.cell.x,source.cell.y],"next":[issued_to.x,issued_to.y],"old_static_cost":initial.size()-1,"fresh_cost":fresh_path.size()-1,"waited":waited,
 		"route":source.route.map(func(cell): return [cell.x,cell.y]),"blocker_current":[blocker.cell.x,blocker.cell.y]}
 	game.free()
 	return result

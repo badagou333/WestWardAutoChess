@@ -1,0 +1,455 @@
+{
+	"cases": [
+		{
+			"age": -1.0,
+			"case": "mobile_guard_monk",
+			"cell": [
+				4,
+				4
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				5,
+				4
+			],
+			"serial": 1,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "mobile_wild_hunter",
+			"cell": [
+				4,
+				4
+			],
+			"id": "wild_hunter",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				5,
+				4
+			],
+			"serial": 1,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "mobile_sparrow_spirit",
+			"cell": [
+				4,
+				4
+			],
+			"id": "sparrow_spirit",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				5,
+				4
+			],
+			"serial": 1,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "mobile_foxfire_imp",
+			"cell": [
+				4,
+				4
+			],
+			"id": "foxfire_imp",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				5,
+				4
+			],
+			"serial": 1,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "mobile_E1",
+			"cell": [
+				4,
+				4
+			],
+			"id": "E1",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				5,
+				4
+			],
+			"serial": 1,
+			"target": "guard_monk",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "mobile_E2",
+			"cell": [
+				4,
+				4
+			],
+			"id": "E2",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				5,
+				4
+			],
+			"serial": 1,
+			"target": "guard_monk",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "mobile_E3",
+			"cell": [
+				4,
+				4
+			],
+			"id": "E3",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				5,
+				4
+			],
+			"serial": 1,
+			"target": "guard_monk",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "mobile_E4",
+			"cell": [
+				4,
+				4
+			],
+			"id": "E4",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				5,
+				4
+			],
+			"serial": 1,
+			"target": "guard_monk",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "mobile_E5",
+			"cell": [
+				4,
+				4
+			],
+			"id": "E5",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				5,
+				4
+			],
+			"serial": 1,
+			"target": "guard_monk",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "mobile_E6",
+			"cell": [
+				4,
+				4
+			],
+			"id": "E6",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				5,
+				4
+			],
+			"serial": 1,
+			"target": "guard_monk",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "stationary_roles",
+			"cell": [
+				4,
+				4
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [],
+			"serial": 0,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "old_attack_position_valid_but_longer",
+			"cell": [
+				7,
+				2
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				6,
+				2
+			],
+			"serial": 1,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "current_range_after_safe_landing",
+			"cell": [
+				4,
+				3
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [],
+			"serial": 1,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "equal_full_routes_prefer_target_progress",
+			"cell": [
+				5,
+				3
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				6,
+				3
+			],
+			"serial": 1,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "equivalent_hint_and_stable_order",
+			"cell": [
+				3,
+				3
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [],
+			"serial": 0,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "necessary_obstacle_detour",
+			"cell": [
+				1,
+				1
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				1,
+				2
+			],
+			"serial": 1,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": 1.0,
+			"case": "same_cell_order_false_older_false",
+			"cell": [
+				3,
+				3
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [],
+			"serial": 0,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": "接战格段交接"
+		},
+		{
+			"age": -1.0,
+			"case": "same_cell_order_false_older_true",
+			"cell": [
+				3,
+				3
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				4,
+				3
+			],
+			"serial": 1,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": 1.0,
+			"case": "same_cell_order_true_older_false",
+			"cell": [
+				3,
+				3
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [],
+			"serial": 0,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": "接战格段交接"
+		},
+		{
+			"age": -1.0,
+			"case": "same_cell_order_true_older_true",
+			"cell": [
+				3,
+				3
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				4,
+				3
+			],
+			"serial": 1,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "equal_cost_conflict_alternative",
+			"cell": [
+				3,
+				3
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				3,
+				4
+			],
+			"serial": 1,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "opposite_sources_do_not_swap",
+			"cell": [
+				3,
+				3
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [],
+			"serial": 0,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "finite_activity_completion",
+			"cell": [
+				7,
+				1
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				6,
+				1
+			],
+			"serial": 1,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "finite_activity_death",
+			"cell": [
+				7,
+				1
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				6,
+				1
+			],
+			"serial": 1,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "finite_activity_destination",
+			"cell": [
+				7,
+				1
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [
+				7,
+				2
+			],
+			"serial": 1,
+			"target": "E1",
+			"wait": {},
+			"wait_reason": ""
+		},
+		{
+			"age": -1.0,
+			"case": "sealed_corner_death_and_retry",
+			"cell": [
+				6,
+				4
+			],
+			"id": "guard_monk",
+			"kind": "isolated_state_or_request_fixture",
+			"next": [],
+			"serial": 0,
+			"target": "",
+			"wait": {},
+			"wait_reason": ""
+		}
+	],
+	"config": "board-v3-stepwise",
+	"coordinate_base": 1,
+	"failures": 0,
+	"kind": "isolated_state_and_queue_fixtures_not_natural_combat"
+}

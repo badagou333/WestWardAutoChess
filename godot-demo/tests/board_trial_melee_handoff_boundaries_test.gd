@@ -2,6 +2,7 @@ extends "res://tests/board_trial_ai_test.gd"
 ## Isolated D-006 boundary fixtures, not a substitute for the full natural-AI trace.
 ## Each decision enters the production _brain; segment completion enters _tick.
 const Melee = preload("res://scripts/combat/board_trial_melee.gd")
+const Stepwise = preload("res://scripts/combat/board_trial_stepwise.gd")
 const MELEE_IDS := ["guard_monk","E1","E2","E3","E4"]
 
 func pair(source_id: String, target_id := ""):
@@ -31,9 +32,10 @@ func route_fixtures() -> void:
 		var old_route: Array = source.route.duplicate()
 		game._set_cell(target,Vector2i(5,2))
 		check(Melee.route_valid(game,source,target),id+" changed target cell leaves old real attack endpoint valid")
+		var options: Array = Stepwise.candidates(game,source,target)
 		game._brain(source,Config.STEP)
-		check(source.route==old_route and source.route_goal==Vector2i(6,3),id+" production brain retains valid route despite stale planning snapshot")
-		check(not source.move.is_empty() and source.move.to==Vector2i(4,3),id+" production brain follows cached next step")
+		check(source.target==target.id and source.route.is_empty() and source.route_goal==Vector2i(-1,-1),id+" production brain discards historical endpoint even when it remains legal")
+		check(not source.move.is_empty() and not options.is_empty() and source.move.get("to")==options[0].cell,id+" production brain commits current optimal first step rather than a cached command")
 		ownership(game)
 		game.free()
 		game = pair(id)
@@ -44,7 +46,7 @@ func route_fixtures() -> void:
 		game._set_cell(target,Vector2i(3,1))
 		check(not Melee.route_valid(game,source,target),id+" old endpoint outside real range invalidates route")
 		game._brain(source,Config.STEP)
-		check(source.route_goal==target.cell and source.route!=old_route,id+" production brain replans only after actual endpoint invalidity")
+		check(source.route_goal==Vector2i(-1,-1) and source.route.is_empty(),id+" production brain also clears invalid historical endpoint")
 		check(not source.move.is_empty() and source.move.to==Vector2i(3,2),id+" new route approaches real current target without pursuit prediction")
 		ownership(game)
 		game.free()
