@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-09",
+  "authority": "负责人：用第二段",
+  "event_key": "wild_hunter_attack",
+  "selected_file": "hunter_launch_02.wav",
+  "sha256": "6936dbe90b719c90d1dfa8900fc1736ca1bda035b767931d00e67e94027ac9a7",
+  "not_selected": [
+    "hunter_launch_01.wav",
+    "hunter_launch_03.wav"
+  ],
+  "listening_status": "第二段已获负责人选择",
+  "license": "CC BY-NC 4.0",
+  "commercial_permission_obtained": false,
+  "runtime_status": "未接入；保留为非商业试听选定版，商业许可未解决"
+}
