@@ -229,7 +229,7 @@ func activity_waits() -> void:
 	close_case(ctx,"sealed_corner_death_and_retry")
 
 func run() -> void:
-	check(Config.VERSION=="board-v3-stepwise","stepwise tests require the actual new production version")
+	check(Config.VERSION=="board-v4-step-target","stepwise tests require the actual new production version")
 	all_mobile_and_static()
 	fresh_attack_position()
 	complete_route_not_greedy()

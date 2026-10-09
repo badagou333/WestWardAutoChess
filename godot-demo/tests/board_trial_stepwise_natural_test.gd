@@ -50,7 +50,7 @@ func request_snapshot(game) -> Array:
 	var values := []
 	for actor in game.actors:
 		values.append({"id":actor.id,"age":actor.step_age,"hint":[actor.step_hint.x,actor.step_hint.y],
-			"reason":actor.step_wait_reason,"dependency":actor.step_wait.duplicate(true),"serial":actor.step_serial,"completed":actor.step_completed})
+			"reason":actor.step_wait_reason,"dependency":actor.step_wait.duplicate(true),"serial":actor.step_serial,"completed":actor.step_completed,"retarget":actor.step_retarget})
 	return values
 
 func stepwise_natural(key: String, fps: int, sim_speed: int, pause_once: bool) -> Dictionary:
@@ -97,13 +97,13 @@ func stepwise_natural(key: String, fps: int, sim_speed: int, pause_once: bool) -
 	game.retry()
 	assert_uniform_roster(game,"stepwise natural retry "+key)
 	check(game.deployment==deployment and game.elapsed==0 and not game.paused and game.speed==1,"natural retry restores original deployment/clock/speed "+key)
-	check(game.actors.all(func(actor): return actor.move.is_empty() and actor.target.is_empty() and actor.route.is_empty() and actor.handoff.is_empty() and actor.cooldown==0 and actor.step_age<0 and actor.step_wait.is_empty() and actor.step_wait_reason.is_empty() and actor.step_serial==0 and actor.step_completed==0),"natural retry clears legacy plus universal step request/activity state "+key)
+	check(game.actors.all(func(actor): return actor.move.is_empty() and actor.target.is_empty() and actor.route.is_empty() and actor.handoff.is_empty() and actor.cooldown==0 and actor.step_age<0 and actor.step_wait.is_empty() and actor.step_wait_reason.is_empty() and actor.step_serial==0 and actor.step_completed==0 and not actor.step_retarget),"natural retry clears legacy plus universal step request/activity state "+key)
 	check(game.combat.strikes.is_empty() and game.combat.missiles.is_empty(),"natural retry clears actual pending strikes/missiles "+key)
 	game.free()
 	return result
 
 func run() -> void:
-	check(Config.VERSION=="board-v3-stepwise","natural stepwise suite requires the actual new production version")
+	check(Config.VERSION=="board-v4-step-target","natural stepwise suite requires the actual new production version")
 	for key in CASE_KEYS:
 		var first:=stepwise_natural(key,30,1,false)
 		var repeated:=stepwise_natural(key,120,2,true)
@@ -115,7 +115,7 @@ func run() -> void:
 			"completed_uniform_segment_count":first.completed_uniform_segments.size(),"repeat_equal":first==repeated}
 		comparisons.append({"formation":key,"report":first.report})
 	check(comparisons.size()==7 and stepwise_cases.size()==7,"all seven complete natural cases ran, no early success")
-	var file:=FileAccess.open("/tmp/board-stepwise-20261009-natural.json",FileAccess.WRITE)
+	var file:=FileAccess.open("/tmp/board-step-target-20261009-natural.json",FileAccess.WRITE)
 	check(file!=null,"independent natural stepwise evidence opens")
 	if file!=null: file.store_string(JSON.stringify({"config":Config.VERSION,"public_schedules":[[30,1],[120,2]],"paused_repeat":true,
 		"every_STEP_invariants":true,"no_historical_result_assertions":true,"comparisons":comparisons,"cases":stepwise_cases,"failures":failures},"\t"))

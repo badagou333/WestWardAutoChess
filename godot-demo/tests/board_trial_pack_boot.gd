@@ -20,7 +20,7 @@ func run() -> void:
 			check(game.actors.all(func(actor): return actor.node.presentation.facing==(1 if actor.friendly else -1)),"pack starts with confirmed default army directions")
 			check(game.BOARD_RECT==Rect2(220,190,1320,714),"pack keeps exact logical board geometry")
 			check(game.Config.COLS==12 and game.Config.ROWS==7 and game.actors.size()==12,"pack includes independent grid/config/fixed actors")
-			check(game.Config.VERSION=="board-v3-stepwise" and is_equal_approx(game.Config.MOVE_SECONDS_PER_CELL,0.5),"pack contains the stepwise config and shared movement duration")
+			check(game.Config.VERSION=="board-v4-step-target" and game.RANGED_RULE=="ranged-step-target-20261009" and is_equal_approx(game.Config.MOVE_SECONDS_PER_CELL,0.5),"pack contains the landing-retarget config and shared movement duration")
 			check(game.Melee.RULE=="melee-stepwise-20261009" and game.Stepwise!=null,"pack includes current melee rules and the actual stepwise planning module")
 			check(game.actors.all(func(actor): return actor.walk==game.Config.MOVE_SECONDS_PER_CELL and actor.node.move_interval==game.Config.MOVE_SECONDS_PER_CELL),"pack uses one movement duration for every friendly and enemy actor")
 			check(game._record("tangseng").node.presentation.body!=null,"pack contains production core texture")

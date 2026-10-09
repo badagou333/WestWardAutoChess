@@ -15,7 +15,7 @@ const BACKGROUND = preload("res://art/boards/formation_trial_v2/board-courtyard.
 const BACKGROUND_RECT := Rect2(0,-12,1920,1128)
 const CANVAS := Rect2(0,0,1920,1080)
 const BOARD_RECT := Rect2(Config.ORIGIN,Vector2(Config.COLS,Config.ROWS)*Config.CELL)
-const RANGED_RULE := "ranged-pursuit-d20261008-001"
+const RANGED_RULE := "ranged-step-target-20261009"
 enum Phase { DEPLOY, BATTLE, RESULT }
 var phase := Phase.DEPLOY
 var actors: Array[Dictionary] = [] # Fixed IDs and update order; no freed-node ledger.
@@ -137,6 +137,7 @@ func _register(id: String, key: String, node, friendly: bool, cell: Vector2i) ->
 		"handoff":{},"move_serial":0,"move_completed":0,
 		"step_age":-1.0,"step_hint":Vector2i(-1,-1),"step_target":"",
 		"step_wait":{},"step_wait_reason":"","step_serial":0,"step_completed":0,
+		"step_retarget":false,
 		"hp_max":node.max_health,"damage":node.damage,"interval":node.attack_interval,
 		"reach":node.attack_range_cells,"walk":node.move_interval,"name":node.display_name})
 
@@ -204,6 +205,7 @@ func start_battle() -> bool:
 		if Melee.applies(actor): Melee.release(actor)
 		actor.cooldown = 0.0
 		actor.think = 0.0
+		actor.step_retarget = false
 		actor.mode = "驻留"
 	phase = Phase.BATTLE
 	selected = ""
@@ -303,6 +305,21 @@ func _clear_step_request(actor: Dictionary) -> void:
 	actor.step_wait = {}
 	actor.step_wait_reason = ""
 
+func _refresh_landed_target(actor: Dictionary) -> void:
+	# Consume one actual landing event. Valid old locks are only replaced by a
+	# strictly cheaper reachable attack position; equal cost keeps the target.
+	actor.step_retarget = false
+	var previous: Dictionary=_record(actor.target)
+	var valid: bool=_target_legal(actor,previous)
+	var candidate: Dictionary=_best_target(actor)
+	var old_path: Array=_pursuit_path(actor,previous) if valid else []
+	var new_path: Array=_pursuit_path(actor,candidate) if not candidate.is_empty() else []
+	if valid and (new_path.is_empty() or new_path.size()>=old_path.size()): return
+	actor.target=candidate.get("id","")
+	_clear_step_request(actor)
+	actor.step_target=""
+	actor.step_hint=Vector2i(-1,-1)
+
 func _request_step(actor: Dictionary) -> void:
 	if not _active(actor) or not _step_mobile(actor) or not actor.move.is_empty() or actor.node.presentation.pose=="basic_attack": return
 	var target: Dictionary=_record(actor.target)
@@ -359,6 +376,7 @@ func _brain(actor: Dictionary, delta: float) -> void:
 		Melee.tick(self,actor)
 		return
 	if not actor.move.is_empty() or actor.node.presentation.pose=="basic_attack": return
+	if actor.step_retarget and _step_mobile(actor): _refresh_landed_target(actor)
 	var target := _record(actor.target)
 	if actor.think>0.00000001:
 		# SCAN throttles path/target searches, never the original attack cooldown.
@@ -423,6 +441,7 @@ func _tick(delta: float) -> void:
 			actor.move = {}
 			actor.step_completed = actor.step_serial
 			actor.think = 0.0 # Every mobile role re-evaluates on its own landing.
+			actor.step_retarget = _step_mobile(actor) and not Melee.applies(actor)
 			if Melee.applies(actor):
 				actor.move_completed = actor.move_serial
 	# Dead sources cannot complete pending effects in this trial; legacy untouched.
@@ -436,6 +455,7 @@ func _tick(delta: float) -> void:
 		actor.target = ""
 		actor.move = {}
 		_clear_step_request(actor)
+		actor.step_retarget = false
 		if Melee.applies(actor): Melee.release(actor)
 		if is_instance_valid(actor.node) and not actor.friendly:
 			actor.node.play_death()

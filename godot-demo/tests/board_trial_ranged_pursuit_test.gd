@@ -1,5 +1,6 @@
 extends "res://tests/board_trial_ai_test.gd"
-## D-20261008-001 isolated boundaries and six live-AI fixture runs, not natural layouts.
+## Original ranged safety/abilities plus landing-based target refresh live fixtures.
+## Six live-AI state-fixture runs, not natural deployment/balance evidence.
 const Catalog = preload("res://scripts/data/demo_units.gd")
 const OUTPUTS := ["wild_hunter","sparrow_spirit","foxfire_imp"]
 var reports := []
@@ -16,6 +17,7 @@ class AuditedBoard:
 	var max_anchor_distance := 0
 	var first_departure := -1.0
 	var stationary_since := -1.0
+	var stationary_target := ""
 	func _brain(actor: Dictionary, delta: float) -> void:
 		var before_move: Dictionary = actor.move.duplicate(true)
 		var before_target: String = actor.target
@@ -50,18 +52,27 @@ class AuditedBoard:
 	func _tick(delta: float) -> void:
 		super._tick(delta)
 		var source: Dictionary = _record(observed_key)
-		var target: Dictionary = _record("E5")
-		for actor in [source,target]:
+		var original_target: Dictionary = _record("E5")
+		var current_target: Dictionary = _record(source.get("target",""))
+		for actor in [source,original_target,current_target]:
 			if not _active(actor): continue
 			var foot: Vector2 = Config.center(actor.cell)
 			if not actor.move.is_empty(): foot = Config.center(actor.move.from).lerp(Config.center(actor.move.to),minf(1,actor.move.time/actor.move.duration))
 			if actor.node.position.distance_to(foot)>0.001: violations.append(actor.id+" foot differs from its real grid segment")
-		if not _active(source) or not _active(target): return
+		if not _active(source) or not _active(original_target): return
 		max_column = maxi(max_column,source.cell.x)
 		max_anchor_distance = maxi(max_anchor_distance,Config.distance(source.cell,source.anchor))
-		var distance: int = Config.distance(source.cell,target.cell)
-		if first_departure<0 and not metrics.attack_times.get(source.id,[]).is_empty() and distance>source.reach: first_departure = elapsed
-		if stationary_since<0 and source.move.is_empty() and target.move.is_empty() and distance<=source.reach: stationary_since = elapsed
+		var original_distance: int = Config.distance(source.cell,original_target.cell)
+		if first_departure<0 and not metrics.attack_times.get(source.id,[]).is_empty() and original_distance>source.reach: first_departure = elapsed
+		# Landing can now choose a cheaper opponent. Measure the final real dwell
+		# against the CURRENT combat target, clearing transient earlier dwell.
+		var dwelling: bool = _active(current_target) and source.move.is_empty() and current_target.move.is_empty() and Config.distance(source.cell,current_target.cell)<=source.reach
+		if dwelling:
+			if stationary_since<0 or stationary_target!=current_target.id: stationary_since=elapsed
+			stationary_target=current_target.id
+		else:
+			stationary_since=-1.0
+			stationary_target=""
 
 func fixture(key: String, enemies: Array = ["E1","E2"], extra_friends: Array = []):
 	var game = fresh()
@@ -212,8 +223,9 @@ func live_departure_and_pursuit(key: String, fps: int, sim_speed: int) -> Dictio
 	var holder: Dictionary = game._record("E1")
 	var guard: Dictionary = game._record("guard_monk")
 	var core: Dictionary = game._record("tangseng")
-	# Explicit post-start state fixture: idle enemy holder blocks (8,6), so the
-	# live rat's original core pursuit ends at (9,5); the output must cross x=6.
+	# Explicit post-start state fixture: the initial rat actually departs range3.
+	# Landing-based cheaper-target reevaluation applies to BOTH pursuers; this
+	# fixture no longer requires the rat to retain a distant core forever.
 	# Every survivor runs its actual brain. HP/CD fixture prevents settlement;
 	# guard/E1 hold each other at real range1, Tang remains stationary at (11,6).
 	for placement in [[source,Vector2i(4,0)],[target,Vector2i(7,0)],[holder,Vector2i(8,6)],[guard,Vector2i(9,6)],[core,Vector2i(11,6)]]: game._set_cell(placement[0],placement[1])
@@ -241,9 +253,11 @@ func live_departure_and_pursuit(key: String, fps: int, sim_speed: int) -> Dictio
 			paused_once = true
 	check(game.phase==game.Phase.BATTLE and game._active(source) and game._active(target),key+" explicit high-HP live fixture remains active, not frozen/dead-target simulation")
 	check(game.violations.is_empty(),key+" all actual STEP attack ranges, safe activities, neighbor reservations and grid foot points: "+str(game.violations))
-	check(game.first_departure>0 and game.max_column>=6 and game.max_anchor_distance>2,key+" actual initial range3 target leaves, source resumes pursuit beyond anchor2 and crosses middle")
+	var pursuit_steps: Array = game.moves.filter(func(row): return row.id==key and row.time+0.00000001>=game.first_departure)
+	check(game.first_departure>0 and not pursuit_steps.is_empty(),key+" actual initial range3 target leaves and source commits real pursuit movement afterward")
 	check(not game.moves.filter(func(row): return row.id=="E5").is_empty(),key+" opponent really moves under its existing live gray-rat brain")
-	check(source.target=="E5" and source.move.is_empty() and target.move.is_empty() and Config.distance(source.cell,target.cell)<=3,key+" live same-target pursuit ends in real range3 cooldown/attack dwell without return")
+	var settled_target: Dictionary = game._record(source.target)
+	check(game._active(settled_target) and game._target_legal(source,settled_target) and source.move.is_empty() and settled_target.move.is_empty() and Config.distance(source.cell,settled_target.cell)<=3,key+" live pursuit ends at the current actual legal range3 target with original cooldown/attack dwell")
 	var expected: Dictionary = Catalog.HEROES[key]
 	check(source.damage==expected.damage and source.node.damage==expected.damage and source.interval==expected.interval and source.reach==3,key+" original damage/attack interval/reach data unchanged")
 	check(source.walk==Config.MOVE_SECONDS_PER_CELL and source.node.move_interval==Config.MOVE_SECONDS_PER_CELL,key+" uses shared trial movement duration")
@@ -255,7 +269,8 @@ func live_departure_and_pursuit(key: String, fps: int, sim_speed: int) -> Dictio
 	check(game.stationary_since>0 and times.size()>=3,key+" actual stationary tail contains repeated production attacks")
 	var cadence: float = ceilf((source.interval-0.00000001)/Config.STEP)*Config.STEP
 	for index in range(1,times.size()): check(is_equal_approx(times[index]-times[index-1],cadence),key+" original cooldown is only fixed-step rounded, never SCAN-quantized")
-	var result := {"key":key,"fps":fps,"speed":sim_speed,"seconds":game.elapsed,"departure":game.first_departure,"settled":game.stationary_since,"cell":[source.cell.x,source.cell.y],"target_cell":[target.cell.x,target.cell.y],"max_column":game.max_column,"max_anchor_distance":game.max_anchor_distance,"damage":damage,"hp_loss":actual_loss,"resolved_amounts":game.resolved_amounts.duplicate(),"attack_times":game.metrics.attack_times.get(key,[]).duplicate(),"moves":game.moves.duplicate(true),"shots":game.shots.duplicate(true)}
+	var settled_cell: Vector2i = settled_target.get("cell",Vector2i(-1,-1))
+	var result := {"key":key,"fps":fps,"speed":sim_speed,"seconds":game.elapsed,"departure":game.first_departure,"settled":game.stationary_since,"cell":[source.cell.x,source.cell.y],"target":source.target,"target_cell":[settled_cell.x,settled_cell.y],"original_target_cell":[target.cell.x,target.cell.y],"pursuit_steps":pursuit_steps.size(),"max_column":game.max_column,"max_anchor_distance":game.max_anchor_distance,"damage":damage,"hp_loss":actual_loss,"resolved_amounts":game.resolved_amounts.duplicate(),"attack_times":game.metrics.attack_times.get(key,[]).duplicate(),"moves":game.moves.duplicate(true),"shots":game.shots.duplicate(true)}
 	var deployment: Dictionary = game.start_deployment.duplicate()
 	game.retry()
 	source = game._record(key)
@@ -310,6 +325,6 @@ func run() -> void:
 		reports.append(first)
 		reports.append(second)
 	var output := FileAccess.open("/tmp/board-ranged-20261008-boundaries.json",FileAccess.WRITE)
-	output.store_string(JSON.stringify({"coordinate_base":0,"rule":"ranged-pursuit-d20261008-001","isolated_boundaries":true,"live_AI_state_fixture":true,"fixture_hp":10000,"stationary_holder_core_cooldown":100,"reports":reports,"foxfire_splash":splash_evidence,"failures":failures},"\t"))
+	output.store_string(JSON.stringify({"coordinate_base":0,"config":Config.VERSION,"rule":"ranged-step-target-20261009","isolated_boundaries":true,"live_AI_state_fixture":true,"fixture_hp":10000,"stationary_holder_core_cooldown":100,"reports":reports,"foxfire_splash":splash_evidence,"failures":failures},"\t"))
 	print("BOARD_TRIAL_RANGED_PURSUIT isolated_boundaries=true live_AI_fixture=true failures=",failures)
 	quit(1 if failures else 0)

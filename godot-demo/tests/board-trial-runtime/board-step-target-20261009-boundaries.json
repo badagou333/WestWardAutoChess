@@ -1,0 +1,1789 @@
+{
+	"cases": [
+		{
+			"case": "strict",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E2",
+				"new_reachable_cost": 0,
+				"old_id": "E1",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "wild_hunter",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "equal",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E1",
+				"new_reachable_cost": 1,
+				"old_id": "E2",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "wild_hunter",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "range",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"cooldown": 0.408333333333334,
+			"facts": {
+				"actual_attack_target": "E2",
+				"explicit_pending_flag_during_real_attack_deferred": true,
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E1",
+				"new_reachable_cost": 0,
+				"old_id": "E2",
+				"old_reachable_cost": 0
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "wild_hunter",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 0.949999999999999
+		},
+		{
+			"case": "obstacle",
+			"cell": [
+				1,
+				1
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					2,
+					1
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					1,
+					1
+				],
+				"landing_selected": "E1",
+				"new_id": "E2",
+				"new_reachable_cost": 3,
+				"old_id": "E1",
+				"old_reachable_cost": 2
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "wild_hunter",
+			"step_retarget": false,
+			"target": "E1",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "death",
+			"cell": [
+				5,
+				3
+			],
+			"completed": 0,
+			"cooldown": 0.0,
+			"facts": {
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E2",
+				"new_reachable_cost": 0,
+				"old_id": "E1",
+				"old_reachable_cost": -1,
+				"retry_cleared": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "wild_hunter",
+			"step_retarget": false,
+			"target": "",
+			"time": 0.0
+		},
+		{
+			"case": "idle_without_landing",
+			"cell": [
+				4,
+				4
+			],
+			"completed": 0,
+			"cooldown": 99.9916666666667,
+			"facts": {
+				"kept": "E1",
+				"newcomer": "E2",
+				"no_landing": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "wild_hunter",
+			"step_retarget": false,
+			"target": "E1",
+			"time": 0.0
+		},
+		{
+			"case": "strict",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E2",
+				"new_reachable_cost": 0,
+				"old_id": "E1",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "wild_hunter",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "equal",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E1",
+				"new_reachable_cost": 1,
+				"old_id": "E2",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "wild_hunter",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "range",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"cooldown": 0.408333333333334,
+			"facts": {
+				"actual_attack_target": "E2",
+				"explicit_pending_flag_during_real_attack_deferred": true,
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E1",
+				"new_reachable_cost": 0,
+				"old_id": "E2",
+				"old_reachable_cost": 0
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "wild_hunter",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 0.949999999999999
+		},
+		{
+			"case": "obstacle",
+			"cell": [
+				12,
+				1
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					11,
+					1
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					12,
+					1
+				],
+				"landing_selected": "E1",
+				"new_id": "E2",
+				"new_reachable_cost": 3,
+				"old_id": "E1",
+				"old_reachable_cost": 2
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "wild_hunter",
+			"step_retarget": false,
+			"target": "E1",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "death",
+			"cell": [
+				5,
+				3
+			],
+			"completed": 0,
+			"cooldown": 0.0,
+			"facts": {
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E2",
+				"new_reachable_cost": 0,
+				"old_id": "E1",
+				"old_reachable_cost": -1,
+				"retry_cleared": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "wild_hunter",
+			"step_retarget": false,
+			"target": "",
+			"time": 0.0
+		},
+		{
+			"case": "idle_without_landing",
+			"cell": [
+				9,
+				4
+			],
+			"completed": 0,
+			"cooldown": 99.9916666666667,
+			"facts": {
+				"kept": "E1",
+				"newcomer": "E2",
+				"no_landing": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "wild_hunter",
+			"step_retarget": false,
+			"target": "E1",
+			"time": 0.0
+		},
+		{
+			"case": "strict",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E2",
+				"new_reachable_cost": 0,
+				"old_id": "E1",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "sparrow_spirit",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "equal",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E1",
+				"new_reachable_cost": 1,
+				"old_id": "E2",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "sparrow_spirit",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "range",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"cooldown": 0.420000000000001,
+			"facts": {
+				"actual_attack_target": "E2",
+				"explicit_pending_flag_during_real_attack_deferred": true,
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E1",
+				"new_reachable_cost": 0,
+				"old_id": "E2",
+				"old_reachable_cost": 0
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "sparrow_spirit",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 1.00833333333333
+		},
+		{
+			"case": "obstacle",
+			"cell": [
+				1,
+				1
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					2,
+					1
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					1,
+					1
+				],
+				"landing_selected": "E1",
+				"new_id": "E2",
+				"new_reachable_cost": 3,
+				"old_id": "E1",
+				"old_reachable_cost": 2
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "sparrow_spirit",
+			"step_retarget": false,
+			"target": "E1",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "death",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 0,
+			"cooldown": 0.0,
+			"facts": {
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E2",
+				"new_reachable_cost": 0,
+				"old_id": "E1",
+				"old_reachable_cost": -1,
+				"retry_cleared": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "sparrow_spirit",
+			"step_retarget": false,
+			"target": "",
+			"time": 0.0
+		},
+		{
+			"case": "idle_without_landing",
+			"cell": [
+				4,
+				4
+			],
+			"completed": 0,
+			"cooldown": 99.9916666666667,
+			"facts": {
+				"kept": "E1",
+				"newcomer": "E2",
+				"no_landing": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "sparrow_spirit",
+			"step_retarget": false,
+			"target": "E1",
+			"time": 0.0
+		},
+		{
+			"case": "strict",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E2",
+				"new_reachable_cost": 0,
+				"old_id": "E1",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "sparrow_spirit",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "equal",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E1",
+				"new_reachable_cost": 1,
+				"old_id": "E2",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "sparrow_spirit",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "range",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"cooldown": 0.420000000000001,
+			"facts": {
+				"actual_attack_target": "E2",
+				"explicit_pending_flag_during_real_attack_deferred": true,
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E1",
+				"new_reachable_cost": 0,
+				"old_id": "E2",
+				"old_reachable_cost": 0
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "sparrow_spirit",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 1.00833333333333
+		},
+		{
+			"case": "obstacle",
+			"cell": [
+				12,
+				1
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					11,
+					1
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					12,
+					1
+				],
+				"landing_selected": "E1",
+				"new_id": "E2",
+				"new_reachable_cost": 3,
+				"old_id": "E1",
+				"old_reachable_cost": 2
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "sparrow_spirit",
+			"step_retarget": false,
+			"target": "E1",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "death",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 0,
+			"cooldown": 0.0,
+			"facts": {
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E2",
+				"new_reachable_cost": 0,
+				"old_id": "E1",
+				"old_reachable_cost": -1,
+				"retry_cleared": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "sparrow_spirit",
+			"step_retarget": false,
+			"target": "",
+			"time": 0.0
+		},
+		{
+			"case": "idle_without_landing",
+			"cell": [
+				9,
+				4
+			],
+			"completed": 0,
+			"cooldown": 99.9916666666667,
+			"facts": {
+				"kept": "E1",
+				"newcomer": "E2",
+				"no_landing": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "sparrow_spirit",
+			"step_retarget": false,
+			"target": "E1",
+			"time": 0.0
+		},
+		{
+			"case": "strict",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E2",
+				"new_reachable_cost": 0,
+				"old_id": "E1",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "foxfire_imp",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "equal",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E1",
+				"new_reachable_cost": 1,
+				"old_id": "E2",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "foxfire_imp",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "range",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"cooldown": 0.650000000000002,
+			"facts": {
+				"actual_attack_target": "E2",
+				"explicit_pending_flag_during_real_attack_deferred": true,
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E1",
+				"new_reachable_cost": 0,
+				"old_id": "E2",
+				"old_reachable_cost": 0
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "foxfire_imp",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 1.10833333333333
+		},
+		{
+			"case": "obstacle",
+			"cell": [
+				1,
+				1
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					2,
+					1
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					1,
+					1
+				],
+				"landing_selected": "E1",
+				"new_id": "E2",
+				"new_reachable_cost": 3,
+				"old_id": "E1",
+				"old_reachable_cost": 2
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "foxfire_imp",
+			"step_retarget": false,
+			"target": "E1",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "death",
+			"cell": [
+				5,
+				5
+			],
+			"completed": 0,
+			"cooldown": 0.0,
+			"facts": {
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E2",
+				"new_reachable_cost": 0,
+				"old_id": "E1",
+				"old_reachable_cost": -1,
+				"retry_cleared": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "foxfire_imp",
+			"step_retarget": false,
+			"target": "",
+			"time": 0.0
+		},
+		{
+			"case": "idle_without_landing",
+			"cell": [
+				4,
+				4
+			],
+			"completed": 0,
+			"cooldown": 99.9916666666667,
+			"facts": {
+				"kept": "E1",
+				"newcomer": "E2",
+				"no_landing": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "foxfire_imp",
+			"step_retarget": false,
+			"target": "E1",
+			"time": 0.0
+		},
+		{
+			"case": "strict",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E2",
+				"new_reachable_cost": 0,
+				"old_id": "E1",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "foxfire_imp",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "equal",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E1",
+				"new_reachable_cost": 1,
+				"old_id": "E2",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "foxfire_imp",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "range",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"cooldown": 0.650000000000002,
+			"facts": {
+				"actual_attack_target": "E2",
+				"explicit_pending_flag_during_real_attack_deferred": true,
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E1",
+				"new_reachable_cost": 0,
+				"old_id": "E2",
+				"old_reachable_cost": 0
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "foxfire_imp",
+			"step_retarget": false,
+			"target": "E2",
+			"time": 1.10833333333333
+		},
+		{
+			"case": "obstacle",
+			"cell": [
+				12,
+				1
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					11,
+					1
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					12,
+					1
+				],
+				"landing_selected": "E1",
+				"new_id": "E2",
+				"new_reachable_cost": 3,
+				"old_id": "E1",
+				"old_reachable_cost": 2
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "foxfire_imp",
+			"step_retarget": false,
+			"target": "E1",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "death",
+			"cell": [
+				5,
+				5
+			],
+			"completed": 0,
+			"cooldown": 0.0,
+			"facts": {
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "E2",
+				"new_id": "E2",
+				"new_reachable_cost": 0,
+				"old_id": "E1",
+				"old_reachable_cost": -1,
+				"retry_cleared": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "foxfire_imp",
+			"step_retarget": false,
+			"target": "",
+			"time": 0.0
+		},
+		{
+			"case": "idle_without_landing",
+			"cell": [
+				9,
+				4
+			],
+			"completed": 0,
+			"cooldown": 99.9916666666667,
+			"facts": {
+				"kept": "E1",
+				"newcomer": "E2",
+				"no_landing": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "foxfire_imp",
+			"step_retarget": false,
+			"target": "E1",
+			"time": 0.0
+		},
+		{
+			"case": "strict",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "wild_hunter",
+				"new_reachable_cost": 0,
+				"old_id": "guard_monk",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "E5",
+			"step_retarget": false,
+			"target": "wild_hunter",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "equal",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "guard_monk",
+				"new_reachable_cost": 1,
+				"old_id": "wild_hunter",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "E5",
+			"step_retarget": false,
+			"target": "wild_hunter",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "range",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"cooldown": 0.408333333333335,
+			"facts": {
+				"actual_attack_target": "wild_hunter",
+				"explicit_pending_flag_during_real_attack_deferred": true,
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "guard_monk",
+				"new_reachable_cost": 0,
+				"old_id": "wild_hunter",
+				"old_reachable_cost": 0
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "E5",
+			"step_retarget": false,
+			"target": "wild_hunter",
+			"time": 1.05
+		},
+		{
+			"case": "obstacle",
+			"cell": [
+				1,
+				1
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					2,
+					1
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					1,
+					1
+				],
+				"landing_selected": "guard_monk",
+				"new_id": "wild_hunter",
+				"new_reachable_cost": 3,
+				"old_id": "guard_monk",
+				"old_reachable_cost": 2
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "E5",
+			"step_retarget": false,
+			"target": "guard_monk",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "death",
+			"cell": [
+				11,
+				2
+			],
+			"completed": 0,
+			"cooldown": 0.0,
+			"facts": {
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "wild_hunter",
+				"new_reachable_cost": 0,
+				"old_id": "guard_monk",
+				"old_reachable_cost": -1,
+				"retry_cleared": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "E5",
+			"step_retarget": false,
+			"target": "",
+			"time": 0.0
+		},
+		{
+			"case": "idle_without_landing",
+			"cell": [
+				4,
+				4
+			],
+			"completed": 0,
+			"cooldown": 99.9916666666667,
+			"facts": {
+				"kept": "guard_monk",
+				"newcomer": "wild_hunter",
+				"no_landing": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "E5",
+			"step_retarget": false,
+			"target": "guard_monk",
+			"time": 0.0
+		},
+		{
+			"case": "strict",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "wild_hunter",
+				"new_reachable_cost": 0,
+				"old_id": "guard_monk",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "E5",
+			"step_retarget": false,
+			"target": "wild_hunter",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "equal",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "guard_monk",
+				"new_reachable_cost": 1,
+				"old_id": "wild_hunter",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "E5",
+			"step_retarget": false,
+			"target": "wild_hunter",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "range",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"cooldown": 0.408333333333335,
+			"facts": {
+				"actual_attack_target": "wild_hunter",
+				"explicit_pending_flag_during_real_attack_deferred": true,
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "guard_monk",
+				"new_reachable_cost": 0,
+				"old_id": "wild_hunter",
+				"old_reachable_cost": 0
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "E5",
+			"step_retarget": false,
+			"target": "wild_hunter",
+			"time": 1.05
+		},
+		{
+			"case": "obstacle",
+			"cell": [
+				12,
+				1
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					11,
+					1
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					12,
+					1
+				],
+				"landing_selected": "guard_monk",
+				"new_id": "wild_hunter",
+				"new_reachable_cost": 3,
+				"old_id": "guard_monk",
+				"old_reachable_cost": 2
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "E5",
+			"step_retarget": false,
+			"target": "guard_monk",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "death",
+			"cell": [
+				11,
+				2
+			],
+			"completed": 0,
+			"cooldown": 0.0,
+			"facts": {
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "wild_hunter",
+				"new_reachable_cost": 0,
+				"old_id": "guard_monk",
+				"old_reachable_cost": -1,
+				"retry_cleared": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "E5",
+			"step_retarget": false,
+			"target": "",
+			"time": 0.0
+		},
+		{
+			"case": "idle_without_landing",
+			"cell": [
+				9,
+				4
+			],
+			"completed": 0,
+			"cooldown": 99.9916666666667,
+			"facts": {
+				"kept": "guard_monk",
+				"newcomer": "wild_hunter",
+				"no_landing": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "E5",
+			"step_retarget": false,
+			"target": "guard_monk",
+			"time": 0.0
+		},
+		{
+			"case": "strict",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "wild_hunter",
+				"new_reachable_cost": 0,
+				"old_id": "guard_monk",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "E6",
+			"step_retarget": false,
+			"target": "wild_hunter",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "equal",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "guard_monk",
+				"new_reachable_cost": 1,
+				"old_id": "wild_hunter",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "E6",
+			"step_retarget": false,
+			"target": "wild_hunter",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "range",
+			"cell": [
+				5,
+				4
+			],
+			"completed": 1,
+			"cooldown": 0.408333333333335,
+			"facts": {
+				"actual_attack_target": "wild_hunter",
+				"explicit_pending_flag_during_real_attack_deferred": true,
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "guard_monk",
+				"new_reachable_cost": 0,
+				"old_id": "wild_hunter",
+				"old_reachable_cost": 0
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "E6",
+			"step_retarget": false,
+			"target": "wild_hunter",
+			"time": 1.05
+		},
+		{
+			"case": "obstacle",
+			"cell": [
+				1,
+				1
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					2,
+					1
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					1,
+					1
+				],
+				"landing_selected": "guard_monk",
+				"new_id": "wild_hunter",
+				"new_reachable_cost": 3,
+				"old_id": "guard_monk",
+				"old_reachable_cost": 2
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "E6",
+			"step_retarget": false,
+			"target": "guard_monk",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "death",
+			"cell": [
+				11,
+				6
+			],
+			"completed": 0,
+			"cooldown": 0.0,
+			"facts": {
+				"from": [
+					4,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					5,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "wild_hunter",
+				"new_reachable_cost": 0,
+				"old_id": "guard_monk",
+				"old_reachable_cost": -1,
+				"retry_cleared": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "E6",
+			"step_retarget": false,
+			"target": "",
+			"time": 0.0
+		},
+		{
+			"case": "idle_without_landing",
+			"cell": [
+				4,
+				4
+			],
+			"completed": 0,
+			"cooldown": 99.9916666666667,
+			"facts": {
+				"kept": "guard_monk",
+				"newcomer": "wild_hunter",
+				"no_landing": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": false,
+			"role": "E6",
+			"step_retarget": false,
+			"target": "guard_monk",
+			"time": 0.0
+		},
+		{
+			"case": "strict",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "wild_hunter",
+				"new_reachable_cost": 0,
+				"old_id": "guard_monk",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "E6",
+			"step_retarget": false,
+			"target": "wild_hunter",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "equal",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "guard_monk",
+				"new_reachable_cost": 1,
+				"old_id": "wild_hunter",
+				"old_reachable_cost": 1
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "E6",
+			"step_retarget": false,
+			"target": "wild_hunter",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "range",
+			"cell": [
+				8,
+				4
+			],
+			"completed": 1,
+			"cooldown": 0.408333333333335,
+			"facts": {
+				"actual_attack_target": "wild_hunter",
+				"explicit_pending_flag_during_real_attack_deferred": true,
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "guard_monk",
+				"new_reachable_cost": 0,
+				"old_id": "wild_hunter",
+				"old_reachable_cost": 0
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "E6",
+			"step_retarget": false,
+			"target": "wild_hunter",
+			"time": 1.05
+		},
+		{
+			"case": "obstacle",
+			"cell": [
+				12,
+				1
+			],
+			"completed": 1,
+			"cooldown": 99.4999999999996,
+			"facts": {
+				"from": [
+					11,
+					1
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					12,
+					1
+				],
+				"landing_selected": "guard_monk",
+				"new_id": "wild_hunter",
+				"new_reachable_cost": 3,
+				"old_id": "guard_monk",
+				"old_reachable_cost": 2
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "E6",
+			"step_retarget": false,
+			"target": "guard_monk",
+			"time": 0.500000000000001
+		},
+		{
+			"case": "death",
+			"cell": [
+				11,
+				6
+			],
+			"completed": 0,
+			"cooldown": 0.0,
+			"facts": {
+				"from": [
+					9,
+					4
+				],
+				"incomplete_segment_kept_old": true,
+				"landing": [
+					8,
+					4
+				],
+				"landing_selected": "wild_hunter",
+				"new_id": "wild_hunter",
+				"new_reachable_cost": 0,
+				"old_id": "guard_monk",
+				"old_reachable_cost": -1,
+				"retry_cleared": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "E6",
+			"step_retarget": false,
+			"target": "",
+			"time": 0.0
+		},
+		{
+			"case": "idle_without_landing",
+			"cell": [
+				9,
+				4
+			],
+			"completed": 0,
+			"cooldown": 99.9916666666667,
+			"facts": {
+				"kept": "guard_monk",
+				"newcomer": "wild_hunter",
+				"no_landing": true
+			},
+			"kind": "isolated_real_segment_one_driven_brain",
+			"mirrored": true,
+			"role": "E6",
+			"step_retarget": false,
+			"target": "guard_monk",
+			"time": 0.0
+		}
+	],
+	"config": "board-v4-step-target",
+	"coordinate_base": 1,
+	"failures": 0,
+	"kind": "isolated_real_movement_one_driven_brain_not_natural_combat",
+	"rule": "ranged-step-target-20261009"
+}
