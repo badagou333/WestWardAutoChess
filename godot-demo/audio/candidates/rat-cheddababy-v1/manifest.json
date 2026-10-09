@@ -1,0 +1,23 @@
+{
+  "status": "原素材第二段获负责人指定；精确切点待试听，未接入",
+  "event_key": "rat_attack",
+  "file": "rat_attack_second.wav",
+  "source_title": "Rockburst5.wav",
+  "author": "Cheddababy",
+  "source_page": "https://freesound.org/people/Cheddababy/sounds/325913/",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0/",
+  "checked_date": "2026-10-09",
+  "source_kind": "Public HQ MP3 preview, not authenticated original WAV download",
+  "download_url": "https://cdn.freesound.org/previews/325/325913_5588237-hq.mp3",
+  "source_sha256": "0cd314b6656fe2013018c67beba4c7c060737fe1e9ac615336e01d99cf3ea159",
+  "decoded_sha256": "a59d20aea6e1e0a3824a0814ea0790fb56c32bc099bef28682541e47a7f043c9",
+  "source_duration": 1.5,
+  "source_start": 0.655,
+  "source_end": 0.855,
+  "duration": 0.2,
+  "format": "44100Hz stereo 16bit PCM WAV",
+  "changes": "Extract second impact at 0.655–0.855s; 2ms fade-in/25ms fade-out; peak -11dBFS. No pitch/time changes, synthesis or added layers.",
+  "peak_dbfs": -11.000260703669154,
+  "sha256": "7b1461f9f572778ab1b58bb5d746b50775087b74abbc160d53620121cc012f94"
+}
