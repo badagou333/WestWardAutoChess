@@ -1,0 +1,22 @@
+{
+  "status": "待负责人A/B试听选择；未接入",
+  "event_key": "herbal_spirit_child_attack",
+  "source_title": "Powerup 07.wav",
+  "author": "LilMati",
+  "source_page": "https://freesound.org/people/LilMati/sounds/523649/",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "checked_date": "2026-10-09",
+  "source_kind": "Public HQ MP3 preview, not original WAV download",
+  "download_url": "https://cdn.freesound.org/previews/523/523649_6142149-hq.mp3",
+  "file": "healer_new_full.wav",
+  "duration": 0.9047619047619048,
+  "format": "44100Hz stereo 16bit PCM WAV",
+  "changes": "Full duration retained. Gain only; peak matched to old sample (~-12dBFS). No trimming, pitch/time changes, synthesis, added layers or loudness matching.",
+  "gain_db": -11.729104794490562,
+  "source_sha256": "275316aba868fa7fdfc00ccaab645413ef7d3573bf8b70a62838d49c1938d22a",
+  "decoded_sha256": "fe372b2d442ed59bc877584f9d5e0315dd88db275cb2dd33506a1f3cec08c5ea",
+  "sha256": "3a40ab16654b2be18d4888976833984b6f13057897b11c643aec001f7fa2c894",
+  "old_reference": "../v1/wav/herbal_spirit_child_attack.wav",
+  "old_sha256": "96e1b82cbf5a7ac2b6cf64ac138f1a1cf12ed0d76ca1c4264ecc4ae1d4cb9f9b"
+}
