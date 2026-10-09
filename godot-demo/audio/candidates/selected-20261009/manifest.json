@@ -1,0 +1,430 @@
+{
+  "authority": "D-20261009-006; 00 delivery stage on baseline 1fbed6f",
+  "status": "08素材交付；待00审核/06运行接入/07独立验收",
+  "sample_rate": 44100,
+  "sample_width_bytes": 2,
+  "roles": [
+    {
+      "role": "guard_monk",
+      "label": "护寺棍僧",
+      "event_key": "guard_monk_attack",
+      "asset": "monk_bear_whack",
+      "recommended_trigger": "melee_damage_applied",
+      "plays_per_attack_max": 1
+    },
+    {
+      "role": "wild_hunter",
+      "label": "山野猎户",
+      "event_key": "wild_hunter_attack",
+      "asset": "hunter_old_fallback",
+      "recommended_trigger": "projectile_launched",
+      "plays_per_attack_max": 1
+    },
+    {
+      "role": "sparrow_spirit",
+      "label": "山雀精",
+      "event_key": "sparrow_spirit_attack",
+      "asset": "sparrow_attack",
+      "recommended_trigger": "projectile_launched",
+      "plays_per_attack_max": 1
+    },
+    {
+      "role": "herbal_spirit_child",
+      "label": "药灵童子",
+      "event_key": "herbal_spirit_child_attack",
+      "asset": "healer_new",
+      "recommended_trigger": "positive_healing_applied",
+      "plays_per_attack_max": 1
+    },
+    {
+      "role": "foxfire_imp",
+      "label": "狐火小妖",
+      "event_key": "foxfire_imp_attack",
+      "asset": "foxfire_A",
+      "recommended_trigger": "projectile_launched",
+      "plays_per_attack_max": 1
+    },
+    {
+      "role": "rat",
+      "label": "灰鼠喽啰",
+      "event_key": "rat_attack",
+      "asset": "rat_attack",
+      "recommended_trigger": "projectile_damage_applied",
+      "plays_per_attack_max": 1
+    },
+    {
+      "role": "boar",
+      "label": "山猪喽啰",
+      "event_key": "boar_attack",
+      "asset": "boar_attack_full",
+      "recommended_trigger": "melee_damage_applied",
+      "plays_per_attack_max": 1
+    },
+    {
+      "role": "wolf",
+      "label": "山狼",
+      "event_key": "wolf_attack",
+      "asset": "wolf_attack_full",
+      "recommended_trigger": "melee_damage_applied",
+      "plays_per_attack_max": 1
+    },
+    {
+      "role": "bear_lord",
+      "label": "熊山君",
+      "event_key": "bear_lord_attack",
+      "asset": "monk_bear_whack",
+      "recommended_trigger": "melee_damage_applied",
+      "plays_per_attack_max": 1
+    }
+  ],
+  "backups": [
+    {
+      "role": "guard_monk",
+      "path": "../v1/wav/guard_monk_attack.wav",
+      "sha256": "41b0105f743c0c606a4d3fd29a04b1c75e314944db7f711b240bebedebcbab8b"
+    },
+    {
+      "role": "wild_hunter",
+      "path": "../v1/wav/wild_hunter_attack.wav",
+      "sha256": "6c067f0acdc52428e7e258ace8980aeb526e2f5513f2ee0bef0d582e781aa768"
+    },
+    {
+      "role": "sparrow_spirit",
+      "path": "../v1/wav/sparrow_spirit_attack.wav",
+      "sha256": "d312b2d0d0b423d17a3543c96fa30833250060e1cce4d10468fd71b2f3192270"
+    },
+    {
+      "role": "herbal_spirit_child",
+      "path": "../v1/wav/herbal_spirit_child_attack.wav",
+      "sha256": "96e1b82cbf5a7ac2b6cf64ac138f1a1cf12ed0d76ca1c4264ecc4ae1d4cb9f9b"
+    },
+    {
+      "role": "foxfire_imp",
+      "path": "../v1/wav/foxfire_imp_attack.wav",
+      "sha256": "b23117f2bf868dbaf682c5964117681ee425e417b64e4e9fa188c862088f0803"
+    },
+    {
+      "role": "rat",
+      "path": "../v1/wav/rat_attack.wav",
+      "sha256": "8b23af0289a4e738b5ae1c5d8ccc1d2ca3fccac729efc2383a329d57ec146259"
+    },
+    {
+      "role": "boar",
+      "path": "../v1/wav/boar_attack.wav",
+      "sha256": "397f7a84e4eb0eb596e0e1f9bb9e5ccc3b0ef382cc79e6a1ce728f818c931b25"
+    },
+    {
+      "role": "wolf",
+      "path": "../v1/wav/wolf_attack.wav",
+      "sha256": "d58a4287e14a237a908827c18b27607098b5fb51cdafd09211404a313dc157ae"
+    },
+    {
+      "role": "bear_lord",
+      "path": "../v1/wav/bear_lord_attack.wav",
+      "sha256": "47ec47cd42a9e1d0bf91039b99adac5aa6641bb1a107c5066b45b068a4b32a10"
+    },
+    {
+      "role": "herbal_spirit_child",
+      "path": "../healer-lilmati-v1/healer_old_backup.wav",
+      "sha256": "96e1b82cbf5a7ac2b6cf64ac138f1a1cf12ed0d76ca1c4264ecc4ae1d4cb9f9b"
+    }
+  ],
+  "hunter_pending": {
+    "source_id": "126464",
+    "reference_path": "docs/audio-references/noncommercial/hunter-robinhood76-v1/hunter_launch_02.wav",
+    "sha256": "6936dbe90b719c90d1dfa8900fc1736ca1bda035b767931d00e67e94027ac9a7",
+    "license": "CC BY-NC 4.0",
+    "commercial_permission_obtained": false,
+    "default_delivery": "hunter_old_fallback",
+    "status": "许可用途选择待负责人；不复制NC素材进默认交付/运行/包"
+  },
+  "assets": [
+    {
+      "id": "monk_bear_whack",
+      "file": "wav/monk_bear_whack.wav",
+      "mode": "full_length_gain_fades",
+      "input": "source/114683_1855536-decoded.wav",
+      "input_sha256": "3568d3ac60402bfc51e5feec78bb07de7122fda4e54cffb6684794b8da098b9c",
+      "source_id": "114683",
+      "source_title": "whack02.mp3",
+      "author": "Qat",
+      "source_page": "https://freesound.org/people/Qat/sounds/114683/",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_checked": "2026-10-09",
+      "raw_source": "source/114683_1855536-hq.mp3",
+      "source_sha256": "38d8001909677916cbf81f8f6d2600a37349dff11ae3eb14479690f771b85a52",
+      "download_url": "https://cdn.freesound.org/previews/114/114683_1855536-hq.mp3",
+      "source_kind": "public HQ MP3 preview, not original download",
+      "changes": "Full decoded duration retained; 2ms fade-in and 8ms fade-out; peak -11dBFS. No trim, pitch/time changes, EQ, synthesis or added layers.",
+      "sha256": "56502597d09207bc3b4acc3f866ef685eb5a4306852e2f16b89889cc666d4fde",
+      "frames": 19459,
+      "duration_seconds": 0.4412471655328798,
+      "sample_rate": 44100,
+      "bits": 16,
+      "channels": 2,
+      "peak_dbfs": -11.000260703669154,
+      "rms_dbfs": -31.804209811882643,
+      "first_frame": [
+        0,
+        0
+      ],
+      "last_frame": [
+        0,
+        0
+      ],
+      "clipped_samples": 0,
+      "gain_db": -10.979299712413022
+    },
+    {
+      "id": "wolf_attack_full",
+      "file": "wav/wolf_attack_full.wav",
+      "mode": "full_length_gain_fades",
+      "input": "source/260776_3424813-decoded.wav",
+      "input_sha256": "829a226ced15089aec19f80c88e721e419c66ac4bcea7e96c7ef530909de8136",
+      "source_id": "260776",
+      "source_title": "ANGRY DOG BARK SNARL Flat.wav",
+      "author": "deleted_user_3424813",
+      "source_page": "https://freesound.org/people/deleted_user_3424813/sounds/260776/",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "license_checked": "2026-10-09",
+      "raw_source": "source/260776_3424813-hq.mp3",
+      "source_sha256": "0bd39551a6b7940c6fb24eb3001242364e3afe04e227a4fd3330755276ebd76e",
+      "download_url": "https://cdn.freesound.org/previews/260/260776_3424813-hq.mp3",
+      "source_kind": "public HQ MP3 preview, not original download",
+      "changes": "Full decoded duration retained; 2ms fade-in and 8ms fade-out; peak -11dBFS. No trim, pitch/time changes, EQ, synthesis or added layers.",
+      "sha256": "087c1e90d04801ad1d732df2e8b2df45efda00c54362e0e29ea34db3ad0026f2",
+      "frames": 106531,
+      "duration_seconds": 2.415668934240363,
+      "sample_rate": 44100,
+      "bits": 16,
+      "channels": 2,
+      "peak_dbfs": -11.000260703669154,
+      "rms_dbfs": -29.556405419004502,
+      "first_frame": [
+        0,
+        0
+      ],
+      "last_frame": [
+        0,
+        0
+      ],
+      "clipped_samples": 0,
+      "gain_db": -10.62765770157947
+    },
+    {
+      "id": "boar_attack_full",
+      "file": "wav/boar_attack_full.wav",
+      "mode": "full_length_gain_fades",
+      "input": "source/416890_3899064-decoded.wav",
+      "input_sha256": "f365685c7ef3c380b88676178b87f5c73fe9c492768ea6cb96ff5865e8bdcac1",
+      "source_id": "416890",
+      "source_title": "Hammer Hitting a Head",
+      "author": "WhiteLineFever",
+      "source_page": "https://freesound.org/people/WhiteLineFever/sounds/416890/",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_checked": "2026-10-09",
+      "raw_source": "source/416890_3899064-hq.mp3",
+      "source_sha256": "bd949886dc9d0ce458bb2b85be276f16e99aadc8fed5bc395563e1c736286f15",
+      "download_url": "https://cdn.freesound.org/previews/416/416890_3899064-hq.mp3",
+      "source_kind": "public HQ MP3 preview, not original download",
+      "changes": "Full decoded duration retained; 2ms fade-in and 8ms fade-out; peak -11dBFS. No trim, pitch/time changes, EQ, synthesis or added layers.",
+      "sha256": "73258a27856e1b5453e4bbec55555b9fc574b1d522c74ec9c1ac157283fe56c3",
+      "frames": 17052,
+      "duration_seconds": 0.38666666666666666,
+      "sample_rate": 44100,
+      "bits": 16,
+      "channels": 2,
+      "peak_dbfs": -11.000260703669154,
+      "rms_dbfs": -32.843894921099064,
+      "first_frame": [
+        0,
+        0
+      ],
+      "last_frame": [
+        0,
+        0
+      ],
+      "clipped_samples": 0,
+      "gain_db": -8.159172926717545
+    },
+    {
+      "id": "sparrow_attack",
+      "file": "wav/sparrow_attack_first.wav",
+      "mode": "copy_exact",
+      "input": "../sparrow-plantmonkey-v1/sparrow_attack_first.wav",
+      "input_sha256": "32f3ba8d0c0f48572f5d410202e53add1e675934ec0d2f0a52f11f34f86ee995",
+      "source_id": "410751",
+      "source_title": "Arrow strike.mp3",
+      "author": "plantmonkey",
+      "source_page": "https://freesound.org/people/plantmonkey/sounds/410751/",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_checked": "2026-10-09",
+      "raw_source": "../sparrow-plantmonkey-v1/source/410751_182472-hq.mp3",
+      "source_sha256": "6922764348fbf8b4ac775f1bb25c5ce1bc195de3a1ef6b71421f04cdf8f4e186",
+      "download_url": "https://cdn.freesound.org/previews/410/410751_182472-hq.mp3",
+      "source_kind": "public HQ MP3 preview, not authenticated original download",
+      "changes": "First complete event only; trim 0.170–0.680s; 2ms fade-in, 25ms fade-out; peak gain to -11dBFS. No pitch/time change, synthesis, EQ, extra layers or target-hit sound.",
+      "prior_manifest": "../sparrow-plantmonkey-v1/manifest.json",
+      "sha256": "32f3ba8d0c0f48572f5d410202e53add1e675934ec0d2f0a52f11f34f86ee995",
+      "frames": 22491,
+      "duration_seconds": 0.51,
+      "sample_rate": 44100,
+      "bits": 16,
+      "channels": 2,
+      "peak_dbfs": -11.000260703669154,
+      "rms_dbfs": -29.947890124095228,
+      "first_frame": [
+        0,
+        0
+      ],
+      "last_frame": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "id": "rat_attack",
+      "file": "wav/rat_attack_second.wav",
+      "mode": "copy_exact",
+      "input": "../rat-cheddababy-v1/rat_attack_second.wav",
+      "input_sha256": "7b1461f9f572778ab1b58bb5d746b50775087b74abbc160d53620121cc012f94",
+      "source_id": "325913",
+      "source_title": "Rockburst5.wav",
+      "author": "Cheddababy",
+      "source_page": "https://freesound.org/people/Cheddababy/sounds/325913/",
+      "license": "CC BY 3.0",
+      "license_url": "https://creativecommons.org/licenses/by/3.0/",
+      "license_checked": "2026-10-09",
+      "raw_source": "../rat-cheddababy-v1/source/325913_5588237-hq.mp3",
+      "source_sha256": "0cd314b6656fe2013018c67beba4c7c060737fe1e9ac615336e01d99cf3ea159",
+      "download_url": "https://cdn.freesound.org/previews/325/325913_5588237-hq.mp3",
+      "source_kind": "Public HQ MP3 preview, not authenticated original WAV download",
+      "changes": "Extract second impact at 0.655–0.855s; 2ms fade-in/25ms fade-out; peak -11dBFS. No pitch/time changes, synthesis or added layers.",
+      "prior_manifest": "../rat-cheddababy-v1/manifest.json",
+      "sha256": "7b1461f9f572778ab1b58bb5d746b50775087b74abbc160d53620121cc012f94",
+      "frames": 8820,
+      "duration_seconds": 0.2,
+      "sample_rate": 44100,
+      "bits": 16,
+      "channels": 2,
+      "peak_dbfs": -11.000260703669154,
+      "rms_dbfs": -37.07234837474025,
+      "first_frame": [
+        0,
+        0
+      ],
+      "last_frame": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "id": "healer_new",
+      "file": "wav/healer_new_full.wav",
+      "mode": "copy_exact",
+      "input": "../healer-lilmati-v1/healer_new_full.wav",
+      "input_sha256": "3a40ab16654b2be18d4888976833984b6f13057897b11c643aec001f7fa2c894",
+      "source_id": "523649",
+      "source_title": "Powerup 07.wav",
+      "author": "LilMati",
+      "source_page": "https://freesound.org/people/LilMati/sounds/523649/",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "license_checked": "2026-10-09",
+      "raw_source": "../healer-lilmati-v1/source/523649_6142149-hq.mp3",
+      "source_sha256": "275316aba868fa7fdfc00ccaab645413ef7d3573bf8b70a62838d49c1938d22a",
+      "download_url": "https://cdn.freesound.org/previews/523/523649_6142149-hq.mp3",
+      "source_kind": "Public HQ MP3 preview, not original WAV download",
+      "changes": "Full duration retained. Gain only; peak matched to old sample (~-12dBFS). No trimming, pitch/time changes, synthesis, added layers or loudness matching.",
+      "prior_manifest": "../healer-lilmati-v1/manifest.json",
+      "sha256": "3a40ab16654b2be18d4888976833984b6f13057897b11c643aec001f7fa2c894",
+      "frames": 39900,
+      "duration_seconds": 0.9047619047619048,
+      "sample_rate": 44100,
+      "bits": 16,
+      "channels": 2,
+      "peak_dbfs": -11.999946665424783,
+      "rms_dbfs": -23.067704058573817,
+      "first_frame": [
+        2948,
+        2948
+      ],
+      "last_frame": [
+        0,
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "id": "foxfire_A",
+      "file": "wav/foxfire_A_faithful.wav",
+      "mode": "copy_exact",
+      "input": "../foxfire-dwoboyle-v1/foxfire_A_faithful.wav",
+      "input_sha256": "aa30009e92190a69ec99a404f047b453606a8f6e79e5a0f4fe3de495a900a7db",
+      "source_id": "136696",
+      "source_title": "Fire Ball",
+      "author": "DWOBoyle",
+      "source_page": "https://freesound.org/people/DWOBoyle/sounds/136696/",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_checked": "2026-09-29",
+      "raw_source": "../foxfire-dwoboyle-v1/source/136696_2289019-hq.mp3",
+      "source_sha256": "0a8cfaa2a6881b8f41ba0fe5cd4cf855dec8d57fad8932f10269f7e12c0fe246",
+      "download_url": "https://cdn.freesound.org/previews/136/136696_2289019-hq.mp3",
+      "source_kind": "Public HQ MP3 preview; not original WAV",
+      "changes": "Stereo averaged to mono; nearly silent tail removed; short endpoint fades; peak -11dBFS.",
+      "prior_manifest": "../foxfire-dwoboyle-v1/manifest.json",
+      "sha256": "aa30009e92190a69ec99a404f047b453606a8f6e79e5a0f4fe3de495a900a7db",
+      "frames": 25137,
+      "duration_seconds": 0.57,
+      "sample_rate": 44100,
+      "bits": 16,
+      "channels": 1,
+      "peak_dbfs": -11.000260703669154,
+      "rms_dbfs": -28.811417660657366,
+      "first_frame": [
+        0
+      ],
+      "last_frame": [
+        0
+      ],
+      "clipped_samples": 0
+    },
+    {
+      "id": "hunter_old_fallback",
+      "file": "wav/hunter_old_fallback.wav",
+      "mode": "copy_exact",
+      "input": "../v1/wav/wild_hunter_attack.wav",
+      "input_sha256": "6c067f0acdc52428e7e258ace8980aeb526e2f5513f2ee0bef0d582e781aa768",
+      "source_id": null,
+      "source_title": "v1 project-generated hunter attack",
+      "author": "本项目08音效制作流程",
+      "source_page": null,
+      "license": "project-generated (existing v1 asset; no external source)",
+      "license_url": null,
+      "source_kind": "unchanged project-generated fallback",
+      "changes": "Exact copy of existing v1 file. New Robinhood76 selection excluded pending license-use decision.",
+      "sha256": "6c067f0acdc52428e7e258ace8980aeb526e2f5513f2ee0bef0d582e781aa768",
+      "frames": 11025,
+      "duration_seconds": 0.25,
+      "sample_rate": 44100,
+      "bits": 16,
+      "channels": 1,
+      "peak_dbfs": -10.000126940172311,
+      "rms_dbfs": -27.997467487498287,
+      "first_frame": [
+        0
+      ],
+      "last_frame": [
+        0
+      ],
+      "clipped_samples": 0
+    }
+  ]
+}
