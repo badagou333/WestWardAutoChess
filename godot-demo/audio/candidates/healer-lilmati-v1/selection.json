@@ -1,0 +1,11 @@
+{
+  "status": "负责人已选新版；旧版保留备用",
+  "selected_date": "2026-10-09",
+  "event_key": "herbal_spirit_child_attack",
+  "selected_file": "healer_new_full.wav",
+  "selected_sha256": "3a40ab16654b2be18d4888976833984b6f13057897b11c643aec001f7fa2c894",
+  "backup_file": "healer_old_backup.wav",
+  "backup_sha256": "96e1b82cbf5a7ac2b6cf64ac138f1a1cf12ed0d76ca1c4264ecc4ae1d4cb9f9b",
+  "original_backup_source": "../v1/wav/herbal_spirit_child_attack.wav",
+  "runtime_status": "待06接入；本批未修改运行时代码"
+}
