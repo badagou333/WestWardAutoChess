@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-10",
+  "scope": "08试听页静态与复现检查，无GUI/设备试听",
+  "result": "passed",
+  "profile": "board-selected-noncommercial-20261010",
+  "sound_count": 9,
+  "event_count": 10,
+  "disabled_keys_in_active_inventory": 0,
+  "audio_controls": 9,
+  "autoplay": false,
+  "runtime_paths_duration_hashes": "all exact",
+  "wolf_frames": 12789,
+  "wolf_seconds": 0.29,
+  "build_reproduction": "index.html/inventory.json byte-identical",
+  "runtime_audio_and_historical_victory": "unchanged",
+  "local_links": "all resolve",
+  "nc_and_attribution_notice": "preserved",
+  "limitations": "程序作者技术验证完成；本批07独立/设备输出/混战听感仍待，不代运行验收"
+}

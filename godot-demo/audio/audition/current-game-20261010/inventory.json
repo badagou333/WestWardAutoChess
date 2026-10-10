@@ -1,6 +1,12 @@
 {
   "date": "2026-10-10",
-  "scope": "当前棋盘Demo，14种声音/15事件；不含未触发UI/共用受击/退场",
+  "profile": "board-selected-noncommercial-20261010",
+  "runtime_manifest": "../../runtime/board-selected-20261010/manifest.json",
+  "scope": "当前棋盘Demo，9种声音/10事件；死亡与战斗结果声已停用，旧源仅保备用",
+  "sound_count": 9,
+  "event_count": 10,
+  "implementation_commit": "6052f18",
+  "verification_status": "程序已接入，作者技术验证完成；本批独立验收与设备/混战听感尚未完成",
   "items": [
     {
       "id": "monk_bear_whack",
@@ -8,11 +14,15 @@
       "title": "棍棒打击",
       "note": "两名角色共用；近战有效命中时播放。",
       "group": "attack",
-      "src": "../../runtime/board-selected-20261009/wav/monk_bear_whack.wav",
+      "src": "../../runtime/board-selected-20261010/wav/monk_bear_whack.wav",
       "duration": 0.4412471655328798,
       "sha256": "56502597d09207bc3b4acc3f866ef685eb5a4306852e2f16b89889cc666d4fde",
       "origin": "current runtime WAV",
-      "license": "CC0 1.0"
+      "license": "CC0 1.0",
+      "event_keys": [
+        "guard_monk_attack",
+        "bear_lord_attack"
+      ]
     },
     {
       "id": "hunter_launch_02_noncommercial",
@@ -20,11 +30,14 @@
       "title": "弓箭发射 · 第2段",
       "note": "箭射出时播放，不包含后续命中声。",
       "group": "attack",
-      "src": "../../runtime/board-selected-20261009/wav/hunter_launch_02.wav",
+      "src": "../../runtime/board-selected-20261010/wav/hunter_launch_02.wav",
       "duration": 0.12997732426303854,
       "sha256": "6936dbe90b719c90d1dfa8900fc1736ca1bda035b767931d00e67e94027ac9a7",
       "origin": "current runtime WAV",
-      "license": "CC BY-NC 4.0"
+      "license": "CC BY-NC 4.0",
+      "event_keys": [
+        "wild_hunter_attack"
+      ]
     },
     {
       "id": "sparrow_attack",
@@ -32,11 +45,14 @@
       "title": "投射攻击 · 前段",
       "note": "投射物发出时播放。",
       "group": "attack",
-      "src": "../../runtime/board-selected-20261009/wav/sparrow_attack_first.wav",
+      "src": "../../runtime/board-selected-20261010/wav/sparrow_attack_first.wav",
       "duration": 0.51,
       "sha256": "32f3ba8d0c0f48572f5d410202e53add1e675934ec0d2f0a52f11f34f86ee995",
       "origin": "current runtime WAV",
-      "license": "CC0 1.0"
+      "license": "CC0 1.0",
+      "event_keys": [
+        "sparrow_spirit_attack"
+      ]
     },
     {
       "id": "foxfire_A",
@@ -44,11 +60,14 @@
       "title": "火球发射 · A版",
       "note": "火球发出时播放。",
       "group": "attack",
-      "src": "../../runtime/board-selected-20261009/wav/foxfire_A_faithful.wav",
+      "src": "../../runtime/board-selected-20261010/wav/foxfire_A_faithful.wav",
       "duration": 0.57,
       "sha256": "aa30009e92190a69ec99a404f047b453606a8f6e79e5a0f4fe3de495a900a7db",
       "origin": "current runtime WAV",
-      "license": "CC BY 4.0"
+      "license": "CC BY 4.0",
+      "event_keys": [
+        "foxfire_imp_attack"
+      ]
     },
     {
       "id": "rat_attack",
@@ -56,11 +75,14 @@
       "title": "投石打击 · 第2段",
       "note": "投石有效命中时播放。",
       "group": "attack",
-      "src": "../../runtime/board-selected-20261009/wav/rat_attack_second.wav",
+      "src": "../../runtime/board-selected-20261010/wav/rat_attack_second.wav",
       "duration": 0.2,
       "sha256": "7b1461f9f572778ab1b58bb5d746b50775087b74abbc160d53620121cc012f94",
       "origin": "current runtime WAV",
-      "license": "CC BY 3.0"
+      "license": "CC BY 3.0",
+      "event_keys": [
+        "rat_attack"
+      ]
     },
     {
       "id": "boar_attack_full",
@@ -68,23 +90,29 @@
       "title": "锤击",
       "note": "近战有效命中时播放。",
       "group": "attack",
-      "src": "../../runtime/board-selected-20261009/wav/boar_attack_full.wav",
+      "src": "../../runtime/board-selected-20261010/wav/boar_attack_full.wav",
       "duration": 0.38666666666666666,
       "sha256": "73258a27856e1b5453e4bbec55555b9fc574b1d522c74ec9c1ac157283fe56c3",
       "origin": "current runtime WAV",
-      "license": "CC0 1.0"
+      "license": "CC0 1.0",
+      "event_keys": [
+        "boar_attack"
+      ]
     },
     {
-      "id": "wolf_attack_full",
+      "id": "wolf_first_call",
       "name": "山狼",
-      "title": "撕咬攻击 · 完整版",
-      "note": "近战有效命中时播放，完整保留长尾。",
+      "title": "撕咬攻击 · 第一声短版",
+      "note": "近战有效命中时播放，已换成确认的0.29秒短版。",
       "group": "attack",
-      "src": "../../runtime/board-selected-20261009/wav/wolf_attack_full.wav",
-      "duration": 2.415668934240363,
-      "sha256": "087c1e90d04801ad1d732df2e8b2df45efda00c54362e0e29ea34db3ad0026f2",
+      "src": "../../runtime/board-selected-20261010/wav/wolf_first_call.wav",
+      "duration": 0.29,
+      "sha256": "04b1add76cfc42dfa2c3384020d638d04fd279f053211485961c512dea49831c",
       "origin": "current runtime WAV",
-      "license": "CC BY 3.0"
+      "license": "CC BY 3.0",
+      "event_keys": [
+        "wolf_attack"
+      ]
     },
     {
       "id": "healer_new",
@@ -92,59 +120,14 @@
       "title": "治疗 · 新版",
       "note": "实际恢复生命时播放；旧版已保留备用。",
       "group": "attack",
-      "src": "../../runtime/board-selected-20261009/wav/healer_new_full.wav",
+      "src": "../../runtime/board-selected-20261010/wav/healer_new_full.wav",
       "duration": 0.9047619047619048,
       "sha256": "3a40ab16654b2be18d4888976833984b6f13057897b11c643aec001f7fa2c894",
       "origin": "current runtime WAV",
-      "license": "CC0 1.0"
-    },
-    {
-      "id": "rat_death",
-      "name": "灰鼠喽啰",
-      "title": "死亡",
-      "note": "灰鼠死亡时播放。",
-      "group": "other",
-      "src": "../../candidates/v1/wav/rat_death.wav",
-      "duration": 0.46,
-      "sha256": "d9ff74dc81e0cb4e35d5ac34d252a5eccfa8f5d6357487c2350343b273f072cd",
-      "origin": "existing v1 runtime WAV",
-      "license": "项目旧合成音效"
-    },
-    {
-      "id": "boar_death",
-      "name": "山猪喽啰",
-      "title": "死亡",
-      "note": "山猪死亡时播放。",
-      "group": "other",
-      "src": "../../candidates/v1/wav/boar_death.wav",
-      "duration": 0.75,
-      "sha256": "318f829ccc955a0bbe8cd8a2ab11cbefc844cd51048c8966f83fac1d81d8f036",
-      "origin": "existing v1 runtime WAV",
-      "license": "项目旧合成音效"
-    },
-    {
-      "id": "wolf_death",
-      "name": "山狼",
-      "title": "死亡",
-      "note": "山狼死亡时播放。",
-      "group": "other",
-      "src": "../../candidates/v1/wav/wolf_death.wav",
-      "duration": 0.85,
-      "sha256": "27de392113ac74faf4d7549bf6032f8a7316c7981012910aaadc8e5307d06e0f",
-      "origin": "existing v1 runtime WAV",
-      "license": "项目旧合成音效"
-    },
-    {
-      "id": "bear_lord_death",
-      "name": "熊山君",
-      "title": "死亡",
-      "note": "熊山君死亡时播放。",
-      "group": "other",
-      "src": "../../candidates/v1/wav/bear_lord_death.wav",
-      "duration": 1.15,
-      "sha256": "53f87e0473ea0c54ab8f32a336b6e454d4296aaa8f5932f4ccf84d0ee950902a",
-      "origin": "existing v1 runtime WAV",
-      "license": "项目旧合成音效"
+      "license": "CC0 1.0",
+      "event_keys": [
+        "herbal_spirit_child_attack"
+      ]
     },
     {
       "id": "tangseng_hurt_warning",
@@ -152,23 +135,14 @@
       "title": "受伤警示",
       "note": "唐僧实际受伤时播放，有冷却限制。",
       "group": "other",
-      "src": "../../candidates/v1/wav/tangseng_hurt_warning.wav",
+      "src": "../../runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav",
       "duration": 0.52,
       "sha256": "e1396159d6686440c57136d996d013d36fa45de9ca7e8c21c662383cc6069778",
-      "origin": "existing v1 runtime WAV",
-      "license": "项目旧合成音效"
-    },
-    {
-      "id": "victory",
-      "name": "战斗结果",
-      "title": "胜利提示",
-      "note": "获胜时播放。此试听按游戏内相同生成公式导出。",
-      "group": "other",
-      "src": "victory_runtime_preview.wav",
-      "duration": 0.18,
-      "sha256": "bc255a25746abce1edb57862354b92bb1876e172d466e68d45203cf13fb64426",
-      "origin": "runtime formula reproduction; not game-recorded output",
-      "license": "项目程序生成提示音"
+      "origin": "current runtime WAV",
+      "license": "项目内自制；未新增公开授权许可证",
+      "event_keys": [
+        "tangseng_hurt_warning"
+      ]
     }
   ]
 }
