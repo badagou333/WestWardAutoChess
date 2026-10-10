@@ -1,0 +1,20 @@
+{
+  "status": "第一声短版候选，待负责人试听；未替换运行完整声",
+  "source_page": "https://freesound.org/people/deleted_user_3424813/sounds/260776/",
+  "source_title": "ANGRY DOG BARK SNARL Flat.wav",
+  "author": "deleted_user_3424813",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0/",
+  "input": "../selected-20261009/wav/wolf_attack_full.wav",
+  "input_sha256": "087c1e90d04801ad1d732df2e8b2df45efda00c54362e0e29ea34db3ad0026f2",
+  "source_kind": "Previously delivered WAV derived from public HQ MP3 preview, not original WAV download",
+  "source_start": 0.6,
+  "source_end": 0.89,
+  "duration": 0.29,
+  "frames": 12789,
+  "file": "wolf_first_call.wav",
+  "sha256": "04b1add76cfc42dfa2c3384020d638d04fd279f053211485961c512dea49831c",
+  "peak_dbfs": -12.194160151362329,
+  "changes": "Extract 0.600–0.890s first strong call; remove leading quiet preparation and second call; 2ms fade-in/30ms fade-out. No gain normalization, pitch/time changes, EQ or added layers.",
+  "cut_evidence": "Two strong amplitude groups near 0.65–0.85s and 0.92–1.10s; cut in intervening valley. Auditory identity and cut quality await user listening."
+}
