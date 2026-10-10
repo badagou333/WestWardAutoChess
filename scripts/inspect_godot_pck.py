@@ -9,7 +9,7 @@ import struct
 from pathlib import Path
 from verify_board_audio import PINS, ROLE_PINS, PROFILE, HUNTER, RUNTIME_REL
 
-BOARD_AUDIO = "audio/runtime/board-selected-20261009/"
+BOARD_AUDIO = "audio/runtime/board-selected-20261010/"
 
 
 REQUIRED_RELEASE_FILES = (
@@ -93,6 +93,8 @@ FORBIDDEN_RELEASE_PREFIXES = (
     "audio/candidates/healer-lilmati-v1/",
     "audio/candidates/sparrow-plantmonkey-v1/",
     "audio/candidates/rat-cheddababy-v1/",
+    "audio/candidates/wolf-first-call-v1/",
+    "audio/runtime/board-selected-20261009/",
 )
 
 
@@ -167,8 +169,8 @@ def check_board_usage(manifest: dict, usage: str) -> None:
     if manifest.get("profile") != PROFILE:
         raise ValueError("package has unknown board audio profile")
     assets = {entry["id"]: entry for entry in manifest["assets"]}
-    if len(manifest["assets"]) != 8 or set(assets) != set(PINS):
-        raise ValueError("package audio assets differ from the exact selected eight")
+    if len(manifest["assets"]) != 9 or set(assets) != set(PINS):
+        raise ValueError("package audio assets differ from the exact current nine")
     for asset_id, (name, sha, frames, channels, license_name) in PINS.items():
         entry = assets[asset_id]
         if (entry.get("file"), entry.get("sha256"), entry.get("frames"), entry.get("channels"), entry.get("license")) != ("wav/" + name, sha, frames, channels, license_name):
@@ -176,6 +178,10 @@ def check_board_usage(manifest: dict, usage: str) -> None:
     roles = manifest["roles"]
     if len(roles) != 9 or {entry["role"]: (entry["asset"], entry["recommended_trigger"]) for entry in roles} != ROLE_PINS:
         raise ValueError("package role/trigger mapping changed")
+    if manifest.get("secondary_cues") != [{"event_key":"tangseng_hurt_warning","asset":"tangseng_hurt_warning","recommended_trigger":"positive_core_damage"}]:
+        raise ValueError("package warning mapping changed")
+    if manifest.get("disable_cues") != ["rat_death","boar_death","wolf_death","bear_lord_death","victory"] or manifest.get("event_count") != 10:
+        raise ValueError("package disabled cues/current event count changed")
     restriction = manifest["usage_restriction"]
     exact = {"file":"wav/" + PINS[HUNTER][0], "repository_relative_file": RUNTIME_REL + "/wav/" + PINS[HUNTER][0], "sha256":PINS[HUNTER][1], "source_id":"126464", "license":"CC BY-NC 4.0"}
     if restriction.get("exact_nc_exception") != exact or restriction.get("permitted_delivery_use") != "仅非商业试玩" or restriction.get("commercial_permission_obtained") is not False:

@@ -2,7 +2,7 @@
 
 默认入口仍是格子版`scenes/escort_route.tscn`；新增无格子半自动**对照试验**`scenes/free_escort.tscn`，不是最终玩法替换。两版共用十个新版角色、四段遭遇、三个营地和经营系统。当前仍是可玩原型，不是完整第一章；未实现章节存档、完整英雄技能或连续逐帧动画。
 
-当前完整分发包含棋盘猎户的Robinhood76新声（CC BY-NC 4.0），**仅供本次非商业试玩**。这不是商用许可；未来商业版须换源或取得许可，其他素材仍分别按原CC0/CC BY许可。完整署名随[CREDITS.md](CREDITS.md)及[棋盘音效声明](audio/runtime/board-selected-20261009/ATTRIBUTION.md)分发，不只保留在候选目录。
+当前完整分发包含棋盘猎户的Robinhood76新声（CC BY-NC 4.0），**仅供本次非商业试玩**。这不是商用许可；未来商业版须换源或取得许可，其他素材仍分别按原CC0/CC BY许可。完整署名随[CREDITS.md](CREDITS.md)及[当前棋盘音效声明](audio/runtime/board-selected-20261010/ATTRIBUTION.md)分发，不只保留在候选目录。
 
 ## 启动
 
@@ -24,7 +24,29 @@ godot --path godot-demo res://scenes/board_trial.tscn
 
 独立入口，不替换默认护送；仅一关、公开固定敌阵，无经营/营地/人口上限/主动技能。默认为加强六怪＋一只现有熊山君，棍僧默认采用此前无棋盘试接的13帧样板；左侧“对照选项”可战前选择原六怪／强化六怪／强化＋熊，棍僧新旧显示可在部署、战斗、暂停、结果阶段切换。切换显示不重新开局或改变战斗，敌人配置开战后锁定，重试保留配置及显示选项。请自行关闭旧试玩窗口再重开此入口，旧进程不会自动更新。未采用05独立棋盘预览、山狼失败稿或狐火Spine候选，没有制作新媒体或Boss技能。本批作者无窗口自测已完成，图形输入/实际像素和05/07独立验收仍待安排。
 
-### D006 · 当前棋盘声音（2026-10-09，无窗口技术交付，听感待验）
+### D-20261010-001 · 当前声音：短狼与死亡／结果静音
+
+当前profile为`board-selected-noncommercial-20261010`，schema2；[新运行清单](audio/runtime/board-selected-20261010/manifest.json)仅9个实际WAV/10事件：九角色行为共8主声＋唐僧遇险警示。山狼采用已确认的第一声短版`wolf_first_call.wav`，12789帧/0.290秒，原切点、速度、音高、增益保持；选材/裁剪唯一权威为[08本批HANDOFF](audio/candidates/wolf-first-call-v1/HANDOFF.md)。旧2.415669秒完整声和旧09目录留备用，不进入本版有效表或当前包。
+
+当前棋盘不请求、不播放、不加载`rat_death/boar_death/wolf_death/bear_lord_death/victory`，不新增失败/结果声，也不加载或补用旧UI/通用材质声。专用Audio不调用旧父类初始化（它会加载旧整套并合成victory），只经固定10键/9路径白名单加载；通用播放只许唐警，主声仍走原实例＋固化serial去重。原死亡动画/淡出/节点释放、唐僧死亡失败、全敌清除胜利、结果界面/数据/重试保持。其余攻击/有效治疗/唐警、声音开关/音量/暂停/倍速pitch1和两个8槽池仍在，不因静音结果删玩法。下方D006长狼/死亡/胜利/UI/唐材质保留口径仅历史，已由本条授权替代。
+
+新9 WAV与对应源完整SHA及原PCM一致，9份`.wav.import`固定无损PCM、不变率/声道/不修剪归一化/循环，源码冷启动直接读原WAV，不依赖未生成的导入cache；实际PCK加载导入sample，核PCM SHA/16bits/44100/通道/完整帧数，不能假称包内有原WAV头。猎户NC仍仅本次非商业试玩、固定新运行路径＋原SHA；八外部来源的完整署名与短狼裁剪说明、项目内唐警来源随包；唐警未虚称CC0。商业默认检查仍拒，未泛放其他NC。
+
+作者无窗口source/PCK各9资产/19语义、6禁载/死亡边界及A/R/B双调度6自然局，全部执行零失败：四类实际原攻击致死后退场淡出/节点free，独立记录实际加载和声音请求，生产死亡/胜败全过程五禁键为0请求/0调度/0加载；手动五禁拒绝另列隔离夹具，不混作生产请求。A18.616667秒胜/唐148、R25.416667胜/唐168、B7.175秒败/唐0，完整report与原黄金报告一致；重试/暂停/原警示保持。旧入口音效最小回归通过，仍可使用其旧v1资源；这些旧资源在共享PCK中不等于当前棋盘加载。最终临时`/tmp/board-audio-short-20261010.pck`实际293项，非商业策略通过、商业默认拒，旧09/候选/试听/源/备份排除。证据在`tests/board-trial-runtime/board-audio-{short,silence}-20261010-*`。
+
+原`audio/audition/current-game-20261010`页/生成器/清单本批不改，仍可能展示旧14声快照；须本交付后由00交08更新实际9声10事件，不能把旧试听表当当前运行证据。没有GUI、鼠标、设备试听或Windows发行；实际听感、药灵原首帧点击及旧动画P3等仍待本人许可/独立复核。
+
+```sh
+godot --headless --path godot-demo --script res://tests/board_trial_audio_test.gd -- --skip-natural --output=/tmp/board-audio-short-20261010-core-source.json
+godot --headless --path godot-demo --script res://tests/board_trial_audio_silence_test.gd
+python3 scripts/verify_board_audio.py --mode noncommercial
+godot --headless --path godot-demo --export-pack "Windows x86_64 Release" /tmp/board-audio-short-20261010.pck
+python3 scripts/inspect_godot_pck.py /tmp/board-audio-short-20261010.pck --release-policy --usage noncommercial --output /tmp/board-audio-short-20261010-pack-files.txt
+godot --headless --main-pack /tmp/board-audio-short-20261010.pck --script /absolute/repo/godot-demo/tests/board_trial_audio_test.gd -- --skip-natural --output=/tmp/board-audio-short-20261010-core-pack.json
+godot --headless --main-pack /tmp/board-audio-short-20261010.pck --script /absolute/repo/godot-demo/tests/board_trial_audio_silence_test.gd -- --baseline=/absolute/repo/godot-demo/tests/board-trial-runtime/board-balance-20261009-natural.json --output=/tmp/board-audio-silence-20261010-pack.json
+```
+
+### 历史D006 · 2026-10-09声音接入（长狼／死亡结果口径已替代）
 
 本入口专用`board-selected-noncommercial-20261009`声表；8个原选WAV映射9个行为，棍僧/熊共Qat，狐火保持A，药灵用新版，猎户必须用已确认第2段。精确素材参数唯一权威为[08 HANDOFF](audio/candidates/selected-20261009/HANDOFF.md)，运行副本/来源/许可在[audio/runtime/board-selected-20261009/](audio/runtime/board-selected-20261009/manifest.json)，旧v1/候选/备份及旧入口默认声音不改。左侧“声音：开/关”和音量条控制全部新旧声音；顶栏标非商业试玩，“帮助→声音署名”查看完整第三方声明。实际输入和显示可读性未作图形验收。
 

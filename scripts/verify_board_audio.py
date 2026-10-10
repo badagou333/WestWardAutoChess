@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify D006 selected WAV copies and the exact noncommercial hunter exception.
+"""Verify D-20261010-001 WAV copies and the exact hunter NC exception.
 
 This is an offline material check, NOT game-event, listening or PCK acceptance.
 Default commercial mode deliberately rejects this specific noncommercial set.
@@ -15,20 +15,27 @@ from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_REL = "godot-demo/audio/candidates/selected-20261009"
-RUNTIME_REL = "godot-demo/audio/runtime/board-selected-20261009"
-PROFILE = "board-selected-noncommercial-20261009"
+WOLF_SOURCE_REL = "godot-demo/audio/candidates/wolf-first-call-v1"
+V1_SOURCE_REL = "godot-demo/audio/candidates/v1"
+RUNTIME_REL = "godot-demo/audio/runtime/board-selected-20261010"
+PROFILE = "board-selected-noncommercial-20261010"
 HUNTER = "hunter_launch_02_noncommercial"
+WOLF = "wolf_first_call"
+WARNING = "tangseng_hurt_warning"
+INTERNAL_LICENSE = "项目内自制；未新增公开授权许可证"
+FULL_WOLF_HASH = "087c1e90d04801ad1d732df2e8b2df45efda00c54362e0e29ea34db3ad0026f2"
 # Pinned selected files, not a generic allow-list of CC BY-NC licenses.
 # id: (filename, complete WAV sha256, frames, channels, individual license)
 PINS = {
     "monk_bear_whack": ("monk_bear_whack.wav", "56502597d09207bc3b4acc3f866ef685eb5a4306852e2f16b89889cc666d4fde", 19459, 2, "CC0 1.0"),
-    "wolf_attack_full": ("wolf_attack_full.wav", "087c1e90d04801ad1d732df2e8b2df45efda00c54362e0e29ea34db3ad0026f2", 106531, 2, "CC BY 3.0"),
+    WOLF: ("wolf_first_call.wav", "04b1add76cfc42dfa2c3384020d638d04fd279f053211485961c512dea49831c", 12789, 2, "CC BY 3.0"),
     "boar_attack_full": ("boar_attack_full.wav", "73258a27856e1b5453e4bbec55555b9fc574b1d522c74ec9c1ac157283fe56c3", 17052, 2, "CC0 1.0"),
     "sparrow_attack": ("sparrow_attack_first.wav", "32f3ba8d0c0f48572f5d410202e53add1e675934ec0d2f0a52f11f34f86ee995", 22491, 2, "CC0 1.0"),
     "rat_attack": ("rat_attack_second.wav", "7b1461f9f572778ab1b58bb5d746b50775087b74abbc160d53620121cc012f94", 8820, 2, "CC BY 3.0"),
     "healer_new": ("healer_new_full.wav", "3a40ab16654b2be18d4888976833984b6f13057897b11c643aec001f7fa2c894", 39900, 2, "CC0 1.0"),
     "foxfire_A": ("foxfire_A_faithful.wav", "aa30009e92190a69ec99a404f047b453606a8f6e79e5a0f4fe3de495a900a7db", 25137, 1, "CC BY 4.0"),
     "hunter_launch_02_noncommercial": ("hunter_launch_02.wav", "6936dbe90b719c90d1dfa8900fc1736ca1bda035b767931d00e67e94027ac9a7", 5732, 2, "CC BY-NC 4.0"),
+    WARNING: ("tangseng_hurt_warning.wav", "e1396159d6686440c57136d996d013d36fa45de9ca7e8c21c662383cc6069778", 22932, 1, INTERNAL_LICENSE),
 }
 # role: (asset id, actual event boundary); Tang has no added attack sound.
 ROLE_PINS = {
@@ -39,7 +46,7 @@ ROLE_PINS = {
     "foxfire_imp": ("foxfire_A", "projectile_launched"),
     "rat": ("rat_attack", "projectile_damage_applied"),
     "boar": ("boar_attack_full", "melee_damage_applied"),
-    "wolf": ("wolf_attack_full", "melee_damage_applied"),
+    "wolf": (WOLF, "melee_damage_applied"),
     "bear_lord": ("monk_bear_whack", "melee_damage_applied"),
 }
 PROVENANCE_KEYS = (
@@ -53,7 +60,31 @@ LICENSE_URLS = {
     "CC BY 3.0": "https://creativecommons.org/licenses/by/3.0/",
     "CC BY 4.0": "https://creativecommons.org/licenses/by/4.0/",
     "CC BY-NC 4.0": "https://creativecommons.org/licenses/by-nc/4.0/",
+    INTERNAL_LICENSE: None,
 }
+SECONDARY_PINS = [{"event_key": WARNING, "asset": WARNING, "recommended_trigger": "positive_core_damage"}]
+DISABLE_PINS = ["rat_death", "boar_death", "wolf_death", "bear_lord_death", "victory"]
+PRESERVE_PINS = [role + "_attack" for role in ROLE_PINS] + [WARNING]
+WOLF_ATTR_PREFIX = "## ANGRY DOG BARK SNARL Flat.wav — deleted_user_3424813\n\n- 成品：`wav/wolf_first_call.wav`\n\n以下保留08短版交付的完整来源与修改说明；其中adoption.json、manifest.json及tools/trim.py指原选材记录，不是本运行目录的资源依赖，也不代表游戏已完成接入：\n\n"
+WARNING_ATTR_SECTION = "\n## 唐僧双脉冲遇险警示 — 本项目08音效制作流程\n\n- 成品：`wav/tangseng_hurt_warning.wav`\n- 来源：v1项目内自制程序合成（2026-09-29制作记录），Python 3＋NumPy确定性DSP；无外部采样、购买素材、第三方音源或真人声线模仿。\n- 授权记录：v1 README明确“来源记录为‘项目内自制程序合成’，没有外部素材署名义务；本记录不擅自为整个项目新增公开授权许可证。正式发布前随项目统一确定资产授权说明。”本运行副本不把它改标为CC0、CC BY或其他公开授权。\n- 修改：原v1警示逐字节复制，未裁切、改增益、变调、变速或叠层；44.1kHz、单声道、16-bit PCM，22932帧、0.520秒。\n- 触发：唐僧实际承受正伤害时的既有警示；不新增唐僧攻击声或战斗结果声。素材复制与来源核对不等于游戏事件或听感验收。\n"
+
+
+def warning_metadata(entry: dict) -> dict:
+    """Internal provenance is recorded, never relabelled CC0 or external BY."""
+    return {
+        "id": WARNING, "file": entry["file"],
+        "source_id": "project-v1-tangseng-hurt-warning",
+        "source_title": "唐僧双脉冲遇险警示（v1原创程序合成）",
+        "author": "本项目08音效制作流程", "source_page": None,
+        "license": INTERNAL_LICENSE, "license_url": None,
+        "source_kind": "Original procedural synthesis; no external samples, no voice cloning.",
+        "source_sha256": entry["sha256"], "sha256": entry["sha256"],
+        "changes": "Original project procedural synthesis copied byte-for-byte from the approved v1 warning; no runtime trim, gain, pitch/time changes or added layers.",
+        "production_method": "Python 3 + NumPy deterministic DSP; no external sampling, purchased sound, third-party audio or voice imitation.",
+        "license_note": "v1 README明确：项目内自制程序合成，没有外部素材署名义务；不擅自为整个项目新增公开授权许可证。",
+        "frames": PINS[WARNING][2], "channels": PINS[WARNING][3],
+        "sample_rate": 44100, "bits": 16, "duration_seconds": entry["duration_seconds"],
+    }
 
 
 def asset_path(base: Path, relative: str) -> Path:
@@ -92,7 +123,9 @@ def forbidden_keys(value) -> set[str]:
     return set()
 
 
-def verify(mode: str, source: Path, runtime: Path) -> dict:
+def verify(mode: str, source: Path, runtime: Path,
+           wolf_source: Path = ROOT / WOLF_SOURCE_REL,
+           v1_source: Path = ROOT / V1_SOURCE_REL) -> dict:
     failures: list[str] = []
     verified: list[dict] = []
 
@@ -101,20 +134,47 @@ def verify(mode: str, source: Path, runtime: Path) -> dict:
             failures.append(reason)
 
     selected = json.loads((source / "manifest.json").read_text(encoding="utf-8"))
+    short = json.loads((wolf_source / "manifest.json").read_text(encoding="utf-8"))
+    adoption = json.loads((wolf_source / "adoption.json").read_text(encoding="utf-8"))
+    v1 = json.loads((v1_source / "manifest.json").read_text(encoding="utf-8"))
     deployed = json.loads((runtime / "manifest.json").read_text(encoding="utf-8"))
-    source_assets = {asset["id"]: asset for asset in selected["assets"]}
+    original_assets = {asset["id"]: asset for asset in selected["assets"]}
+    check(len(selected["assets"]) == len(original_assets) == 8, "original selected source must still contain eight distinct assets, including the preserved long wolf")
+    check(original_assets.get("wolf_attack_full", {}).get("sha256") == FULL_WOLF_HASH, "preserved original long-wolf source record changed")
+    source_assets = {key: value for key, value in original_assets.items() if key != "wolf_attack_full"}
+    wolf_metadata = {**original_assets["wolf_attack_full"], **short,
+                     "id": WOLF, "duration_seconds": short["duration"],
+                     "selection_input_sha256": short["input_sha256"],
+                     "sample_rate": 44100, "bits": 16, "channels": 2}
+    source_assets[WOLF] = wolf_metadata
+    warning_entries = [entry for entry in v1["entries"] if entry["key"] == WARNING]
+    check(len(warning_entries) == 1, "v1 must contain exactly one original Tang warning")
+    source_assets[WARNING] = warning_metadata(warning_entries[0])
     assets = {asset["id"]: asset for asset in deployed["assets"]}
-    check(len(selected["assets"]) == len(source_assets) == 8, "source must contain exactly eight distinct selected assets")
-    check(len(deployed["assets"]) == len(assets) == 8, "runtime must contain exactly eight distinct assets")
-    check(set(source_assets) == set(assets) == set(PINS), "source/runtime selected asset IDs differ from the pinned eight")
+    check(len(source_assets) == len(deployed["assets"]) == len(assets) == 9, "current source/runtime must contain exactly nine distinct assets")
+    check(set(source_assets) == set(assets) == set(PINS), "source/runtime asset IDs differ from the pinned nine; long wolf must not remain active")
     check(deployed.get("profile") == PROFILE, "runtime must name this exact noncommercial profile")
-    check(deployed.get("schema_version") == 1, "unknown runtime schema")
-    check(deployed.get("role_count") == 9 and deployed.get("file_count") == 8 and deployed.get("external_source_count") == 8, "runtime inventory counts must remain 9 roles / 8 files / 8 sources")
+    check(deployed.get("schema_version") == 2, "current runtime requires schema 2")
+    check(deployed.get("role_count") == 9 and deployed.get("event_count") == 10 and deployed.get("file_count") == 9 and deployed.get("external_source_count") == 8, "runtime counts must be 9 roles / 10 events / 9 files / 8 external sources")
+    check(len({asset["source_id"] for key, asset in assets.items() if key != WARNING}) == 8, "external sources must remain eight; project warning is not an external source")
     check(deployed.get("sample_rate") == selected.get("sample_rate") == 44100 and deployed.get("sample_width_bytes") == selected.get("sample_width_bytes") == 2, "global format must be 44.1kHz / 16-bit PCM")
     check(not forbidden_keys(deployed), "runtime manifest must not depend on source/backup/reference local paths")
     semantics = deployed.get("hash_semantics", {})
     check("complete" in semantics.get("sha256", "") and "PCM" in semantics.get("pcm_sha256", ""), "manifest must distinguish full WAV and imported PCM hashes")
-    check(deployed["roles"] == selected["roles"] and len(deployed["roles"]) == 9, "nine role/event mappings must exactly preserve the selected delivery")
+    expected_roles = [{**role, "asset": WOLF} if role["role"] == "wolf" else role for role in selected["roles"]]
+    check(deployed["roles"] == expected_roles and len(deployed["roles"]) == 9, "nine role mappings must preserve selected delivery except the confirmed short-wolf substitution")
+    check(deployed.get("secondary_cues") == SECONDARY_PINS, "secondary cue must be exactly positive-core-damage Tang warning")
+    check(deployed.get("disable_cues") == adoption["disable_cues"] == DISABLE_PINS, "exactly four monster-death cues and victory must be disabled")
+    check(deployed.get("disabled_event_categories") == adoption["disabled_event_categories"] == ["monster_death", "battle_result"], "monster-death and all battle-result categories remain disabled")
+    check(deployed.get("preserve_cues") == adoption["preserve_cues"] == PRESERVE_PINS and not set(DISABLE_PINS).intersection(PRESERVE_PINS), "ten retained cues must exactly match adoption and never include disabled cues")
+    event_keys = [role["event_key"] for role in deployed["roles"]] + [cue["event_key"] for cue in deployed["secondary_cues"]]
+    check(len(event_keys) == len(set(event_keys)) == 10 and set(event_keys) == set(PRESERVE_PINS), "effective mappings must be exactly ten unique retained event keys")
+    replacement = adoption["replace"]["wolf_attack"]
+    check(short.get("file") == PINS[WOLF][0] and short.get("sha256") == replacement["sha256"] == PINS[WOLF][1] and short.get("frames") == 12789 and short.get("duration") == replacement["duration_seconds"] == 0.29 and short.get("source_start") == 0.6 and short.get("source_end") == 0.89 and short.get("input_sha256") == FULL_WOLF_HASH and replacement.get("preserve_original") is True and adoption.get("asset_deletion") is False, "short wolf must preserve the approved hash/cut/format and retain old source backup")
+    check(v1.get("source") == "Original procedural synthesis; no external samples, no voice cloning." and v1.get("format") == "PCM signed 16-bit mono 44100 Hz", "Tang warning source must be original internal synthesis, not an external sample")
+    v1_readme = (v1_source / "README.md").read_text(encoding="utf-8")
+    generator = (v1_source / "tools/generate.py").read_text(encoding="utf-8")
+    check("没有外部素材署名义务" in v1_readme and "本记录不擅自为整个项目新增公开授权许可证" in v1_readme and "Original deterministic DSP sketches, not recordings or voice imitations." in generator and "('tangseng_hurt_warning','唐僧','遇险警示','warning',.52,-8," in generator, "internal-warning origin/license must remain supported by v1 README and generator")
     check({role["role"] for role in deployed["roles"]} == set(ROLE_PINS), "unexpected or missing role; no Tang attack cue may be added")
     for role in deployed["roles"]:
         pin = ROLE_PINS.get(role["role"])
@@ -125,7 +185,8 @@ def verify(mode: str, source: Path, runtime: Path) -> dict:
             continue
         old, new = source_assets[asset_id], assets[asset_id]
         check(new.get("file") == "wav/" + filename, f"runtime asset must use its own wav path: {asset_id}")
-        check(old.get("file") == ("noncommercial/wav/" if asset_id == HUNTER else "wav/") + filename, f"selected delivery path changed: {asset_id}")
+        expected_source_file = filename if asset_id == WOLF else ("noncommercial/wav/" if asset_id == HUNTER else "wav/") + filename
+        check(old.get("file") == expected_source_file, f"selected delivery path changed: {asset_id}")
         check(all(new.get(key) == old.get(key) for key in PROVENANCE_KEYS), f"provenance/license/changes/format differs from selected delivery: {asset_id}")
         check(new.get("license") == license_name and new.get("license_url") == LICENSE_URLS[license_name], f"individual selected license is not preserved: {asset_id}")
         check(new.get("sha256") == old.get("sha256") == whole_hash, f"selected WAV hash pin differs: {asset_id}")
@@ -133,17 +194,26 @@ def verify(mode: str, source: Path, runtime: Path) -> dict:
         settings = asset_path(runtime, new["file"] + ".import").read_text(encoding="utf-8")
         for option in ("compress/mode=0", "force/8_bit=false", "force/mono=false", "force/max_rate=false", "edit/trim=false", "edit/normalize=false", "edit/loop_mode=0"):
             check(option in settings.splitlines(), f"runtime Godot import must preserve exact PCM ({option}): {asset_id}")
-        before = wav_info(asset_path(source, old["file"]))
+        source_file = "res://" + RUNTIME_REL.removeprefix("godot-demo/") + "/" + new["file"]
+        import_digest = hashlib.md5(source_file.encode("utf-8")).hexdigest()
+        import_file = "res://.godot/imported/" + filename + "-" + import_digest + ".sample"
+        check(f'source_file="{source_file}"' in settings.splitlines() and f'path="{import_file}"' in settings.splitlines() and f'dest_files=["{import_file}"]' in settings.splitlines(), f"import source/destination must belong to this new runtime resource: {asset_id}")
+        original_base = wolf_source if asset_id == WOLF else v1_source if asset_id == WARNING else source
+        before = wav_info(asset_path(original_base, old["file"]))
         after = wav_info(asset_path(runtime, new["file"]))
         check(before == after, f"source-to-runtime WAV/PCM/format mismatch: {asset_id}")
         check(after["sha256"] == whole_hash and after["pcm_sha256"] == new.get("pcm_sha256"), f"actual full WAV / PCM digest mismatch: {asset_id}")
         check(after["encoding"] == "PCM" and after["sample_rate"] == 44100 and after["bits"] == 16 and after["frames"] == frames and after["channels"] == channels and after["pcm_bytes"] == frames * channels * 2, f"actual PCM format/frame/channel mismatch: {asset_id}")
         check(new.get("frames") == frames and new.get("channels") == channels and abs(float(new["duration_seconds"]) - frames / 44100) < 1e-12, f"runtime declared duration/frames/channels mismatch: {asset_id}")
+        if asset_id == WOLF:
+            check(new.get("selection_input_sha256") == FULL_WOLF_HASH and new.get("source_start") == short["source_start"] and new.get("source_end") == short["source_end"], "short-wolf cut lineage must not be replaced by an unrelated waveform")
+        elif asset_id == WARNING:
+            check(new.get("production_method") == old["production_method"] and new.get("license_note") == old["license_note"], "Tang warning must preserve internal provenance and no-new-public-license note")
         verified.append({"id": asset_id, "file": new["file"], **after})
 
     expected_files = {"wav/" + pin[0] for pin in PINS.values()}
     actual_files = {path.relative_to(runtime).as_posix() for path in runtime.rglob("*.wav")}
-    check(actual_files == expected_files, "runtime has an extra/missing WAV outside the exact selected eight")
+    check(actual_files == expected_files, "runtime has an extra/missing WAV outside the exact selected nine; long wolf must not be copied into this active set")
     check(not any((runtime / name).exists() for name in ("source", "backup", "backups", "reference", "references", "noncommercial")), "runtime must not include candidate/source/reference partitions")
     nc_assets = [asset for asset in deployed["assets"] if "-NC" in asset.get("license", "")]
     check(len(nc_assets) == 1 and nc_assets[0].get("id") == HUNTER, "no other NC asset is authorized")
@@ -159,15 +229,22 @@ def verify(mode: str, source: Path, runtime: Path) -> dict:
     if mode == "commercial":
         failures.append(f"COMMERCIAL_BLOCKED: {hunter_file} ({PINS[HUNTER][1]}) is CC BY-NC 4.0; replace source or obtain commercial permission. No general NC override exists.")
 
-    expected_attribution = (source / "ATTRIBUTION.md").read_text(encoding="utf-8").replace("`noncommercial/wav/hunter_launch_02.wav`", "`wav/hunter_launch_02.wav`")
-    check((runtime / "ATTRIBUTION.md").read_text(encoding="utf-8") == expected_attribution, "complete attribution must be preserved; only the final hunter relative path may change")
+    base_attribution = (source / "ATTRIBUTION.md").read_text(encoding="utf-8").replace("`noncommercial/wav/hunter_launch_02.wav`", "`wav/hunter_launch_02.wav`")
+    wolf_begin = base_attribution.index("## ANGRY DOG BARK SNARL")
+    wolf_end = base_attribution.index("## Hammer Hitting a Head", wolf_begin)
+    short_attribution = (wolf_source / "ATTRIBUTION.md").read_text(encoding="utf-8").split("\n", 2)[2]
+    expected_attribution = (base_attribution[:wolf_begin] + WOLF_ATTR_PREFIX + short_attribution + "\n" + base_attribution[wolf_end:]).replace("以下音频均取自公开HQ MP3预览", "以下第三方音频均取自公开HQ MP3预览") + WARNING_ATTR_SECTION
+    check((runtime / "ATTRIBUTION.md").read_text(encoding="utf-8") == expected_attribution, "complete attribution must preserve seven selected notices, full short-wolf notice and explicit internal-warning provenance")
     use = (runtime / "USE.md").read_text(encoding="utf-8")
     check(PROFILE in use and "仅非商业" in use and PINS[HUNTER][1] in use and "pcm_sha256" in use, "USE must state exact NC restriction and distinct full-WAV / PCM checks")
     validation = json.loads((source / "VALIDATION.json").read_text(encoding="utf-8"))
-    check(validation.get("role_count") == 9 and validation.get("file_count") == 8 and {item["id"]: item["sha256"] for item in validation["assets"]} == {asset_id: pin[1] for asset_id, pin in PINS.items()}, "selected technical-validation inventory differs from pinned assets")
+    original_pins = {key: pin[1] for key, pin in PINS.items() if key not in (WOLF, WARNING)}
+    original_pins["wolf_attack_full"] = FULL_WOLF_HASH
+    check(validation.get("role_count") == 9 and validation.get("file_count") == 8 and {item["id"]: item["sha256"] for item in validation["assets"]} == original_pins and {key: item["sha256"] for key, item in original_assets.items()} == original_pins, "preserved original selected technical-validation inventory must still match its eight fixed source hashes")
     return {
         "profile": PROFILE, "mode": mode, "scope": "offline source-to-runtime material/license check; not game events, listening or PCK acceptance",
-        "asset_count": len(verified), "role_count": len(deployed["roles"]),
+        "asset_count": len(verified), "role_count": len(deployed["roles"]), "event_count": len(event_keys),
+        "disabled_cues": deployed["disable_cues"], "preserved_cues": deployed["preserve_cues"],
         "foxfire_A_exact": assets.get("foxfire_A", {}).get("sha256") == PINS["foxfire_A"][1],
         "nc_exception": exception, "commercial_blocked": mode == "commercial",
         "assets": verified, "failures": failures, "passed": not failures,
@@ -178,11 +255,13 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--mode", choices=("commercial", "noncommercial"), default="commercial")
     parser.add_argument("--source", type=Path, default=ROOT / SOURCE_REL)
+    parser.add_argument("--wolf-source", type=Path, default=ROOT / WOLF_SOURCE_REL)
+    parser.add_argument("--v1-source", type=Path, default=ROOT / V1_SOURCE_REL)
     parser.add_argument("--runtime", type=Path, default=ROOT / RUNTIME_REL)
     args = parser.parse_args()
     try:
-        result = verify(args.mode, args.source.resolve(), args.runtime.resolve())
-    except (OSError, ValueError, KeyError, TypeError, wave.Error) as error:
+        result = verify(args.mode, args.source.resolve(), args.runtime.resolve(), args.wolf_source.resolve(), args.v1_source.resolve())
+    except (OSError, ValueError, KeyError, IndexError, TypeError, wave.Error) as error:
         result = {"profile": PROFILE, "mode": args.mode, "passed": False, "failures": [str(error)]}
     print(json.dumps(result, ensure_ascii=False, indent=2))
     return 0 if result["passed"] else 1

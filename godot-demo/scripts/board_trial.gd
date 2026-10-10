@@ -481,7 +481,6 @@ func _tick(delta: float) -> void:
 		if Melee.applies(actor): Melee.release(actor)
 		if is_instance_valid(actor.node) and not actor.friendly:
 			actor.node.play_death()
-			audio_feedback.play_cue(actor.key+"_death")
 	collecting_steps = true
 	for actor in actors:
 		if _active(actor):
@@ -558,7 +557,6 @@ func _finish(won: bool) -> void:
 	combat.clear()
 	paused = false
 	audio_feedback.set_paused(false)
-	if won: audio_feedback.play_cue("victory")
 	var damage := 0.0
 	var healing := 0.0
 	var losses: Array[String] = []

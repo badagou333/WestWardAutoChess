@@ -2,7 +2,8 @@ extends SceneTree
 ## Standalone source/main-pack audit. Headless verifies scheduling, not hearing.
 const Config = preload("res://scripts/data/board_trial_config.gd")
 const Board = preload("res://scripts/board_trial.gd")
-const RUNTIME_MANIFEST := "res://audio/runtime/board-selected-20261009/manifest.json"
+const RUNTIME_MANIFEST := "res://audio/runtime/board-selected-20261010/manifest.json"
+const DISABLED := ["rat_death","boar_death","wolf_death","bear_lord_death","victory"]
 const EXPECTED := {
 	"guard_monk":["monk_bear_whack","melee_damage_applied","monk_bear_whack.wav","56502597d09207bc3b4acc3f866ef685eb5a4306852e2f16b89889cc666d4fde",19459,2],
 	"wild_hunter":["hunter_launch_02_noncommercial","projectile_launched","hunter_launch_02.wav","6936dbe90b719c90d1dfa8900fc1736ca1bda035b767931d00e67e94027ac9a7",5732,2],
@@ -11,7 +12,7 @@ const EXPECTED := {
 	"foxfire_imp":["foxfire_A","projectile_launched","foxfire_A_faithful.wav","aa30009e92190a69ec99a404f047b453606a8f6e79e5a0f4fe3de495a900a7db",25137,1],
 	"rat":["rat_attack","projectile_damage_applied","rat_attack_second.wav","7b1461f9f572778ab1b58bb5d746b50775087b74abbc160d53620121cc012f94",8820,2],
 	"boar":["boar_attack_full","melee_damage_applied","boar_attack_full.wav","73258a27856e1b5453e4bbec55555b9fc574b1d522c74ec9c1ac157283fe56c3",17052,2],
-	"wolf":["wolf_attack_full","melee_damage_applied","wolf_attack_full.wav","087c1e90d04801ad1d732df2e8b2df45efda00c54362e0e29ea34db3ad0026f2",106531,2],
+	"wolf":["wolf_first_call","melee_damage_applied","wolf_first_call.wav","04b1add76cfc42dfa2c3384020d638d04fd279f053211485961c512dea49831c",12789,2],
 	"bear_lord":["monk_bear_whack","melee_damage_applied","monk_bear_whack.wav","56502597d09207bc3b4acc3f866ef685eb5a4306852e2f16b89889cc666d4fde",19459,2]}
 const IDS := {"guard_monk":"guard_monk","wild_hunter":"wild_hunter","sparrow_spirit":"sparrow_spirit","herbal_spirit_child":"herbal_spirit_child","foxfire_imp":"foxfire_imp","rat":"E5","boar":"E3","wolf":"E1","bear_lord":"E7"}
 var failures := 0
@@ -19,7 +20,8 @@ var assets := []
 var cases := []
 var naturals := []
 var baseline_path := ""
-var output_path := "/tmp/board-audio-20261009-source.json"
+var output_path := "/tmp/board-audio-20261010-source.json"
+var skip_natural := false
 
 func _initialize() -> void: call_deferred("run")
 func check(ok: bool, label: String) -> void:
@@ -76,9 +78,12 @@ func fixture(role: String, extra: Array = []) -> Dictionary:
 func verify_assets() -> void:
 	var game=fresh()
 	var sound=game.audio_feedback
-	check(sound.PROFILE=="board-selected-noncommercial-20261009","board uses explicit noncommercial selected audio profile")
+	check(sound.PROFILE=="board-selected-noncommercial-20261010","board uses current short-wolf/noncommercial selected audio profile")
 	check(sound.role_rules.size()==9 and not sound.role_rules.has("tangseng"),"nine selected behaviors; core gets no new primary attack")
-	check(sound.primary_slots.size()==8 and sound.slots.size()==8 and sound.voices.size()==16,"selected eight-voice pool is isolated from eight original cue voices")
+	check(sound.primary_slots.size()==8 and sound.slots.size()==8 and sound.voices.size()==16,"selected eight-voice pool is isolated from eight warning voices")
+	check(sound.streams.size()==10 and sound.stream_paths.size()==10 and sound.loaded_keys.size()==10,"actual initialization loads only nine role keys plus warning")
+	for key in DISABLED: check(not sound.streams.has(key) and not sound.stream_paths.has(key) and key not in sound.loaded_keys,"disabled cue is not initialized or loaded "+key)
+	check(not sound.streams.has("ui") and not sound.streams.keys().any(func(key): return key.begins_with("shared_hit_")),"no synthetic UI/result or material fallback is loaded")
 	check(game.ui.usage_label.text.contains("非商业试玩") and game.ui.audio_button!=null and game.ui.audio_volume!=null,"actual board controls expose usage marker/sound switch/volume (not rendered/input acceptance)")
 	var attribution: String=FileAccess.get_file_as_string(sound.RUNTIME+"ATTRIBUTION.md")
 	check(attribution.contains("Robinhood76") and attribution.contains("126464") and attribution.contains("CC BY-NC 4.0") and attribution.contains("Cheddababy") and attribution.contains("DWOBoyle"),"actual runtime/package contains required authors/source/license attribution")
@@ -98,10 +103,10 @@ func verify_assets() -> void:
 		check(sound.stream_paths.has(key) and sound.streams.get(key)!=null,"selected role loads actual runtime stream "+role)
 		if not sound.stream_paths.has(key) or sound.streams.get(key)==null: continue
 		var path: String=sound.stream_paths[key]
-		check(path.begins_with("res://audio/runtime/board-selected-20261009/") and path.get_file()==expected[2],"runtime path uses adopted asset "+role)
+		check(path.begins_with("res://audio/runtime/board-selected-20261010/") and path.get_file()==expected[2],"runtime path uses current adopted asset "+role)
 		var stream=sound.streams[key]
 		check(stream is AudioStreamWAV and stream.mix_rate==44100 and stream.format==AudioStreamWAV.FORMAT_16_BITS and stream.stereo==(expected[5]==2),"actual selected stream retains PCM16/44100/channels "+role)
-		check(absf(stream.get_length()-float(expected[4])/44100.0)<1.0/44100.0,"actual selected stream retains full unaltered duration "+role)
+		check(absf(stream.get_length()-float(expected[4])/44100.0)<1.0/44100.0,"actual selected stream retains the approved clip duration "+role)
 		var entry: Dictionary=entries.get(expected[0],{})
 		check(entry.get("sha256","")==expected[3],"runtime provenance retains approved original WAV SHA "+role)
 		var pcm_hash: String=hash_bytes(stream.data)
@@ -113,6 +118,21 @@ func verify_assets() -> void:
 		assets.append({"asset":expected[0],"path":path,"original_wav_sha256":expected[3],"original_wav_available":raw_available,"verification":"original_WAV_and_imported_PCM" if raw_available else "imported_PCM_plus_embedded_original_SHA","pcm_sha256":pcm_hash,"duration":stream.get_length(),"pitch":1.0})
 	check(checked.size()==8,"nine selected role keys load exactly eight shared runtime files")
 	check(sound.stream_paths.guard_monk_attack==sound.stream_paths.bear_lord_attack,"guard and bear share the selected file without sharing attack identity")
+	check(sound.secondary_cues.size()==1 and sound.secondary_cues[0].event_key=="tangseng_hurt_warning","warning is the only secondary cue")
+	if sound.secondary_cues.size()==1:
+		var rule: Dictionary=sound.secondary_cues[0]
+		var entry: Dictionary=entries.get(rule.asset,{})
+		var path: String=sound.stream_paths.get("tangseng_hurt_warning","")
+		var stream=sound.streams.get("tangseng_hurt_warning")
+		var expected_sha := "e1396159d6686440c57136d996d013d36fa45de9ca7e8c21c662383cc6069778"
+		check(stream is AudioStreamWAV and stream.mix_rate==44100 and stream.format==AudioStreamWAV.FORMAT_16_BITS and not stream.stereo and is_equal_approx(stream.get_length(),0.52),"existing warning retains mono PCM16/44100/full0.52 seconds")
+		if stream!=null:
+			var pcm: String=hash_bytes(stream.data)
+			var raw: bool=FileAccess.file_exists(path)
+			check(entry.get("sha256","")==expected_sha and pcm==entry.get("pcm_sha256",""),"retained warning original provenance and actual imported PCM are exact")
+			if raw: check(hash_bytes(FileAccess.get_file_as_bytes(path))==expected_sha,"retained warning original WAV SHA is unchanged")
+			assets.append({"asset":rule.asset,"path":path,"original_wav_sha256":expected_sha,"original_wav_available":raw,"verification":"original_WAV_and_imported_PCM" if raw else "imported_PCM_plus_embedded_original_SHA","pcm_sha256":pcm,"duration":stream.get_length(),"pitch":1.0})
+	check(sound.rejected_keys.is_empty(),"initialization makes zero disabled-cue requests")
 	game.free()
 
 func real_single(role: String) -> void:
@@ -252,7 +272,7 @@ func lifecycle_scheduler() -> void:
 		slot.until=now+10000
 		slot.key="wolf_attack"
 	var occupied_tails: Array=sound.primary_slots.duplicate(true)
-	check(sound.play_cue("ui") and sound.play_cue("tangseng_hurt_warning") and sound.primary_slots==occupied_tails,"full long-tail selected pool cannot block or steal existing UI/warning voices")
+	check(not sound.play_cue("ui") and sound.play_cue("tangseng_hurt_warning") and sound.primary_slots==occupied_tails,"full selected pool preserves retained warning while unused UI remains unloaded")
 	legacy_slots=sound.slots.duplicate(true)
 	event.serial=103
 	var dropped: int=sound.stats.dropped
@@ -271,7 +291,7 @@ func lifecycle_scheduler() -> void:
 	event.serial=105
 	sound.role_applied(event,1.0)
 	check(sound.stats.expired==expired+sound.primary_slots.size(),"past selected tails explicitly expire and release bounded voice capacity")
-	check(sound.voices[8].stream==sound.streams.wolf_attack and is_equal_approx(sound.voices[8].pitch_scale,1.0),"rescheduled wolf retains the complete unmodified long stream")
+	check(sound.voices[8].stream==sound.streams.wolf_attack and is_equal_approx(sound.voices[8].pitch_scale,1.0),"rescheduled wolf retains the selected short stream and original pitch")
 	var before_direct: int=sound.stats.played
 	check(not sound.play_cue("wolf_attack") and sound.stats.played==before_direct,"selected main sound cannot bypass semantic event adapter")
 	ctx.source.node.take_damage(ctx.source.hp_max)
@@ -298,10 +318,11 @@ func preserved_secondary_cues() -> void:
 	sound.hit_event(core.node,true,true,event_for(wolf,core,778),1.0)
 	check(cues_for(heard,"tangseng_hurt_warning").size()==1,"existing core damage warning remains")
 	sound.hit_event(guard.node,true,false,event_for(core,guard,779),1.0)
-	check(cues_for(heard,"shared_hit_armor").size()==1,"unselected core attack retains its original material feedback")
-	for key in ["ui","victory","bear_lord_death"]: check(sound.play_cue(key),"existing non-replaced cue still schedules "+key)
+	check(not heard.any(func(row): return row.key.begins_with("shared_hit_")),"unselected core attack does not restore disabled material layer")
+	for key in ["ui","victory","rat_death","boar_death","wolf_death","bear_lord_death"]: check(not sound.streams.has(key),"removed result/UI/death assets stay unloaded "+key)
 	check(not sound.streams.has("guard_monk_death"),"deferred hero death cue is not newly enabled")
-	cases.append({"case":"preserved_nonreplaced_cues","heard":heard})
+	check(sound.rejected_keys.is_empty(),"warning-only fixture makes zero disabled event requests")
+	cases.append({"case":"retained_warning_no_material_result_or_death","heard":heard})
 	game.free()
 
 func cancelled_projectile(source_dies: bool) -> void:
@@ -369,6 +390,7 @@ func natural(formation: String, fps: int, sim_speed: int, pause_once: bool) -> D
 			game.toggle_pause()
 			did_pause=true
 	check(game.phase==game.Phase.RESULT and game.result_count==1,"audio natural finishes once "+formation)
+	check(game.audio_feedback.rejected_keys.is_empty(),"actual natural deaths/results issue zero disabled requests "+formation)
 	check(game.audio_feedback.voices.all(func(player): return is_equal_approx(player.pitch_scale,1.0)),"all natural scheduled audio voices retain pitch1 at normal/2x speed")
 	var result := {"formation":formation,"fps":fps,"speed":sim_speed,"report":game.report().duplicate(true),"audio_stats":game.audio_feedback.stats.duplicate(true),"semantic_audit_rows":game.audio_feedback.audit.size()}
 	game.free()
@@ -378,6 +400,7 @@ func run() -> void:
 	for argument in OS.get_cmdline_user_args():
 		if argument.begins_with("--baseline="): baseline_path=argument.trim_prefix("--baseline=")
 		elif argument.begins_with("--output="): output_path=argument.trim_prefix("--output=")
+		elif argument=="--skip-natural": skip_natural=true
 	if baseline_path.is_empty(): baseline_path="res://tests/board-trial-runtime/board-balance-20261009-natural.json"
 	verify_assets()
 	for role in EXPECTED: real_single(role)
@@ -390,10 +413,10 @@ func run() -> void:
 	cancelled_projectile(true)
 	cancelled_projectile(false)
 	lethal_melee()
-	check(assets.size()==8 and cases.size()==19,"all eight asset verifications and nineteen audio semantic/runtime cases executed")
-	var reference=JSON.parse_string(FileAccess.get_file_as_string(baseline_path))
-	check(reference is Dictionary,"existing balanced bear full-report baseline loads")
-	if reference is Dictionary:
+	check(assets.size()==9 and cases.size()==19,"all nine unique assets and nineteen audio semantic/runtime cases executed")
+	var reference=null if skip_natural else JSON.parse_string(FileAccess.get_file_as_string(baseline_path))
+	if not skip_natural: check(reference is Dictionary,"existing balanced bear full-report baseline loads")
+	if not skip_natural and reference is Dictionary:
 		for formation in ["A","R"]:
 			var expected: Array=reference.cases.filter(func(row): return row.profile=="bear" and row.formation==formation)
 			check(expected.size()==1,"unique existing bear baseline exists "+formation)
@@ -402,9 +425,9 @@ func run() -> void:
 			check(expected.size()==1 and same_value(first.report,expected[0].report) and same_value(second.report,expected[0].report),"selected audio does not change any full original gameplay report "+formation)
 			naturals.append(first)
 			naturals.append(second)
-	check(naturals.size()==4,"both existing bear winning formations complete under two schedules with audio enabled")
+	check(naturals.size()==(0 if skip_natural else 4),"requested natural-run scope completed without an early-success exit")
 	var file:=FileAccess.open(output_path,FileAccess.WRITE)
 	check(file!=null,"standalone audio evidence output opens")
-	if file!=null: file.store_string(JSON.stringify({"profile":"board-selected-noncommercial-20261009","headless_is_scheduling_not_listening":true,"asset_count":assets.size(),"assets":assets,"semantic_case_count":cases.size(),"cases":cases,"natural_count":naturals.size(),"naturals":naturals,"failures":failures},"\t"))
+	if file!=null: file.store_string(JSON.stringify({"profile":"board-selected-noncommercial-20261010","headless_is_scheduling_not_listening":true,"asset_count":assets.size(),"assets":assets,"semantic_case_count":cases.size(),"cases":cases,"natural_count":naturals.size(),"natural_explicitly_skipped":skip_natural,"naturals":naturals,"failures":failures},"\t"))
 	print("BOARD_AUDIO assets=",assets.size()," semantic_cases=",cases.size()," natural_runs=",naturals.size()," failures=",failures)
 	quit(1 if failures else 0)

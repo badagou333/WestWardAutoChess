@@ -1,0 +1,155 @@
+{
+  "scope": "D-20261010-001 offline source/runtime only",
+  "noncommercial": {
+    "profile": "board-selected-noncommercial-20261010",
+    "mode": "noncommercial",
+    "scope": "offline source-to-runtime material/license check; not game events, listening or PCK acceptance",
+    "asset_count": 9,
+    "role_count": 9,
+    "event_count": 10,
+    "disabled_cues": [
+      "rat_death",
+      "boar_death",
+      "wolf_death",
+      "bear_lord_death",
+      "victory"
+    ],
+    "preserved_cues": [
+      "guard_monk_attack",
+      "wild_hunter_attack",
+      "sparrow_spirit_attack",
+      "herbal_spirit_child_attack",
+      "foxfire_imp_attack",
+      "rat_attack",
+      "boar_attack",
+      "wolf_attack",
+      "bear_lord_attack",
+      "tangseng_hurt_warning"
+    ],
+    "foxfire_A_exact": true,
+    "nc_exception": {
+      "file": "wav/hunter_launch_02.wav",
+      "repository_relative_file": "godot-demo/audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav",
+      "sha256": "6936dbe90b719c90d1dfa8900fc1736ca1bda035b767931d00e67e94027ac9a7",
+      "source_id": "126464",
+      "license": "CC BY-NC 4.0"
+    },
+    "commercial_blocked": false,
+    "assets": [
+      {
+        "id": "monk_bear_whack",
+        "file": "wav/monk_bear_whack.wav",
+        "sha256": "56502597d09207bc3b4acc3f866ef685eb5a4306852e2f16b89889cc666d4fde",
+        "pcm_sha256": "e6ef5d40de75641540ffe93ade706cae4b9acb2ba54630c6219f4f0a9d7c516b",
+        "encoding": "PCM",
+        "sample_rate": 44100,
+        "bits": 16,
+        "channels": 2,
+        "frames": 19459,
+        "pcm_bytes": 77836
+      },
+      {
+        "id": "wolf_first_call",
+        "file": "wav/wolf_first_call.wav",
+        "sha256": "04b1add76cfc42dfa2c3384020d638d04fd279f053211485961c512dea49831c",
+        "pcm_sha256": "580fb94b33cb6f253c6a25d2f3579d6d8770bf3ea154f9c4594b43881a3353cb",
+        "encoding": "PCM",
+        "sample_rate": 44100,
+        "bits": 16,
+        "channels": 2,
+        "frames": 12789,
+        "pcm_bytes": 51156
+      },
+      {
+        "id": "boar_attack_full",
+        "file": "wav/boar_attack_full.wav",
+        "sha256": "73258a27856e1b5453e4bbec55555b9fc574b1d522c74ec9c1ac157283fe56c3",
+        "pcm_sha256": "16283242247125286883fabd207b294dc9ada282bf245cb59df326994d5d36d3",
+        "encoding": "PCM",
+        "sample_rate": 44100,
+        "bits": 16,
+        "channels": 2,
+        "frames": 17052,
+        "pcm_bytes": 68208
+      },
+      {
+        "id": "sparrow_attack",
+        "file": "wav/sparrow_attack_first.wav",
+        "sha256": "32f3ba8d0c0f48572f5d410202e53add1e675934ec0d2f0a52f11f34f86ee995",
+        "pcm_sha256": "21e3311c99c47fa722fac0fa72ffa6d2bfad4bca8ced732d9f902f69365e911d",
+        "encoding": "PCM",
+        "sample_rate": 44100,
+        "bits": 16,
+        "channels": 2,
+        "frames": 22491,
+        "pcm_bytes": 89964
+      },
+      {
+        "id": "rat_attack",
+        "file": "wav/rat_attack_second.wav",
+        "sha256": "7b1461f9f572778ab1b58bb5d746b50775087b74abbc160d53620121cc012f94",
+        "pcm_sha256": "cc43fb6dfa162828e8462cf18dec50b0798b122c3a5d9bb21ca0d655dd08d157",
+        "encoding": "PCM",
+        "sample_rate": 44100,
+        "bits": 16,
+        "channels": 2,
+        "frames": 8820,
+        "pcm_bytes": 35280
+      },
+      {
+        "id": "healer_new",
+        "file": "wav/healer_new_full.wav",
+        "sha256": "3a40ab16654b2be18d4888976833984b6f13057897b11c643aec001f7fa2c894",
+        "pcm_sha256": "074ef01a4521e6e787a6a61c056eb7a3dfbc50e8343ae198ba8df43b345c74ac",
+        "encoding": "PCM",
+        "sample_rate": 44100,
+        "bits": 16,
+        "channels": 2,
+        "frames": 39900,
+        "pcm_bytes": 159600
+      },
+      {
+        "id": "foxfire_A",
+        "file": "wav/foxfire_A_faithful.wav",
+        "sha256": "aa30009e92190a69ec99a404f047b453606a8f6e79e5a0f4fe3de495a900a7db",
+        "pcm_sha256": "9eaea132428e9a6398145bc9e8c4d3257b94300655cbf95f21792cf1638af515",
+        "encoding": "PCM",
+        "sample_rate": 44100,
+        "bits": 16,
+        "channels": 1,
+        "frames": 25137,
+        "pcm_bytes": 50274
+      },
+      {
+        "id": "hunter_launch_02_noncommercial",
+        "file": "wav/hunter_launch_02.wav",
+        "sha256": "6936dbe90b719c90d1dfa8900fc1736ca1bda035b767931d00e67e94027ac9a7",
+        "pcm_sha256": "a3794c6046ba332e676552af7f00a0585ae1e022d43be67a68efd817a9c97b4c",
+        "encoding": "PCM",
+        "sample_rate": 44100,
+        "bits": 16,
+        "channels": 2,
+        "frames": 5732,
+        "pcm_bytes": 22928
+      },
+      {
+        "id": "tangseng_hurt_warning",
+        "file": "wav/tangseng_hurt_warning.wav",
+        "sha256": "e1396159d6686440c57136d996d013d36fa45de9ca7e8c21c662383cc6069778",
+        "pcm_sha256": "18b3255f33bd6b36cfb8fa419762e3884a2c87b6e307f13eb84862e980427774",
+        "encoding": "PCM",
+        "sample_rate": 44100,
+        "bits": 16,
+        "channels": 1,
+        "frames": 22932,
+        "pcm_bytes": 45864
+      }
+    ],
+    "failures": [],
+    "passed": true
+  },
+  "commercial_expected_exit": 1,
+  "commercial_expected_refusal": [
+    "COMMERCIAL_BLOCKED: godot-demo/audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav (6936dbe90b719c90d1dfa8900fc1736ca1bda035b767931d00e67e94027ac9a7) is CC BY-NC 4.0; replace source or obtain commercial permission. No general NC override exists."
+  ]
+}

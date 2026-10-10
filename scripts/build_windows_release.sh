@@ -70,8 +70,8 @@ cp "$PROJECT_DIR/release/windows/反馈模板.txt" "$STAGE_DIR/"
 cp "$PROJECT_DIR/release/windows/GODOT_ENGINE_LICENSE.txt" "$STAGE_DIR/"
 cp "$PROJECT_DIR/CREDITS.md" "$STAGE_DIR/第三方音频署名.md"
 cp "$PROJECT_DIR/audio/candidates/foxfire-dwoboyle-v1/ATTRIBUTION.md" "$STAGE_DIR/第三方音频完整声明.md"
-cp "$PROJECT_DIR/audio/runtime/board-selected-20261009/ATTRIBUTION.md" "$STAGE_DIR/棋盘新音效完整声明.md"
-cp "$PROJECT_DIR/audio/runtime/board-selected-20261009/USE.md" "$STAGE_DIR/非商业用途限制.md"
+cp "$PROJECT_DIR/audio/runtime/board-selected-20261010/ATTRIBUTION.md" "$STAGE_DIR/棋盘新音效完整声明.md"
+cp "$PROJECT_DIR/audio/runtime/board-selected-20261010/USE.md" "$STAGE_DIR/非商业用途限制.md"
 
 (
   cd "$STAGE_DIR"

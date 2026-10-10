@@ -1,0 +1,391 @@
+{
+	"asset_count": 9,
+	"assets": [
+		{
+			"asset": "monk_bear_whack",
+			"duration": 0.44124716553288,
+			"original_wav_available": false,
+			"original_wav_sha256": "56502597d09207bc3b4acc3f866ef685eb5a4306852e2f16b89889cc666d4fde",
+			"path": "res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav",
+			"pcm_sha256": "e6ef5d40de75641540ffe93ade706cae4b9acb2ba54630c6219f4f0a9d7c516b",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		},
+		{
+			"asset": "hunter_launch_02_noncommercial",
+			"duration": 0.129977324263039,
+			"original_wav_available": false,
+			"original_wav_sha256": "6936dbe90b719c90d1dfa8900fc1736ca1bda035b767931d00e67e94027ac9a7",
+			"path": "res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav",
+			"pcm_sha256": "a3794c6046ba332e676552af7f00a0585ae1e022d43be67a68efd817a9c97b4c",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		},
+		{
+			"asset": "sparrow_attack",
+			"duration": 0.51,
+			"original_wav_available": false,
+			"original_wav_sha256": "32f3ba8d0c0f48572f5d410202e53add1e675934ec0d2f0a52f11f34f86ee995",
+			"path": "res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav",
+			"pcm_sha256": "21e3311c99c47fa722fac0fa72ffa6d2bfad4bca8ced732d9f902f69365e911d",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		},
+		{
+			"asset": "healer_new",
+			"duration": 0.904761904761905,
+			"original_wav_available": false,
+			"original_wav_sha256": "3a40ab16654b2be18d4888976833984b6f13057897b11c643aec001f7fa2c894",
+			"path": "res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav",
+			"pcm_sha256": "074ef01a4521e6e787a6a61c056eb7a3dfbc50e8343ae198ba8df43b345c74ac",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		},
+		{
+			"asset": "foxfire_A",
+			"duration": 0.57,
+			"original_wav_available": false,
+			"original_wav_sha256": "aa30009e92190a69ec99a404f047b453606a8f6e79e5a0f4fe3de495a900a7db",
+			"path": "res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav",
+			"pcm_sha256": "9eaea132428e9a6398145bc9e8c4d3257b94300655cbf95f21792cf1638af515",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		},
+		{
+			"asset": "rat_attack",
+			"duration": 0.2,
+			"original_wav_available": false,
+			"original_wav_sha256": "7b1461f9f572778ab1b58bb5d746b50775087b74abbc160d53620121cc012f94",
+			"path": "res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav",
+			"pcm_sha256": "cc43fb6dfa162828e8462cf18dec50b0798b122c3a5d9bb21ca0d655dd08d157",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		},
+		{
+			"asset": "boar_attack_full",
+			"duration": 0.386666666666667,
+			"original_wav_available": false,
+			"original_wav_sha256": "73258a27856e1b5453e4bbec55555b9fc574b1d522c74ec9c1ac157283fe56c3",
+			"path": "res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav",
+			"pcm_sha256": "16283242247125286883fabd207b294dc9ada282bf245cb59df326994d5d36d3",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		},
+		{
+			"asset": "wolf_first_call",
+			"duration": 0.29,
+			"original_wav_available": false,
+			"original_wav_sha256": "04b1add76cfc42dfa2c3384020d638d04fd279f053211485961c512dea49831c",
+			"path": "res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav",
+			"pcm_sha256": "580fb94b33cb6f253c6a25d2f3579d6d8770bf3ea154f9c4594b43881a3353cb",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		},
+		{
+			"asset": "tangseng_hurt_warning",
+			"duration": 0.52,
+			"original_wav_available": false,
+			"original_wav_sha256": "e1396159d6686440c57136d996d013d36fa45de9ca7e8c21c662383cc6069778",
+			"path": "res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav",
+			"pcm_sha256": "18b3255f33bd6b36cfb8fa419762e3884a2c87b6e307f13eb84862e980427774",
+			"pitch": 1.0,
+			"verification": "imported_PCM_plus_embedded_original_SHA"
+		}
+	],
+	"cases": [
+		{
+			"actual_hp_delta": -14.0,
+			"audit": [
+				{
+					"key": "guard_monk_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 64424511450,
+					"source_key": "guard_monk",
+					"trigger": "melee_damage_applied"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 0,
+			"primary_count": 1,
+			"role": "guard_monk",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": -22.0,
+			"audit": [
+				{
+					"key": "wild_hunter_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 79876327364,
+					"source_key": "wild_hunter",
+					"trigger": "projectile_launched"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 1,
+			"primary_count": 1,
+			"role": "wild_hunter",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": -17.0,
+			"audit": [
+				{
+					"key": "sparrow_spirit_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 95210702759,
+					"source_key": "sparrow_spirit",
+					"trigger": "projectile_launched"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 1,
+			"primary_count": 1,
+			"role": "sparrow_spirit",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": 24.0,
+			"audit": [
+				{
+					"key": "herbal_spirit_child_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 110561855381,
+					"source_key": "herbal_spirit_child",
+					"trigger": "positive_healing_applied"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 1,
+			"primary_count": 1,
+			"role": "herbal_spirit_child",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": -20.0,
+			"audit": [
+				{
+					"key": "foxfire_imp_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 126013671296,
+					"source_key": "foxfire_imp",
+					"trigger": "projectile_launched"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 1,
+			"primary_count": 1,
+			"role": "foxfire_imp",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": -9.0,
+			"audit": [
+				{
+					"key": "rat_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 142035912778,
+					"source_key": "rat",
+					"trigger": "projectile_damage_applied"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 1,
+			"primary_count": 1,
+			"role": "rat",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": -12.0,
+			"audit": [
+				{
+					"key": "boar_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 156917303149,
+					"source_key": "boar",
+					"trigger": "melee_damage_applied"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 0,
+			"primary_count": 1,
+			"role": "boar",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": -17.0,
+			"audit": [
+				{
+					"key": "wolf_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 171798693883,
+					"source_key": "wolf",
+					"trigger": "melee_damage_applied"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 0,
+			"primary_count": 1,
+			"role": "wolf",
+			"serial": 1
+		},
+		{
+			"actual_hp_delta": -20.0,
+			"audit": [
+				{
+					"key": "bear_lord_attack",
+					"outcome": "played",
+					"serial": 1,
+					"source_id": 188022261592,
+					"source_key": "bear_lord",
+					"trigger": "melee_damage_applied"
+				}
+			],
+			"case": "real_role",
+			"launch_events": 0,
+			"primary_count": 1,
+			"role": "bear_lord",
+			"serial": 1
+		},
+		{
+			"case": "delayed_serial_duplicates",
+			"later_presentation_serial": 2,
+			"serial": 1,
+			"stats": {
+				"direct_primary_rejected": 0,
+				"dropped": 0,
+				"duplicates": 2,
+				"expired": 0,
+				"invalid": 0,
+				"muted": 0,
+				"paused": 0,
+				"played": 1,
+				"preempted": 0,
+				"requested": 3
+			}
+		},
+		{
+			"case": "two_wolf_instances",
+			"heard": [
+				{
+					"key": "wolf_attack",
+					"time": 0.166666666666667
+				},
+				{
+					"key": "wolf_attack",
+					"time": 0.166666666666667
+				}
+			],
+			"source_ids": [
+				217449498546,
+				217617270677
+			],
+			"stats": {
+				"direct_primary_rejected": 0,
+				"dropped": 0,
+				"duplicates": 0,
+				"expired": 0,
+				"invalid": 0,
+				"muted": 0,
+				"paused": 0,
+				"played": 2,
+				"preempted": 0,
+				"requested": 2
+			}
+		},
+		{
+			"case": "shared_file_instances",
+			"heard": [
+				{
+					"key": "guard_monk_attack",
+					"time": 0.241666666666667
+				},
+				{
+					"key": "bear_lord_attack",
+					"time": 0.416666666666667
+				}
+			],
+			"source_ids": [
+				231810795552,
+				233673066292
+			],
+			"stats": {
+				"direct_primary_rejected": 0,
+				"dropped": 0,
+				"duplicates": 0,
+				"expired": 0,
+				"invalid": 0,
+				"muted": 0,
+				"paused": 0,
+				"played": 2,
+				"preempted": 0,
+				"requested": 2
+			}
+		},
+		{
+			"case": "full_health_heal",
+			"healing": 0.0,
+			"primary_count": 0
+		},
+		{
+			"actual_damage": 40.0,
+			"case": "real_fox_splash",
+			"primary_count": 1
+		},
+		{
+			"case": "mute_pause_pool_death_retry",
+			"legacy_capacity": 8,
+			"primary_capacity": 8,
+			"stats_before_retry": {
+				"direct_primary_rejected": 1,
+				"dropped": 1,
+				"duplicates": 3,
+				"expired": 9,
+				"invalid": 1,
+				"muted": 2,
+				"paused": 1,
+				"played": 2,
+				"preempted": 0,
+				"requested": 9
+			}
+		},
+		{
+			"case": "retained_warning_no_material_result_or_death",
+			"heard": [
+				{
+					"key": "tangseng_hurt_warning"
+				}
+			]
+		},
+		{
+			"applied_count": 0,
+			"case": "real_projectile_source_death",
+			"primary_count": 0
+		},
+		{
+			"applied_count": 0,
+			"case": "real_projectile_target_death",
+			"primary_count": 0
+		},
+		{
+			"actual_damage": 5.0,
+			"case": "real_lethal_melee",
+			"primary_count": 1
+		}
+	],
+	"failures": 0,
+	"headless_is_scheduling_not_listening": true,
+	"natural_count": 0,
+	"natural_explicitly_skipped": true,
+	"naturals": [],
+	"profile": "board-selected-noncommercial-20261010",
+	"semantic_case_count": 19
+}

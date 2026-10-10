@@ -1,0 +1,2216 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] verify_assets (res://tests/board_trial_audio_test.gd:79)
+       [5] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] verify_assets (res://tests/board_trial_audio_test.gd:79)
+       [5] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] verify_assets (res://tests/board_trial_audio_test.gd:79)
+       [5] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] verify_assets (res://tests/board_trial_audio_test.gd:79)
+       [5] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] verify_assets (res://tests/board_trial_audio_test.gd:79)
+       [5] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] verify_assets (res://tests/board_trial_audio_test.gd:79)
+       [5] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] verify_assets (res://tests/board_trial_audio_test.gd:79)
+       [5] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] verify_assets (res://tests/board_trial_audio_test.gd:79)
+       [5] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] verify_assets (res://tests/board_trial_audio_test.gd:79)
+       [5] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] verify_assets (res://tests/board_trial_audio_test.gd:79)
+       [5] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: selected role loads actual runtime stream guard_monk
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] verify_assets (res://tests/board_trial_audio_test.gd:103)
+       [2] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: selected role loads actual runtime stream wild_hunter
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] verify_assets (res://tests/board_trial_audio_test.gd:103)
+       [2] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: selected role loads actual runtime stream sparrow_spirit
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] verify_assets (res://tests/board_trial_audio_test.gd:103)
+       [2] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: selected role loads actual runtime stream herbal_spirit_child
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] verify_assets (res://tests/board_trial_audio_test.gd:103)
+       [2] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: selected role loads actual runtime stream foxfire_imp
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] verify_assets (res://tests/board_trial_audio_test.gd:103)
+       [2] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: selected role loads actual runtime stream rat
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] verify_assets (res://tests/board_trial_audio_test.gd:103)
+       [2] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: selected role loads actual runtime stream boar
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] verify_assets (res://tests/board_trial_audio_test.gd:103)
+       [2] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: selected role loads actual runtime stream wolf
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] verify_assets (res://tests/board_trial_audio_test.gd:103)
+       [2] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: selected role loads actual runtime stream bear_lord
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] verify_assets (res://tests/board_trial_audio_test.gd:103)
+       [2] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: nine selected role keys load exactly eight shared runtime files
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] verify_assets (res://tests/board_trial_audio_test.gd:119)
+       [2] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: existing warning retains mono PCM16/44100/full0.52 seconds
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] verify_assets (res://tests/board_trial_audio_test.gd:128)
+       [2] run (res://tests/board_trial_audio_test.gd:405)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: one actual primary scheduling for the selected behavior guard_monk
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:154)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: impact/heal primary occurs at actual positive application guard_monk
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:159)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: one actual primary scheduling for the selected behavior wild_hunter
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:154)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: remote primary occurs at actual launch, not impact wild_hunter
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:158)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: one actual primary scheduling for the selected behavior sparrow_spirit
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:154)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: remote primary occurs at actual launch, not impact sparrow_spirit
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:158)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: one actual primary scheduling for the selected behavior herbal_spirit_child
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:154)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: impact/heal primary occurs at actual positive application herbal_spirit_child
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:159)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: one actual primary scheduling for the selected behavior foxfire_imp
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:154)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: remote primary occurs at actual launch, not impact foxfire_imp
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:158)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: one actual primary scheduling for the selected behavior rat
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:154)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: impact/heal primary occurs at actual positive application rat
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:159)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: one actual primary scheduling for the selected behavior boar
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:154)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: impact/heal primary occurs at actual positive application boar
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:159)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: one actual primary scheduling for the selected behavior wolf
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:154)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: impact/heal primary occurs at actual positive application wolf
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:159)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] real_single (res://tests/board_trial_audio_test.gd:139)
+       [6] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: one actual primary scheduling for the selected behavior bear_lord
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:154)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: impact/heal primary occurs at actual positive application bear_lord
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] real_single (res://tests/board_trial_audio_test.gd:159)
+       [2] run (res://tests/board_trial_audio_test.gd:406)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] delayed_serial_and_duplicates (res://tests/board_trial_audio_test.gd:165)
+       [6] run (res://tests/board_trial_audio_test.gd:407)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] delayed_serial_and_duplicates (res://tests/board_trial_audio_test.gd:165)
+       [6] run (res://tests/board_trial_audio_test.gd:407)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] delayed_serial_and_duplicates (res://tests/board_trial_audio_test.gd:165)
+       [6] run (res://tests/board_trial_audio_test.gd:407)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] delayed_serial_and_duplicates (res://tests/board_trial_audio_test.gd:165)
+       [6] run (res://tests/board_trial_audio_test.gd:407)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] delayed_serial_and_duplicates (res://tests/board_trial_audio_test.gd:165)
+       [6] run (res://tests/board_trial_audio_test.gd:407)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] delayed_serial_and_duplicates (res://tests/board_trial_audio_test.gd:165)
+       [6] run (res://tests/board_trial_audio_test.gd:407)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] delayed_serial_and_duplicates (res://tests/board_trial_audio_test.gd:165)
+       [6] run (res://tests/board_trial_audio_test.gd:407)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] delayed_serial_and_duplicates (res://tests/board_trial_audio_test.gd:165)
+       [6] run (res://tests/board_trial_audio_test.gd:407)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] delayed_serial_and_duplicates (res://tests/board_trial_audio_test.gd:165)
+       [6] run (res://tests/board_trial_audio_test.gd:407)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] delayed_serial_and_duplicates (res://tests/board_trial_audio_test.gd:165)
+       [6] run (res://tests/board_trial_audio_test.gd:407)
+ERROR: late real rat impact triggers exactly its original attack sound
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] delayed_serial_and_duplicates (res://tests/board_trial_audio_test.gd:179)
+       [2] run (res://tests/board_trial_audio_test.gd:407)
+ERROR: duplicate applied callbacks never replay the old missile serial
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] delayed_serial_and_duplicates (res://tests/board_trial_audio_test.gd:183)
+       [2] run (res://tests/board_trial_audio_test.gd:407)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:408)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:408)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:408)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:408)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:408)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:408)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:408)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:408)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:408)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:408)
+ERROR: same serial or same file does not swallow independent source-instance attacks
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] distinct_instances (res://tests/board_trial_audio_test.gd:211)
+       [2] run (res://tests/board_trial_audio_test.gd:408)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:409)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:409)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:409)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:409)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:409)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:409)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:409)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:409)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:409)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] distinct_instances (res://tests/board_trial_audio_test.gd:188)
+       [5] run (res://tests/board_trial_audio_test.gd:409)
+ERROR: same serial or same file does not swallow independent source-instance attacks
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] distinct_instances (res://tests/board_trial_audio_test.gd:211)
+       [2] run (res://tests/board_trial_audio_test.gd:409)
+ERROR: bear retains its independent main sound using shared guard file
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] distinct_instances (res://tests/board_trial_audio_test.gd:212)
+       [2] run (res://tests/board_trial_audio_test.gd:409)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:218)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:218)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:218)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:218)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:218)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:218)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:218)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:218)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:218)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:218)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:225)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:225)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:225)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:225)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:225)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:225)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:225)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:225)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:225)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] no_effect_and_splash (res://tests/board_trial_audio_test.gd:225)
+       [6] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: multiple actual splash victims never multiply launch main sound
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] no_effect_and_splash (res://tests/board_trial_audio_test.gd:234)
+       [2] run (res://tests/board_trial_audio_test.gd:410)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lifecycle_scheduler (res://tests/board_trial_audio_test.gd:239)
+       [6] run (res://tests/board_trial_audio_test.gd:411)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lifecycle_scheduler (res://tests/board_trial_audio_test.gd:239)
+       [6] run (res://tests/board_trial_audio_test.gd:411)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lifecycle_scheduler (res://tests/board_trial_audio_test.gd:239)
+       [6] run (res://tests/board_trial_audio_test.gd:411)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lifecycle_scheduler (res://tests/board_trial_audio_test.gd:239)
+       [6] run (res://tests/board_trial_audio_test.gd:411)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lifecycle_scheduler (res://tests/board_trial_audio_test.gd:239)
+       [6] run (res://tests/board_trial_audio_test.gd:411)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lifecycle_scheduler (res://tests/board_trial_audio_test.gd:239)
+       [6] run (res://tests/board_trial_audio_test.gd:411)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lifecycle_scheduler (res://tests/board_trial_audio_test.gd:239)
+       [6] run (res://tests/board_trial_audio_test.gd:411)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lifecycle_scheduler (res://tests/board_trial_audio_test.gd:239)
+       [6] run (res://tests/board_trial_audio_test.gd:411)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lifecycle_scheduler (res://tests/board_trial_audio_test.gd:239)
+       [6] run (res://tests/board_trial_audio_test.gd:411)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lifecycle_scheduler (res://tests/board_trial_audio_test.gd:239)
+       [6] run (res://tests/board_trial_audio_test.gd:411)
+ERROR: full selected pool preserves retained warning while unused UI remains unloaded
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] lifecycle_scheduler (res://tests/board_trial_audio_test.gd:275)
+       [2] run (res://tests/board_trial_audio_test.gd:411)
+ERROR: full selected pool drops new event without cutting any existing tail
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] lifecycle_scheduler (res://tests/board_trial_audio_test.gd:280)
+       [2] run (res://tests/board_trial_audio_test.gd:411)
+ERROR: expired selected slot is reused without touching legacy warning/UI/death capacity
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] lifecycle_scheduler (res://tests/board_trial_audio_test.gd:284)
+       [2] run (res://tests/board_trial_audio_test.gd:411)
+ERROR: past selected tails explicitly expire and release bounded voice capacity
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] lifecycle_scheduler (res://tests/board_trial_audio_test.gd:293)
+       [2] run (res://tests/board_trial_audio_test.gd:411)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] preserved_secondary_cues (res://tests/board_trial_audio_test.gd:309)
+       [5] run (res://tests/board_trial_audio_test.gd:412)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] preserved_secondary_cues (res://tests/board_trial_audio_test.gd:309)
+       [5] run (res://tests/board_trial_audio_test.gd:412)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] preserved_secondary_cues (res://tests/board_trial_audio_test.gd:309)
+       [5] run (res://tests/board_trial_audio_test.gd:412)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] preserved_secondary_cues (res://tests/board_trial_audio_test.gd:309)
+       [5] run (res://tests/board_trial_audio_test.gd:412)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] preserved_secondary_cues (res://tests/board_trial_audio_test.gd:309)
+       [5] run (res://tests/board_trial_audio_test.gd:412)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] preserved_secondary_cues (res://tests/board_trial_audio_test.gd:309)
+       [5] run (res://tests/board_trial_audio_test.gd:412)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] preserved_secondary_cues (res://tests/board_trial_audio_test.gd:309)
+       [5] run (res://tests/board_trial_audio_test.gd:412)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] preserved_secondary_cues (res://tests/board_trial_audio_test.gd:309)
+       [5] run (res://tests/board_trial_audio_test.gd:412)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] preserved_secondary_cues (res://tests/board_trial_audio_test.gd:309)
+       [5] run (res://tests/board_trial_audio_test.gd:412)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] preserved_secondary_cues (res://tests/board_trial_audio_test.gd:309)
+       [5] run (res://tests/board_trial_audio_test.gd:412)
+ERROR: existing core damage warning remains
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] preserved_secondary_cues (res://tests/board_trial_audio_test.gd:319)
+       [2] run (res://tests/board_trial_audio_test.gd:412)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:413)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:413)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:413)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:413)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:413)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:413)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:413)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:413)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:413)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:413)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:414)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:414)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:414)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:414)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:414)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:414)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:414)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:414)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:414)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] cancelled_projectile (res://tests/board_trial_audio_test.gd:329)
+       [6] run (res://tests/board_trial_audio_test.gd:414)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lethal_melee (res://tests/board_trial_audio_test.gd:347)
+       [6] run (res://tests/board_trial_audio_test.gd:415)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/hunter_launch_02.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lethal_melee (res://tests/board_trial_audio_test.gd:347)
+       [6] run (res://tests/board_trial_audio_test.gd:415)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/sparrow_attack_first.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lethal_melee (res://tests/board_trial_audio_test.gd:347)
+       [6] run (res://tests/board_trial_audio_test.gd:415)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/healer_new_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lethal_melee (res://tests/board_trial_audio_test.gd:347)
+       [6] run (res://tests/board_trial_audio_test.gd:415)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/foxfire_A_faithful.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lethal_melee (res://tests/board_trial_audio_test.gd:347)
+       [6] run (res://tests/board_trial_audio_test.gd:415)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/rat_attack_second.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lethal_melee (res://tests/board_trial_audio_test.gd:347)
+       [6] run (res://tests/board_trial_audio_test.gd:415)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/boar_attack_full.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lethal_melee (res://tests/board_trial_audio_test.gd:347)
+       [6] run (res://tests/board_trial_audio_test.gd:415)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/wolf_first_call.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lethal_melee (res://tests/board_trial_audio_test.gd:347)
+       [6] run (res://tests/board_trial_audio_test.gd:415)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/monk_bear_whack.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:33)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lethal_melee (res://tests/board_trial_audio_test.gd:347)
+       [6] run (res://tests/board_trial_audio_test.gd:415)
+ERROR: Failed loading resource: res://audio/runtime/board-selected-20261010/wav/tangseng_hurt_warning.wav.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] _load_cue (res://scripts/presentation/board_trial_audio.gd:58)
+       [1] _ready (res://scripts/presentation/board_trial_audio.gd:35)
+       [2] _ready (res://scripts/board_trial.gd:64)
+       [3] fresh (res://tests/board_trial_audio_test.gd:39)
+       [4] fixture (res://tests/board_trial_audio_test.gd:52)
+       [5] lethal_melee (res://tests/board_trial_audio_test.gd:347)
+       [6] run (res://tests/board_trial_audio_test.gd:415)
+ERROR: lethal positive damage still plays exactly one main sound
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] lethal_melee (res://tests/board_trial_audio_test.gd:353)
+       [2] run (res://tests/board_trial_audio_test.gd:415)
+ERROR: all nine unique assets and nineteen audio semantic/runtime cases executed
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_trial_audio_test.gd:30)
+       [1] run (res://tests/board_trial_audio_test.gd:416)
+BOARD_AUDIO assets=0 semantic_cases=19 natural_runs=0 failures=42
