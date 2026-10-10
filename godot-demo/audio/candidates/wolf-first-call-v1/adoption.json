@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-10",
+  "authority_quote": "可以，把这个加进去，然后把死亡和战斗结果先删除掉，不要加在游戏里",
+  "status": "负责人已确认，08交付待06运行接入",
+  "scope": "当前棋盘Demo",
+  "replace": {
+    "wolf_attack": {
+      "file": "wolf_first_call.wav",
+      "duration_seconds": 0.29,
+      "sha256": "04b1add76cfc42dfa2c3384020d638d04fd279f053211485961c512dea49831c",
+      "replaces": "完整wolf_attack_full.wav",
+      "preserve_original": true
+    }
+  },
+  "disable_cues": [
+    "rat_death",
+    "boar_death",
+    "wolf_death",
+    "bear_lord_death",
+    "victory"
+  ],
+  "disabled_event_categories": [
+    "monster_death",
+    "battle_result"
+  ],
+  "preserve_cues": [
+    "guard_monk_attack",
+    "wild_hunter_attack",
+    "sparrow_spirit_attack",
+    "herbal_spirit_child_attack",
+    "foxfire_imp_attack",
+    "rat_attack",
+    "boar_attack",
+    "wolf_attack",
+    "bear_lord_attack",
+    "tangseng_hurt_warning"
+  ],
+  "asset_deletion": false,
+  "note": "停用游戏事件，保留源文件备用；英雄退场继续静音，不新增失败/其他战斗结果音；猎户仍仅非商业试玩。"
+}
