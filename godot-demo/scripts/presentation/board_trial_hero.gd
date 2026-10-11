@@ -19,7 +19,7 @@ func tick_visual(delta: float) -> void:
 		var controller=get_parent()
 		if controller!=null and controller.has_method("_record"):
 			var advancing: bool=controller.phase==controller.Phase.BATTLE and not controller.paused
-			presentation.sync_board_step(controller._record(unit_type),delta,advancing)
+			presentation.sync_board_step(controller._by_node(self),delta,advancing)
 	super.tick_visual(delta)
 	if unit_type=="guard_monk": presentation.end_board_tick()
 

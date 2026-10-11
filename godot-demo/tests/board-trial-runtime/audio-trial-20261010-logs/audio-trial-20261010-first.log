@@ -1,0 +1,35 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+ERROR: actual trial UI exposes connected start/retry/pause controls
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/audio_trial_test.gd:19)
+       [1] logical_input_and_callbacks (res://tests/audio_trial_test.gd:320)
+       [2] run (res://tests/audio_trial_test.gd:345)
+ERROR: actual start-button callback begins trial
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/audio_trial_test.gd:19)
+       [1] logical_input_and_callbacks (res://tests/audio_trial_test.gd:322)
+       [2] run (res://tests/audio_trial_test.gd:345)
+ERROR: actual pause-button callback freezes trial
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/audio_trial_test.gd:19)
+       [1] logical_input_and_callbacks (res://tests/audio_trial_test.gd:324)
+       [2] run (res://tests/audio_trial_test.gd:345)
+ERROR: actual retry-button callback immediately restarts same battle
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/audio_trial_test.gd:19)
+       [1] logical_input_and_callbacks (res://tests/audio_trial_test.gd:326)
+       [2] run (res://tests/audio_trial_test.gd:345)
+ERROR: logical Delete cannot remove actors in active battle
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/audio_trial_test.gd:19)
+       [1] logical_input_and_callbacks (res://tests/audio_trial_test.gd:330)
+       [2] run (res://tests/audio_trial_test.gd:345)
+AUDIO_TRIAL cases=9 natural_runs=6 failures=5
