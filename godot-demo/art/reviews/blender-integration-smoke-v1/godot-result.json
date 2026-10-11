@@ -1,0 +1,15 @@
+{
+	"animation_length_seconds": 1.0,
+	"animations": [
+		"probe_head_turn"
+	],
+	"bone_count": 2,
+	"godot_version": "4.7.2-stable (official)",
+	"head_pose_change_radians": 0.479939252138138,
+	"import_error": 0,
+	"mesh_instances": 3,
+	"passed": true,
+	"scope": "Headless import and animation data; no Godot graphical rendering or game integration",
+	"skinned_meshes": 3,
+	"tested_animation": "probe_head_turn"
+}

@@ -1,0 +1,24 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "blender_binary": "/Applications/Blender.app/Contents/MacOS/Blender",
+  "background": true,
+  "mesh_objects": 3,
+  "bones": 2,
+  "animation": "probe_head_turn",
+  "frame_range": [
+    1,
+    24
+  ],
+  "fps": 24,
+  "render_engine": "CYCLES",
+  "render_device": "CPU",
+  "render_size": [
+    480,
+    480
+  ],
+  "outputs": {
+    "probe.blend": 98268,
+    "probe.glb": 21996,
+    "probe.png": 240149
+  }
+}

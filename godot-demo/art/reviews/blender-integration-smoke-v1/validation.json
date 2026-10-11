@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-11",
+  "status": "local-script-and-export-connection-passed",
+  "blender_version": "5.2.2 LTS",
+  "godot_version": "4.7.2-stable (official)",
+  "blender_final_exit_code": 0,
+  "godot_final_exit_code": 0,
+  "passed": ["scripted meshes/materials/skin/animation", "saved blend", "480x480 Cycles CPU render", "animated GLB export", "independent GLB structure check", "Godot GLB import and animation advance"],
+  "first_attempts": [
+    {"tool": "Blender", "environment": "restricted", "exit_code": 139, "failure": "Metal GPU device initialization before Python", "retry": "same script under normal host permissions passed"},
+    {"tool": "Godot", "environment": "restricted", "exit_code": 0, "failure": "user data/log directory permission errors; import and animation assertion passed", "retry": "normal host permissions with explicit log file passed without errors"}
+  ],
+  "glb": {"bytes": 21996, "meshes": 3, "materials": 3, "skins": 1, "bones": 2, "animation": "probe_head_turn", "head_rotation_samples": 24, "distinct_head_rotation_samples": 23, "sha256": "f36f0966f70ba41e59220c731b65d2dc84f557aa1f00b7591674d6fe69be7fd7"},
+  "not_verified": ["Blender desktop UI automation", "Godot 3D graphical rendering", "production character quality", "current game integration", "Tripo"],
+  "production_files_changed": false
+}
