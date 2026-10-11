@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-11",
+  "status": "single-image-modeling-input-ready-for-trial",
+  "generation": "built-in imagegen, one generation plus one framing edit",
+  "reference": "../nine_sols_v1/foxfire-nine-sols-sample.png",
+  "file": "foxfire-tripo-front-tpose.png",
+  "size": [1254, 1254],
+  "mode": "RGB",
+  "bytes": 1325452,
+  "sha256": "f710adfbaef1f5d8c8466c9ae2d6fb4576033f11a90ce0094df5f85f23e3bbcc",
+  "foreground_bbox_luma_below_235": [125, 128, 1128, 1129],
+  "silhouette_width_ratio": 0.7998405103668261,
+  "silhouette_height_ratio": 0.7982456140350878,
+  "margin_ratios_left_top_right_bottom": [0.09968102073365231, 0.10207336523125997, 0.10047846889952153, 0.09968102073365231],
+  "visual_check": ["single full-body front-facing T-pose", "hands and feet inside frame", "white background", "one attached tail", "no detached foxfire", "no labels or multi-view collage"],
+  "not_verified": ["Tripo upload", "generated model geometry", "hidden back/tail-root reconstruction", "automatic rigging and weights", "game integration"],
+  "runtime_assets_changed": false
+}
