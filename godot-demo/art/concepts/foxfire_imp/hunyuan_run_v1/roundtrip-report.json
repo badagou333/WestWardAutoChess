@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-13",
+  "blender": "5.2.2 LTS",
+  "sha256": "0648786e5b89ca118946a200e16ea9def7199ea9ada20120560821733775429a",
+  "bone_count": 25,
+  "weighted_vertices": 40310,
+  "actions": [
+    "Foxfire_Run_InPlace_v1"
+  ],
+  "fps": 30,
+  "actual_glb_deformation_checks": [
+    {
+      "frame": 4,
+      "max_delta_from_first": 0.10411384289511443
+    },
+    {
+      "frame": 7,
+      "max_delta_from_first": 0.22343637971252286
+    },
+    {
+      "frame": 10,
+      "max_delta_from_first": 0.3352422691328504
+    },
+    {
+      "frame": 13,
+      "max_delta_from_first": 0.35019813262357224
+    },
+    {
+      "frame": 16,
+      "max_delta_from_first": 0.3440512581149311
+    },
+    {
+      "frame": 19,
+      "max_delta_from_first": 0.21363676190627381
+    },
+    {
+      "frame": 22,
+      "max_delta_from_first": 0.06444002108641401
+    },
+    {
+      "frame": 25,
+      "max_delta_from_first": 0.0
+    }
+  ],
+  "scope": "Fresh Blender GLB import and actual skinned motion; not a game integration test."
+}

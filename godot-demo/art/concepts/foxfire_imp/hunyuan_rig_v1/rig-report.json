@@ -1,0 +1,501 @@
+{
+  "date": "2026-10-12",
+  "blender": "5.2.2 LTS",
+  "source": "../hunyuan_model_review_v1/source.glb",
+  "source_sha256": "0bef120b2d008b67d57df7bbe5317fec8da1e1a07c860533eb9eb838daf0a425",
+  "bones": [
+    {
+      "name": "root",
+      "head": [
+        0,
+        0,
+        0
+      ],
+      "tail": [
+        0,
+        0,
+        0.12
+      ],
+      "parent": null,
+      "deform": false
+    },
+    {
+      "name": "pelvis",
+      "head": [
+        0,
+        -0.108,
+        0.385
+      ],
+      "tail": [
+        0,
+        -0.1,
+        0.5
+      ],
+      "parent": "root",
+      "deform": true
+    },
+    {
+      "name": "spine",
+      "head": [
+        0,
+        -0.1,
+        0.5
+      ],
+      "tail": [
+        0,
+        -0.108,
+        0.585
+      ],
+      "parent": "pelvis",
+      "deform": true
+    },
+    {
+      "name": "chest",
+      "head": [
+        0,
+        -0.108,
+        0.585
+      ],
+      "tail": [
+        0,
+        -0.11,
+        0.665
+      ],
+      "parent": "spine",
+      "deform": true
+    },
+    {
+      "name": "neck",
+      "head": [
+        0,
+        -0.11,
+        0.665
+      ],
+      "tail": [
+        0,
+        -0.115,
+        0.742
+      ],
+      "parent": "chest",
+      "deform": true
+    },
+    {
+      "name": "head",
+      "head": [
+        0,
+        -0.115,
+        0.742
+      ],
+      "tail": [
+        0,
+        -0.12,
+        0.91
+      ],
+      "parent": "neck",
+      "deform": true
+    },
+    {
+      "name": "clavicle.L",
+      "head": [
+        0,
+        -0.108,
+        0.637
+      ],
+      "tail": [
+        0.13,
+        -0.108,
+        0.645
+      ],
+      "parent": "chest",
+      "deform": true
+    },
+    {
+      "name": "upper_arm.L",
+      "head": [
+        0.13,
+        -0.108,
+        0.645
+      ],
+      "tail": [
+        0.275,
+        -0.108,
+        0.643
+      ],
+      "parent": "clavicle.L",
+      "deform": true
+    },
+    {
+      "name": "forearm.L",
+      "head": [
+        0.275,
+        -0.108,
+        0.643
+      ],
+      "tail": [
+        0.41,
+        -0.107,
+        0.641
+      ],
+      "parent": "upper_arm.L",
+      "deform": true
+    },
+    {
+      "name": "hand.L",
+      "head": [
+        0.41,
+        -0.107,
+        0.641
+      ],
+      "tail": [
+        0.5,
+        -0.108,
+        0.64
+      ],
+      "parent": "forearm.L",
+      "deform": true
+    },
+    {
+      "name": "thigh.L",
+      "head": [
+        0.087,
+        -0.108,
+        0.385
+      ],
+      "tail": [
+        0.096,
+        -0.115,
+        0.215
+      ],
+      "parent": "pelvis",
+      "deform": true
+    },
+    {
+      "name": "shin.L",
+      "head": [
+        0.096,
+        -0.115,
+        0.215
+      ],
+      "tail": [
+        0.108,
+        -0.116,
+        0.07
+      ],
+      "parent": "thigh.L",
+      "deform": true
+    },
+    {
+      "name": "foot.L",
+      "head": [
+        0.108,
+        -0.116,
+        0.07
+      ],
+      "tail": [
+        0.115,
+        -0.222,
+        0.025
+      ],
+      "parent": "shin.L",
+      "deform": true
+    },
+    {
+      "name": "clavicle.R",
+      "head": [
+        0,
+        -0.108,
+        0.637
+      ],
+      "tail": [
+        -0.13,
+        -0.108,
+        0.645
+      ],
+      "parent": "chest",
+      "deform": true
+    },
+    {
+      "name": "upper_arm.R",
+      "head": [
+        -0.13,
+        -0.108,
+        0.645
+      ],
+      "tail": [
+        -0.275,
+        -0.108,
+        0.643
+      ],
+      "parent": "clavicle.R",
+      "deform": true
+    },
+    {
+      "name": "forearm.R",
+      "head": [
+        -0.275,
+        -0.108,
+        0.643
+      ],
+      "tail": [
+        -0.41,
+        -0.107,
+        0.641
+      ],
+      "parent": "upper_arm.R",
+      "deform": true
+    },
+    {
+      "name": "hand.R",
+      "head": [
+        -0.41,
+        -0.107,
+        0.641
+      ],
+      "tail": [
+        -0.5,
+        -0.108,
+        0.64
+      ],
+      "parent": "forearm.R",
+      "deform": true
+    },
+    {
+      "name": "thigh.R",
+      "head": [
+        -0.087,
+        -0.108,
+        0.385
+      ],
+      "tail": [
+        -0.096,
+        -0.115,
+        0.215
+      ],
+      "parent": "pelvis",
+      "deform": true
+    },
+    {
+      "name": "shin.R",
+      "head": [
+        -0.096,
+        -0.115,
+        0.215
+      ],
+      "tail": [
+        -0.108,
+        -0.116,
+        0.07
+      ],
+      "parent": "thigh.R",
+      "deform": true
+    },
+    {
+      "name": "foot.R",
+      "head": [
+        -0.108,
+        -0.116,
+        0.07
+      ],
+      "tail": [
+        -0.115,
+        -0.222,
+        0.025
+      ],
+      "parent": "shin.R",
+      "deform": true
+    },
+    {
+      "name": "tail_01",
+      "head": [
+        0,
+        0.005,
+        0.42
+      ],
+      "tail": [
+        0,
+        0.13,
+        0.405
+      ],
+      "parent": "pelvis",
+      "deform": true
+    },
+    {
+      "name": "tail_02",
+      "head": [
+        0,
+        0.13,
+        0.405
+      ],
+      "tail": [
+        0,
+        0.235,
+        0.32
+      ],
+      "parent": "tail_01",
+      "deform": true
+    },
+    {
+      "name": "tail_03",
+      "head": [
+        0,
+        0.235,
+        0.32
+      ],
+      "tail": [
+        0,
+        0.26,
+        0.205
+      ],
+      "parent": "tail_02",
+      "deform": true
+    },
+    {
+      "name": "tail_04",
+      "head": [
+        0,
+        0.26,
+        0.205
+      ],
+      "tail": [
+        0,
+        0.235,
+        0.095
+      ],
+      "parent": "tail_03",
+      "deform": true
+    },
+    {
+      "name": "tail_05",
+      "head": [
+        0,
+        0.235,
+        0.095
+      ],
+      "tail": [
+        0,
+        0.19,
+        0.022
+      ],
+      "parent": "tail_04",
+      "deform": true
+    }
+  ],
+  "bone_count": 25,
+  "mesh_vertices": 40292,
+  "mesh_triangles": 50789,
+  "source_geometry_changed": false,
+  "source_mesh_uv_material_preserved": true,
+  "weighting": {
+    "method": "anatomical coordinate fields plus temporary topology tail mask, seam-consistent smoothing, top-4 normalized influences; not automatic heat weights",
+    "vertices": 40292,
+    "temporary_graph_vertices": 25339,
+    "components": [
+      25175,
+      164
+    ],
+    "tail_core_unique_vertices": 7916,
+    "tail_inner_unique_vertices": 164,
+    "zero_weight_vertices": 0,
+    "max_influences": 4,
+    "max_weight_sum_error": 2.220446049250313e-16,
+    "influenced_vertices_by_bone": {
+      "forearm.L": 1551,
+      "hand.L": 1529,
+      "pelvis": 11756,
+      "spine": 5263,
+      "upper_arm.L": 1357,
+      "head": 6769,
+      "neck": 3677,
+      "clavicle.R": 1185,
+      "upper_arm.R": 1387,
+      "clavicle.L": 1162,
+      "hand.R": 1695,
+      "forearm.R": 1706,
+      "tail_05": 3521,
+      "tail_04": 6566,
+      "tail_03": 8325,
+      "tail_02": 8802,
+      "chest": 4049,
+      "thigh.L": 4080,
+      "thigh.R": 3978,
+      "shin.R": 2479,
+      "shin.L": 2538,
+      "tail_01": 8984,
+      "foot.L": 1413,
+      "foot.R": 1374
+    }
+  },
+  "deformation_checks": {
+    "rest_pose_max_vertex_error": 8.560065398421926e-08,
+    "poses": [
+      {
+        "pose": "relaxed",
+        "amount": 0,
+        "finite": true,
+        "max_displacement": 0.2847856575636601,
+        "edge_stretch_p99": 1.039942793929076,
+        "max_edge_stretch": 4.884675292806065
+      },
+      {
+        "pose": "tail",
+        "amount": 1,
+        "finite": true,
+        "max_displacement": 0.2847856575636601,
+        "edge_stretch_p99": 1.1616133348892133,
+        "max_edge_stretch": 4.884675292806065
+      },
+      {
+        "pose": "tail",
+        "amount": -1,
+        "finite": true,
+        "max_displacement": 0.2847856575636601,
+        "edge_stretch_p99": 1.166602251055923,
+        "max_edge_stretch": 4.884675292806065
+      },
+      {
+        "pose": "arm",
+        "amount": 1,
+        "finite": true,
+        "max_displacement": 0.2842213999066073,
+        "edge_stretch_p99": 1.0908671666273069,
+        "max_edge_stretch": 3.915064776845107
+      },
+      {
+        "pose": "arm_right",
+        "amount": 1,
+        "finite": true,
+        "max_displacement": 0.2847856575636601,
+        "edge_stretch_p99": 1.0978356883471725,
+        "max_edge_stretch": 4.884675292806065
+      },
+      {
+        "pose": "leg",
+        "amount": 1,
+        "finite": true,
+        "max_displacement": 0.2847856575636601,
+        "edge_stretch_p99": 1.1776148600382748,
+        "max_edge_stretch": 4.884675292806065
+      },
+      {
+        "pose": "leg_right",
+        "amount": 1,
+        "finite": true,
+        "max_displacement": 0.2847856575636601,
+        "edge_stretch_p99": 1.1665369999019453,
+        "max_edge_stretch": 4.884675292806065
+      }
+    ],
+    "scope": "Numeric finite/stretch sanity, not self-intersection or final deformation acceptance"
+  },
+  "action": "Rig_Check_Tail_Arms_Leg_NOT_GAME_ANIMATION",
+  "frames": [
+    1,
+    145
+  ],
+  "fps": 24,
+  "limitations": [
+    "FK prototype, no IK controllers, fingers, face or cloth simulation",
+    "No self-intersection or game performance certification",
+    "Binding-test motion only; not completed idle/walk/attack animations"
+  ]
+}

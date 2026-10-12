@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-12",
+  "reviewer": "Independent read-only subagent; binary glTF parse and CPU skinning; not author report replay",
+  "glb_sha256": "d50341a27fee716429b04d33264ca3a40ffa346f2f765ab7adbe44021bbb4f76",
+  "skins": 1,
+  "bones": 25,
+  "tail_chain": ["pelvis", "tail_01", "tail_02", "tail_03", "tail_04", "tail_05"],
+  "vertices": 40310,
+  "triangles": 50789,
+  "unweighted_vertices": 0,
+  "max_influences": 4,
+  "max_weight_sum_error": 1.79e-7,
+  "max_bind_matrix_reconstruction_error": 1.89e-7,
+  "animation_samples": 145,
+  "animation_duration_seconds": 6,
+  "varying_rotation_channels": 18,
+  "both_sides_temporal_mesh_deformation_confirmed": true,
+  "loop_mesh_error": 0,
+  "embedded_png_byte_identical_to_source": 3,
+  "material_and_sampler_preserved": true,
+  "triangle_corner_position_max_error": 7.06e-8,
+  "uv_max_error": 0,
+  "normal_vector_max_error": 0.013,
+  "crotch_edge_correction": {
+    "original_candidate_ratio": 8.17,
+    "final_ratio": 2.82,
+    "rest_length": 0.000831,
+    "deformed_length": 0.002344
+  },
+  "remaining_short_edge_stretch": {
+    "ratio": 4.8847,
+    "rest_length": 0.001292,
+    "deformed_length": 0.006309,
+    "location": "pelvis / upper_arm.L / clavicle.L transition near sleeve root",
+    "present_in_initial_relaxed_pose": true
+  },
+  "visual_review": {
+    "files": ["arm_test_front.png", "tail_test_back.png", "leg_test_side.png"],
+    "result": "No obvious detached limb, tail root opening or large texture misalignment in these three stills. Leg occlusion limits knee assessment.",
+    "scope": "Limited still-image review, not continuous motion, extreme poses, gameplay or final art approval."
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-12",
+  "blender": "5.2.2 LTS",
+  "glb_sha256": "d50341a27fee716429b04d33264ca3a40ffa346f2f765ab7adbe44021bbb4f76",
+  "rigs": 1,
+  "bones": 25,
+  "tail_bones": [
+    "tail_01",
+    "tail_02",
+    "tail_03",
+    "tail_04",
+    "tail_05"
+  ],
+  "actions": [
+    "Rig_Check_Tail_Arms_Leg_NOT_GAME_ANIMATION"
+  ],
+  "weighted_vertices": 40310,
+  "vertices": 40310,
+  "images": [
+    {
+      "size": [
+        4096,
+        4096
+      ],
+      "packed": true
+    },
+    {
+      "size": [
+        4096,
+        4096
+      ],
+      "packed": true
+    },
+    {
+      "size": [
+        4096,
+        4096
+      ],
+      "packed": true
+    }
+  ],
+  "animation_deformation": [
+    {
+      "frame": 13,
+      "max_deformation_from_frame_1": 0.11404115421727014,
+      "vertices_moved_over_1e_5": 23949,
+      "finite": true
+    },
+    {
+      "frame": 37,
+      "max_deformation_from_frame_1": 0.11404434091295619,
+      "vertices_moved_over_1e_5": 23949,
+      "finite": true
+    },
+    {
+      "frame": 61,
+      "max_deformation_from_frame_1": 0.22352689677370216,
+      "vertices_moved_over_1e_5": 9022,
+      "finite": true
+    },
+    {
+      "frame": 73,
+      "max_deformation_from_frame_1": 0.22345722923548447,
+      "vertices_moved_over_1e_5": 9184,
+      "finite": true
+    },
+    {
+      "frame": 85,
+      "max_deformation_from_frame_1": 0.05684876226728195,
+      "vertices_moved_over_1e_5": 4705,
+      "finite": true
+    },
+    {
+      "frame": 97,
+      "max_deformation_from_frame_1": 0.05674236350709664,
+      "vertices_moved_over_1e_5": 4635,
+      "finite": true
+    },
+    {
+      "frame": 145,
+      "max_deformation_from_frame_1": 0.0,
+      "vertices_moved_over_1e_5": 0,
+      "finite": true
+    }
+  ],
+  "scope": "Actual exported GLB reimport and mesh deformation, not Godot or gameplay performance."
+}

@@ -1,0 +1,14 @@
+{
+  "file": "binding-preview.gif",
+  "size": [
+    512,
+    512
+  ],
+  "frames": 48,
+  "duration_ms": 6000,
+  "source": "Native Blender .blend renders; animated skinned model plus orbiting camera",
+  "full_image_2d_warping": false,
+  "game_animation": false,
+  "rigged_glb_sha256": "d50341a27fee716429b04d33264ca3a40ffa346f2f765ab7adbe44021bbb4f76",
+  "sha256": "9345190d1699f2d79a9f56b3add624a806b48f53423dd977eacb6bf6a386e456"
+}

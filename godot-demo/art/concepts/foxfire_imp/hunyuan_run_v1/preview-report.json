@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-13",
+  "source": "Native Blender skinned model renders; no 2D warping",
+  "glb_sha256": "0648786e5b89ca118946a200e16ea9def7199ea9ada20120560821733775429a",
+  "previews": [
+    {
+      "file": "run-front.gif",
+      "frames": 24,
+      "duration_ms": 800,
+      "sha256": "c97b1bb555012e9a756a1c69b1dd5e06b09c841ac1923e5d048009689443dafe"
+    },
+    {
+      "file": "run-side.gif",
+      "frames": 24,
+      "duration_ms": 800,
+      "sha256": "093ab3f4fb778236a561588d54ae470371447b09a596bb8ad56f16432674dac0"
+    }
+  ]
+}
