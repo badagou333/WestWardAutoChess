@@ -1,0 +1,706 @@
+{
+  "sha256": "d467e950dc0559f9e382ed3460a5cdcdf782ee46aca0310d9900eaaebe024462",
+  "method": "One-sided velocity limits around every GLB key using dt=duration/1000; root-only translation contribution analytically subtracted from each vertex velocity jump. Units model units/second.",
+  "dt": 0.0006666666530072689,
+  "seam": {
+    "frame": 1,
+    "time": 0.03333333507180214,
+    "is_loop_seam": true,
+    "max_vertex_velocity_delta": 1.518967958212875,
+    "worst_vertex": 24692,
+    "dominant_bone": "foot.R",
+    "worst_before_velocity": [
+      -0.0022130692120899457,
+      -0.6485275529592971,
+      -1.502834674024159
+    ],
+    "worst_after_velocity": [
+      0.04637330532527526,
+      -0.3632168622099913,
+      -0.0116938919278276
+    ],
+    "root_velocity_delta": [
+      -0.026971047276103825,
+      -0.2985644313583087,
+      2.514570816673775e-07
+    ],
+    "root_velocity_delta_norm": 0.29978018123875916,
+    "without_root_translation_max": 1.603186715874087,
+    "without_root_worst_vertex": 24694,
+    "without_root_dominant_bone": "foot.R",
+    "same_worst_without_root": 1.6031591200883286,
+    "vertex_delta_percentiles_50_90_99": [
+      0.3014081445209569,
+      0.9871253712886181,
+      1.4912484575792733
+    ]
+  },
+  "interior_max_of_global_maxima": 3.383688763482278,
+  "interior_median_of_global_maxima": 1.1182894606988851,
+  "seam_worst_vertex_rank_among_20_keys": 5,
+  "seam_worst_vertex_interior_max": 2.5270151330325,
+  "seam_worst_vertex_interior_median": 0.5778567907317095,
+  "vertices_whose_seam_is_largest_jump": 322,
+  "all_key_results": [
+    {
+      "frame": 1,
+      "time": 0.03333333507180214,
+      "is_loop_seam": true,
+      "max_vertex_velocity_delta": 1.518967958212875,
+      "worst_vertex": 24692,
+      "dominant_bone": "foot.R",
+      "worst_before_velocity": [
+        -0.0022130692120899457,
+        -0.6485275529592971,
+        -1.502834674024159
+      ],
+      "worst_after_velocity": [
+        0.04637330532527526,
+        -0.3632168622099913,
+        -0.0116938919278276
+      ],
+      "root_velocity_delta": [
+        -0.026971047276103825,
+        -0.2985644313583087,
+        2.514570816673775e-07
+      ],
+      "root_velocity_delta_norm": 0.29978018123875916,
+      "without_root_translation_max": 1.603186715874087,
+      "without_root_worst_vertex": 24694,
+      "without_root_dominant_bone": "foot.R",
+      "same_worst_without_root": 1.6031591200883286,
+      "vertex_delta_percentiles_50_90_99": [
+        0.3014081445209569,
+        0.9871253712886181,
+        1.4912484575792733
+      ]
+    },
+    {
+      "frame": 2,
+      "time": 0.06666667014360428,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 1.089485502891106,
+      "worst_vertex": 407,
+      "dominant_bone": "hand.L",
+      "worst_before_velocity": [
+        0.15793074803992457,
+        -1.0175143258956003,
+        -0.05920186183229943
+      ],
+      "worst_after_velocity": [
+        0.36516941170669914,
+        -2.082912790488251,
+        -0.15384280928696864
+      ],
+      "root_velocity_delta": [
+        -4.871721577422855e-06,
+        -0.22061427182782584,
+        1.39698422361307e-07
+      ],
+      "root_velocity_delta_norm": 0.22061427188166005,
+      "without_root_translation_max": 0.9490116511132262,
+      "without_root_worst_vertex": 18423,
+      "without_root_dominant_bone": "shin.L",
+      "same_worst_without_root": 0.8749669426230338,
+      "vertex_delta_percentiles_50_90_99": [
+        0.27172984253922283,
+        0.6737478793135535,
+        1.0147846510445238
+      ]
+    },
+    {
+      "frame": 3,
+      "time": 0.10000000149011612,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 0.9313791930985619,
+      "worst_vertex": 25767,
+      "dominant_bone": "foot.R",
+      "worst_before_velocity": [
+        0.04627760409107345,
+        -0.48312461627825587,
+        -0.9060368878621902
+      ],
+      "worst_after_velocity": [
+        0.0027574319106390783,
+        0.13494807518231075,
+        -1.6014212017642258
+      ],
+      "root_velocity_delta": [
+        0.017217331739289292,
+        0.617895514913721,
+        -3.073364854798429e-07
+      ],
+      "root_velocity_delta_norm": 0.6181353442918529,
+      "without_root_translation_max": 1.0503700375409655,
+      "without_root_worst_vertex": 14777,
+      "without_root_dominant_bone": "foot.L",
+      "same_worst_without_root": 0.6980315124412968,
+      "vertex_delta_percentiles_50_90_99": [
+        0.5988713392706042,
+        0.6436928165253193,
+        0.8367282071715274
+      ]
+    },
+    {
+      "frame": 4,
+      "time": 0.13333334028720856,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 0.862779199553969,
+      "worst_vertex": 10536,
+      "dominant_bone": "thigh.L",
+      "worst_before_velocity": [
+        -0.048303334805763244,
+        -0.25728696052271494,
+        1.2587580904609383
+      ],
+      "worst_after_velocity": [
+        -0.06879976524486714,
+        0.433270077226319,
+        0.7419420485876992
+      ],
+      "root_velocity_delta": [
+        0.02023317637188594,
+        0.5929116534691179,
+        -2.7939677056318385e-07
+      ],
+      "root_velocity_delta_norm": 0.5932567827219991,
+      "without_root_translation_max": 1.3078065628599111,
+      "without_root_worst_vertex": 14740,
+      "without_root_dominant_bone": "foot.L",
+      "same_worst_without_root": 0.5275339366204641,
+      "vertex_delta_percentiles_50_90_99": [
+        0.5738413786876597,
+        0.6273373038651081,
+        0.749397885705425
+      ]
+    },
+    {
+      "frame": 5,
+      "time": 0.1666666716337204,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 1.1182894606988851,
+      "worst_vertex": 27092,
+      "dominant_bone": "shin.R",
+      "worst_before_velocity": [
+        -0.11620862333331276,
+        0.8670355792864542,
+        -0.43439070977010047
+      ],
+      "worst_after_velocity": [
+        0.06303091518689058,
+        0.1544842034153047,
+        -1.2774298799664796
+      ],
+      "root_velocity_delta": [
+        0.009041798723558982,
+        -0.1190224174572489,
+        -8.381903676343846e-08
+      ],
+      "root_velocity_delta_norm": 0.11936536340803393,
+      "without_root_translation_max": 1.045852104278578,
+      "without_root_worst_vertex": 27095,
+      "without_root_dominant_bone": "shin.R",
+      "same_worst_without_root": 1.0449683230929636,
+      "vertex_delta_percentiles_50_90_99": [
+        0.1596960111506,
+        0.6583320894004656,
+        1.0094725895766363
+      ]
+    },
+    {
+      "frame": 6,
+      "time": 0.20000000298023224,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 1.4424662855435328,
+      "worst_vertex": 14670,
+      "dominant_bone": "foot.L",
+      "worst_before_velocity": [
+        -0.14038291070664868,
+        -0.6858347215345084,
+        2.094513728580856
+      ],
+      "worst_after_velocity": [
+        -0.04529841150748835,
+        -1.727470155798165,
+        3.0878231189664325
+      ],
+      "root_velocity_delta": [
+        -3.05328303528557e-06,
+        0.04468482254057282,
+        4.470348623046577e-07
+      ],
+      "root_velocity_delta_norm": 0.04468482264712329,
+      "without_root_translation_max": 1.475057964935878,
+      "without_root_worst_vertex": 14670,
+      "without_root_dominant_bone": "foot.L",
+      "same_worst_without_root": 1.475057964935878,
+      "vertex_delta_percentiles_50_90_99": [
+        0.05266884600069009,
+        0.4189186227405784,
+        1.386174755351505
+      ]
+    },
+    {
+      "frame": 7,
+      "time": 0.23333333432674408,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 2.8092960205442705,
+      "worst_vertex": 14777,
+      "dominant_bone": "foot.L",
+      "worst_before_velocity": [
+        -0.02457485324721801,
+        3.1469760048134603,
+        4.012965059929341
+      ],
+      "worst_after_velocity": [
+        -0.026205942992474685,
+        0.6187820133246407,
+        2.788066446985418
+      ],
+      "root_velocity_delta": [
+        -0.009041344146431856,
+        -0.03489885389665076,
+        -4.470347374045649e-07
+      ],
+      "root_velocity_delta_norm": 0.03605101811979564,
+      "without_root_translation_max": 2.7779400770820684,
+      "without_root_worst_vertex": 14777,
+      "without_root_dominant_bone": "foot.L",
+      "same_worst_without_root": 2.7779400770820684,
+      "vertex_delta_percentiles_50_90_99": [
+        0.06540560010238108,
+        0.6147831895778456,
+        2.413674446763846
+      ]
+    },
+    {
+      "frame": 8,
+      "time": 0.2666666805744171,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 2.906859847126525,
+      "worst_vertex": 14777,
+      "dominant_bone": "foot.L",
+      "worst_before_velocity": [
+        -0.03715474408301609,
+        2.043052561243813,
+        1.9823116411933768
+      ],
+      "worst_after_velocity": [
+        0.0035020700632554073,
+        -0.28893124031982076,
+        0.2473670473965777
+      ],
+      "root_velocity_delta": [
+        -0.006742738273441412,
+        -0.4476950055430542,
+        1.3969826883827622e-07
+      ],
+      "root_velocity_delta_norm": 0.4477457788831057,
+      "without_root_translation_max": 2.561800970540168,
+      "without_root_worst_vertex": 14777,
+      "without_root_dominant_bone": "foot.L",
+      "same_worst_without_root": 2.561800970540168,
+      "vertex_delta_percentiles_50_90_99": [
+        0.44404479088768234,
+        1.0320598145943567,
+        2.56007676420678
+      ]
+    },
+    {
+      "frame": 9,
+      "time": 0.30000001192092896,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 1.9302197416226405,
+      "worst_vertex": 18901,
+      "dominant_bone": "foot.R",
+      "worst_before_velocity": [
+        -0.03565232945525078,
+        1.2852497857282814,
+        -1.5285296701337487
+      ],
+      "worst_after_velocity": [
+        -0.015057386233643248,
+        0.061057646910753285,
+        -0.03632401858271738
+      ],
+      "root_velocity_delta": [
+        -0.00372925213414421,
+        -0.3167044187607885,
+        1.396983950394117e-07
+      ],
+      "root_velocity_delta_norm": 0.31672637431086853,
+      "without_root_translation_max": 1.7466547793244298,
+      "without_root_worst_vertex": 18901,
+      "without_root_dominant_bone": "foot.R",
+      "same_worst_without_root": 1.7466547793244298,
+      "vertex_delta_percentiles_50_90_99": [
+        0.3167691248851958,
+        0.8810350326196278,
+        1.7823786662890384
+      ]
+    },
+    {
+      "frame": 10,
+      "time": 0.3333333432674408,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 0.9036097424201237,
+      "worst_vertex": 563,
+      "dominant_bone": "hand.L",
+      "worst_before_velocity": [
+        -0.15257520452710935,
+        0.451285997744416,
+        -1.3916453399835276
+      ],
+      "worst_after_velocity": [
+        -0.06540804575591741,
+        0.14996073264696536,
+        -0.5442283601900665
+      ],
+      "root_velocity_delta": [
+        0.0,
+        0.18798190358172726,
+        0.0
+      ],
+      "root_velocity_delta_norm": 0.18798190358172726,
+      "without_root_translation_max": 0.9829246933370815,
+      "without_root_worst_vertex": 579,
+      "without_root_dominant_bone": "hand.L",
+      "same_worst_without_root": 0.9824129256739993,
+      "vertex_delta_percentiles_50_90_99": [
+        0.21872524425961518,
+        0.5534836320602543,
+        0.7314556451184702
+      ]
+    },
+    {
+      "frame": 11,
+      "time": 0.36666667461395264,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 1.4886478709192967,
+      "worst_vertex": 579,
+      "dominant_bone": "hand.L",
+      "worst_before_velocity": [
+        -0.06873931980866928,
+        0.18856451893517082,
+        -0.5209828496070751
+      ],
+      "worst_after_velocity": [
+        0.5125491387182739,
+        -0.7286557315026265,
+        0.49729178120857537
+      ],
+      "root_velocity_delta": [
+        -0.02697105814838694,
+        -0.2750017099083377,
+        2.5145711029031546e-07
+      ],
+      "root_velocity_delta_norm": 0.276321150891886,
+      "without_root_translation_max": 1.4116835065929771,
+      "without_root_worst_vertex": 28074,
+      "without_root_dominant_bone": "foot.L",
+      "same_worst_without_root": 1.3488168908654412,
+      "vertex_delta_percentiles_50_90_99": [
+        0.2768285583256289,
+        0.8268155690372258,
+        1.3647567954195623
+      ]
+    },
+    {
+      "frame": 12,
+      "time": 0.4000000059604645,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 1.0537614360781264,
+      "worst_vertex": 7088,
+      "dominant_bone": "hand.R",
+      "worst_before_velocity": [
+        -0.15198456425110157,
+        -0.9485665196367187,
+        -0.110057574827744
+      ],
+      "worst_after_velocity": [
+        -0.3734387217215899,
+        -1.9646068231728389,
+        -0.28044924685047085
+      ],
+      "root_velocity_delta": [
+        -4.8669610977873645e-06,
+        -0.23894667187014035,
+        1.3969839373836906e-07
+      ],
+      "root_velocity_delta_norm": 0.2389466719197473,
+      "without_root_translation_max": 0.8258012291977651,
+      "without_root_worst_vertex": 7088,
+      "without_root_dominant_bone": "hand.R",
+      "same_worst_without_root": 0.8258012291977651,
+      "vertex_delta_percentiles_50_90_99": [
+        0.2766632588943194,
+        0.5130216073224141,
+        0.9129866800403615
+      ]
+    },
+    {
+      "frame": 13,
+      "time": 0.4333333373069763,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 0.8929313070834212,
+      "worst_vertex": 14808,
+      "dominant_bone": "foot.L",
+      "worst_before_velocity": [
+        0.01877304990843039,
+        -0.46141367671858435,
+        -0.7460196112350719
+      ],
+      "worst_after_velocity": [
+        -0.012787738635489841,
+        0.14903046765930625,
+        -1.3969329559983652
+      ],
+      "root_velocity_delta": [
+        0.0172173426547989,
+        0.576041971209147,
+        -3.0733646726524603e-07
+      ],
+      "root_velocity_delta_norm": 0.5762992187073543,
+      "without_root_translation_max": 1.152545546947508,
+      "without_root_worst_vertex": 18901,
+      "without_root_dominant_bone": "foot.R",
+      "same_worst_without_root": 0.6536440911491423,
+      "vertex_delta_percentiles_50_90_99": [
+        0.5556537368851658,
+        0.6031485151823859,
+        0.8007900069910653
+      ]
+    },
+    {
+      "frame": 14,
+      "time": 0.46666666865348816,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 0.8992522043325365,
+      "worst_vertex": 18901,
+      "dominant_bone": "foot.R",
+      "worst_before_velocity": [
+        0.030405662165663535,
+        -0.3387494410055506,
+        1.5607562665658372
+      ],
+      "worst_after_velocity": [
+        -0.003911426344167944,
+        -0.7809818841355253,
+        2.3430013245089527
+      ],
+      "root_velocity_delta": [
+        0.02023317156817958,
+        0.6326817911971488,
+        -2.793967887777807e-07
+      ],
+      "root_velocity_delta_norm": 0.6330052370590769,
+      "without_root_translation_max": 1.3305352719201644,
+      "without_root_worst_vertex": 18901,
+      "without_root_dominant_bone": "foot.R",
+      "same_worst_without_root": 1.3305352719201644,
+      "vertex_delta_percentiles_50_90_99": [
+        0.6113138791999926,
+        0.6606126486483757,
+        0.8259063297821375
+      ]
+    },
+    {
+      "frame": 15,
+      "time": 0.5,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 1.092540418327652,
+      "worst_vertex": 18901,
+      "dominant_bone": "foot.R",
+      "worst_before_velocity": [
+        -0.04573822603056844,
+        0.20885947244699113,
+        2.662153206077374
+      ],
+      "worst_after_velocity": [
+        0.0016561043451194272,
+        -0.11255218557178877,
+        3.7052701166954596
+      ],
+      "root_velocity_delta": [
+        0.00904178825947783,
+        -0.09753417209054255,
+        -8.381878696325284e-08
+      ],
+      "root_velocity_delta_norm": 0.09795237955416819,
+      "without_root_translation_max": 1.0675603543947005,
+      "without_root_worst_vertex": 18901,
+      "without_root_dominant_bone": "foot.R",
+      "same_worst_without_root": 1.0675603543947005,
+      "vertex_delta_percentiles_50_90_99": [
+        0.15150545534812132,
+        0.6357089525032728,
+        0.9945252490093248
+      ]
+    },
+    {
+      "frame": 16,
+      "time": 0.5333333611488342,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 2.06164771218584,
+      "worst_vertex": 23747,
+      "dominant_bone": "shin.R",
+      "worst_before_velocity": [
+        0.13645084966138066,
+        1.4088211127738428,
+        1.0940007395947753
+      ],
+      "worst_after_velocity": [
+        -0.23969434217743474,
+        2.5323640302324733,
+        2.7811751219412466
+      ],
+      "root_velocity_delta": [
+        -3.0253726555455607e-06,
+        -0.019215375627557874,
+        4.4703476212437495e-07
+      ],
+      "root_velocity_delta_norm": 0.019215375870923392,
+      "without_root_translation_max": 2.0721812984887,
+      "without_root_worst_vertex": 23747,
+      "without_root_dominant_bone": "shin.R",
+      "same_worst_without_root": 2.0721812984887,
+      "vertex_delta_percentiles_50_90_99": [
+        0.05246948497297409,
+        0.5253355843903921,
+        1.884275561151905
+      ]
+    },
+    {
+      "frame": 17,
+      "time": 0.5666666626930237,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 3.347046566595462,
+      "worst_vertex": 18901,
+      "dominant_bone": "foot.R",
+      "worst_before_velocity": [
+        -0.20123681496336154,
+        3.718068678256748,
+        4.389887743733283
+      ],
+      "worst_after_velocity": [
+        -0.05952692675161377,
+        0.6638170163905545,
+        3.02820282697424
+      ],
+      "root_velocity_delta": [
+        -0.009041359289156564,
+        0.0033252003721664924,
+        -4.4703476212437495e-07
+      ],
+      "root_velocity_delta_norm": 0.009633438405393682,
+      "without_root_translation_max": 3.350475608358722,
+      "without_root_worst_vertex": 18901,
+      "without_root_dominant_bone": "foot.R",
+      "same_worst_without_root": 3.350475608358722,
+      "vertex_delta_percentiles_50_90_99": [
+        0.08251406132503052,
+        0.4967864987289723,
+        2.9059334143879565
+      ]
+    },
+    {
+      "frame": 18,
+      "time": 0.6000000238418579,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 3.383688763482278,
+      "worst_vertex": 18901,
+      "dominant_bone": "foot.R",
+      "worst_before_velocity": [
+        -0.1563898628385187,
+        2.391505264633129,
+        2.3923521220298274
+      ],
+      "worst_after_velocity": [
+        -0.07006128083987713,
+        -0.2703969456532382,
+        0.30520726675051907
+      ],
+      "root_velocity_delta": [
+        -0.0067427442277262885,
+        -0.40517251771357127,
+        1.396980190380906e-07
+      ],
+      "root_velocity_delta_norm": 0.40522861906594687,
+      "without_root_translation_max": 3.0753317556263986,
+      "without_root_worst_vertex": 18901,
+      "without_root_dominant_bone": "foot.R",
+      "same_worst_without_root": 3.0753317556263986,
+      "vertex_delta_percentiles_50_90_99": [
+        0.40091076873740367,
+        1.0916052093642872,
+        3.048151463762538
+      ]
+    },
+    {
+      "frame": 19,
+      "time": 0.6333333253860474,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 2.228919635942566,
+      "worst_vertex": 18901,
+      "dominant_bone": "foot.R",
+      "worst_before_velocity": [
+        -0.0871268421968071,
+        -0.10141133949125296,
+        0.03724435862930399
+      ],
+      "worst_after_velocity": [
+        -0.046394537121979315,
+        -1.8689392888506051,
+        -1.3200575867929947
+      ],
+      "root_velocity_delta": [
+        -0.003729248483433054,
+        -0.3865867595926697,
+        1.396985199395045e-07
+      ],
+      "root_velocity_delta_norm": 0.38660474646159126,
+      "without_root_translation_max": 2.057472450944957,
+      "without_root_worst_vertex": 25564,
+      "without_root_dominant_bone": "foot.R",
+      "same_worst_without_root": 1.9368129361433841,
+      "vertex_delta_percentiles_50_90_99": [
+        0.38492213151556665,
+        0.9640448635114185,
+        2.032815679072434
+      ]
+    },
+    {
+      "frame": 20,
+      "time": 0.6666666865348816,
+      "is_loop_seam": false,
+      "max_vertex_velocity_delta": 0.8286072778699552,
+      "worst_vertex": 6974,
+      "dominant_bone": "hand.R",
+      "worst_before_velocity": [
+        0.15472592385055414,
+        0.0722547395694625,
+        -1.3639029799155558
+      ],
+      "worst_after_velocity": [
+        0.07483487633744065,
+        0.004077078076416797,
+        -0.5419788666668603
+      ],
+      "root_velocity_delta": [
+        0.0,
+        0.2044337483631318,
+        0.0
+      ],
+      "root_velocity_delta_norm": 0.2044337483631318,
+      "without_root_translation_max": 0.8696314208882805,
+      "without_root_worst_vertex": 6974,
+      "without_root_dominant_bone": "hand.R",
+      "same_worst_without_root": 0.8696314208882805,
+      "vertex_delta_percentiles_50_90_99": [
+        0.21178949128194355,
+        0.5627321932573577,
+        0.7264217684458225
+      ]
+    }
+  ]
+}

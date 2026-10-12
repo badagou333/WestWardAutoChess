@@ -1,0 +1,30 @@
+{
+  "source": "Native Blender renders of retargeted skinned animation",
+  "glb_sha256": "d467e950dc0559f9e382ed3460a5cdcdf782ee46aca0310d9900eaaebe024462",
+  "files": [
+    {
+      "path": "run-front.gif",
+      "frames": 20,
+      "duration_ms": 660,
+      "sha256": "16d343a0746dfe920f2f9f951fcd3566bff66d89351254f89e011450155070f3"
+    },
+    {
+      "path": "run-front-slow.gif",
+      "frames": 20,
+      "duration_ms": 1330,
+      "sha256": "194a2d2a64db8024b611c7f43976615301f1c7913396288f707d5e62ac8ac676"
+    },
+    {
+      "path": "run-side.gif",
+      "frames": 20,
+      "duration_ms": 660,
+      "sha256": "a120ad1ef336c74370c09586767ea6cc7809d1013c21a6a9e9d80ec13354be09"
+    },
+    {
+      "path": "run-side-slow.gif",
+      "frames": 20,
+      "duration_ms": 1330,
+      "sha256": "f32cec2c703316358242054a9f24f32126cee3eadcbc390f318687929a25a7ab"
+    }
+  ]
+}

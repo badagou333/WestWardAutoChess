@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-13",
+  "blender": "5.2.2 LTS",
+  "glb_sha256": "d467e950dc0559f9e382ed3460a5cdcdf782ee46aca0310d9900eaaebe024462",
+  "bones": 25,
+  "tail_bones": 5,
+  "weighted_vertices": 40310,
+  "action": "Foxfire_Run_Kenney_Retarget_v2",
+  "range": [
+    1.0,
+    21.0
+  ],
+  "fps": 30,
+  "actual_mesh_checks": [
+    {
+      "frame": 4.0,
+      "max_mesh_delta_from_start": 0.18512097598499017
+    },
+    {
+      "frame": 7.0,
+      "max_mesh_delta_from_start": 0.5402766828411806
+    },
+    {
+      "frame": 11.0,
+      "max_mesh_delta_from_start": 0.544092421375982
+    },
+    {
+      "frame": 15.0,
+      "max_mesh_delta_from_start": 0.42329244447291614
+    },
+    {
+      "frame": 18.0,
+      "max_mesh_delta_from_start": 0.137571528159848
+    },
+    {
+      "frame": 21.0,
+      "max_mesh_delta_from_start": 0.0
+    }
+  ],
+  "scope": "Fresh GLB import and actual skinning, not an engine or visual quality sign-off."
+}
