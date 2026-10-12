@@ -1,0 +1,62 @@
+===== front.png =====
+Tool: built-in image_gen
+transparent_background: false
+Reference images (project-relative): ../tripo_input_v1/foxfire-tripo-front-tpose.png
+
+Use case: precise-object-edit / identity-preserve.
+Asset type: revised FRONT reference for a consistent four-view Hunyuan3D foxfire imp reconstruction set.
+Input image 1 is the existing front T-pose character to edit.
+Primary request: change ONLY the tail placement/orientation. The tail must be a normal fox tail emerging from the CENTERLINE of the rear pelvis/sacrum and extending BACKWARD BEHIND the body, not attached to a hip side and not swung to either side. The spine and tail root line up anatomically.
+Keep this exact FRONT view, exact horizontal straight T-pose, exact character identity, head, facial expression, tall ears, orange forehead markings, red scarf, charcoal/gold-trimmed robe, bell belt, red sash, loose pants, ankle wraps, paws, lighting/style and square opaque white background unchanged.
+The viewer looks at the front of the character, so the normally rearward tail should be MOSTLY OCCLUDED behind the torso and legs. A small central glimpse behind the separated legs is acceptable; do NOT force the entire tail into view by swinging it to screen-left or screen-right. Remove the original large side-swept tail silhouette on screen-right. Do not put the tail on the belly or between the legs as a front appendage.
+Tail design is still EXACTLY ONE thick fluffy cream-to-orange/rust fox tail of the original length and volume, with the same tuft pattern; only its direction changes. It extends behind the hips with a gentle downward natural curve in the body's center sagittal plane, ending behind the character, without any lateral bend. No second tail, no fire or particles, no new appendages.
+No other redesign, no three-quarter camera, no changes to posture, no text, no collage, no ground line/shadow. Same full-body scale and safe white margins as the source.
+
+===== left.png =====
+Tool: built-in image_gen
+transparent_background: false
+Reference images (project-relative): front.png, ../tripo_input_v1/foxfire-tripo-front-tpose.png
+
+Use case: identity-preserve.
+Asset type: ONE separate orthographic-view reference PNG for Hunyuan3D multiview reconstruction.
+Image 1 is the NEW authoritative FRONT reference, including the corrected normal rearward centered tail orientation. Preserve its exact character identity, proportions, posture, head-to-body ratio, ear height, charcoal/gold-trimmed robe, red scarf/sash, brass FRONT belt bell, dark pants, ankle wraps, paws, cream fox fur and restrained cel-shaded style.
+Image 2 is the OLD front image supplied ONLY to identify tail SIZE, fur TUFTS and cream-root/orange-rust-end color pattern. Its side-swept tail placement is OBSOLETE and MUST NOT be reproduced.
+Tail geometry LOCK: EXACTLY ONE normal fox tail rooted at the CENTER of the REAR pelvis/sacrum, directly in line with the spine; extends BACKWARDS BEHIND the body, with a gentle downward curve in the body's median sagittal plane. NO bend or sweep to the character's left/right; never attached to a hip side, leg, arm or robe hem. The fluffy tail has the same large physical volume as image 2, a thick pale cream root/upper region blending into orange/rust terminal fur, NOT a generic orange-tail-with-white-tip. The tail is not a second leg, front groin appendage, scarf or flame.
+Pose LOCK: neutral upright T-pose, both arms straight and horizontal at shoulder height, hands at sleeve ends, separated legs, both flat planted paws. Change ONLY camera yaw; do not rotate the head independently, bend elbows or change stance to make the view prettier.
+Style LOCK: exact same soft cel-shaded, softly dimensional stylized character illustration as image 1; no photorealism or unrelated redesign.
+Framing: square opaque pure-white canvas, full body, ear tips and paws and tail never cropped. Character ear-to-foot height about 80% of canvas, about 10% margins at top/bottom. Match the source's body scale and foot baseline rather than enlarging a narrow side silhouette to fill the width. Uniform diffuse lighting, no shadow on background, no floor, no text, logos, labels, collage, extra character, fire, weapon or particles. This is one uploaded view, not a sheet.
+VIEW REQUIRED: STRICT true 90-degree LEFT SIDE PROFILE, camera on the character's anatomical left. Fox nose/muzzle points SCREEN-LEFT, back and rearward tail extend SCREEN-RIGHT. Face must have one visible eye/one ear profile naturally overlapping, not a 3/4 face and not frontal. Keep the same T-pose: arms point toward/away from the camera, naturally foreshortened; one near sleeve/paw can overlap the far arm. Do NOT turn the arms forward/backward into a different pose or hold them downward.
+Show the same planted feet from the side, pointing screen-left; leg separation is in depth, not a running stride. Show genuine head, muzzle, chest and hip depth consistent with image 1. The one tail emerges from the REAR SACRUM/MIDLINE and extends visibly behind the character to SCREEN-RIGHT; it is NOT mounted to the visible hip side. Show a short clear root bridging the rear pelvis to the large fluffy rearward tail, then a gentle downward curve at the distal tail. Leave a clean white gap between the bulk of the tail and the rear leg/robe where physically possible, no floating root. Tail occupies behind-body space, not below the groin or in front of legs. Preserve scarf wrap and clothing lengths; do not invent another belt badge on the side.
+
+===== right.png =====
+Tool: built-in image_gen
+transparent_background: false
+Reference images (project-relative): front.png, left.png, back.png
+
+Use case: identity-preserve.
+Asset type: separate RIGHT SIDE orthographic reference for a four-view Hunyuan3D foxfire imp reconstruction set.
+Input image 1: authoritative NEW FRONT view, including centered rearward tail, exact identity/outfit/proportions/T-pose.
+Input image 2: LEFT SIDE view, reference for the SAME tail's rearward geometry, head depth and side clothing construction.
+Input image 3: BACK view, reference for rear head/outer ear surfaces, continuous rear robe and central rear-pelvis tail root.
+Primary request: depict the EXACT SAME character from the OPPOSITE, RIGHT SIDE, camera yaw exactly 90 degrees from front, with the nose facing SCREEN-RIGHT and the tail extending behind the body toward SCREEN-LEFT. Output one full-body view only.
+Keep a true side profile: one eye and side muzzle, NOT a three-quarter or front-facing head. The two symmetrical ears overlap naturally in profile, do not offset an ear as if viewing three-quarter. Arms stay in the exact neutral T-pose, pointing toward/away from the side-view camera and naturally foreshortened; do not rotate them back/forward to show the far hand. Near sleeve/paw can overlap and obscure the far arm. Both paws are planted in the original separated stance, toes pointing screen-right, no running stride, crouch, bent arms, or new action.
+Appearance locked to image 1: cream-white fox, tall dark-rimmed ears with orange INNER ear coloring only on surfaces visible from this actual side; the same orange forehead/eye markings, same red scarf wrap, charcoal robe with thin warm ochre-gold sleeve and hem borders, same front brass bell/belt, red sash, dark loose pants, ankle wraps, cream paws. Do not swap character anatomy or sash handedness by treating this as a merely mirrored new design. Same softly dimensional cel-shaded illustration, restrained dark outlines, no photorealism.
+Tail LOCK: exactly ONE large fluffy tail from the CENTERLINE of the REAR pelvis/sacrum, connected to the spine line, extending backwards along the body's median plane and then gently curving down. In this right-side projection the tail is BEHIND the body to SCREEN-LEFT. It is NOT a lateral hip appendage; no sideways sweeping in 3D, no duplicate tail, no floating base, no groin tail. Match the size/thickness and cream upper/root to orange/rust lower-terminal fur pattern in image 2. Make the single root/connection to the rear pelvis clear, and a white gap between the tail bulk and rear leg/robe where physically possible. Do not attach tail to scarf or robe hem. Rear surfaces agree with image 3.
+Framing: square opaque pure-white canvas matching the references. Match image 1's body scale, head-top and foot-baseline, subject height about 80% of canvas with around 10% top/bottom margins; do not enlarge the body simply to fill narrow side-view width. All ears, hands, feet and full tail uncut. Orthographic-like camera at middle body height, uniform diffuse light, no perspective distortion, no ground/floor/cast shadow, no labels, text, collage, effects, fire, weapons, logos or watermark.
+
+===== back.png =====
+Tool: built-in image_gen
+transparent_background: false
+Reference images (project-relative): front.png, ../tripo_input_v1/foxfire-tripo-front-tpose.png
+
+Use case: identity-preserve.
+Asset type: ONE separate orthographic-view reference PNG for Hunyuan3D multiview reconstruction.
+Image 1 is the NEW authoritative FRONT reference, including the corrected normal rearward centered tail orientation. Preserve its exact character identity, proportions, posture, head-to-body ratio, ear height, charcoal/gold-trimmed robe, red scarf/sash, brass FRONT belt bell, dark pants, ankle wraps, paws, cream fox fur and restrained cel-shaded style.
+Image 2 is the OLD front image supplied ONLY to identify tail SIZE, fur TUFTS and cream-root/orange-rust-end color pattern. Its side-swept tail placement is OBSOLETE and MUST NOT be reproduced.
+Tail geometry LOCK: EXACTLY ONE normal fox tail rooted at the CENTER of the REAR pelvis/sacrum, directly in line with the spine; extends BACKWARDS BEHIND the body, with a gentle downward curve in the body's median sagittal plane. NO bend or sweep to the character's left/right; never attached to a hip side, leg, arm or robe hem. The fluffy tail has the same large physical volume as image 2, a thick pale cream root/upper region blending into orange/rust terminal fur, NOT a generic orange-tail-with-white-tip. The tail is not a second leg, front groin appendage, scarf or flame.
+Pose LOCK: neutral upright T-pose, both arms straight and horizontal at shoulder height, hands at sleeve ends, separated legs, both flat planted paws. Change ONLY camera yaw; do not rotate the head independently, bend elbows or change stance to make the view prettier.
+Style LOCK: exact same soft cel-shaded, softly dimensional stylized character illustration as image 1; no photorealism or unrelated redesign.
+Framing: square opaque pure-white canvas, full body, ear tips and paws and tail never cropped. Character ear-to-foot height about 80% of canvas, about 10% margins at top/bottom. Match the source's body scale and foot baseline rather than enlarging a narrow side silhouette to fill the width. Uniform diffuse lighting, no shadow on background, no floor, no text, logos, labels, collage, extra character, fire, weapon or particles. This is one uploaded view, not a sheet.
+VIEW REQUIRED: STRICT true BACK view, 180-degree yaw from the new front. Only back of head and OUTER BACK surfaces of ears visible; rear ears are cream-furred with dark rims/tips, NO orange hollow inner-ear cavities. No eyes, muzzle or orange forehead markings on the rear head. Both arms extend laterally across the image as in the same T-pose.
+Show a simple continuous charcoal rear robe below the belt with matching thin ochre hem trim. Do not copy the front overlapping robe lapels, front bell or front knot onto the back; no invented armor, backpack, cloak, ornaments or additional scarf ends.
+The tail base is on the EXACT MIDLINE of the rear lower back just below the waist belt, not on either hip. Because the camera looks directly at the back, the rearward-pointing tail is foreshortened toward the camera and centered in front of the lower back/legs in this projection. It may occlude a central portion of the rear robe and upper thighs, but MUST NOT swing out toward the left or right side. Its tip lowers naturally along the CENTERLINE, ending clear of the ground. Make the single central attachment legible. Rear feet show heels/ankle backs; their toes point away from camera, no frontal claw fan facing viewer.

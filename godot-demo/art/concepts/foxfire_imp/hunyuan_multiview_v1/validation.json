@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-12",
+  "measurement_note": "Luminance bbox is composition-only, not 3D consistency; API constraints do not confirm current website limits.",
+  "files": [
+    {
+      "view": "front",
+      "file": "front.png",
+      "format": "PNG",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "bytes": 1604285,
+      "estimated_base64_bytes": 2139048,
+      "sha256": "728c8943ffefd42f01d6cca4cd067adafd51cc0ed54e889166c1aa92a733c56b",
+      "subject_bbox_luma_lt_235": [
+        125,
+        128,
+        1128,
+        1129
+      ],
+      "subject_height_ratio": 0.7982,
+      "not_touching_edges": true,
+      "fits_selected_official_api_limits": true
+    },
+    {
+      "view": "left",
+      "file": "left.png",
+      "format": "PNG",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "bytes": 1577577,
+      "estimated_base64_bytes": 2103436,
+      "sha256": "03b6ebba2383f1c1b57ef21d3c666f7775eb8a182c4f3d90ad72b71bb1ade72a",
+      "subject_bbox_luma_lt_235": [
+        429,
+        68,
+        1050,
+        1147
+      ],
+      "subject_height_ratio": 0.8604,
+      "not_touching_edges": true,
+      "fits_selected_official_api_limits": true
+    },
+    {
+      "view": "right",
+      "file": "right.png",
+      "format": "PNG",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "bytes": 1615586,
+      "estimated_base64_bytes": 2154116,
+      "sha256": "5e6f8b650cab93e4a80da114a4da75f618ff510d8bd7a87544ce85f239e94407",
+      "subject_bbox_luma_lt_235": [
+        160,
+        51,
+        823,
+        1164
+      ],
+      "subject_height_ratio": 0.8876,
+      "not_touching_edges": true,
+      "fits_selected_official_api_limits": true
+    },
+    {
+      "view": "back",
+      "file": "back.png",
+      "format": "PNG",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "bytes": 1590220,
+      "estimated_base64_bytes": 2120296,
+      "sha256": "9f8314934cfb51c6e626c7cfdc4b2200b7b4614fe0a6f87277d14a77a6e53090",
+      "subject_bbox_luma_lt_235": [
+        75,
+        79,
+        1174,
+        1139
+      ],
+      "subject_height_ratio": 0.8453,
+      "not_touching_edges": true,
+      "fits_selected_official_api_limits": true
+    }
+  ],
+  "visual_review": {
+    "status": "usable_for_multiview_generation_trial",
+    "reviewers": [
+      "primary_native_output_review",
+      "blender_claim_audit_readonly"
+    ],
+    "checks": [
+      "one character and one tail per image",
+      "front/back have horizontal T-pose; side limbs foreshortened",
+      "left nose faces screen-left; right nose faces screen-right",
+      "rear head has no front face or inner-ear cavities",
+      "tail root centered on rear pelvis, tail extends backward not to a hip side",
+      "white background and full-body bounds"
+    ],
+    "limitations": [
+      "ear heights, garment folds, paws and tail-tip positions have small generated differences",
+      "body-height framing ratios differ by view; no mechanical normalization performed",
+      "side views have slight perspective; not a calibrated orthographic camera set",
+      "not a real 3D turntable; geometry/UV/rig/animation/performance untested"
+    ],
+    "formal_character_or_runtime_adoption": false
+  }
+}

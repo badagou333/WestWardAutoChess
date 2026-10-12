@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-12",
+  "mode": "built-in image_gen",
+  "scope": "foxfire imp Hunyuan3D multiview inputs only",
+  "user_tail_instruction": "尾巴不要在侧面，改到正常的后方",
+  "interpretation": "single sacral midline tail root, extending backward in the body's sagittal plane; frontal occlusion is intentional",
+  "sources": [
+    {
+      "view": "front",
+      "file": "front.png",
+      "tool_output_basename": "exec-fbd20715-080c-4bca-bc94-9f9e0265b8c8.png",
+      "sha256": "728c8943ffefd42f01d6cca4cd067adafd51cc0ed54e889166c1aa92a733c56b",
+      "references": [
+        "../tripo_input_v1/foxfire-tripo-front-tpose.png"
+      ]
+    },
+    {
+      "view": "left",
+      "file": "left.png",
+      "tool_output_basename": "exec-d3939fa5-a1a7-40d0-9c6b-525104fc08e7.png",
+      "sha256": "03b6ebba2383f1c1b57ef21d3c666f7775eb8a182c4f3d90ad72b71bb1ade72a",
+      "references": [
+        "front.png",
+        "../tripo_input_v1/foxfire-tripo-front-tpose.png"
+      ]
+    },
+    {
+      "view": "right",
+      "file": "right.png",
+      "tool_output_basename": "exec-93beafdc-4188-4dc8-8b5d-cfece3d50a02.png",
+      "sha256": "5e6f8b650cab93e4a80da114a4da75f618ff510d8bd7a87544ce85f239e94407",
+      "references": [
+        "front.png",
+        "left.png",
+        "back.png"
+      ]
+    },
+    {
+      "view": "back",
+      "file": "back.png",
+      "tool_output_basename": "exec-765a8249-f332-4141-a771-402a3413b0cc.png",
+      "sha256": "9f8314934cfb51c6e626c7cfdc4b2200b7b4614fe0a6f87277d14a77a6e53090",
+      "references": [
+        "front.png",
+        "../tripo_input_v1/foxfire-tripo-front-tpose.png"
+      ]
+    }
+  ],
+  "original_identity_reference": {
+    "file": "../tripo_input_v1/foxfire-tripo-front-tpose.png",
+    "sha256": "f710adfbaef1f5d8c8466c9ae2d6fb4576033f11a90ce0094df5f85f23e3bbcc",
+    "use": "body identity and tail texture/volume only; old side-swept placement is obsolete for this set"
+  },
+  "earlier_discarded": {
+    "tool_output_basename": "exec-88b3ea4b-f170-4844-b6ac-cd7bb5173e8c.png",
+    "archive": "../history/hunyuan_multiview_pre_center_tail_20261012/back-side-tail-NOT_ADOPTED.png",
+    "reason": "generated before the rear-midline tail instruction; back-ear/heel surfaces also needed correction"
+  },
+  "failed_call": {
+    "target": "correct the earlier side-tail back-view draft",
+    "error": "HTTP 401: Your IP is not authorized to make this request.",
+    "result": "no corrected output; new user-tail-instruction front/left/back/right calls later succeeded"
+  },
+  "external_hunyuan_upload_or_model_generation": false,
+  "paid_cli_or_api_fallback_used": false
+}
