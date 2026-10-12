@@ -1,0 +1,62 @@
+{
+  "render_mode": "Cycles CPU, 24 samples, Standard view transform",
+  "source_materials_preserved": true,
+  "renders": [
+    {
+      "file": "view_neg_y.png",
+      "camera": [
+        0,
+        -6,
+        1.05
+      ],
+      "target": [
+        0,
+        0,
+        1.05
+      ],
+      "ortho_scale": 2.6500000953674316
+    },
+    {
+      "file": "view_pos_y.png",
+      "camera": [
+        0,
+        6,
+        1.05
+      ],
+      "target": [
+        0,
+        0,
+        1.05
+      ],
+      "ortho_scale": 2.6500000953674316
+    },
+    {
+      "file": "view_neg_x.png",
+      "camera": [
+        -6,
+        0,
+        1.05
+      ],
+      "target": [
+        0,
+        0,
+        1.05
+      ],
+      "ortho_scale": 2.6500000953674316
+    },
+    {
+      "file": "view_pos_x.png",
+      "camera": [
+        6,
+        0,
+        1.05
+      ],
+      "target": [
+        0,
+        0,
+        1.05
+      ],
+      "ortho_scale": 2.6500000953674316
+    }
+  ]
+}

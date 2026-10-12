@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-12",
+  "source": "User-provided downloaded GLB",
+  "provided_path": "/Users/leqiong/Downloads/0ddfe4ef7f6b03b0e97954c5a3065eb2.glb",
+  "retained_project_copy": "source.glb",
+  "copy_sha256": "0bef120b2d008b67d57df7bbe5317fec8da1e1a07c860533eb9eb838daf0a425",
+  "source_bytes": 34919844,
+  "reported_generation_platform": "Hunyuan3D",
+  "reported_input_set": "../hunyuan_multiview_v1/README.md",
+  "assistant_recommended_face_target": 50000,
+  "selected_target_note": "Assistant recommended 50k; actual file independently measures 50,789 triangles. No UI operation by assistant.",
+  "original_download_unchanged": true,
+  "remote_sync_authorization": {
+    "date": "2026-10-12",
+    "user_reply": "要推送，我会跨机器开发",
+    "scope": "Original GLB, review previews and related review documentation",
+    "destination": "https://gitee.com/baiweicheng/tower-defense.git",
+    "branch": "master"
+  },
+  "model_geometry_or_material_edits": false,
+  "rigging_performed": false,
+  "animations_created": false,
+  "game_integration": false,
+  "review_scene_changes_only": [
+    "temporary scale to character height 2",
+    "camera/lighting/floor for still images",
+    "temporary diagnostic BMesh weld to exclude coincident UV/normal split vertices"
+  ],
+  "geometric_analysis_note": "Temporary BMesh analysis does not modify the imported mesh or source file; self-intersections and deformation not checked.",
+  "visual_review": {
+    "status": "retain static candidate for further evaluation",
+    "reviewed_primary_views": [
+      "view_neg_y.png",
+      "view_pos_y.png",
+      "view_neg_x.png",
+      "view_pos_x.png",
+      "game_view.png"
+    ],
+    "independent_views": [
+      "game_view.png",
+      "view_pos_y.png",
+      "view_pos_x.png"
+    ],
+    "observed": "Fox identity, single tail with rear-midline root and rearward volume retained; no obvious duplicate limbs. Tail root close to rear robe; possible intersections/skin deformation remain untested.",
+    "lighting_note": "Current Standard color transform plus review lights clips some cream-white fur highlights; not evidence that original texture detail is irreversibly lost."
+  },
+  "acceptance_boundary": "Static candidate and import audit only; not animation, runtime performance, commercial-license or final-art acceptance.",
+  "license_status": "Not independently verified; current game remains noncommercial trial.",
+  "next_step_proposal": "Inspect local seam/internal small component, then complete humanoid plus tail rigging and idle/walk tests only after explicit scope approval."
+}

@@ -1,0 +1,140 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "source": "source.glb",
+  "source_object_types": {
+    "MESH": 1,
+    "ARMATURE": 0,
+    "EMPTY": 0
+  },
+  "mesh_audits": [
+    {
+      "object": "node_0",
+      "vertices_imported": 40292,
+      "polygons": 50789,
+      "triangles": 50789,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Material.001"
+      ],
+      "raw_boundary_edges": 25815,
+      "diagnostic_weld_tolerance": 1.0485470294952392e-06,
+      "welded_vertices": 25339,
+      "welded_boundary_edges": 19,
+      "welded_nonmanifold_edges": 19,
+      "welded_connected_components": 2,
+      "welded_component_vertex_sizes": [
+        25175,
+        164
+      ],
+      "welded_component_details": [
+        {
+          "vertices": 25175,
+          "faces": 50465,
+          "bounds_world_min": [
+            -0.5238950252532959,
+            -0.2725960910320282,
+            -1.236383706526567e-08
+          ],
+          "bounds_world_max": [
+            0.5246520042419434,
+            0.3835790157318115,
+            1.0406391620635986
+          ]
+        },
+        {
+          "vertices": 164,
+          "faces": 324,
+          "bounds_world_min": [
+            -0.013755000196397305,
+            0.12599095702171326,
+            0.25562307238578796
+          ],
+          "bounds_world_max": [
+            0.014783999882638454,
+            0.27600300312042236,
+            0.4087230861186981
+          ]
+        }
+      ],
+      "welded_boundary_world_bounds": {
+        "min": [
+          -0.032712001353502274,
+          0.012201950885355473,
+          0.3835480511188507
+        ],
+        "max": [
+          0.023826999589800835,
+          0.029909949749708176,
+          0.4048810601234436
+        ]
+      },
+      "note": "Welding was diagnostic only; UV seams can look like open edges before welding. This does not test self-intersections."
+    }
+  ],
+  "triangles_total": 50789,
+  "armature_bones": {},
+  "actions": [],
+  "bounds_imported": {
+    "min": [
+      -0.5238950252532959,
+      -0.27259618043899536,
+      -3.662568559548163e-08
+    ],
+    "max": [
+      0.5246520042419434,
+      0.3835790455341339,
+      1.0406391620635986
+    ],
+    "size": [
+      1.0485470294952393,
+      0.6561752557754517,
+      1.0406391620635986
+    ]
+  },
+  "images": [
+    {
+      "name": "texture_pbr_20250901",
+      "size": [
+        4096,
+        4096
+      ],
+      "channels": 4,
+      "packed": true
+    },
+    {
+      "name": "texture_pbr_20250901_metallic-texture_pbr_20250901_roughness",
+      "size": [
+        4096,
+        4096
+      ],
+      "channels": 4,
+      "packed": true
+    },
+    {
+      "name": "texture_pbr_20250901_normal",
+      "size": [
+        4096,
+        4096
+      ],
+      "channels": 4,
+      "packed": true
+    }
+  ],
+  "materials": [
+    {
+      "name": "Material.001",
+      "nodes": [
+        "ShaderNodeBsdfPrincipled",
+        "ShaderNodeOutputMaterial",
+        "ShaderNodeTexImage",
+        "ShaderNodeSeparateColor",
+        "ShaderNodeTexImage",
+        "ShaderNodeNormalMap",
+        "ShaderNodeTexImage"
+      ]
+    }
+  ],
+  "scope": "Import audit and native Blender still renders only; no rigging, model export or runtime integration."
+}

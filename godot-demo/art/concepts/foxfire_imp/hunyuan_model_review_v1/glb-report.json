@@ -1,0 +1,95 @@
+{
+  "file": "source.glb",
+  "provided_download_name": "0ddfe4ef7f6b03b0e97954c5a3065eb2.glb",
+  "bytes": 34919844,
+  "sha256": "0bef120b2d008b67d57df7bbe5317fec8da1e1a07c860533eb9eb838daf0a425",
+  "gltf_version": "2.0",
+  "header_length_matches": true,
+  "generator": "Khronos glTF Blender I/O v4.0.43",
+  "meshes": 1,
+  "primitives": 1,
+  "nodes": 1,
+  "materials": 1,
+  "vertices": 40292,
+  "triangles": 50789,
+  "all_indexed_vertices_used": true,
+  "degenerate_triangles": 0,
+  "skins": 0,
+  "joint_nodes_referenced_by_skins": 0,
+  "node_skin_references": 0,
+  "animations": 0,
+  "vertex_attributes": [
+    "POSITION",
+    "NORMAL",
+    "TEXCOORD_0"
+  ],
+  "node_transform": {
+    "name": "node_0",
+    "rotation": "X +90 degrees in glTF",
+    "translation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "children": 0
+  },
+  "images": [
+    {
+      "index": 0,
+      "role": "normal",
+      "format": "PNG",
+      "size": [
+        4096,
+        4096
+      ],
+      "mode": "RGB",
+      "embedded": true
+    },
+    {
+      "index": 1,
+      "role": "base_color",
+      "format": "PNG",
+      "size": [
+        4096,
+        4096
+      ],
+      "mode": "RGB",
+      "embedded": true
+    },
+    {
+      "index": 2,
+      "role": "metallic_roughness",
+      "format": "PNG",
+      "size": [
+        4096,
+        4096
+      ],
+      "mode": "RGB",
+      "embedded": true
+    }
+  ],
+  "external_image_resources": 0,
+  "external_buffer_resources": 0,
+  "material_observations": {
+    "double_sided": true,
+    "extensions": [
+      "KHR_materials_specular"
+    ],
+    "specularColorFactor": [
+      2,
+      2,
+      2
+    ]
+  },
+  "verification": [
+    "primary raw GLB chunk/accessor/image-header parsing",
+    "independent hunyuan_glb_audit binary parsing",
+    "actual Blender import count cross-check"
+  ],
+  "scope_note": "No bones/skin weights in this file. This is a new Hunyuan static mesh, not the earlier Tripo rigged asset. Provider provenance is user-reported; exporter generator alone does not prove model provider or license."
+}

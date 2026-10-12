@@ -1,0 +1,20 @@
+{
+  "render_mode": "Cycles CPU, 24 samples, Standard view transform",
+  "source_materials_preserved": true,
+  "renders": [
+    {
+      "file": "game_view.png",
+      "camera": [
+        4.2,
+        -6,
+        4.7
+      ],
+      "target": [
+        0,
+        0,
+        1.05
+      ],
+      "ortho_scale": 2.9000000953674316
+    }
+  ]
+}
