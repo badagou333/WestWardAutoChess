@@ -220,7 +220,9 @@ func animation_tests(board: Node3D) -> void:
 	var ref_player: AnimationPlayer = ref_model.find_children("*", "AnimationPlayer", true, false)[0]
 	var installed: Dictionary = load("res://dual_fire_motion.gd").install(ref_player, &"Idle", &"Run")
 	var baseline := ref_player.get_animation(installed.run)
-	var actual := player.get_animation(board.run_animation)
+	# Locomotion is now separately authorized; this regression still compares the
+	# preserved original library, not the newly selected movement candidate.
+	var actual := player.get_animation(&"dual_fire/DualFireRun")
 	var unchanged := baseline.get_track_count() == actual.get_track_count() and baseline.length == actual.length
 	for track in baseline.get_track_count():
 		var path := baseline.track_get_path(track)

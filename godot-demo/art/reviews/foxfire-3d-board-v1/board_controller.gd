@@ -7,12 +7,18 @@ const DualFireMotion = preload("res://dual_fire_motion.gd")
 const HeldFire = preload("res://held_fire.gd")
 const DualFireVerifier = preload("res://verify_dual_fire.gd")
 const SpellMotion = preload("res://spell_motion.gd")
+const NaturalMotion = preload("res://locomotion_motion.gd")
 const AttackEffects = preload("res://attack_effects.gd")
 const COLS := 12
 const ROWS := 7
 const MOVE_SPEED := 2.35
 const RUN_PLAYBACK_SPEED := 0.65
 const ACTOR_SCALE := 1.65
+const RUN_REFERENCE_SPEED := 0.80 * ACTOR_SCALE / 0.60
+const MOVE_ACCELERATION := 9.0
+const MOVE_BRAKING := 12.0
+const TURN_RATE := 9.0
+const MOTION_STEP := 1.0 / 120.0
 const HOME := Vector2i(4, 4)
 const AUTO_ROUTE := [Vector2i(8, 4), Vector2i(8, 1), Vector2i(3, 1), Vector2i(3, 5), Vector2i(7, 5), HOME]
 
@@ -23,6 +29,11 @@ var run_animation: StringName
 var idle_animation: StringName
 var base_idle_animation: StringName
 var base_run_animation: StringName
+var locomotion_loaded := false
+var locomotion_data: Dictionary = {}
+var move_speed := 0.0
+var actual_move_speed := 0.0
+var motion_remainder := 0.0
 var skeleton: Skeleton3D
 var hand_fires: Dictionary = {}
 var dual_fire_loaded := false
@@ -118,6 +129,8 @@ func _ready() -> void:
 		call_deferred("_verify")
 	elif options.has("dual-fire-verify"):
 		call_deferred("_verify_dual_fire")
+	elif options.has("locomotion-verify"):
+		call_deferred("_verify_locomotion")
 	elif options.has("input-verify"):
 		call_deferred("_verify_input")
 	elif options.has("performance"):
@@ -220,6 +233,15 @@ func _build_actor() -> void:
 				release_time = spells.release
 				attack_duration = animation_player.get_animation(attack_animation).length
 				animation_names.append_array([str(idle_animation), str(attack_animations.L), str(attack_animations.R)])
+		if dual_fire_loaded and not options.has("legacy-motion"):
+			var locomotion: Dictionary = NaturalMotion.install(animation_player, base_run_animation)
+			if locomotion.has("error"):
+				push_error(str(locomotion.error))
+			else:
+				locomotion_loaded = true
+				locomotion_data = locomotion.data
+				run_animation = locomotion.run
+				animation_names.append(str(run_animation))
 		attack_effects = AttackEffects.new()
 		add_child(attack_effects)
 		attack_effects.configure()
@@ -298,6 +320,14 @@ func _step_visuals(delta: float) -> void:
 				if attack_time >= attack_duration - 0.000001:
 					attacking = false
 					animation_player.play(idle_animation, 0.12)
+		if locomotion_loaded and moving and not attacking:
+			# Relax a slowing or turning body without resetting its distance-driven
+			# run phase. Paused frames must never blend an already blended pose.
+			NaturalMotion.relax_at_low_speed(skeleton, animation_player, idle_animation, actual_move_speed / MOVE_SPEED)
+		if locomotion_loaded and not attacking:
+			# The Run-to-Idle crossfade continues after moving becomes false.
+			# Ground its evaluated pose too, before updating the hand sockets.
+			NaturalMotion.ensure_ground_clearance(skeleton, animation_player)
 	_update_fire_sockets()
 	for side in hand_fires:
 		# A fixed independent phase prevents synchronized/mirrored flame flicker.
@@ -419,7 +449,7 @@ func request_move(target: Vector2i) -> bool:
 	# Replan from the current edge endpoint, never snap a moving actor to a cell.
 	var start := current_cell
 	var retain: Array[Vector2i] = []
-	if not route.is_empty() and actor.position.distance_to(cell_to_world(current_cell)) > 0.005:
+	if not route.is_empty() and actor.position.distance_to(cell_to_world(current_cell)) > (0.000001 if locomotion_loaded else 0.005):
 		start = route[0]
 		retain.append(start)
 	var next_route := find_path(start, target)
@@ -487,12 +517,23 @@ func _process(delta: float) -> void:
 		performance_last_usec = now
 		performance_process_ms.append(Performance.get_monitor(Performance.TIME_PROCESS) * 1000.0)
 		performance_draw_calls.append(Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME))
-	_step_simulation(delta)
-	_step_visuals(delta)
+	_step_frame(delta)
 	if camera_mode == 4:
 		_update_detail_camera()
 	if hud:
 		hud.refresh()
+
+func _step_frame(delta: float) -> void:
+	# Movement, turns, animation phase and sockets share one small-step clock.
+	# Keep the two lower-level methods for isolated attack/event verification.
+	if paused:
+		_step_visuals(0.0)
+		return
+	motion_remainder += maxf(0.0, delta)
+	while motion_remainder >= MOTION_STEP - 0.000000001:
+		motion_remainder = maxf(0.0, motion_remainder - MOTION_STEP)
+		_step_simulation(MOTION_STEP)
+		_step_visuals(MOTION_STEP)
 
 func _step_simulation(delta: float) -> void:
 	if paused:
@@ -510,6 +551,14 @@ func _step_simulation(delta: float) -> void:
 			request_move(AUTO_ROUTE[auto_index % AUTO_ROUTE.size()])
 			auto_index += 1
 			auto_wait = 0.85
+	if locomotion_loaded:
+		var remaining := delta
+		while remaining > 0.0000001:
+			var step := minf(remaining, MOTION_STEP)
+			_step_locomotion(step)
+			remaining -= step
+		_play(not route.is_empty())
+		return
 	var did_move := not route.is_empty()
 	if did_move:
 		var budget := MOVE_SPEED * delta
@@ -534,6 +583,63 @@ func _step_simulation(delta: float) -> void:
 			marker.hide()
 	_play(not route.is_empty())
 
+func _step_locomotion(delta: float) -> void:
+	actual_move_speed = 0.0
+	if route.is_empty():
+		move_speed = 0.0
+		return
+	var target := cell_to_world(route[0])
+	var difference := target - actor.position
+	var direction := difference.normalized()
+	actor_yaw = atan2(direction.x, direction.z)
+	var turn := wrapf(actor_yaw - actor.rotation.y, -PI, PI)
+	actor.rotation.y += clampf(turn, -TURN_RATE * delta, TURN_RATE * delta)
+	var angle := absf(wrapf(actor_yaw - actor.rotation.y, -PI, PI))
+	# Brake only at the end of a straight run or before a real corner, not
+	# every cell. Retain four-neighbour paths and their exact cell centres.
+	var stopping_distance := difference.length()
+	var previous := route[0]
+	for index in range(1, route.size()):
+		var next_direction := (cell_to_world(route[index]) - cell_to_world(previous)).normalized()
+		if next_direction.dot(direction) < 0.99:
+			break
+		stopping_distance += 1.0
+		previous = route[index]
+	# Solve v_next²/(2b) + (v_now+v_next)*dt/2 <= distance so the
+	# braking budget includes this substep's travel, including the final one.
+	var brake_step := MOVE_BRAKING * delta
+	var safe_speed := maxf(0.0, 0.5 * (-brake_step + sqrt(maxf(0.0, brake_step * brake_step - 4.0 * brake_step * move_speed + 8.0 * MOVE_BRAKING * stopping_distance))))
+	var desired := minf(MOVE_SPEED, safe_speed)
+	# A stopped sharp turn rotates first. Within 25 degrees ease into forward
+	# travel; a character never runs sideways at full speed around a corner.
+	var alignment := 1.0 - smoothstep(0.0, deg_to_rad(25.0), angle)
+	desired *= alignment
+	var previous_speed := move_speed
+	move_speed = move_toward(move_speed, desired, (MOVE_ACCELERATION if desired > move_speed else MOVE_BRAKING) * delta)
+	var budget := 0.5 * (previous_speed + move_speed) * delta
+	var travelled := 0.0
+	while budget > 0.00000001 and not route.is_empty():
+		target = cell_to_world(route[0])
+		var distance := actor.position.distance_to(target)
+		var step := minf(budget, distance)
+		actor.position = actor.position.move_toward(target, step)
+		actor.position.y = 0.0
+		budget -= step
+		travelled += step
+		if actor.position.distance_to(target) < 0.000001:
+			actor.position = target
+			current_cell = route.pop_front()
+			travel_log.append(current_cell)
+			_show_route()
+			if route.is_empty() or (cell_to_world(route[0]) - actor.position).normalized().dot(direction) < 0.99:
+				move_speed = 0.0
+				break
+		else:
+			break
+	actual_move_speed = travelled / delta
+	if route.is_empty():
+		marker.hide()
+
 func _update_detail_camera() -> void:
 	camera.position = actor.position + Vector3(4.0, 5.3, 7.7)
 	camera.look_at(actor.position + Vector3(0, 0.65, 0), Vector3.UP)
@@ -544,17 +650,24 @@ func _play(is_moving: bool) -> void:
 	moving = is_moving
 	if not animation_player:
 		return
-	animation_player.speed_scale = 0.0 if paused else (RUN_PLAYBACK_SPEED if is_moving else 1.0)
+	animation_player.speed_scale = _animation_rate()
 	var clip := run_animation if is_moving else idle_animation
 	if str(clip).is_empty():
 		return
 	if animation_player.current_animation != clip or not animation_player.is_playing():
-		animation_player.play(clip, 0.18)
+		animation_player.play(clip, 0.12 if locomotion_loaded else 0.18)
+
+func _animation_rate() -> float:
+	if paused:
+		return 0.0
+	if not moving or attacking:
+		return 1.0
+	return actual_move_speed / RUN_REFERENCE_SPEED if locomotion_loaded else RUN_PLAYBACK_SPEED
 
 func set_paused(value: bool) -> void:
 	paused = value
 	if animation_player:
-		animation_player.speed_scale = 0.0 if paused else (RUN_PLAYBACK_SPEED if moving else 1.0)
+		animation_player.speed_scale = _animation_rate()
 	if hud:
 		hud.refresh()
 
@@ -591,6 +704,9 @@ func reset_actor() -> void:
 		attack_effects.reset()
 	auto_demo = false
 	route.clear()
+	move_speed = 0.0
+	actual_move_speed = 0.0
+	motion_remainder = 0.0
 	current_cell = HOME
 	destination = HOME
 	actor.position = cell_to_world(HOME)
@@ -660,6 +776,16 @@ func _verify_dual_fire() -> void:
 	print(JSON.stringify(result))
 	get_tree().quit(0 if result.passed else 1)
 
+func _verify_locomotion() -> void:
+	set_process(false)
+	var result: Dictionary = load("res://verify_locomotion.gd").new().run(self)
+	var target := str(options.get("report", "user://locomotion-verification.json"))
+	var file := FileAccess.open(target, FileAccess.WRITE)
+	if file:
+		file.store_string(JSON.stringify(result, "\t"))
+	print(JSON.stringify(result))
+	get_tree().quit(0 if result.passed else 1)
+
 func _measure_performance() -> void:
 	set_auto(true)
 	await get_tree().create_timer(8.0).timeout
@@ -698,7 +824,7 @@ func _measure_performance() -> void:
 		"unit_count": 1,
 		"actor_scale": ACTOR_SCALE,
 		"move_speed": MOVE_SPEED,
-		"run_playback_speed": RUN_PLAYBACK_SPEED,
+		"run_playback_speed": MOVE_SPEED / RUN_REFERENCE_SPEED if locomotion_loaded else RUN_PLAYBACK_SPEED,
 	}
 	var target := str(options.get("report", "user://performance.json"))
 	var file := FileAccess.open(target, FileAccess.WRITE)
@@ -744,10 +870,9 @@ func _capture() -> void:
 		var substeps := maxi(1, ceili(60.0 / fps))
 		for index in range(count):
 			for substep in range(substeps):
-				_step_simulation(1.0 / (fps * substeps))
+				_step_frame(1.0 / (fps * substeps))
 				if camera_mode == 4:
 					_update_detail_camera()
-				_step_visuals(1.0 / (fps * substeps))
 				hud.refresh()
 				await RenderingServer.frame_post_draw
 				if substep + 1 < substeps:

@@ -39,13 +39,13 @@ Mac 安装 Godot 4.7 后，双击本目录 `launch.command`。也可以在 Godot
 
 `assets/foxfire-board.glb` 是 [双动作制作资产](../../concepts/foxfire_imp/hunyuan_board_actor_v1/README.md)的原样副本：25 骨、50,789 三角形、原 3 张 4K 内嵌贴图。SHA-256：`4257ac78a80ade3bbd328212c9341ecf9f775a7a8452aef7f8a2fc0875cfaa57`。
 
-- GLB 中的原 Idle/Run 保留。当前待机为 `spell/SpellIdle`（3 秒循环），攻击为左 `spell/FlameAttack` / 右 `spell/FlameAttackRight`（均1.2秒非循环，0.4秒从各自手上发射），跑步仍为已认可的 `dual_fire/DualFireRun`。原待机、左攻击与跑步数据保持未改。
+- GLB 中的原 Idle/Run 保留。当前待机为 `spell/SpellIdle`（3 秒循环），攻击为左 `spell/FlameAttack` / 右 `spell/FlameAttackRight`（均1.2秒非循环，0.4秒从各自手上发射）；移动改为 `locomotion/NaturalRun` 短步跑候选。原待机、左右攻击和历史Run数据均保持未改，但默认移动不再播放旧Run。
 - 新 `assets/spell-animations.json` 是 25 骨完整局部 TRS，每动作 75 轨道，不依赖上一个跑步姿势残留；两脚、下半身及根固定，攻击首尾对齐待机起点。模型、权重、贴图和原 GLB 不变。制作源、完整导出约定与重建入口见[待机与攻击候选](../../concepts/foxfire_imp/hunyuan_spell_v1/README.md)。
 - 既有 `assets/dual-fire-animations.json` 只覆盖原动作六根臂骨；保留旧 `dual_fire/DualFireIdle` 以便历史复验，但默认不再播放。启动加 `-- --legacy-motion` 可复验上版双火待机/跑步，无新攻击。
 - 制作源与完整数据约定见[双火动作候选](../../concepts/foxfire_imp/hunyuan_dual_fire_v1/README.md)。不重复保存完整模型；本地重新制作时从已有 Blender 工程载入再生成轻量补丁。
 - 两团火各自跟随本手的掌指挂点，采用有深度遮挡的三维火焰体、微小火星与弱掌光。运行、暂停、动作切换及归位由统一时钟控制，两火保持不同变化相位。不是两个球共同跟随角色原点或双手中点。
-- 动作时间去除源帧1的1/30秒导入前导段；原双火 Idle 的约0.155毫米根位移闭环修正仅为历史记录，新待机上下文见新候选说明。未重新制作跑步腿部步态。
-- 引擎整体缩放 1.65；移动 2.35 单位/秒，Run 0.65 倍播放。基于真实蒙皮脚底位移测量减少滑步，**不是 IK 锁足，也不保证完全零滑步**。
+- 旧动作去除源帧1的1/30秒导入前导段，新Run为1/120秒；原双火Idle闭环修正仅为历史记录。新腿部步态、足底支撑与来源见[短步跑候选](../../concepts/foxfire_imp/hunyuan_locomotion_v1/README.md)。
+- 引擎整体缩放1.65，移动上限仍2.35单位/秒；新Run每周期0.8模型单位/0.6秒，步频按实际速度/2.2驱动，满速约1.068倍。起停有加减速，急转先减速回站姿；低速及停步混合按真实足底探针修正显示高度。不改平面格子/路径，**仍不保证完全零滑步**。旧固定0.65倍率只在legacy模式使用。
 - 新火球与小型命中闪光已加入表现层：发射手熄火，0.72～1.2 秒重新凝火，另一手持续留火；完整动作/火球/火星统一暂停与复位。发射事件只触发一次，过渡按最多1/60秒细分以免大步推进从旧姿势发射。投射物节点复用，无不断增长的粒子列表。
 - `request_attack()` 自动选择下一手；只有实际release事件推进 `next_attack_hand`。取消前摇用 `cancel_attack()`，不会跳过该手；若已发出，弹道继续且不会重复发射。正常移动、停步与换镜头不重置次序，`reset_actor()` 显式清理并重置左手。此接口只准备表现层，正式战斗接入仍归06，不能据此声称现有二维战斗已改为双手3D攻击。
 - 未制作受击、退场、碰撞物理或布料；没有敌人命中判定、伤害、技能或正式战斗接入，目前不具备替换整套战斗角色的动作条件。
@@ -55,7 +55,15 @@ Mac 安装 Godot 4.7 后，双击本目录 `launch.command`。也可以在 Godot
 
 实际 Godot 版本、渲染设备、逻辑/输入/几何检查和性能采样在 `reports/` 记录。作者静态与逐帧复审、程序注入输入、独立审查、用户真人体验是不同层级；本轮没有冒称用户已认可。
 
-### 当前左右交替版本
+### 当前短步跑优化版本
+
+- 新 `assets/locomotion-animations.json` 为轻量全骨动作，原模型、双火/待机/左右攻击JSON保持。制作时修正尾尖穿地，独立复核又抓到并修复低速及停步混合穿脚；未将中间失败稿交作完成版。
+- `reports/locomotion-control.json` 120/120：30/60/120FPS的起停、急转、改目标、暂停、大小步一致、实际步频/位移、全速姿势和逐帧混合脚底；`locomotion-logic.json` 13/13，`locomotion-attacks.json` 43/43。旧Run回归明确比较仍保留的历史库，新移动另查，未删掉旧动作保护。
+- `locomotion-input.json` 真实视口事件17/17；全模型1089姿势的独立CPU蒙皮无穿地，报告与复跑工具在新动作目录。验证只支持所测范围，不声称所有曲面、衣物或连续姿势绝无穿插。
+- `preview-locomotion.mp4` 为最终版本8秒120帧实机近景，`preview-locomotion-contact.jpg` 为抽样。作者正侧制作/实机及独立7帧复核未见阻断展示的新问题；不是真人连续播放验收。视频全部120帧解码通过，编码器对近景低对比图的方向误报已改为空间相关性加绝对色差上限检验，见 `locomotion-video.json`；并非放弃方向检查。
+- 移动仍是简化短步跑：宽裤/衣尾较硬，没有专门的脚趾滚动、布料或左右踏步转身；站稳后整体转身还不是商业级逐足重定位。此次未重测性能、多角色或正式战斗。
+
+### 上一版左右交替攻击（攻击数据仍保持）
 
 - `reports/alternating-fire-logic.json` 逻辑13/13，`alternating-fire-input.json` 视口事件17/17，含按钮提示下一只手、实际第二次右手发射及R重置左手。
 - `alternating-fire-independent.json` 独立无界面43/43：右动作75TRS/9075个采样、两种动作端点、手动/自动各L/R/L/R、右手大小步发射点、4阶段暂停、12个取消、10个复位与18个双手火焰状态。对照 `ae779e0` 验证原左攻击/待机JSON逐字段、双火源逐字节及Run逐关键帧保持。首次测试脚本3处类型推断错误已修复后完整重跑；未发现本批生产必修。
@@ -71,7 +79,7 @@ Mac 安装 Godot 4.7 后，双击本目录 `launch.command`。也可以在 Godot
 - `preview-spell.mp4` 为8秒120帧实机近景，展示待机与两次火攻；`preview-spell-contact.jpg` 是抽样，`preview-spell-ui.png` 是操作入口。视频按60Hz推进、15FPS保存，非插帧、非无缝循环。全部视频帧解码复验记录在 `spell-video.json`。
 - 本轮未重测多单位或整场战斗性能；下方59.92FPS是此前双火移动版本，不能冒充新增投射物的性能结果。
 
-### 已认可的双火移动基线
+### 历史双火移动基线（本轮负责人要求优化其步态）
 
 - `reports/dual-fire.json` 作者专项10/10；`dual-fire-independent.json` 独立数值复核30/30。覆盖两动作、各自手骨父链挂点、单手扰动负对照、原身体曲线、混合途中暂停、两火及14颗火星/灯光/材质时钟、恢复与归位。不能据这些数值声称动作审美通过。
 - `dual-fire-logic.json` 逻辑13/13、`dual-fire-input.json` 真实视口事件注入9/9。正式游戏未修改，本轮没有运行其战斗验收。
@@ -94,6 +102,7 @@ Mac 安装 Godot 4.7 后，双击本目录 `launch.command`。也可以在 Godot
 
 ```sh
 godot --headless --path . -- --verify --report=/tmp/fox-logic.json
+godot --headless --path . -- --locomotion-verify --report=/tmp/fox-locomotion.json
 godot --headless --path . --script res://verify_spell_independent.gd -- --output=/tmp/fox-alternating-fire.json
 godot --headless --path . -- --legacy-motion --dual-fire-verify --report=/tmp/fox-dual-fire.json
 godot --headless --path . --script verify_geometry.gd

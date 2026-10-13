@@ -86,7 +86,8 @@ func run_input(board: Node3D) -> Dictionary:
 	_check(checks, "空格暂停位置与骨骼播放", board.paused and board.actor.position.distance_to(before) < 0.00001 and absf(board.animation_player.current_animation_position - animation_before) < 0.00001)
 	_key(KEY_SPACE)
 	await tree.process_frame
-	_check(checks, "空格恢复状态与动画速率", not board.paused and is_equal_approx(board.animation_player.speed_scale, board.RUN_PLAYBACK_SPEED if board.moving else 1.0))
+	var expected_rate: float = (board.actual_move_speed / board.RUN_REFERENCE_SPEED if board.locomotion_loaded else board.RUN_PLAYBACK_SPEED) if board.moving else 1.0
+	_check(checks, "空格恢复状态与实际移动对应动画速率", not board.paused and is_equal_approx(board.animation_player.speed_scale, expected_rate))
 	var elapsed := 0.0
 	while not board.route.is_empty() and elapsed < 6.0:
 		await tree.create_timer(0.1).timeout

@@ -151,6 +151,9 @@ func run() throws {
     let decodedPixels = try rgbaBytes(decodedFirst, width: width, height: height)
     var directError: Double = 0
     var invertedError: Double = 0
+    var sumA: Double = 0, sumB: Double = 0, sumC: Double = 0
+    var sumAA: Double = 0, sumBB: Double = 0, sumCC: Double = 0
+    var sumAB: Double = 0, sumAC: Double = 0
     for y in stride(from: 0, to: height, by: 5) {
         for x in stride(from: 0, to: width, by: 5) {
             for channel in 0..<3 {
@@ -158,13 +161,24 @@ func run() throws {
                 let inverted = ((height - 1 - y) * width + x) * 4 + channel
                 directError += abs(Double(originalPixels[index]) - Double(decodedPixels[index]))
                 invertedError += abs(Double(originalPixels[index]) - Double(decodedPixels[inverted]))
+                let a = Double(originalPixels[index]), b = Double(decodedPixels[index]), c = Double(decodedPixels[inverted])
+                sumA += a; sumB += b; sumC += c
+                sumAA += a*a; sumBB += b*b; sumCC += c*c
+                sumAB += a*b; sumAC += a*c
             }
         }
     }
     let sampleValues = Double(((width + 4) / 5) * ((height + 4) / 5) * 3)
     directError /= sampleValues
     invertedError /= sampleValues
-    try require(directError < invertedError * 0.25, "First-frame orientation check failed")
+    // Flat, bright close-ups have little flip error, so the old MAE ratio
+    // falsely rejected correctly oriented footage after Rec709/sRGB conversion.
+    // Check spatial correlation, plus an absolute color-error bound, instead.
+    let varianceA = sumAA - sumA*sumA/sampleValues
+    let directCorrelation = (sumAB - sumA*sumB/sampleValues) / sqrt(max(1, varianceA*(sumBB-sumB*sumB/sampleValues)))
+    let flippedCorrelation = (sumAC - sumA*sumC/sampleValues) / sqrt(max(1, varianceA*(sumCC-sumC*sumC/sampleValues)))
+    print("Frame QA MAE=\(directError), flipped MAE=\(invertedError), correlation=\(directCorrelation), flipped correlation=\(flippedCorrelation)")
+    try require(directError < 12 && directCorrelation > 0.99 && directCorrelation > flippedCorrelation + 0.2, "First-frame orientation/color check failed")
     let size = try manager.attributesOfItem(atPath: destination.path)[.size] as! NSNumber
     let report: [String: Any] = [
         "encoder": "macOS AVFoundation / H.264 High", "source": "120 original engine PNG frames; no interpolation",
@@ -173,6 +187,8 @@ func run() throws {
         "decoded_frames": decoded, "first_pts_seconds": firstPTS, "last_pts_seconds": lastPTS,
         "first_frame_rgb_mean_absolute_error_0_255": directError,
         "first_frame_vertical_flip_error_0_255": invertedError,
+        "first_frame_direct_correlation": directCorrelation,
+        "first_frame_flipped_correlation": flippedCorrelation,
         "first_frame_orientation_passed": true,
         "validation_png": validationImage.path, "audio": false,
         "scope": "Local encoding and all-frame decode verification; not a claim of new gameplay or animation acceptance."

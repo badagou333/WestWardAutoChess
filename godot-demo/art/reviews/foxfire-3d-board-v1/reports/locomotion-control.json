@@ -1,0 +1,922 @@
+{
+	"check_count": 120,
+	"checks": [
+		{
+			"name": "新移动动作安装且使用独立NaturalRun",
+			"passed": true
+		},
+		{
+			"name": "周期与名义速度匹配0.6秒和缩放后1.32单位",
+			"passed": true
+		},
+		{
+			"name": "straight 30FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "straight 30FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "straight 30FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "straight 30FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "straight 30FPS：含最后抵达子步的减速度不超制动上限",
+			"passed": true
+		},
+		{
+			"name": "直线30FPS：跨格相位连续且步频随实际位移",
+			"passed": true
+		},
+		{
+			"name": "straight 60FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "straight 60FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "straight 60FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "straight 60FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "straight 60FPS：含最后抵达子步的减速度不超制动上限",
+			"passed": true
+		},
+		{
+			"name": "直线60FPS：跨格相位连续且步频随实际位移",
+			"passed": true
+		},
+		{
+			"name": "straight 60FPS：全部公共时刻与30FPS位置/朝向/步相/火焰一致",
+			"passed": true
+		},
+		{
+			"name": "straight 120FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "straight 120FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "straight 120FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "straight 120FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "straight 120FPS：含最后抵达子步的减速度不超制动上限",
+			"passed": true
+		},
+		{
+			"name": "直线120FPS：跨格相位连续且步频随实际位移",
+			"passed": true
+		},
+		{
+			"name": "straight 120FPS：全部公共时刻与30FPS位置/朝向/步相/火焰一致",
+			"passed": true
+		},
+		{
+			"name": "short 30FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "short 30FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "short 30FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "short 30FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "short 30FPS：含最后抵达子步的减速度不超制动上限",
+			"passed": true
+		},
+		{
+			"name": "short 60FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "short 60FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "short 60FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "short 60FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "short 60FPS：含最后抵达子步的减速度不超制动上限",
+			"passed": true
+		},
+		{
+			"name": "short 60FPS：全部公共时刻与30FPS位置/朝向/步相/火焰一致",
+			"passed": true
+		},
+		{
+			"name": "short 120FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "short 120FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "short 120FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "short 120FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "short 120FPS：含最后抵达子步的减速度不超制动上限",
+			"passed": true
+		},
+		{
+			"name": "short 120FPS：全部公共时刻与30FPS位置/朝向/步相/火焰一致",
+			"passed": true
+		},
+		{
+			"name": "corner 30FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "corner 30FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "corner 30FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "corner 30FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "corner 30FPS：含最后抵达子步的减速度不超制动上限",
+			"passed": true
+		},
+		{
+			"name": "corner 60FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "corner 60FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "corner 60FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "corner 60FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "corner 60FPS：含最后抵达子步的减速度不超制动上限",
+			"passed": true
+		},
+		{
+			"name": "corner 60FPS：全部公共时刻与30FPS位置/朝向/步相/火焰一致",
+			"passed": true
+		},
+		{
+			"name": "corner 120FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "corner 120FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "corner 120FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "corner 120FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "corner 120FPS：含最后抵达子步的减速度不超制动上限",
+			"passed": true
+		},
+		{
+			"name": "corner 120FPS：全部公共时刻与30FPS位置/朝向/步相/火焰一致",
+			"passed": true
+		},
+		{
+			"name": "replan 30FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "replan 30FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "replan 30FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "replan 30FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "replan 30FPS：改目标无瞬移/暂停冻结骨骼与时钟",
+			"passed": true
+		},
+		{
+			"name": "replan 60FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "replan 60FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "replan 60FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "replan 60FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "replan 60FPS：改目标无瞬移/暂停冻结骨骼与时钟",
+			"passed": true
+		},
+		{
+			"name": "replan 60FPS：全部公共时刻与30FPS位置/朝向/步相/火焰一致",
+			"passed": true
+		},
+		{
+			"name": "replan 120FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "replan 120FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "replan 120FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "replan 120FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "replan 120FPS：改目标无瞬移/暂停冻结骨骼与时钟",
+			"passed": true
+		},
+		{
+			"name": "replan 120FPS：全部公共时刻与30FPS位置/朝向/步相/火焰一致",
+			"passed": true
+		},
+		{
+			"name": "reverse 30FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "reverse 30FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "reverse 30FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "reverse 30FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "reverse 30FPS：改目标无瞬移/暂停冻结骨骼与时钟",
+			"passed": true
+		},
+		{
+			"name": "reverse 60FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "reverse 60FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "reverse 60FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "reverse 60FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "reverse 60FPS：改目标无瞬移/暂停冻结骨骼与时钟",
+			"passed": true
+		},
+		{
+			"name": "reverse 60FPS：全部公共时刻与30FPS位置/朝向/步相/火焰一致",
+			"passed": true
+		},
+		{
+			"name": "reverse 120FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "reverse 120FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "reverse 120FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "reverse 120FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "reverse 120FPS：改目标无瞬移/暂停冻结骨骼与时钟",
+			"passed": true
+		},
+		{
+			"name": "reverse 120FPS：全部公共时刻与30FPS位置/朝向/步相/火焰一致",
+			"passed": true
+		},
+		{
+			"name": "pause 30FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "pause 30FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "pause 30FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "pause 30FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "pause 30FPS：改目标无瞬移/暂停冻结骨骼与时钟",
+			"passed": true
+		},
+		{
+			"name": "pause 60FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "pause 60FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "pause 60FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "pause 60FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "pause 60FPS：改目标无瞬移/暂停冻结骨骼与时钟",
+			"passed": true
+		},
+		{
+			"name": "pause 60FPS：全部公共时刻与30FPS位置/朝向/步相/火焰一致",
+			"passed": true
+		},
+		{
+			"name": "pause 120FPS：合法逐格抵达并归待机清速率",
+			"passed": true
+		},
+		{
+			"name": "pause 120FPS：起步/刹车及位移步频匹配",
+			"passed": true
+		},
+		{
+			"name": "pause 120FPS：高速朝向误差小于12度",
+			"passed": true
+		},
+		{
+			"name": "pause 120FPS：逐帧含抵达后0.12秒混合的足底保持接地",
+			"passed": true
+		},
+		{
+			"name": "pause 120FPS：改目标无瞬移/暂停冻结骨骼与时钟",
+			"passed": true
+		},
+		{
+			"name": "pause 120FPS：全部公共时刻与30FPS位置/朝向/步相/火焰一致",
+			"passed": true
+		},
+		{
+			"name": "1.2秒大步与144个小步的移动/骨骼相位/火焰时钟一致",
+			"passed": true
+		},
+		{
+			"name": "极慢起步不足旧0.005阈值也保当前格段且不瞬移",
+			"passed": true
+		},
+		{
+			"name": "归位清除速度/固定步余量/暂停和路径",
+			"passed": true
+		},
+		{
+			"name": "全速五个相位的25骨姿势保持新Run且不改步相",
+			"passed": true
+		},
+		{
+			"name": "四分之一速度姿势为混合中点加精确根骨接地补偿且重复零推进不累积",
+			"passed": true
+		},
+		{
+			"name": "低速姿势混合途中暂停不重复松弛或推进步相/火焰",
+			"passed": true
+		},
+		{
+			"name": "旧动作模式跳过低速松弛",
+			"passed": true
+		},
+		{
+			"name": "真实90度急转零速时全身与双脚回到Idle0且步相保留",
+			"passed": true
+		},
+		{
+			"name": "低速松弛后才更新两手火焰挂点",
+			"passed": true
+		},
+		{
+			"name": "600个低速相位足底探针均不低于0.002模型单位",
+			"passed": true
+		},
+		{
+			"name": "低速接地只允许根骨按最低足底精确上抬且不改变模型/演员位置",
+			"passed": true
+		},
+		{
+			"name": "负对照确实复现原低速穿地且补偿不超过0.03模型单位",
+			"passed": true
+		},
+		{
+			"name": "最大根骨补偿相位重复刷新及暂停都不累积抬高",
+			"passed": true
+		}
+	],
+	"low_speed_grounding": {
+		"maximum_lift_phase": 0.575,
+		"maximum_lift_speed_fraction": 0.25,
+		"maximum_pose_error": 0.00000130655234897858,
+		"maximum_root_lift": 0.0241724435687065,
+		"minimum_after": 0.00199992954730988,
+		"minimum_before": -0.0221724435687065,
+		"sample_count": 600
+	},
+	"low_speed_pose": {
+		"full_speed_pose_error": 0.000000894100708137557,
+		"quarter_speed_pose_error": 0.00000054159107776286,
+		"quarter_speed_root_lift": 0.0019934583902359,
+		"relaxed_socket_error": 0.0,
+		"zero_speed_turn_phase_error": 0.0,
+		"zero_speed_turn_pose_error": 0.00000062104066955726,
+		"zero_speed_turn_samples": 15
+	},
+	"passed": true,
+	"passed_count": 120,
+	"scenarios": [
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.2625,
+			"four_neighbour": true,
+			"fps": 30,
+			"idle": true,
+			"kind": "straight",
+			"maximum_deceleration": 11.9999927519607,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541860727398813,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199995934963226,
+			"minimum_stop_sole": 0.00199996680021286,
+			"pause_stable": true,
+			"phase_distance_error": 0.00000595505039768796,
+			"replan_stable": true,
+			"stop_blend_samples": 4,
+			"stopped": true,
+			"straight_crossings": 4
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.1125,
+			"four_neighbour": true,
+			"fps": 60,
+			"idle": true,
+			"kind": "straight",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541860727398813,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199995934963226,
+			"minimum_stop_sole": 0.00199996680021286,
+			"pause_stable": true,
+			"phase_distance_error": 0.00000598840416277113,
+			"replan_stable": true,
+			"stop_blend_samples": 8,
+			"stopped": true,
+			"straight_crossings": 4
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.0375,
+			"four_neighbour": true,
+			"fps": 120,
+			"idle": true,
+			"kind": "straight",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541860727398813,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199919939041138,
+			"minimum_stop_sole": 0.00199919939041138,
+			"pause_stable": true,
+			"phase_distance_error": 0.00000602654489689769,
+			"replan_stable": true,
+			"stop_blend_samples": 15,
+			"stopped": true,
+			"straight_crossings": 4
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.2625,
+			"four_neighbour": true,
+			"fps": 30,
+			"idle": true,
+			"kind": "short",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541860727398813,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199995934963226,
+			"minimum_stop_sole": 0.00199996680021286,
+			"pause_stable": true,
+			"phase_distance_error": 0.0,
+			"replan_stable": true,
+			"stop_blend_samples": 4,
+			"stopped": true,
+			"straight_crossings": 0
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.1125,
+			"four_neighbour": true,
+			"fps": 60,
+			"idle": true,
+			"kind": "short",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541860727398813,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199993699789047,
+			"minimum_stop_sole": 0.00199993699789047,
+			"pause_stable": true,
+			"phase_distance_error": 0.0,
+			"replan_stable": true,
+			"stop_blend_samples": 8,
+			"stopped": true,
+			"straight_crossings": 0
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.0375,
+			"four_neighbour": true,
+			"fps": 120,
+			"idle": true,
+			"kind": "short",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541860727398813,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199905037879944,
+			"minimum_stop_sole": 0.00199905037879944,
+			"pause_stable": true,
+			"phase_distance_error": 0.0,
+			"replan_stable": true,
+			"stop_blend_samples": 15,
+			"stopped": true,
+			"straight_crossings": 0
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.2625,
+			"four_neighbour": true,
+			"fps": 30,
+			"idle": true,
+			"kind": "corner",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541861693292844,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199995934963226,
+			"minimum_stop_sole": 0.00199998915195465,
+			"pause_stable": true,
+			"phase_distance_error": 0.0,
+			"replan_stable": true,
+			"stop_blend_samples": 4,
+			"stopped": true,
+			"straight_crossings": 0
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.1125,
+			"four_neighbour": true,
+			"fps": 60,
+			"idle": true,
+			"kind": "corner",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541861693292844,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199992954730988,
+			"minimum_stop_sole": 0.00199998915195465,
+			"pause_stable": true,
+			"phase_distance_error": 0.0,
+			"replan_stable": true,
+			"stop_blend_samples": 8,
+			"stopped": true,
+			"straight_crossings": 0
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.0375,
+			"four_neighbour": true,
+			"fps": 120,
+			"idle": true,
+			"kind": "corner",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541861693292844,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199992954730988,
+			"minimum_stop_sole": 0.00199996680021286,
+			"pause_stable": true,
+			"phase_distance_error": 0.0,
+			"replan_stable": true,
+			"stop_blend_samples": 15,
+			"stopped": true,
+			"straight_crossings": 0
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.2625,
+			"four_neighbour": true,
+			"fps": 30,
+			"idle": true,
+			"kind": "replan",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541861693292844,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199995934963226,
+			"minimum_stop_sole": 0.00199996680021286,
+			"pause_stable": true,
+			"phase_distance_error": 0.0,
+			"replan_stable": true,
+			"stop_blend_samples": 4,
+			"stopped": true,
+			"straight_crossings": 0
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.1125,
+			"four_neighbour": true,
+			"fps": 60,
+			"idle": true,
+			"kind": "replan",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541861693292844,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199994444847107,
+			"minimum_stop_sole": 0.00199996680021286,
+			"pause_stable": true,
+			"phase_distance_error": 0.0,
+			"replan_stable": true,
+			"stop_blend_samples": 8,
+			"stopped": true,
+			"straight_crossings": 0
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.0375,
+			"four_neighbour": true,
+			"fps": 120,
+			"idle": true,
+			"kind": "replan",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541861693292844,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199994444847107,
+			"minimum_stop_sole": 0.00199995189905167,
+			"pause_stable": true,
+			"phase_distance_error": 0.0,
+			"replan_stable": true,
+			"stop_blend_samples": 15,
+			"stopped": true,
+			"straight_crossings": 0
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.2625,
+			"four_neighbour": true,
+			"fps": 30,
+			"idle": true,
+			"kind": "reverse",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541860727398813,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199995934963226,
+			"minimum_stop_sole": 0.00199996680021286,
+			"pause_stable": true,
+			"phase_distance_error": 0.0,
+			"replan_stable": true,
+			"stop_blend_samples": 4,
+			"stopped": true,
+			"straight_crossings": 0
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.1125,
+			"four_neighbour": true,
+			"fps": 60,
+			"idle": true,
+			"kind": "reverse",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541860727398813,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199994444847107,
+			"minimum_stop_sole": 0.00199996680021286,
+			"pause_stable": true,
+			"phase_distance_error": 0.0,
+			"replan_stable": true,
+			"stop_blend_samples": 8,
+			"stopped": true,
+			"straight_crossings": 0
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.0375,
+			"four_neighbour": true,
+			"fps": 120,
+			"idle": true,
+			"kind": "reverse",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541860727398813,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199919939041138,
+			"minimum_stop_sole": 0.00199919939041138,
+			"pause_stable": true,
+			"phase_distance_error": 0.0,
+			"replan_stable": true,
+			"stop_blend_samples": 15,
+			"stopped": true,
+			"straight_crossings": 0
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.2625,
+			"four_neighbour": true,
+			"fps": 30,
+			"idle": true,
+			"kind": "pause",
+			"maximum_deceleration": 11.9999927519607,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541860727398813,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199995934963226,
+			"minimum_stop_sole": 0.00199996680021286,
+			"pause_stable": true,
+			"phase_distance_error": 0.0,
+			"replan_stable": true,
+			"stop_blend_samples": 4,
+			"stopped": true,
+			"straight_crossings": 0
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.1125,
+			"four_neighbour": true,
+			"fps": 60,
+			"idle": true,
+			"kind": "pause",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541860727398813,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199995934963226,
+			"minimum_stop_sole": 0.00199996680021286,
+			"pause_stable": true,
+			"phase_distance_error": 0.0,
+			"replan_stable": true,
+			"stop_blend_samples": 8,
+			"stopped": true,
+			"straight_crossings": 0
+		},
+		{
+			"accepted": true,
+			"arrived": true,
+			"brake_seen": true,
+			"continuous_phase": true,
+			"first_speed": 0.0375,
+			"four_neighbour": true,
+			"fps": 120,
+			"idle": true,
+			"kind": "pause",
+			"maximum_deceleration": 12.0,
+			"maximum_fast_heading_error_degrees": 0.0,
+			"maximum_rate_error": 0.0000000541860727398813,
+			"maximum_speed": 2.34999999999993,
+			"minimum_frame_sole": 0.00199919939041138,
+			"minimum_stop_sole": 0.00199919939041138,
+			"pause_stable": true,
+			"phase_distance_error": 0.0,
+			"replan_stable": true,
+			"stop_blend_samples": 15,
+			"stopped": true,
+			"straight_crossings": 0
+		}
+	],
+	"scope": "独立试场新移动控制的无窗口动态检查；足底仅为源模型探针，不替代全部真实蒙皮、GPU、连续视觉或正式战斗验收"
+}
