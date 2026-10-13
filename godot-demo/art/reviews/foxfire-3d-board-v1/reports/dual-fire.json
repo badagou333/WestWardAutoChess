@@ -1,0 +1,87 @@
+{
+	"checks": [
+		{
+			"name": "自然双手动作与两团独立狐火均已载入",
+			"passed": true
+		},
+		{
+			"name": "身体曲线相位保持，仅Idle根骨记录小于0.2mm世界位移闭环修正",
+			"passed": true
+		},
+		{
+			"name": "双火动作循环首尾姿势一致",
+			"passed": true
+		},
+		{
+			"name": "两动作四朝向328个时点两火分别跟随各自掌心",
+			"passed": true
+		},
+		{
+			"name": "双手分开且保留左高右低轮廓",
+			"passed": true
+		},
+		{
+			"name": "单手扰动负对照：左火移动，右火不跟随",
+			"passed": true
+		},
+		{
+			"name": "混合途中暂停也冻结全部骨骼与两火时钟",
+			"passed": true
+		},
+		{
+			"name": "恢复后两火继续流动且保留独立相位",
+			"passed": true
+		},
+		{
+			"name": "归位清除旧动作混合与两火时间",
+			"passed": true
+		},
+		{
+			"name": "两火独立分层且无自主时钟或重复动态阴影",
+			"passed": true
+		}
+	],
+	"effects": {
+		"L": {
+			"closed_flame_meshes": 5,
+			"configured": true,
+			"elapsed": 0.0,
+			"embers": 7,
+			"independent_clock": false,
+			"light_casts_shadows": false,
+			"radius_world_units": 0.125
+		},
+		"R": {
+			"closed_flame_meshes": 5,
+			"configured": true,
+			"elapsed": 0.731,
+			"embers": 7,
+			"independent_clock": false,
+			"light_casts_shadows": false,
+			"radius_world_units": 0.125
+		}
+	},
+	"minimum_left_above_right_world": 0.17229562997818,
+	"palm_spacing_world": [
+		0.963706612586975,
+		0.987892866134644
+	],
+	"passed": true,
+	"runtime_seam_repairs": {
+		"DualFireIdle": [
+			{
+				"delta": [
+					-0.0000000000109139364212751,
+					0.0000937636941671371,
+					0.0
+				],
+				"path": "Foxfire_Rig/Skeleton3D:root",
+				"until": 0.333333341280619
+			}
+		],
+		"DualFireRun": []
+	},
+	"sample_count": 328,
+	"scope": "双火动作数据保真、每手独立挂点与确定性时钟检查；不替代自然度、视觉穿插或连续播放审查",
+	"socket_error_world": 0.0
+}

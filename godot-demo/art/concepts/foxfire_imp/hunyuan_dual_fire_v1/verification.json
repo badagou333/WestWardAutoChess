@@ -1,0 +1,36 @@
+{
+  "passed": true,
+  "json_bytes": 68733,
+  "json_sha256": "a05ac755f3a7c810cffb7ebfa02aeb6197d1d77add80412bd382ebc4e746610f",
+  "clips": {
+    "DualFireIdle": {
+      "duration": 3,
+      "keys_per_bone": 91,
+      "arm_rotation_variation_degrees": {
+        "upper_arm.L": 1.0136450827961008,
+        "forearm.L": 1.766926115775609,
+        "hand.L": 1.9282199246338045,
+        "upper_arm.R": 2.0454288736615687,
+        "forearm.R": 5.092845027213533,
+        "hand.R": 3.519790702140136
+      },
+      "non_arm_curves_exact": true,
+      "loop_mesh_error": 0.0
+    },
+    "DualFireRun": {
+      "duration": 0.6666666666666666,
+      "keys_per_bone": 21,
+      "arm_rotation_variation_degrees": {
+        "upper_arm.L": 2.8774160758197187,
+        "forearm.L": 5.424342471640506,
+        "hand.L": 1.2578587175253693,
+        "upper_arm.R": 7.588672485104433,
+        "forearm.R": 17.35764534641821,
+        "hand.R": 6.116349605243085
+      },
+      "non_arm_curves_exact": true,
+      "loop_mesh_error": 0.0
+    }
+  },
+  "limits": "Numeric export/pose checks only; actual flame and board-camera appearance require engine visual review."
+}

@@ -1,0 +1,3 @@
+# Full-resolution QA render frames are reproducible local intermediates.
+*.png
+__pycache__/

@@ -1,0 +1,356 @@
+{
+	"check_count": 30,
+	"checks": [
+		{
+			"name": "Final dual-fire JSON and original model SHA match the assigned versions",
+			"passed": true
+		},
+		{
+			"name": "Two distinct hand-fire nodes and both dual-fire clips are loaded",
+			"passed": true
+		},
+		{
+			"name": "DualFireIdle allowed arm rotation track: upper_arm.L",
+			"passed": true
+		},
+		{
+			"name": "DualFireIdle allowed arm rotation track: forearm.L",
+			"passed": true
+		},
+		{
+			"name": "DualFireIdle allowed arm rotation track: hand.L",
+			"passed": true
+		},
+		{
+			"name": "DualFireIdle allowed arm rotation track: upper_arm.R",
+			"passed": true
+		},
+		{
+			"name": "DualFireIdle allowed arm rotation track: forearm.R",
+			"passed": true
+		},
+		{
+			"name": "DualFireIdle allowed arm rotation track: hand.R",
+			"passed": true
+		},
+		{
+			"name": "DualFireIdle exactly six authored arm rotation curves match actual local poses",
+			"passed": true
+		},
+		{
+			"name": "DualFireIdle declared sub-0.2mm root repair equals independently derived correction",
+			"passed": true
+		},
+		{
+			"name": "DualFireIdle all untouched tracks preserve the base phase plus explicit root repair",
+			"passed": true
+		},
+		{
+			"name": "DualFireIdle cyclic keyed endpoints are closed",
+			"passed": true
+		},
+		{
+			"name": "DualFireRun allowed arm rotation track: upper_arm.L",
+			"passed": true
+		},
+		{
+			"name": "DualFireRun allowed arm rotation track: forearm.L",
+			"passed": true
+		},
+		{
+			"name": "DualFireRun allowed arm rotation track: hand.L",
+			"passed": true
+		},
+		{
+			"name": "DualFireRun allowed arm rotation track: upper_arm.R",
+			"passed": true
+		},
+		{
+			"name": "DualFireRun allowed arm rotation track: forearm.R",
+			"passed": true
+		},
+		{
+			"name": "DualFireRun allowed arm rotation track: hand.R",
+			"passed": true
+		},
+		{
+			"name": "DualFireRun exactly six authored arm rotation curves match actual local poses",
+			"passed": true
+		},
+		{
+			"name": "DualFireRun declared sub-0.2mm root repair equals independently derived correction",
+			"passed": true
+		},
+		{
+			"name": "DualFireRun all untouched tracks preserve the base phase plus explicit root repair",
+			"passed": true
+		},
+		{
+			"name": "DualFireRun cyclic keyed endpoints are closed",
+			"passed": true
+		},
+		{
+			"name": "Each hand uses its own full parent-chain socket over 488 poses and four orientations",
+			"passed": true
+		},
+		{
+			"name": "Fire radius applies model scaling exactly once",
+			"passed": true
+		},
+		{
+			"name": "Moving only one hand moves only its own fire by the full displacement, not a midpoint half-displacement",
+			"passed": true
+		},
+		{
+			"name": "Crossfade pause freezes all bones and actor movement",
+			"passed": true
+		},
+		{
+			"name": "Both fires, 14 embers, shader time, colors and both lights freeze during pause",
+			"passed": true
+		},
+		{
+			"name": "Both fires resume by the same elapsed duration while retaining independent flicker phases",
+			"passed": true
+		},
+		{
+			"name": "Reset clears old crossfade and restores both fires deterministically",
+			"passed": true
+		},
+		{
+			"name": "Reviewed source files did not change during the check",
+			"passed": true
+		}
+	],
+	"clips": {
+		"DualFireIdle": {
+			"arm_basis_error_max": 0.000000505762159264123,
+			"body_position_residual_max": 0.0000000026341806513841,
+			"body_rotation_one_minus_abs_dot_max": 0.000000119209289550781,
+			"body_samples_per_track": 601,
+			"body_scale_residual_max": 0.0,
+			"curve_mismatches": [],
+			"derived_root_seam_repairs": [
+				{
+					"delta": [
+						-0.0000000000109139364212751,
+						0.0000937636941671371,
+						0.0
+					],
+					"path": "Foxfire_Rig/Skeleton3D:root",
+					"until": 0.333333341280619,
+					"world_magnitude": 0.000154710095375776
+				}
+			],
+			"json_pose_samples": 1086,
+			"loop_quaternion_one_minus_abs_dot_max": 0.0000000596046447753906,
+			"loop_vector_error_max": 0.0,
+			"replaced_bones": [
+				"upper_arm.L",
+				"forearm.L",
+				"hand.L",
+				"upper_arm.R",
+				"forearm.R",
+				"hand.R"
+			],
+			"source_track_count": 6,
+			"unchanged_track_count": 19
+		},
+		"DualFireRun": {
+			"arm_basis_error_max": 0.000000387430191040039,
+			"body_position_residual_max": 0.0000000037257450458128,
+			"body_rotation_one_minus_abs_dot_max": 0.000000178813934326172,
+			"body_samples_per_track": 601,
+			"body_scale_residual_max": 0.0,
+			"curve_mismatches": [],
+			"derived_root_seam_repairs": [],
+			"json_pose_samples": 246,
+			"loop_quaternion_one_minus_abs_dot_max": 0.0,
+			"loop_vector_error_max": 0.000000000816983425355744,
+			"replaced_bones": [
+				"upper_arm.L",
+				"forearm.L",
+				"hand.L",
+				"upper_arm.R",
+				"forearm.R",
+				"hand.R"
+			],
+			"source_track_count": 6,
+			"unchanged_track_count": 19
+		}
+	},
+	"created_at_utc": "2026-10-13T10:07:40Z",
+	"engine": "4.7.2-stable (official)",
+	"fire_scale_max_error": 0.0000000842936955791629,
+	"hashes": {
+		"assets/dual-fire-animations.json": "a05ac755f3a7c810cffb7ebfa02aeb6197d1d77add80412bd382ebc4e746610f",
+		"assets/foxfire-board.glb": "4257ac78a80ade3bbd328212c9341ecf9f775a7a8452aef7f8a2fc0875cfaa57",
+		"board_controller.gd": "addb27ee66d2f9847c1065a136333723c30564866a4173658a6676b336f79141",
+		"dual_fire_motion.gd": "18a59390b2f56094ca4b6d3135af2c809decdd75a9ffa6d0681e1c9a5c1f9f28",
+		"held_fire.gd": "1b6ce839683964289f5ef8250140a700a982fc58c34bc7cd1d2532ec55954358",
+		"held_fire.gdshader": "bec78e3a354d39ff6706b4f338ba450de9a43134a7f8a6388f0fe618fb085f03"
+	},
+	"passed": true,
+	"passed_count": 30,
+	"pause": {
+		"actor_transform_error": 0.0,
+		"all_fire_children_materials_and_lights_identical": true,
+		"animation_time_change": 0.0,
+		"bone_transform_error_max": 0.0,
+		"duration_seconds": 1.0,
+		"effect_clock_change": 0.0,
+		"embers_checked": 14
+	},
+	"reset": {
+		"bone_error_vs_hard_idle": 0.0,
+		"fires_identical_to_hard_idle": true,
+		"left_effect_time": 0.0,
+		"right_effect_time": 0.731
+	},
+	"resume": {
+		"bone_transform_change": 0.343588650226593,
+		"left_children_changed": true,
+		"left_effect_advance": 0.125,
+		"right_children_changed": true,
+		"right_effect_advance": 0.125,
+		"right_left_phase_difference": 0.731
+	},
+	"review_phase": "Final dual-fire revision only; supersedes earlier single-held-fire exploration.",
+	"schema": 1,
+	"scope": "Independent headless numerical integration review; not GPU, performance, visual occlusion or human-play acceptance.",
+	"single_hand_negative_controls": [
+		{
+			"clip": "DualFireIdle",
+			"expected_own_motion_world": 0.206744492053986,
+			"moved_hand": "L",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.0000000596046447753906,
+			"yaw": 0.0
+		},
+		{
+			"clip": "DualFireIdle",
+			"expected_own_motion_world": 0.206744521856308,
+			"moved_hand": "R",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.000000214907601048253,
+			"yaw": 0.0
+		},
+		{
+			"clip": "DualFireIdle",
+			"expected_own_motion_world": 0.206744492053986,
+			"moved_hand": "L",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.0000000298023223876953,
+			"yaw": 0.8
+		},
+		{
+			"clip": "DualFireIdle",
+			"expected_own_motion_world": 0.206744447350502,
+			"moved_hand": "R",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.000000160490415623826,
+			"yaw": 0.8
+		},
+		{
+			"clip": "DualFireIdle",
+			"expected_own_motion_world": 0.206744477152824,
+			"moved_hand": "L",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.0000000596046447753906,
+			"yaw": 1.9
+		},
+		{
+			"clip": "DualFireIdle",
+			"expected_own_motion_world": 0.206744506955147,
+			"moved_hand": "R",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.000000190827975643515,
+			"yaw": 1.9
+		},
+		{
+			"clip": "DualFireIdle",
+			"expected_own_motion_world": 0.206744477152824,
+			"moved_hand": "L",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.0,
+			"yaw": 3.6
+		},
+		{
+			"clip": "DualFireIdle",
+			"expected_own_motion_world": 0.206744477152824,
+			"moved_hand": "R",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.000000178813934326172,
+			"yaw": 3.6
+		},
+		{
+			"clip": "DualFireRun",
+			"expected_own_motion_world": 0.206744402647018,
+			"moved_hand": "L",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.0000000842936955791629,
+			"yaw": 0.0
+		},
+		{
+			"clip": "DualFireRun",
+			"expected_own_motion_world": 0.206744357943535,
+			"moved_hand": "R",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.000000149011611938477,
+			"yaw": 0.0
+		},
+		{
+			"clip": "DualFireRun",
+			"expected_own_motion_world": 0.206744432449341,
+			"moved_hand": "L",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.0000000596046447753906,
+			"yaw": 0.8
+		},
+		{
+			"clip": "DualFireRun",
+			"expected_own_motion_world": 0.206744343042374,
+			"moved_hand": "R",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.000000168587391158326,
+			"yaw": 0.8
+		},
+		{
+			"clip": "DualFireRun",
+			"expected_own_motion_world": 0.206744477152824,
+			"moved_hand": "L",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.0000000842936955791629,
+			"yaw": 1.9
+		},
+		{
+			"clip": "DualFireRun",
+			"expected_own_motion_world": 0.206744343042374,
+			"moved_hand": "R",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.000000178813934326172,
+			"yaw": 1.9
+		},
+		{
+			"clip": "DualFireRun",
+			"expected_own_motion_world": 0.206744387745857,
+			"moved_hand": "L",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.0000000842936955791629,
+			"yaw": 3.6
+		},
+		{
+			"clip": "DualFireRun",
+			"expected_own_motion_world": 0.206744343042374,
+			"moved_hand": "R",
+			"opposite_fire_motion_world": 0.0,
+			"own_motion_error_world": 0.000000178813934326172,
+			"yaw": 3.6
+		}
+	],
+	"socket_max_error_world": {
+		"L": 0.000000305382940268828,
+		"R": 0.000000268220901489258
+	},
+	"socket_samples_per_hand": 488
+}

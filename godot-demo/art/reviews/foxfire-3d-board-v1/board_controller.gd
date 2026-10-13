@@ -3,6 +3,9 @@ extends Node3D
 const WorldBuilder = preload("res://world_builder.gd")
 const TrialUI = preload("res://ui.gd")
 const Verifier = preload("res://verify.gd")
+const DualFireMotion = preload("res://dual_fire_motion.gd")
+const HeldFire = preload("res://held_fire.gd")
+const DualFireVerifier = preload("res://verify_dual_fire.gd")
 const COLS := 12
 const ROWS := 7
 const MOVE_SPEED := 2.35
@@ -16,6 +19,19 @@ var model: Node3D
 var animation_player: AnimationPlayer
 var run_animation: StringName
 var idle_animation: StringName
+var base_idle_animation: StringName
+var base_run_animation: StringName
+var skeleton: Skeleton3D
+var hand_fires: Dictionary = {}
+var dual_fire_loaded := false
+var dual_fire_data: Dictionary = {}
+var fire_elapsed := 0.0
+var palm_left := Vector3.ZERO
+var palm_right := Vector3.ZERO
+var fire_lifts: Dictionary = {}
+var fire_sizes: Dictionary = {}
+var hand_left := -1
+var hand_right := -1
 var camera: Camera3D
 var grid: Node3D
 var marker: Node3D
@@ -77,6 +93,8 @@ func _ready() -> void:
 		set_auto(true)
 	if options.has("verify"):
 		call_deferred("_verify")
+	elif options.has("dual-fire-verify"):
+		call_deferred("_verify_dual_fire")
 	elif options.has("input-verify"):
 		call_deferred("_verify_input")
 	elif options.has("performance"):
@@ -117,7 +135,7 @@ func set_camera(value: int) -> void:
 			camera.position = Vector3(4.0, 23.0, 13.0)
 		4:
 			camera.projection = Camera3D.PROJECTION_ORTHOGONAL
-			camera.size = 6.4
+			camera.size = float(options.get("detail-size", "6.4"))
 	if camera_mode == 4 and actor:
 		_update_detail_camera()
 	else:
@@ -153,7 +171,72 @@ func _build_actor() -> void:
 		for clip in [run_animation, idle_animation]:
 			if not str(clip).is_empty():
 				animation_player.get_animation(clip).loop_mode = Animation.LOOP_LINEAR
+		base_idle_animation = idle_animation
+		base_run_animation = run_animation
+		var pose_result: Dictionary = DualFireMotion.install(animation_player, idle_animation, run_animation)
+		if pose_result.has("error"):
+			push_error(str(pose_result.error))
+		else:
+			idle_animation = pose_result.idle
+			run_animation = pose_result.run
+			dual_fire_data = pose_result.data
+			dual_fire_loaded = true
+			animation_names.append_array([str(idle_animation), str(run_animation)])
+			_build_hand_fires()
+		# One explicit animation/effect clock prevents a frame of socket lag and
+		# makes paused gameplay and deterministic captures agree.
+		animation_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
 		_play(false)
+
+func _build_hand_fires() -> void:
+	var skeletons := model.find_children("*", "Skeleton3D", true, false)
+	if skeletons.size() != 1:
+		push_error("托火需要唯一狐火骨架")
+		dual_fire_loaded = false
+		return
+	skeleton = skeletons[0] as Skeleton3D
+	hand_left = skeleton.find_bone("hand.L")
+	hand_right = skeleton.find_bone("hand.R")
+	var left_data: Array = dual_fire_data.palm_offsets.L.position
+	var right_data: Array = dual_fire_data.palm_offsets.R.position
+	palm_left = Vector3(left_data[0], left_data[1], left_data[2])
+	palm_right = Vector3(right_data[0], right_data[1], right_data[2])
+	if hand_left < 0 or hand_right < 0:
+		push_error("托火需要双手骨骼")
+		dual_fire_loaded = false
+		return
+	for side in ["L", "R"]:
+		var fire := HeldFire.new()
+		add_child(fire)
+		fire.configure()
+		fire.name = "Foxfire" + side
+		fire.visible = str(options.get("fire", "on")) != "off"
+		hand_fires[side] = fire
+		fire_lifts[side] = float(dual_fire_data.orbs[side].up_offset) * ACTOR_SCALE
+		fire_sizes[side] = float(dual_fire_data.orbs[side].core_radius) * ACTOR_SCALE / 0.125
+
+func _palm_world(index: int, offset: Vector3) -> Vector3:
+	return skeleton.global_transform * (skeleton.get_bone_global_pose(index) * offset)
+
+func _update_fire_sockets() -> void:
+	if hand_fires.size() != 2 or not skeleton:
+		return
+	for side in ["L", "R"]:
+		var palm := _palm_world(hand_left if side == "L" else hand_right, palm_left if side == "L" else palm_right)
+		# Each flame follows its own palm, never the midpoint of the two hands.
+		# World-up flame, independent size, ordinary depth occlusion.
+		var basis := actor.global_basis.orthonormalized().scaled(Vector3.ONE * float(fire_sizes[side]))
+		hand_fires[side].global_transform = Transform3D(basis, palm + Vector3.UP * float(fire_lifts[side]))
+
+func _step_visuals(delta: float) -> void:
+	if animation_player and not paused:
+		animation_player.advance(delta)
+	if not paused:
+		fire_elapsed += delta
+	_update_fire_sockets()
+	for side in hand_fires:
+		# A fixed independent phase prevents synchronized/mirrored flame flicker.
+		hand_fires[side].update_effect(fire_elapsed + (0.731 if side == "R" else 0.0), 0.0 if paused else delta, moving)
 
 func _find_animation_player(node: Node) -> AnimationPlayer:
 	if node is AnimationPlayer:
@@ -283,6 +366,7 @@ func _process(delta: float) -> void:
 		performance_process_ms.append(Performance.get_monitor(Performance.TIME_PROCESS) * 1000.0)
 		performance_draw_calls.append(Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME))
 	_step_simulation(delta)
+	_step_visuals(delta)
 	if camera_mode == 4:
 		_update_detail_camera()
 	if hud:
@@ -370,6 +454,11 @@ func reset_actor() -> void:
 	_show_route()
 	set_paused(false)
 	_play(false)
+	fire_elapsed = 0.0
+	if animation_player:
+		animation_player.play(idle_animation, 0.0)
+		animation_player.seek(0.0, true)
+	_step_visuals(0.0)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -405,6 +494,16 @@ func _verify() -> void:
 func _verify_input() -> void:
 	var result: Dictionary = await Verifier.new().run_input(self)
 	var target := str(options.get("report", "user://input-verification.json"))
+	var file := FileAccess.open(target, FileAccess.WRITE)
+	if file:
+		file.store_string(JSON.stringify(result, "\t"))
+	print(JSON.stringify(result))
+	get_tree().quit(0 if result.passed else 1)
+
+func _verify_dual_fire() -> void:
+	set_process(false)
+	var result: Dictionary = DualFireVerifier.new().run(self)
+	var target := str(options.get("report", "user://dual-fire-verification.json"))
 	var file := FileAccess.open(target, FileAccess.WRITE)
 	if file:
 		file.store_string(JSON.stringify(result, "\t"))
@@ -472,6 +571,8 @@ func _capture() -> void:
 		if not str(selected_clip).is_empty():
 			animation_player.play(selected_clip, 0.0)
 			animation_player.seek(float(options.get("time", "0.6")), true)
+	fire_elapsed = float(options.get("time", "0.6"))
+	_step_visuals(0.0)
 	if options.has("destination"):
 		var pair: PackedStringArray = str(options.destination).split(",")
 		if pair.size() == 2:
@@ -483,14 +584,20 @@ func _capture() -> void:
 		DirAccess.make_dir_recursive_absolute(directory)
 		var fps := maxi(1, int(options.get("fps", "15")))
 		var count := maxi(1, int(float(options.get("duration", "8")) * fps))
+		# Keep camera/bone motion and temporal AA near the normal 60 Hz cadence;
+		# only downsample the saved video. A single large 1/15 s step exaggerates
+		# motion noise and is not representative of the live preview.
+		var substeps := maxi(1, ceili(60.0 / fps))
 		for index in range(count):
-			_step_simulation(1.0 / fps)
-			if camera_mode == 4:
-				_update_detail_camera()
-			if animation_player:
-				animation_player.advance(1.0 / fps)
-			hud.refresh()
-			await RenderingServer.frame_post_draw
+			for substep in range(substeps):
+				_step_simulation(1.0 / (fps * substeps))
+				if camera_mode == 4:
+					_update_detail_camera()
+				_step_visuals(1.0 / (fps * substeps))
+				hud.refresh()
+				await RenderingServer.frame_post_draw
+				if substep + 1 < substeps:
+					await get_tree().process_frame
 			get_viewport().get_texture().get_image().save_png(directory.path_join("frame-%04d.png" % index))
 			await get_tree().process_frame
 	else:

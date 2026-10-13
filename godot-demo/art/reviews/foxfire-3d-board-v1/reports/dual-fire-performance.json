@@ -1,0 +1,32 @@
+{
+	"actor_scale": 1.65,
+	"adapter": "Apple M1 (Apple7)",
+	"average_fps": 59.9210091297148,
+	"draw_calls_max": 1505.0,
+	"draw_calls_p50": 1501.0,
+	"elapsed_seconds": 12.015819,
+	"engine_time_process_ms_p95": 31.317,
+	"engine_time_process_note": "Godot TIME_PROCESS监视值，并非隔离CPU耗时；帧时统计以实际相邻_process入口时间差为准",
+	"fps_limit": 0,
+	"frame_interval_ms": {
+		"max": 31.42,
+		"p50": 16.642,
+		"p95": 17.648,
+		"p99": 18.844
+	},
+	"last_frame_objects": 1548.0,
+	"last_frame_primitives": 119322.0,
+	"logical_viewport": "(1600.0, 1000.0)",
+	"move_speed": 2.35,
+	"msaa_3d": 2,
+	"renderer": "forward_plus",
+	"run_playback_speed": 0.65,
+	"sample_count": 720,
+	"scope": "本机单角色独立试场正常窗口自动漫游；8秒预热、约12秒取样，无截图写盘，不代表多角色或其他硬件通过",
+	"ssao_half_size": false,
+	"ssao_quality": 2,
+	"taa": true,
+	"unit_count": 1,
+	"vsync_mode": 1,
+	"window_pixels": "(1440, 900)"
+}
