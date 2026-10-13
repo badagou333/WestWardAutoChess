@@ -6,6 +6,8 @@ var camera_buttons: Array[Button] = []
 var pause_button: Button
 var auto_button: Button
 var grid_button: Button
+var attack_button: Button
+var spell_button: Button
 var coordinate_label: Label
 var font: SystemFont
 const INK := Color("152b2d")
@@ -71,7 +73,7 @@ func build(owner_node: Node3D) -> void:
 	bottom.add_theme_stylebox_override("panel", _box(Color(0.045, 0.10, 0.11, 0.94), Color(0.36, 0.49, 0.45, 0.55), 10, 18, 9))
 	root.add_child(bottom)
 	var row := HBoxContainer.new()
-	row.add_theme_constant_override("separation", 10)
+	row.add_theme_constant_override("separation", 8)
 	row.alignment = BoxContainer.ALIGNMENT_CENTER
 	bottom.add_child(row)
 	var label_group := VBoxContainer.new()
@@ -83,12 +85,21 @@ func build(owner_node: Node3D) -> void:
 	row.add_child(VSeparator.new())
 	for index in range(4):
 		var camera_button := _button(["1  沉浸", "2  战术", "3  俯瞰", "4  近景"][index])
+		camera_button.custom_minimum_size.x = 90
 		camera_button.pressed.connect(controller.set_camera.bind(index + 1))
 		row.add_child(camera_button)
 		camera_buttons.append(camera_button)
 	var spacer := Control.new()
 	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	row.add_child(spacer)
+	attack_button = _button("F  火焰攻击")
+	attack_button.pressed.connect(controller.request_attack)
+	attack_button.tooltip_text = "停步后发射一次火球；仅动画展示，没有伤害结算"
+	row.add_child(attack_button)
+	spell_button = _button("待机 / 火攻演示")
+	spell_button.custom_minimum_size.x = 154
+	spell_button.pressed.connect(func(): controller.set_spell_demo(not controller.spell_demo))
+	row.add_child(spell_button)
 	grid_button = _button("G  格线")
 	grid_button.pressed.connect(controller.toggle_grid)
 	row.add_child(grid_button)
@@ -136,10 +147,14 @@ func _box(fill: Color, border: Color, radius: int, horizontal: int = 12, vertica
 func refresh() -> void:
 	if not state_label:
 		return
-	state_label.text = "已暂停" if controller.paused else ("漫游中" if controller.auto_demo else ("奔向所指" if controller.moving else "静候指令"))
+	state_label.text = "已暂停" if controller.paused else ("火焰攻击" if controller.attacking else ("动作演示" if controller.spell_demo else ("漫游中" if controller.auto_demo else ("奔向所指" if controller.moving else "双火待机"))))
 	coordinate_label.text = "第 %d 列 · 第 %d 行" % [controller.current_cell.x + 1, controller.current_cell.y + 1]
 	pause_button.text = "空格  继续" if controller.paused else "空格  暂停"
 	auto_button.text = "停止漫游" if controller.auto_demo else "自动漫游"
+	attack_button.disabled = not controller.spell_loaded or controller.paused or controller.moving or controller.attacking or controller.attack_effects.is_active()
+	spell_button.disabled = not controller.spell_loaded or controller.moving
+	spell_button.text = "停止动作演示" if controller.spell_demo else "待机 / 火攻演示"
+	auto_button.disabled = controller.attacking
 	grid_button.modulate = GOLD if controller.grid and controller.grid.visible else Color.WHITE
 	for index in range(camera_buttons.size()):
 		camera_buttons[index].modulate = GOLD if controller.camera_mode == index + 1 else Color.WHITE

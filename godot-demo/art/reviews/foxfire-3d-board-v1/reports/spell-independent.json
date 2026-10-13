@@ -1,0 +1,706 @@
+{
+	"check_count": 26,
+	"checks": [
+		{
+			"name": "Effect begins with no active projectile or impact",
+			"passed": true
+		},
+		{
+			"evidence": [
+				{
+					"elapsed": 0.0,
+					"impact_scale_error": 0.0,
+					"passed": true,
+					"position_error_world": 0.0,
+					"reference_position_error_world": 0.0
+				},
+				{
+					"elapsed": 0.073,
+					"impact_scale_error": 0.0,
+					"passed": true,
+					"position_error_world": 0.0,
+					"reference_position_error_world": 0.0
+				},
+				{
+					"elapsed": 0.304953380425771,
+					"impact_scale_error": 0.0,
+					"passed": true,
+					"position_error_world": 0.0,
+					"reference_position_error_world": 0.0
+				},
+				{
+					"elapsed": 0.43564768632253,
+					"impact_scale_error": 0.0,
+					"passed": true,
+					"position_error_world": 0.0,
+					"reference_position_error_world": 0.0
+				},
+				{
+					"elapsed": 0.55564768632253,
+					"impact_scale_error": 0.0,
+					"passed": true,
+					"position_error_world": 0.0,
+					"reference_position_error_world": 0.0
+				},
+				{
+					"elapsed": 0.81464768632253,
+					"impact_scale_error": 0.0,
+					"passed": true,
+					"position_error_world": 0.0,
+					"reference_position_error_world": 0.0
+				}
+			],
+			"name": "Projectile and impact agree for one large step and 120Hz subdivision",
+			"passed": true
+		},
+		{
+			"name": "Zero/negative steps and scene frames do not autonomously advance effects",
+			"passed": true
+		},
+		{
+			"name": "A completed shot hides projectile, trail and impact",
+			"passed": true
+		},
+		{
+			"name": "Repeated shots reuse the same fixed node pool",
+			"passed": true
+		},
+		{
+			"name": "Effect reset clears counters, origins, age and all active layers",
+			"passed": true
+		},
+		{
+			"name": "Coincident endpoints retain a finite minimum flight duration",
+			"passed": true
+		},
+		{
+			"name": "Original model is unchanged",
+			"passed": true
+		},
+		{
+			"name": "Final spell animation data exists",
+			"passed": true
+		},
+		{
+			"name": "Spell clips and presentation-only attack effects are loaded",
+			"passed": true
+		},
+		{
+			"name": "SpellIdle expected duration and loop mode",
+			"passed": true
+		},
+		{
+			"evidence": {
+				"pose_samples": 9075,
+				"rotation_error_max": 0.000000533952515979763,
+				"scale_error_max": 0.0,
+				"track_count": 75,
+				"translation_error_max": 0.00000000000000177635683940025
+			},
+			"name": "SpellIdle complete imported TRS matches independent JSON interpolation",
+			"passed": true
+		},
+		{
+			"name": "FlameAttack expected duration and loop mode",
+			"passed": true
+		},
+		{
+			"evidence": {
+				"pose_samples": 9075,
+				"rotation_error_max": 0.000000399840189402312,
+				"scale_error_max": 0.0,
+				"track_count": 75,
+				"translation_error_max": 0.00000000000000177635683940025
+			},
+			"name": "FlameAttack complete imported TRS matches independent JSON interpolation",
+			"passed": true
+		},
+		{
+			"name": "Spell installation leaves the prior dual-fire running animation exactly unchanged",
+			"passed": true
+		},
+		{
+			"name": "One left-hand release event is exactly at 0.4 seconds",
+			"passed": true
+		},
+		{
+			"evidence": [
+				{
+					"elapsed": 0.399,
+					"outcomes": [
+						{
+							"active": false,
+							"age": 0.0,
+							"controller_launches": 0,
+							"effect_launches": 0,
+							"impact_active": false,
+							"origin_error_world": 0.0,
+							"passed": true,
+							"position": "(0.0, 0.0, 0.0)",
+							"projectile_active": false,
+							"quantum": 10.0
+						},
+						{
+							"active": false,
+							"age": 0.0,
+							"controller_launches": 0,
+							"effect_launches": 0,
+							"impact_active": false,
+							"origin_error_world": 0.0,
+							"passed": true,
+							"position": "(0.0, 0.0, 0.0)",
+							"projectile_active": false,
+							"quantum": 0.0166666666666667
+						}
+					],
+					"passed": true
+				},
+				{
+					"elapsed": 0.4,
+					"outcomes": [
+						{
+							"active": true,
+							"age": 0.0,
+							"controller_launches": 1,
+							"effect_launches": 1,
+							"impact_active": false,
+							"origin_error_world": 0.000000133280039449346,
+							"passed": true,
+							"position": "(-1.704138, 0.980693, 1.762038)",
+							"projectile_active": true,
+							"quantum": 10.0
+						},
+						{
+							"active": true,
+							"age": 0.0,
+							"controller_launches": 1,
+							"effect_launches": 1,
+							"impact_active": false,
+							"origin_error_world": 0.000000133280039449346,
+							"passed": true,
+							"position": "(-1.704138, 0.980693, 1.762038)",
+							"projectile_active": true,
+							"quantum": 0.0166666666666667
+						}
+					],
+					"passed": true
+				},
+				{
+					"elapsed": 0.47,
+					"outcomes": [
+						{
+							"active": true,
+							"age": 0.0700000000000001,
+							"controller_launches": 1,
+							"effect_launches": 1,
+							"impact_active": false,
+							"origin_error_world": 0.000000133280039449346,
+							"passed": true,
+							"position": "(-1.932426, 0.96461, 2.110882)",
+							"projectile_active": true,
+							"quantum": 10.0
+						},
+						{
+							"active": true,
+							"age": 0.0700000000000001,
+							"controller_launches": 1,
+							"effect_launches": 1,
+							"impact_active": false,
+							"origin_error_world": 0.000000133280039449346,
+							"passed": true,
+							"position": "(-1.932426, 0.96461, 2.110882)",
+							"projectile_active": true,
+							"quantum": 0.0166666666666667
+						}
+					],
+					"passed": true
+				},
+				{
+					"elapsed": 0.9,
+					"outcomes": [
+						{
+							"active": true,
+							"age": 0.499999999999999,
+							"controller_launches": 1,
+							"effect_launches": 1,
+							"impact_active": true,
+							"origin_error_world": 0.000000133280039449346,
+							"passed": true,
+							"position": "(-2.514279, 0.8, 3.0)",
+							"projectile_active": false,
+							"quantum": 10.0
+						},
+						{
+							"active": true,
+							"age": 0.499999999999999,
+							"controller_launches": 1,
+							"effect_launches": 1,
+							"impact_active": true,
+							"origin_error_world": 0.000000133280039449346,
+							"passed": true,
+							"position": "(-2.514279, 0.8, 3.0)",
+							"projectile_active": false,
+							"quantum": 0.0166666666666667
+						}
+					],
+					"passed": true
+				},
+				{
+					"elapsed": 1.2,
+					"outcomes": [
+						{
+							"active": false,
+							"age": 0.633333333333334,
+							"controller_launches": 1,
+							"effect_launches": 1,
+							"impact_active": false,
+							"origin_error_world": 0.000000133280039449346,
+							"passed": true,
+							"position": "(-2.514279, 0.8, 3.0)",
+							"projectile_active": false,
+							"quantum": 10.0
+						},
+						{
+							"active": false,
+							"age": 0.633333333333334,
+							"controller_launches": 1,
+							"effect_launches": 1,
+							"impact_active": false,
+							"origin_error_world": 0.000000133280039449346,
+							"passed": true,
+							"position": "(-2.514279, 0.8, 3.0)",
+							"projectile_active": false,
+							"quantum": 0.0166666666666667
+						}
+					],
+					"passed": true
+				},
+				{
+					"elapsed": 2.0,
+					"outcomes": [
+						{
+							"active": false,
+							"age": 0.633333333333334,
+							"controller_launches": 1,
+							"effect_launches": 1,
+							"impact_active": false,
+							"origin_error_world": 0.000000133280039449346,
+							"passed": true,
+							"position": "(-2.514279, 0.8, 3.0)",
+							"projectile_active": false,
+							"quantum": 10.0
+						},
+						{
+							"active": false,
+							"age": 0.633333333333334,
+							"controller_launches": 1,
+							"effect_launches": 1,
+							"impact_active": false,
+							"origin_error_world": 0.000000133280039449346,
+							"passed": true,
+							"position": "(-2.514279, 0.8, 3.0)",
+							"projectile_active": false,
+							"quantum": 0.0166666666666667
+						}
+					],
+					"passed": true
+				}
+			],
+			"name": "Release boundary, exact JSON socket and large/subdivided time steps agree",
+			"passed": true
+		},
+		{
+			"evidence": [
+				{
+					"fully_frozen": true,
+					"phase": 0.06,
+					"resume_exactly_one_release": true
+				},
+				{
+					"fully_frozen": true,
+					"phase": 0.399,
+					"resume_exactly_one_release": true
+				},
+				{
+					"fully_frozen": true,
+					"phase": 0.45,
+					"resume_exactly_one_release": true
+				},
+				{
+					"fully_frozen": true,
+					"phase": 0.9,
+					"resume_exactly_one_release": true
+				}
+			],
+			"name": "Windup, pre-release, flight and impact pauses freeze all clocks and visual nodes",
+			"passed": true
+		},
+		{
+			"name": "Resume never repeats an already released shot",
+			"passed": true
+		},
+		{
+			"evidence": [
+				{
+					"passed": true,
+					"phase": 0.06
+				},
+				{
+					"passed": true,
+					"phase": 0.399
+				},
+				{
+					"passed": true,
+					"phase": 0.45
+				},
+				{
+					"passed": true,
+					"phase": 0.9
+				},
+				{
+					"passed": true,
+					"phase": 1.3
+				}
+			],
+			"name": "Reset during every attack phase clears projectile/impact and restores both hand fires",
+			"passed": true
+		},
+		{
+			"name": "Attack is rejected while moving",
+			"passed": true
+		},
+		{
+			"name": "Attack rejects move and repeat-attack requests without changing position",
+			"passed": true
+		},
+		{
+			"name": "Released left fire is extinguished while the right hand stays lit",
+			"passed": true
+		},
+		{
+			"name": "Left hand fire replenishes during recovery",
+			"passed": true
+		},
+		{
+			"name": "Clamped board-edge target matches the actor casting direction",
+			"passed": true
+		},
+		{
+			"name": "Tested source files did not change during this run",
+			"passed": true
+		}
+	],
+	"created_at_utc": "2026-10-13T11:45:47Z",
+	"details": {
+		"animation": {
+			"FlameAttack": {
+				"pose_samples": 9075,
+				"rotation_error_max": 0.000000399840189402312,
+				"scale_error_max": 0.0,
+				"track_count": 75,
+				"translation_error_max": 0.00000000000000177635683940025
+			},
+			"SpellIdle": {
+				"pose_samples": 9075,
+				"rotation_error_max": 0.000000533952515979763,
+				"scale_error_max": 0.0,
+				"track_count": 75,
+				"translation_error_max": 0.00000000000000177635683940025
+			}
+		},
+		"component": {
+			"fixed_node_count": 30,
+			"flight_duration": 0.43564768632253,
+			"inactive_age_note": "Inactive age overshoot is not used as visual evidence; active projectile/impact state and cleanup are checked separately.",
+			"samples": [
+				{
+					"elapsed": 0.0,
+					"impact_scale_error": 0.0,
+					"passed": true,
+					"position_error_world": 0.0,
+					"reference_position_error_world": 0.0
+				},
+				{
+					"elapsed": 0.073,
+					"impact_scale_error": 0.0,
+					"passed": true,
+					"position_error_world": 0.0,
+					"reference_position_error_world": 0.0
+				},
+				{
+					"elapsed": 0.304953380425771,
+					"impact_scale_error": 0.0,
+					"passed": true,
+					"position_error_world": 0.0,
+					"reference_position_error_world": 0.0
+				},
+				{
+					"elapsed": 0.43564768632253,
+					"impact_scale_error": 0.0,
+					"passed": true,
+					"position_error_world": 0.0,
+					"reference_position_error_world": 0.0
+				},
+				{
+					"elapsed": 0.55564768632253,
+					"impact_scale_error": 0.0,
+					"passed": true,
+					"position_error_world": 0.0,
+					"reference_position_error_world": 0.0
+				},
+				{
+					"elapsed": 0.81464768632253,
+					"impact_scale_error": 0.0,
+					"passed": true,
+					"position_error_world": 0.0,
+					"reference_position_error_world": 0.0
+				}
+			]
+		},
+		"pause": [
+			{
+				"fully_frozen": true,
+				"phase": 0.06,
+				"resume_exactly_one_release": true
+			},
+			{
+				"fully_frozen": true,
+				"phase": 0.399,
+				"resume_exactly_one_release": true
+			},
+			{
+				"fully_frozen": true,
+				"phase": 0.45,
+				"resume_exactly_one_release": true
+			},
+			{
+				"fully_frozen": true,
+				"phase": 0.9,
+				"resume_exactly_one_release": true
+			}
+		],
+		"release": [
+			{
+				"elapsed": 0.399,
+				"outcomes": [
+					{
+						"active": false,
+						"age": 0.0,
+						"controller_launches": 0,
+						"effect_launches": 0,
+						"impact_active": false,
+						"origin_error_world": 0.0,
+						"passed": true,
+						"position": "(0.0, 0.0, 0.0)",
+						"projectile_active": false,
+						"quantum": 10.0
+					},
+					{
+						"active": false,
+						"age": 0.0,
+						"controller_launches": 0,
+						"effect_launches": 0,
+						"impact_active": false,
+						"origin_error_world": 0.0,
+						"passed": true,
+						"position": "(0.0, 0.0, 0.0)",
+						"projectile_active": false,
+						"quantum": 0.0166666666666667
+					}
+				],
+				"passed": true
+			},
+			{
+				"elapsed": 0.4,
+				"outcomes": [
+					{
+						"active": true,
+						"age": 0.0,
+						"controller_launches": 1,
+						"effect_launches": 1,
+						"impact_active": false,
+						"origin_error_world": 0.000000133280039449346,
+						"passed": true,
+						"position": "(-1.704138, 0.980693, 1.762038)",
+						"projectile_active": true,
+						"quantum": 10.0
+					},
+					{
+						"active": true,
+						"age": 0.0,
+						"controller_launches": 1,
+						"effect_launches": 1,
+						"impact_active": false,
+						"origin_error_world": 0.000000133280039449346,
+						"passed": true,
+						"position": "(-1.704138, 0.980693, 1.762038)",
+						"projectile_active": true,
+						"quantum": 0.0166666666666667
+					}
+				],
+				"passed": true
+			},
+			{
+				"elapsed": 0.47,
+				"outcomes": [
+					{
+						"active": true,
+						"age": 0.0700000000000001,
+						"controller_launches": 1,
+						"effect_launches": 1,
+						"impact_active": false,
+						"origin_error_world": 0.000000133280039449346,
+						"passed": true,
+						"position": "(-1.932426, 0.96461, 2.110882)",
+						"projectile_active": true,
+						"quantum": 10.0
+					},
+					{
+						"active": true,
+						"age": 0.0700000000000001,
+						"controller_launches": 1,
+						"effect_launches": 1,
+						"impact_active": false,
+						"origin_error_world": 0.000000133280039449346,
+						"passed": true,
+						"position": "(-1.932426, 0.96461, 2.110882)",
+						"projectile_active": true,
+						"quantum": 0.0166666666666667
+					}
+				],
+				"passed": true
+			},
+			{
+				"elapsed": 0.9,
+				"outcomes": [
+					{
+						"active": true,
+						"age": 0.499999999999999,
+						"controller_launches": 1,
+						"effect_launches": 1,
+						"impact_active": true,
+						"origin_error_world": 0.000000133280039449346,
+						"passed": true,
+						"position": "(-2.514279, 0.8, 3.0)",
+						"projectile_active": false,
+						"quantum": 10.0
+					},
+					{
+						"active": true,
+						"age": 0.499999999999999,
+						"controller_launches": 1,
+						"effect_launches": 1,
+						"impact_active": true,
+						"origin_error_world": 0.000000133280039449346,
+						"passed": true,
+						"position": "(-2.514279, 0.8, 3.0)",
+						"projectile_active": false,
+						"quantum": 0.0166666666666667
+					}
+				],
+				"passed": true
+			},
+			{
+				"elapsed": 1.2,
+				"outcomes": [
+					{
+						"active": false,
+						"age": 0.633333333333334,
+						"controller_launches": 1,
+						"effect_launches": 1,
+						"impact_active": false,
+						"origin_error_world": 0.000000133280039449346,
+						"passed": true,
+						"position": "(-2.514279, 0.8, 3.0)",
+						"projectile_active": false,
+						"quantum": 10.0
+					},
+					{
+						"active": false,
+						"age": 0.633333333333334,
+						"controller_launches": 1,
+						"effect_launches": 1,
+						"impact_active": false,
+						"origin_error_world": 0.000000133280039449346,
+						"passed": true,
+						"position": "(-2.514279, 0.8, 3.0)",
+						"projectile_active": false,
+						"quantum": 0.0166666666666667
+					}
+				],
+				"passed": true
+			},
+			{
+				"elapsed": 2.0,
+				"outcomes": [
+					{
+						"active": false,
+						"age": 0.633333333333334,
+						"controller_launches": 1,
+						"effect_launches": 1,
+						"impact_active": false,
+						"origin_error_world": 0.000000133280039449346,
+						"passed": true,
+						"position": "(-2.514279, 0.8, 3.0)",
+						"projectile_active": false,
+						"quantum": 10.0
+					},
+					{
+						"active": false,
+						"age": 0.633333333333334,
+						"controller_launches": 1,
+						"effect_launches": 1,
+						"impact_active": false,
+						"origin_error_world": 0.000000133280039449346,
+						"passed": true,
+						"position": "(-2.514279, 0.8, 3.0)",
+						"projectile_active": false,
+						"quantum": 0.0166666666666667
+					}
+				],
+				"passed": true
+			}
+		],
+		"reset": [
+			{
+				"passed": true,
+				"phase": 0.06
+			},
+			{
+				"passed": true,
+				"phase": 0.399
+			},
+			{
+				"passed": true,
+				"phase": 0.45
+			},
+			{
+				"passed": true,
+				"phase": 0.9
+			},
+			{
+				"passed": true,
+				"phase": 1.3
+			}
+		]
+	},
+	"engine": "4.7.2-stable (official)",
+	"hashes": {
+		"assets/dual-fire-animations.json": "a05ac755f3a7c810cffb7ebfa02aeb6197d1d77add80412bd382ebc4e746610f",
+		"assets/foxfire-board.glb": "4257ac78a80ade3bbd328212c9341ecf9f775a7a8452aef7f8a2fc0875cfaa57",
+		"assets/spell-animations.json": "18b4c1b720cf9229527a2d97f0ede55c408d8e04f681dbc8a6337176aaeba9d9",
+		"attack_effects.gd": "f21dc6619e5815df935b28756e27a06a9e90ba4510cda40650447b29ec9248ba",
+		"board_controller.gd": "3602f7d665b4dae90db5b3eee3131bdc5c8694c8fc80d92ac6c41d507a5f61de",
+		"dual_fire_motion.gd": "18a59390b2f56094ca4b6d3135af2c809decdd75a9ffa6d0681e1c9a5c1f9f28",
+		"held_fire.gd": "1b6ce839683964289f5ef8250140a700a982fc58c34bc7cd1d2532ec55954358",
+		"held_fire.gdshader": "bec78e3a354d39ff6706b4f338ba450de9a43134a7f8a6388f0fe618fb085f03",
+		"spell_motion.gd": "7e7e7207a16b6a83004cbba03ef1d2a5d51db8ef0a45fa784fef0c21a6872203",
+		"ui.gd": "951daf59834eebd4f6948e1160da95dedccbfe837022c2a7e13de3f79a0c3fcd"
+	},
+	"integration_pending": false,
+	"passed": true,
+	"passed_count": 26,
+	"phase": "integrated",
+	"schema": 1,
+	"scope": "Independent headless state/clock/pose/component review. No GPU, frame-rate benchmark, gameplay damage or visual acceptance."
+}

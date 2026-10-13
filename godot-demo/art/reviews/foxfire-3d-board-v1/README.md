@@ -4,7 +4,8 @@
 
 ## 做了什么
 
-- 当前版本为**一手一火、左高右低的双火待机／双腿奔跑样板**。只参考火女上身控火的姿态关系，不复制她的漂浮移动；不采用旧的双手合托一球草稿。
+- 当前版本为**一手一火、左高右低的双火待机／双腿奔跑／火球普攻动画样板**。只参考火女上身控火的姿态关系，不复制她的漂浮移动；不采用旧的双手合托一球草稿。
+- 新待机有呼吸、轻微头部与尾巴跟随，双脚保持落地。攻击为左手蓄势、推出火球、收势并重新凝火；右手保留火焰。仅是普通攻击表现候选，不定义正式技能、冷却或伤害。
 - 同一个真实三维场景承载石台、山门、松树、狐火、相机和灯光。人物与环境共用透视、深度遮挡及实时阴影，不是往原棋盘上贴一张三维角色截图。
 - 保留 12×7 平面格子思路：角色仅沿 XZ 地面移动，Y 是视觉高度。点击落格、路径、转身、Idle/Run、起停混合、暂停和自动巡视可实际操作。
 - 加入有厚度的地基、石台阶、低噪声石材、层叠松枝、石灯与克制 UI；不占用 84 个可行走格。
@@ -23,8 +24,10 @@ Mac 安装 Godot 4.7 后，双击本目录 `launch.command`。也可以在 Godot
 | 1 / 2 / 3 | 沉浸透视 / 战术正交 / 俯瞰 |
 | 4 | 跟随角色的近景，观察尾巴、脚步与转身 |
 | G | 辅助格线开关 |
+| F / 火焰攻击按钮 | 停步后播放一次火球攻击；向面前的橙色示意点发射，没有敌人或伤害结算 |
+| 待机 / 火攻演示按钮 | 循环展示待机、攻击、回位；再点停止后续自动施法 |
 | 空格 | 暂停/继续，含骨骼动画 |
-| R | 归位，并停止自动巡视 |
+| R | 归位，取消动作，并清除火球、命中效果与自动演示 |
 | 自动漫游按钮 | 按固定路线往返，测试多个朝向与起停 |
 | Esc | 停止自动巡视，不退出已有其他游戏窗口 |
 
@@ -36,25 +39,37 @@ Mac 安装 Godot 4.7 后，双击本目录 `launch.command`。也可以在 Godot
 
 `assets/foxfire-board.glb` 是 [双动作制作资产](../../concepts/foxfire_imp/hunyuan_board_actor_v1/README.md)的原样副本：25 骨、50,789 三角形、原 3 张 4K 内嵌贴图。SHA-256：`4257ac78a80ade3bbd328212c9341ecf9f775a7a8452aef7f8a2fc0875cfaa57`。
 
-- GLB 中的原 Idle/Run 保留。当前播放 `dual_fire/DualFireIdle` 与 `dual_fire/DualFireRun`：从原动作复制，仅以小体积 `assets/dual-fire-animations.json` 覆盖六根手臂骨的轨道。左右手高低、前后分开，保留少量非同步微动；腿、躯干、尾巴继续原动画。
+- GLB 中的原 Idle/Run 保留。当前待机为 `spell/SpellIdle`（3 秒循环），攻击为 `spell/FlameAttack`（1.2 秒非循环，0.4 秒从左手发射），跑步仍为已认可的 `dual_fire/DualFireRun`，逐关键帧保持未改。
+- 新 `assets/spell-animations.json` 是 25 骨完整局部 TRS，每动作 75 轨道，不依赖上一个跑步姿势残留；两脚、下半身及根固定，攻击首尾对齐待机起点。模型、权重、贴图和原 GLB 不变。制作源、完整导出约定与重建入口见[待机与攻击候选](../../concepts/foxfire_imp/hunyuan_spell_v1/README.md)。
+- 既有 `assets/dual-fire-animations.json` 只覆盖原动作六根臂骨；保留旧 `dual_fire/DualFireIdle` 以便历史复验，但默认不再播放。启动加 `-- --legacy-motion` 可复验上版双火待机/跑步，无新攻击。
 - 制作源与完整数据约定见[双火动作候选](../../concepts/foxfire_imp/hunyuan_dual_fire_v1/README.md)。不重复保存完整模型；本地重新制作时从已有 Blender 工程载入再生成轻量补丁。
 - 两团火各自跟随本手的掌指挂点，采用有深度遮挡的三维火焰体、微小火星与弱掌光。运行、暂停、动作切换及归位由统一时钟控制，两火保持不同变化相位。不是两个球共同跟随角色原点或双手中点。
-- 去除源动画帧1的1/30秒导入前导段；Idle 根骨另有已记录的约0.155毫米世界位移闭环修正，其他非臂曲线按原相位保留。该修正不是重新制作腿部步态。
+- 动作时间去除源帧1的1/30秒导入前导段；原双火 Idle 的约0.155毫米根位移闭环修正仅为历史记录，新待机上下文见新候选说明。未重新制作跑步腿部步态。
 - 引擎整体缩放 1.65；移动 2.35 单位/秒，Run 0.65 倍播放。基于真实蒙皮脚底位移测量减少滑步，**不是 IK 锁足，也不保证完全零滑步**。
-- 未制作攻击、受击、退场、碰撞物理、布料或投射物命中；两手火焰仅是待机／移动展示，不代表战斗技能已接入，目前不具备替换整套战斗角色的动作条件。
+- 新火球与小型命中闪光已加入表现层：发射后左手熄火，0.72～1.2 秒重新凝火，右手持续留火；完整动作/火球/火星统一暂停与复位。发射事件只触发一次，过渡按最多1/60秒细分以免大步推进从旧姿势发射。投射物节点复用，无不断增长的粒子列表。
+- 未制作受击、退场、碰撞物理或布料；没有敌人命中判定、伤害、技能或正式战斗接入，目前不具备替换整套战斗角色的动作条件。
 - 宽袖、袍摆与尾巴仍有刚性；本轮目标是上棋盘的空间可信度与基础移动展示，不能把网格采样通过说成所有穿插已排除。
 
 ## 验证与证据
 
 实际 Godot 版本、渲染设备、逻辑/输入/几何检查和性能采样在 `reports/` 记录。作者静态与逐帧复审、程序注入输入、独立审查、用户真人体验是不同层级；本轮没有冒称用户已认可。
 
-### 当前双火版本
+### 当前待机 / 火攻版本
+
+- `reports/spell-logic.json` 逻辑13/13；`spell-input.json` 实际视口事件注入15/15，含F、按钮不穿透、暂停/恢复、R清理及控件边界。不是真人鼠标验收。
+- `spell-independent.json` 独立脚本26/26：两动作各75 TRS、全骨采样、原Run逐key不变、精确发射点、大步与细步一致、暂停恢复、移动互斥、复位和双手火焰状态。首次检查发现大步跨发射点的骨骼混合滞后，已修复后复验。组件8项包含在26项中，不重复累计。纯数值通过不等于动作审美通过。
+- 制作端逐帧实际脚部顶点不漂移、首尾蒙皮闭合、攻击首尾与待机起点一致；详见候选的 `build-report.json`。采样不能保证全身所有瞬时穿插都不存在。
+- 作者检查实机待机/攻击关键帧、完整按钮布局及8秒接触表；独立视觉审查抽查待机、蓄势、发射、收势与回位5帧，未见必须阻断展示的腕部反折、袖口塌陷或脚底悬浮。蓄势较轻、宽袖和尾巴仍有刚性，无手指细分，不宣称商业成品质量或真人连续播放通过。
+- `preview-spell.mp4` 为8秒120帧实机近景，展示待机与两次火攻；`preview-spell-contact.jpg` 是抽样，`preview-spell-ui.png` 是操作入口。视频按60Hz推进、15FPS保存，非插帧、非无缝循环。全部视频帧解码复验记录在 `spell-video.json`。
+- 本轮未重测多单位或整场战斗性能；下方59.92FPS是此前双火移动版本，不能冒充新增投射物的性能结果。
+
+### 已认可的双火移动基线
 
 - `reports/dual-fire.json` 作者专项10/10；`dual-fire-independent.json` 独立数值复核30/30。覆盖两动作、各自手骨父链挂点、单手扰动负对照、原身体曲线、混合途中暂停、两火及14颗火星/灯光/材质时钟、恢复与归位。不能据这些数值声称动作审美通过。
 - `dual-fire-logic.json` 逻辑13/13、`dual-fire-input.json` 真实视口事件注入9/9。正式游戏未修改，本轮没有运行其战斗验收。
 - `dual-fire-performance.json`：Apple M1、Metal Forward+、1440×900，8秒预热后约12秒720帧，平均59.92 FPS、帧间隔p95 17.648ms、中位1501 draw calls，仅此单角色。
 - 作者与独立视觉审查已看正/侧真实火焰及8秒接触表、前侧跑/背跑/返身/回正关键帧：双手分开、高低清楚，没有发现持续盖住眼口、共托成碗或明显袖口吞手的问题。纯侧面部分角度远手火与头部投影接近，背侧远手会正常被身体遮挡；并非全角度都能同时看见两团火。仍有宽袖/尾巴刚性、细节运动噪点，不宣称所有帧无穿插或完全无滑步，也不冒充真人连续播放验收。
-- `preview-dual-fire.png` 是当前正面实机图，`preview-dual-fire.mp4` 是8秒120帧实机片段，`preview-dual-fire-contact.jpg` 为抽样。录像按60Hz推进动作/相机/抗锯齿，仅保存15FPS，不做插帧；全部120帧编码后解码检查见 `dual-fire-video.json`。视频不是无缝循环。
+- `preview-dual-fire.png` 是上版正面实机图，`preview-dual-fire.mp4` 是上版8秒120帧实机片段，`preview-dual-fire-contact.jpg` 为抽样。录像按60Hz推进动作/相机/抗锯齿，仅保存15FPS，不做插帧；全部120帧编码后解码检查见 `dual-fire-video.json`。视频不是无缝循环。负责人已表示“还可以”，并授权本轮补待机及攻击，不等于正式游戏已采用。
 
 ### 无手火的历史基线
 
@@ -71,12 +86,14 @@ Mac 安装 Godot 4.7 后，双击本目录 `launch.command`。也可以在 Godot
 
 ```sh
 godot --headless --path . -- --verify --report=/tmp/fox-logic.json
-godot --headless --path . -- --dual-fire-verify --report=/tmp/fox-dual-fire.json
+godot --headless --path . --script res://verify_spell_independent.gd -- --report=/tmp/fox-spell.json
+godot --headless --path . -- --legacy-motion --dual-fire-verify --report=/tmp/fox-dual-fire.json
 godot --headless --path . --script verify_geometry.gd
 godot --path . -- --input-verify --report=/tmp/fox-input.json
 godot --path . -- --performance --report=/tmp/fox-performance.json
 godot --path . -- --capture=/tmp/fox.png --camera=4
 godot --path . -- --sequence=/tmp/fox-frames --camera=4 --auto --duration=8 --fps=15
+godot --path . -- --sequence=/tmp/fox-spell-frames --camera=4 --detail-size=4.2 --spell-demo --time=0 --duration=8 --fps=15 --hide-ui --grid=off
 python3 pack_preview.py /tmp/fox-frames /tmp/fox.gif --fps=15
 ```
 

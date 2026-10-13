@@ -1,0 +1,19 @@
+{
+  "audio" : false,
+  "bytes" : 2930499,
+  "decoded_frames" : 120,
+  "duration_seconds" : 8,
+  "encoder" : "macOS AVFoundation \/ H.264 High",
+  "file" : "preview-spell.mp4",
+  "first_frame_orientation_passed" : true,
+  "first_frame_rgb_mean_absolute_error_0_255" : 8.778343621399177,
+  "first_frame_vertical_flip_error_0_255" : 35.803530092592595,
+  "first_pts_seconds" : 0,
+  "fps" : 15,
+  "height" : 900,
+  "last_pts_seconds" : 7.9333333333333336,
+  "scope" : "Local encoding and all-frame decode verification; not a claim of new gameplay or animation acceptance.",
+  "source" : "120 original engine PNG frames; no interpolation",
+  "validation_png" : "\/private\/tmp\/foxfire-video-first-frame.png",
+  "width" : 1440
+}

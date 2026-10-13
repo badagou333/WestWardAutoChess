@@ -1,0 +1,67 @@
+{
+	"checks": [
+		{
+			"name": "相机投影拾取与格心一致",
+			"passed": true
+		},
+		{
+			"name": "真实视口输入分发接受地面点击",
+			"passed": true
+		},
+		{
+			"name": "空格暂停位置与骨骼播放",
+			"passed": true
+		},
+		{
+			"name": "空格恢复状态与动画速率",
+			"passed": true
+		},
+		{
+			"name": "点击后真实时钟抵达并切回Idle",
+			"passed": true
+		},
+		{
+			"name": "数字键切换镜头",
+			"passed": true
+		},
+		{
+			"name": "G键切换格线",
+			"passed": true
+		},
+		{
+			"name": "GUI按钮点击启动漫游且不穿透棋盘",
+			"passed": true
+		},
+		{
+			"name": "R归位停止漫游并清空路径",
+			"passed": true
+		},
+		{
+			"name": "新增动作按钮与原控件在视口内且互不重叠",
+			"passed": true
+		},
+		{
+			"name": "F键触发真实火攻动作",
+			"passed": true
+		},
+		{
+			"name": "起手暂停不偷偷发射火球",
+			"passed": true
+		},
+		{
+			"name": "恢复后仅发射一次并收回待机",
+			"passed": true
+		},
+		{
+			"name": "火攻按钮触发动画且不穿透为地面移动",
+			"passed": true
+		},
+		{
+			"name": "R键取消动作且清除残余火球",
+			"passed": true
+		}
+	],
+	"passed": true,
+	"rendering_method": "forward_plus",
+	"scope": "通过Input.parse_input_event向真实Godot视口注入点击和按键，验证GUI事件分发；不是真人鼠标/OS自动化验收"
+}

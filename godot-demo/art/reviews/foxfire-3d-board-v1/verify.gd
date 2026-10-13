@@ -106,6 +106,35 @@ func run_input(board: Node3D) -> Dictionary:
 	_key(KEY_R)
 	await tree.process_frame
 	_check(checks, "R归位停止漫游并清空路径", not board.auto_demo and board.current_cell == board.HOME and board.route.is_empty())
+	if board.spell_loaded:
+		var buttons: Array = board.hud.find_children("*", "Button", true, false)
+		var layout_ok := true
+		for index in range(buttons.size()):
+			var rect: Rect2 = buttons[index].get_global_rect()
+			layout_ok = layout_ok and board.get_viewport().get_visible_rect().encloses(rect)
+			for other in range(index + 1, buttons.size()):
+				layout_ok = layout_ok and not rect.intersects(buttons[other].get_global_rect())
+		_check(checks, "新增动作按钮与原控件在视口内且互不重叠", layout_ok)
+		_key(KEY_F)
+		await tree.process_frame
+		await tree.process_frame
+		_check(checks, "F键触发真实火攻动作", board.attacking and board.animation_player.current_animation == board.attack_animation)
+		_key(KEY_SPACE)
+		await tree.process_frame
+		var attack_before: float = board.attack_time
+		var launches_before: int = board.launch_count
+		await tree.create_timer(0.3).timeout
+		_check(checks, "起手暂停不偷偷发射火球", board.paused and is_equal_approx(board.attack_time, attack_before) and board.launch_count == launches_before)
+		_key(KEY_SPACE)
+		await tree.create_timer(1.8).timeout
+		_check(checks, "恢复后仅发射一次并收回待机", board.launch_count == 1 and not board.attacking and board.animation_player.current_animation == board.idle_animation)
+		_click(board.get_viewport().get_final_transform() * board.hud.attack_button.get_global_rect().get_center())
+		await tree.process_frame
+		await tree.process_frame
+		_check(checks, "火攻按钮触发动画且不穿透为地面移动", board.attacking and board.route.is_empty())
+		_key(KEY_R)
+		await tree.process_frame
+		_check(checks, "R键取消动作且清除残余火球", not board.attacking and not board.attack_effects.is_active() and board.launch_count == 0)
 	var passed := true
 	for check in checks:
 		passed = passed and check.passed

@@ -6,6 +6,8 @@ const Verifier = preload("res://verify.gd")
 const DualFireMotion = preload("res://dual_fire_motion.gd")
 const HeldFire = preload("res://held_fire.gd")
 const DualFireVerifier = preload("res://verify_dual_fire.gd")
+const SpellMotion = preload("res://spell_motion.gd")
+const AttackEffects = preload("res://attack_effects.gd")
 const COLS := 12
 const ROWS := 7
 const MOVE_SPEED := 2.35
@@ -32,6 +34,20 @@ var fire_lifts: Dictionary = {}
 var fire_sizes: Dictionary = {}
 var hand_left := -1
 var hand_right := -1
+var spell_loaded := false
+var spell_data: Dictionary = {}
+var attack_animation: StringName
+var attack_effects: Node3D
+var attacking := false
+var attack_time := 0.0
+var attack_duration := 1.2
+var release_time := 0.4
+var attack_released := false
+var attack_target := Vector3.ZERO
+var launch_count := 0
+var spell_demo := false
+var spell_wait := 2.4
+var attack_marker: Node3D
 var camera: Camera3D
 var grid: Node3D
 var marker: Node3D
@@ -91,6 +107,8 @@ func _ready() -> void:
 		grid.visible = str(options.grid) != "off"
 	if options.has("auto"):
 		set_auto(true)
+	if options.has("spell-demo"):
+		set_spell_demo(true)
 	if options.has("verify"):
 		call_deferred("_verify")
 	elif options.has("dual-fire-verify"):
@@ -183,6 +201,21 @@ func _build_actor() -> void:
 			dual_fire_loaded = true
 			animation_names.append_array([str(idle_animation), str(run_animation)])
 			_build_hand_fires()
+		if dual_fire_loaded and not options.has("legacy-motion"):
+			var spells: Dictionary = SpellMotion.install(animation_player, base_idle_animation)
+			if spells.has("error"):
+				push_error(str(spells.error))
+			else:
+				spell_loaded = true
+				spell_data = spells.data
+				idle_animation = spells.idle
+				attack_animation = spells.attack
+				release_time = spells.release
+				attack_duration = animation_player.get_animation(attack_animation).length
+				animation_names.append_array([str(idle_animation), str(attack_animation)])
+		attack_effects = AttackEffects.new()
+		add_child(attack_effects)
+		attack_effects.configure()
 		# One explicit animation/effect clock prevents a frame of socket lag and
 		# makes paused gameplay and deterministic captures agree.
 		animation_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
@@ -229,14 +262,73 @@ func _update_fire_sockets() -> void:
 		hand_fires[side].global_transform = Transform3D(basis, palm + Vector3.UP * float(fire_lifts[side]))
 
 func _step_visuals(delta: float) -> void:
-	if animation_player and not paused:
-		animation_player.advance(delta)
 	if not paused:
-		fire_elapsed += delta
+		if animation_player and is_zero_approx(delta):
+			animation_player.advance(0.0)
+		var remaining := delta
+		while remaining > 0.0000001:
+			# Advance cross-fades in bounded steps as well as splitting events.
+			# One large advance can retain the previous pose at a release boundary.
+			var step := minf(remaining, 1.0 / 60.0)
+			if attacking:
+				step = minf(step, (attack_duration if attack_released else release_time) - attack_time)
+			if animation_player:
+				animation_player.advance(step)
+			fire_elapsed += step
+			if attack_effects:
+				attack_effects.step(step)
+			remaining -= step
+			if attacking:
+				attack_time += step
+				if not attack_released and attack_time >= release_time - 0.000001:
+					_update_fire_sockets()
+					attack_effects.launch(hand_fires.L.global_position, attack_target)
+					attack_released = true
+					launch_count += 1
+				if attack_time >= attack_duration - 0.000001:
+					attacking = false
+					animation_player.play(idle_animation, 0.12)
 	_update_fire_sockets()
 	for side in hand_fires:
 		# A fixed independent phase prevents synchronized/mirrored flame flicker.
 		hand_fires[side].update_effect(fire_elapsed + (0.731 if side == "R" else 0.0), 0.0 if paused else delta, moving)
+		var amount := 1.0
+		if side == "L" and attacking:
+			amount = 1.0 + 0.22 * sin(clampf(attack_time / release_time, 0.0, 1.0) * PI) if not attack_released else smoothstep(0.72, attack_duration, attack_time)
+		var fire: Node3D = hand_fires[side]
+		fire.visible = str(options.get("fire", "on")) != "off" and amount > 0.005
+		fire.basis = fire.basis.scaled(Vector3.ONE * maxf(0.001, amount))
+	if attack_marker:
+		attack_marker.visible = attacking or (attack_effects != null and attack_effects.is_active())
+
+func request_attack() -> bool:
+	if not spell_loaded or paused or attacking or moving or not route.is_empty() or attack_effects.is_active():
+		return false
+	auto_demo = false
+	var ahead := actor.position + actor.global_basis.z * 2.4
+	ahead.x = clampf(ahead.x, -5.5, 5.5)
+	ahead.z = clampf(ahead.z, -3.0, 3.0)
+	if ahead.distance_to(actor.position) < 0.9:
+		var inward := (Vector3.ZERO - actor.position).normalized()
+		ahead = actor.position + inward * 2.4
+		actor.rotation.y = atan2(inward.x, inward.z)
+	var aim := ahead - actor.position
+	actor.rotation.y = atan2(aim.x, aim.z)
+	attack_target = Vector3(ahead.x, 0.8, ahead.z)
+	attack_marker.position = Vector3(ahead.x, 0.025, ahead.z)
+	attacking = true
+	attack_time = 0.0
+	attack_released = false
+	animation_player.speed_scale = 1.0
+	animation_player.play(attack_animation, 0.12)
+	_step_visuals(0.0)
+	return true
+
+func set_spell_demo(value: bool) -> void:
+	spell_demo = value and spell_loaded and not moving and route.is_empty()
+	spell_wait = 2.4
+	if spell_demo:
+		auto_demo = false
 
 func _find_animation_player(node: Node) -> AnimationPlayer:
 	if node is AnimationPlayer:
@@ -248,6 +340,9 @@ func _find_animation_player(node: Node) -> AnimationPlayer:
 	return null
 
 func _build_markers() -> void:
+	attack_marker = _ring("AttackTarget", Color(1.0, 0.46, 0.13, 0.75), 0.18)
+	add_child(attack_marker)
+	attack_marker.hide()
 	marker = _ring("Destination", Color(1.0, 0.65, 0.25, 0.9), 0.28)
 	add_child(marker)
 	marker.hide()
@@ -292,8 +387,9 @@ func _screen_cell(screen_position: Vector2) -> Vector2i:
 	return world_to_cell(hit) if hit != null else Vector2i(-1, -1)
 
 func request_move(target: Vector2i) -> bool:
-	if not valid_cell(target) or paused:
+	if not valid_cell(target) or paused or attacking:
 		return false
+	spell_demo = false
 	# Replan from the current edge endpoint, never snap a moving actor to a cell.
 	var start := current_cell
 	var retain: Array[Vector2i] = []
@@ -375,6 +471,13 @@ func _process(delta: float) -> void:
 func _step_simulation(delta: float) -> void:
 	if paused:
 		return
+	if attacking:
+		return
+	if spell_demo:
+		spell_wait -= delta
+		if spell_wait <= 0 and request_attack():
+			spell_wait = 2.0
+			return
 	if auto_demo and route.is_empty():
 		auto_wait -= delta
 		if auto_wait <= 0:
@@ -410,6 +513,8 @@ func _update_detail_camera() -> void:
 	camera.look_at(actor.position + Vector3(0, 0.65, 0), Vector3.UP)
 
 func _play(is_moving: bool) -> void:
+	if attacking:
+		return
 	moving = is_moving
 	if not animation_player:
 		return
@@ -428,7 +533,11 @@ func set_paused(value: bool) -> void:
 		hud.refresh()
 
 func set_auto(value: bool) -> void:
+	if attacking and value:
+		return
 	auto_demo = value
+	if value:
+		spell_demo = false
 	auto_wait = 0.0
 	if hud:
 		hud.refresh()
@@ -440,6 +549,14 @@ func toggle_grid() -> void:
 		hud.refresh()
 
 func reset_actor() -> void:
+	attacking = false
+	attack_time = 0.0
+	attack_released = false
+	launch_count = 0
+	spell_demo = false
+	spell_wait = 2.4
+	if attack_effects:
+		attack_effects.reset()
 	auto_demo = false
 	route.clear()
 	current_cell = HOME
@@ -477,6 +594,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			KEY_3: set_camera(3)
 			KEY_4: set_camera(4)
 			KEY_G: toggle_grid()
+			KEY_F: request_attack()
 			KEY_SPACE: set_paused(not paused)
 			KEY_R: reset_actor()
 			KEY_ESCAPE: set_auto(false)
@@ -564,15 +682,19 @@ func _percentile(values: Array[float], fraction: float) -> float:
 
 func _capture() -> void:
 	set_process(false)
+	var requested_clip := str(options.get("pose", "Idle")).to_lower()
 	if animation_player:
 		animation_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
-		var requested_clip := str(options.get("pose", "Idle")).to_lower()
 		var selected_clip := run_animation if requested_clip == "run" else idle_animation
 		if not str(selected_clip).is_empty():
 			animation_player.play(selected_clip, 0.0)
 			animation_player.seek(float(options.get("time", "0.6")), true)
 	fire_elapsed = float(options.get("time", "0.6"))
 	_step_visuals(0.0)
+	if requested_clip == "attack":
+		fire_elapsed = 0.0
+		request_attack()
+		_step_visuals(float(options.get("time", "0.4")))
 	if options.has("destination"):
 		var pair: PackedStringArray = str(options.destination).split(",")
 		if pair.size() == 2:
