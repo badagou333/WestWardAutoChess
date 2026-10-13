@@ -1,0 +1,68 @@
+{
+	"animations": [
+		"Idle",
+		"Run",
+		"dual_fire/DualFireIdle",
+		"dual_fire/DualFireRun",
+		"spell/SpellIdle",
+		"spell/FlameAttack",
+		"spell/FlameAttackRight"
+	],
+	"checks": [
+		{
+			"name": "真实角色资源已载入",
+			"passed": true
+		},
+		{
+			"name": "Run 与 Idle 动画具备",
+			"passed": true
+		},
+		{
+			"name": "84 个逻辑格与世界脚点双向一致",
+			"passed": true
+		},
+		{
+			"name": "越界目标拒绝",
+			"passed": true
+		},
+		{
+			"name": "寻路绕开阻挡且逐格相邻",
+			"passed": true
+		},
+		{
+			"name": "暂停冻结世界移动",
+			"passed": true
+		},
+		{
+			"name": "暂停期间拒绝改目标",
+			"passed": true
+		},
+		{
+			"name": "抵达目标格心并停止",
+			"passed": true
+		},
+		{
+			"name": "人物只在 XZ 平面移动",
+			"passed": true
+		},
+		{
+			"name": "中途改目标不瞬移",
+			"passed": true
+		},
+		{
+			"name": "中途重新寻路抵达新目标",
+			"passed": true
+		},
+		{
+			"name": "四镜头共用同一真实三维世界",
+			"passed": true
+		},
+		{
+			"name": "自动漫游持续真实走格",
+			"passed": true
+		}
+	],
+	"passed": true,
+	"rendering_method": "forward_plus",
+	"scope": "隔离三维候选的程序逻辑与资源检查；不替代图形点击、正常窗口视觉或性能验收"
+}

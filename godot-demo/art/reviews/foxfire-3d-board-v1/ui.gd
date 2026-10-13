@@ -94,7 +94,7 @@ func build(owner_node: Node3D) -> void:
 	row.add_child(spacer)
 	attack_button = _button("F  火焰攻击")
 	attack_button.pressed.connect(controller.request_attack)
-	attack_button.tooltip_text = "停步后发射一次火球；仅动画展示，没有伤害结算"
+	attack_button.tooltip_text = "停步后左右手轮流发射火球；仅动画展示，没有伤害结算"
 	row.add_child(attack_button)
 	spell_button = _button("待机 / 火攻演示")
 	spell_button.custom_minimum_size.x = 154
@@ -152,6 +152,7 @@ func refresh() -> void:
 	pause_button.text = "空格  继续" if controller.paused else "空格  暂停"
 	auto_button.text = "停止漫游" if controller.auto_demo else "自动漫游"
 	attack_button.disabled = not controller.spell_loaded or controller.paused or controller.moving or controller.attacking or controller.attack_effects.is_active()
+	attack_button.text = "F  %s手火攻" % ("左" if controller.next_attack_hand == "L" else "右")
 	spell_button.disabled = not controller.spell_loaded or controller.moving
 	spell_button.text = "停止动作演示" if controller.spell_demo else "待机 / 火攻演示"
 	auto_button.disabled = controller.attacking

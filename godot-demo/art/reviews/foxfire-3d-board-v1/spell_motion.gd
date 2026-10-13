@@ -16,7 +16,7 @@ static func install(player: AnimationPlayer, base_idle: StringName) -> Dictionar
 		if path.get_subname_count() == 1:
 			paths[str(path.get_subname(0))] = path
 	var library := AnimationLibrary.new()
-	for title in ["SpellIdle", "FlameAttack"]:
+	for title in ["SpellIdle", "FlameAttack", "FlameAttackRight"]:
 		var raw: Dictionary = data.clips.get(title, {})
 		var duration := float(raw.get("duration", 0.0))
 		if duration <= 0 or not raw.get("tracks") is Array:
@@ -66,11 +66,17 @@ static func install(player: AnimationPlayer, base_idle: StringName) -> Dictionar
 				if not seen.has(bone + "/" + property):
 					return {"error": "缺少完整骨骼姿势：" + bone + "/" + property}
 		library.add_animation(title, clip)
-	var events: Array = data.clips.FlameAttack.get("events", [])
-	if events.size() != 1 or events[0].get("name") != "release" or events[0].get("hand") != "L":
-		return {"error": "必须恰好包含一次左手发射事件"}
-	var release := float(events[0].get("time", -1))
-	if release <= 0 or release >= float(data.clips.FlameAttack.duration):
-		return {"error": "火球发射时刻无效"}
+	var releases: Dictionary = {}
+	var attacks := {"L": &"spell/FlameAttack", "R": &"spell/FlameAttackRight"}
+	for hand in attacks:
+		var title := "FlameAttack" if hand == "L" else "FlameAttackRight"
+		var events: Array = data.clips[title].get("events", [])
+		if events.size() != 1 or events[0].get("name") != "release" or events[0].get("hand") != hand:
+			return {"error": "攻击必须恰好包含一次本手发射事件：" + hand}
+		var release := float(events[0].get("time", -1))
+		if not is_finite(release) or release <= 0 or release >= float(data.clips[title].duration):
+			return {"error": "火球发射时刻无效"}
+		releases[hand] = release
 	player.add_animation_library("spell", library)
-	return {"idle": &"spell/SpellIdle", "attack": &"spell/FlameAttack", "data": data, "release": release}
+	return {"idle": &"spell/SpellIdle", "attack": attacks.L, "attacks": attacks,
+		"data": data, "release": releases.L, "releases": releases}

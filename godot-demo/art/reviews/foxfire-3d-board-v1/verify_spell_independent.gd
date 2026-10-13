@@ -5,6 +5,8 @@ extends SceneTree
 # Godot --headless --path <project> --script res://verify_spell_independent.gd -- --component-only
 # Omit --component-only for the final integrated report after assets are ready.
 const MODEL_SHA := "4257ac78a80ade3bbd328212c9341ecf9f775a7a8452aef7f8a2fc0875cfaa57"
+const BASELINE_COMMIT := "ae779e0"
+const REPOSITORY_PREFIX := "godot-demo/art/reviews/foxfire-3d-board-v1/"
 const SOURCE_FILES := ["assets/foxfire-board.glb", "assets/dual-fire-animations.json", "assets/spell-animations.json", "spell_motion.gd", "dual_fire_motion.gd", "board_controller.gd", "attack_effects.gd", "held_fire.gd", "held_fire.gdshader", "ui.gd"]
 var checks: Array[Dictionary] = []
 var details: Dictionary = {}
@@ -147,7 +149,7 @@ func sample(track: Dictionary, time: float) -> Variant:
 		return q(track.values[at]).slerp(q(track.values[next]), factor).normalized()
 	return v(track.values[at]).lerp(v(track.values[next]), factor)
 
-func json_hand_origin(board: Node3D, time: float) -> Vector3:
+func json_hand_origin(board: Node3D, time: float, hand: String = "L") -> Vector3:
 	var skeleton: Skeleton3D = board.skeleton
 	var positions: Array = []
 	var rotations: Array = []
@@ -157,20 +159,21 @@ func json_hand_origin(board: Node3D, time: float) -> Vector3:
 		positions.append(rest.origin)
 		rotations.append(rest.basis.get_rotation_quaternion())
 		scales.append(rest.basis.get_scale())
-	for track in board.spell_data.clips.FlameAttack.tracks:
+	var title := "FlameAttack" if hand == "L" else "FlameAttackRight"
+	for track in board.spell_data.clips[title].tracks:
 		var index := skeleton.find_bone(track.bone)
 		match str(track.path):
 			"translation": positions[index] = sample(track, time)
 			"rotation": rotations[index] = sample(track, time)
 			"scale": scales[index] = sample(track, time)
-	var index := skeleton.find_bone("hand.L")
+	var index := skeleton.find_bone("hand." + hand)
 	var chain := Transform3D(Basis(rotations[index]).scaled(scales[index]), positions[index])
 	index = skeleton.get_bone_parent(index)
 	while index >= 0:
 		chain = Transform3D(Basis(rotations[index]).scaled(scales[index]), positions[index]) * chain
 		index = skeleton.get_bone_parent(index)
-	var local_offset := v(board.dual_fire_data.palm_offsets.L.position)
-	return skeleton.global_transform * (chain * local_offset) + Vector3.UP * float(board.dual_fire_data.orbs.L.up_offset) * 1.65
+	var local_offset := v(board.dual_fire_data.palm_offsets[hand].position)
+	return skeleton.global_transform * (chain * local_offset) + Vector3.UP * float(board.dual_fire_data.orbs[hand].up_offset) * 1.65
 
 func board_tick(board: Node3D, delta: float) -> void:
 	board._step_simulation(delta)
@@ -187,7 +190,10 @@ func animation_tests(board: Node3D) -> void:
 	var player: AnimationPlayer = board.animation_player
 	var skeleton: Skeleton3D = board.skeleton
 	var reports: Dictionary = {}
-	for name in ["SpellIdle", "FlameAttack"]:
+	for name in ["SpellIdle", "FlameAttack", "FlameAttackRight"]:
+		if not player.has_animation("spell/" + name) or not board.spell_data.clips.has(name):
+			check(name + " is present in the installed animation library and source data", false)
+			continue
 		var clip := player.get_animation("spell/" + name)
 		var source: Dictionary = board.spell_data.clips[name]
 		var stats := {"rotation_error_max": 0.0, "translation_error_max": 0.0, "scale_error_max": 0.0, "pose_samples": 0, "track_count": source.tracks.size()}
@@ -225,8 +231,209 @@ func animation_tests(board: Node3D) -> void:
 		for key in baseline.track_get_key_count(track):
 			unchanged = unchanged and baseline.track_get_key_time(track, key) == actual.track_get_key_time(found, key) and baseline.track_get_key_value(track, key) == actual.track_get_key_value(found, key)
 	check("Spell installation leaves the prior dual-fire running animation exactly unchanged", unchanged)
+	var endpoint_reports: Array = []
+	player.play("spell/SpellIdle", 0.0)
+	player.seek(0.0, true)
+	player.advance(0.0)
+	var idle_pose := bones(skeleton)
+	for name in ["FlameAttack", "FlameAttackRight"]:
+		if not player.has_animation("spell/" + name):
+			continue
+		for time in [0.0, 1.2]:
+			player.play("spell/" + name, 0.0)
+			player.seek(time, true)
+			player.advance(0.0)
+			var error := transforms_error(idle_pose, bones(skeleton))
+			endpoint_reports.append({"clip": name, "time": time, "all_bone_transform_error": error, "passed": error < 0.00001})
+	check("Both attack start/end poses match the complete idle start pose", endpoint_reports.size() == 4 and endpoint_reports.all(func(item): return item.passed), endpoint_reports)
+	details.endpoints = endpoint_reports
 	ref_model.queue_free()
 	board.reset_actor()
+
+func baseline_tests(board: Node3D) -> void:
+	var output: Array = []
+	var repository := ProjectSettings.globalize_path("res://")
+	var status := OS.execute("git", ["-C", repository, "show", BASELINE_COMMIT + ":" + REPOSITORY_PREFIX + "assets/spell-animations.json"], output, true)
+	var old = JSON.parse_string(str(output[0])) if status == 0 and not output.is_empty() else null
+	var loaded: bool = old is Dictionary and old.get("clips") is Dictionary
+	check("Historical spell baseline is read directly from the pre-change Git commit", loaded, {"commit": BASELINE_COMMIT, "git_exit": status})
+	if loaded:
+		check("Original left attack data is exactly unchanged from the pre-change commit", old.clips.FlameAttack == board.spell_data.clips.FlameAttack)
+		check("Original idle data is exactly unchanged from the pre-change commit", old.clips.SpellIdle == board.spell_data.clips.SpellIdle)
+	output.clear()
+	status = OS.execute("git", ["-C", repository, "show", BASELINE_COMMIT + ":" + REPOSITORY_PREFIX + "assets/dual-fire-animations.json"], output, true)
+	var baseline_text := str(output[0]) if status == 0 and not output.is_empty() else ""
+	check("Prior dual-fire source, including Run, is byte-for-byte unchanged", status == 0 and not baseline_text.is_empty() and baseline_text == FileAccess.get_file_as_string("res://assets/dual-fire-animations.json"), {"commit": BASELINE_COMMIT, "git_exit": status, "historical_sha256": baseline_text.sha256_text()})
+
+func sequence_state(board: Node3D) -> Dictionary:
+	return {"hand": str(board.attack_hand), "next": str(board.next_attack_hand), "last": str(board.last_release_hand), "clip": str(board.attack_animation), "launches": board.launch_count}
+
+func prepare_hand(board: Node3D, hand: String) -> bool:
+	board.reset_actor()
+	if hand == "R":
+		if not board.request_attack():
+			return false
+		board_step_to(board, 2.0, 1.0 / 60.0)
+	return str(board.next_attack_hand) == hand and not board.attacking and not board.attack_effects.is_active()
+
+func alternating_tests(board: Node3D) -> void:
+	if not board.spell_data.clips.has("FlameAttackRight"):
+		check("Right attack is ready for alternating integration checks", false)
+		return
+	baseline_tests(board)
+	var events: Array = board.spell_data.clips.FlameAttackRight.get("events", [])
+	check("One right-hand release event is exactly at 0.4 seconds", events.size() == 1 and events[0].get("name") == "release" and events[0].get("hand") == "R" and absf(float(events[0].get("time", -1.0)) - 0.4) < 0.000001)
+	board.reset_actor()
+	var rounds: Array = []
+	for hand in ["L", "R", "L", "R"]:
+		var before: int = board.launch_count
+		var accepted: bool = board.request_attack()
+		var expected_clip := "spell/FlameAttack" if hand == "L" else "spell/FlameAttackRight"
+		var selected: bool = str(board.attack_hand) == hand and str(board.next_attack_hand) == hand and str(board.attack_animation) == expected_clip
+		var expected := json_hand_origin(board, 0.4, hand)
+		board_step_to(board, 0.399, 1.0 / 60.0)
+		var before_release: bool = board.launch_count == before and str(board.next_attack_hand) == hand
+		board_tick(board, 0.001)
+		var opposite := "R" if hand == "L" else "L"
+		var origin_error: float = board.attack_effects.origin.distance_to(expected)
+		var released: bool = board.launch_count == before + 1 and board.attack_effects.launch_count == before + 1 and str(board.last_release_hand) == hand and str(board.next_attack_hand) == opposite and origin_error < 0.00001
+		board_step_to(board, 1.6, 1.0 / 60.0)
+		var finished: bool = not board.attacking and board.launch_count == before + 1 and str(board.next_attack_hand) == opposite and str(board.animation_player.current_animation) == str(board.idle_animation)
+		rounds.append({"hand": hand, "accepted": accepted, "correct_clip_and_pending_hand": selected, "unchanged_before_release": before_release, "one_correct_release": released, "clean_idle_completion": finished, "origin_error_world": origin_error, "passed": accepted and selected and before_release and released and finished})
+	check("Four completed attacks follow L/R/L/R and advance the next hand only at release", rounds.size() == 4 and rounds.all(func(item): return item.passed), rounds)
+	details.alternating_rounds = rounds
+	var releases: Array = []
+	for elapsed in [0.399, 0.4, 0.47, 0.9, 1.2, 2.0]:
+		var outcomes: Array = []
+		for quantum in [10.0, 1.0 / 120.0]:
+			var prepared := prepare_hand(board, "R")
+			var accepted: bool = board.request_attack()
+			var expected := json_hand_origin(board, 0.4, "R")
+			board_step_to(board, elapsed, quantum)
+			var state: Dictionary = board.attack_effects.diagnostic_state()
+			var fired: bool = elapsed >= 0.4
+			var expected_count := 2 if fired else 1
+			var origin_error: float = state.origin.distance_to(expected) if fired else 0.0
+			var correct_sequence: bool = str(board.attack_hand) == "R" and str(board.next_attack_hand) == ("L" if fired else "R") and str(board.last_release_hand) == ("R" if fired else "L")
+			outcomes.append({"quantum": quantum, "passed": prepared and accepted and correct_sequence and board.launch_count == expected_count and state.launch_count == expected_count and origin_error < 0.00001, "origin_error_world": origin_error, "sequence": sequence_state(board), "active": state.active, "projectile_active": state.projectile_active, "impact_active": state.impact_active, "position": state.projectile_position, "age": state.age, "pose": bones(board.skeleton)})
+		var pose_error := transforms_error(outcomes[0].pose, outcomes[1].pose)
+		var agree: bool = outcomes[0].active == outcomes[1].active and outcomes[0].projectile_active == outcomes[1].projectile_active and outcomes[0].impact_active == outcomes[1].impact_active and outcomes[0].position.distance_to(outcomes[1].position) < 0.00001 and pose_error < 0.00001
+		for outcome in outcomes:
+			outcome.erase("pose")
+		releases.append({"elapsed": elapsed, "passed": agree and outcomes.all(func(item): return item.passed), "pose_error": pose_error, "outcomes": outcomes})
+	check("Right release uses its own JSON hand socket and agrees for large/120Hz steps", releases.all(func(item): return item.passed), releases)
+	details.right_release = releases
+	var pauses: Array = []
+	for phase in [0.06, 0.399, 0.45, 0.9]:
+		var prepared := prepare_hand(board, "R")
+		board.request_attack()
+		board_step_to(board, phase, 1.0 / 60.0)
+		var sequence := sequence_state(board)
+		board.set_paused(true)
+		var pose := bones(board.skeleton)
+		var effect := tree_state(board.attack_effects)
+		var left := tree_state(board.hand_fires.L)
+		var right := tree_state(board.hand_fires.R)
+		var state: Dictionary = board.attack_effects.diagnostic_state()
+		var time: float = board.attack_time
+		var fire_time: float = board.fire_elapsed
+		var rejected: bool = not board.request_attack()
+		board_step_to(board, 1.0, 1.0 / 30.0)
+		var frozen: bool = prepared and rejected and sequence == sequence_state(board) and transforms_error(pose, bones(board.skeleton)) == 0.0 and effect == tree_state(board.attack_effects) and left == tree_state(board.hand_fires.L) and right == tree_state(board.hand_fires.R) and state == board.attack_effects.diagnostic_state() and board.attack_time == time and board.fire_elapsed == fire_time
+		board.set_paused(false)
+		var unpause_keeps_sequence: bool = sequence == sequence_state(board)
+		board_step_to(board, 2.0, 1.0 / 60.0)
+		var once: bool = unpause_keeps_sequence and board.launch_count == 2 and board.attack_effects.launch_count == 2 and not board.attacking and str(board.next_attack_hand) == "L" and str(board.last_release_hand) == "R"
+		pauses.append({"phase": phase, "all_state_frozen": frozen, "resume_once_and_preserve_sequence": once})
+	check("Right windup/pre-release/flight/impact pauses freeze pose, flames, effects and sequence", pauses.all(func(item): return item.all_state_frozen), pauses)
+	check("Right resume preserves pending hand and never repeats the shot", pauses.all(func(item): return item.resume_once_and_preserve_sequence))
+	details.right_pause = pauses
+	var resets: Array = []
+	for hand in ["L", "R"]:
+		for phase in [0.06, 0.399, 0.45, 0.9, 1.3]:
+			var prepared := prepare_hand(board, hand)
+			board.request_attack()
+			board_step_to(board, phase, 1.0 / 60.0)
+			board.reset_actor()
+			var state: Dictionary = board.attack_effects.diagnostic_state()
+			var reset: bool = prepared and not board.attacking and board.attack_time == 0.0 and board.launch_count == 0 and str(board.next_attack_hand) == "L" and str(board.last_release_hand).is_empty() and not state.active and state.launch_count == 0 and state.age == 0.0 and board.hand_fires.L.visible and board.hand_fires.R.visible and not board.attack_marker.visible
+			var accepted: bool = board.request_attack()
+			board_tick(board, 0.4)
+			var first_left: bool = accepted and board.launch_count == 1 and str(board.last_release_hand) == "L" and str(board.next_attack_hand) == "R"
+			resets.append({"interrupted_hand": hand, "phase": phase, "reset_cleared_all_and_next_left": reset, "first_new_release_left": first_left, "passed": reset and first_left})
+	check("Reset cancels either hand in every phase, clears both effect clocks and restarts with L", resets.all(func(item): return item.passed), resets)
+	details.alternating_reset = resets
+	var rejections: Array = []
+	for hand in ["L", "R"]:
+		var prepared := prepare_hand(board, hand)
+		var before := sequence_state(board)
+		board.set_paused(true)
+		var paused_rejected: bool = not board.request_attack() and before == sequence_state(board)
+		board.set_paused(false)
+		var pause_roundtrip: bool = before == sequence_state(board)
+		board.request_move(Vector2i(7, 4))
+		board_tick(board, 0.04)
+		var moving_rejected: bool = board.moving and not board.request_attack() and before == sequence_state(board)
+		board_step_to(board, 10.0, 1.0 / 60.0)
+		var move_complete: bool = not board.moving and before == sequence_state(board)
+		var accepted: bool = board.request_attack()
+		board_tick(board, 0.2)
+		var pending := sequence_state(board)
+		var busy_rejected: bool = not board.request_attack() and not board.request_move(Vector2i(8, 4)) and pending == sequence_state(board) and str(board.next_attack_hand) == hand
+		board_tick(board, 0.2)
+		var after := sequence_state(board)
+		var after_release_rejected: bool = not board.request_attack() and after == sequence_state(board) and str(board.last_release_hand) == hand and str(board.next_attack_hand) == ("R" if hand == "L" else "L")
+		rejections.append({"hand": hand, "paused": paused_rejected, "pause_roundtrip": pause_roundtrip, "moving": moving_rejected, "move_completed_same_hand": move_complete, "busy_before_release": busy_rejected, "busy_after_release": after_release_rejected, "passed": prepared and accepted and paused_rejected and pause_roundtrip and moving_rejected and move_complete and busy_rejected and after_release_rejected})
+	check("Paused, moving and busy rejected requests never skip either hand", rejections.all(func(item): return item.passed), rejections)
+	details.rejections = rejections
+	var cancellations: Array = []
+	for hand in ["L", "R"]:
+		for phase in [0.0, 0.06, 0.399, 0.45, 0.9, 1.199]:
+			var prepared := prepare_hand(board, hand)
+			var initial_count: int = board.launch_count
+			board.request_attack()
+			board_step_to(board, phase, 1.0 / 60.0)
+			var before := sequence_state(board)
+			var effect: Dictionary = board.attack_effects.diagnostic_state()
+			board.cancel_attack()
+			var preserved: bool = not board.attacking and str(board.next_attack_hand) == before.next and str(board.last_release_hand) == before.last and board.launch_count == before.launches and effect == board.attack_effects.diagnostic_state()
+			var pending_projectile_rejects: bool = not effect.active or (not board.request_attack() and str(board.next_attack_hand) == before.next and board.launch_count == before.launches)
+			board_step_to(board, 2.0, 1.0 / 60.0)
+			var no_late_release: bool = board.launch_count == before.launches and board.attack_effects.launch_count == before.launches and not board.attack_effects.is_active()
+			var fired_before_cancel: bool = phase >= 0.4
+			var expected: String = ("R" if hand == "L" else "L") if fired_before_cancel else hand
+			var accepted: bool = board.request_attack()
+			board_tick(board, 0.4)
+			var resumed_correctly: bool = accepted and str(board.last_release_hand) == expected and board.launch_count == initial_count + (2 if fired_before_cancel else 1)
+			cancellations.append({"hand": hand, "phase": phase, "cancellation_preserves_sequence_and_launched_effect": preserved, "pending_projectile_rejects_without_skip": pending_projectile_rejects, "no_delayed_release": no_late_release, "next_release": str(board.last_release_hand), "expected_next_release": expected, "passed": prepared and preserved and pending_projectile_rejects and no_late_release and resumed_correctly})
+	check("Cancellation before release retries the same hand; cancellation after release retains the fired shot and next hand", cancellations.all(func(item): return item.passed), cancellations)
+	details.cancellations = cancellations
+	board.reset_actor()
+	board.set_spell_demo(true)
+	var loop_hands: Array = []
+	var previous_count := 0
+	for unused in 1200:
+		board_tick(board, 1.0 / 60.0)
+		if board.launch_count != previous_count:
+			loop_hands.append(str(board.last_release_hand))
+			previous_count = board.launch_count
+		if loop_hands.size() >= 4:
+			break
+	check("The existing automatic spell demonstration also releases L/R/L/R", loop_hands == ["L", "R", "L", "R"], loop_hands)
+	var flames: Array = []
+	for hand in ["L", "R"]:
+		for phase in [0.0, 0.2, 0.399, 0.4, 0.6, 0.72, 0.85, 1.0, 1.2]:
+			var prepared := prepare_hand(board, hand)
+			board.request_attack()
+			board_step_to(board, phase, 1.0 / 60.0)
+			var other := "R" if hand == "L" else "L"
+			var expected := 1.0 + 0.22 * sin(phase / 0.4 * PI) if phase < 0.4 else smoothstep(0.72, 1.2, phase)
+			var amount: float = board.hand_fires[hand].basis.get_scale().x / float(board.fire_sizes[hand])
+			var other_amount: float = board.hand_fires[other].basis.get_scale().x / float(board.fire_sizes[other])
+			var passed: bool = prepared and absf(amount - maxf(0.001, expected)) < 0.00001 and board.hand_fires[hand].visible == (expected > 0.005) and board.hand_fires[other].visible and absf(other_amount - 1.0) < 0.00001
+			flames.append({"hand": hand, "phase": phase, "expected_scale": expected, "actual_scale": amount, "other_hand_scale": other_amount, "passed": passed})
+	check("Only the casting flame vanishes at 0.4 and replenishes over 0.72–1.2 seconds", flames.all(func(item): return item.passed), flames)
+	details.alternating_flames = flames
 
 func integrated_tests() -> void:
 	var board = load("res://board_controller.gd").new()
@@ -309,9 +516,11 @@ func integrated_tests() -> void:
 	details.release = releases
 	details.pause = pause_reports
 	details.reset = resets
+	alternating_tests(board)
 	board.queue_free()
 
 func run() -> void:
+	details.test_runner_notes = ["First invocation found three GDScript type-inference errors in new test locals, before any assertions ran. Explicit bool/String annotations fixed the test fixture; no production code was changed. The headless rerun directs its log to /private/tmp because the sandbox cannot write the default user log directory."]
 	var before := hashes()
 	await component_tests()
 	if not options.has("component-only"):
@@ -320,8 +529,8 @@ func run() -> void:
 		if FileAccess.file_exists("res://assets/spell-animations.json"):
 			await integrated_tests()
 	check("Tested source files did not change during this run", before == hashes())
-	var result := {"schema": 1, "phase": "component-only" if options.has("component-only") else "integrated", "integration_pending": options.has("component-only"), "scope": "Independent headless state/clock/pose/component review. No GPU, frame-rate benchmark, gameplay damage or visual acceptance.", "engine": Engine.get_version_info().string, "created_at_utc": Time.get_datetime_string_from_system(true) + "Z", "hashes": before, "checks": checks, "details": details, "passed": checks.all(func(item): return item.passed), "passed_count": checks.filter(func(item): return item.passed).size(), "check_count": checks.size()}
-	var output := str(options.get("output", "/private/tmp/spell-component-independent.json" if options.has("component-only") else "res://reports/spell-independent.json"))
+	var result := {"schema": 2, "baseline_commit": BASELINE_COMMIT, "phase": "component-only" if options.has("component-only") else "alternating-integrated", "integration_pending": options.has("component-only"), "scope": "Independent headless state/clock/pose/component review. No GPU, frame-rate benchmark, gameplay damage or visual acceptance.", "engine": Engine.get_version_info().string, "created_at_utc": Time.get_datetime_string_from_system(true) + "Z", "hashes": before, "checks": checks, "details": details, "passed": checks.all(func(item): return item.passed), "passed_count": checks.filter(func(item): return item.passed).size(), "check_count": checks.size()}
+	var output := str(options.get("output", "/private/tmp/spell-component-independent.json" if options.has("component-only") else "res://reports/alternating-fire-independent.json"))
 	var file := FileAccess.open(output, FileAccess.WRITE)
 	file.store_string(JSON.stringify(result, "\t"))
 	print(JSON.stringify({"phase": result.phase, "passed": result.passed, "passed_count": result.passed_count, "check_count": result.check_count, "output": output}))

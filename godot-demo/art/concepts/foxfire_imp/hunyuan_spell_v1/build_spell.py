@@ -1,4 +1,4 @@
-"""Grounded spell idle and one left-hand fire cast, using the unchanged rig.
+"""Grounded spell idle and asymmetric left/right casts on the unchanged rig.
 
 Background Blender: --python build_spell.py -- --preview (pose gate)
 Then --build --render exports compact complete glTF TRS and QA key frames.
@@ -65,10 +65,11 @@ def idle_pose(rig,t):
         rotate_world(rig,f'tail_{i:02}',(0,0,1),(1.45-.13*i)*(math.sin(phase-lag)+math.sin(lag)))
     dual.dual_pose(rig,phase,False)
 
-def attack_pose(rig,t):
+def attack_pose(rig,t,side='L'):
     # The entire 1.2 s gesture starts/ends at idle t0. Preparation is slower
     # than the thrust; the release event is the outward acceleration at 0.4 s.
     yaw=interpolate(t,[(0,0),(.20,9.0),(.40,-9.5),(.50,-10.5),(.72,-3.5),(1.2,0)])
+    if side=='R': yaw=-yaw
     pitch=interpolate(t,[(0,0),(.20,-1.8),(.40,3.2),(.50,3.7),(.72,1.4),(1.2,0)])
     rotate_world(rig,'spine',(0,0,1),yaw*.45)
     rotate_world(rig,'chest',(0,0,1),yaw*.55)
@@ -89,18 +90,32 @@ def attack_pose(rig,t):
         (.40,(.10,-.32,.94)),(.50,(.10,-.43,.88)),(.72,(.16,-.82,.55)),(1.2,(.25,-.93,.27))])
     palm=interpolate(t,[(0,(-.74,-.10,.665)),(.20,(-.6,-.15,.79)),
         (.40,(-.10,-.96,.27)),(.50,(-.10,-.93,.32)),(.72,(-.40,-.65,.62)),(1.2,(-.74,-.10,.665))])
+    if side=='R':
+        # Start from the existing low waist-side hand, not a mirrored high-hand
+        # idle. Draw back, rise into a forward push, return to the same low hand.
+        target=interpolate(t,[(0,(-.28,-.20,.485)),(.20,(-.255,-.125,.535)),
+            (.40,(-.185,-.435,.565)),(.50,(-.185,-.440,.550)),
+            (.72,(-.245,-.265,.510)),(1.2,(-.28,-.20,.485))])
+        pole=interpolate(t,[(0,(-.225,-.055,.40)),(.20,(-.29,-.015,.425)),
+            (.40,(-.30,-.195,.425)),(.50,(-.30,-.205,.42)),(1.2,(-.225,-.055,.40))])
+        fingers=interpolate(t,[(0,(-.25,-.93,-.16)),(.20,(-.12,-.86,.32)),
+            (.40,(-.10,-.32,.94)),(.50,(-.10,-.43,.88)),(.72,(-.16,-.90,.18)),(1.2,(-.25,-.93,-.16))])
+        palm=interpolate(t,[(0,(.38,-.38,.844)),(.20,(.6,-.15,.79)),
+            (.40,(.10,-.96,.27)),(.50,(.10,-.93,.32)),(.72,(.40,-.45,.75)),(1.2,(.38,-.38,.844))])
     chest=rig.pose.bones['chest'].matrix@rig.data.bones['chest'].matrix_local.inverted()
-    rot=chest.to_quaternion(); shoulder=rig.pose.bones['upper_arm.L'].head.copy()
+    arm='upper_arm.'+side; forearm='forearm.'+side; hand='hand.'+side
+    rot=chest.to_quaternion(); shoulder=rig.pose.bones[arm].head.copy()
     elbow,wrist=dual.solve_elbow(shoulder,chest@target,chest@pole,
-        rig.data.bones['upper_arm.L'].length,rig.data.bones['forearm.L'].length)
-    dual.set_bone(rig,'upper_arm.L',elbow-shoulder,rot@Vector((0,-1,.15)))
-    dual.set_bone(rig,'forearm.L',wrist-elbow,rot@Vector((-.16,-.10,.98)))
-    dual.set_bone(rig,'hand.L',rot@fingers,rot@palm)
+        rig.data.bones[arm].length,rig.data.bones[forearm].length)
+    dual.set_bone(rig,arm,elbow-shoulder,rot@Vector((0,-1,.15)))
+    dual.set_bone(rig,forearm,wrist-elbow,rot@Vector((-.16 if side=='L' else .16,-.10,.98)))
+    dual.set_bone(rig,hand,rot@fingers,rot@palm)
 
 def pose_frames(scene,rig,mesh,base,source_action):
     bones=list(base); clips={}; report={}; idle_start=None; idle_matrices=None
     fixed=['root','pelvis','thigh.L','shin.L','foot.L','thigh.R','shin.R','foot.R']
-    for name,count,fn in [('SpellIdle',90,idle_pose),('FlameAttack',36,attack_pose)]:
+    for name,count,fn in [('SpellIdle',90,idle_pose),('FlameAttack',36,attack_pose),
+                          ('FlameAttackRight',36,lambda rig,t: attack_pose(rig,t,'R'))]:
         action=source_action.copy(); action.name=name; clear_curves(action)
         dual.bind(rig,action); previous={}; samples=[]; maximum_foot_vertex_drift=0
         for i in range(count+1):
@@ -125,7 +140,7 @@ def pose_frames(scene,rig,mesh,base,source_action):
             foot_drift=max((pts[j]-start[j]).length for j in foot_indices)
             maximum_foot_vertex_drift=max(maximum_foot_vertex_drift,foot_drift)
             assert foot_drift<1e-5,(name,i,'foot mesh drift',foot_drift)
-            if i in [0,count//4,count//2,3*count//4,count] or (name=='FlameAttack' and i in [6,12,15,22]):
+            if i in [0,count//4,count//2,3*count//4,count] or (name.startswith('FlameAttack') and i in [6,12,15,22]):
                 samples.append({'time':i/30,'hands':{s:hand_measure(rig,s) for s in ('L','R')},
                     'mesh_min_z':min(p.z for p in pts)})
         for curve in dual.fcurves(action):
@@ -143,13 +158,13 @@ def render_gate(scene,rig,clips):
     scene.render.resolution_x=scene.render.resolution_y=720; scene.cycles.samples=16
     scene.camera.data.ortho_scale=1.30
     orbs=dual.make_orbs()
-    gates=[('SpellIdle',1,'idle'),('FlameAttack',7,'windup'),('FlameAttack',13,'release'),('FlameAttack',19,'follow')]
+    gates=[('FlameAttackRight',7,'right-windup'),('FlameAttackRight',13,'right-release'),('FlameAttackRight',19,'right-follow')]
     for name,frame,label in gates:
         dual.bind(rig,clips[name]); scene.frame_set(frame); update(); dual.place_orbs(rig,orbs)
         # Left source flame disappears after release in the final runtime. Here
         # keep a ball at release to identify the launch origin, hide on follow.
-        orbs['L'].hide_render=(label=='follow')
-        for view,loc in ([('threequarter',(1.4,-3,1.25)),('side',(3,-.35,1.15))] if label=='release' else [('threequarter',(1.4,-3,1.25))]):
+        orbs['R'].hide_render=(label=='right-follow')
+        for view,loc in ([('threequarter',(-1.4,-3,1.25)),('side',(-3,-.35,1.15))] if label=='right-release' else [('threequarter',(-1.4,-3,1.25))]):
             scene.camera.location=loc
             scene.camera.rotation_euler=(Vector((0,-.10,.51))-scene.camera.location).to_track_quat('-Z','Y').to_euler()
             scene.render.filepath=str(BASE/f'gate-{label}-{view}.png'); bpy.ops.render.render(write_still=True)
@@ -188,8 +203,8 @@ def export(scene,rig,clips,report):
                     tracks[(bone,path)]={'bone':bone,'path':path,'interpolation':'LINEAR',
                         'times':[0,duration],'values':[value,value],'constant_from_gltf_node':True}
         out['clips'][name]={'duration':duration,'loop':name=='SpellIdle','tracks':list(tracks.values())}
-        if name=='FlameAttack':
-            out['clips'][name]['events']=[{'name':'release','time':.4,'hand':'L'}]
+        if name.startswith('FlameAttack'):
+            out['clips'][name]['events']=[{'name':'release','time':.4,'hand':'R' if name=='FlameAttackRight' else 'L'}]
             out['clips'][name]['recovery_complete_time']=duration
     assert set(out['clips'])==set(clips)
     (BASE/'spell-animations.json').write_text(json.dumps(out,separators=(',',':'))+'\n')
@@ -206,7 +221,9 @@ def main():
     clips,report=pose_frames(scene,rig,mesh,base,original)
     assert dual.curve_signature(original)==original_signature
     (BASE/'build-report.json').write_text(json.dumps({'mesh_rig_material_unchanged':True,
-        'source_actions_unchanged':True,'root_horizontal_drift':0,'events':[{'clip':'FlameAttack','name':'release','time':.4,'hand':'L'}],
+        'source_actions_unchanged':True,'root_horizontal_drift':0,'events':[
+            {'clip':'FlameAttack','name':'release','time':.4,'hand':'L'},
+            {'clip':'FlameAttackRight','name':'release','time':.4,'hand':'R'}],
         'clips':report},indent=2)+'\n')
     if '--build' in sys.argv: export(scene,rig,clips,report)
     if '--preview' in sys.argv or '--render' in sys.argv: render_gate(scene,rig,clips)

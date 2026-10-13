@@ -128,13 +128,16 @@ func run_input(board: Node3D) -> Dictionary:
 		_key(KEY_SPACE)
 		await tree.create_timer(1.8).timeout
 		_check(checks, "恢复后仅发射一次并收回待机", board.launch_count == 1 and not board.attacking and board.animation_player.current_animation == board.idle_animation)
+		_check(checks, "左手出手后按钮提示下一次右手", board.last_release_hand == "L" and board.next_attack_hand == "R" and "右" in board.hud.attack_button.text)
 		_click(board.get_viewport().get_final_transform() * board.hud.attack_button.get_global_rect().get_center())
 		await tree.process_frame
 		await tree.process_frame
-		_check(checks, "火攻按钮触发动画且不穿透为地面移动", board.attacking and board.route.is_empty())
+		_check(checks, "火攻按钮触发右手动画且不穿透为地面移动", board.attacking and board.attack_hand == "R" and board.route.is_empty())
+		await tree.create_timer(0.5).timeout
+		_check(checks, "右手火球释放后轮回左手且未出手火保持", board.launch_count == 2 and board.last_release_hand == "R" and board.next_attack_hand == "L" and not board.hand_fires.R.visible and board.hand_fires.L.visible)
 		_key(KEY_R)
 		await tree.process_frame
-		_check(checks, "R键取消动作且清除残余火球", not board.attacking and not board.attack_effects.is_active() and board.launch_count == 0)
+		_check(checks, "R键取消动作清除残余火球并重置首发左手", not board.attacking and not board.attack_effects.is_active() and board.launch_count == 0 and board.next_attack_hand == "L")
 	var passed := true
 	for check in checks:
 		passed = passed and check.passed

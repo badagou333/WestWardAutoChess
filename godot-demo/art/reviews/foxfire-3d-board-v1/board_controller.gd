@@ -37,6 +37,11 @@ var hand_right := -1
 var spell_loaded := false
 var spell_data: Dictionary = {}
 var attack_animation: StringName
+var attack_animations: Dictionary = {}
+var release_times: Dictionary = {}
+var attack_hand := "L"
+var next_attack_hand := "L"
+var last_release_hand := ""
 var attack_effects: Node3D
 var attacking := false
 var attack_time := 0.0
@@ -210,9 +215,11 @@ func _build_actor() -> void:
 				spell_data = spells.data
 				idle_animation = spells.idle
 				attack_animation = spells.attack
+				attack_animations = spells.attacks
+				release_times = spells.releases
 				release_time = spells.release
 				attack_duration = animation_player.get_animation(attack_animation).length
-				animation_names.append_array([str(idle_animation), str(attack_animation)])
+				animation_names.append_array([str(idle_animation), str(attack_animations.L), str(attack_animations.R)])
 		attack_effects = AttackEffects.new()
 		add_child(attack_effects)
 		attack_effects.configure()
@@ -282,9 +289,12 @@ func _step_visuals(delta: float) -> void:
 				attack_time += step
 				if not attack_released and attack_time >= release_time - 0.000001:
 					_update_fire_sockets()
-					attack_effects.launch(hand_fires.L.global_position, attack_target)
+					attack_effects.launch(hand_fires[attack_hand].global_position, attack_target)
 					attack_released = true
 					launch_count += 1
+					last_release_hand = attack_hand
+					# Consume the turn only when a projectile was actually released.
+					next_attack_hand = "R" if attack_hand == "L" else "L"
 				if attack_time >= attack_duration - 0.000001:
 					attacking = false
 					animation_player.play(idle_animation, 0.12)
@@ -293,7 +303,7 @@ func _step_visuals(delta: float) -> void:
 		# A fixed independent phase prevents synchronized/mirrored flame flicker.
 		hand_fires[side].update_effect(fire_elapsed + (0.731 if side == "R" else 0.0), 0.0 if paused else delta, moving)
 		var amount := 1.0
-		if side == "L" and attacking:
+		if side == attack_hand and attacking:
 			amount = 1.0 + 0.22 * sin(clampf(attack_time / release_time, 0.0, 1.0) * PI) if not attack_released else smoothstep(0.72, attack_duration, attack_time)
 		var fire: Node3D = hand_fires[side]
 		fire.visible = str(options.get("fire", "on")) != "off" and amount > 0.005
@@ -316,6 +326,10 @@ func request_attack() -> bool:
 	actor.rotation.y = atan2(aim.x, aim.z)
 	attack_target = Vector3(ahead.x, 0.8, ahead.z)
 	attack_marker.position = Vector3(ahead.x, 0.025, ahead.z)
+	attack_hand = next_attack_hand
+	attack_animation = attack_animations[attack_hand]
+	release_time = release_times[attack_hand]
+	attack_duration = animation_player.get_animation(attack_animation).length
 	attacking = true
 	attack_time = 0.0
 	attack_released = false
@@ -323,6 +337,18 @@ func request_attack() -> bool:
 	animation_player.play(attack_animation, 0.12)
 	_step_visuals(0.0)
 	return true
+
+func cancel_attack() -> void:
+	# Presentation interruption: preserve hand order and already released shots.
+	# A future battle controller can call this for a cancelled windup/recovery.
+	if not attacking:
+		return
+	attacking = false
+	attack_time = 0.0
+	attack_released = false
+	spell_demo = false
+	animation_player.play(idle_animation, 0.12)
+	_step_visuals(0.0)
 
 func set_spell_demo(value: bool) -> void:
 	spell_demo = value and spell_loaded and not moving and route.is_empty()
@@ -553,6 +579,12 @@ func reset_actor() -> void:
 	attack_time = 0.0
 	attack_released = false
 	launch_count = 0
+	attack_hand = "L"
+	next_attack_hand = "L"
+	last_release_hand = ""
+	if spell_loaded:
+		attack_animation = attack_animations.L
+		release_time = release_times.L
 	spell_demo = false
 	spell_wait = 2.4
 	if attack_effects:
