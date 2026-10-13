@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-13",
+  "passed": true,
+  "scope": "本机两个全新临时目录的冷导入/启动器验证，不替代另一台实体机器或Windows验收",
+  "copied_inputs": ["project.godot", "main.tscn", "board_controller.gd", "ui.gd", "verify.gd", "world_builder.gd", "assets/foxfire-board.glb"],
+  "excluded_inputs": [".godot", "*.import", "解包的PNG贴图"],
+  "glb_sha256": "4257ac78a80ade3bbd328212c9341ecf9f775a7a8452aef7f8a2fc0875cfaa57",
+  "manual_import": {
+    "directory": "/private/tmp/fox-cold-import.FEiWCp",
+    "command": "Godot --headless --editor --import --quit --path <temporary_project>",
+    "exit_code": 0,
+    "logic_checks_passed": 13,
+    "render_capture_exit_code": 0,
+    "capture": "/private/tmp/fox-cold-capture.png"
+  },
+  "launcher_import": {
+    "directory": "/private/tmp/fox-launch-cold.JimiaN",
+    "additional_input": "launch.command",
+    "command": "launch.command --headless -- --verify --report=<temporary_report>",
+    "exit_code": 0,
+    "logic_checks_passed": 13,
+    "details": "cold-start-logic.json"
+  },
+  "regenerated_textures_match_current_project": true,
+  "regenerated_texture_sha256": {
+    "foxfire-board_texture_pbr_20250901.png": "707fd1692826ee747b080da9bebd92fd82117f70d63cb4a6ff3dc8f9b24302d3",
+    "foxfire-board_texture_pbr_20250901_metallic-texture_pbr_20250901_roughness.png": "a4f317eb94a93f5eba43682e726f7c3a8970ffd6168c2017f919f1a215dcf878",
+    "foxfire-board_texture_pbr_20250901_normal.png": "0286b8c06dc792a17801ab2e3e959e456702fa0a8bcc4984082805d76c7991b8"
+  },
+  "animations": ["Idle", "Run"],
+  "current_project_assets_deleted": false,
+  "first_clone_requirement": "必须先由Godot编辑器导入；launch.command已自动执行headless import后再运行。"
+}

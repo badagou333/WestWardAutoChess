@@ -1,0 +1,2 @@
+# Preserve the third-party license verbatim, including its original CRLF and tabs.
+motion_source/License.txt -whitespace

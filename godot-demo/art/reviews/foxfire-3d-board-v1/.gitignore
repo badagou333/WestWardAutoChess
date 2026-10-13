@@ -1,0 +1,8 @@
+.godot/
+__pycache__/
+*.tmp
+drafts/
+capture_frames/
+# Embedded GLB textures are regenerated and SHA-checked by a clean Godot import.
+assets/foxfire-board_texture*.png
+assets/foxfire-board_texture*.png.import

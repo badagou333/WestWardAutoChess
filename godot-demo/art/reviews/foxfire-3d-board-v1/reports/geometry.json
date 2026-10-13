@@ -1,0 +1,80 @@
+{
+	"builder_sha256": "cdc4326126f44f924fe7bd81f5be8dc31620367a23197c9391d71ccd04829422",
+	"checks": [
+		{
+			"degenerate": 0,
+			"expected_degenerate": 0,
+			"failures": [],
+			"flat_failures": 0,
+			"flat_required": true,
+			"min_normal_exterior_dot": 0.592965483665466,
+			"min_normal_geometric_dot": 0.99999988079071,
+			"min_winding_exterior_dot": 0.592993140220642,
+			"name": "stone_block",
+			"nondegenerate": 40,
+			"normals_inward_or_invalid": 0,
+			"passed": true,
+			"triangles": 40,
+			"winding_inward_or_tangent": 0
+		},
+		{
+			"degenerate": 0,
+			"expected_degenerate": 0,
+			"failures": [],
+			"flat_failures": 0,
+			"flat_required": true,
+			"min_normal_exterior_dot": 0.598814606666565,
+			"min_normal_geometric_dot": 0.999999821186066,
+			"min_winding_exterior_dot": 0.598857343196869,
+			"name": "stone_tile",
+			"nondegenerate": 40,
+			"normals_inward_or_invalid": 0,
+			"passed": true,
+			"triangles": 40,
+			"winding_inward_or_tangent": 0
+		},
+		{
+			"degenerate": 0,
+			"expected_degenerate": 0,
+			"failures": [],
+			"flat_failures": 0,
+			"flat_required": true,
+			"min_normal_exterior_dot": 0.512255489826202,
+			"min_normal_geometric_dot": 0.999999821186066,
+			"min_winding_exterior_dot": 0.512265205383301,
+			"name": "landform",
+			"nondegenerate": 200,
+			"normals_inward_or_invalid": 0,
+			"passed": true,
+			"triangles": 200,
+			"winding_inward_or_tangent": 0
+		},
+		{
+			"degenerate": 14,
+			"expected_degenerate": 14,
+			"failures": [],
+			"flat_failures": 0,
+			"flat_required": false,
+			"min_normal_exterior_dot": 0.753122806549072,
+			"min_normal_geometric_dot": 0.654384434223175,
+			"min_winding_exterior_dot": 0.836023151874542,
+			"name": "rock",
+			"nondegenerate": 42,
+			"normals_inward_or_invalid": 0,
+			"passed": true,
+			"triangles": 56,
+			"winding_inward_or_tangent": 0
+		}
+	],
+	"godot": "4.7.2-stable (official)",
+	"method": "Actual generated mesh arrays. Godot clockwise front = -(b-a).cross(c-a). Independent exterior: +Y on top fans; radial XZ on block/landform sides; radial XYZ on sphere-derived rock. All actual vertex normals independently point exterior. Flat faces additionally agree with their own clockwise geometric normal.",
+	"negative_controls": {
+		"both_reversed_rejected": true,
+		"reversed_normals_rejected": true,
+		"reversed_winding_rejected": true
+	},
+	"passed": true,
+	"schema": 1,
+	"scope": "Headless geometry only; no GPU render, screenshot, lighting quality, gameplay, or visual acceptance. Rock pole degenerates are explicitly counted.",
+	"seed": 492861
+}
