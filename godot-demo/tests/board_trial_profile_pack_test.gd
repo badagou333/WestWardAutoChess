@@ -2,6 +2,7 @@ extends SceneTree
 ## Standalone so an absolute host script also runs against --main-pack.
 ## The source evidence is an external host file, never a bundled test resource.
 const Config = preload("res://scripts/data/board_trial_config.gd")
+const GroundProjection = preload("res://scripts/presentation/board_depth_projection.gd")
 const SUPPORT := [Vector2i(2,4),Vector2i(5,4),Vector2i(4,3),Vector2i(4,5),Vector2i(3,4),Vector2i(4,4)]
 const CLOCK_KEYS := ["pose","pose_time","animation_clock","attack_serial","attack_direction","facing","visual_alpha","dead","move_start","move_end","move_left","position","hit_pulse","hit_cooldown","impact_stop","landing","sample_walk_time","events"]
 var failures := 0
@@ -59,10 +60,14 @@ func natural(profile: String, formation: String, sampled: bool) -> void:
 		for index in Config.FRIENDS.size(): game.deployment[Config.FRIENDS[index]]=SUPPORT[index]-Vector2i.ONE
 		game._reset_roster()
 	else: game.load_formation(formation)
+	check(game.get_script().resource_path=="res://scripts/board_depth.gd","profile pack runs the actual main depth controller")
+	var stage=game.get("stage")
+	check(is_instance_valid(stage) and stage.get_script().resource_path=="res://scripts/presentation/board_depth_stage.gd" and stage.game==game and stage.get_parent()==game,"profile pack keeps the actual attached depth stage through roster rebuilds")
+	check(is_equal_approx(game.BODY_SCALE,0.9) and game.actors.all(func(actor): return actor.node.scale==Vector2.ONE*game.BODY_SCALE and actor.node.position==GroundProjection.center(actor.cell) and actor.node.position==game.display_center(actor.cell)),"profile pack has the actual 0.9 bodies at projected grid centers")
 	var view=game._record("guard_monk").node.presentation
 	check(view.get_script().resource_path=="res://scripts/presentation/board_trial_monk_view.gd","pack instantiates actual board-only monk adapter")
 	check(view.sample_body.get_size()==Vector2(3328,256) and view.sample_track.manifest.frames.size()==13,"pack actually loads thirteen-frame sample atlas and manifest")
-	check(is_equal_approx(view.impact_delay(),0.235) and game._record("guard_monk").node.scale==Vector2.ONE*0.72 and view.foot_anchor==Vector2.ZERO,"pack retains actual contact time/actor scale/foot origin")
+	check(is_equal_approx(view.impact_delay(),0.235) and game._record("guard_monk").node.scale==Vector2.ONE*game.BODY_SCALE and view.foot_anchor==Vector2.ZERO,"pack retains actual contact time and foot origin at the current depth body size")
 	check(game.actors.size()==(13 if profile=="bear" else 12) and game.actors.all(func(actor): return actor.walk==0.5 and actor.node.move_interval==0.5),"pack uses selected full roster and shared movement duration")
 	toggle_check(game,sampled,"deployment")
 	check(game.start_battle(),"pack starts actual profile formation "+profile+" "+formation)

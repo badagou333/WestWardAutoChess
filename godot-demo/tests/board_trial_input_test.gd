@@ -1,4 +1,5 @@
 extends SceneTree
+## Legacy rectangular-board visual/input regression; depth has its own entry.
 const Config = preload("res://scripts/data/board_trial_config.gd")
 var game
 var failures := 0
@@ -52,9 +53,8 @@ func press(code: Key) -> void:
 	root.push_input(event,true)
 	await frames()
 func choose_profile(index: int) -> void:
-	# Exercise the real OptionButton popup with complete keyboard events, never
-	# emit item_selected or invoke set_enemy_profile as a substitute for GUI input.
-	var previous: int=game.ui.profile_choice.selected
+	# Route through the root's real embedded-window dispatch; direct popup
+	# injection bypasses Window navigation. Never assign a profile or emit its signal.
 	var point: Vector2=game.ui.profile_choice.get_global_rect().get_center()
 	await settle(point)
 	# Keep the release in the same focused gesture: ordinary click() calls
@@ -75,28 +75,16 @@ func choose_profile(index: int) -> void:
 	var popup: PopupMenu=game.ui.profile_choice.get_popup()
 	check(popup.visible,"real enemy-profile popup opens during deployment")
 	if not popup.visible: return
+	check(popup.is_embedded(),"unchanged production profile popup uses the root's embedded-window event route")
 	popup.grab_focus()
 	await frames()
-	var direction: Key=KEY_DOWN if index>previous else KEY_UP
-	for offset in range(absi(index-previous)):
-		var event:=InputEventKey.new()
-		event.keycode=direction
-		event.pressed=true
-		popup.push_input(event,true)
-		await frames()
-		event=event.duplicate()
-		event.pressed=false
-		popup.push_input(event,true)
-		await frames()
-	var accept:=InputEventKey.new()
-	accept.keycode=KEY_ENTER
-	accept.pressed=true
-	popup.push_input(accept,true)
-	await frames()
-	accept=accept.duplicate()
-	accept.pressed=false
-	root.push_input(accept,true)
-	await frames()
+	# Focus is observed, not assigned; all navigation uses complete key gestures.
+	for attempt in popup.item_count+1:
+		if popup.get_focused_item()==index: break
+		await press(KEY_DOWN)
+	check(popup.get_focused_item()==index,"root keyboard navigation focuses requested actual profile row")
+	await press(KEY_ENTER)
+	check(not popup.visible and game.ui.profile_choice.selected==index,"root Enter activates and closes the actual profile popup")
 func check_profile(profile: String) -> void:
 	var report: Dictionary=game.report()
 	var specs: Array=Config.enemy_specs(profile)
@@ -142,11 +130,12 @@ func await_result() -> void:
 	check(game.phase==game.Phase.RESULT,"normal production frames reach result")
 func run() -> void:
 	root.size = Vector2i(1280,720)
-	game = load("res://scenes/board_trial.tscn").instantiate()
+	game = load("res://scenes/board_trial_legacy.tscn").instantiate()
 	root.add_child(game)
 	current_scene = game
 	game.audio_feedback.enabled = false
 	await frames()
+	check(game.get_script().resource_path=="res://scripts/board_trial.gd","legacy input test loads the original rectangular-board controller")
 	check(game.is_processing() and game.deployment.size()==6,"normal frames / no three-person limit")
 	check(game.BACKGROUND.get_size()==Vector2(1672,941) and game.BOARD_RECT==Rect2(220,190,1320,714),"full art texture and original exact geometry")
 	check(game.BACKGROUND_RECT==Rect2(0,-12,1920,1128),"only v2 background uses calibrated crop mapping")

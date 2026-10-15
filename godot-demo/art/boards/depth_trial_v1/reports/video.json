@@ -1,0 +1,21 @@
+{
+  "audio" : false,
+  "bytes" : 10974235,
+  "decoded_frames" : 300,
+  "duration_seconds" : 20,
+  "encoder" : "macOS AVFoundation \/ H.264 High",
+  "file" : "board-depth-final-v2.mp4",
+  "first_frame_direct_correlation" : 0.99497961557325099,
+  "first_frame_flipped_correlation" : 0.368374115280722,
+  "first_frame_orientation_passed" : true,
+  "first_frame_rgb_mean_absolute_error_0_255" : 6.6554855395518979,
+  "first_frame_vertical_flip_error_0_255" : 36.537101337448561,
+  "first_pts_seconds" : 0,
+  "fps" : 15,
+  "height" : 810,
+  "last_pts_seconds" : 19.933333333333334,
+  "scope" : "Local encoding and all-frame decode verification; not a claim of new gameplay or animation acceptance.",
+  "source" : "300 original engine PNG frames; no interpolation",
+  "validation_png" : "\/private\/tmp\/board-depth-video-first-frame.png",
+  "width" : 1440
+}

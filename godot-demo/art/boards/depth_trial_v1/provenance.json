@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-15",
+  "scope": "Fixed-camera native 2D board presentation; existing characters and battle rules retained",
+  "generator": "Built-in image_gen",
+  "assets": [
+    {"file": "woodland.png", "generated_date": "2026-10-14", "sha256": "7b568eb54ad25d18efa7dab24adcce833a4528940fdd615ca053196cd6ad1ed6", "prompt": "PROMPTS.txt#woodland", "processing": "Unmodified generated image; renderer scales/crops as environment backdrop"},
+    {"file": "limestone.png", "generated_date": "2026-10-14", "sha256": "ab3cc570e4961ed6afcc9666168d76280ef22fac1a9da1e5757df8f686528ac8", "prompt": "PROMPTS.txt#limestone", "processing": "Unmodified generated image; UV patches on programmatically projected slabs. Seamlessness not independently certified"}
+  ],
+  "review": {
+    "formation.png": "Actual final r2 PCK viewport capture",
+    "battle.png": "Actual final r2 PCK viewport capture, battle-05",
+    "preview.mp4": {"sha256": "e684928c59fee6b7c5f10d9d34d33c12df8068ba3b36968d8439aea7ee4e5681", "bytes": 10974235, "seconds": 20, "fps": 15, "frames": 300, "audio": false, "source": "Deterministic actual source-game viewport frames, no interpolation or repainting", "report": "reports/video.json"}
+  },
+  "limitations": ["Not a full directional character redraw", "Not a Windows or performance certification", "Existing project audio restricts this distribution to noncommercial use"],
+  "failed_attempts": ["Initial environment generation returned IP authorization error; explicit user retry then succeeded", "Initial PCK omitted new textures; exact export inclusions fixed and package tests rerun"]
+}

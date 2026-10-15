@@ -18,6 +18,7 @@ func load_game() -> void:
 	current_scene = game
 	game.audio_feedback.enabled = false
 	await frames()
+	check(game.get_script().resource_path=="res://scripts/board_depth.gd","healer input test loads the main depth controller")
 
 func source_compare() -> void:
 	var plate := Node2D.new()
@@ -78,7 +79,7 @@ func healing(direction: int) -> void:
 		elif view.frame_index==0 and view.pose_time>0.57: stage = "收势"
 		if stage.is_empty() or seen.has(stage): continue
 		check(view.facing==direction and signf(view.visual_transform().x.x)==direction*(-1 if view.frame_index==0 else 1),"actual selected source frame determines one mirror in "+stage)
-		check(healer.node.position==Config.center(healer.cell) and view.position==Vector2.ZERO and view.foot_anchor==Vector2.ZERO,"treatment never shifts root/local foot anchors")
+		check(healer.node.position==game.display_center(healer.cell) and view.position==Vector2.ZERO and view.foot_anchor==Vector2.ZERO,"treatment never shifts root/local foot anchors")
 		samples.append({"side":direction,"stage":stage,"frame":view.frame_index,"basis":view.visual_transform().x.x,"logical":view.facing,"time":game.elapsed,"hp":core.node.health})
 		seen[stage] = true
 		if stage=="接触": await capture("heal-right" if direction>0 else "heal-left")
@@ -93,7 +94,8 @@ func run() -> void:
 	await click(game.roster_buttons[4].get_global_rect().get_center())
 	check(game.ui.card_portraits[4].mirrored and game.ui.selected_portrait.mirrored,"actual idle source, both portrait locations flipped once")
 	await capture("deploy-healer-right")
-	await click(Config.center(Vector2i(0,6)))
+	await click(game.display_center(Vector2i(0,6)))
+	check(game.deployment.herbal_spirit_child==Vector2i(0,6) and game._record("herbal_spirit_child").cell==Vector2i(0,6) and game.selected.is_empty(),"real projected redeploy commits the healer's requested cell and releases selection")
 	check(game._record("herbal_spirit_child").node.presentation.facing==1 and signf(game._record("herbal_spirit_child").node.presentation.visual_transform().x.x)==-1,"real redeploy restores actual visual right")
 	await click(game.start_button.get_global_rect().get_center())
 	await press(KEY_P)

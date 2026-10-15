@@ -1,0 +1,42 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+SCRIPT ERROR: Parse Error: Preload file "res://art/boards/depth_trial_v1/woodland.png" does not exist.
+   at: GDScript::reload (res://scripts/presentation/board_depth_stage.gd:8)
+   GDScript backtrace (most recent call first):
+       [0] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_pack_boot.gd:12)
+SCRIPT ERROR: Parse Error: Preload file "res://art/boards/depth_trial_v1/limestone.png" does not exist.
+   at: GDScript::reload (res://scripts/presentation/board_depth_stage.gd:9)
+   GDScript backtrace (most recent call first):
+       [0] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_pack_boot.gd:12)
+SCRIPT ERROR: Compile Error: Failed to compile depended scripts.
+   at: GDScript::reload (res://scripts/board_depth.gd:0)
+   GDScript backtrace (most recent call first):
+       [0] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_pack_boot.gd:12)
+ERROR: Failed to load script "res://scripts/board_depth.gd" with error "Compilation failed".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)
+   GDScript backtrace (most recent call first):
+       [0] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_pack_boot.gd:12)
+SCRIPT ERROR: Invalid call. Nonexistent function 'new' in base 'GDScript'.
+   at: _ready (res://scripts/board_depth.gd:12)
+   GDScript backtrace (most recent call first):
+       [0] _ready (res://scripts/board_depth.gd:12)
+       [1] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_pack_boot.gd:13)
+ERROR: pack boots the actual attached depth stage, not inherited legacy constants
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_pack_boot.gd:9)
+       [1] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_pack_boot.gd:19)
+ERROR: pack actually loads both new depth-stage textures
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_pack_boot.gd:9)
+       [1] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/board_trial_pack_boot.gd:20)
+BOARD_PACK_A profile=bear victory=true seconds=18.6166666666663 TangHP=148.0
+BOARD_PACK_BOOT board_trial
+BOARD_PACK_BOOT escort_route
+BOARD_PACK_BOOT free_escort
+BOARD_PACK_BOOT main
+BOARD_PACK_BOOT monk_animation_trial
+BOARD_PACK_BOOT failures=2

@@ -1,5 +1,5 @@
 extends SceneTree
-# Historical twelve-actor technical fixtures explicitly use the legacy profile.
+# Historical rectangular fixtures use the legacy scene and enemy profile.
 # Default bear/profile balance coverage lives in the independent D002 suite.
 const Config = preload("res://scripts/data/board_trial_config.gd")
 var failures := 0
@@ -10,7 +10,8 @@ func check(ok: bool, label: String) -> void:
 		push_error(label)
 func _initialize() -> void: call_deferred("run")
 func fresh():
-	var game = load("res://scenes/board_trial.tscn").instantiate()
+	var game = load("res://scenes/board_trial_legacy.tscn").instantiate()
+	check(game.get_script().resource_path=="res://scripts/board_trial.gd","historical rectangular fixtures explicitly use the legacy controller")
 	game.enemy_profile = "legacy"
 	root.add_child(game)
 	game.set_process(false)

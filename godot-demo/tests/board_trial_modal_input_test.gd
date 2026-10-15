@@ -30,6 +30,7 @@ func run_case(size: Vector2i, in_battle: bool) -> void:
 	current_scene = game
 	game.audio_feedback.enabled = false
 	await frames()
+	check(game.get_script().resource_path=="res://scripts/board_depth.gd","modal input test loads the main depth controller")
 	if in_battle:
 		await click(game.start_button.get_global_rect().get_center())
 		await press(KEY_P)
@@ -40,17 +41,17 @@ func run_case(size: Vector2i, in_battle: bool) -> void:
 	check(game.ui.help_layer.visible,"real help button opens modal")
 	var before := snapshot()
 	# Inside help body and outside it over the actual board.
-	for point in [Vector2(960,500),Config.center(Vector2i(0,0))]:
+	for point in [Vector2(960,500),game.display_center(Vector2i(0,0))]:
 		for which in [MOUSE_BUTTON_LEFT,MOUSE_BUTTON_RIGHT,MOUSE_BUTTON_MIDDLE,MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN,MOUSE_BUTTON_XBUTTON1,MOUSE_BUTTON_XBUTTON2]:
 			await gesture(point,which)
 			unchanged(before,"full mouse "+str(which)+" "+str(point))
 	for control in [game.roster_buttons[0],game.start_button,game.retry_button,game.withdraw_button]:
 		await click(control.get_global_rect().get_center())
 		unchanged(before,"covered UI action")
-	await mouse(Config.center(game._record("guard_monk").cell),true,MOUSE_BUTTON_LEFT)
-	await settle(Config.center(Vector2i(0,6)))
+	await mouse(game.display_center(game._record("guard_monk").cell),true,MOUSE_BUTTON_LEFT)
+	await settle(game.display_center(Vector2i(0,6)))
 	var motion := InputEventMouseMotion.new()
-	motion.position = Config.center(Vector2i(0,6))
+	motion.position = game.display_center(Vector2i(0,6))
 	motion.global_position = motion.position
 	motion.button_mask = MOUSE_BUTTON_MASK_LEFT
 	motion.relative = Vector2(-100,100)

@@ -11,6 +11,7 @@ var evidence := []
 
 func profile_game(profile: String):
 	var game = load("res://scenes/board_trial.tscn").instantiate()
+	check(game.get_script().resource_path=="res://scripts/board_depth.gd","profile boundaries exercise the current main depth controller")
 	game.enemy_profile=profile
 	root.add_child(game)
 	game.set_process(false)
@@ -106,7 +107,7 @@ func bear_movement(mirrored: bool) -> void:
 		game._tick(Config.STEP)
 		ownership(game)
 	check(bear.cell==from and not bear.move.is_empty() and is_equal_approx(bear.move.time,0.25),"bear half step remains an in-flight segment")
-	check(bear.node.position.distance_to(Config.center(from).lerp(Config.center(to),0.5))<0.000001,"bear actual foot reaches exact half-step point")
+	check(bear.node.position.distance_to(game.display_center(from).lerp(game.display_center(to),0.5))<0.000001,"bear actual foot reaches exact half-step point")
 	check(game._occupant(from,guard.id).id==bear.id and game._occupant(to,guard.id).id==bear.id,"bear owns both endpoints throughout interpolation")
 	var before: Dictionary=game.report().duplicate(true)
 	var held: Dictionary=bear.move.duplicate(true)
@@ -117,7 +118,7 @@ func bear_movement(mirrored: bool) -> void:
 	for index in 30:
 		game._tick(Config.STEP)
 		ownership(game)
-	check(bear.cell==to and bear.step_completed==1 and bear.node.position==Config.center(to),"bear lands after one full 0.50-second segment")
+	check(bear.cell==to and bear.step_completed==1 and bear.node.position==game.display_center(to),"bear lands after one full 0.50-second segment")
 	# The guard starts on the first battle tick, one STEP later than the
 	# explicit bear request. Same speed does not imply simultaneous landing.
 	if not guard.move.is_empty():

@@ -1,5 +1,6 @@
 extends SceneTree
 ## May run from source, or by absolute script path with --main-pack <final.pck>.
+const GroundProjection = preload("res://scripts/presentation/board_depth_projection.gd")
 var failures := 0
 func _initialize() -> void: call_deferred("run")
 func check(ok: bool, label: String) -> void:
@@ -13,12 +14,14 @@ func run() -> void:
 		game.set_process(false)
 		game.audio_feedback.enabled = false
 		if name=="board_trial":
-			check(game.BACKGROUND.get_size()==Vector2(1672,941),"pack contains full courtyard background")
-			check(game.BACKGROUND_RECT==Rect2(0,-12,1920,1128),"pack includes v2-only background mapping")
+			check(game.get_script().resource_path=="res://scripts/board_depth.gd","pack main board instantiates the actual depth controller")
+			var stage=game.get("stage")
+			check(is_instance_valid(stage) and stage.get_script().resource_path=="res://scripts/presentation/board_depth_stage.gd" and stage.game==game and stage.get_parent()==game and stage.visible and stage.z_index<0,"pack boots the actual attached depth stage, not inherited legacy constants")
+			check(is_instance_valid(stage) and stage.BACKDROP!=null and stage.STONE!=null and stage.BACKDROP.get_width()>0 and stage.STONE.get_width()>0,"pack actually loads both new depth-stage textures")
 			check(game.ui.card_portraits.all(func(item): return item.texture!=null and item.cropped.get_size()==item.region.size),"pack actually loads all six cropped current production portraits")
 			check(game.ui.enemy_portraits.size()==4 and game.ui.enemy_portraits.all(func(item): return item.texture!=null) and game.ui.enemy_buttons.size()==7,"default pack loads four enemy portraits and seven specific inspection buttons")
 			check(game.actors.all(func(actor): return actor.node.presentation.facing==(1 if actor.friendly else -1)),"pack starts with confirmed default army directions")
-			check(game.BOARD_RECT==Rect2(220,190,1320,714),"pack keeps exact logical board geometry")
+			check(is_equal_approx(game.BODY_SCALE,0.9) and game.actors.all(func(actor): return actor.node.scale==Vector2.ONE*game.BODY_SCALE and actor.node.position==GroundProjection.center(actor.cell) and actor.node.position==game.display_center(actor.cell) and not actor.node.presentation.show_shadow),"pack uses the actual projected foot positions, 0.9 body size and dedicated ground shadows")
 			check(game.Config.COLS==12 and game.Config.ROWS==7 and game.actors.size()==13 and game.enemy_profile=="bear","pack boots the default six-friendly/seven-enemy bear roster")
 			check(game.Config.VERSION=="board-v5-bear" and game.RANGED_RULE=="ranged-step-target-20261009" and is_equal_approx(game.Config.MOVE_SECONDS_PER_CELL,0.5),"pack contains current profile-aware config and shared movement duration")
 			check(game.Melee.RULE=="melee-stepwise-20261009" and game.Stepwise!=null,"pack includes current melee rules and the actual stepwise planning module")

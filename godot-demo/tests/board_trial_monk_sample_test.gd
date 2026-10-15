@@ -14,7 +14,8 @@ class ActivityGame extends "res://scripts/board_trial.gd":
 		# Only labelled activity fixtures hold the other brains.
 
 func fresh():
-	var game=load("res://scenes/board_trial.tscn").instantiate()
+	var game=load("res://scenes/board_trial_legacy.tscn").instantiate()
+	check(game.get_script().resource_path=="res://scripts/board_trial.gd","historical monk sample geometry explicitly uses the rectangular 0.72 legacy controller")
 	game.enemy_profile="legacy"
 	root.add_child(game)
 	game.set_process(false)

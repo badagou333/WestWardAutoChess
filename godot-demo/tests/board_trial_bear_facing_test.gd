@@ -33,7 +33,8 @@ func equal(a,b) -> bool:
 	return a==b
 
 func fresh():
-	var game=load("res://scenes/board_trial.tscn").instantiate()
+	var game=load("res://scenes/board_trial_legacy.tscn").instantiate()
+	check(game.get_script().resource_path=="res://scripts/board_trial.gd","historical bear geometry explicitly uses the rectangular 0.72 legacy controller")
 	root.add_child(game)
 	game.set_process(false)
 	game.audio_feedback.enabled=false

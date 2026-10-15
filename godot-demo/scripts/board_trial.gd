@@ -80,6 +80,13 @@ func _active(actor: Dictionary) -> bool:
 func _hp(actor: Dictionary) -> float:
 	return float(actor.node.health) if _alive(actor) else 0.0
 
+func display_center(cell: Vector2i) -> Vector2:
+	# Presentation hook: logical cells, paths and combat ranges remain in Config.
+	return Config.center(cell)
+
+func display_cell_at(point: Vector2) -> Vector2i:
+	return Config.cell_at(point)
+
 func _reset_roster() -> void:
 	combat.clear(true)
 	audio_feedback.stop_all()
@@ -126,7 +133,7 @@ func _register(id: String, key: String, node, friendly: bool, cell: Vector2i) ->
 	if key=="guard_monk": node.presentation.set_motion_sample(monk_sample_enabled)
 	node.scale = Vector2.ONE*0.72
 	node.visible = Config.valid(cell)
-	node.position = Config.center(cell) if Config.valid(cell) else Vector2.ZERO
+	node.position = display_center(cell) if Config.valid(cell) else Vector2.ZERO
 	node.z_index = int(node.position.y)
 	_default_face(node,friendly)
 	var hud := Style.new()
@@ -195,7 +202,7 @@ func place(id: String, cell: Vector2i) -> bool:
 func _set_cell(actor: Dictionary, cell: Vector2i) -> void:
 	actor.cell = cell
 	actor.anchor = cell
-	actor.node.position = Config.center(cell) if Config.valid(cell) else Vector2.ZERO
+	actor.node.position = display_center(cell) if Config.valid(cell) else Vector2.ZERO
 	actor.node.z_index = int(actor.node.position.y)
 	actor.node.visible = Config.valid(cell)
 	_default_face(actor.node,actor.friendly)
@@ -318,7 +325,7 @@ func _move(actor: Dictionary, next: Vector2i) -> bool:
 	if Melee.applies(actor):
 		actor.move_serial += 1
 		actor.handoff = {}
-	actor.node.presentation.face(Config.center(next)-actor.node.position)
+	actor.node.presentation.face(display_center(next)-actor.node.position)
 	actor.node.presentation.move_to(Vector2.ZERO)
 	return true
 
@@ -456,10 +463,10 @@ func _tick(delta: float) -> void:
 		if is_instance_valid(actor.node): actor.node.tick_visual(delta)
 		if not _active(actor) or actor.move.is_empty(): continue
 		actor.move.time += delta
-		actor.node.position = Config.center(actor.move.from).lerp(Config.center(actor.move.to),minf(1,actor.move.time/actor.move.duration))
+		actor.node.position = display_center(actor.move.from).lerp(display_center(actor.move.to),minf(1,actor.move.time/actor.move.duration))
 		if actor.move.time+0.00000001>=actor.move.duration:
 			actor.cell = actor.move.to
-			actor.node.position = Config.center(actor.cell)
+			actor.node.position = display_center(actor.cell)
 			actor.move = {}
 			actor.step_completed = actor.step_serial
 			actor.think = 0.0 # Every mobile role re-evaluates on its own landing.
@@ -633,7 +640,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			pointer_drag = false
 		return
 	if not event is InputEventMouseButton or event.button_index!=MOUSE_BUTTON_LEFT: return
-	var cell := Config.cell_at(event.position)
+	var cell := display_cell_at(event.position)
 	if not Config.valid(cell):
 		if not event.pressed: pointer_drag = false # Failed off-board drop ends gesture, not selection.
 		return
@@ -680,7 +687,7 @@ func range_cells() -> Array[Vector2i]:
 	return result
 
 func hover_cell() -> Vector2i:
-	return Config.cell_at(get_global_mouse_position())
+	return display_cell_at(get_global_mouse_position())
 
 func _draw() -> void:
 	draw_texture_rect(BACKGROUND,BACKGROUND_RECT,false)
