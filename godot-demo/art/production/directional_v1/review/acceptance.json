@@ -1,0 +1,56 @@
+{
+  "completed_on": "2026-10-17",
+  "scope": "Author technical tests plus independent bounded static/visual review; playable directional key-pose candidate, not full animation sign-off",
+  "counts": {
+    "characters": 10,
+    "atlases": 13,
+    "sampled_poses": 160,
+    "source_direction_checks": 1212,
+    "pack_direction_checks": 1212,
+    "projection_checks": 6585,
+    "viewport_input_checks": 635,
+    "source_checks": 938,
+    "source_natural_runs": 24,
+    "pack_natural_runs": 24,
+    "pack_boot_entries": 5,
+    "pack_policy_files": 355,
+    "failures": 0
+  },
+  "visual": {
+    "author": "Actual source formation/battle frames, final move/attack keyframes and actual packaged frame inspected.",
+    "independent": "Six specified engine frames reviewed by separate read-only collaborator; no blocking cropping, atlas contamination, persistent severe floating or sudden gross scale errors observed.",
+    "samples": [
+      "frame-0000.png",
+      "frame-0021.png",
+      "frame-0023.png",
+      "frame-0027.png",
+      "frame-0055.png",
+      "frame-0190.png"
+    ],
+    "not_verified": [
+      "all actions continuously by a human",
+      "full alternating-leg cycle",
+      "Windows hardware",
+      "many-hardware performance",
+      "07 formal acceptance"
+    ]
+  },
+  "review_fixes": [
+    "Require all ten direction packages, not optional skip of missing roles",
+    "Package regression asserts directional adapter and all actual actors",
+    "Disable obsolete monk old/new UI toggle and F in new scene, preserve legacy"
+  ],
+  "evidence": {
+    "pack_sha256": "3545413442652e0058d6a8a9230d35758998e90fd81b3bb6e9b200d3c2aa634d",
+    "preview_sha256": "77e9d78beeef9be0cbfef66d9f42879af2308e0f429d146a24850cf4877c5354",
+    "preview_frames": 300,
+    "preview_seconds": 20,
+    "preview_fps": 15
+  },
+  "limitations": [
+    "Front/back three-quarter banks with horizontal mirroring = four visual facings, not independent eight directions.",
+    "Two locomotion key poses per facing, not a completed alternating run cycle.",
+    "Hand-painted pose details vary; mirrored asymmetrical equipment changes visible side.",
+    "Existing selected sound assets remain noncommercial."
+  ]
+}

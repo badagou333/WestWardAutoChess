@@ -1,0 +1,21 @@
+{
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "jobs": [
+    {
+      "key": "tangseng_fix",
+      "ref": "/Users/leqiong/.codex/generated_images/01a06044-bbe6-7b31-946a-f682ea53611a/exec-1be7afda-292b-445d-932c-f587be44603c.png",
+      "prompt": "Use case: precise-object-edit. Edit the supplied 4x4 transparent Tang Sanzang sprite atlas. Keep exactly the same 16 poses, camera, identity, costume, scale and position. Correct ONLY the erroneous duplicated monk staff: row 2 column 1 has TWO staffs, remove the floating extra vertical staff behind the extended empty blessing palm and keep ONLY the single staff physically gripped by the other hand. Row 4 column 1 also has TWO staffs, remove the extra floating staff behind the empty blessing palm, leaving ONLY the one staff gripped in the other hand. In every pose there is exactly ONE staff and two hands. Do not redesign or change any other pose. Preserve transparent alpha, no background, no shadow, no text."
+    },
+    {
+      "key": "sparrow_padding",
+      "ref": "/Users/leqiong/.codex/generated_images/01a06044-bbe6-7b31-946a-f682ea53611a/exec-3666d9db-5c57-4d40-bcf2-dbed34f24ae9.png",
+      "prompt": "Use case: precise-object-edit. Edit this exact transparent 4x4 sparrow spirit sprite atlas. ONLY repair framing: reduce EVERY character by the SAME 20 percent in its own existing cell, keep the 4x4 layout and original cell centers. Restore the missing feather tips on the top row so all head plumes are complete. Leave at least 10 percent fully transparent space between character silhouette and every cell edge. Nothing touches the canvas. Preserve identity, cel-shaded illustration style, blue/tan palette, camera elevated view, all 16 pose meanings and true rear views unchanged. Same body size in every pose, not variable. Transparent alpha background, no floor, no shadow, no text, no grid."
+    },
+    {
+      "key": "monk_walk_fix",
+      "ref": "/Users/leqiong/.codex/generated_images/01a06044-bbe6-7b31-946a-f682ea53611a/exec-615f4a6f-2621-4782-89d6-05c31fccc98b.png",
+      "prompt": "Use case: identity-preserve. Input is the exact guard monk character reference, yellow robe, white V collar, dark trousers, beaded belt, black-white badger, one long staff. Generate a NEW compact 2 by 2 transparent sprite sheet of ONLY FOUR WALKING poses. Top row: FRONT THREE-QUARTER walk toward screen lower-right. Bottom row: TRUE REAR THREE-QUARTER walk toward upper-right. Fixed orthographic camera elevated45 degrees, match source head and body proportions, all four figures same scale. These are TWO DISTINCT consecutive gait keyframes for each view: LEFT column is wide-stride CONTACT, BOTH legs visible spread front/back with the screen-right foot far forward and screen-left foot far back. RIGHT column is OPPOSITE CONTACT: screen-LEFT foot now far forward and screen-right foot far back; the feet MUST exchange positions through a walking stride. The torso stays facing the SAME direction between columns, do NOT horizontally mirror the whole character or reverse the staff, only swap which leg leads. Clear unequal opposing leg silhouettes, not two copies of a one-legged hop. Staff held steady diagonally at waist in both hands during walking, no doubled staff. Robe hem reveals both feet. Keep the established detailed clean hand-drawn cel-shaded design, consistent face/costume. Full bodies and staff in each cell with15% transparent margins, no text, no floor, no shadow, no effects."
+    }
+  ]
+}

@@ -1,0 +1,378 @@
+{
+  "schema": "board-directional-v1",
+  "character": "sparrow_spirit",
+  "atlas": "atlas.png",
+  "scale": 0.39,
+  "limitations": [
+    "Sixteen directional key poses, not a complete hand-animated cycle.",
+    "Region, contact feet and emission/socket metadata are hand-reviewed; PNG pixels are unchanged."
+  ],
+  "frames": [
+    {
+      "region": [
+        49,
+        44,
+        218,
+        284
+      ],
+      "foot": [
+        134,
+        266
+      ],
+      "feet": [
+        [
+          93,
+          271
+        ],
+        [
+          175,
+          254
+        ]
+      ],
+      "emission_socket": [
+        205,
+        195
+      ]
+    },
+    {
+      "region": [
+        345,
+        47,
+        222,
+        286
+      ],
+      "foot": [
+        153,
+        272
+      ],
+      "feet": [
+        [
+          153,
+          272
+        ]
+      ],
+      "emission_socket": [
+        211,
+        204
+      ]
+    },
+    {
+      "region": [
+        658,
+        49,
+        228,
+        286
+      ],
+      "foot": [
+        161,
+        276
+      ],
+      "feet": [
+        [
+          161,
+          276
+        ]
+      ],
+      "emission_socket": [
+        217,
+        201
+      ]
+    },
+    {
+      "region": [
+        996,
+        51,
+        190,
+        292
+      ],
+      "foot": [
+        103,
+        272
+      ],
+      "feet": [
+        [
+          47,
+          256
+        ],
+        [
+          155,
+          277
+        ]
+      ],
+      "emission_socket": [
+        180,
+        163
+      ]
+    },
+    {
+      "region": [
+        31,
+        367,
+        333,
+        263
+      ],
+      "foot": [
+        129,
+        243
+      ],
+      "feet": [
+        [
+          69,
+          238
+        ],
+        [
+          190,
+          248
+        ]
+      ],
+      "emission_socket": [
+        318,
+        94
+      ]
+    },
+    {
+      "region": [
+        418,
+        379,
+        200,
+        250
+      ],
+      "foot": [
+        101,
+        231
+      ],
+      "feet": [
+        [
+          62,
+          237
+        ],
+        [
+          141,
+          220
+        ]
+      ],
+      "emission_socket": [
+        190,
+        118
+      ]
+    },
+    {
+      "region": [
+        688,
+        412,
+        212,
+        205
+      ],
+      "foot": [
+        116,
+        188
+      ],
+      "feet": [
+        [
+          89,
+          187
+        ],
+        [
+          143,
+          179
+        ]
+      ],
+      "emission_socket": [
+        195,
+        150
+      ]
+    },
+    {
+      "region": [
+        978,
+        484,
+        232,
+        135
+      ],
+      "foot": [
+        115,
+        122
+      ],
+      "feet": [],
+      "emission_socket": [
+        210,
+        110
+      ]
+    },
+    {
+      "region": [
+        60,
+        665,
+        212,
+        245
+      ],
+      "foot": [
+        130,
+        233
+      ],
+      "feet": [
+        [
+          130,
+          233
+        ]
+      ],
+      "emission_socket": [
+        191,
+        189
+      ]
+    },
+    {
+      "region": [
+        379,
+        663,
+        215,
+        257
+      ],
+      "foot": [
+        109,
+        245
+      ],
+      "feet": [
+        [
+          109,
+          245
+        ]
+      ],
+      "emission_socket": [
+        202,
+        191
+      ]
+    },
+    {
+      "region": [
+        682,
+        662,
+        220,
+        249
+      ],
+      "foot": [
+        65,
+        236
+      ],
+      "feet": [
+        [
+          65,
+          236
+        ]
+      ],
+      "emission_socket": [
+        209,
+        190
+      ]
+    },
+    {
+      "region": [
+        1001,
+        673,
+        192,
+        253
+      ],
+      "foot": [
+        119,
+        224
+      ],
+      "feet": [
+        [
+          96,
+          240
+        ],
+        [
+          154,
+          202
+        ]
+      ],
+      "emission_socket": [
+        181,
+        151
+      ]
+    },
+    {
+      "region": [
+        36,
+        948,
+        333,
+        257
+      ],
+      "foot": [
+        178,
+        244
+      ],
+      "feet": [
+        [
+          178,
+          244
+        ]
+      ],
+      "emission_socket": [
+        321,
+        86
+      ]
+    },
+    {
+      "region": [
+        402,
+        962,
+        215,
+        252
+      ],
+      "foot": [
+        97,
+        240
+      ],
+      "feet": [
+        [
+          97,
+          240
+        ]
+      ],
+      "emission_socket": [
+        205,
+        140
+      ]
+    },
+    {
+      "region": [
+        677,
+        1000,
+        219,
+        201
+      ],
+      "foot": [
+        124,
+        187
+      ],
+      "feet": [
+        [
+          124,
+          187
+        ]
+      ],
+      "emission_socket": [
+        207,
+        167
+      ]
+    },
+    {
+      "region": [
+        973,
+        1048,
+        236,
+        155
+      ],
+      "foot": [
+        120,
+        136
+      ],
+      "feet": [],
+      "emission_socket": [
+        221,
+        108
+      ]
+    }
+  ]
+}

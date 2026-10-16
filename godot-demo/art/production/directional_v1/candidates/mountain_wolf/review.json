@@ -1,0 +1,62 @@
+{
+  "status": "adopted-with-clip-polygon-reference-only",
+  "character": "mountain_wolf",
+  "source": "../../mountain_wolf/atlas.png",
+  "source_original": "exec-7716129b-acc6-40cf-8777-84e578484602.png",
+  "size": [
+    1312,
+    1199
+  ],
+  "reason": "Adjacent major subjects have overlapping bounding rectangles. A single rectangle cannot isolate each full pose.",
+  "overlaps": [
+    {
+      "frames": [
+        4,
+        5
+      ],
+      "bounds": [
+        [
+          23,
+          326,
+          391,
+          586
+        ],
+        [
+          382,
+          332,
+          642,
+          583
+        ]
+      ]
+    },
+    {
+      "frames": [
+        6,
+        7
+      ],
+      "bounds": [
+        [
+          647,
+          407,
+          960,
+          588
+        ],
+        [
+          953,
+          431,
+          1292,
+          587
+        ]
+      ]
+    }
+  ],
+  "pixel_editing": "none",
+  "recommended_repair": "Resolved without pixel edits: the runtime package uses per-frame convex clip_polygon UV geometry, preserving the entire source subject and excluding neighboring subjects.",
+  "resolution_manifest": "../../mountain_wolf/manifest.json",
+  "deduplication": {
+    "sha256": "7836ca783bce8c95350a123f9f29a175c2fdba1a5815e74d85c82cc4fd620ad6",
+    "reason": "The former candidate source and adopted runtime atlas were byte-identical. The candidate duplicate was moved, not deleted; the runtime atlas remains the repository source of truth.",
+    "local_backup": "/tmp/directional-source-backup.PVUKgn/mountain_wolf-source.png",
+    "recovery": "Copy ../../mountain_wolf/atlas.png back to this directory as source.png if the old candidate layout is needed. The temporary backup is an additional local copy, not required for recovery."
+  }
+}

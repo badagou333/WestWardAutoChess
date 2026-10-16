@@ -1,9 +1,14 @@
 extends RefCounted
-## Affine ground projection only. Combat retains its integer 12 by 7 board.
+## Frontal orthographic ground plane, pitched 45 degrees down from the horizon.
+## X is exactly horizontal; ground-depth Y is compressed by sin(45 degrees).
+## This is display projection only. Combat retains its integer 12 by 7 board.
 const Config = preload("res://scripts/data/board_trial_config.gd")
-const ORIGIN := Vector2(234,406)
-const U := Vector2(92,-17)
-const V := Vector2(29,54)
+const CAMERA_PITCH_DEGREES := 45.0
+const TILE_WIDTH := 106.0
+const DEPTH_RATIO := 0.7071067811865476
+const ORIGIN := Vector2(246,274)
+const U := Vector2(TILE_WIDTH,0)
+const V := Vector2(0,TILE_WIDTH*DEPTH_RATIO)
 
 static func point(grid: Vector2) -> Vector2:
 	return ORIGIN+U*grid.x+V*grid.y

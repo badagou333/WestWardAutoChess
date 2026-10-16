@@ -116,7 +116,7 @@ func all_cell_gestures() -> void:
 		print("BOARD_DEPTH_INPUT_ROW ",row+1," cells=",cells_exercised)
 	await press(KEY_1)
 	var before: Dictionary=game.deployment.duplicate()
-	for point in [GroundProjection.point(Vector2(0,3))+Vector2(0,20),GroundProjection.point(Vector2(6,7))+Vector2(0,20),GroundProjection.point(Vector2(-.25,-.25))]:
+	for point in [GroundProjection.point(Vector2(0,3))+Vector2(-20,0),GroundProjection.point(Vector2(6,7))+Vector2(0,20),GroundProjection.point(Vector2(-.25,-.25))]:
 		await click(point)
 		check(game.hover_cell()==Vector2i(-1,-1) and game.deployment==before and game.selected=="tangseng","visible platform sides and off-board point never deploy or discard selection")
 	await cell_click(Vector2i(0,0),MOUSE_BUTTON_RIGHT)

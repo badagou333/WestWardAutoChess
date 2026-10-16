@@ -1,0 +1,1680 @@
+{
+  "role_count": 10,
+  "frame_count": 160,
+  "roles": [
+    {
+      "character": "bear_lord",
+      "scale": 0.86,
+      "manifest_sha256": "63c252a1310749b90ae98bea329ca973a5f62443b2752e2938f0c537bb104c85",
+      "frame_count": 16,
+      "frames": [
+        {
+          "index": 0,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 22501,
+          "complete_subject_pixels": 22501
+        },
+        {
+          "index": 1,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 20486,
+          "complete_subject_pixels": 20486
+        },
+        {
+          "index": 2,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 20077,
+          "complete_subject_pixels": 20077
+        },
+        {
+          "index": 3,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 22104,
+          "complete_subject_pixels": 22104
+        },
+        {
+          "index": 4,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 23955,
+          "complete_subject_pixels": 23955
+        },
+        {
+          "index": 5,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 23996,
+          "complete_subject_pixels": 23996
+        },
+        {
+          "index": 6,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 21815,
+          "complete_subject_pixels": 21815
+        },
+        {
+          "index": 7,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 22240,
+          "complete_subject_pixels": 22240
+        },
+        {
+          "index": 8,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 22172,
+          "complete_subject_pixels": 22172
+        },
+        {
+          "index": 9,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 20405,
+          "complete_subject_pixels": 20405
+        },
+        {
+          "index": 10,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 20850,
+          "complete_subject_pixels": 20850
+        },
+        {
+          "index": 11,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 25152,
+          "complete_subject_pixels": 25152
+        },
+        {
+          "index": 12,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 21306,
+          "complete_subject_pixels": 21306
+        },
+        {
+          "index": 13,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 20939,
+          "complete_subject_pixels": 20939
+        },
+        {
+          "index": 14,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 18432,
+          "complete_subject_pixels": 18432
+        },
+        {
+          "index": 15,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 20246,
+          "complete_subject_pixels": 20246
+        }
+      ],
+      "images": [
+        {
+          "file": "godot-demo/art/production/directional_v1/bear_lord/atlas.png",
+          "sha256": "8a234c00eeaa8bc4c0edac3433f3fe6769229f4a69a291190d1d770b146ac4ed",
+          "size": [
+            1254,
+            1254
+          ],
+          "alpha_range": [
+            0,
+            255
+          ],
+          "canvas_edge_visible_pixels": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "visible_pixels_outside_regions": 0,
+          "explicitly_replaced_original_pixels": 0,
+          "unexplained_visible_pixels_outside_regions": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Pixel containment only; foot/emission landmarks are manual, not an anatomy or animation acceptance test."
+    },
+    {
+      "character": "boar",
+      "scale": 0.59,
+      "manifest_sha256": "1fc5e8dc4bf17fce08cf21d250feed92ca391950c613f3c280157130ee83bd8b",
+      "frame_count": 16,
+      "frames": [
+        {
+          "index": 0,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 22789,
+          "complete_subject_pixels": 22789
+        },
+        {
+          "index": 1,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 22395,
+          "complete_subject_pixels": 22395
+        },
+        {
+          "index": 2,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 21829,
+          "complete_subject_pixels": 21829
+        },
+        {
+          "index": 3,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 22874,
+          "complete_subject_pixels": 22874
+        },
+        {
+          "index": 4,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 21402,
+          "complete_subject_pixels": 21402
+        },
+        {
+          "index": 5,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 23064,
+          "complete_subject_pixels": 23064
+        },
+        {
+          "index": 6,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 20483,
+          "complete_subject_pixels": 20483
+        },
+        {
+          "index": 7,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 19596,
+          "complete_subject_pixels": 19596
+        },
+        {
+          "index": 8,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 23080,
+          "complete_subject_pixels": 23080
+        },
+        {
+          "index": 9,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 22793,
+          "complete_subject_pixels": 22793
+        },
+        {
+          "index": 10,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 22790,
+          "complete_subject_pixels": 22790
+        },
+        {
+          "index": 11,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 23195,
+          "complete_subject_pixels": 23195
+        },
+        {
+          "index": 12,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 20232,
+          "complete_subject_pixels": 20232
+        },
+        {
+          "index": 13,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 20579,
+          "complete_subject_pixels": 20579
+        },
+        {
+          "index": 14,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 20290,
+          "complete_subject_pixels": 20290
+        },
+        {
+          "index": 15,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 19446,
+          "complete_subject_pixels": 19446
+        }
+      ],
+      "images": [
+        {
+          "file": "godot-demo/art/production/directional_v1/boar/atlas.png",
+          "sha256": "558465c7e441bb38dd90800ebd89e08ddc15c2d20e7d15b95b0be415f48627d1",
+          "size": [
+            1254,
+            1254
+          ],
+          "alpha_range": [
+            0,
+            255
+          ],
+          "canvas_edge_visible_pixels": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "visible_pixels_outside_regions": 0,
+          "explicitly_replaced_original_pixels": 0,
+          "unexplained_visible_pixels_outside_regions": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Pixel containment only; foot/emission landmarks are manual, not an anatomy or animation acceptance test."
+    },
+    {
+      "character": "foxfire_imp",
+      "scale": 0.37,
+      "manifest_sha256": "221216f2fc66a94ddb260eb69345655fba571c875d3a85bbfcaed29bc001f3c5",
+      "frame_count": 16,
+      "frames": [
+        {
+          "index": 0,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 33441,
+          "complete_subject_pixels": 33441
+        },
+        {
+          "index": 1,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 33607,
+          "complete_subject_pixels": 33607
+        },
+        {
+          "index": 2,
+          "atlas": "move-atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 219838,
+          "complete_subject_pixels": 219838
+        },
+        {
+          "index": 3,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 34509,
+          "complete_subject_pixels": 34509
+        },
+        {
+          "index": 4,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 36946,
+          "complete_subject_pixels": 36946
+        },
+        {
+          "index": 5,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 36542,
+          "complete_subject_pixels": 36542
+        },
+        {
+          "index": 6,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 31110,
+          "complete_subject_pixels": 31110
+        },
+        {
+          "index": 7,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 27351,
+          "complete_subject_pixels": 27351
+        },
+        {
+          "index": 8,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 31892,
+          "complete_subject_pixels": 31892
+        },
+        {
+          "index": 9,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 31790,
+          "complete_subject_pixels": 31790
+        },
+        {
+          "index": 10,
+          "atlas": "move-atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 213714,
+          "complete_subject_pixels": 213714
+        },
+        {
+          "index": 11,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 36177,
+          "complete_subject_pixels": 36177
+        },
+        {
+          "index": 12,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 33712,
+          "complete_subject_pixels": 33712
+        },
+        {
+          "index": 13,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 31805,
+          "complete_subject_pixels": 31805
+        },
+        {
+          "index": 14,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 27898,
+          "complete_subject_pixels": 27898
+        },
+        {
+          "index": 15,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 24185,
+          "complete_subject_pixels": 24185
+        }
+      ],
+      "images": [
+        {
+          "file": "godot-demo/art/production/directional_v1/foxfire_imp/atlas.png",
+          "sha256": "fc4064bb1cb90a7517d314b8dbf845de9eb01f4a9e7a962c2c70fee1a9adc3f0",
+          "size": [
+            1254,
+            1254
+          ],
+          "alpha_range": [
+            0,
+            255
+          ],
+          "canvas_edge_visible_pixels": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "visible_pixels_outside_regions": 60836,
+          "explicitly_replaced_original_pixels": 60836,
+          "unexplained_visible_pixels_outside_regions": 0
+        },
+        {
+          "file": "godot-demo/art/production/directional_v1/foxfire_imp/move-atlas.png",
+          "sha256": "f8cd039810eb5c0893644b0ebd0edca6093d82918f4a90b9a97a202009837ffd",
+          "size": [
+            1774,
+            887
+          ],
+          "alpha_range": [
+            0,
+            255
+          ],
+          "canvas_edge_visible_pixels": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "visible_pixels_outside_regions": 0,
+          "explicitly_replaced_original_pixels": 0,
+          "unexplained_visible_pixels_outside_regions": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Pixel containment only; foot/emission landmarks are manual, not an anatomy or animation acceptance test."
+    },
+    {
+      "character": "gray_rat",
+      "scale": 0.4,
+      "manifest_sha256": "d2a9161a36b357f3598d5251274ea1a45a22c294d4e80c9d984f951fe83a3753",
+      "frame_count": 16,
+      "frames": [
+        {
+          "index": 0,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 32887,
+          "complete_subject_pixels": 32887
+        },
+        {
+          "index": 1,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 30491,
+          "complete_subject_pixels": 30491
+        },
+        {
+          "index": 2,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 28893,
+          "complete_subject_pixels": 28893
+        },
+        {
+          "index": 3,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 35061,
+          "complete_subject_pixels": 35061
+        },
+        {
+          "index": 4,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 35393,
+          "complete_subject_pixels": 35393
+        },
+        {
+          "index": 5,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 28596,
+          "complete_subject_pixels": 28596
+        },
+        {
+          "index": 6,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 25768,
+          "complete_subject_pixels": 25768
+        },
+        {
+          "index": 7,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 24921,
+          "complete_subject_pixels": 24921
+        },
+        {
+          "index": 8,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 28184,
+          "complete_subject_pixels": 28184
+        },
+        {
+          "index": 9,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 25855,
+          "complete_subject_pixels": 25855
+        },
+        {
+          "index": 10,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 25907,
+          "complete_subject_pixels": 25907
+        },
+        {
+          "index": 11,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 30257,
+          "complete_subject_pixels": 30257
+        },
+        {
+          "index": 12,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 27282,
+          "complete_subject_pixels": 27282
+        },
+        {
+          "index": 13,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 23753,
+          "complete_subject_pixels": 23753
+        },
+        {
+          "index": 14,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 23209,
+          "complete_subject_pixels": 23209
+        },
+        {
+          "index": 15,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 22533,
+          "complete_subject_pixels": 22533
+        }
+      ],
+      "images": [
+        {
+          "file": "godot-demo/art/production/directional_v1/gray_rat/atlas.png",
+          "sha256": "590a5b120d5889ae43e5c23d91f7d2c555c0a8323905401829331fc3a4637979",
+          "size": [
+            1254,
+            1254
+          ],
+          "alpha_range": [
+            0,
+            255
+          ],
+          "canvas_edge_visible_pixels": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "visible_pixels_outside_regions": 0,
+          "explicitly_replaced_original_pixels": 0,
+          "unexplained_visible_pixels_outside_regions": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Pixel containment only; foot/emission landmarks are manual, not an anatomy or animation acceptance test."
+    },
+    {
+      "character": "guard_monk",
+      "scale": 0.54,
+      "manifest_sha256": "7e10280337677c495e24b4570df05081dc2a6b35d6c612a814ba225d35ff1c90",
+      "frame_count": 16,
+      "frames": [
+        {
+          "index": 0,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 31716,
+          "complete_subject_pixels": 31716
+        },
+        {
+          "index": 1,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 31132,
+          "complete_subject_pixels": 31132
+        },
+        {
+          "index": 2,
+          "atlas": "move-atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 135105,
+          "complete_subject_pixels": 135105
+        },
+        {
+          "index": 3,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 32656,
+          "complete_subject_pixels": 32656
+        },
+        {
+          "index": 4,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 31383,
+          "complete_subject_pixels": 31383
+        },
+        {
+          "index": 5,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 35259,
+          "complete_subject_pixels": 35259
+        },
+        {
+          "index": 6,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 27742,
+          "complete_subject_pixels": 27742
+        },
+        {
+          "index": 7,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 22193,
+          "complete_subject_pixels": 22193
+        },
+        {
+          "index": 8,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 29905,
+          "complete_subject_pixels": 29905
+        },
+        {
+          "index": 9,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 27003,
+          "complete_subject_pixels": 27003
+        },
+        {
+          "index": 10,
+          "atlas": "move-atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 128957,
+          "complete_subject_pixels": 128957
+        },
+        {
+          "index": 11,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 33939,
+          "complete_subject_pixels": 33939
+        },
+        {
+          "index": 12,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 32690,
+          "complete_subject_pixels": 32690
+        },
+        {
+          "index": 13,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 34185,
+          "complete_subject_pixels": 34185
+        },
+        {
+          "index": 14,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 29226,
+          "complete_subject_pixels": 29226
+        },
+        {
+          "index": 15,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 24864,
+          "complete_subject_pixels": 24864
+        }
+      ],
+      "images": [
+        {
+          "file": "godot-demo/art/production/directional_v1/guard_monk/atlas.png",
+          "sha256": "89decc91ba489823ef07e40035bea34d586669370940fcd0224cf079d86f0223",
+          "size": [
+            1254,
+            1254
+          ],
+          "alpha_range": [
+            0,
+            255
+          ],
+          "canvas_edge_visible_pixels": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "visible_pixels_outside_regions": 57906,
+          "explicitly_replaced_original_pixels": 57906,
+          "unexplained_visible_pixels_outside_regions": 0
+        },
+        {
+          "file": "godot-demo/art/production/directional_v1/guard_monk/move-atlas.png",
+          "sha256": "575d41e39cd26dc49036d6248a13a5e81199a21598d9bffe8ac6c78d6985d091",
+          "size": [
+            1774,
+            887
+          ],
+          "alpha_range": [
+            0,
+            255
+          ],
+          "canvas_edge_visible_pixels": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "visible_pixels_outside_regions": 0,
+          "explicitly_replaced_original_pixels": 0,
+          "unexplained_visible_pixels_outside_regions": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Pixel containment only; foot/emission landmarks are manual, not an anatomy or animation acceptance test."
+    },
+    {
+      "character": "herbal_spirit_child",
+      "scale": 0.386,
+      "manifest_sha256": "7c93e0327d3aa8b6dd028c45e8fbcfc1a77ff24d90a8baa3a49932062bccc682",
+      "frame_count": 16,
+      "frames": [
+        {
+          "index": 0,
+          "atlas": "atlas.png",
+          "polygon_vertices": 29,
+          "subject_count": 1,
+          "captured_subject_pixels": 46121,
+          "complete_subject_pixels": 46121
+        },
+        {
+          "index": 1,
+          "atlas": "atlas.png",
+          "polygon_vertices": 24,
+          "subject_count": 1,
+          "captured_subject_pixels": 46319,
+          "complete_subject_pixels": 46319
+        },
+        {
+          "index": 2,
+          "atlas": "atlas.png",
+          "polygon_vertices": 22,
+          "subject_count": 1,
+          "captured_subject_pixels": 42734,
+          "complete_subject_pixels": 42734
+        },
+        {
+          "index": 3,
+          "atlas": "atlas.png",
+          "polygon_vertices": 25,
+          "subject_count": 1,
+          "captured_subject_pixels": 43500,
+          "complete_subject_pixels": 43500
+        },
+        {
+          "index": 4,
+          "atlas": "atlas.png",
+          "polygon_vertices": 29,
+          "subject_count": 1,
+          "captured_subject_pixels": 43888,
+          "complete_subject_pixels": 43888
+        },
+        {
+          "index": 5,
+          "atlas": "atlas.png",
+          "polygon_vertices": 26,
+          "subject_count": 1,
+          "captured_subject_pixels": 37433,
+          "complete_subject_pixels": 37433
+        },
+        {
+          "index": 6,
+          "atlas": "atlas.png",
+          "polygon_vertices": 25,
+          "subject_count": 1,
+          "captured_subject_pixels": 38301,
+          "complete_subject_pixels": 38301
+        },
+        {
+          "index": 7,
+          "atlas": "atlas.png",
+          "polygon_vertices": 26,
+          "subject_count": 1,
+          "captured_subject_pixels": 31473,
+          "complete_subject_pixels": 31473
+        },
+        {
+          "index": 8,
+          "atlas": "atlas.png",
+          "polygon_vertices": 26,
+          "subject_count": 1,
+          "captured_subject_pixels": 39915,
+          "complete_subject_pixels": 39915
+        },
+        {
+          "index": 9,
+          "atlas": "atlas.png",
+          "polygon_vertices": 22,
+          "subject_count": 1,
+          "captured_subject_pixels": 40568,
+          "complete_subject_pixels": 40568
+        },
+        {
+          "index": 10,
+          "atlas": "atlas.png",
+          "polygon_vertices": 25,
+          "subject_count": 1,
+          "captured_subject_pixels": 39032,
+          "complete_subject_pixels": 39032
+        },
+        {
+          "index": 11,
+          "atlas": "atlas.png",
+          "polygon_vertices": 27,
+          "subject_count": 1,
+          "captured_subject_pixels": 42680,
+          "complete_subject_pixels": 42680
+        },
+        {
+          "index": 12,
+          "atlas": "atlas.png",
+          "polygon_vertices": 28,
+          "subject_count": 1,
+          "captured_subject_pixels": 40626,
+          "complete_subject_pixels": 40626
+        },
+        {
+          "index": 13,
+          "atlas": "atlas.png",
+          "polygon_vertices": 22,
+          "subject_count": 1,
+          "captured_subject_pixels": 37758,
+          "complete_subject_pixels": 37758
+        },
+        {
+          "index": 14,
+          "atlas": "atlas.png",
+          "polygon_vertices": 25,
+          "subject_count": 1,
+          "captured_subject_pixels": 38870,
+          "complete_subject_pixels": 38870
+        },
+        {
+          "index": 15,
+          "atlas": "atlas.png",
+          "polygon_vertices": 23,
+          "subject_count": 1,
+          "captured_subject_pixels": 33571,
+          "complete_subject_pixels": 33571
+        }
+      ],
+      "images": [
+        {
+          "file": "godot-demo/art/production/directional_v1/herbal_spirit_child/atlas.png",
+          "sha256": "0bc6b0877d548023f1d38d92a804cba0a5411bda40defc886151ed57f1c176ea",
+          "size": [
+            1239,
+            1270
+          ],
+          "alpha_range": [
+            0,
+            255
+          ],
+          "canvas_edge_visible_pixels": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "visible_pixels_outside_regions": 0,
+          "explicitly_replaced_original_pixels": 0,
+          "unexplained_visible_pixels_outside_regions": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Pixel containment only; foot/emission landmarks are manual, not an anatomy or animation acceptance test."
+    },
+    {
+      "character": "mountain_wolf",
+      "scale": 0.45,
+      "manifest_sha256": "036b2007b4756beab1303ca74908be856cd321f8a5a90933b13c87e8329f1350",
+      "frame_count": 16,
+      "frames": [
+        {
+          "index": 0,
+          "atlas": "atlas.png",
+          "polygon_vertices": 36,
+          "subject_count": 1,
+          "captured_subject_pixels": 43843,
+          "complete_subject_pixels": 43843
+        },
+        {
+          "index": 1,
+          "atlas": "atlas.png",
+          "polygon_vertices": 32,
+          "subject_count": 1,
+          "captured_subject_pixels": 37961,
+          "complete_subject_pixels": 37961
+        },
+        {
+          "index": 2,
+          "atlas": "atlas.png",
+          "polygon_vertices": 27,
+          "subject_count": 1,
+          "captured_subject_pixels": 39434,
+          "complete_subject_pixels": 39434
+        },
+        {
+          "index": 3,
+          "atlas": "atlas.png",
+          "polygon_vertices": 29,
+          "subject_count": 1,
+          "captured_subject_pixels": 38158,
+          "complete_subject_pixels": 38158
+        },
+        {
+          "index": 4,
+          "atlas": "atlas.png",
+          "polygon_vertices": 28,
+          "subject_count": 1,
+          "captured_subject_pixels": 45624,
+          "complete_subject_pixels": 45624
+        },
+        {
+          "index": 5,
+          "atlas": "atlas.png",
+          "polygon_vertices": 30,
+          "subject_count": 1,
+          "captured_subject_pixels": 36289,
+          "complete_subject_pixels": 36289
+        },
+        {
+          "index": 6,
+          "atlas": "atlas.png",
+          "polygon_vertices": 30,
+          "subject_count": 1,
+          "captured_subject_pixels": 34786,
+          "complete_subject_pixels": 34786
+        },
+        {
+          "index": 7,
+          "atlas": "atlas.png",
+          "polygon_vertices": 35,
+          "subject_count": 1,
+          "captured_subject_pixels": 34530,
+          "complete_subject_pixels": 34530
+        },
+        {
+          "index": 8,
+          "atlas": "atlas.png",
+          "polygon_vertices": 30,
+          "subject_count": 1,
+          "captured_subject_pixels": 39055,
+          "complete_subject_pixels": 39055
+        },
+        {
+          "index": 9,
+          "atlas": "atlas.png",
+          "polygon_vertices": 33,
+          "subject_count": 1,
+          "captured_subject_pixels": 37174,
+          "complete_subject_pixels": 37174
+        },
+        {
+          "index": 10,
+          "atlas": "atlas.png",
+          "polygon_vertices": 32,
+          "subject_count": 1,
+          "captured_subject_pixels": 35766,
+          "complete_subject_pixels": 35766
+        },
+        {
+          "index": 11,
+          "atlas": "atlas.png",
+          "polygon_vertices": 31,
+          "subject_count": 1,
+          "captured_subject_pixels": 35798,
+          "complete_subject_pixels": 35798
+        },
+        {
+          "index": 12,
+          "atlas": "atlas.png",
+          "polygon_vertices": 26,
+          "subject_count": 1,
+          "captured_subject_pixels": 40579,
+          "complete_subject_pixels": 40579
+        },
+        {
+          "index": 13,
+          "atlas": "atlas.png",
+          "polygon_vertices": 30,
+          "subject_count": 1,
+          "captured_subject_pixels": 37850,
+          "complete_subject_pixels": 37850
+        },
+        {
+          "index": 14,
+          "atlas": "atlas.png",
+          "polygon_vertices": 36,
+          "subject_count": 1,
+          "captured_subject_pixels": 32338,
+          "complete_subject_pixels": 32338
+        },
+        {
+          "index": 15,
+          "atlas": "atlas.png",
+          "polygon_vertices": 28,
+          "subject_count": 1,
+          "captured_subject_pixels": 31894,
+          "complete_subject_pixels": 31894
+        }
+      ],
+      "images": [
+        {
+          "file": "godot-demo/art/production/directional_v1/mountain_wolf/atlas.png",
+          "sha256": "7836ca783bce8c95350a123f9f29a175c2fdba1a5815e74d85c82cc4fd620ad6",
+          "size": [
+            1312,
+            1199
+          ],
+          "alpha_range": [
+            0,
+            255
+          ],
+          "canvas_edge_visible_pixels": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "visible_pixels_outside_regions": 0,
+          "explicitly_replaced_original_pixels": 0,
+          "unexplained_visible_pixels_outside_regions": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Pixel containment only; foot/emission landmarks are manual, not an anatomy or animation acceptance test."
+    },
+    {
+      "character": "sparrow_spirit",
+      "scale": 0.39,
+      "manifest_sha256": "301178058bc889746656905b1848154a1d6d3486bd9ed2aa6f20f5376d05d8fd",
+      "frame_count": 16,
+      "frames": [
+        {
+          "index": 0,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 29280,
+          "complete_subject_pixels": 29280
+        },
+        {
+          "index": 1,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 28577,
+          "complete_subject_pixels": 28577
+        },
+        {
+          "index": 2,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 29360,
+          "complete_subject_pixels": 29360
+        },
+        {
+          "index": 3,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 28402,
+          "complete_subject_pixels": 28402
+        },
+        {
+          "index": 4,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 36453,
+          "complete_subject_pixels": 36453
+        },
+        {
+          "index": 5,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 26821,
+          "complete_subject_pixels": 26821
+        },
+        {
+          "index": 6,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 23072,
+          "complete_subject_pixels": 23072
+        },
+        {
+          "index": 7,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 18953,
+          "complete_subject_pixels": 18953
+        },
+        {
+          "index": 8,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 27813,
+          "complete_subject_pixels": 27813
+        },
+        {
+          "index": 9,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 28510,
+          "complete_subject_pixels": 28510
+        },
+        {
+          "index": 10,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 27934,
+          "complete_subject_pixels": 27934
+        },
+        {
+          "index": 11,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 25147,
+          "complete_subject_pixels": 25147
+        },
+        {
+          "index": 12,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 37314,
+          "complete_subject_pixels": 37314
+        },
+        {
+          "index": 13,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 30660,
+          "complete_subject_pixels": 30660
+        },
+        {
+          "index": 14,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 22665,
+          "complete_subject_pixels": 22665
+        },
+        {
+          "index": 15,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 19909,
+          "complete_subject_pixels": 19909
+        }
+      ],
+      "images": [
+        {
+          "file": "godot-demo/art/production/directional_v1/sparrow_spirit/atlas.png",
+          "sha256": "9d2f1e2296f12114bfd15d6cda7bef8a0f0fc3e8ccf42eb3a47ffc7706c27097",
+          "size": [
+            1234,
+            1275
+          ],
+          "alpha_range": [
+            0,
+            255
+          ],
+          "canvas_edge_visible_pixels": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "visible_pixels_outside_regions": 0,
+          "explicitly_replaced_original_pixels": 0,
+          "unexplained_visible_pixels_outside_regions": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Pixel containment only; foot/emission landmarks are manual, not an anatomy or animation acceptance test."
+    },
+    {
+      "character": "tangseng",
+      "scale": 0.42,
+      "manifest_sha256": "d2042b62b1a26bccbb5be325d159bc016e7a334f1ff970e49e1ea5ac1b7a894d",
+      "frame_count": 16,
+      "frames": [
+        {
+          "index": 0,
+          "atlas": "atlas.png",
+          "polygon_vertices": 27,
+          "subject_count": 1,
+          "captured_subject_pixels": 37199,
+          "complete_subject_pixels": 37199
+        },
+        {
+          "index": 1,
+          "atlas": "atlas.png",
+          "polygon_vertices": 26,
+          "subject_count": 1,
+          "captured_subject_pixels": 36717,
+          "complete_subject_pixels": 36717
+        },
+        {
+          "index": 2,
+          "atlas": "atlas.png",
+          "polygon_vertices": 27,
+          "subject_count": 1,
+          "captured_subject_pixels": 35170,
+          "complete_subject_pixels": 35170
+        },
+        {
+          "index": 3,
+          "atlas": "atlas.png",
+          "polygon_vertices": 27,
+          "subject_count": 1,
+          "captured_subject_pixels": 37584,
+          "complete_subject_pixels": 37584
+        },
+        {
+          "index": 4,
+          "atlas": "atlas.png",
+          "polygon_vertices": 24,
+          "subject_count": 1,
+          "captured_subject_pixels": 39875,
+          "complete_subject_pixels": 39875
+        },
+        {
+          "index": 5,
+          "atlas": "atlas.png",
+          "polygon_vertices": 28,
+          "subject_count": 1,
+          "captured_subject_pixels": 30683,
+          "complete_subject_pixels": 30683
+        },
+        {
+          "index": 6,
+          "atlas": "atlas.png",
+          "polygon_vertices": 23,
+          "subject_count": 1,
+          "captured_subject_pixels": 28189,
+          "complete_subject_pixels": 28189
+        },
+        {
+          "index": 7,
+          "atlas": "atlas.png",
+          "polygon_vertices": 30,
+          "subject_count": 1,
+          "captured_subject_pixels": 23229,
+          "complete_subject_pixels": 23229
+        },
+        {
+          "index": 8,
+          "atlas": "atlas.png",
+          "polygon_vertices": 27,
+          "subject_count": 1,
+          "captured_subject_pixels": 31540,
+          "complete_subject_pixels": 31540
+        },
+        {
+          "index": 9,
+          "atlas": "atlas.png",
+          "polygon_vertices": 29,
+          "subject_count": 1,
+          "captured_subject_pixels": 31792,
+          "complete_subject_pixels": 31792
+        },
+        {
+          "index": 10,
+          "atlas": "atlas.png",
+          "polygon_vertices": 28,
+          "subject_count": 1,
+          "captured_subject_pixels": 32154,
+          "complete_subject_pixels": 32154
+        },
+        {
+          "index": 11,
+          "atlas": "atlas.png",
+          "polygon_vertices": 27,
+          "subject_count": 1,
+          "captured_subject_pixels": 32936,
+          "complete_subject_pixels": 32936
+        },
+        {
+          "index": 12,
+          "atlas": "atlas.png",
+          "polygon_vertices": 27,
+          "subject_count": 1,
+          "captured_subject_pixels": 41784,
+          "complete_subject_pixels": 41784
+        },
+        {
+          "index": 13,
+          "atlas": "atlas.png",
+          "polygon_vertices": 27,
+          "subject_count": 1,
+          "captured_subject_pixels": 26934,
+          "complete_subject_pixels": 26934
+        },
+        {
+          "index": 14,
+          "atlas": "atlas.png",
+          "polygon_vertices": 26,
+          "subject_count": 1,
+          "captured_subject_pixels": 26955,
+          "complete_subject_pixels": 26955
+        },
+        {
+          "index": 15,
+          "atlas": "atlas.png",
+          "polygon_vertices": 28,
+          "subject_count": 1,
+          "captured_subject_pixels": 24951,
+          "complete_subject_pixels": 24951
+        }
+      ],
+      "images": [
+        {
+          "file": "godot-demo/art/production/directional_v1/tangseng/atlas.png",
+          "sha256": "8babda2b698a962f07fd826bdcb97df86f9bd4257f544f4030353904ef546176",
+          "size": [
+            1225,
+            1284
+          ],
+          "alpha_range": [
+            0,
+            255
+          ],
+          "canvas_edge_visible_pixels": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "visible_pixels_outside_regions": 0,
+          "explicitly_replaced_original_pixels": 0,
+          "unexplained_visible_pixels_outside_regions": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Pixel containment only; foot/emission landmarks are manual, not an anatomy or animation acceptance test."
+    },
+    {
+      "character": "wild_hunter",
+      "scale": 0.395,
+      "manifest_sha256": "59f3897ff60e7a51935854f368fe8910eefc1b9312f708cef1dff5a37a3e7c24",
+      "frame_count": 16,
+      "frames": [
+        {
+          "index": 0,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 45702,
+          "complete_subject_pixels": 45702
+        },
+        {
+          "index": 1,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 44507,
+          "complete_subject_pixels": 44507
+        },
+        {
+          "index": 2,
+          "atlas": "move-atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 206812,
+          "complete_subject_pixels": 206812
+        },
+        {
+          "index": 3,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 47717,
+          "complete_subject_pixels": 47717
+        },
+        {
+          "index": 4,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 50857,
+          "complete_subject_pixels": 50857
+        },
+        {
+          "index": 5,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 42698,
+          "complete_subject_pixels": 42698
+        },
+        {
+          "index": 6,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 38504,
+          "complete_subject_pixels": 38504
+        },
+        {
+          "index": 7,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 36837,
+          "complete_subject_pixels": 36837
+        },
+        {
+          "index": 8,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 42730,
+          "complete_subject_pixels": 42730
+        },
+        {
+          "index": 9,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 41283,
+          "complete_subject_pixels": 41283
+        },
+        {
+          "index": 10,
+          "atlas": "move-atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 186598,
+          "complete_subject_pixels": 186598
+        },
+        {
+          "index": 11,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 40687,
+          "complete_subject_pixels": 40687
+        },
+        {
+          "index": 12,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 47053,
+          "complete_subject_pixels": 47053
+        },
+        {
+          "index": 13,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 37016,
+          "complete_subject_pixels": 37016
+        },
+        {
+          "index": 14,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 38030,
+          "complete_subject_pixels": 38030
+        },
+        {
+          "index": 15,
+          "atlas": "atlas.png",
+          "polygon_vertices": 0,
+          "subject_count": 1,
+          "captured_subject_pixels": 36853,
+          "complete_subject_pixels": 36853
+        }
+      ],
+      "images": [
+        {
+          "file": "godot-demo/art/production/directional_v1/wild_hunter/atlas.png",
+          "sha256": "6c3d24263c63dce47c2f1ab99915ed4a5f2de19e4893f0b8d3e724111922bc1e",
+          "size": [
+            1254,
+            1254
+          ],
+          "alpha_range": [
+            0,
+            255
+          ],
+          "canvas_edge_visible_pixels": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "visible_pixels_outside_regions": 85739,
+          "explicitly_replaced_original_pixels": 85739,
+          "unexplained_visible_pixels_outside_regions": 0
+        },
+        {
+          "file": "godot-demo/art/production/directional_v1/wild_hunter/move-atlas.png",
+          "sha256": "725c12f3d8d08c984478603c2e0182c11739109e784a2cbdc150ff3afa76c46a",
+          "size": [
+            1774,
+            887
+          ],
+          "alpha_range": [
+            0,
+            255
+          ],
+          "canvas_edge_visible_pixels": {
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          },
+          "visible_pixels_outside_regions": 0,
+          "explicitly_replaced_original_pixels": 0,
+          "unexplained_visible_pixels_outside_regions": 0
+        }
+      ],
+      "failures": [],
+      "scope": "Pixel containment only; foot/emission landmarks are manual, not an anatomy or animation acceptance test."
+    }
+  ],
+  "failures": []
+}

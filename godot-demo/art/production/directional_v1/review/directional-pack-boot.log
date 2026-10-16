@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+BOARD_PACK_A profile=bear victory=true seconds=18.6166666666663 TangHP=148.0
+BOARD_PACK_BOOT board_trial
+BOARD_PACK_BOOT escort_route
+BOARD_PACK_BOOT free_escort
+BOARD_PACK_BOOT main
+BOARD_PACK_BOOT monk_animation_trial
+BOARD_PACK_BOOT failures=0

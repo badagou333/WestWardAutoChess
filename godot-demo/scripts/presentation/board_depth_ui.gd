@@ -11,9 +11,15 @@ func panel(rect: Rect2, parent: Node = self) -> Panel:
 
 func setup(host) -> void:
 	super.setup(host)
-	usage_label.text = "松风台 · 2D斜视试玩"
+	usage_label.text = "松风台 · 正面45°试玩"
 	profile_choice.add_theme_font_override("font",ThemeDB.fallback_font)
 	for state in ["normal","hover","pressed"]:
 		profile_choice.get_popup().add_theme_font_override("font",ThemeDB.fallback_font)
 	status_label.add_theme_font_size_override("font_size",18)
 	status_label.add_theme_color_override("font_color",Color("d4d3b9"))
+	animation_toggle.tooltip_text = "此入口使用全员正背面姿势；旧棍僧动作对照请打开旧矩形棋盘。"
+
+func refresh() -> void:
+	super.refresh()
+	animation_toggle.text = "正背面已启用"
+	animation_toggle.disabled = true

@@ -1,0 +1,42 @@
+{
+  "status": "adopted-with-clip-polygon-reference-only",
+  "character": "herbal_spirit_child",
+  "source": "../../herbal_spirit_child/atlas.png",
+  "source_original": "exec-358e0f24-c6fe-497b-8b6d-f8f47d290a00.png",
+  "size": [
+    1239,
+    1270
+  ],
+  "reason": "Back move pose extends into the bounding rectangle of the following back collapse pose. Single-region sampling would carry neighboring pixels.",
+  "overlaps": [
+    {
+      "frames": [
+        10,
+        14
+      ],
+      "bounds": [
+        [
+          656,
+          645,
+          891,
+          953
+        ],
+        [
+          644,
+          947,
+          883,
+          1239
+        ]
+      ]
+    }
+  ],
+  "pixel_editing": "none",
+  "recommended_repair": "Resolved without pixel edits: the runtime package uses per-frame convex clip_polygon UV geometry, preserving the entire source subject and excluding neighboring subjects.",
+  "resolution_manifest": "../../herbal_spirit_child/manifest.json",
+  "deduplication": {
+    "sha256": "0bc6b0877d548023f1d38d92a804cba0a5411bda40defc886151ed57f1c176ea",
+    "reason": "The former candidate source and adopted runtime atlas were byte-identical. The candidate duplicate was moved, not deleted; the runtime atlas remains the repository source of truth.",
+    "local_backup": "/tmp/directional-source-backup.PVUKgn/herbal_spirit_child-source.png",
+    "recovery": "Copy ../../herbal_spirit_child/atlas.png back to this directory as source.png if the old candidate layout is needed. The temporary backup is an additional local copy, not required for recovery."
+  }
+}

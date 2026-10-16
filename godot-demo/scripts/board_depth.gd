@@ -4,6 +4,7 @@ const GroundProjection = preload("res://scripts/presentation/board_depth_project
 const DepthStage = preload("res://scripts/presentation/board_depth_stage.gd")
 const DepthUI = preload("res://scripts/presentation/board_depth_ui.gd")
 const DepthHUD = preload("res://scripts/presentation/board_depth_hud.gd")
+const DirectionalView = preload("res://scripts/presentation/board_directional_view.gd")
 const BODY_SCALE := 0.9
 var stage
 
@@ -31,6 +32,14 @@ func _tick(delta: float) -> void:
 
 func _register(id: String, key: String, node, friendly: bool, cell: Vector2i) -> void:
 	super._register(id,key,node,friendly,cell)
+	var pack: Dictionary=DirectionalView.load_pack(node.presentation.role)
+	if not pack.is_empty():
+		var previous=node.presentation
+		var view=DirectionalView.new()
+		view.copy_playback(previous,_record(id),pack)
+		node.add_child(view)
+		node.presentation=view
+		previous.free()
 	node.scale=Vector2.ONE*BODY_SCALE
 	node.presentation.show_shadow=false
 	for child in node.get_children():
@@ -40,6 +49,12 @@ func _register(id: String, key: String, node, friendly: bool, cell: Vector2i) ->
 	hud.z_as_relative=false
 	hud.z_index=2000
 	node.add_child(hud)
+
+func _default_face(node, friendly: bool) -> void:
+	if node.presentation.has_method("keep_board_direction"):
+		node.presentation.keep_board_direction()
+		return
+	super._default_face(node,friendly)
 
 func _create_ui() -> void:
 	board_overlay=Node2D.new()
@@ -58,6 +73,8 @@ func _draw_overlay() -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
+	# F is the old monk sample comparison, available only in the legacy scene.
+	if event is InputEventKey and event.keycode==KEY_F: return
 	# A result panel intercepts gestures over itself, while retry and other
 	# controls outside it remain usable. Match the existing help modal policy.
 	if is_instance_valid(ui) and ui.result_panel.visible and event is InputEventMouseButton:

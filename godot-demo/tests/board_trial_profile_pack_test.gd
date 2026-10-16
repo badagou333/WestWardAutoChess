@@ -46,7 +46,7 @@ func toggle_check(game, enabled: bool, label: String) -> void:
 	var view=game._record("guard_monk").node.presentation
 	var before: Dictionary=toggle_snapshot(game)
 	game.set_monk_sample(enabled)
-	check(game._record("guard_monk").node.presentation==view and view.motion_sample_enabled==enabled,"pack changes only existing monk display "+label)
+	check(game._record("guard_monk").node.presentation==view and view.motion_sample_enabled==enabled,"legacy comparison API preserves installed directional adapter "+label)
 	check(toggle_snapshot(game)==before,"pack display switch preserves every observed gameplay/playback clock "+label)
 
 func natural(profile: String, formation: String, sampled: bool) -> void:
@@ -65,7 +65,9 @@ func natural(profile: String, formation: String, sampled: bool) -> void:
 	check(is_instance_valid(stage) and stage.get_script().resource_path=="res://scripts/presentation/board_depth_stage.gd" and stage.game==game and stage.get_parent()==game,"profile pack keeps the actual attached depth stage through roster rebuilds")
 	check(is_equal_approx(game.BODY_SCALE,0.9) and game.actors.all(func(actor): return actor.node.scale==Vector2.ONE*game.BODY_SCALE and actor.node.position==GroundProjection.center(actor.cell) and actor.node.position==game.display_center(actor.cell)),"profile pack has the actual 0.9 bodies at projected grid centers")
 	var view=game._record("guard_monk").node.presentation
-	check(view.get_script().resource_path=="res://scripts/presentation/board_trial_monk_view.gd","pack instantiates actual board-only monk adapter")
+	check(view.get_script().resource_path=="res://scripts/presentation/board_directional_view.gd","pack instantiates actual board-only directional adapter")
+	for actor in game.actors:
+		check(actor.node.presentation.has_method("draw_sample") and actor.node.presentation.direction_pack.frames.size()==16,"pack actually enables every actor's sixteen directional poses: "+actor.id)
 	check(view.sample_body.get_size()==Vector2(3328,256) and view.sample_track.manifest.frames.size()==13,"pack actually loads thirteen-frame sample atlas and manifest")
 	check(is_equal_approx(view.impact_delay(),0.235) and game._record("guard_monk").node.scale==Vector2.ONE*game.BODY_SCALE and view.foot_anchor==Vector2.ZERO,"pack retains actual contact time and foot origin at the current depth body size")
 	check(game.actors.size()==(13 if profile=="bear" else 12) and game.actors.all(func(actor): return actor.walk==0.5 and actor.node.move_interval==0.5),"pack uses selected full roster and shared movement duration")
@@ -123,9 +125,9 @@ func run() -> void:
 	for profile in Config.ENEMY_PROFILES:
 		for formation in ["A","B","C","R"]:
 			for sampled in [true,false]: await natural(profile,formation,sampled)
-	check(evidence.size()==24,"all source-vs-pack old/new animation profile formations actually executed")
+	check(evidence.size()==24,"all source-vs-pack legacy-flag compatibility profile formations actually executed")
 	var file:=FileAccess.open("/tmp/board-balance-20261009-pack.json",FileAccess.WRITE)
 	check(file!=null,"pack runtime evidence opens")
-	if file!=null: file.store_string(JSON.stringify({"source_evidence":reference_path,"candidate_frames":13,"profile_formations":12,"actual_runs":evidence.size(),"cases":evidence,"graphical_rendering_verified":false,"failures":failures},"\t"))
+	if file!=null: file.store_string(JSON.stringify({"source_evidence":reference_path,"directional_frames_per_role":16,"legacy_sample_clock_frames":13,"profile_formations":12,"actual_runs":evidence.size(),"cases":evidence,"graphical_rendering_verified":false,"failures":failures},"\t"))
 	print("BOARD_PROFILE_PACK runs=",evidence.size()," failures=",failures)
 	quit(1 if failures else 0)

@@ -1,5 +1,5 @@
 extends Node2D
-## A fixed-camera 2D diorama. Geometry, tile picking and effects share GroundProjection.
+## A frontal, fixed-camera 2D diorama. Every ground edge shares GroundProjection.
 ## No mesh, camera, hidden 3D viewport or changes to the simulation live here.
 const GroundProjection = preload("res://scripts/presentation/board_depth_projection.gd")
 const Config = preload("res://scripts/data/board_trial_config.gd")
@@ -58,12 +58,12 @@ func _draw() -> void:
 	_tiles()
 	_highlights()
 	_shadows()
-	# The far and near corners carry matching low stone lanterns; they sit outside
-	# every legal tile, so decoration never disguises a blocked playable square.
-	_lantern(GroundProjection.point(Vector2(-.48,-.5)),.8)
-	_lantern(GroundProjection.point(Vector2(12.5,-.5)),.8)
-	_lantern(GroundProjection.point(Vector2(-.50,7.6)),1.0)
-	_lantern(GroundProjection.point(Vector2(12.3,7.4)),1.0)
+	# Matching, frontal lanterns stand outside the far/near playable edges.
+	# An orthographic camera does not make the back pair smaller.
+	_lantern(GroundProjection.point(Vector2(.2,-.36)),1.0)
+	_lantern(GroundProjection.point(Vector2(11.8,-.36)),1.0)
+	_lantern(GroundProjection.point(Vector2(.2,7.98)),1.0)
+	_lantern(GroundProjection.point(Vector2(11.8,7.98)),1.0)
 	for leaf in leaves:
 		var p: Vector2 = leaf.p+Vector2(sin(clock*.22+leaf.phase)*8,fmod(clock*leaf.v,45))
 		if p.y<260 or p.y>820:
@@ -84,26 +84,26 @@ func _platform() -> void:
 	var c := GroundProjection.point(Vector2(12+edge,7+edge))
 	var d := GroundProjection.point(Vector2(-edge,7+edge))
 	var down := Vector2(0,40)
-	stone_face(PackedVector2Array([a,d,d+down,a+down]),Color(.38,.53,.51))
+	# Looking straight along the depth axis exposes the front fascia, not an
+	# invented left/right side. The old slanted side would collapse to zero area.
 	stone_face(PackedVector2Array([d,c,c+down,d+down]),Color(.48,.61,.56))
 	for x in range(13):
 		var p:=GroundProjection.point(Vector2(x,7+edge))
 		draw_line(p+Vector2(0,8),p+down,Color("2b403e"),2,true)
-	for y in range(8):
-		var p:=GroundProjection.point(Vector2(-edge,y))
-		draw_line(p+Vector2(0,8),p+down,Color("263c3b"),2,true)
 	stone_face(PackedVector2Array([a,b,c,d]),Color(.77,.88,.81))
 	# A narrow stone bevel catches the light on the top, another closes the fascia.
+	draw_line(a,b,Color("aab39b"),2,true)
 	draw_line(a,d,Color("b6b99b"),3,true)
+	draw_line(b,c,Color("8d9e8b"),2,true)
 	draw_line(d,c,Color("a3ad93"),3,true)
 	draw_line(d+down,c+down,Color("253d3b"),3,true)
 	draw_line(d+Vector2(0,10),c+Vector2(0,10),Color("5b7066"),2,true)
-	# Two descending entrance steps. Pure 2D solid faces share the same basis.
+	# Two centered entrance steps, with parallel horizontal fronts and no skew.
 	for i in [1,0]:
-		var top := plane(Vector2(3.1,7.20+i*.32),Vector2(5.3,7.52+i*.32),14+i*13)
+		var top := plane(Vector2(4.7,7.20+i*.32),Vector2(7.3,7.52+i*.32),14+i*13)
 		shape(PackedVector2Array([top[3],top[2],top[2]+Vector2(0,13),top[3]+Vector2(0,13)]),Color("3e5350"),INK,1)
 		shape(top,Color("748477"),Color("a4ac91"),1)
-		for x in range(4,6):
+		for x in range(5,8):
 			draw_line(GroundProjection.point(Vector2(x,7.20+i*.32))+Vector2(0,14+i*13),GroundProjection.point(Vector2(x,7.52+i*.32))+Vector2(0,14+i*13),Color("53685f"),1,true)
 
 func _tiles() -> void:
@@ -153,18 +153,27 @@ func _shadows() -> void:
 		var opacity: float=view.visual_alpha
 		if opacity<=0: continue
 		var at: Vector2=node.position+view.ground_offset()*node.scale
-		var texture: Texture2D=view.body
-		var frame: int=view.frame_index
-		if view.motion_sample_enabled: texture=view.sample_body
-		elif view.motion_frame>=0:
-			texture=view.motion_body
-			frame=view.motion_frame
-		# Height maps to ground along one light vector; source alpha retains the
-		# current attack/walk silhouette. The body itself is never skewed or flattened.
-		var facing: float=view.visual_transform().x.x
-		var cast := Transform2D(Vector2(facing*node.scale.x,0),Vector2(-.46,-.19)*node.scale.y,at+Vector2(2,2))
-		draw_set_transform_matrix(cast)
-		draw_texture_rect_region(texture,Rect2(-128,-218,256,256),Rect2(frame*256,0,256,256),Color(.016,.035,.030,.23*opacity))
+		var sample: Dictionary=view.draw_sample() if view.has_method("draw_sample") else {}
+		if not sample.is_empty():
+			# Use exactly the same crop, source scale, pivot and front/back bank
+			# as the visible body. Contact points retain both feet's depth offsets.
+			var cast:=Transform2D(Vector2(node.scale.x,0),Vector2(-.46,-.19)*node.scale.y,at+Vector2(2,2))
+			draw_set_transform_matrix(cast*Transform2D(sample.transform))
+			if not sample.polygon.is_empty():
+				draw_colored_polygon(sample.polygon,Color(.016,.035,.030,.23*opacity),sample.uvs,sample.texture)
+			else:
+				draw_texture_rect_region(sample.texture,sample.destination,sample.region,Color(.016,.035,.030,.23*opacity))
+		else:
+			var texture: Texture2D=view.body
+			var frame: int=view.frame_index
+			if view.motion_sample_enabled: texture=view.sample_body
+			elif view.motion_frame>=0:
+				texture=view.motion_body
+				frame=view.motion_frame
+			var facing: float=view.visual_transform().x.x
+			var cast:=Transform2D(Vector2(facing*node.scale.x,0),Vector2(-.46,-.19)*node.scale.y,at+Vector2(2,2))
+			draw_set_transform_matrix(cast)
+			draw_texture_rect_region(texture,Rect2(-128,-218,256,256),Rect2(frame*256,0,256,256),Color(.016,.035,.030,.23*opacity))
 		draw_set_transform(Vector2.ZERO)
 		var width := 25.0 if actor.key not in ["bear_lord","boar","wolf"] else 33.0
 		for i in range(8,0,-1):
@@ -175,6 +184,7 @@ func _shadows() -> void:
 			"guard_monk", "boar", "bear_lord": feet=[Vector2(-23,0),Vector2(23,0)]
 			"wolf": feet=[Vector2(-26,-3),Vector2(-12,0),Vector2(15,-3),Vector2(29,0)]
 			"tangseng": feet=[Vector2(-7,0),Vector2(3,0)]
+		if not sample.is_empty(): feet.assign(sample.feet)
 		for foot in feet:
 			ellipse(at+foot*node.scale,Vector2(7,2.5)*node.scale,Color(.018,.039,.025,.32*opacity))
 		if actor.key=="foxfire_imp" and not actor.dead:
@@ -183,11 +193,15 @@ func _shadows() -> void:
 
 func _lantern(p: Vector2, size_factor: float) -> void:
 	draw_set_transform(p,0,Vector2.ONE*size_factor)
-	shape(PackedVector2Array([Vector2(-17,0),Vector2(0,-8),Vector2(19,0),Vector2(0,8)]),Color("637a6e"),INK,2)
-	shape(PackedVector2Array([Vector2(-7,0),Vector2(-7,-31),Vector2(7,-34),Vector2(7,1)]),Color("526b60"),INK,2)
-	shape(PackedVector2Array([Vector2(-13,-30),Vector2(-13,-56),Vector2(14,-59),Vector2(14,-31)]),Color("2c4542"),INK,2)
-	draw_rect(Rect2(-7,-52,15,16),Color("ecb95f"))
-	draw_rect(Rect2(-4,-50,7,13),Color("ffe0a1"))
-	shape(PackedVector2Array([Vector2(-22,-55),Vector2(0,-72),Vector2(23,-59),Vector2(2,-51)]),Color("668577"),INK,2)
-	draw_line(Vector2(-19,-56),Vector2(0,-68),Color("a2ab82"),2,true)
+	# Rectangular footing and symmetric roof obey the same non-rotated camera.
+	shape(PackedVector2Array([Vector2(-19,0),Vector2(19,0),Vector2(19,8),Vector2(-19,8)]),Color("415a54"),INK,1.5)
+	shape(PackedVector2Array([Vector2(-19,-8),Vector2(19,-8),Vector2(19,0),Vector2(-19,0)]),Color("728678"),INK,1.5)
+	draw_rect(Rect2(-7,-32,14,29),Color("526b60"))
+	draw_line(Vector2(-7,-32),Vector2(-7,-4),Color("859481"),1.5,true)
+	shape(PackedVector2Array([Vector2(-13,-32),Vector2(-13,-58),Vector2(13,-58),Vector2(13,-32)]),Color("2c4542"),INK,2)
+	draw_rect(Rect2(-7,-53,14,16),Color("ecb95f"))
+	draw_rect(Rect2(-3,-51,6,12),Color("ffe0a1"))
+	shape(PackedVector2Array([Vector2(-23,-57),Vector2(-8,-70),Vector2(8,-70),Vector2(23,-57)]),Color("668577"),INK,2)
+	draw_line(Vector2(-19,-59),Vector2(-7,-68),Color("a2ab82"),1.5,true)
+	draw_line(Vector2(-23,-56),Vector2(23,-56),Color("253d3a"),2,true)
 	draw_set_transform(Vector2.ZERO)

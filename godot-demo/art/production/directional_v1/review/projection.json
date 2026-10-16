@@ -1,0 +1,21 @@
+{
+	"OS_input_verified": false,
+	"camera_pitch_degrees": 45.0,
+	"cells": 84,
+	"checks": 6585,
+	"failures": [],
+	"interior_samples_per_cell": 25,
+	"max_roundtrip_error": 0.00000106624031559477,
+	"origin": [
+		246.0,
+		274.0
+	],
+	"u": [
+		106.0,
+		0.0
+	],
+	"v": [
+		0.0,
+		74.9533157348633
+	]
+}

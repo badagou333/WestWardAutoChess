@@ -65,7 +65,7 @@ func projection_and_input() -> void:
 	for grid in [Vector2(-0.001,3),Vector2(12,3),Vector2(3,-0.001),Vector2(3,7),Vector2(-1,-1),Vector2(13,8)]:
 		check(GroundProjection.cell_at(GroundProjection.point(grid))==Vector2i(-1,-1),"outside projected edges reject input "+str(grid))
 	check(GroundProjection.cell_at(GroundProjection.point(Vector2(6,7))+Vector2(0,20))==Vector2i(-1,-1),"front board thickness cannot become a playable cell")
-	check(GroundProjection.cell_at(GroundProjection.point(Vector2(0,3))+Vector2(0,20))==Vector2i(-1,-1),"left board thickness cannot become a playable cell")
+	check(GroundProjection.cell_at(GroundProjection.point(Vector2(0,3))+Vector2(-20,0))==Vector2i(-1,-1),"left exterior cannot become a playable cell in the frontal projection")
 	check(GroundProjection.cell_at(GroundProjection.point(Vector2.ZERO))==Vector2i.ZERO,"top-left boundary remains inclusive")
 	check(GroundProjection.cell_at(GroundProjection.point(Vector2(5.999,3)))==Vector2i(5,3) and GroundProjection.cell_at(GroundProjection.point(Vector2(6.001,3)))==Vector2i(6,3),"deployment seam is exactly the projected sixth column")
 	cases.append({"kind":"projection_and_logical_clicks","cells":84,"edges":true,"OS_input_verified":false})

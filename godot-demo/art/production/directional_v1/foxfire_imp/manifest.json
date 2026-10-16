@@ -1,0 +1,429 @@
+{
+  "schema": "board-directional-v1",
+  "character": "foxfire_imp",
+  "atlas": "atlas.png",
+  "scale": 0.37,
+  "limitations": [
+    "Movement uses one original contact key pose plus one newly generated passing key pose per facing; this is not a complete alternating-leg locomotion cycle.",
+    "Replacement-sheet scale is shared across front and back poses and normalized from head/torso size, not adjusted per pose to normalize bent-leg height.",
+    "Region and contact/socket metadata are hand-reviewed. Original atlas pixels are unchanged; original frames 2/10 remain archived inside atlas.png but are not sampled."
+  ],
+  "frames": [
+    {
+      "region": [
+        38,
+        9,
+        230,
+        313
+      ],
+      "foot": [
+        139,
+        292
+      ],
+      "feet": [
+        [
+          112,
+          300
+        ],
+        [
+          166,
+          281
+        ]
+      ],
+      "emission_socket": [
+        206,
+        159
+      ]
+    },
+    {
+      "region": [
+        343,
+        6,
+        232,
+        315
+      ],
+      "foot": [
+        153,
+        303
+      ],
+      "feet": [
+        [
+          153,
+          303
+        ]
+      ],
+      "emission_socket": [
+        211,
+        162
+      ]
+    },
+    {
+      "atlas": "move-atlas.png",
+      "source_scale": 0.415,
+      "region": [
+        136,
+        87,
+        586,
+        734
+      ],
+      "foot": [
+        330,
+        719
+      ],
+      "feet": [
+        [
+          330,
+          719
+        ]
+      ],
+      "emission_socket": [
+        524,
+        364
+      ]
+    },
+    {
+      "region": [
+        962,
+        30,
+        235,
+        298
+      ],
+      "foot": [
+        136,
+        275
+      ],
+      "feet": [
+        [
+          75,
+          258
+        ],
+        [
+          198,
+          285
+        ]
+      ],
+      "emission_socket": [
+        81,
+        96
+      ]
+    },
+    {
+      "region": [
+        29,
+        323,
+        276,
+        298
+      ],
+      "foot": [
+        129,
+        283
+      ],
+      "feet": [
+        [
+          80,
+          284
+        ],
+        [
+          180,
+          283
+        ]
+      ],
+      "emission_socket": [
+        240,
+        147
+      ]
+    },
+    {
+      "region": [
+        365,
+        324,
+        226,
+        305
+      ],
+      "foot": [
+        154,
+        285
+      ],
+      "feet": [
+        [
+          125,
+          292
+        ],
+        [
+          185,
+          268
+        ]
+      ],
+      "emission_socket": [
+        202,
+        142
+      ]
+    },
+    {
+      "region": [
+        652,
+        393,
+        239,
+        216
+      ],
+      "foot": [
+        147,
+        198
+      ],
+      "feet": [
+        [
+          116,
+          196
+        ],
+        [
+          199,
+          197
+        ]
+      ],
+      "emission_socket": [
+        212,
+        148
+      ]
+    },
+    {
+      "region": [
+        967,
+        423,
+        267,
+        190
+      ],
+      "foot": [
+        152,
+        170
+      ],
+      "feet": [
+        [
+          116,
+          170
+        ],
+        [
+          187,
+          169
+        ]
+      ],
+      "emission_socket": [
+        189,
+        147
+      ]
+    },
+    {
+      "region": [
+        46,
+        629,
+        221,
+        300
+      ],
+      "foot": [
+        153,
+        279
+      ],
+      "feet": [
+        [
+          153,
+          279
+        ]
+      ],
+      "emission_socket": [
+        197,
+        147
+      ]
+    },
+    {
+      "region": [
+        358,
+        632,
+        228,
+        297
+      ],
+      "foot": [
+        127,
+        283
+      ],
+      "feet": [
+        [
+          127,
+          283
+        ]
+      ],
+      "emission_socket": [
+        208,
+        137
+      ]
+    },
+    {
+      "atlas": "move-atlas.png",
+      "source_scale": 0.415,
+      "region": [
+        1065,
+        87,
+        575,
+        711
+      ],
+      "foot": [
+        347,
+        686
+      ],
+      "feet": [
+        [
+          347,
+          686
+        ]
+      ],
+      "emission_socket": [
+        534,
+        306
+      ]
+    },
+    {
+      "region": [
+        974,
+        620,
+        240,
+        308
+      ],
+      "foot": [
+        173,
+        288
+      ],
+      "feet": [
+        [
+          173,
+          288
+        ]
+      ],
+      "emission_socket": [
+        215,
+        91
+      ]
+    },
+    {
+      "region": [
+        33,
+        934,
+        284,
+        277
+      ],
+      "foot": [
+        183,
+        252
+      ],
+      "feet": [
+        [
+          183,
+          252
+        ]
+      ],
+      "emission_socket": [
+        239,
+        117
+      ]
+    },
+    {
+      "region": [
+        359,
+        950,
+        216,
+        266
+      ],
+      "foot": [
+        179,
+        251
+      ],
+      "feet": [
+        [
+          179,
+          251
+        ]
+      ],
+      "emission_socket": [
+        195,
+        126
+      ]
+    },
+    {
+      "region": [
+        655,
+        1000,
+        235,
+        222
+      ],
+      "foot": [
+        146,
+        187
+      ],
+      "feet": [
+        [
+          132,
+          184
+        ],
+        [
+          177,
+          185
+        ]
+      ],
+      "emission_socket": [
+        204,
+        118
+      ]
+    },
+    {
+      "region": [
+        981,
+        1023,
+        241,
+        192
+      ],
+      "foot": [
+        145,
+        163
+      ],
+      "feet": [
+        [
+          128,
+          161
+        ],
+        [
+          176,
+          157
+        ]
+      ],
+      "emission_socket": [
+        196,
+        115
+      ]
+    }
+  ],
+  "atlas_scales": {
+    "atlas.png": 1,
+    "move-atlas.png": 0.415
+  },
+  "excluded_original_frames": [
+    {
+      "index": 2,
+      "atlas": "atlas.png",
+      "region": [
+        648,
+        12,
+        211,
+        309
+      ],
+      "reason": "Replaced by the independently generated passing pose in move-atlas.png; retained original pixels are intentionally unused."
+    },
+    {
+      "index": 10,
+      "atlas": "atlas.png",
+      "region": [
+        661,
+        636,
+        222,
+        293
+      ],
+      "reason": "Replaced by the independently generated passing pose in move-atlas.png; retained original pixels are intentionally unused."
+    }
+  ]
+}

@@ -26,11 +26,15 @@ func _draw() -> void:
 	if actor.health<=0: return
 	var game=actor.get_parent()
 	var chosen: bool=game.selected==actor_id
+	var draw_top:=top
+	if actor.presentation.has_method("draw_sample"):
+		var sample: Dictionary=actor.presentation.draw_sample()
+		draw_top=float(sample.get("hud_top",float(sample.bounds.position.y)-13.0))
 	# Full bars in deployment, in combat only when damaged/selected. A discreet
 	# faction dot remains at the foot without covering the character's face.
 	if game.phase==game.Phase.DEPLOY or actor.health<actor.max_health or chosen:
 		var width:=47.0
-		var rect:=Rect2(-width*.5,top,width,5)
+		var rect:=Rect2(-width*.5,draw_top,width,5)
 		draw_style_box(_box(Color(.027,.045,.043,.95)),rect.grow(1.3))
 		draw_rect(Rect2(rect.position,Vector2(width*clampf(actor.health/actor.max_health,0,1),5)),Color("a9cd94") if friendly else Color("d48272"))
 		draw_line(rect.position,rect.position+Vector2(width,0),Color(.89,.90,.72,.4),1,true)
