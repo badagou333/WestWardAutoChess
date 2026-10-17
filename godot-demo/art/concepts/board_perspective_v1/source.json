@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "tool": "built-in imagegen",
+  "status": "discussion_only_grid_requirement_failed",
+  "selected": "board-perspective-candidate.png",
+  "requested_grid": {
+    "columns": 12,
+    "rows": 7
+  },
+  "reference": {
+    "path": "../../production/directional_v1/review/formation.png",
+    "sha256": "acfabbdb2b7b3958324145423ee3eff532a0fcc032df319e2408e722996ddb3a",
+    "role": "style_identity_scene_reference_only"
+  },
+  "outputs": [
+    {
+      "path": "board-perspective-candidate.png",
+      "original_path": "/Users/leqiong/.codex/generated_images/01a14803-a337-7792-b006-8b14874af055/exec-f56ab77c-9cb6-4375-9fd2-1848921e9234.png",
+      "sha256": "d48745d6b3a67d1b84d11feed125bfd2648ca9bea1d5fa244d376b7003aa6956",
+      "width": 1672,
+      "height": 941,
+      "observed_grid": {
+        "columns": 14,
+        "rows": 7
+      },
+      "selected": true
+    },
+    {
+      "path": "history/grid-retry-not-adopted.png",
+      "original_path": "/Users/leqiong/.codex/generated_images/01a14803-a337-7792-b006-8b14874af055/exec-033ad856-f69d-4171-a90d-a67a687790ca.png",
+      "sha256": "d29c143cdfbb42bfa6350e7144d772d308ba66e27df871f269192ce118ca39d9",
+      "width": 1672,
+      "height": 941,
+      "observed_grid": {
+        "columns": 14,
+        "rows": 7
+      },
+      "selected": false,
+      "reason": "one targeted grid edit did not fix column count"
+    }
+  ],
+  "technical_geometry_verified": false,
+  "runtime_integration": false,
+  "production_approval": false
+}
