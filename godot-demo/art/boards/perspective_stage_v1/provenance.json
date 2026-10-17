@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "authorization": "D-20261017-002",
+  "owner_chat": "05｜美术 / 角色 / UI（续2）",
+  "tool": "built-in imagegen",
+  "calls": 1,
+  "targeted_revisions": 0,
+  "input": {
+    "path": "../../concepts/board_perspective_v1/board-perspective-candidate.png",
+    "sha256": "d48745d6b3a67d1b84d11feed125bfd2648ca9bea1d5fa244d376b7003aa6956",
+    "role": "approved spatial-composition edit target; erroneous grid and demonstration characters removed"
+  },
+  "output": {
+    "path": "scene-clean.png",
+    "original_path": "/Users/leqiong/.codex/generated_images/01a14803-a337-7792-b006-8b14874af055/exec-cacb23d4-30a1-47ad-b5e3-269d9d4608a0.png",
+    "sha256": "0a600d28de16c27fb6c92003c1e29a8c4a33c3bd819ab887c8d505adf1142302",
+    "bytes": 2981854,
+    "width": 1672,
+    "height": 941,
+    "background": "opaque",
+    "copied_without_pixel_edit": true
+  },
+  "visual_review": {
+    "author": "no visible units, unit shadows or regular old grid; rim/stairs/forest retained",
+    "independent_read_only": "handoff_geometry_audit confirmed cleanup and recommended inset corners",
+    "runtime": false
+  },
+  "offline_previews": {
+    "method": "Pillow annotation on copies; generated source is unmodified",
+    "files": [
+      "review/calibration-12x7.png",
+      "review/hud-fit-1920x1080.png"
+    ],
+    "report": "review/verification.json",
+    "rebuild": "review/build_preview.py",
+    "warning": "no live game or existing character rendering"
+  },
+  "packaging": {
+    "effective_image": "scene-clean.png",
+    "exclude": [
+      "review/*",
+      "README.md",
+      "HANDOFF.md",
+      "PROMPTS.md",
+      "provenance.json"
+    ],
+    "not_yet_imported_or_exported": true
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "scope": "offline proposed artwork mapping only; not runtime input/PCK/character/battle acceptance",
+  "source_sha256": "0a600d28de16c27fb6c92003c1e29a8c4a33c3bd819ab887c8d505adf1142302",
+  "source_size": [
+    1672,
+    941
+  ],
+  "grid": [
+    12,
+    7
+  ],
+  "center_count": 84,
+  "boundary_vertex_count": 104,
+  "offline_forward_inverse_samples": 188,
+  "maximum_grid_coordinate_roundtrip_error": 1.9860273225978185e-15,
+  "image_corners": [
+    [
+      248.0,
+      228.0
+    ],
+    [
+      1400.0,
+      228.0
+    ],
+    [
+      1524.0,
+      678.0
+    ],
+    [
+      124.0,
+      678.0
+    ]
+  ],
+  "proposed_screen_corners": [
+    [
+      348.15999999999997,
+      319.76
+    ],
+    [
+      1408.0,
+      319.76
+    ],
+    [
+      1522.0800000000002,
+      733.76
+    ],
+    [
+      234.07999999999998,
+      733.76
+    ]
+  ],
+  "row_boundaries_image_y": [
+    228.0,
+    282.2713567839196,
+    339.4359415305245,
+    399.7314487632509,
+    463.4223433242506,
+    530.803738317757,
+    602.205967276227,
+    678.0
+  ],
+  "all_centers_clear_of_reserved_hud": true,
+  "top_bottom_actor_relative_scale": [
+    0.8228571428571428,
+    1
+  ],
+  "runtime_tested": false,
+  "preview_sha256": {
+    "calibration-12x7.png": "63211b0e98fc8bbdf90be9cac4f50e030bda2997a3ef9a42c330757b14bd2404",
+    "hud-fit-1920x1080.png": "b13fb17d6601990553e14571d55e0870778be0441e736299d427e9d5f1d84638"
+  }
+}

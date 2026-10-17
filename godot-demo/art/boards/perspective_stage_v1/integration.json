@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "status": "art_handoff_not_runtime_integrated",
+  "source_image": "scene-clean.png",
+  "image_size": [
+    1672,
+    941
+  ],
+  "coordinate_system": "top-left origin; +x right; +y down; all corner values in source-image pixels",
+  "logical_grid": {
+    "columns": 12,
+    "rows": 7,
+    "orientation": "friendly left / enemy right; y=0 far, y=7 near",
+    "corners_order": [
+      "top_left",
+      "top_right",
+      "bottom_right",
+      "bottom_left"
+    ]
+  },
+  "surface": {
+    "art_outline_approx": [
+      [
+        242,
+        220
+      ],
+      [
+        1406,
+        220
+      ],
+      [
+        1534,
+        686
+      ],
+      [
+        116,
+        686
+      ]
+    ],
+    "recommended_playable_corners": [
+      [
+        248,
+        228
+      ],
+      [
+        1400,
+        228
+      ],
+      [
+        1524,
+        678
+      ],
+      [
+        124,
+        678
+      ]
+    ],
+    "bounds_semantics": "map logical outer corners (0,0),(12,0),(12,7),(0,7); exclude decorative rim, sidewall, lanterns, stairs and all external ground"
+  },
+  "projection_proposal": {
+    "type": "one planar projective homography",
+    "center_x": 824,
+    "top_y": 228,
+    "bottom_y": 678,
+    "top_width": 1152,
+    "bottom_width": 1400,
+    "far_to_near_width_ratio": 0.8228571428571428,
+    "warning": "not bilinear linear-row interpolation; not production camera calibration"
+  },
+  "display_proposal": {
+    "canvas": [
+      1920,
+      1080
+    ],
+    "uniform_image_scale": 0.92,
+    "image_origin": [
+      120,
+      110
+    ],
+    "image_rect": [
+      120,
+      110,
+      1538.24,
+      865.72
+    ],
+    "outside_fill": "#102323",
+    "outside_fill_note": "same dark-forest tone behind HUD; no second enlarged copy of the platform",
+    "interactive_safe_rect": [
+      210,
+      150,
+      1340,
+      760
+    ]
+  },
+  "actor_scale_proposal": {
+    "near_base": 0.9,
+    "far_multiplier": 0.8228571428571428,
+    "near_multiplier": 1,
+    "interpolation": "same continuous projective depth factor as surface; interpolate current moving ground point, not discrete destination row",
+    "notes": "preserve existing animation identity/proportions; keep HUD text readable rather than compress fonts with depth"
+  },
+  "hud_reserved_rectangles": [
+    {
+      "id": "top",
+      "rect": [
+        32,
+        20,
+        1856,
+        112
+      ]
+    },
+    {
+      "id": "left_envelope",
+      "rect": [
+        26,
+        179,
+        168,
+        732
+      ]
+    },
+    {
+      "id": "right_envelope",
+      "rect": [
+        1572,
+        176,
+        314,
+        728
+      ]
+    },
+    {
+      "id": "bottom_status_roster",
+      "rect": [
+        220,
+        918,
+        1320,
+        134
+      ]
+    },
+    {
+      "id": "bottom_actions",
+      "rect": [
+        1572,
+        918,
+        314,
+        130
+      ]
+    }
+  ],
+  "runtime_requirements": [
+    "one shared forward/inverse projection for surface/grid/selection/range/input",
+    "reuse animated units; no baked demonstration characters",
+    "avoid double-drawing existing platform, lamps and stairs",
+    "feet/contact and cast shadows/sorting/bars/projectile source points align",
+    "actual source and final PCK visual/input/battle verification remains with 06/07"
+  ]
+}
