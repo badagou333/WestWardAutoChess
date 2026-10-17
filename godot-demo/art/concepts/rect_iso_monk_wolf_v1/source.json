@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "authorization": "D-20261018-001",
+  "status": "static_proposal_owner_review_pending",
+  "tool": "built-in imagegen",
+  "generation_calls": 1,
+  "targeted_revisions": 0,
+  "references": [
+    {
+      "path": "../guard_monk/nine_sols_v1/guard-monk-nine-sols-candidate.png",
+      "role": "confirmed badger monk identity/clothing/colors only; not old camera",
+      "sha256": "304a21515f7f5579b9b9cecb1e9d687b3da944816e82304664e476bebefe4582"
+    },
+    {
+      "path": "../mountain_wolf/nine_sols_v1/mountain-wolf-nine-sols-candidate.png",
+      "role": "current ordinary quadruped mountain wolf identity/colors only; not old camera",
+      "sha256": "9c2a29db71a9a6a477054a2d36c1cbac8e3d316cd3d1cb2622727188a1d89585"
+    }
+  ],
+  "output": {
+    "path": "rect-iso-monk-wolf-candidate.png",
+    "original_path": "/Users/leqiong/.codex/generated_images/01a14803-a337-7792-b006-8b14874af055/exec-5fc37072-c6ce-4637-9a4f-325c1d733ed8.png",
+    "width": 1672,
+    "height": 941,
+    "bytes": 2457411,
+    "sha256": "2d8e79cf4c06fc3f25a84d8cf05e66ce66f89efdb5ee25a0c69b7d171335bf19",
+    "unmodified_copy": true
+  },
+  "review": {
+    "author_static": "retained; rectangular field with diagonal diamond lattice, redrawn elevated poses and grounding",
+    "read_only_visual": "rect_iso_visual_review recommends retaining first output; no mandatory revision",
+    "limits": [
+      "outer side edges have slight convergence, not an exact orthogonal rectangle",
+      "only three wolf paws clearly visible; far hind leg occluded, full anatomy not verified",
+      "exact grid geometry and camera pitch not calibrated"
+    ],
+    "owner_confirmed": false,
+    "animation_verified": false,
+    "runtime_integrated": false,
+    "qa07_verified": false
+  }
+}
