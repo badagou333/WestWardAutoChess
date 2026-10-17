@@ -1,0 +1,29 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+BOARD_PROFILE_PACK legacy A sample=true source_equal=true seconds=11.825
+BOARD_PROFILE_PACK legacy A sample=false source_equal=true seconds=11.825
+BOARD_PROFILE_PACK legacy B sample=true source_equal=true seconds=10.1000000000001
+BOARD_PROFILE_PACK legacy B sample=false source_equal=true seconds=10.1000000000001
+BOARD_PROFILE_PACK legacy C sample=true source_equal=true seconds=10.5583333333334
+BOARD_PROFILE_PACK legacy C sample=false source_equal=true seconds=10.5583333333334
+BOARD_PROFILE_PACK legacy R sample=true source_equal=true seconds=10.3833333333334
+BOARD_PROFILE_PACK legacy R sample=false source_equal=true seconds=10.3833333333334
+BOARD_PROFILE_PACK normal A sample=true source_equal=true seconds=15.3666666666664
+BOARD_PROFILE_PACK normal A sample=false source_equal=true seconds=15.3666666666664
+BOARD_PROFILE_PACK normal B sample=true source_equal=true seconds=6.3000000000001
+BOARD_PROFILE_PACK normal B sample=false source_equal=true seconds=6.3000000000001
+BOARD_PROFILE_PACK normal C sample=true source_equal=true seconds=14.2166666666665
+BOARD_PROFILE_PACK normal C sample=false source_equal=true seconds=14.2166666666665
+BOARD_PROFILE_PACK normal R sample=true source_equal=true seconds=11.5333333333333
+BOARD_PROFILE_PACK normal R sample=false source_equal=true seconds=11.5333333333333
+BOARD_PROFILE_PACK bear A sample=true source_equal=true seconds=18.6166666666663
+BOARD_PROFILE_PACK bear A sample=false source_equal=true seconds=18.6166666666663
+BOARD_PROFILE_PACK bear B sample=true source_equal=true seconds=7.17500000000015
+BOARD_PROFILE_PACK bear B sample=false source_equal=true seconds=7.17500000000015
+BOARD_PROFILE_PACK bear C sample=true source_equal=true seconds=18.5083333333329
+BOARD_PROFILE_PACK bear C sample=false source_equal=true seconds=18.5083333333329
+BOARD_PROFILE_PACK bear R sample=true source_equal=true seconds=25.4166666666659
+BOARD_PROFILE_PACK bear R sample=false source_equal=true seconds=25.4166666666659
+BOARD_PROFILE_PACK runs=24 failures=0

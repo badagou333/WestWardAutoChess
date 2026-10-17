@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+ERROR: A source unchanged
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/audio_integration_test.gd:7)
+       [1] run (/Users/leqiong/workSpace/tower-defense/godot-demo/tests/audio_integration_test.gd:18)
+AUDIO_INTEGRATION: failures=1 (scheduling only when headless)

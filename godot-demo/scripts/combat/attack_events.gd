@@ -8,6 +8,8 @@ var strikes: Array = []
 var missiles: Array = []
 var marks: Array = []
 var respect_run_casualties := false # Only free mode opts into run-wide losses.
+var visual_target := Callable() # Optional display adapters; never affect timing/HP.
+var visual_scale := Callable()
 var counts := {"attacks":0,"projectiles":0,"hits":0,"heals":0,"cancelled":0}
 
 static func alive(target) -> bool:
@@ -17,6 +19,12 @@ static func alive(target) -> bool:
 static func visual(actor):
 	var result = actor.get("presentation")
 	return result if result != null else (actor if actor.has_method("impact_delay") else null)
+
+func target_point(actor) -> Vector2:
+	return visual_target.call(actor) if visual_target.is_valid() else actor.position+Vector2(0,-35)
+
+func effect_scale(actor) -> float:
+	return float(visual_scale.call(actor)) if visual_scale.is_valid() else 1.0
 
 func request(actor, target, healing := false, splash := false) -> void:
 	if not alive(actor) or not alive(target): return
@@ -38,7 +46,7 @@ func tick(delta: float) -> void:
 			counts.cancelled += 1
 			continue
 		missile.time += delta
-		var aim: Vector2 = missile.target.position + Vector2(0,-35)
+		var aim: Vector2 = target_point(missile.target)
 		missile.position = missile.from.lerp(aim, minf(1,missile.time / 0.25))
 		if missile.time + 0.0000001 >= 0.25:
 			missiles.erase(missile)
@@ -69,6 +77,7 @@ func tick(delta: float) -> void:
 			strike["texture"] = texture
 			strike["projectile_kind"] = projectile
 			strike.time = 0.0
+			if visual_scale.is_valid(): strike["visual_scale_from"]=effect_scale(strike.source)
 			missiles.append(strike)
 			counts.projectiles += 1
 			released.emit()
@@ -88,7 +97,7 @@ func _apply(event: Dictionary) -> void:
 	else: counts.hits += 1
 	var view = visual(event.target)
 	if view != null and not event.healing: view.impact_stop = 0.025
-	marks.append({"position":event.target.position+Vector2(0,-35),"time":0.2,"healing":event.healing})
+	marks.append({"position":target_point(event.target),"time":0.2,"healing":event.healing,"visual_scale":effect_scale(event.target)})
 
 func _fallen_source(event: Dictionary) -> bool:
 	return respect_run_casualties and is_instance_valid(event.source) and event.source.get("run_fallen") == true
@@ -104,8 +113,9 @@ func clear(reset_counts := false) -> void:
 func _draw() -> void:
 	for missile in missiles:
 		if not alive(missile.target): continue
-		var heading: Vector2 = missile.target.position + Vector2(0,-35) - missile.from
-		draw_set_transform(missile.position,heading.angle())
+		var heading: Vector2 = target_point(missile.target) - missile.from
+		var size:=lerpf(float(missile.get("visual_scale_from",1.0)),effect_scale(missile.target),minf(1.0,missile.time/0.25))
+		draw_set_transform(missile.position,heading.angle(),Vector2.ONE*size)
 		if missile.texture != null:
 			draw_texture(missile.texture,-Vector2(missile.texture.get_size())/2)
 		else:
@@ -128,4 +138,4 @@ func _draw() -> void:
 	for mark in marks:
 		var color := Color("75eba3") if mark.healing else Color("ffd28a")
 		color.a = mark.time / 0.2
-		draw_arc(mark.position,15+(0.2-mark.time)*30,0,TAU,24,color,2)
+		draw_arc(mark.position,(15+(0.2-mark.time)*30)*float(mark.get("visual_scale",1.0)),0,TAU,24,color,2)

@@ -11,7 +11,7 @@ func panel(rect: Rect2, parent: Node = self) -> Panel:
 
 func setup(host) -> void:
 	super.setup(host)
-	usage_label.text = "松风台 · 正面45°试玩"
+	usage_label.text = "松风台 · 轻透视试玩"
 	profile_choice.add_theme_font_override("font",ThemeDB.fallback_font)
 	for state in ["normal","hover","pressed"]:
 		profile_choice.get_popup().add_theme_font_override("font",ThemeDB.fallback_font)

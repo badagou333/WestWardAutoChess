@@ -1,12 +1,20 @@
 extends SceneTree
 var heard: Array[String] = []
 var failures := 0
+var source_audio_path := ""
+var output_path := ""
+var packaged := false
+var loaded_stream := {}
 func check(ok: bool, label: String):
 	if not ok:
 		failures += 1
 		push_error(label)
 func _initialize(): call_deferred("run")
 func run():
+	packaged=OS.get_cmdline_user_args().has("--expect-packed")
+	for argument in OS.get_cmdline_user_args():
+		if argument.begins_with("--source-audio="): source_audio_path=argument.trim_prefix("--source-audio=")
+		elif argument.begins_with("--output="): output_path=argument.trim_prefix("--output=")
 	var game = load("res://scenes/main.tscn").instantiate()
 	root.add_child(game)
 	game.set_process(false)
@@ -15,7 +23,21 @@ func run():
 	check(sound.streams.size()==19,"17 adopted cues plus UI and victory")
 	var fox_path := "res://audio/candidates/foxfire-dwoboyle-v1/foxfire_A_faithful.wav"
 	check(sound.stream_paths.foxfire_imp_attack==fox_path,"Selected A overrides legacy synthesis")
-	check(FileAccess.get_sha256(fox_path)=="aa30009e92190a69ec99a404f047b453606a8f6e79e5a0f4fe3de495a900a7db","A source unchanged")
+	var stream: AudioStreamWAV=sound.streams.foxfire_imp_attack
+	var context:=HashingContext.new()
+	context.start(HashingContext.HASH_SHA256)
+	context.update(stream.data)
+	loaded_stream={"path":fox_path,"format":stream.format,"mix_rate":stream.mix_rate,"stereo":stream.stereo,"duration":stream.get_length(),"imported_data_sha256":context.finish().hex_encode()}
+	if not packaged:
+		check(FileAccess.get_sha256(fox_path)=="aa30009e92190a69ec99a404f047b453606a8f6e79e5a0f4fe3de495a900a7db","A source unchanged")
+	else:
+		check(not FileAccess.file_exists(fox_path),"isolated PCK uses imported sample, never host original WAV fallback")
+		var reference=JSON.parse_string(FileAccess.get_file_as_string(source_audio_path)) if not source_audio_path.is_empty() and FileAccess.file_exists(source_audio_path) else null
+		check(reference is Dictionary and reference.get("failures",-1)==0 and reference.get("packaged",true)==false,"PCK requires completed external source audio evidence")
+		if reference is Dictionary:
+			var expected: Dictionary=reference.get("loaded_stream",{})
+			for field in loaded_stream:
+				check(expected.has(field) and (absf(float(expected[field])-float(loaded_stream[field]))<1e-9 if field=="duration" else expected[field]==loaded_stream[field]),"PCK imported legacy sample equals source "+field)
 	check(absf(sound.streams.foxfire_imp_attack.get_length()-0.57)<0.001,"A duration loaded")
 	check(FileAccess.file_exists("res://CREDITS.md"),"Distribution attribution present")
 	for key in sound.stream_paths:
@@ -85,5 +107,9 @@ func run():
 	game._restart_demo()
 	check(sound.slots.all(func(s):return s.until==0) and not sound.paused,"Restart stops all audio")
 	game.free()
+	if not output_path.is_empty():
+		var file:=FileAccess.open(output_path,FileAccess.WRITE)
+		check(file!=null,"legacy audio evidence output opens")
+		if file: file.store_string(JSON.stringify({"scope":"legacy audio scheduling and actual imported sample parity, not audible playback","packaged":packaged,"raw_source_sha256":"aa30009e92190a69ec99a404f047b453606a8f6e79e5a0f4fe3de495a900a7db","loaded_stream":loaded_stream,"source_audio_evidence":source_audio_path,"failures":failures},"\t"))
 	print("AUDIO_INTEGRATION: failures=",failures," (scheduling only when headless)")
 	quit(1 if failures else 0)

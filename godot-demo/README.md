@@ -14,6 +14,30 @@ godot --path godot-demo
 
 启动器需要本机安装引擎。旧 `scenes/main.tscn` 固定棋盘保留作对照；经营规则与角色素材共用新版，不再保留旧免费券/五候选玩法。
 
+## 当前棋盘：正面轻透视森林石台（2026-10-17）
+
+双击`launch-board-trial.command`，或运行`godot --path godot-demo res://scenes/board_trial.tscn`。仍是12×7、左友右敌，原布阵/选择/换位/R撤下/右键取消、暂停倍速和重试均保留；不是把概念图误画的14列变成玩法。普通启动器仍进护送，旧矩形棋盘、独立音效试场和独立狐火3D工程保持原入口。
+
+场景使用05交付的[干净底图](art/boards/perspective_stage_v1/scene-clean.png)，按[HANDOFF](art/boards/perspective_stage_v1/HANDOFF.md)的0.92缩放+(120,110)起始标定接入，没有叠加旧平台/灯/台阶。准确网格、范围/选中提示和点击逆映射共用单应投影；可玩范围按逻辑`[0,12)×[0,7)`半开域，石框、立面、台阶及森林不接收布阵。人物移动先在逻辑格间按原0.50秒连续插值再投影，围脚点平滑远近缩放；身体不压扁/斜切。影子、排序、血条锚高及弹道发射/命中同步，HUD文字与条宽保可读像素。原十角色正背面关键姿势、攻击/弹道时钟、AI/射程/数值/声表/胜败均保持。
+
+作者无窗口source/实际PCK各完成9824项几何、963项逻辑视口输入、1234项十角色方向、1555项显示/动作与24自然局对照；实际新场景A/R/B两调度含暂停倍速与旧矩形/历史完整report、攻击/发射/接触和声音事件时序保持。实际包另24配置自然局与固定历史一致，9音频PCM/19语义、音效试场9边界/6自然局及7入口启动通过。证据为`tests/board-trial-runtime/board-perspective-20261017/`。首次夹具/解析/浮点及JSON索引失败和修正记录保留，不冒称首跑通过。
+
+本轮只无窗口：三档960×540、1280×720、1440×810验证的是逻辑视口映射与事件注入，不是OS鼠标、任意DPI或实际渲染验收；未操作用户已有窗口、播放设备声音或制作离线假截图。远排实际可读性、武器越格/前后遮挡和风格化轮廓影仍交05真实画面复核，07独立及负责人体验未完成。旧[正背面交付预览](art/production/directional_v1/README.md)与[旧石台预览](art/boards/depth_trial_v1/README.md)保留历史，不当当前轻透视运行截图；原关键姿势非完整跑步动画、药灵点击及Windows等未验限制保持。
+
+本批临时PCK为`/tmp/board-perspective-20261017.pck`（可重建，不入Git），实际353项；只新增有效底图及必要程序，不带本批HANDOFF/integration/review/概念候选，仍仅非商业试玩。源码检查示例：
+
+```sh
+godot --headless --path godot-demo --script res://tests/board_frontal_projection_test.gd -- --output=/tmp/board-perspective-geometry.json
+godot --headless --path godot-demo --script res://tests/board_depth_input_test.gd -- --output=/tmp/board-perspective-input.json
+godot --headless --path godot-demo --script res://tests/board_directional_test.gd -- --output=/tmp/board-perspective-direction.json
+godot --headless --path godot-demo --script res://tests/board_depth_test.gd -- --output=/tmp/board-perspective-depth.json
+godot --headless --path godot-demo --script res://tests/board_perspective_runtime_test.gd -- --output=/tmp/board-perspective-runtime.json
+godot --headless --path godot-demo --export-pack "Windows x86_64 Release" /tmp/board-perspective-20261017.pck
+python3 scripts/inspect_godot_pck.py /tmp/board-perspective-20261017.pck --release-policy --usage noncommercial --output=/tmp/board-perspective-files.txt
+```
+
+包内测试必须直接调用引擎，以新建空临时目录作为工作目录及`--path`，加`--main-pack`和绝对host测试脚本；不要经启动器带入源码`--path`。`board_trial_pack_boot.gd`先跑源码取`stage.decoded_rgba8_sha256`，包内须显式传`--expect-packed --expected-stage-pixels-sha=<该值>`；它拒绝宿主原PNG和测试源码回退，并检查交接/review/独立3D不入包。这是导入纹理像素校验，不虚称包内含原PNG头。其余包测试也在同一隔离条件执行；runtime加`--baseline=<仓库绝对路径>/godot-demo/tests/board-trial-runtime/board-balance-20261009-natural.json --source=/tmp/board-perspective-runtime.json`。旧`audio_integration_test.gd`源码先用`--output`保存原文件/实际导入sample证据，包内用`--expect-packed --source-audio=<该证据绝对路径>`逐项对照，不拿不存在的原WAV头作包内哈希。正常窗口/原生鼠标检查须另获允许后才运行；`board_depth_input_test.gd --native-pointer`会操作指针，默认分支不会。
+
 ## 独立音效试战（2026-10-10，非商业试玩）
 
 Mac双击[launch-audio-trial.command](launch-audio-trial.command)，或在仓库根目录运行：
@@ -45,9 +69,9 @@ Mac双击`launch-board-trial.command`，或在仓库根目录运行：
 godot --path godot-demo res://scenes/board_trial.tscn
 ```
 
-独立入口，不替换默认护送；仅一关、公开固定敌阵，无经营/营地/人口上限/主动技能。默认为加强六怪＋一只现有熊山君，棍僧默认采用此前无棋盘试接的13帧样板；左侧“对照选项”可战前选择原六怪／强化六怪／强化＋熊，棍僧新旧显示可在部署、战斗、暂停、结果阶段切换。切换显示不重新开局或改变战斗，敌人配置开战后锁定，重试保留配置及显示选项。请自行关闭旧试玩窗口再重开此入口，旧进程不会自动更新。未采用山狼失败稿或狐火Spine候选，不新增Boss技能。
+玩法仍为独立单关、公开固定敌阵，不替换默认护送；无经营/营地/人口上限/主动技能。默认为加强六怪＋一只熊山君，保原六怪／强化六怪／强化＋熊配置，开战后锁定。**本节下方13帧样板及旧显示对照为2026-10-09交付历史，只在legacy入口保留；当前主入口是上方2026-10-17轻透视及十角色16姿势版，旧动画切换按钮禁用。** 请自行关闭旧试玩窗口再重开，旧进程不会自动更新；未新增Boss技能。
 
-当前显示采用[松风台2D斜视棋盘](art/boards/depth_trial_v1/README.md)：带厚度石台、接触/轮廓阴影、脚点遮挡、0.9人物尺寸和调整后的血条。仍为纯2D，沿用角色素材而未重绘全员背面/多方向，玩法与完整战报保持。专用入口和实际打包版已出图，源码938项、图形输入635项、包内24局回归通过；检查范围与未验项目见上述说明，不代表07正式或负责人体验验收。旧矩形对照使用`launch-board-legacy.command`或`scenes/board_trial_legacy.tscn`。默认护送和独立音效入口保持。
+历史显示阶段见[松风台2D斜视棋盘记录](art/boards/depth_trial_v1/README.md)：2026-10-15固定0.9尺寸和当时未补背面的限制、938项/635项图形输入及旧包预览只证明该阶段，不代表当前轻透视已做GUI验收。10月17日正背面素材已另行接入，本轮保留使用；当前深度缩放、证据及未验范围以本页顶部新节为准。旧矩形对照使用`launch-board-legacy.command`或`scenes/board_trial_legacy.tscn`，默认护送和独立音效入口保持。
 
 ### D-20261010-001 · 当前声音：短狼与死亡／结果静音
 
@@ -95,7 +119,7 @@ godot --headless --main-pack /tmp/board-audio-20261009-final.pck --script /absol
 
 2026-10-09 D004待机朝向小修：熊山君atlas0实际源左，却被整套manifest的right标签误镜像成右；仅当前棋盘`board_trial_bear_view.gd`在实际取0帧时修正绘图X轴，包含攻击起手/收势用0帧的阶段。开场/无目标等待/重试逻辑敌方向左，0帧正确显示左向；实际目标在右时仍可转右，不锁死方向。1—4帧原变换、逻辑facing、脚点/socket、所有时钟/数值/寻路与旧模式不改。敌情/详情头像修前也实际镜像，且无窗口逐字节核实idle.png与atlas0完全相同，因此同一缺陷的两处头像按原生左源显示；未重画或改共享manifest。18帧/朝向矩阵、4真实移动/攻击/暂停/死亡重试活动与熊A/R两局完整报告均通过，包内同一专项也通过；A18.617秒/唐148、R25.417秒/唐168与原D002完整report一致。当前临时包为`/tmp/board-bear-facing-20261009.pck`，实际269项含新适配，资源策略通过；紧凑证据`tests/board-trial-runtime/board-bear-facing-20261009-{source,pack}.json`。只看过授权的一张源atlas，无图形窗口/鼠标/截图，几何与源像素事实不冒充实机连续视觉验收；待07本小修独立复核，原GUI/05视觉/P3待验保持。
 
-旧矩形版表现说明（当前仅legacy及沿用旧显示的入口，斜视版以松风台README为准）：底图`art/boards/formation_trial_v2/board-courtyard.png`（1672×941）映射到`Rect(0,-12,1920,1128)`，画布裁到1920×1080；仅背景纵向拉伸/裁剪，棋盘、角色及输入不动。旧v1保留，不把生成概念整图用作UI。底图来源、映射与样式权威见[05 v2交接](art/boards/formation_trial_v2/README.md)和`integration.json`；程序独立UI/真实头像裁切/细血量条在`scripts/presentation/board_trial_{ui,portrait,meter}.gd`，配色及场上HUD在`board_trial_style.gd`。头像只裁当前production/idle.png，不采用错误人脸/漂移头像/虚构防御或概念数值。重要正文22—24、次级18—20逻辑像素。
+旧矩形版表现说明（当前仅legacy及沿用旧显示的入口，主棋盘以本页顶部轻透视说明为准）：底图`art/boards/formation_trial_v2/board-courtyard.png`（1672×941）映射到`Rect(0,-12,1920,1128)`，画布裁到1920×1080；仅背景纵向拉伸/裁剪，棋盘、角色及输入不动。旧v1保留，不把生成概念整图用作UI。底图来源、映射与样式权威见[05 v2交接](art/boards/formation_trial_v2/README.md)和`integration.json`；程序独立UI/真实头像裁切/细血量条在`scripts/presentation/board_trial_{ui,portrait,meter}.gd`，配色及场上HUD在`board_trial_style.gd`。头像只裁当前production/idle.png，不采用错误人脸/漂移头像/虚构防御或概念数值。重要正文22—24、次级18—20逻辑像素。
 
 界面：顶栏为唐僧实时HP、阶段、计时、暂停/倍速/帮助；左窄A/B/C、对照选项和短键鼠提示；右上按所选配置显示三／四类敌情动态数量，点类型可轮看同类，E1—E6及熊E7可直接看具体单位，右下显示选中实时HP/攻或疗/间隔/射程/目标编号/格位/状态，仅己方战前显示可用R撤下。底部六个真实头像卡含编号/姓名/HP细条/部署或战斗状态，右下主开始/次重试；结果后主按钮查看战果，完整六人伤害/治疗/阵亡统计可关闭并重开。帮助按需展开，遮挡时不向棋盘/按钮透传鼠标或部署键，Esc关闭；不强制暂停自动战斗。操作失败原因短时在棋盘下方显示，不常驻版本号或大段规则。原点放/拖放/交换/取消语义保持。
 
@@ -320,7 +344,7 @@ D-004证据：`tests/board-trial-runtime/board-d004-20261007-{healer-source-comp
 
 最终新源码包`/tmp/board-d004-20261007.pck`：261项策略通过，要求新近战和药灵局部表现模块，保留有效v2/九头像，审阅/测试/Spine/失败狼候选排除。实际包A阵11.725秒胜并启动五入口；普通UI/药灵真实输入、AI/生命周期/朝向、旧格子/自由核心自测零失败，新三阵帧率/暂停/倍速稳定。系统证书/日志/编辑器设置权限警告保留，无新增脚本/资源错误；未制作Windows EXE/ZIP，待05新药灵图与07本提交独立验收。
 
-历史矩形版UI坐标接口：1920×1080逻辑，棋盘`ORIGIN=(220,190)`、`CELL=(110,102)`、Rect(220,190,1320,714)，720p按2/3映射，部署线x880/实际586.67。2026-10-15斜视版棋盘不再使用这些矩形坐标，应调用`display_center/display_cell_at`；UI区域仍保留以下布局。顶栏Rect(32,20,1856,112)，左窄边x26—194；右敌情Rect(1572,176,314,274)、详情Rect(1572,467,314,437)，详情文本Rect(1590,613,278,231)、R按钮y851—889。六卡x220—1540/y958—1052/间10，主按钮Rect(1572,918,314,72)、重试y1003—1048。临时反馈y918在棋盘下方；完整帮助展开Rect(660,170,600,724)，结果Rect(555,278,820,550)，展开时覆盖区按交互需要拦截。普通常驻UI不侵入棋盘，边缘角色头/血条仍可高于首行脚点。当前投影精确变换只引用松风台说明，不按台沿反推格心。
+历史矩形版UI坐标接口：1920×1080逻辑，棋盘`ORIGIN=(220,190)`、`CELL=(110,102)`、Rect(220,190,1320,714)，720p按2/3映射，部署线x880/实际586.67。当前轻透视棋盘不使用这些矩形坐标，应调用`display_center/display_cell_at`；UI区域仍保留以下布局。顶栏Rect(32,20,1856,112)，左窄边x26—194；右敌情Rect(1572,176,314,274)、详情Rect(1572,467,314,437)，详情文本Rect(1590,613,278,231)、R按钮y851—889。六卡x220—1540/y958—1052/间10，主按钮Rect(1572,918,314,72)、重试y1003—1048。临时反馈y918在棋盘下方；完整帮助展开Rect(660,170,600,724)，结果Rect(555,278,820,550)，展开时覆盖区按交互需要拦截。普通常驻UI不侵入棋盘，边缘角色头/血条仍可高于首行脚点。当前投影精确变换见本页顶部轻透视说明及board_depth_projection.gd，不按台沿反推格心。
 
 ## 棍僧动画样板试接（2026-10-04，待05/07审核）
 

@@ -6,6 +6,7 @@ const SUPPORT := [Vector2i(2,4),Vector2i(5,4),Vector2i(4,3),Vector2i(4,5),Vector
 var failures := 0
 var checks := 0
 var cases := []
+var output_path := "/tmp/board-perspective-20261017-depth.json"
 
 class MotionFixture extends "res://scripts/board_depth.gd":
 	func _brain(_actor: Dictionary, _delta: float) -> void:
@@ -41,13 +42,20 @@ func projection_and_input() -> void:
 	check(game.get_script().resource_path=="res://scripts/board_depth.gd","main board scene activates the new 2D depth controller")
 	check(game is Node2D and game.stage is Node2D,"stage and controller remain native 2D")
 	check(game.combat.z_index==1900,"projectiles draw above actor bodies and below HUD")
-	check(is_equal_approx(game.BODY_SCALE,0.9) and game.actors.all(func(actor): return actor.node.scale==Vector2.ONE*game.BODY_SCALE and not actor.node.presentation.show_shadow and actor.node.z_index==int(actor.node.global_position.y)),"all actor sizes use explicit 0.9 depth presentation, dedicated shadows and actual foot sorting")
+	check(is_equal_approx(game.BODY_SCALE,0.9) and game.actors.all(func(actor): return actor.node.scale.is_equal_approx(Vector2.ONE*game.BODY_SCALE*GroundProjection.depth_scale(Vector2(actor.cell)+Vector2(0.5,0.5))) and not actor.node.presentation.show_shadow and actor.node.z_index==int(actor.node.global_position.y)),"all actual actor sizes use continuous projective depth, dedicated shadows and actual foot sorting")
+	var far_scale: float=GroundProjection.depth_scale(Vector2(6,0.5))
+	var middle_scale: float=GroundProjection.depth_scale(Vector2(6,3.5))
+	var near_scale: float=GroundProjection.depth_scale(Vector2(6,6.5))
+	check(far_scale>0 and far_scale<middle_scale and middle_scale<near_scale and near_scale<=1.0,"far/middle/near projective body scales increase without changing actor proportions")
 	for row in Config.ROWS:
 		for col in Config.COLS:
 			var cell:=Vector2i(col,row)
 			var center: Vector2=GroundProjection.center(cell)
 			check(GroundProjection.cell_at(center)==cell and game.display_cell_at(center)==cell,"projected cell center roundtrip "+str(cell))
-			check(GroundProjection.inverse(center).distance_to(Vector2(cell)+Vector2(0.5,0.5))<0.000001,"projection inverse recovers fractional grid center "+str(cell))
+			# Godot's screen Vector2 is float32; the independent 9,824-check geometry
+			# run measures 1.06624031559477e-6 max roundtrip error at this calibration.
+			# Integer picking and all just-outside/shared-edge tests stay exact.
+			check(GroundProjection.inverse(center).distance_to(Vector2(cell)+Vector2(0.5,0.5))<0.000004,"projection inverse recovers fractional grid center within float32 pixel precision "+str(cell))
 			for corner in [Vector2(0.02,0.02),Vector2(0.98,0.02),Vector2(0.98,0.98),Vector2(0.02,0.98)]:
 				check(GroundProjection.cell_at(GroundProjection.point(Vector2(cell)+corner))==cell,"four near-edge samples retain same cell "+str(cell))
 			var polygon: PackedVector2Array=GroundProjection.polygon(cell)
@@ -68,35 +76,66 @@ func projection_and_input() -> void:
 	check(GroundProjection.cell_at(GroundProjection.point(Vector2(0,3))+Vector2(-20,0))==Vector2i(-1,-1),"left exterior cannot become a playable cell in the frontal projection")
 	check(GroundProjection.cell_at(GroundProjection.point(Vector2.ZERO))==Vector2i.ZERO,"top-left boundary remains inclusive")
 	check(GroundProjection.cell_at(GroundProjection.point(Vector2(5.999,3)))==Vector2i(5,3) and GroundProjection.cell_at(GroundProjection.point(Vector2(6.001,3)))==Vector2i(6,3),"deployment seam is exactly the projected sixth column")
-	cases.append({"kind":"projection_and_logical_clicks","cells":84,"edges":true,"OS_input_verified":false})
+	for row in Config.ROWS:
+		for col in range(1,Config.COLS):
+			for side in [-1,1]:
+				var grid:=Vector2(col+side*0.00001,row+0.5)
+				check(GroundProjection.cell_at(GroundProjection.point(grid))==Vector2i(col-1 if side<0 else col,row),"both sides of every shared projected column edge "+str(grid))
+	for row in range(1,Config.ROWS):
+		for col in Config.COLS:
+			for side in [-1,1]:
+				var grid:=Vector2(col+0.5,row+side*0.00001)
+				check(GroundProjection.cell_at(GroundProjection.point(grid))==Vector2i(col,row-1 if side<0 else row),"both sides of every shared projected row edge "+str(grid))
+	for grid in [Vector2(-0.00001,0),Vector2(0,-0.00001),Vector2(12.00001,0),Vector2(12,-0.00001),Vector2(-0.00001,7),Vector2(0,7.00001),Vector2(12.00001,7),Vector2(12,7.00001)]:
+		check(GroundProjection.cell_at(GroundProjection.point(grid))==Vector2i(-1,-1),"all four outer corners reject their just-outside points without clamping "+str(grid))
+	cases.append({"kind":"projection_and_logical_clicks","cells":84,"all_shared_edges_both_sides":true,"four_corner_outside_rejection":true,"depth_scales":[far_scale,middle_scale,near_scale],"OS_input_verified":false})
 	game.free()
 
 func movement() -> void:
-	for direction in [Vector2i.RIGHT,Vector2i.DOWN]:
-		var game=fixture()
-		var actor: Dictionary=game._record("guard_monk")
-		var from:=Vector2i(1,0)
-		var target: Vector2i=from+direction
-		game._set_cell(actor,from)
-		check(game.start_battle(),"movement fixture starts real simulation")
-		check(game._move(actor,target),"movement fixture accepts an unoccupied adjacent cell")
-		game.step(0.25)
-		var midpoint: Vector2=GroundProjection.center(from).lerp(GroundProjection.center(target),0.5)
-		check(actor.node.position.distance_to(midpoint)<0.000001 and is_equal_approx(actor.move.time,0.25),"half-second segment reaches exact projected midpoint at 0.25 seconds "+str(direction))
-		check(actor.cell==from and actor.node.z_index==int(midpoint.y),"mid-segment keeps logical origin and projected foot sorting "+str(direction))
-		var before: Dictionary=game.report().duplicate(true)
-		game.paused=true
-		game.step(2)
-		check(game.report()==before and actor.node.position.distance_to(midpoint)<0.000001,"pause freezes projected actor and all combat report fields")
-		game.paused=false
-		game.step(0.25)
-		check(actor.cell==target and actor.move.is_empty() and actor.node.position.distance_to(GroundProjection.center(target))<0.000001,"exact 0.50 second projected landing "+str(direction))
-		var landing_time: float=game.elapsed
-		var anchored: bool=actor.node.presentation.position==Vector2.ZERO and actor.node.presentation.foot_anchor==Vector2.ZERO
-		var death_sorted: bool=death_during_motion(game,actor,direction)
-		check(anchored and death_sorted,"local animation foot stays anchored and lethal contact mid-move freezes the correct foot depth "+str(direction))
-		cases.append({"kind":"movement","direction":[direction.x,direction.y],"half_seconds":0.25,"full_seconds":landing_time})
-		game.free()
+	for row in [0,3,6]:
+		for direction in [Vector2i.RIGHT,Vector2i.LEFT,Vector2i.DOWN,Vector2i.UP]:
+			movement_case(row,direction)
+
+func movement_case(row: int, direction: Vector2i) -> void:
+	var game=fixture()
+	var actor: Dictionary=game._record("guard_monk")
+	# Keep actual actors alive but outside the isolated movement lane. No AI runs
+	# in this explicit fixture; the natural suite below retains all real brains.
+	var other_index:=0
+	for other in game.actors:
+		if other.id==actor.id: continue
+		game._set_cell(other,Vector2i(8+other_index%4,int(other_index/4)))
+		other_index+=1
+	var from:=Vector2i(1,clampi(row,1,5) if direction.y!=0 else row)
+	var target: Vector2i=from+direction
+	game._set_cell(actor,from)
+	check(game.start_battle(),"movement fixture starts real simulation")
+	check(game._move(actor,target),"movement fixture accepts an unoccupied adjacent cell")
+	game.step(0.25)
+	var continuous_grid:=Vector2(from).lerp(Vector2(target),0.5)+Vector2(0.5,0.5)
+	var midpoint: Vector2=GroundProjection.point(continuous_grid)
+	var halfway_scale: Vector2=Vector2.ONE*game.BODY_SCALE*GroundProjection.depth_scale(continuous_grid)
+	check(actor.node.position.distance_to(midpoint)<0.000001 and is_equal_approx(actor.move.time,0.25),"0.25 second half-step interpolates logical ground before projection "+str(direction)+" row="+str(row))
+	check(actor.node.scale.is_equal_approx(halfway_scale) and is_zero_approx(actor.node.rotation),"half-step body smoothly scales around an upright foot, not a discrete destination row "+str(direction)+" row="+str(row))
+	if direction.y!=0:
+		check(midpoint.distance_to(GroundProjection.center(from).lerp(GroundProjection.center(target),0.5))>0.001,"non-affine projective half-step is not a screen-endpoint midpoint "+str(direction))
+	check(actor.cell==from and actor.node.z_index==int(midpoint.y),"mid-segment keeps logical origin and projected foot sorting "+str(direction))
+	var before: Dictionary=game.report().duplicate(true)
+	var paused_scale: Vector2=actor.node.scale
+	game.paused=true
+	game.step(2)
+	check(game.report()==before and actor.node.position.distance_to(midpoint)<0.000001 and actor.node.scale==paused_scale,"pause freezes projected actor, continuous scale and all combat report fields")
+	game.paused=false
+	game.step(0.25)
+	check(actor.cell==target and actor.move.is_empty() and actor.node.position.distance_to(GroundProjection.center(target))<0.000001,"exact 0.50 second projected landing "+str(direction))
+	check(actor.node.scale.is_equal_approx(Vector2.ONE*game.BODY_SCALE*GroundProjection.depth_scale(Vector2(target)+Vector2(0.5,0.5))),"landing adopts exact target depth scale without changing half-second timing "+str(direction))
+	var landing_time: float=game.elapsed
+	var anchored: bool=actor.node.presentation.position==Vector2.ZERO and actor.node.presentation.foot_anchor==Vector2.ZERO
+	var death_direction: Vector2i=direction if Config.valid(actor.cell+direction) else -direction
+	var death_sorted: bool=death_during_motion(game,actor,death_direction)
+	check(anchored and death_sorted,"local animation foot stays anchored and lethal contact mid-move freezes the correct foot depth "+str(direction))
+	cases.append({"kind":"movement","row":row,"direction":[direction.x,direction.y],"half_seconds":0.25,"full_seconds":landing_time,"continuous_midpoint":[midpoint.x,midpoint.y],"half_scale":halfway_scale.x})
+	game.free()
 
 func death_during_motion(game, actor: Dictionary, direction: Vector2i) -> bool:
 	var attacker: Dictionary=game._record("E5")
@@ -111,21 +150,22 @@ func death_during_motion(game, actor: Dictionary, direction: Vector2i) -> bool:
 	while game._alive(actor) and game.elapsed<limit: game.step(Config.STEP)
 	var foot: Vector2=actor.node.to_global(actor.node.presentation.foot_anchor)
 	var order: int=actor.node.z_index
+	var contact_scale: Vector2=actor.node.scale
 	var mid_move: bool=foot.distance_to(game.display_center(actor.cell))>0.1 and foot.distance_to(game.display_center(destination))>0.1
-	var sorted_on_contact: bool=actor.dead and order==int(foot.y)
+	var sorted_on_contact: bool=actor.dead and order==int(foot.y) and contact_scale.is_equal_approx(Vector2.ONE*game.BODY_SCALE*GroundProjection.depth_scale(GroundProjection.inverse(foot)))
 	game.step(0.5)
-	var frozen: bool=actor.node.global_position==foot and actor.node.z_index==order and actor.move.is_empty()
+	var frozen: bool=actor.node.global_position==foot and actor.node.z_index==order and actor.node.scale==contact_scale and actor.move.is_empty()
 	cases.append({"kind":"lethal_contact_mid_move","direction":[direction.x,direction.y],"real_projectile":released,"moving":moving,"mid_segment":mid_move,"dead":actor.dead,"foot":[foot.x,foot.y],"z_index":order,"sorted_on_contact":sorted_on_contact,"frozen_after_half_second":frozen})
 	return released and moving and mid_move and sorted_on_contact and frozen
 
-func projectile(key: String, mirrored: bool) -> void:
+func projectile(key: String, mirrored: bool, row: int) -> void:
 	var game=fixture()
 	check(game.start_battle(),"projectile fixture starts real simulation")
 	var source: Dictionary=game._record(key)
 	var healing: bool=key=="herbal_spirit_child"
 	var recipient: Dictionary=game._record("tangseng" if healing else "E5")
-	game._set_cell(source,Vector2i(4 if mirrored else 1,0))
-	game._set_cell(recipient,Vector2i(1 if mirrored else 4,0))
+	game._set_cell(source,Vector2i(4 if mirrored else 1,row))
+	game._set_cell(recipient,Vector2i(1 if mirrored else 4,row))
 	if healing: recipient.node.health=recipient.hp_max-40
 	game._attack(source,recipient,healing)
 	var release_limit:=2.0
@@ -140,19 +180,20 @@ func projectile(key: String, mirrored: bool) -> void:
 	check(missile.from.distance_to(expected_from)<0.000001 and missile.position.distance_to(expected_from)<0.000001,"actual projected socket is the initial projectile point "+key)
 	check(is_zero_approx(missile.time),"projectile flight begins at the existing release event")
 	game.step(0.125)
-	var expected_aim: Vector2=recipient.node.position+Vector2(0,-35)
+	var expected_aim: Vector2=game.combat.to_local(recipient.node.to_global(Vector2(0,-35)))
+	check(game.visual_target_point(recipient.node).distance_to(expected_aim)<0.000001,"target display point follows the recipient's actual depth-scaled local anchor "+key)
 	check(missile.position.distance_to(expected_from.lerp(expected_aim,0.5))<0.000001,"half-flight reaches correct screen-space interpolation "+key)
 	check(game.combat.counts.heals==0 and game.combat.counts.hits==0,"no early damage or heal before 0.25 seconds "+key)
-	var next_cell: Vector2i=recipient.cell+Vector2i.DOWN
+	var next_cell: Vector2i=recipient.cell+(Vector2i.UP if row==6 else Vector2i.DOWN)
 	game._set_cell(recipient,next_cell)
 	game.step(Config.STEP)
-	expected_aim=recipient.node.position+Vector2(0,-35)
+	expected_aim=game.combat.to_local(recipient.node.to_global(Vector2(0,-35)))
 	check(missile.position.distance_to(expected_from.lerp(expected_aim,missile.time/0.25))<0.000001,"projectile tracks the actual newly projected target point "+key)
 	while not game.combat.missiles.is_empty() and game.elapsed<release_limit:
 		game.step(Config.STEP)
 	check(game.combat.counts.projectiles==1 and game.combat.counts.heals+game.combat.counts.hits==1,"single serial releases and applies exactly once "+key)
 	check(not game.combat.marks.is_empty() and game.combat.marks[0].position.distance_to(expected_aim)<0.000001,"contact mark lands on projected target "+key)
-	cases.append({"kind":"projectile","source":key,"mirrored":mirrored,"flight_seconds":0.25,"single_application":true})
+	cases.append({"kind":"projectile","source":key,"row":row,"mirrored":mirrored,"flight_seconds":0.25,"single_application":true,"depth_scaled_origin_and_contact":true})
 	game.free()
 
 func audit_foot_sorting(game, frozen_dead: Dictionary, issues: Dictionary) -> void:
@@ -160,9 +201,12 @@ func audit_foot_sorting(game, frozen_dead: Dictionary, issues: Dictionary) -> vo
 		var foot: Vector2=actor.node.to_global(actor.node.presentation.foot_anchor)
 		if actor.node.z_index!=int(foot.y) and not issues.has("sort:"+actor.id):
 			issues["sort:"+actor.id]={"time":game.elapsed,"id":actor.id,"dead":actor.dead,"foot":[foot.x,foot.y],"z_index":actor.node.z_index}
+		var expected_scale: Vector2=Vector2.ONE*game.BODY_SCALE*GroundProjection.depth_scale(GroundProjection.inverse(foot))
+		if not actor.node.scale.is_equal_approx(expected_scale) and not issues.has("scale:"+actor.id):
+			issues["scale:"+actor.id]={"time":game.elapsed,"id":actor.id,"dead":actor.dead,"foot":[foot.x,foot.y],"scale":actor.node.scale.x,"expected":expected_scale.x}
 		if actor.dead:
-			if not frozen_dead.has(actor.id): frozen_dead[actor.id]={"foot":foot,"z_index":actor.node.z_index}
-			elif (foot!=frozen_dead[actor.id].foot or actor.node.z_index!=frozen_dead[actor.id].z_index) and not issues.has("freeze:"+actor.id):
+			if not frozen_dead.has(actor.id): frozen_dead[actor.id]={"foot":foot,"z_index":actor.node.z_index,"scale":actor.node.scale}
+			elif (foot!=frozen_dead[actor.id].foot or actor.node.z_index!=frozen_dead[actor.id].z_index or actor.node.scale!=frozen_dead[actor.id].scale) and not issues.has("freeze:"+actor.id):
 				issues["freeze:"+actor.id]={"time":game.elapsed,"id":actor.id,"foot":[foot.x,foot.y],"z_index":actor.node.z_index}
 
 func natural(depth: bool, profile: String, formation: String) -> Dictionary:
@@ -204,10 +248,13 @@ func legacy_and_audio() -> void:
 	cases.append({"kind":"legacy_and_audio","cells":84,"old_actor_scale":0.72})
 
 func run() -> void:
+	for argument in OS.get_cmdline_user_args():
+		if argument.begins_with("--output="): output_path=argument.trim_prefix("--output=")
 	projection_and_input()
 	movement()
 	for key in ["tangseng","wild_hunter","sparrow_spirit","herbal_spirit_child","foxfire_imp"]:
-		for mirrored in [false,true]: projectile(key,mirrored)
+		for row in [0,3,6]:
+			for mirrored in [false,true]: projectile(key,mirrored,row)
 	legacy_and_audio()
 	for profile in Config.ENEMY_PROFILES:
 		for formation in ["A","B","C","R"]:
@@ -217,7 +264,7 @@ func run() -> void:
 			check(matched,"complete report including all attack times matches legacy "+profile+" "+formation)
 			cases.append({"kind":"natural_full_report","profile":profile,"formation":formation,"exact_report_equal":matched,"report":depth_report,"legacy_report":old_report})
 			print("BOARD_DEPTH_PARITY ",profile," ",formation," exact=",matched)
-	var output:=FileAccess.open("/tmp/board-depth-20261014.json",FileAccess.WRITE)
+	var output:=FileAccess.open(output_path,FileAccess.WRITE)
 	check(output!=null,"depth evidence file opens outside the repository")
 	if output!=null:
 		output.store_string(JSON.stringify({"scope":"2D depth presentation and simulation parity","checks":checks,"failures":failures,"cases":cases,"natural_runs":24,"OS_input_or_visual_review":false},"\t"))

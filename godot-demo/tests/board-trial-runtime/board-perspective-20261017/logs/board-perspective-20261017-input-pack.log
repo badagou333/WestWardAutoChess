@@ -1,0 +1,18 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+BOARD_DEPTH_PROFILE before=bear target=0 focused=-1 embedded=true
+BOARD_DEPTH_PROFILE after=legacy visible=false
+BOARD_DEPTH_PROFILE before=legacy target=1 focused=-1 embedded=true
+BOARD_DEPTH_PROFILE after=normal visible=false
+BOARD_DEPTH_PROFILE before=normal target=2 focused=-1 embedded=true
+BOARD_DEPTH_PROFILE after=bear visible=false
+BOARD_DEPTH_INPUT_ROW 1 cells=12
+BOARD_DEPTH_INPUT_ROW 2 cells=24
+BOARD_DEPTH_INPUT_ROW 3 cells=36
+BOARD_DEPTH_INPUT_ROW 4 cells=48
+BOARD_DEPTH_INPUT_ROW 5 cells=60
+BOARD_DEPTH_INPUT_ROW 6 cells=72
+BOARD_DEPTH_INPUT_ROW 7 cells=84
+BOARD_DEPTH_INPUT completed=true checks=963 cells=84 pointer_timeouts=0 failures=0

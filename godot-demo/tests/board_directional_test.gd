@@ -2,6 +2,7 @@ extends SceneTree
 ## Directional drawing contracts and real board events; not a visual acceptance test.
 const View=preload("res://scripts/presentation/board_directional_view.gd")
 const Config=preload("res://scripts/data/board_trial_config.gd")
+const GroundProjection=preload("res://scripts/presentation/board_depth_projection.gd")
 const KEYS:=["tangseng","guard_monk","wild_hunter","sparrow_spirit","herbal_spirit_child","foxfire_imp","mountain_wolf","boar","gray_rat","bear_lord"]
 const PLAYBACK:=["pose","pose_time","animation_clock","attack_serial","attack_direction","facing","visual_alpha","dead","move_start","move_end","move_left","position","hit_pulse","hit_cooldown","impact_stop","landing","sample_walk_time","events","motion_sample_enabled"]
 var failures:=0
@@ -62,6 +63,8 @@ func scene_wiring() -> void:
 		check(view.has_method("draw_sample")==expected,"only delivered packages opt into main board: "+actor.id)
 		if expected:
 			check(view.direction_actor==actor and view.position==Vector2.ZERO and view.foot_anchor==Vector2.ZERO,"direction view follows actual actor foot: "+actor.id)
+			var expected_scale: float=game.BODY_SCALE*GroundProjection.depth_scale(Vector2(actor.cell)+Vector2(0.5,0.5))
+			check(actor.node.scale.is_equal_approx(Vector2.ONE*expected_scale) and actor.node.position.is_equal_approx(GroundProjection.center(actor.cell)),"direction adapter stays upright at projected foot with continuous depth scale: "+actor.id)
 			check(view.manifest==actor.visual_manifest,"combat still reads original action manifest: "+actor.id)
 			var other=old._record(actor.id).node.presentation
 			for field in PLAYBACK:
@@ -131,8 +134,14 @@ func real_movement_and_pause() -> void:
 		check(game._move(actor,Vector2i(0,1)),"real upward segment accepts "+key)
 		game.step(0.10)
 		check(view.direction_frame()==9,"real upward first support pose "+key)
+		var early_grid:=Vector2(0.5,2.5).lerp(Vector2(0.5,1.5),0.2)
+		check(actor.node.position.distance_to(GroundProjection.point(early_grid))<0.0002 and actor.node.scale.is_equal_approx(Vector2.ONE*game.BODY_SCALE*GroundProjection.depth_scale(early_grid)),"early real upward motion projects continuous logical point and scales around its foot "+key)
 		game.step(0.35)
 		check(view.direction_frame()==10 and not actor.move.is_empty(),"real upward late segment remains walking "+key)
+		var late_grid:=Vector2(0.5,2.5).lerp(Vector2(0.5,1.5),0.9)
+		check(actor.node.position.distance_to(GroundProjection.point(late_grid))<0.0002 and actor.node.scale.is_equal_approx(Vector2.ONE*game.BODY_SCALE*GroundProjection.depth_scale(late_grid)),"late motion remains nonlinearly projected without pose or scale snap "+key)
+		var socket: Vector2=view.emission_position()
+		check(view.to_global(socket).distance_to(actor.node.position+socket*actor.node.scale)<0.0002,"world socket follows the same scaled upright actor transform "+key)
 		var pose_time: float=view.pose_time
 		var frame: int=view.direction_frame()
 		var report: Dictionary=game.report().duplicate(true)
@@ -141,7 +150,7 @@ func real_movement_and_pause() -> void:
 		check(view.direction_frame()==frame and view.pose_time==pose_time and game.report()==report,"pause freezes complete action and simulation "+key)
 		game.paused=false
 		game.step(0.05)
-		check(actor.move.is_empty() and actor.cell==Vector2i(0,1) and view.direction_frame()==8,"real 0.50-second landing retains back idle "+key)
+		check(actor.move.is_empty() and actor.cell==Vector2i(0,1) and view.direction_frame()==8 and actor.node.position.is_equal_approx(GroundProjection.center(actor.cell)),"real 0.50-second projected landing retains back idle "+key)
 		game.free()
 
 func run() -> void:
@@ -149,7 +158,10 @@ func run() -> void:
 	scene_wiring()
 	direction_contracts()
 	real_movement_and_pause()
-	var file:=FileAccess.open("/tmp/board-directional-checks.json",FileAccess.WRITE)
+	var output_path: String="/tmp/board-perspective-directional-20261017.json"
+	for argument in OS.get_cmdline_user_args():
+		if argument.begins_with("--output="): output_path=argument.trim_prefix("--output=")
+	var file:=FileAccess.open(output_path,FileAccess.WRITE)
 	check(file!=null,"directional test report opens")
 	var report:={"scope":"board-only front/back display, no visual acceptance","checks":checks,"failures":failures,"roles":tested_roles,"cases":cases}
 	if file: file.store_string(JSON.stringify(report,"\t"))

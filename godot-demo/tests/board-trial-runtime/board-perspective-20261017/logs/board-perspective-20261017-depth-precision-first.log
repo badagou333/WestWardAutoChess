@@ -1,0 +1,29 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+ERROR: projection inverse recovers fractional grid center (10, 4)
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_depth_test.gd:22)
+       [1] projection_and_input (res://tests/board_depth_test.gd:55)
+       [2] run (res://tests/board_depth_test.gd:250)
+ERROR: projection inverse recovers fractional grid center (8, 6)
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/board_depth_test.gd:22)
+       [1] projection_and_input (res://tests/board_depth_test.gd:55)
+       [2] run (res://tests/board_depth_test.gd:250)
+BOARD_DEPTH_PARITY legacy A exact=true
+BOARD_DEPTH_PARITY legacy B exact=true
+BOARD_DEPTH_PARITY legacy C exact=true
+BOARD_DEPTH_PARITY legacy R exact=true
+BOARD_DEPTH_PARITY normal A exact=true
+BOARD_DEPTH_PARITY normal B exact=true
+BOARD_DEPTH_PARITY normal C exact=true
+BOARD_DEPTH_PARITY normal R exact=true
+BOARD_DEPTH_PARITY bear A exact=true
+BOARD_DEPTH_PARITY bear B exact=true
+BOARD_DEPTH_PARITY bear C exact=true
+BOARD_DEPTH_PARITY bear R exact=true
+BOARD_DEPTH checks=1555 natural_runs=24 failures=2

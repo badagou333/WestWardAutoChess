@@ -1,13 +1,27 @@
-extends "res://tests/board_trial_input_test.gd"
-## Full Window/Viewport gestures against the depth scene, with production frames.
-## Pointer helpers are inherited; no rectangular Config.center clicks.
+extends SceneTree
+## Root Viewport event routing against the real depth scene. Default is logical
+## injection, not OS pointer verification. --native-pointer enables the separately
+## authorized normal-window/native-pointer path.
 const GroundProjection = preload("res://scripts/presentation/board_depth_projection.gd")
+const Config = preload("res://scripts/data/board_trial_config.gd")
+var game
+var failures := 0
 var checks := 0
 var failed_labels: Array[String] = []
 var cases: Array[Dictionary] = []
 var cells_exercised := 0
 var pointer_timeouts := 0
 var consecutive_pointer_timeouts := 0
+var native_pointer := false
+var boundary_samples := 0
+
+func _initialize() -> void:
+	if "--native-pointer" in OS.get_cmdline_user_args(): root.position=Vector2i(80,80)
+	call_deferred("run")
+
+func frames() -> void:
+	for i in 3: await process_frame
+	if is_instance_valid(game) and not native_pointer: game._update_ui()
 
 func check(ok: bool, label: String) -> void:
 	checks+=1
@@ -17,6 +31,13 @@ func check(ok: bool, label: String) -> void:
 		push_error(label)
 
 func settle(point: Vector2) -> void:
+	if not native_pointer:
+		var motion:=InputEventMouseMotion.new()
+		motion.position=point
+		motion.global_position=point
+		root.push_input(motion,true)
+		await frames()
+		return
 	root.grab_focus()
 	await process_frame
 	root.warp_mouse(point)
@@ -44,6 +65,100 @@ func settle(point: Vector2) -> void:
 
 func cell_click(cell: Vector2i, button := MOUSE_BUTTON_LEFT) -> void:
 	await click(game.display_center(cell),button)
+
+func pointer(point: Vector2, pressed: bool, button := MOUSE_BUTTON_LEFT) -> void:
+	await settle(point)
+	var event:=InputEventMouseButton.new()
+	event.position=point
+	event.global_position=point
+	event.button_index=button
+	event.pressed=pressed
+	event.button_mask=(MOUSE_BUTTON_MASK_LEFT if button==MOUSE_BUTTON_LEFT else MOUSE_BUTTON_MASK_RIGHT) if pressed else 0
+	root.push_input(event,true)
+	await frames()
+
+func click(point: Vector2, button := MOUSE_BUTTON_LEFT) -> void:
+	await pointer(point,true,button)
+	await pointer(point,false,button)
+
+func press(code: Key) -> void:
+	var event:=InputEventKey.new()
+	event.keycode=code
+	event.pressed=true
+	root.push_input(event,true)
+	await frames()
+	event=event.duplicate()
+	event.pressed=false
+	root.push_input(event,true)
+	await frames()
+
+func check_profile(profile: String) -> void:
+	var report: Dictionary=game.report()
+	var specs: Array=Config.enemy_specs(profile)
+	check(game.enemy_profile==profile and report.enemy_profile==profile and report.config==Config.version_for(profile),"actual selected profile/version reported "+profile)
+	check(game.actors.size()==Config.FRIENDS.size()+specs.size() and report.enemy_parameters.size()==specs.size(),"profile rebuilds actual actor/parameter counts "+profile)
+	for index in specs.size():
+		var actor: Dictionary=game._record("E%d" % (index+1))
+		var stats: Dictionary=Config.enemy_stats(specs[index][0],profile)
+		var parameter: Dictionary=report.enemy_parameters[index]
+		check(actor.key==specs[index][0] and actor.hp_max==stats.hp and actor.damage==stats.damage and actor.interval==stats.interval and actor.reach==stats.range,"actual enemy stats bind selected profile "+profile+" "+actor.id)
+		check(parameter.id==actor.id and parameter.key==actor.key and parameter.hp==stats.hp and parameter.damage==stats.damage and parameter.interval==stats.interval and parameter.range==stats.range and parameter.walk==0.5 and parameter.initial_cell==[specs[index][1].x,specs[index][1].y],"reported parameter table matches selected profile "+profile+" "+actor.id)
+	check(game.ui.enemy_rows[3].is_visible_in_tree()==(profile=="bear"),"bear inspection row follows actual profile membership")
+	check(game.monk_sample_enabled and game._record("guard_monk").node.presentation.motion_sample_enabled,"profile rebuild preserves default board monk sample clock")
+
+func check_result() -> void:
+	var report: Dictionary=game.report()
+	check(game.phase==game.Phase.RESULT and game.result_count==1 and report.enemy_profile=="bear" and report.config==Config.version_for("bear"),"default bear settles exactly one actual profiled Result")
+	var core: Dictionary=game._record("tangseng")
+	var enemies: Array=game.actors.filter(func(actor): return not actor.friendly)
+	if game.victory:
+		check(game._alive(core) and enemies.all(func(actor): return not game._alive(actor)) and "唐僧存活且全敌清除" in game.ui.result_label.text,"actual victory requires living Tang and all enemies cleared")
+	else:
+		check(not game._alive(core) and "唐僧阵亡" in game.ui.result_label.text,"actual failure reports real Tang death")
+	check(game.ui.profile_choice.disabled,"result never unlocks profile changes")
+	for index in game.ui.ENEMY_TYPES.size():
+		var kind: String=game.ui.ENEMY_TYPES[index]
+		var members: Array=game.actors.filter(func(actor): return not actor.friendly and actor.key==kind)
+		if members.is_empty(): continue
+		var living: int=members.filter(func(actor): return game._alive(actor)).size()
+		check(game.ui.enemy_counts[index].text=="存活 %d / %d" % [living,members.size()],"enemy summary binds actual live/total count "+kind)
+
+func check_pick(point: Vector2, expected: Vector2i, label: String) -> void:
+	check(game.display_cell_at(point)==expected and GroundProjection.cell_at(point)==expected,label)
+
+func projected_boundaries() -> void:
+	# Probe every shared edge on both sides, including the deployment seam.
+	# Exact outer-boundary ownership is half-open [0,12) x [0,7).
+	var epsilon:=0.0001
+	for row in Config.ROWS:
+		for col in range(1,Config.COLS):
+			for side in [-1,1]:
+				var grid:=Vector2(col+side*epsilon,row+0.5)
+				var expected:=Vector2i(col-1 if side<0 else col,row)
+				check_pick(GroundProjection.point(grid),expected,"both sides of vertical shared edge "+str(grid))
+				boundary_samples+=1
+	for row in range(1,Config.ROWS):
+		for col in Config.COLS:
+			for side in [-1,1]:
+				var grid:=Vector2(col+0.5,row+side*epsilon)
+				var expected:=Vector2i(col,row-1 if side<0 else row)
+				check_pick(GroundProjection.point(grid),expected,"both sides of horizontal shared edge "+str(grid))
+				boundary_samples+=1
+	for corner in [Vector2(0,0),Vector2(12,0),Vector2(12,7),Vector2(0,7)]:
+		var inside:=Vector2(epsilon if corner.x==0 else 12-epsilon,epsilon if corner.y==0 else 7-epsilon)
+		check_pick(GroundProjection.point(inside),Vector2i(0 if corner.x==0 else 11,0 if corner.y==0 else 6),"inside corner "+str(corner))
+		var outside:=Vector2(-epsilon if corner.x==0 else 12+epsilon,-epsilon if corner.y==0 else 7+epsilon)
+		check_pick(GroundProjection.point(outside),Vector2i(-1,-1),"outside corner never clamps inward "+str(corner))
+	# Stone rim, sidewall and stairs are outside the playable homography.
+	for grid in [Vector2(-epsilon,0.5),Vector2(12+epsilon,0.5),Vector2(6,-epsilon),Vector2(6,7+epsilon),Vector2(-0.08,3.5),Vector2(12.08,3.5),Vector2(6,7.12),Vector2(6,7.8)]:
+		check_pick(GroundProjection.point(grid),Vector2i(-1,-1),"rim/step/exterior never accepted "+str(grid))
+	var far_left: Vector2=GroundProjection.point(Vector2.ZERO)
+	var near_left: Vector2=GroundProjection.point(Vector2(0,7))
+	check_pick(Vector2(near_left.x+1,far_left.y+1),Vector2i(-1,-1),"trapezoid bounding-box false positive rejected")
+	check_pick(GroundProjection.point(Vector2.ZERO),Vector2i.ZERO,"top-left boundary inclusive")
+	check_pick(GroundProjection.point(Vector2(12,0)),Vector2i(-1,-1),"right boundary exclusive")
+	check_pick(GroundProjection.point(Vector2(0,7)),Vector2i(-1,-1),"bottom boundary exclusive")
+	cases.append({"case":"projective_shared_edges_corners_and_exterior","two_sided_shared_edge_samples":boundary_samples,"boundary_policy":"half-open [0,12) x [0,7), no outward clamping"})
 
 func choose_profile(index: int) -> void:
 	# Route through the root's real embedded-window dispatch. Sending keys to
@@ -106,7 +221,8 @@ func all_cell_gestures() -> void:
 			var before: Dictionary=game.deployment.duplicate()
 			await cell_click(cell)
 			cells_exercised+=1
-			check(game.hover_cell()==cell,"actual pointer/hover agrees with projected cell "+str(cell))
+			check_pick(game.display_center(cell),cell,"event point agrees with projected cell "+str(cell))
+			if native_pointer: check(game.hover_cell()==cell,"native hover agrees with projected cell "+str(cell))
 			if Config.deployable(cell):
 				check(game.deployment.tangseng==cell,"native depth gesture deploys in left-half cell "+str(cell))
 				check(game.selected.is_empty() and not game.pointer_drag and game.range_cells().is_empty(),"successful depth gesture releases control and range "+str(cell))
@@ -118,7 +234,7 @@ func all_cell_gestures() -> void:
 	var before: Dictionary=game.deployment.duplicate()
 	for point in [GroundProjection.point(Vector2(0,3))+Vector2(-20,0),GroundProjection.point(Vector2(6,7))+Vector2(0,20),GroundProjection.point(Vector2(-.25,-.25))]:
 		await click(point)
-		check(game.hover_cell()==Vector2i(-1,-1) and game.deployment==before and game.selected=="tangseng","visible platform sides and off-board point never deploy or discard selection")
+		check(game.display_cell_at(point)==Vector2i(-1,-1) and game.deployment==before and game.selected=="tangseng","visible platform sides and off-board point never deploy or discard selection")
 	await cell_click(Vector2i(0,0),MOUSE_BUTTON_RIGHT)
 	check(game.selected.is_empty() and not game.pointer_drag,"native right-click cancels selection without moving any unit")
 	cases.append({"case":"84_projected_centers_and_platform_sides","cells":cells_exercised,"left_cells":42,"right_cells":42})
@@ -142,12 +258,30 @@ func swap_drag_and_resize() -> void:
 	await pointer(game.display_center(destination),false)
 	check(game.deployment==after_drag and game.selected.is_empty(),"a repeated release cannot swap or place a second time")
 	await reset_formation()
-	for size in [Vector2i(960,540),Vector2i(1280,720)]:
+	var before_outside: Dictionary=game.deployment.duplicate()
+	await pointer(game.display_center(game.deployment.guard_monk),true)
+	await pointer(GroundProjection.point(Vector2(6,7.6)),false)
+	check(game.deployment==before_outside and not game.pointer_drag and game.selected=="guard_monk","drag release on stairs ends gesture without moving or silently discarding selection")
+	await pointer(game.display_center(Vector2i(5,1)),false)
+	check(game.deployment==before_outside and game.selected=="guard_monk","release after off-board drag cannot commit a second drop")
+	await press(KEY_ESCAPE)
+	check(game.selected.is_empty() and not game.pointer_drag,"Escape cancels board selection and drag without movement")
+	await press(KEY_2)
+	await press(KEY_R)
+	check(not game.deployment.has("guard_monk") and game.selected=="guard_monk" and not game.pointer_drag,"R withdraws selected friendly while keeping it available for redeployment")
+	await press(KEY_2)
+	await cell_click(Vector2i(5,1))
+	check(game.deployment.guard_monk==Vector2i(5,1) and game.selected.is_empty(),"withdrawn friend returns through ordinary projected placement")
+	await reset_formation()
+	for size in [Vector2i(960,540),Vector2i(1280,720),Vector2i(1440,810)]:
 		root.size=size
 		await frames()
-		for cell in [Vector2i(0,0),Vector2i(11,0),Vector2i(0,6),Vector2i(11,6)]:
-			await settle(game.display_center(cell))
-			check(game.hover_cell()==cell,"resized actual viewport retains projected corner picking "+str(size)+" "+str(cell))
+		for row in Config.ROWS:
+			for col in Config.COLS:
+				var cell:=Vector2i(col,row)
+				await settle(game.display_center(cell))
+				check_pick(game.display_center(cell),cell,"resized viewport retains all projected centers "+str(size)+" "+str(cell))
+				if native_pointer: check(game.hover_cell()==cell,"resized native hover agrees with projected center "+str(size)+" "+str(cell))
 		await press(KEY_1)
 		await cell_click(Vector2i(5,6))
 		check(game.deployment.tangseng==Vector2i(5,6),"resized native sixth-column edge accepts deployment")
@@ -156,7 +290,17 @@ func swap_drag_and_resize() -> void:
 		await cell_click(Vector2i(6,6))
 		check(game.deployment==before and game.selected=="tangseng","resized native seventh-column edge rejects deployment")
 		await reset_formation()
-	cases.append({"case":"occupied_swap_drag_selection_release_resize","window_sizes":[[960,540],[1280,720]]})
+	cases.append({"case":"occupied_swap_drag_selection_release_resize","window_sizes":[[960,540],[1280,720],[1440,810]],"centers_per_size":84,"event_coordinate_space":"logical viewport; native mouse separately flagged","off_board_drag":true,"withdraw_and_redeploy":true})
+
+func ui_occlusion() -> void:
+	await press(KEY_2)
+	var before: Dictionary=game.deployment.duplicate()
+	var selected_before: String=game.selected
+	# Actual panel surfaces, away from intentional buttons, cannot place units.
+	for point in [Vector2(1800,700),Vector2(80,200),Vector2(1000,80),Vector2(1000,940)]:
+		await click(point)
+		check(game.deployment==before and game.selected==selected_before and not game.pointer_drag,"HUD panel gesture does not place or pick an underlying actor "+str(point))
+	cases.append({"case":"hud_occlusion","logical_viewport_events":true})
 
 func help_modal() -> void:
 	await press(KEY_6)
@@ -178,7 +322,7 @@ func battle_result_retry() -> void:
 	await reset_formation()
 	var opening: Dictionary=game.deployment.duplicate()
 	await click(game.start_button.get_global_rect().get_center())
-	check(game.phase==game.Phase.BATTLE and game.is_processing(),"real start button begins production frame-driven combat")
+	check(game.phase==game.Phase.BATTLE and game.is_processing()==native_pointer,"real start button begins combat; native frames or explicit deterministic logical stepping")
 	await press(KEY_P)
 	check(game.paused and game.pause_button.text=="继续 P","native pause key updates actual state and visible control")
 	var elapsed: float=game.elapsed
@@ -229,24 +373,38 @@ func battle_result_retry() -> void:
 	check(not game.ui.profile_choice.disabled and not game.ui.result_panel.visible,"retry unlocks profile controls and closes result")
 	cases.append({"case":"battle_result_retry","complete":true,"report":before_report})
 
+func await_result() -> void:
+	if native_pointer:
+		var began:=Time.get_ticks_msec()
+		while game.phase==game.Phase.BATTLE and Time.get_ticks_msec()-began<25000: await process_frame
+		check(game.phase==game.Phase.RESULT,"normal production frames reach result")
+		return
+	while game.phase==game.Phase.BATTLE and game.elapsed<60: game.step(1.0/60)
+	game._update_ui()
+	await frames()
+	check(game.phase==game.Phase.RESULT,"logical-input path reaches real natural result")
+
 func save_evidence(completed: bool, reason := "") -> void:
-	var path: String="/tmp/board-depth-input-20261014.json"
+	var path: String="/tmp/board-perspective-input-20261017.json"
 	for argument in OS.get_cmdline_user_args():
 		if argument.begins_with("--output="): path=argument.trim_prefix("--output=")
 	var output:=FileAccess.open(path,FileAccess.WRITE)
 	if output!=null:
-		output.store_string(JSON.stringify({"scope":"depth board normal-window full viewport input","completed":completed,"abort_reason":reason,"checks":checks,"failures":failures,"failed_labels":failed_labels,"pointer_timeouts":pointer_timeouts,"cell_gestures":cells_exercised,"cases":cases,"native_window_and_root_push_input":true,"human_manual_playtest":false},"\t"))
+		output.store_string(JSON.stringify({"scope":"perspective board root viewport event routing","completed":completed,"abort_reason":reason,"checks":checks,"failures":failures,"failed_labels":failed_labels,"pointer_timeouts":pointer_timeouts,"cell_gestures":cells_exercised,"cases":cases,"native_window_and_root_push_input":native_pointer,"logical_root_push_input":not native_pointer,"OS_mouse_verified":native_pointer and pointer_timeouts==0,"human_manual_playtest":false},"\t"))
 	print("BOARD_DEPTH_INPUT completed=",completed," checks=",checks," cells=",cells_exercised," pointer_timeouts=",pointer_timeouts," failures=",failures)
 
 func run() -> void:
+	native_pointer="--native-pointer" in OS.get_cmdline_user_args()
 	root.title="松风台 · 本轮输入验证"
 	root.size=Vector2i(1280,720)
 	game=load("res://scenes/board_trial.tscn").instantiate()
 	root.add_child(game)
 	current_scene=game
+	if not native_pointer: game.set_process(false)
 	game.audio_feedback.enabled=false
 	await frames()
-	check(game.get_script().resource_path=="res://scripts/board_depth.gd" and game.is_processing(),"window test loads the real main depth scene with normal production processing")
+	check(game.get_script().resource_path=="res://scripts/board_depth.gd" and game.is_processing()==native_pointer,"input test loads real main perspective scene without presenting logical injection as OS input")
+	projected_boundaries()
 	await keyboard_and_profiles()
 	if "--profiles-only" in OS.get_cmdline_user_args():
 		save_evidence(false,"profiles_only_diagnostic")
@@ -255,9 +413,10 @@ func run() -> void:
 		return
 	await all_cell_gestures()
 	await swap_drag_and_resize()
+	await ui_occlusion()
 	await help_modal()
 	await battle_result_retry()
-	var completed: bool=cells_exercised==84 and cases.size()==5 and cases.all(func(entry): return entry.get("complete",true))
+	var completed: bool=cells_exercised==84 and boundary_samples==298 and cases.size()==7 and cases.all(func(entry): return entry.get("complete",true))
 	check(completed,"all requested projected input groups actually execute")
 	save_evidence(completed)
 	game.free()

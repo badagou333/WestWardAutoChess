@@ -1,0 +1,15 @@
+{
+	"failures": 0,
+	"loaded_stream": {
+		"duration": 0.57,
+		"format": 3,
+		"imported_data_sha256": "fed5dd3123cc693a985d536cce9f430223b72248c5a28ecbe994621833420239",
+		"mix_rate": 44100,
+		"path": "res://audio/candidates/foxfire-dwoboyle-v1/foxfire_A_faithful.wav",
+		"stereo": false
+	},
+	"packaged": true,
+	"raw_source_sha256": "aa30009e92190a69ec99a404f047b453606a8f6e79e5a0f4fe3de495a900a7db",
+	"scope": "legacy audio scheduling and actual imported sample parity, not audible playback",
+	"source_audio_evidence": "/tmp/board-perspective-20261017-legacy-audio-source.json"
+}

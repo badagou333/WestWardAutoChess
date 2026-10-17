@@ -1,0 +1,223 @@
+{
+	"cases": [
+		{
+			"atlas_source_factors": {
+				"atlas.png": 1.0
+			},
+			"back_local_height": 126.84,
+			"front_local_height": 134.4,
+			"height_includes_weapon": true,
+			"kind": "uniform_scale_profile",
+			"role": "tangseng",
+			"scale": 0.42
+		},
+		{
+			"atlas_source_factors": {
+				"atlas.png": 1.0,
+				"move-atlas.png": 0.45
+			},
+			"back_local_height": 149.04,
+			"front_local_height": 160.38,
+			"height_includes_weapon": true,
+			"kind": "uniform_scale_profile",
+			"role": "guard_monk",
+			"scale": 0.54
+		},
+		{
+			"atlas_source_factors": {
+				"atlas.png": 1.0,
+				"move-atlas.png": 0.47
+			},
+			"back_local_height": 117.71,
+			"front_local_height": 123.24,
+			"height_includes_weapon": true,
+			"kind": "uniform_scale_profile",
+			"role": "wild_hunter",
+			"scale": 0.395
+		},
+		{
+			"atlas_source_factors": {
+				"atlas.png": 1.0
+			},
+			"back_local_height": 95.55,
+			"front_local_height": 110.76,
+			"height_includes_weapon": true,
+			"kind": "uniform_scale_profile",
+			"role": "sparrow_spirit",
+			"scale": 0.39
+		},
+		{
+			"atlas_source_factors": {
+				"atlas.png": 1.0
+			},
+			"back_local_height": 113.484,
+			"front_local_height": 121.59,
+			"height_includes_weapon": true,
+			"kind": "uniform_scale_profile",
+			"role": "herbal_spirit_child",
+			"scale": 0.386
+		},
+		{
+			"atlas_source_factors": {
+				"atlas.png": 1.0,
+				"move-atlas.png": 0.415
+			},
+			"back_local_height": 110.63,
+			"front_local_height": 113.96,
+			"height_includes_weapon": true,
+			"kind": "uniform_scale_profile",
+			"role": "foxfire_imp",
+			"scale": 0.37
+		},
+		{
+			"atlas_source_factors": {
+				"atlas.png": 1.0
+			},
+			"back_local_height": 125.1,
+			"front_local_height": 125.1,
+			"height_includes_weapon": true,
+			"kind": "uniform_scale_profile",
+			"role": "mountain_wolf",
+			"scale": 0.45
+		},
+		{
+			"atlas_source_factors": {
+				"atlas.png": 1.0
+			},
+			"back_local_height": 126.26,
+			"front_local_height": 125.08,
+			"height_includes_weapon": true,
+			"kind": "uniform_scale_profile",
+			"role": "boar",
+			"scale": 0.59
+		},
+		{
+			"atlas_source_factors": {
+				"atlas.png": 1.0
+			},
+			"back_local_height": 99.6,
+			"front_local_height": 101.6,
+			"height_includes_weapon": true,
+			"kind": "uniform_scale_profile",
+			"role": "gray_rat",
+			"scale": 0.4
+		},
+		{
+			"atlas_source_factors": {
+				"atlas.png": 1.0
+			},
+			"back_local_height": 188.34,
+			"front_local_height": 192.64,
+			"height_includes_weapon": true,
+			"kind": "uniform_scale_profile",
+			"role": "bear_lord",
+			"scale": 0.86
+		},
+		{
+			"actor": "tangseng",
+			"death_frozen": true,
+			"front_back_actions": true,
+			"mirror_socket": true,
+			"role": "tangseng"
+		},
+		{
+			"actor": "guard_monk",
+			"death_frozen": true,
+			"front_back_actions": true,
+			"mirror_socket": true,
+			"role": "guard_monk"
+		},
+		{
+			"actor": "wild_hunter",
+			"death_frozen": true,
+			"front_back_actions": true,
+			"mirror_socket": true,
+			"role": "wild_hunter"
+		},
+		{
+			"actor": "sparrow_spirit",
+			"death_frozen": true,
+			"front_back_actions": true,
+			"mirror_socket": true,
+			"role": "sparrow_spirit"
+		},
+		{
+			"actor": "herbal_spirit_child",
+			"death_frozen": true,
+			"front_back_actions": true,
+			"mirror_socket": true,
+			"role": "herbal_spirit_child"
+		},
+		{
+			"actor": "foxfire_imp",
+			"death_frozen": true,
+			"front_back_actions": true,
+			"mirror_socket": true,
+			"role": "foxfire_imp"
+		},
+		{
+			"actor": "E1",
+			"death_frozen": true,
+			"front_back_actions": true,
+			"mirror_socket": true,
+			"role": "mountain_wolf"
+		},
+		{
+			"actor": "E2",
+			"death_frozen": true,
+			"front_back_actions": true,
+			"mirror_socket": true,
+			"role": "mountain_wolf"
+		},
+		{
+			"actor": "E3",
+			"death_frozen": true,
+			"front_back_actions": true,
+			"mirror_socket": true,
+			"role": "boar"
+		},
+		{
+			"actor": "E4",
+			"death_frozen": true,
+			"front_back_actions": true,
+			"mirror_socket": true,
+			"role": "boar"
+		},
+		{
+			"actor": "E5",
+			"death_frozen": true,
+			"front_back_actions": true,
+			"mirror_socket": true,
+			"role": "gray_rat"
+		},
+		{
+			"actor": "E6",
+			"death_frozen": true,
+			"front_back_actions": true,
+			"mirror_socket": true,
+			"role": "gray_rat"
+		},
+		{
+			"actor": "E7",
+			"death_frozen": true,
+			"front_back_actions": true,
+			"mirror_socket": true,
+			"role": "bear_lord"
+		}
+	],
+	"checks": 1234,
+	"failures": 0,
+	"roles": [
+		"tangseng",
+		"guard_monk",
+		"wild_hunter",
+		"sparrow_spirit",
+		"herbal_spirit_child",
+		"foxfire_imp",
+		"mountain_wolf",
+		"boar",
+		"gray_rat",
+		"bear_lord"
+	],
+	"scope": "board-only front/back display, no visual acceptance"
+}

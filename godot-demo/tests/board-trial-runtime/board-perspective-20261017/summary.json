@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "scope": "D-20261017-002 author headless verification; not independent or rendered visual acceptance",
+  "date": "2026-10-17",
+  "baseline": "ef25f57",
+  "art_commit": "4114735",
+  "entry": "godot-demo/launch-board-trial.command",
+  "package": {
+    "path": "/tmp/board-perspective-20261017.pck",
+    "files": 353,
+    "sha256": "7f880e973084f72054a997b0560d24ebe64f1b1356aeccc0f6ac171ffe01cd40",
+    "usage": "noncommercial",
+    "decoded_stage_rgba8_sha256": "5752666877a9e8b0e6e0f965ba76834b5709c2280b2e47fcee92360d404269cd",
+    "main_entries_booted": 7,
+    "independent_3d_in_main_pack": false,
+    "isolated_working_directory": "/tmp/board-perspective-isolated-20261017.W29bZW",
+    "pack_mode_is_explicit_user_argument": true,
+    "host_source_fallback_gate_checked": true,
+    "source_boot_checks": 74,
+    "isolated_pack_boot_checks": 81,
+    "commercial_policy_rejected": true
+  },
+  "source_and_pack": {
+    "geometry_checks": 9824,
+    "depth_checks": 1555,
+    "depth_natural_runs": 24,
+    "direction_checks": 1234,
+    "input_checks": 963,
+    "logical_input_sizes": [
+      [
+        960,
+        540
+      ],
+      [
+        1280,
+        720
+      ],
+      [
+        1440,
+        810
+      ]
+    ],
+    "runtime_naturals": 9,
+    "runtime_new_scene_naturals": 6,
+    "runtime_legacy_controls": 3,
+    "full_report_and_release_contact_sound_trace_preserved": true,
+    "failures": 0
+  },
+  "pack_additional": {
+    "profile_natural_runs": 24,
+    "audio_pcm_assets": 9,
+    "audio_semantic_cases": 19,
+    "audio_core_natural_runs": 0,
+    "audio_trial_cases": 9,
+    "audio_trial_naturals": 6,
+    "legacy_audio_integration_passed": true,
+    "legacy_presentation_integration_passed": true,
+    "legacy_demo_integration_passed": true,
+    "legacy_audio_source_and_isolated_pack_import_sample_equal": true
+  },
+  "initial_failures_preserved": [
+    {
+      "report": "board-perspective-20261017-geometry-first.json",
+      "failures": 1,
+      "reason": "incorrect exterior fixture inside the playable surface; test point corrected"
+    },
+    {
+      "log": "logs/board-perspective-20261017-depth-first.log",
+      "reason": "test dynamic variable type inference; explicit types added"
+    },
+    {
+      "report": "board-perspective-20261017-depth-precision-first.json",
+      "failures": 2,
+      "reason": "float32 inverse test threshold below measured representable error; 4e-6 tolerance, integer picking and exterior counterexamples unchanged"
+    },
+    {
+      "report": "board-perspective-20261017-runtime-pack-first.json",
+      "failures": 9,
+      "reason": "JSON float/integer token mismatch; normalized fps indexing, full report/trace assertions retained"
+    },
+    {
+      "report": "board-perspective-20261017-boot-pack-mode-first.json",
+      "reason": "engine-consumed main-pack flag caused source-branch misclassification; explicit user flag and empty project path, all packaged suites rerun without source fallback"
+    },
+    {
+      "log": "logs/board-perspective-20261017-legacy-audio-pack-first.log",
+      "failures": 1,
+      "reason": "old source-only raw WAV header assertion not applicable to exported import sample; retain source raw SHA and compare packaged import sample byte hash/format/rate/channels/duration to completed source evidence"
+    }
+  ],
+  "not_verified": [
+    "GUI rendered output",
+    "OS/native pointer and DPI",
+    "device playback/listening",
+    "05 visual review",
+    "07 independent acceptance",
+    "Windows execution",
+    "arbitrary crowd occlusion/continuous animation quality"
+  ],
+  "warn": "macOS certificate and editor settings sandbox warnings retained; final test logs contain no script, parse or resource errors"
+}

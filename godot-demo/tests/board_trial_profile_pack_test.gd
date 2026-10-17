@@ -63,13 +63,15 @@ func natural(profile: String, formation: String, sampled: bool) -> void:
 	check(game.get_script().resource_path=="res://scripts/board_depth.gd","profile pack runs the actual main depth controller")
 	var stage=game.get("stage")
 	check(is_instance_valid(stage) and stage.get_script().resource_path=="res://scripts/presentation/board_depth_stage.gd" and stage.game==game and stage.get_parent()==game,"profile pack keeps the actual attached depth stage through roster rebuilds")
-	check(is_equal_approx(game.BODY_SCALE,0.9) and game.actors.all(func(actor): return actor.node.scale==Vector2.ONE*game.BODY_SCALE and actor.node.position==GroundProjection.center(actor.cell) and actor.node.position==game.display_center(actor.cell)),"profile pack has the actual 0.9 bodies at projected grid centers")
+	check(is_equal_approx(game.BODY_SCALE,0.9) and game.actors.all(func(actor): return actor.node.scale.is_equal_approx(Vector2.ONE*game.BODY_SCALE*GroundProjection.depth_scale(Vector2(actor.cell)+Vector2(0.5,0.5))) and actor.node.position==GroundProjection.center(actor.cell) and actor.node.position==game.display_center(actor.cell)),"profile pack has upright bodies at one projected foot/depth scale, not fixed scale across rows")
 	var view=game._record("guard_monk").node.presentation
 	check(view.get_script().resource_path=="res://scripts/presentation/board_directional_view.gd","pack instantiates actual board-only directional adapter")
 	for actor in game.actors:
 		check(actor.node.presentation.has_method("draw_sample") and actor.node.presentation.direction_pack.frames.size()==16,"pack actually enables every actor's sixteen directional poses: "+actor.id)
-	check(view.sample_body.get_size()==Vector2(3328,256) and view.sample_track.manifest.frames.size()==13,"pack actually loads thirteen-frame sample atlas and manifest")
-	check(is_equal_approx(view.impact_delay(),0.235) and game._record("guard_monk").node.scale==Vector2.ONE*game.BODY_SCALE and view.foot_anchor==Vector2.ZERO,"pack retains actual contact time and foot origin at the current depth body size")
+	var sample: Dictionary=view.draw_sample()
+	check(view.direction_pack.frames.size()==16 and view.direction_pack.textures.size()==16 and sample.texture!=null and sample.region.has_area() and sample.frame==view.direction_frame(),"pack actually draws current sixteen-frame monk directional package, not retained legacy sample clock art")
+	var monk: Dictionary=game._record("guard_monk")
+	check(is_equal_approx(view.impact_delay(),0.235) and monk.node.scale.is_equal_approx(Vector2.ONE*game.BODY_SCALE*GroundProjection.depth_scale(Vector2(monk.cell)+Vector2(0.5,0.5))) and view.foot_anchor==Vector2.ZERO,"pack retains actual contact time and foot origin with per-depth upright body size")
 	check(game.actors.size()==(13 if profile=="bear" else 12) and game.actors.all(func(actor): return actor.walk==0.5 and actor.node.move_interval==0.5),"pack uses selected full roster and shared movement duration")
 	toggle_check(game,sampled,"deployment")
 	check(game.start_battle(),"pack starts actual profile formation "+profile+" "+formation)
@@ -115,7 +117,12 @@ func natural(profile: String, formation: String, sampled: bool) -> void:
 
 func run() -> void:
 	var args:=OS.get_cmdline_user_args()
-	var reference_path: String=args[0] if not args.is_empty() else ProjectSettings.globalize_path("res://tests/board-trial-runtime/board-balance-20261009-natural.json")
+	var reference_path: String=ProjectSettings.globalize_path("res://tests/board-trial-runtime/board-balance-20261009-natural.json")
+	var output_path: String="/tmp/board-perspective-profile-pack-20261017.json"
+	for argument in args:
+		if argument.begins_with("--reference="): reference_path=argument.trim_prefix("--reference=")
+		elif argument.begins_with("--output="): output_path=argument.trim_prefix("--output=")
+		elif not argument.begins_with("--"): reference_path=argument
 	var parsed=JSON.parse_string(FileAccess.get_file_as_string(reference_path)) if FileAccess.file_exists(reference_path) else null
 	check(parsed is Dictionary and parsed.get("natural_runs",0)==24 and parsed.get("failures",-1)==0 and parsed.get("cases",[]).size()==12,"actual complete source comparison evidence must exist")
 	if not parsed is Dictionary or parsed.get("cases",[]).size()!=12:
@@ -126,8 +133,8 @@ func run() -> void:
 		for formation in ["A","B","C","R"]:
 			for sampled in [true,false]: await natural(profile,formation,sampled)
 	check(evidence.size()==24,"all source-vs-pack legacy-flag compatibility profile formations actually executed")
-	var file:=FileAccess.open("/tmp/board-balance-20261009-pack.json",FileAccess.WRITE)
+	var file:=FileAccess.open(output_path,FileAccess.WRITE)
 	check(file!=null,"pack runtime evidence opens")
-	if file!=null: file.store_string(JSON.stringify({"source_evidence":reference_path,"directional_frames_per_role":16,"legacy_sample_clock_frames":13,"profile_formations":12,"actual_runs":evidence.size(),"cases":evidence,"graphical_rendering_verified":false,"failures":failures},"\t"))
+	if file!=null: file.store_string(JSON.stringify({"source_evidence":reference_path,"directional_frames_per_role":16,"legacy_sample_flag_checked_for_state_compatibility_only":true,"profile_formations":12,"actual_runs":evidence.size(),"cases":evidence,"graphical_rendering_verified":false,"failures":failures},"\t"))
 	print("BOARD_PROFILE_PACK runs=",evidence.size()," failures=",failures)
 	quit(1 if failures else 0)

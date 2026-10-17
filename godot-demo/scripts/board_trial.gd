@@ -87,6 +87,12 @@ func display_center(cell: Vector2i) -> Vector2:
 func display_cell_at(point: Vector2) -> Vector2i:
 	return Config.cell_at(point)
 
+func display_move(from: Vector2i, to: Vector2i, progress: float) -> Vector2:
+	return display_center(from).lerp(display_center(to),progress)
+
+func sync_display_actor(_actor: Dictionary) -> void:
+	pass # Optional display-only scale/sorting; legacy simulation is unchanged.
+
 func _reset_roster() -> void:
 	combat.clear(true)
 	audio_feedback.stop_all()
@@ -204,6 +210,7 @@ func _set_cell(actor: Dictionary, cell: Vector2i) -> void:
 	actor.anchor = cell
 	actor.node.position = display_center(cell) if Config.valid(cell) else Vector2.ZERO
 	actor.node.z_index = int(actor.node.position.y)
+	sync_display_actor(actor)
 	actor.node.visible = Config.valid(cell)
 	_default_face(actor.node,actor.friendly)
 	if actor.friendly and actor.key!="tangseng":
@@ -463,7 +470,7 @@ func _tick(delta: float) -> void:
 		if is_instance_valid(actor.node): actor.node.tick_visual(delta)
 		if not _active(actor) or actor.move.is_empty(): continue
 		actor.move.time += delta
-		actor.node.position = display_center(actor.move.from).lerp(display_center(actor.move.to),minf(1,actor.move.time/actor.move.duration))
+		actor.node.position = display_move(actor.move.from,actor.move.to,minf(1,actor.move.time/actor.move.duration))
 		if actor.move.time+0.00000001>=actor.move.duration:
 			actor.cell = actor.move.to
 			actor.node.position = display_center(actor.cell)
@@ -473,6 +480,8 @@ func _tick(delta: float) -> void:
 			actor.step_retarget = _step_mobile(actor) and not Melee.applies(actor)
 			if Melee.applies(actor):
 				actor.move_completed = actor.move_serial
+	for actor in actors:
+		if _active(actor): sync_display_actor(actor)
 	# Dead sources cannot complete pending effects in this trial; legacy untouched.
 	combat.strikes = combat.strikes.filter(func(event): return Events.alive(event.source) and Events.alive(event.target))
 	combat.missiles = combat.missiles.filter(func(event): return Events.alive(event.source) and Events.alive(event.target))

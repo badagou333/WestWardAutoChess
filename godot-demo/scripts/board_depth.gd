@@ -16,12 +16,31 @@ func _ready() -> void:
 	stage.setup(self)
 	# Shared events retain their release/contact clocks and draw in screen space.
 	combat.z_index=1900
+	combat.visual_target=visual_target_point
+	combat.visual_scale=_visual_effect_scale
 
 func display_center(cell: Vector2i) -> Vector2:
 	return GroundProjection.center(cell)
 
 func display_cell_at(pixel: Vector2) -> Vector2i:
 	return GroundProjection.cell_at(pixel)
+
+func display_move(from: Vector2i, to: Vector2i, progress: float) -> Vector2:
+	return GroundProjection.point(Vector2(from).lerp(Vector2(to),progress)+Vector2(0.5,0.5))
+
+func sync_display_actor(actor: Dictionary) -> void:
+	if not is_instance_valid(actor.node): return
+	var grid:=Vector2(actor.cell)+Vector2(0.5,0.5)
+	if not actor.move.is_empty():
+		grid=Vector2(actor.move.from).lerp(Vector2(actor.move.to),minf(1.0,actor.move.time/actor.move.duration))+Vector2(0.5,0.5)
+	actor.node.scale=Vector2.ONE*BODY_SCALE*GroundProjection.depth_scale(grid)
+	actor.node.z_index=int(actor.node.position.y)
+
+func visual_target_point(node) -> Vector2:
+	return combat.to_local(node.to_global(Vector2(0,-35)))
+
+func _visual_effect_scale(node) -> float:
+	return node.scale.x/BODY_SCALE
 
 func _tick(delta: float) -> void:
 	super._tick(delta)
@@ -40,7 +59,7 @@ func _register(id: String, key: String, node, friendly: bool, cell: Vector2i) ->
 		node.add_child(view)
 		node.presentation=view
 		previous.free()
-	node.scale=Vector2.ONE*BODY_SCALE
+	sync_display_actor(_record(id))
 	node.presentation.show_shadow=false
 	for child in node.get_children():
 		if child.get_script()==Style: child.free()

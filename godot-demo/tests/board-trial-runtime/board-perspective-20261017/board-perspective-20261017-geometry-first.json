@@ -1,0 +1,21 @@
+{
+	"OS_input_verified": false,
+	"cells": 84,
+	"checks": 9824,
+	"exterior_samples": 201,
+	"failures": [
+		"decorative rim/sidewall/stair/forest rejected (200.0, 470.0)"
+	],
+	"image_origin": [
+		120,
+		110
+	],
+	"image_scale": 0.92,
+	"interior_samples_per_cell": 25,
+	"max_roundtrip_error": 0.00000106624031559477,
+	"projection": "perspective-stage-v1-homography",
+	"rendered_pixels_verified": false,
+	"shared_line_side_samples": 894,
+	"strict_logical_boundary_delta": 0.0000001,
+	"subpixel_quantization_collapsed_samples": 1
+}

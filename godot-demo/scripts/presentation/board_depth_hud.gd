@@ -30,6 +30,9 @@ func _draw() -> void:
 	if actor.presentation.has_method("draw_sample"):
 		var sample: Dictionary=actor.presentation.draw_sample()
 		draw_top=float(sample.get("hud_top",float(sample.bounds.position.y)-13.0))
+	# Position follows the scaled body; bars and text retain readable canvas pixels.
+	draw_top*=actor.scale.y
+	draw_set_transform(Vector2.ZERO,0,Vector2.ONE/actor.scale)
 	# Full bars in deployment, in combat only when damaged/selected. A discreet
 	# faction dot remains at the foot without covering the character's face.
 	if game.phase==game.Phase.DEPLOY or actor.health<actor.max_health or chosen:

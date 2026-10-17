@@ -13,6 +13,11 @@ BOARD_AUDIO = "audio/runtime/board-selected-20261010/"
 
 
 REQUIRED_RELEASE_FILES = (
+    "art/boards/perspective_stage_v1/scene-clean.png.import",
+    "scripts/board_depth.gd.remap",
+    "scripts/presentation/board_depth_projection.gd.remap",
+    "scripts/presentation/board_depth_stage.gd.remap",
+    "scenes/board_trial_legacy.tscn.remap",
     "scripts/combat/board_trial_melee.gd.remap",
     "scripts/combat/board_trial_stepwise.gd.remap",
     "scripts/presentation/board_trial_healer_view.gd.remap",
@@ -83,6 +88,7 @@ REQUIRED_RELEASE_FILES = (
 )
 
 FORBIDDEN_RELEASE_PREFIXES = (
+    "art/boards/perspective_stage_v1/review/",
     "art/boards/formation_trial_v2/review/",
     "art/reviews/formation-ui-v2/",
     "art/boards/formation_trial_v1/review/",
