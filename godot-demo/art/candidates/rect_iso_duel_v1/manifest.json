@@ -1,0 +1,5986 @@
+{
+  "schema": "rect-iso-duel-v1",
+  "status": "limited_key_pose_candidate_not_complete_animation",
+  "decision": "D-20261018-002",
+  "created": "2026-10-18",
+  "design_cell": {
+    "width": 192,
+    "height": 96,
+    "safe_inset": 0.9,
+    "vertices": [
+      [
+        0,
+        -48
+      ],
+      [
+        96,
+        0
+      ],
+      [
+        0,
+        48
+      ],
+      [
+        -96,
+        0
+      ]
+    ]
+  },
+  "coordinates": {
+    "source": "top-left continuous-edge pixels; x right, y down",
+    "sample_rect": "[x,y,width,height] in source atlas; per-frame PNG is this rectangle after isolating its connected silhouette",
+    "crop": "source minus sample_rect origin",
+    "design": "(source-anchor_source)*uniform_scale_to_design; anchor is cell center",
+    "mirror": "SW from SE; NW from NE; design x -> -x. Crop anchor x -> image_width-anchor_x; edge coordinates, no minus one",
+    "feet": "manual visible-foot image envelopes and bottom-edge contact proxies; NOT calibrated 3D footprints; hidden outlines stay null",
+    "attack_contact": "visual staff-tip/muzzle point; not combat range, hitbox or damage timing",
+    "anchor": "manual staging ground reference; not measured skeletal root; frame-to-frame interpolation remains unverified"
+  },
+  "readiness": {
+    "static_idle_visual_placement": "candidate; four idle views plus mirrors inspected",
+    "monk_SE_move": "two distinguishable key poses, no complete smooth cycle",
+    "monk_NE_move": "failed_same_leg_phase",
+    "wolf_move": "failed_no_clear_diagonal_pair_exchange",
+    "full_footprint_all_frames": false,
+    "runtime_tested": false,
+    "owner_visual_approved": false,
+    "recommended_integration": "isolated prototype only; keep supplied limitations visible; do not label smooth animation"
+  },
+  "reference_images": [
+    {
+      "path": "godot-demo/art/concepts/guard_monk/nine_sols_v1/guard-monk-nine-sols-candidate.png",
+      "sha256": "304a21515f7f5579b9b9cecb1e9d687b3da944816e82304664e476bebefe4582"
+    },
+    {
+      "path": "godot-demo/art/concepts/mountain_wolf/nine_sols_v1/mountain-wolf-nine-sols-candidate.png",
+      "sha256": "9c2a29db71a9a6a477054a2d36c1cbac8e3d316cd3d1cb2622727188a1d89585"
+    }
+  ],
+  "generation": {
+    "tool": "Codex built-in imagegen",
+    "calls_per_actor": 2,
+    "additional_generation_performed": false,
+    "prompt_file": "PROMPTS.md",
+    "requested_size": [
+      2500,
+      1000
+    ],
+    "actual_size": "see sources; output differs from request",
+    "camera": "approximately 30 degrees intended; not calibrated"
+  },
+  "sources": [
+    {
+      "path": "sources/monk-initial.png",
+      "original_generated_filename": "exec-fcc1d5b2-0af6-40cd-88e1-25976fc16e90.png",
+      "sha256": "662b0de8a9cfbbb413b90f28775c443cf88aec29187bff118fd87ce43ab450d3",
+      "size": [
+        1983,
+        793
+      ],
+      "mode": "RGBA",
+      "role": "history"
+    },
+    {
+      "path": "sources/wolf-initial.png",
+      "original_generated_filename": "exec-7ee927c4-73f4-4934-a97d-21e8d8a95763.png",
+      "sha256": "b3dc516187075370a0e3703da004037150ff0181ba9d548cbde2257370c67214",
+      "size": [
+        1959,
+        803
+      ],
+      "mode": "RGBA",
+      "role": "history"
+    },
+    {
+      "path": "sources/monk-revised.png",
+      "original_generated_filename": "exec-4fd22d60-1513-43fc-9bc2-613268da46ae.png",
+      "sha256": "dd9dda5ad989323796cd49f7d7ab1a0a65217ab9f51235ff17c5228a1916a620",
+      "size": [
+        1983,
+        793
+      ],
+      "mode": "RGBA",
+      "role": "current_candidate"
+    },
+    {
+      "path": "sources/wolf-revised.png",
+      "original_generated_filename": "exec-62419496-5318-4ebe-87fa-4839ccad8a8d.png",
+      "sha256": "34850ea67b699a7a013b217845034b9317dd02c8ae298b450f9c0f6f6bda2325",
+      "size": [
+        1958,
+        803
+      ],
+      "mode": "RGBA",
+      "role": "current_candidate"
+    }
+  ],
+  "actors": {
+    "monk": {
+      "uniform_scale_to_design": 0.34,
+      "source_directions": [
+        "SE",
+        "NE"
+      ],
+      "mirrored_directions": {
+        "SW": "SE",
+        "NW": "NE"
+      },
+      "natural_overhang": "staff may extend beyond cell; excluded from monk body bbox",
+      "no_per_frame_scale": true
+    },
+    "wolf": {
+      "uniform_scale_to_design": 0.34,
+      "source_directions": [
+        "SE",
+        "NE"
+      ],
+      "mirrored_directions": {
+        "SW": "SE",
+        "NW": "NE"
+      },
+      "natural_overhang": "tail may extend beyond cell; excluded from wolf body bbox",
+      "no_per_frame_scale": true
+    }
+  },
+  "frames": [
+    {
+      "id": "monk_se_idle",
+      "actor": "monk",
+      "direction": "SE",
+      "pose": "idle",
+      "anchor_source": [
+        222,
+        350
+      ],
+      "body_bbox_source": [
+        80,
+        27,
+        376,
+        381
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            78,
+            327,
+            155,
+            360
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -48.96,
+              -7.82
+            ],
+            [
+              -22.78,
+              -7.82
+            ],
+            [
+              -22.78,
+              3.4
+            ],
+            [
+              -48.96,
+              3.4
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -48.96,
+              1.36
+            ],
+            [
+              -22.78,
+              1.36
+            ],
+            [
+              -22.78,
+              3.4
+            ],
+            [
+              -48.96,
+              3.4
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -48.96,
+              1.36
+            ],
+            [
+              -22.78,
+              1.36
+            ],
+            [
+              -22.78,
+              3.4
+            ],
+            [
+              -48.96,
+              3.4
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            297,
+            344,
+            367,
+            378
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              25.5,
+              -2.04
+            ],
+            [
+              49.3,
+              -2.04
+            ],
+            [
+              49.3,
+              9.52
+            ],
+            [
+              25.5,
+              9.52
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              25.5,
+              7.48
+            ],
+            [
+              49.3,
+              7.48
+            ],
+            [
+              49.3,
+              9.52
+            ],
+            [
+              25.5,
+              9.52
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              25.5,
+              7.48
+            ],
+            [
+              49.3,
+              7.48
+            ],
+            [
+              49.3,
+              9.52
+            ],
+            [
+              25.5,
+              9.52
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [],
+      "source": "sources/monk-revised.png",
+      "image": "frames/monk_se_idle.png",
+      "image_size": [
+        416,
+        362
+      ],
+      "sha256": "e3063f4b64e7d673b7832986131e32117aa4f1886578f06630bddf190add6776",
+      "source_component_label": 2,
+      "sample_rect": [
+        39,
+        23,
+        416,
+        362
+      ],
+      "anchor_crop": [
+        183,
+        327
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -48.28,
+          -109.82
+        ],
+        [
+          52.36,
+          10.54
+        ]
+      ],
+      "body_size_design": [
+        100.64,
+        120.36
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -48.96,
+          1.36
+        ],
+        [
+          -22.78,
+          1.36
+        ],
+        [
+          49.3,
+          7.48
+        ],
+        [
+          49.3,
+          9.52
+        ],
+        [
+          25.5,
+          9.52
+        ],
+        [
+          -48.96,
+          3.4
+        ]
+      ],
+      "support_footprint_design": [
+        [
+          -48.96,
+          1.36
+        ],
+        [
+          -22.78,
+          1.36
+        ],
+        [
+          49.3,
+          7.48
+        ],
+        [
+          49.3,
+          9.52
+        ],
+        [
+          25.5,
+          9.52
+        ],
+        [
+          -48.96,
+          3.4
+        ]
+      ],
+      "support_complete": true,
+      "all_feet_ground_envelope_design": [
+        [
+          -48.96,
+          -7.82
+        ],
+        [
+          -22.78,
+          -7.82
+        ],
+        [
+          49.3,
+          -2.04
+        ],
+        [
+          49.3,
+          9.52
+        ],
+        [
+          25.5,
+          9.52
+        ],
+        [
+          -48.96,
+          3.4
+        ]
+      ],
+      "all_feet_ground_complete": true,
+      "visible_feet_envelope_metric": 0.71188,
+      "contact_proxy_metric": 0.71188,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "static_idle_placement_checked",
+      "full_animation_approved": false
+    },
+    {
+      "id": "monk_se_move_a",
+      "actor": "monk",
+      "direction": "SE",
+      "pose": "move_a",
+      "anchor_source": [
+        646,
+        348
+      ],
+      "body_bbox_source": [
+        492,
+        30,
+        777,
+        393
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            564,
+            358,
+            617,
+            391
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -27.88,
+              3.4
+            ],
+            [
+              -9.86,
+              3.4
+            ],
+            [
+              -9.86,
+              14.62
+            ],
+            [
+              -27.88,
+              14.62
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -27.88,
+              12.58
+            ],
+            [
+              -9.86,
+              12.58
+            ],
+            [
+              -9.86,
+              14.62
+            ],
+            [
+              -27.88,
+              14.62
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -27.88,
+              12.58
+            ],
+            [
+              -9.86,
+              12.58
+            ],
+            [
+              -9.86,
+              14.62
+            ],
+            [
+              -27.88,
+              14.62
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            665,
+            313,
+            739,
+            346
+          ],
+          "support": "swing",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              6.46,
+              -11.9
+            ],
+            [
+              31.62,
+              -11.9
+            ],
+            [
+              31.62,
+              -0.68
+            ],
+            [
+              6.46,
+              -0.68
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [
+        "two_key_poses_only"
+      ],
+      "source": "sources/monk-revised.png",
+      "image": "frames/monk_se_move_a.png",
+      "image_size": [
+        376,
+        371
+      ],
+      "sha256": "45dadf6941e8fa136eac314e84ea6799e2a51e5f03b5e155d80e4adf2235eb5d",
+      "source_component_label": 6,
+      "sample_rect": [
+        463,
+        26,
+        376,
+        371
+      ],
+      "anchor_crop": [
+        183,
+        322
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -52.36,
+          -108.12
+        ],
+        [
+          44.54,
+          15.3
+        ]
+      ],
+      "body_size_design": [
+        96.9,
+        123.42
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -27.88,
+          12.58
+        ],
+        [
+          -9.86,
+          12.58
+        ],
+        [
+          -9.86,
+          14.62
+        ],
+        [
+          -27.88,
+          14.62
+        ]
+      ],
+      "support_footprint_design": [
+        [
+          -27.88,
+          12.58
+        ],
+        [
+          -9.86,
+          12.58
+        ],
+        [
+          -9.86,
+          14.62
+        ],
+        [
+          -27.88,
+          14.62
+        ]
+      ],
+      "support_complete": true,
+      "all_feet_ground_envelope_design": null,
+      "all_feet_ground_complete": false,
+      "visible_feet_envelope_metric": 0.595,
+      "contact_proxy_metric": 0.595,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "limited_movement_pose",
+      "full_animation_approved": false
+    },
+    {
+      "id": "monk_se_move_b",
+      "actor": "monk",
+      "direction": "SE",
+      "pose": "move_b",
+      "anchor_source": [
+        998,
+        350
+      ],
+      "body_bbox_source": [
+        867,
+        34,
+        1131,
+        385
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            932,
+            296,
+            972,
+            331
+          ],
+          "support": "swing",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -22.44,
+              -18.36
+            ],
+            [
+              -8.84,
+              -18.36
+            ],
+            [
+              -8.84,
+              -6.46
+            ],
+            [
+              -22.44,
+              -6.46
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        },
+        {
+          "visible_bounds_source": [
+            989,
+            346,
+            1059,
+            381
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              -3.06,
+              -1.36
+            ],
+            [
+              20.74,
+              -1.36
+            ],
+            [
+              20.74,
+              10.54
+            ],
+            [
+              -3.06,
+              10.54
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -3.06,
+              8.5
+            ],
+            [
+              20.74,
+              8.5
+            ],
+            [
+              20.74,
+              10.54
+            ],
+            [
+              -3.06,
+              10.54
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -3.06,
+              8.5
+            ],
+            [
+              20.74,
+              8.5
+            ],
+            [
+              20.74,
+              10.54
+            ],
+            [
+              -3.06,
+              10.54
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [
+        "two_key_poses_only"
+      ],
+      "source": "sources/monk-revised.png",
+      "image": "frames/monk_se_move_b.png",
+      "image_size": [
+        341,
+        359
+      ],
+      "sha256": "384227cb5f694e505c4ce0d82b428b97e89aa56954c7e3da723a2ff70757c960",
+      "source_component_label": 19,
+      "sample_rect": [
+        843,
+        30,
+        341,
+        359
+      ],
+      "anchor_crop": [
+        155,
+        320
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -44.54,
+          -107.44
+        ],
+        [
+          45.22,
+          11.9
+        ]
+      ],
+      "body_size_design": [
+        89.76,
+        119.34
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -3.06,
+          8.5
+        ],
+        [
+          20.74,
+          8.5
+        ],
+        [
+          20.74,
+          10.54
+        ],
+        [
+          -3.06,
+          10.54
+        ]
+      ],
+      "support_footprint_design": [
+        [
+          -3.06,
+          8.5
+        ],
+        [
+          20.74,
+          8.5
+        ],
+        [
+          20.74,
+          10.54
+        ],
+        [
+          -3.06,
+          10.54
+        ]
+      ],
+      "support_complete": true,
+      "all_feet_ground_envelope_design": null,
+      "all_feet_ground_complete": false,
+      "visible_feet_envelope_metric": 0.61625,
+      "contact_proxy_metric": 0.43562,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "limited_movement_pose",
+      "full_animation_approved": false
+    },
+    {
+      "id": "monk_se_attack_prepare",
+      "actor": "monk",
+      "direction": "SE",
+      "pose": "attack_prepare",
+      "anchor_source": [
+        1370,
+        350
+      ],
+      "body_bbox_source": [
+        1214,
+        48,
+        1523,
+        384
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            1225,
+            327,
+            1301,
+            359
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -49.3,
+              -7.82
+            ],
+            [
+              -23.46,
+              -7.82
+            ],
+            [
+              -23.46,
+              3.06
+            ],
+            [
+              -49.3,
+              3.06
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -49.3,
+              1.02
+            ],
+            [
+              -23.46,
+              1.02
+            ],
+            [
+              -23.46,
+              3.06
+            ],
+            [
+              -49.3,
+              3.06
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -49.3,
+              1.02
+            ],
+            [
+              -23.46,
+              1.02
+            ],
+            [
+              -23.46,
+              3.06
+            ],
+            [
+              -49.3,
+              3.06
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            1450,
+            348,
+            1523,
+            381
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              27.2,
+              -0.68
+            ],
+            [
+              52.02,
+              -0.68
+            ],
+            [
+              52.02,
+              10.54
+            ],
+            [
+              27.2,
+              10.54
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              27.2,
+              8.5
+            ],
+            [
+              52.02,
+              8.5
+            ],
+            [
+              52.02,
+              10.54
+            ],
+            [
+              27.2,
+              10.54
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              27.2,
+              8.5
+            ],
+            [
+              52.02,
+              8.5
+            ],
+            [
+              52.02,
+              10.54
+            ],
+            [
+              27.2,
+              10.54
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [],
+      "source": "sources/monk-revised.png",
+      "image": "frames/monk_se_attack_prepare.png",
+      "image_size": [
+        389,
+        364
+      ],
+      "sha256": "33ec2fee4edbfdbd235c5710d318c9d598cd3a1871c8edf187fd90289085d0a7",
+      "source_component_label": 4,
+      "sample_rect": [
+        1138,
+        24,
+        389,
+        364
+      ],
+      "anchor_crop": [
+        232,
+        326
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -53.04,
+          -102.68
+        ],
+        [
+          52.02,
+          11.56
+        ]
+      ],
+      "body_size_design": [
+        105.06,
+        114.24
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -49.3,
+          1.02
+        ],
+        [
+          -23.46,
+          1.02
+        ],
+        [
+          52.02,
+          8.5
+        ],
+        [
+          52.02,
+          10.54
+        ],
+        [
+          27.2,
+          10.54
+        ],
+        [
+          -49.3,
+          3.06
+        ]
+      ],
+      "support_footprint_design": [
+        [
+          -49.3,
+          1.02
+        ],
+        [
+          -23.46,
+          1.02
+        ],
+        [
+          52.02,
+          8.5
+        ],
+        [
+          52.02,
+          10.54
+        ],
+        [
+          27.2,
+          10.54
+        ],
+        [
+          -49.3,
+          3.06
+        ]
+      ],
+      "support_complete": true,
+      "all_feet_ground_envelope_design": [
+        [
+          -49.3,
+          -7.82
+        ],
+        [
+          -23.46,
+          -7.82
+        ],
+        [
+          52.02,
+          -0.68
+        ],
+        [
+          52.02,
+          10.54
+        ],
+        [
+          27.2,
+          10.54
+        ],
+        [
+          -49.3,
+          3.06
+        ]
+      ],
+      "all_feet_ground_complete": true,
+      "visible_feet_envelope_metric": 0.76146,
+      "contact_proxy_metric": 0.76146,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "attack_key_pose_with_listed_limits",
+      "full_animation_approved": false
+    },
+    {
+      "id": "monk_se_attack_contact",
+      "actor": "monk",
+      "direction": "SE",
+      "pose": "attack_contact",
+      "anchor_source": [
+        1692,
+        347
+      ],
+      "body_bbox_source": [
+        1544,
+        50,
+        1843,
+        383
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            1559,
+            309,
+            1614,
+            350
+          ],
+          "support": "uncertain",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -45.22,
+              -12.92
+            ],
+            [
+              -26.52,
+              -12.92
+            ],
+            [
+              -26.52,
+              1.02
+            ],
+            [
+              -45.22,
+              1.02
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        },
+        {
+          "visible_bounds_source": [
+            1745,
+            345,
+            1818,
+            380
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              18.02,
+              -0.68
+            ],
+            [
+              42.84,
+              -0.68
+            ],
+            [
+              42.84,
+              11.22
+            ],
+            [
+              18.02,
+              11.22
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              18.02,
+              9.18
+            ],
+            [
+              42.84,
+              9.18
+            ],
+            [
+              42.84,
+              11.22
+            ],
+            [
+              18.02,
+              11.22
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              18.02,
+              9.18
+            ],
+            [
+              42.84,
+              9.18
+            ],
+            [
+              42.84,
+              11.22
+            ],
+            [
+              18.02,
+              11.22
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        }
+      ],
+      "attack_contact_source": [
+        1948,
+        258
+      ],
+      "issues": [
+        "left_image_foot_support_uncertain"
+      ],
+      "source": "sources/monk-revised.png",
+      "image": "frames/monk_se_attack_contact.png",
+      "image_size": [
+        425,
+        341
+      ],
+      "sha256": "73314e4c9009ae18687b422737e8838f4db560c97cbd66a3b1b80f75e4e07cbb",
+      "source_component_label": 33,
+      "sample_rect": [
+        1540,
+        46,
+        425,
+        341
+      ],
+      "anchor_crop": [
+        152,
+        301
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -50.32,
+          -100.98
+        ],
+        [
+          51.34,
+          12.24
+        ]
+      ],
+      "body_size_design": [
+        101.66,
+        113.22
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          18.02,
+          9.18
+        ],
+        [
+          42.84,
+          9.18
+        ],
+        [
+          42.84,
+          11.22
+        ],
+        [
+          18.02,
+          11.22
+        ]
+      ],
+      "support_footprint_design": null,
+      "support_complete": false,
+      "all_feet_ground_envelope_design": null,
+      "all_feet_ground_complete": false,
+      "visible_feet_envelope_metric": 0.74021,
+      "contact_proxy_metric": 0.68,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": [
+        408,
+        212
+      ],
+      "attack_contact_design": [
+        87.04,
+        -30.26
+      ],
+      "prototype_use": "attack_key_pose_with_listed_limits",
+      "full_animation_approved": false
+    },
+    {
+      "id": "monk_ne_idle",
+      "actor": "monk",
+      "direction": "NE",
+      "pose": "idle",
+      "anchor_source": [
+        219,
+        723
+      ],
+      "body_bbox_source": [
+        84,
+        396,
+        349,
+        755
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            90,
+            693,
+            155,
+            725
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -43.86,
+              -10.2
+            ],
+            [
+              -21.76,
+              -10.2
+            ],
+            [
+              -21.76,
+              0.68
+            ],
+            [
+              -43.86,
+              0.68
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -43.86,
+              -1.36
+            ],
+            [
+              -21.76,
+              -1.36
+            ],
+            [
+              -21.76,
+              0.68
+            ],
+            [
+              -43.86,
+              0.68
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -43.86,
+              -1.36
+            ],
+            [
+              -21.76,
+              -1.36
+            ],
+            [
+              -21.76,
+              0.68
+            ],
+            [
+              -43.86,
+              0.68
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            258,
+            717,
+            345,
+            753
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              13.26,
+              -2.04
+            ],
+            [
+              42.84,
+              -2.04
+            ],
+            [
+              42.84,
+              10.2
+            ],
+            [
+              13.26,
+              10.2
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              13.26,
+              8.16
+            ],
+            [
+              42.84,
+              8.16
+            ],
+            [
+              42.84,
+              10.2
+            ],
+            [
+              13.26,
+              10.2
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              13.26,
+              8.16
+            ],
+            [
+              42.84,
+              8.16
+            ],
+            [
+              42.84,
+              10.2
+            ],
+            [
+              13.26,
+              10.2
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [],
+      "source": "sources/monk-revised.png",
+      "image": "frames/monk_ne_idle.png",
+      "image_size": [
+        412,
+        367
+      ],
+      "sha256": "4b6010af7087a5689ede1c2a6b492f332c587dc8824a5838434fb8fe494c969f",
+      "source_component_label": 181,
+      "sample_rect": [
+        24,
+        392,
+        412,
+        367
+      ],
+      "anchor_crop": [
+        195,
+        331
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -45.9,
+          -111.18
+        ],
+        [
+          44.2,
+          10.88
+        ]
+      ],
+      "body_size_design": [
+        90.1,
+        122.06
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -43.86,
+          -1.36
+        ],
+        [
+          -21.76,
+          -1.36
+        ],
+        [
+          42.84,
+          8.16
+        ],
+        [
+          42.84,
+          10.2
+        ],
+        [
+          13.26,
+          10.2
+        ],
+        [
+          -43.86,
+          0.68
+        ]
+      ],
+      "support_footprint_design": [
+        [
+          -43.86,
+          -1.36
+        ],
+        [
+          -21.76,
+          -1.36
+        ],
+        [
+          42.84,
+          8.16
+        ],
+        [
+          42.84,
+          10.2
+        ],
+        [
+          13.26,
+          10.2
+        ],
+        [
+          -43.86,
+          0.68
+        ]
+      ],
+      "support_complete": true,
+      "all_feet_ground_envelope_design": [
+        [
+          -43.86,
+          -10.2
+        ],
+        [
+          -21.76,
+          -10.2
+        ],
+        [
+          42.84,
+          -2.04
+        ],
+        [
+          42.84,
+          10.2
+        ],
+        [
+          13.26,
+          10.2
+        ],
+        [
+          -43.86,
+          0.68
+        ]
+      ],
+      "all_feet_ground_complete": true,
+      "visible_feet_envelope_metric": 0.66937,
+      "contact_proxy_metric": 0.65875,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "static_idle_placement_checked",
+      "full_animation_approved": false
+    },
+    {
+      "id": "monk_ne_move_a",
+      "actor": "monk",
+      "direction": "NE",
+      "pose": "move_a",
+      "anchor_source": [
+        630,
+        712
+      ],
+      "body_bbox_source": [
+        493,
+        402,
+        751,
+        755
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            520,
+            713,
+            594,
+            753
+          ],
+          "support": "swing",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -37.4,
+              0.34
+            ],
+            [
+              -12.24,
+              0.34
+            ],
+            [
+              -12.24,
+              13.94
+            ],
+            [
+              -37.4,
+              13.94
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        },
+        {
+          "visible_bounds_source": [
+            655,
+            656,
+            723,
+            697
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              8.5,
+              -19.04
+            ],
+            [
+              31.62,
+              -19.04
+            ],
+            [
+              31.62,
+              -5.1
+            ],
+            [
+              8.5,
+              -5.1
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              8.5,
+              -7.14
+            ],
+            [
+              31.62,
+              -7.14
+            ],
+            [
+              31.62,
+              -5.1
+            ],
+            [
+              8.5,
+              -5.1
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              8.5,
+              -7.14
+            ],
+            [
+              31.62,
+              -7.14
+            ],
+            [
+              31.62,
+              -5.1
+            ],
+            [
+              8.5,
+              -5.1
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [
+        "same_leg_phase_no_alternating_cycle"
+      ],
+      "source": "sources/monk-revised.png",
+      "image": "frames/monk_ne_move_a.png",
+      "image_size": [
+        396,
+        361
+      ],
+      "sha256": "67f02c3cdf5a99591156285176e9503540e821d8cc6b13a793ffdf93180d015e",
+      "source_component_label": 189,
+      "sample_rect": [
+        434,
+        398,
+        396,
+        361
+      ],
+      "anchor_crop": [
+        196,
+        314
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -46.58,
+          -105.4
+        ],
+        [
+          41.14,
+          14.62
+        ]
+      ],
+      "body_size_design": [
+        87.72,
+        120.02
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          8.5,
+          -7.14
+        ],
+        [
+          31.62,
+          -7.14
+        ],
+        [
+          31.62,
+          -5.1
+        ],
+        [
+          8.5,
+          -5.1
+        ]
+      ],
+      "support_footprint_design": [
+        [
+          8.5,
+          -7.14
+        ],
+        [
+          31.62,
+          -7.14
+        ],
+        [
+          31.62,
+          -5.1
+        ],
+        [
+          8.5,
+          -5.1
+        ]
+      ],
+      "support_complete": true,
+      "all_feet_ground_envelope_design": null,
+      "all_feet_ground_complete": false,
+      "visible_feet_envelope_metric": 0.72604,
+      "contact_proxy_metric": 0.47813,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "limited_movement_pose",
+      "full_animation_approved": false
+    },
+    {
+      "id": "monk_ne_move_b",
+      "actor": "monk",
+      "direction": "NE",
+      "pose": "move_b",
+      "anchor_source": [
+        1011,
+        725
+      ],
+      "body_bbox_source": [
+        882,
+        408,
+        1119,
+        754
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            888,
+            710,
+            955,
+            753
+          ],
+          "support": "swing",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -41.82,
+              -5.1
+            ],
+            [
+              -19.04,
+              -5.1
+            ],
+            [
+              -19.04,
+              9.52
+            ],
+            [
+              -41.82,
+              9.52
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        },
+        {
+          "visible_bounds_source": [
+            1040,
+            680,
+            1114,
+            726
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              9.86,
+              -15.3
+            ],
+            [
+              35.02,
+              -15.3
+            ],
+            [
+              35.02,
+              0.34
+            ],
+            [
+              9.86,
+              0.34
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              9.86,
+              -1.7
+            ],
+            [
+              35.02,
+              -1.7
+            ],
+            [
+              35.02,
+              0.34
+            ],
+            [
+              9.86,
+              0.34
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              9.86,
+              -1.7
+            ],
+            [
+              35.02,
+              -1.7
+            ],
+            [
+              35.02,
+              0.34
+            ],
+            [
+              9.86,
+              0.34
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [
+        "same_leg_phase_no_alternating_cycle"
+      ],
+      "source": "sources/monk-revised.png",
+      "image": "frames/monk_ne_move_b.png",
+      "image_size": [
+        360,
+        354
+      ],
+      "sha256": "74eef706f8fb3946c8078fc380bf137b4849142659d2e0118d469ad5272736b8",
+      "source_component_label": 193,
+      "sample_rect": [
+        820,
+        404,
+        360,
+        354
+      ],
+      "anchor_crop": [
+        191,
+        321
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -43.86,
+          -107.78
+        ],
+        [
+          36.72,
+          9.86
+        ]
+      ],
+      "body_size_design": [
+        80.58,
+        117.64
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          9.86,
+          -1.7
+        ],
+        [
+          35.02,
+          -1.7
+        ],
+        [
+          35.02,
+          0.34
+        ],
+        [
+          9.86,
+          0.34
+        ]
+      ],
+      "support_footprint_design": [
+        [
+          9.86,
+          -1.7
+        ],
+        [
+          35.02,
+          -1.7
+        ],
+        [
+          35.02,
+          0.34
+        ],
+        [
+          9.86,
+          0.34
+        ]
+      ],
+      "support_complete": true,
+      "all_feet_ground_envelope_design": null,
+      "all_feet_ground_complete": false,
+      "visible_feet_envelope_metric": 0.68354,
+      "contact_proxy_metric": 0.40021,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "redundant_same_phase_not_recommended",
+      "full_animation_approved": false
+    },
+    {
+      "id": "monk_ne_attack_prepare",
+      "actor": "monk",
+      "direction": "NE",
+      "pose": "attack_prepare",
+      "anchor_source": [
+        1334,
+        730
+      ],
+      "body_bbox_source": [
+        1199,
+        412,
+        1488,
+        766
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            1201,
+            702,
+            1271,
+            734
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -45.22,
+              -9.52
+            ],
+            [
+              -21.42,
+              -9.52
+            ],
+            [
+              -21.42,
+              1.36
+            ],
+            [
+              -45.22,
+              1.36
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -45.22,
+              -0.68
+            ],
+            [
+              -21.42,
+              -0.68
+            ],
+            [
+              -21.42,
+              1.36
+            ],
+            [
+              -45.22,
+              1.36
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -45.22,
+              -0.68
+            ],
+            [
+              -21.42,
+              -0.68
+            ],
+            [
+              -21.42,
+              1.36
+            ],
+            [
+              -45.22,
+              1.36
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            1385,
+            727,
+            1471,
+            764
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              17.34,
+              -1.02
+            ],
+            [
+              46.58,
+              -1.02
+            ],
+            [
+              46.58,
+              11.56
+            ],
+            [
+              17.34,
+              11.56
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              17.34,
+              9.52
+            ],
+            [
+              46.58,
+              9.52
+            ],
+            [
+              46.58,
+              11.56
+            ],
+            [
+              17.34,
+              11.56
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              17.34,
+              9.52
+            ],
+            [
+              46.58,
+              9.52
+            ],
+            [
+              46.58,
+              11.56
+            ],
+            [
+              17.34,
+              11.56
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [],
+      "source": "sources/monk-revised.png",
+      "image": "frames/monk_ne_attack_prepare.png",
+      "image_size": [
+        344,
+        383
+      ],
+      "sha256": "8929a34af729b3344d7d726cd789fa5aa40d075f4c7da2c301213d674887023a",
+      "source_component_label": 180,
+      "sample_rect": [
+        1195,
+        387,
+        344,
+        383
+      ],
+      "anchor_crop": [
+        139,
+        343
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -45.9,
+          -108.12
+        ],
+        [
+          52.36,
+          12.24
+        ]
+      ],
+      "body_size_design": [
+        98.26,
+        120.36
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -45.22,
+          -0.68
+        ],
+        [
+          -21.42,
+          -0.68
+        ],
+        [
+          46.58,
+          9.52
+        ],
+        [
+          46.58,
+          11.56
+        ],
+        [
+          17.34,
+          11.56
+        ],
+        [
+          -45.22,
+          1.36
+        ]
+      ],
+      "support_footprint_design": [
+        [
+          -45.22,
+          -0.68
+        ],
+        [
+          -21.42,
+          -0.68
+        ],
+        [
+          46.58,
+          9.52
+        ],
+        [
+          46.58,
+          11.56
+        ],
+        [
+          17.34,
+          11.56
+        ],
+        [
+          -45.22,
+          1.36
+        ]
+      ],
+      "support_complete": true,
+      "all_feet_ground_envelope_design": [
+        [
+          -45.22,
+          -9.52
+        ],
+        [
+          -21.42,
+          -9.52
+        ],
+        [
+          46.58,
+          -1.02
+        ],
+        [
+          46.58,
+          11.56
+        ],
+        [
+          17.34,
+          11.56
+        ],
+        [
+          -45.22,
+          1.36
+        ]
+      ],
+      "all_feet_ground_complete": true,
+      "visible_feet_envelope_metric": 0.72604,
+      "contact_proxy_metric": 0.72604,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "attack_key_pose_with_listed_limits",
+      "full_animation_approved": false
+    },
+    {
+      "id": "monk_ne_attack_contact",
+      "actor": "monk",
+      "direction": "NE",
+      "pose": "attack_contact",
+      "anchor_source": [
+        1707,
+        730
+      ],
+      "body_bbox_source": [
+        1562,
+        418,
+        1858,
+        763
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            1564,
+            706,
+            1629,
+            741
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -48.62,
+              -8.16
+            ],
+            [
+              -26.52,
+              -8.16
+            ],
+            [
+              -26.52,
+              3.74
+            ],
+            [
+              -48.62,
+              3.74
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -48.62,
+              1.7
+            ],
+            [
+              -26.52,
+              1.7
+            ],
+            [
+              -26.52,
+              3.74
+            ],
+            [
+              -48.62,
+              3.74
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -48.62,
+              1.7
+            ],
+            [
+              -26.52,
+              1.7
+            ],
+            [
+              -26.52,
+              3.74
+            ],
+            [
+              -48.62,
+              3.74
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            1755,
+            727,
+            1838,
+            761
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              16.32,
+              -1.02
+            ],
+            [
+              44.54,
+              -1.02
+            ],
+            [
+              44.54,
+              10.54
+            ],
+            [
+              16.32,
+              10.54
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              16.32,
+              8.5
+            ],
+            [
+              44.54,
+              8.5
+            ],
+            [
+              44.54,
+              10.54
+            ],
+            [
+              16.32,
+              10.54
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              16.32,
+              8.5
+            ],
+            [
+              44.54,
+              8.5
+            ],
+            [
+              44.54,
+              10.54
+            ],
+            [
+              16.32,
+              10.54
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        }
+      ],
+      "attack_contact_source": [
+        1947,
+        439
+      ],
+      "issues": [],
+      "source": "sources/monk-revised.png",
+      "image": "frames/monk_ne_attack_contact.png",
+      "image_size": [
+        409,
+        353
+      ],
+      "sha256": "e0859acba23397eaa863e48576763ccc94390f57a8f9ef3c0697a84923ea28e4",
+      "source_component_label": 196,
+      "sample_rect": [
+        1558,
+        414,
+        409,
+        353
+      ],
+      "anchor_crop": [
+        149,
+        316
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -49.3,
+          -106.08
+        ],
+        [
+          51.34,
+          11.22
+        ]
+      ],
+      "body_size_design": [
+        100.64,
+        117.3
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -48.62,
+          1.7
+        ],
+        [
+          -26.52,
+          1.7
+        ],
+        [
+          44.54,
+          8.5
+        ],
+        [
+          44.54,
+          10.54
+        ],
+        [
+          16.32,
+          10.54
+        ],
+        [
+          -48.62,
+          3.74
+        ]
+      ],
+      "support_footprint_design": [
+        [
+          -48.62,
+          1.7
+        ],
+        [
+          -26.52,
+          1.7
+        ],
+        [
+          44.54,
+          8.5
+        ],
+        [
+          44.54,
+          10.54
+        ],
+        [
+          16.32,
+          10.54
+        ],
+        [
+          -48.62,
+          3.74
+        ]
+      ],
+      "support_complete": true,
+      "all_feet_ground_envelope_design": [
+        [
+          -48.62,
+          -8.16
+        ],
+        [
+          -26.52,
+          -8.16
+        ],
+        [
+          44.54,
+          -1.02
+        ],
+        [
+          44.54,
+          10.54
+        ],
+        [
+          16.32,
+          10.54
+        ],
+        [
+          -48.62,
+          3.74
+        ]
+      ],
+      "all_feet_ground_complete": true,
+      "visible_feet_envelope_metric": 0.68354,
+      "contact_proxy_metric": 0.68354,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": [
+        389,
+        25
+      ],
+      "attack_contact_design": [
+        81.6,
+        -98.94
+      ],
+      "prototype_use": "attack_key_pose_with_listed_limits",
+      "full_animation_approved": false
+    },
+    {
+      "id": "wolf_se_idle",
+      "actor": "wolf",
+      "direction": "SE",
+      "pose": "idle",
+      "anchor_source": [
+        199,
+        306
+      ],
+      "body_bbox_source": [
+        69,
+        35,
+        370,
+        365
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            67,
+            263,
+            118,
+            298
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -44.88,
+              -14.62
+            ],
+            [
+              -27.54,
+              -14.62
+            ],
+            [
+              -27.54,
+              -2.72
+            ],
+            [
+              -44.88,
+              -2.72
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -44.88,
+              -4.76
+            ],
+            [
+              -27.54,
+              -4.76
+            ],
+            [
+              -27.54,
+              -2.72
+            ],
+            [
+              -44.88,
+              -2.72
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -44.88,
+              -4.76
+            ],
+            [
+              -27.54,
+              -4.76
+            ],
+            [
+              -27.54,
+              -2.72
+            ],
+            [
+              -44.88,
+              -2.72
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            160,
+            238,
+            202,
+            271
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              -13.26,
+              -23.12
+            ],
+            [
+              1.02,
+              -23.12
+            ],
+            [
+              1.02,
+              -11.9
+            ],
+            [
+              -13.26,
+              -11.9
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -13.26,
+              -13.94
+            ],
+            [
+              1.02,
+              -13.94
+            ],
+            [
+              1.02,
+              -11.9
+            ],
+            [
+              -13.26,
+              -11.9
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -13.26,
+              -13.94
+            ],
+            [
+              1.02,
+              -13.94
+            ],
+            [
+              1.02,
+              -11.9
+            ],
+            [
+              -13.26,
+              -11.9
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            203,
+            327,
+            254,
+            363
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_3",
+          "visible_envelope_design": [
+            [
+              1.36,
+              7.14
+            ],
+            [
+              18.7,
+              7.14
+            ],
+            [
+              18.7,
+              19.38
+            ],
+            [
+              1.36,
+              19.38
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              1.36,
+              17.34
+            ],
+            [
+              18.7,
+              17.34
+            ],
+            [
+              18.7,
+              19.38
+            ],
+            [
+              1.36,
+              19.38
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              1.36,
+              17.34
+            ],
+            [
+              18.7,
+              17.34
+            ],
+            [
+              18.7,
+              19.38
+            ],
+            [
+              1.36,
+              19.38
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            275,
+            304,
+            329,
+            336
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_4",
+          "visible_envelope_design": [
+            [
+              25.84,
+              -0.68
+            ],
+            [
+              44.2,
+              -0.68
+            ],
+            [
+              44.2,
+              10.2
+            ],
+            [
+              25.84,
+              10.2
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              25.84,
+              8.16
+            ],
+            [
+              44.2,
+              8.16
+            ],
+            [
+              44.2,
+              10.2
+            ],
+            [
+              25.84,
+              10.2
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              25.84,
+              8.16
+            ],
+            [
+              44.2,
+              8.16
+            ],
+            [
+              44.2,
+              10.2
+            ],
+            [
+              25.84,
+              10.2
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [],
+      "source": "sources/wolf-revised.png",
+      "image": "frames/wolf_se_idle.png",
+      "image_size": [
+        358,
+        338
+      ],
+      "sha256": "b09215b028524cc63fc74351f2db19aef7f1f0be75841dd58d3e338d1cbae943",
+      "source_component_label": 1,
+      "sample_rect": [
+        15,
+        31,
+        358,
+        338
+      ],
+      "anchor_crop": [
+        184,
+        275
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -44.2,
+          -92.14
+        ],
+        [
+          58.14,
+          20.06
+        ]
+      ],
+      "body_size_design": [
+        102.34,
+        112.2
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -44.88,
+          -4.76
+        ],
+        [
+          -13.26,
+          -13.94
+        ],
+        [
+          1.02,
+          -13.94
+        ],
+        [
+          44.2,
+          8.16
+        ],
+        [
+          44.2,
+          10.2
+        ],
+        [
+          18.7,
+          19.38
+        ],
+        [
+          1.36,
+          19.38
+        ],
+        [
+          -44.88,
+          -2.72
+        ]
+      ],
+      "support_footprint_design": [
+        [
+          -44.88,
+          -4.76
+        ],
+        [
+          -13.26,
+          -13.94
+        ],
+        [
+          1.02,
+          -13.94
+        ],
+        [
+          44.2,
+          8.16
+        ],
+        [
+          44.2,
+          10.2
+        ],
+        [
+          18.7,
+          19.38
+        ],
+        [
+          1.36,
+          19.38
+        ],
+        [
+          -44.88,
+          -2.72
+        ]
+      ],
+      "support_complete": true,
+      "all_feet_ground_envelope_design": [
+        [
+          -44.88,
+          -14.62
+        ],
+        [
+          -13.26,
+          -23.12
+        ],
+        [
+          1.02,
+          -23.12
+        ],
+        [
+          44.2,
+          -0.68
+        ],
+        [
+          44.2,
+          10.2
+        ],
+        [
+          18.7,
+          19.38
+        ],
+        [
+          1.36,
+          19.38
+        ],
+        [
+          -44.88,
+          -2.72
+        ]
+      ],
+      "all_feet_ground_complete": true,
+      "visible_feet_envelope_metric": 0.77208,
+      "contact_proxy_metric": 0.67292,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "static_idle_placement_checked",
+      "full_animation_approved": false
+    },
+    {
+      "id": "wolf_se_move_a",
+      "actor": "wolf",
+      "direction": "SE",
+      "pose": "move_a",
+      "anchor_source": [
+        612,
+        306
+      ],
+      "body_bbox_source": [
+        476,
+        45,
+        781,
+        362
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            478,
+            259,
+            528,
+            295
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -45.56,
+              -15.98
+            ],
+            [
+              -28.56,
+              -15.98
+            ],
+            [
+              -28.56,
+              -3.74
+            ],
+            [
+              -45.56,
+              -3.74
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -45.56,
+              -5.78
+            ],
+            [
+              -28.56,
+              -5.78
+            ],
+            [
+              -28.56,
+              -3.74
+            ],
+            [
+              -45.56,
+              -3.74
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -45.56,
+              -5.78
+            ],
+            [
+              -28.56,
+              -5.78
+            ],
+            [
+              -28.56,
+              -3.74
+            ],
+            [
+              -45.56,
+              -3.74
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            578,
+            247,
+            620,
+            273
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              -11.56,
+              -20.06
+            ],
+            [
+              2.72,
+              -20.06
+            ],
+            [
+              2.72,
+              -11.22
+            ],
+            [
+              -11.56,
+              -11.22
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -11.56,
+              -13.26
+            ],
+            [
+              2.72,
+              -13.26
+            ],
+            [
+              2.72,
+              -11.22
+            ],
+            [
+              -11.56,
+              -11.22
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -11.56,
+              -13.26
+            ],
+            [
+              2.72,
+              -13.26
+            ],
+            [
+              2.72,
+              -11.22
+            ],
+            [
+              -11.56,
+              -11.22
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            640,
+            327,
+            693,
+            360
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_3",
+          "visible_envelope_design": [
+            [
+              9.52,
+              7.14
+            ],
+            [
+              27.54,
+              7.14
+            ],
+            [
+              27.54,
+              18.36
+            ],
+            [
+              9.52,
+              18.36
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              9.52,
+              16.32
+            ],
+            [
+              27.54,
+              16.32
+            ],
+            [
+              27.54,
+              18.36
+            ],
+            [
+              9.52,
+              18.36
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              9.52,
+              16.32
+            ],
+            [
+              27.54,
+              16.32
+            ],
+            [
+              27.54,
+              18.36
+            ],
+            [
+              9.52,
+              18.36
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            683,
+            291,
+            722,
+            320
+          ],
+          "support": "swing",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_4",
+          "visible_envelope_design": [
+            [
+              24.14,
+              -5.1
+            ],
+            [
+              37.4,
+              -5.1
+            ],
+            [
+              37.4,
+              4.76
+            ],
+            [
+              24.14,
+              4.76
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [
+        "no_clear_diagonal_pair_exchange"
+      ],
+      "source": "sources/wolf-revised.png",
+      "image": "frames/wolf_se_move_a.png",
+      "image_size": [
+        383,
+        325
+      ],
+      "sha256": "9d1006cb5fece77cb1ed4f0287d13df6816e04fccd05845d0b6a8317bbb962a6",
+      "source_component_label": 9,
+      "sample_rect": [
+        402,
+        41,
+        383,
+        325
+      ],
+      "anchor_crop": [
+        210,
+        265
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -46.24,
+          -88.74
+        ],
+        [
+          57.46,
+          19.04
+        ]
+      ],
+      "body_size_design": [
+        103.7,
+        107.78
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -45.56,
+          -5.78
+        ],
+        [
+          -11.56,
+          -13.26
+        ],
+        [
+          2.72,
+          -13.26
+        ],
+        [
+          27.54,
+          16.32
+        ],
+        [
+          27.54,
+          18.36
+        ],
+        [
+          9.52,
+          18.36
+        ],
+        [
+          -45.56,
+          -3.74
+        ]
+      ],
+      "support_footprint_design": [
+        [
+          -45.56,
+          -5.78
+        ],
+        [
+          -11.56,
+          -13.26
+        ],
+        [
+          2.72,
+          -13.26
+        ],
+        [
+          27.54,
+          16.32
+        ],
+        [
+          27.54,
+          18.36
+        ],
+        [
+          9.52,
+          18.36
+        ],
+        [
+          -45.56,
+          -3.74
+        ]
+      ],
+      "support_complete": true,
+      "all_feet_ground_envelope_design": null,
+      "all_feet_ground_complete": false,
+      "visible_feet_envelope_metric": 0.8075,
+      "contact_proxy_metric": 0.66938,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "limited_movement_pose",
+      "full_animation_approved": false
+    },
+    {
+      "id": "wolf_se_move_b",
+      "actor": "wolf",
+      "direction": "SE",
+      "pose": "move_b",
+      "anchor_source": [
+        1000,
+        305
+      ],
+      "body_bbox_source": [
+        875,
+        51,
+        1168,
+        363
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            881,
+            249,
+            930,
+            279
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -40.46,
+              -19.04
+            ],
+            [
+              -23.8,
+              -19.04
+            ],
+            [
+              -23.8,
+              -8.84
+            ],
+            [
+              -40.46,
+              -8.84
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -40.46,
+              -10.88
+            ],
+            [
+              -23.8,
+              -10.88
+            ],
+            [
+              -23.8,
+              -8.84
+            ],
+            [
+              -40.46,
+              -8.84
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -40.46,
+              -10.88
+            ],
+            [
+              -23.8,
+              -10.88
+            ],
+            [
+              -23.8,
+              -8.84
+            ],
+            [
+              -40.46,
+              -8.84
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            972,
+            228,
+            1007,
+            257
+          ],
+          "support": "uncertain",
+          "visibility": "partial",
+          "full_outline_visible": false,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              -9.52,
+              -26.18
+            ],
+            [
+              2.38,
+              -26.18
+            ],
+            [
+              2.38,
+              -16.32
+            ],
+            [
+              -9.52,
+              -16.32
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        },
+        {
+          "visible_bounds_source": [
+            1046,
+            328,
+            1100,
+            361
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_3",
+          "visible_envelope_design": [
+            [
+              15.64,
+              7.82
+            ],
+            [
+              34.0,
+              7.82
+            ],
+            [
+              34.0,
+              19.04
+            ],
+            [
+              15.64,
+              19.04
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              15.64,
+              17.0
+            ],
+            [
+              34.0,
+              17.0
+            ],
+            [
+              34.0,
+              19.04
+            ],
+            [
+              15.64,
+              19.04
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              15.64,
+              17.0
+            ],
+            [
+              34.0,
+              17.0
+            ],
+            [
+              34.0,
+              19.04
+            ],
+            [
+              15.64,
+              19.04
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": null,
+          "support": "uncertain",
+          "visibility": "occluded",
+          "full_outline_visible": false,
+          "id": "image_order_4",
+          "visible_envelope_design": null,
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [
+        "no_clear_diagonal_pair_exchange",
+        "far_feet_fused_unverifiable"
+      ],
+      "source": "sources/wolf-revised.png",
+      "image": "frames/wolf_se_move_b.png",
+      "image_size": [
+        358,
+        320
+      ],
+      "sha256": "397dd31dccb92cc1e8cfee541b77504aef764cded6feb22b8ea7d11e8b6a43ba",
+      "source_component_label": 14,
+      "sample_rect": [
+        814,
+        47,
+        358,
+        320
+      ],
+      "anchor_crop": [
+        186,
+        258
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -42.5,
+          -86.36
+        ],
+        [
+          57.12,
+          19.72
+        ]
+      ],
+      "body_size_design": [
+        99.62,
+        106.08
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -40.46,
+          -10.88
+        ],
+        [
+          -23.8,
+          -10.88
+        ],
+        [
+          34.0,
+          17.0
+        ],
+        [
+          34.0,
+          19.04
+        ],
+        [
+          15.64,
+          19.04
+        ],
+        [
+          -40.46,
+          -8.84
+        ]
+      ],
+      "support_footprint_design": null,
+      "support_complete": false,
+      "all_feet_ground_envelope_design": null,
+      "all_feet_ground_complete": false,
+      "visible_feet_envelope_metric": 0.81812,
+      "contact_proxy_metric": 0.75083,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "hold_for_foot_visibility",
+      "full_animation_approved": false
+    },
+    {
+      "id": "wolf_se_attack_prepare",
+      "actor": "wolf",
+      "direction": "SE",
+      "pose": "attack_prepare",
+      "anchor_source": [
+        1386,
+        314
+      ],
+      "body_bbox_source": [
+        1251,
+        90,
+        1556,
+        364
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            1257,
+            270,
+            1306,
+            303
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -43.86,
+              -14.96
+            ],
+            [
+              -27.2,
+              -14.96
+            ],
+            [
+              -27.2,
+              -3.74
+            ],
+            [
+              -43.86,
+              -3.74
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -43.86,
+              -5.78
+            ],
+            [
+              -27.2,
+              -5.78
+            ],
+            [
+              -27.2,
+              -3.74
+            ],
+            [
+              -43.86,
+              -3.74
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -43.86,
+              -5.78
+            ],
+            [
+              -27.2,
+              -5.78
+            ],
+            [
+              -27.2,
+              -3.74
+            ],
+            [
+              -43.86,
+              -3.74
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            1331,
+            251,
+            1366,
+            287
+          ],
+          "support": "uncertain",
+          "visibility": "partial",
+          "full_outline_visible": false,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              -18.7,
+              -21.42
+            ],
+            [
+              -6.8,
+              -21.42
+            ],
+            [
+              -6.8,
+              -9.18
+            ],
+            [
+              -18.7,
+              -9.18
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        },
+        {
+          "visible_bounds_source": [
+            1377,
+            327,
+            1429,
+            363
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_3",
+          "visible_envelope_design": [
+            [
+              -3.06,
+              4.42
+            ],
+            [
+              14.62,
+              4.42
+            ],
+            [
+              14.62,
+              16.66
+            ],
+            [
+              -3.06,
+              16.66
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -3.06,
+              14.62
+            ],
+            [
+              14.62,
+              14.62
+            ],
+            [
+              14.62,
+              16.66
+            ],
+            [
+              -3.06,
+              16.66
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -3.06,
+              14.62
+            ],
+            [
+              14.62,
+              14.62
+            ],
+            [
+              14.62,
+              16.66
+            ],
+            [
+              -3.06,
+              16.66
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            1464,
+            314,
+            1512,
+            354
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_4",
+          "visible_envelope_design": [
+            [
+              26.52,
+              0.0
+            ],
+            [
+              42.84,
+              0.0
+            ],
+            [
+              42.84,
+              13.6
+            ],
+            [
+              26.52,
+              13.6
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              26.52,
+              11.56
+            ],
+            [
+              42.84,
+              11.56
+            ],
+            [
+              42.84,
+              13.6
+            ],
+            [
+              26.52,
+              13.6
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              26.52,
+              11.56
+            ],
+            [
+              42.84,
+              11.56
+            ],
+            [
+              42.84,
+              13.6
+            ],
+            [
+              26.52,
+              13.6
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [
+        "far_hind_sole_occluded"
+      ],
+      "source": "sources/wolf-revised.png",
+      "image": "frames/wolf_se_attack_prepare.png",
+      "image_size": [
+        357,
+        311
+      ],
+      "sha256": "bebe302622807acdeb0b814cc3c055381a6835b289b47f89942e4fc7db3db21a",
+      "source_component_label": 21,
+      "sample_rect": [
+        1203,
+        57,
+        357,
+        311
+      ],
+      "anchor_crop": [
+        183,
+        257
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -45.9,
+          -76.16
+        ],
+        [
+          57.8,
+          17.0
+        ]
+      ],
+      "body_size_design": [
+        103.7,
+        93.16
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -43.86,
+          -5.78
+        ],
+        [
+          -27.2,
+          -5.78
+        ],
+        [
+          42.84,
+          11.56
+        ],
+        [
+          42.84,
+          13.6
+        ],
+        [
+          14.62,
+          16.66
+        ],
+        [
+          -3.06,
+          16.66
+        ],
+        [
+          -43.86,
+          -3.74
+        ]
+      ],
+      "support_footprint_design": null,
+      "support_complete": false,
+      "all_feet_ground_envelope_design": null,
+      "all_feet_ground_complete": false,
+      "visible_feet_envelope_metric": 0.76854,
+      "contact_proxy_metric": 0.72958,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "attack_key_pose_with_listed_limits",
+      "full_animation_approved": false
+    },
+    {
+      "id": "wolf_se_attack_contact",
+      "actor": "wolf",
+      "direction": "SE",
+      "pose": "attack_contact",
+      "anchor_source": [
+        1765,
+        319
+      ],
+      "body_bbox_source": [
+        1614,
+        78,
+        1951,
+        365
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            1623,
+            282,
+            1670,
+            317
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -48.28,
+              -12.58
+            ],
+            [
+              -32.3,
+              -12.58
+            ],
+            [
+              -32.3,
+              -0.68
+            ],
+            [
+              -48.28,
+              -0.68
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -48.28,
+              -2.72
+            ],
+            [
+              -32.3,
+              -2.72
+            ],
+            [
+              -32.3,
+              -0.68
+            ],
+            [
+              -48.28,
+              -0.68
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -48.28,
+              -2.72
+            ],
+            [
+              -32.3,
+              -2.72
+            ],
+            [
+              -32.3,
+              -0.68
+            ],
+            [
+              -48.28,
+              -0.68
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            1716,
+            266,
+            1759,
+            296
+          ],
+          "support": "uncertain",
+          "visibility": "partial",
+          "full_outline_visible": false,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              -16.66,
+              -18.02
+            ],
+            [
+              -2.04,
+              -18.02
+            ],
+            [
+              -2.04,
+              -7.82
+            ],
+            [
+              -16.66,
+              -7.82
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        },
+        {
+          "visible_bounds_source": [
+            1775,
+            330,
+            1828,
+            364
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_3",
+          "visible_envelope_design": [
+            [
+              3.4,
+              3.74
+            ],
+            [
+              21.42,
+              3.74
+            ],
+            [
+              21.42,
+              15.3
+            ],
+            [
+              3.4,
+              15.3
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              3.4,
+              13.26
+            ],
+            [
+              21.42,
+              13.26
+            ],
+            [
+              21.42,
+              15.3
+            ],
+            [
+              3.4,
+              15.3
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              3.4,
+              13.26
+            ],
+            [
+              21.42,
+              13.26
+            ],
+            [
+              21.42,
+              15.3
+            ],
+            [
+              3.4,
+              15.3
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            1863,
+            307,
+            1913,
+            345
+          ],
+          "support": "uncertain",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_4",
+          "visible_envelope_design": [
+            [
+              33.32,
+              -4.08
+            ],
+            [
+              50.32,
+              -4.08
+            ],
+            [
+              50.32,
+              8.84
+            ],
+            [
+              33.32,
+              8.84
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        }
+      ],
+      "attack_contact_source": [
+        1940,
+        272
+      ],
+      "issues": [
+        "far_hind_sole_occluded",
+        "far_front_support_uncertain"
+      ],
+      "source": "sources/wolf-revised.png",
+      "image": "frames/wolf_se_attack_contact.png",
+      "image_size": [
+        391,
+        309
+      ],
+      "sha256": "7e3f166ef35890ee52b7d082240f6e6c9aebaec39b723b5cf42d0a06cd1ce1a0",
+      "source_component_label": 25,
+      "sample_rect": [
+        1564,
+        60,
+        391,
+        309
+      ],
+      "anchor_crop": [
+        201,
+        259
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -51.34,
+          -81.94
+        ],
+        [
+          63.24,
+          15.64
+        ]
+      ],
+      "body_size_design": [
+        114.58,
+        97.58
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -48.28,
+          -2.72
+        ],
+        [
+          -32.3,
+          -2.72
+        ],
+        [
+          21.42,
+          13.26
+        ],
+        [
+          21.42,
+          15.3
+        ],
+        [
+          3.4,
+          15.3
+        ],
+        [
+          -48.28,
+          -0.68
+        ]
+      ],
+      "support_footprint_design": null,
+      "support_complete": false,
+      "all_feet_ground_envelope_design": null,
+      "all_feet_ground_complete": false,
+      "visible_feet_envelope_metric": 0.765,
+      "contact_proxy_metric": 0.55958,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": [
+        376,
+        212
+      ],
+      "attack_contact_design": [
+        59.5,
+        -15.98
+      ],
+      "prototype_use": "attack_key_pose_with_listed_limits",
+      "full_animation_approved": false
+    },
+    {
+      "id": "wolf_ne_idle",
+      "actor": "wolf",
+      "direction": "NE",
+      "pose": "idle",
+      "anchor_source": [
+        207,
+        700
+      ],
+      "body_bbox_source": [
+        73,
+        387,
+        378,
+        761
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            75,
+            683,
+            124,
+            719
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -44.88,
+              -5.78
+            ],
+            [
+              -28.22,
+              -5.78
+            ],
+            [
+              -28.22,
+              6.46
+            ],
+            [
+              -44.88,
+              6.46
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -44.88,
+              4.42
+            ],
+            [
+              -28.22,
+              4.42
+            ],
+            [
+              -28.22,
+              6.46
+            ],
+            [
+              -44.88,
+              6.46
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -44.88,
+              4.42
+            ],
+            [
+              -28.22,
+              4.42
+            ],
+            [
+              -28.22,
+              6.46
+            ],
+            [
+              -44.88,
+              6.46
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            147,
+            722,
+            206,
+            759
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              -20.4,
+              7.48
+            ],
+            [
+              -0.34,
+              7.48
+            ],
+            [
+              -0.34,
+              20.06
+            ],
+            [
+              -20.4,
+              20.06
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -20.4,
+              18.02
+            ],
+            [
+              -0.34,
+              18.02
+            ],
+            [
+              -0.34,
+              20.06
+            ],
+            [
+              -20.4,
+              20.06
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -20.4,
+              18.02
+            ],
+            [
+              -0.34,
+              18.02
+            ],
+            [
+              -0.34,
+              20.06
+            ],
+            [
+              -20.4,
+              20.06
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            208,
+            638,
+            258,
+            674
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_3",
+          "visible_envelope_design": [
+            [
+              0.34,
+              -21.08
+            ],
+            [
+              17.34,
+              -21.08
+            ],
+            [
+              17.34,
+              -8.84
+            ],
+            [
+              0.34,
+              -8.84
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              0.34,
+              -10.88
+            ],
+            [
+              17.34,
+              -10.88
+            ],
+            [
+              17.34,
+              -8.84
+            ],
+            [
+              0.34,
+              -8.84
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              0.34,
+              -10.88
+            ],
+            [
+              17.34,
+              -10.88
+            ],
+            [
+              17.34,
+              -8.84
+            ],
+            [
+              0.34,
+              -8.84
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            287,
+            668,
+            345,
+            696
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_4",
+          "visible_envelope_design": [
+            [
+              27.2,
+              -10.88
+            ],
+            [
+              46.92,
+              -10.88
+            ],
+            [
+              46.92,
+              -1.36
+            ],
+            [
+              27.2,
+              -1.36
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              27.2,
+              -3.4
+            ],
+            [
+              46.92,
+              -3.4
+            ],
+            [
+              46.92,
+              -1.36
+            ],
+            [
+              27.2,
+              -1.36
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              27.2,
+              -3.4
+            ],
+            [
+              46.92,
+              -3.4
+            ],
+            [
+              46.92,
+              -1.36
+            ],
+            [
+              27.2,
+              -1.36
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [],
+      "source": "sources/wolf-revised.png",
+      "image": "frames/wolf_ne_idle.png",
+      "image_size": [
+        363,
+        382
+      ],
+      "sha256": "ba855dc1943bcf6fd4f6fb79d78c660ea8fe1ec01ce5e7cb07c687fcf172b6c5",
+      "source_component_label": 204,
+      "sample_rect": [
+        19,
+        383,
+        363,
+        382
+      ],
+      "anchor_crop": [
+        188,
+        317
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -45.56,
+          -106.42
+        ],
+        [
+          58.14,
+          20.74
+        ]
+      ],
+      "body_size_design": [
+        103.7,
+        127.16
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -44.88,
+          4.42
+        ],
+        [
+          0.34,
+          -10.88
+        ],
+        [
+          17.34,
+          -10.88
+        ],
+        [
+          46.92,
+          -3.4
+        ],
+        [
+          46.92,
+          -1.36
+        ],
+        [
+          -0.34,
+          20.06
+        ],
+        [
+          -20.4,
+          20.06
+        ],
+        [
+          -44.88,
+          6.46
+        ]
+      ],
+      "support_footprint_design": [
+        [
+          -44.88,
+          4.42
+        ],
+        [
+          0.34,
+          -10.88
+        ],
+        [
+          17.34,
+          -10.88
+        ],
+        [
+          46.92,
+          -3.4
+        ],
+        [
+          46.92,
+          -1.36
+        ],
+        [
+          -0.34,
+          20.06
+        ],
+        [
+          -20.4,
+          20.06
+        ],
+        [
+          -44.88,
+          6.46
+        ]
+      ],
+      "support_complete": true,
+      "all_feet_ground_envelope_design": [
+        [
+          -44.88,
+          -5.78
+        ],
+        [
+          0.34,
+          -21.08
+        ],
+        [
+          17.34,
+          -21.08
+        ],
+        [
+          46.92,
+          -10.88
+        ],
+        [
+          46.92,
+          -1.36
+        ],
+        [
+          -0.34,
+          20.06
+        ],
+        [
+          -20.4,
+          20.06
+        ],
+        [
+          -44.88,
+          6.46
+        ]
+      ],
+      "all_feet_ground_complete": true,
+      "visible_feet_envelope_metric": 0.71542,
+      "contact_proxy_metric": 0.63042,
+      "visible_feet_inside_safe_diamond": true,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "static_idle_placement_checked",
+      "full_animation_approved": false
+    },
+    {
+      "id": "wolf_ne_move_a",
+      "actor": "wolf",
+      "direction": "NE",
+      "pose": "move_a",
+      "anchor_source": [
+        613,
+        695
+      ],
+      "body_bbox_source": [
+        490,
+        385,
+        789,
+        753
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            488,
+            687,
+            539,
+            720
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -42.5,
+              -2.72
+            ],
+            [
+              -25.16,
+              -2.72
+            ],
+            [
+              -25.16,
+              8.5
+            ],
+            [
+              -42.5,
+              8.5
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -42.5,
+              6.46
+            ],
+            [
+              -25.16,
+              6.46
+            ],
+            [
+              -25.16,
+              8.5
+            ],
+            [
+              -42.5,
+              8.5
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -42.5,
+              6.46
+            ],
+            [
+              -25.16,
+              6.46
+            ],
+            [
+              -25.16,
+              8.5
+            ],
+            [
+              -42.5,
+              8.5
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            558,
+            726,
+            610,
+            752
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              -18.7,
+              10.54
+            ],
+            [
+              -1.02,
+              10.54
+            ],
+            [
+              -1.02,
+              19.38
+            ],
+            [
+              -18.7,
+              19.38
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -18.7,
+              17.34
+            ],
+            [
+              -1.02,
+              17.34
+            ],
+            [
+              -1.02,
+              19.38
+            ],
+            [
+              -18.7,
+              19.38
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -18.7,
+              17.34
+            ],
+            [
+              -1.02,
+              17.34
+            ],
+            [
+              -1.02,
+              19.38
+            ],
+            [
+              -18.7,
+              19.38
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            624,
+            635,
+            673,
+            662
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_3",
+          "visible_envelope_design": [
+            [
+              3.74,
+              -20.4
+            ],
+            [
+              20.4,
+              -20.4
+            ],
+            [
+              20.4,
+              -11.22
+            ],
+            [
+              3.74,
+              -11.22
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              3.74,
+              -13.26
+            ],
+            [
+              20.4,
+              -13.26
+            ],
+            [
+              20.4,
+              -11.22
+            ],
+            [
+              3.74,
+              -11.22
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              3.74,
+              -13.26
+            ],
+            [
+              20.4,
+              -13.26
+            ],
+            [
+              20.4,
+              -11.22
+            ],
+            [
+              3.74,
+              -11.22
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            699,
+            608,
+            740,
+            653
+          ],
+          "support": "swing",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_4",
+          "visible_envelope_design": [
+            [
+              29.24,
+              -29.58
+            ],
+            [
+              43.18,
+              -29.58
+            ],
+            [
+              43.18,
+              -14.28
+            ],
+            [
+              29.24,
+              -14.28
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [
+        "no_clear_diagonal_pair_exchange"
+      ],
+      "source": "sources/wolf-revised.png",
+      "image": "frames/wolf_ne_move_a.png",
+      "image_size": [
+        370,
+        376
+      ],
+      "sha256": "d032075edb8c26d47711dae860c62e11abf1edaf02abfafae74f6e0c466c4de1",
+      "source_component_label": 203,
+      "sample_rect": [
+        423,
+        381,
+        370,
+        376
+      ],
+      "anchor_crop": [
+        190,
+        314
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -41.82,
+          -105.4
+        ],
+        [
+          59.84,
+          19.72
+        ]
+      ],
+      "body_size_design": [
+        101.66,
+        125.12
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -42.5,
+          6.46
+        ],
+        [
+          3.74,
+          -13.26
+        ],
+        [
+          20.4,
+          -13.26
+        ],
+        [
+          20.4,
+          -11.22
+        ],
+        [
+          -1.02,
+          19.38
+        ],
+        [
+          -18.7,
+          19.38
+        ],
+        [
+          -42.5,
+          8.5
+        ]
+      ],
+      "support_footprint_design": [
+        [
+          -42.5,
+          6.46
+        ],
+        [
+          3.74,
+          -13.26
+        ],
+        [
+          20.4,
+          -13.26
+        ],
+        [
+          20.4,
+          -11.22
+        ],
+        [
+          -1.02,
+          19.38
+        ],
+        [
+          -18.7,
+          19.38
+        ],
+        [
+          -42.5,
+          8.5
+        ]
+      ],
+      "support_complete": true,
+      "all_feet_ground_envelope_design": null,
+      "all_feet_ground_complete": false,
+      "visible_feet_envelope_metric": 1.06604,
+      "contact_proxy_metric": 0.61979,
+      "visible_feet_inside_safe_diamond": false,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "limited_movement_pose",
+      "full_animation_approved": false
+    },
+    {
+      "id": "wolf_ne_move_b",
+      "actor": "wolf",
+      "direction": "NE",
+      "pose": "move_b",
+      "anchor_source": [
+        1005,
+        702
+      ],
+      "body_bbox_source": [
+        868,
+        395,
+        1181,
+        757
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            867,
+            702,
+            914,
+            732
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -46.92,
+              0.0
+            ],
+            [
+              -30.94,
+              0.0
+            ],
+            [
+              -30.94,
+              10.2
+            ],
+            [
+              -46.92,
+              10.2
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -46.92,
+              8.16
+            ],
+            [
+              -30.94,
+              8.16
+            ],
+            [
+              -30.94,
+              10.2
+            ],
+            [
+              -46.92,
+              10.2
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -46.92,
+              8.16
+            ],
+            [
+              -30.94,
+              8.16
+            ],
+            [
+              -30.94,
+              10.2
+            ],
+            [
+              -46.92,
+              10.2
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            975,
+            733,
+            1031,
+            757
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              -10.2,
+              10.54
+            ],
+            [
+              8.84,
+              10.54
+            ],
+            [
+              8.84,
+              18.7
+            ],
+            [
+              -10.2,
+              18.7
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -10.2,
+              16.66
+            ],
+            [
+              8.84,
+              16.66
+            ],
+            [
+              8.84,
+              18.7
+            ],
+            [
+              -10.2,
+              18.7
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -10.2,
+              16.66
+            ],
+            [
+              8.84,
+              16.66
+            ],
+            [
+              8.84,
+              18.7
+            ],
+            [
+              -10.2,
+              18.7
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            1014,
+            638,
+            1061,
+            670
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_3",
+          "visible_envelope_design": [
+            [
+              3.06,
+              -21.76
+            ],
+            [
+              19.04,
+              -21.76
+            ],
+            [
+              19.04,
+              -10.88
+            ],
+            [
+              3.06,
+              -10.88
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              3.06,
+              -12.92
+            ],
+            [
+              19.04,
+              -12.92
+            ],
+            [
+              19.04,
+              -10.88
+            ],
+            [
+              3.06,
+              -10.88
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              3.06,
+              -12.92
+            ],
+            [
+              19.04,
+              -12.92
+            ],
+            [
+              19.04,
+              -10.88
+            ],
+            [
+              3.06,
+              -10.88
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            1095,
+            621,
+            1132,
+            665
+          ],
+          "support": "swing",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_4",
+          "visible_envelope_design": [
+            [
+              30.6,
+              -27.54
+            ],
+            [
+              43.18,
+              -27.54
+            ],
+            [
+              43.18,
+              -12.58
+            ],
+            [
+              30.6,
+              -12.58
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [
+        "no_clear_diagonal_pair_exchange"
+      ],
+      "source": "sources/wolf-revised.png",
+      "image": "frames/wolf_ne_move_b.png",
+      "image_size": [
+        368,
+        370
+      ],
+      "sha256": "9acb3d73a93a89ba805ff112498ac44642cd2b27782ab895f33e27a09b5815b2",
+      "source_component_label": 207,
+      "sample_rect": [
+        817,
+        391,
+        368,
+        370
+      ],
+      "anchor_crop": [
+        188,
+        311
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -46.58,
+          -104.38
+        ],
+        [
+          59.84,
+          18.7
+        ]
+      ],
+      "body_size_design": [
+        106.42,
+        123.08
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -46.92,
+          8.16
+        ],
+        [
+          3.06,
+          -12.92
+        ],
+        [
+          19.04,
+          -12.92
+        ],
+        [
+          19.04,
+          -10.88
+        ],
+        [
+          8.84,
+          18.7
+        ],
+        [
+          -10.2,
+          18.7
+        ],
+        [
+          -46.92,
+          10.2
+        ]
+      ],
+      "support_footprint_design": [
+        [
+          -46.92,
+          8.16
+        ],
+        [
+          3.06,
+          -12.92
+        ],
+        [
+          19.04,
+          -12.92
+        ],
+        [
+          19.04,
+          -10.88
+        ],
+        [
+          8.84,
+          18.7
+        ],
+        [
+          -10.2,
+          18.7
+        ],
+        [
+          -46.92,
+          10.2
+        ]
+      ],
+      "support_complete": true,
+      "all_feet_ground_envelope_design": null,
+      "all_feet_ground_complete": false,
+      "visible_feet_envelope_metric": 1.02354,
+      "contact_proxy_metric": 0.70125,
+      "visible_feet_inside_safe_diamond": false,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "redundant_same_phase_not_recommended",
+      "full_animation_approved": false
+    },
+    {
+      "id": "wolf_ne_attack_prepare",
+      "actor": "wolf",
+      "direction": "NE",
+      "pose": "attack_prepare",
+      "anchor_source": [
+        1395,
+        708
+      ],
+      "body_bbox_source": [
+        1269,
+        432,
+        1566,
+        761
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            1269,
+            684,
+            1325,
+            719
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -42.84,
+              -8.16
+            ],
+            [
+              -23.8,
+              -8.16
+            ],
+            [
+              -23.8,
+              3.74
+            ],
+            [
+              -42.84,
+              3.74
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -42.84,
+              1.7
+            ],
+            [
+              -23.8,
+              1.7
+            ],
+            [
+              -23.8,
+              3.74
+            ],
+            [
+              -42.84,
+              3.74
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -42.84,
+              1.7
+            ],
+            [
+              -23.8,
+              1.7
+            ],
+            [
+              -23.8,
+              3.74
+            ],
+            [
+              -42.84,
+              3.74
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            1342,
+            721,
+            1401,
+            759
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              -18.02,
+              4.42
+            ],
+            [
+              2.04,
+              4.42
+            ],
+            [
+              2.04,
+              17.34
+            ],
+            [
+              -18.02,
+              17.34
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -18.02,
+              15.3
+            ],
+            [
+              2.04,
+              15.3
+            ],
+            [
+              2.04,
+              17.34
+            ],
+            [
+              -18.02,
+              17.34
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -18.02,
+              15.3
+            ],
+            [
+              2.04,
+              15.3
+            ],
+            [
+              2.04,
+              17.34
+            ],
+            [
+              -18.02,
+              17.34
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            1415,
+            630,
+            1458,
+            668
+          ],
+          "support": "uncertain",
+          "visibility": "partial",
+          "full_outline_visible": false,
+          "id": "image_order_3",
+          "visible_envelope_design": [
+            [
+              6.8,
+              -26.52
+            ],
+            [
+              21.42,
+              -26.52
+            ],
+            [
+              21.42,
+              -13.6
+            ],
+            [
+              6.8,
+              -13.6
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        },
+        {
+          "visible_bounds_source": [
+            1480,
+            645,
+            1539,
+            681
+          ],
+          "support": "swing",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_4",
+          "visible_envelope_design": [
+            [
+              28.9,
+              -21.42
+            ],
+            [
+              48.96,
+              -21.42
+            ],
+            [
+              48.96,
+              -9.18
+            ],
+            [
+              28.9,
+              -9.18
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        }
+      ],
+      "attack_contact_source": null,
+      "issues": [
+        "small_partial_under_belly_paw",
+        "front_support_uncertain"
+      ],
+      "source": "sources/wolf-revised.png",
+      "image": "frames/wolf_ne_attack_prepare.png",
+      "image_size": [
+        378,
+        337
+      ],
+      "sha256": "82e97f8e5308d1d5d51a9b8e9afda47ad34c8a2b2e49514eb7122c1baac51a19",
+      "source_component_label": 230,
+      "sample_rect": [
+        1192,
+        428,
+        378,
+        337
+      ],
+      "anchor_crop": [
+        203,
+        280
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -42.84,
+          -93.84
+        ],
+        [
+          58.14,
+          18.02
+        ]
+      ],
+      "body_size_design": [
+        100.98,
+        111.86
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -42.84,
+          1.7
+        ],
+        [
+          -23.8,
+          1.7
+        ],
+        [
+          2.04,
+          15.3
+        ],
+        [
+          2.04,
+          17.34
+        ],
+        [
+          -18.02,
+          17.34
+        ],
+        [
+          -42.84,
+          3.74
+        ]
+      ],
+      "support_footprint_design": null,
+      "support_complete": false,
+      "all_feet_ground_envelope_design": null,
+      "all_feet_ground_complete": false,
+      "visible_feet_envelope_metric": 0.95625,
+      "contact_proxy_metric": 0.54896,
+      "visible_feet_inside_safe_diamond": false,
+      "attack_contact_crop": null,
+      "attack_contact_design": null,
+      "prototype_use": "attack_key_pose_with_listed_limits",
+      "full_animation_approved": false
+    },
+    {
+      "id": "wolf_ne_attack_contact",
+      "actor": "wolf",
+      "direction": "NE",
+      "pose": "attack_contact",
+      "anchor_source": [
+        1780,
+        716
+      ],
+      "body_bbox_source": [
+        1629,
+        409,
+        1942,
+        761
+      ],
+      "feet": [
+        {
+          "visible_bounds_source": [
+            1628,
+            701,
+            1683,
+            739
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_1",
+          "visible_envelope_design": [
+            [
+              -51.68,
+              -5.1
+            ],
+            [
+              -32.98,
+              -5.1
+            ],
+            [
+              -32.98,
+              7.82
+            ],
+            [
+              -51.68,
+              7.82
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -51.68,
+              5.78
+            ],
+            [
+              -32.98,
+              5.78
+            ],
+            [
+              -32.98,
+              7.82
+            ],
+            [
+              -51.68,
+              7.82
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -51.68,
+              5.78
+            ],
+            [
+              -32.98,
+              5.78
+            ],
+            [
+              -32.98,
+              7.82
+            ],
+            [
+              -51.68,
+              7.82
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            1720,
+            726,
+            1783,
+            758
+          ],
+          "support": "contact",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_2",
+          "visible_envelope_design": [
+            [
+              -20.4,
+              3.4
+            ],
+            [
+              1.02,
+              3.4
+            ],
+            [
+              1.02,
+              14.28
+            ],
+            [
+              -20.4,
+              14.28
+            ]
+          ],
+          "contact_proxy_design": [
+            [
+              -20.4,
+              12.24
+            ],
+            [
+              1.02,
+              12.24
+            ],
+            [
+              1.02,
+              14.28
+            ],
+            [
+              -20.4,
+              14.28
+            ]
+          ],
+          "ground_projection_design": [
+            [
+              -20.4,
+              12.24
+            ],
+            [
+              1.02,
+              12.24
+            ],
+            [
+              1.02,
+              14.28
+            ],
+            [
+              -20.4,
+              14.28
+            ]
+          ],
+          "annotation_confidence": "manual_2d_visible_proxy"
+        },
+        {
+          "visible_bounds_source": [
+            1796,
+            597,
+            1845,
+            640
+          ],
+          "support": "swing",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_3",
+          "visible_envelope_design": [
+            [
+              5.44,
+              -40.46
+            ],
+            [
+              22.1,
+              -40.46
+            ],
+            [
+              22.1,
+              -25.84
+            ],
+            [
+              5.44,
+              -25.84
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        },
+        {
+          "visible_bounds_source": [
+            1883,
+            611,
+            1935,
+            648
+          ],
+          "support": "swing",
+          "visibility": "visible",
+          "full_outline_visible": true,
+          "id": "image_order_4",
+          "visible_envelope_design": [
+            [
+              35.02,
+              -35.7
+            ],
+            [
+              52.7,
+              -35.7
+            ],
+            [
+              52.7,
+              -23.12
+            ],
+            [
+              35.02,
+              -23.12
+            ]
+          ],
+          "contact_proxy_design": null,
+          "ground_projection_design": null,
+          "annotation_confidence": "unknown_ground_projection"
+        }
+      ],
+      "attack_contact_source": [
+        1930,
+        470
+      ],
+      "issues": [
+        "front_paws_airborne_key_pose_only"
+      ],
+      "source": "sources/wolf-revised.png",
+      "image": "frames/wolf_ne_attack_contact.png",
+      "image_size": [
+        366,
+        360
+      ],
+      "sha256": "3d16237681972fc8c002ca1940e7b6a08cf977ee89049d5149c7fb626c3b9acd",
+      "source_component_label": 212,
+      "sample_rect": [
+        1580,
+        405,
+        366,
+        360
+      ],
+      "anchor_crop": [
+        200,
+        311
+      ],
+      "uniform_scale_to_design": 0.34,
+      "body_bbox_design": [
+        [
+          -51.34,
+          -104.38
+        ],
+        [
+          55.08,
+          15.3
+        ]
+      ],
+      "body_size_design": [
+        106.42,
+        119.68
+      ],
+      "known_contact_proxy_hull_design": [
+        [
+          -51.68,
+          5.78
+        ],
+        [
+          -32.98,
+          5.78
+        ],
+        [
+          1.02,
+          12.24
+        ],
+        [
+          1.02,
+          14.28
+        ],
+        [
+          -20.4,
+          14.28
+        ],
+        [
+          -51.68,
+          7.82
+        ]
+      ],
+      "support_footprint_design": [
+        [
+          -51.68,
+          5.78
+        ],
+        [
+          -32.98,
+          5.78
+        ],
+        [
+          1.02,
+          12.24
+        ],
+        [
+          1.02,
+          14.28
+        ],
+        [
+          -20.4,
+          14.28
+        ],
+        [
+          -51.68,
+          7.82
+        ]
+      ],
+      "support_complete": true,
+      "all_feet_ground_envelope_design": null,
+      "all_feet_ground_complete": false,
+      "visible_feet_envelope_metric": 1.29271,
+      "contact_proxy_metric": 0.70125,
+      "visible_feet_inside_safe_diamond": false,
+      "attack_contact_crop": [
+        350,
+        65
+      ],
+      "attack_contact_design": [
+        51.0,
+        -83.64
+      ],
+      "prototype_use": "attack_key_pose_with_listed_limits",
+      "full_animation_approved": false
+    }
+  ]
+}

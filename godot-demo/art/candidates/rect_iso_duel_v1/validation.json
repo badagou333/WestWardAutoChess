@@ -1,0 +1,347 @@
+{
+  "checks": {
+    "sources": 4,
+    "isolated_frames": 20,
+    "design_cell": [
+      192,
+      96
+    ],
+    "common_scale_per_actor": true,
+    "all_idle_full_visible_foot_envelopes_inside_safe_diamond": true,
+    "all_known_contact_proxies_inside_safe_diamond": true,
+    "all_visible_foot_envelopes_inside_90_percent_diamond": false,
+    "source_pixel_preservation": true,
+    "mirror_geometry": true,
+    "preview_grid_is_actual_pixels": true,
+    "runtime_tested": false,
+    "full_animation_passed": false
+  },
+  "segmentation": {
+    "monk": {
+      "large_connected_bodies": 10,
+      "retained_pixels": 656148,
+      "omitted_alpha_ge_8_pixels": 0,
+      "max_omitted_alpha": 6,
+      "method": "8-connected alpha>=8; two-pixel halo; all source originals retained"
+    },
+    "wolf": {
+      "large_connected_bodies": 10,
+      "retained_pixels": 636322,
+      "omitted_alpha_ge_8_pixels": 0,
+      "max_omitted_alpha": 6,
+      "method": "8-connected alpha>=8; two-pixel halo; all source originals retained"
+    }
+  },
+  "frames": [
+    {
+      "id": "monk_se_idle",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": true,
+      "support_complete": true,
+      "visible_metric": 0.71188,
+      "body_size_design": [
+        100.64,
+        120.36
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": []
+    },
+    {
+      "id": "monk_se_move_a",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": false,
+      "support_complete": true,
+      "visible_metric": 0.595,
+      "body_size_design": [
+        96.9,
+        123.42
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": [
+        "two_key_poses_only"
+      ]
+    },
+    {
+      "id": "monk_se_move_b",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": false,
+      "support_complete": true,
+      "visible_metric": 0.61625,
+      "body_size_design": [
+        89.76,
+        119.34
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": [
+        "two_key_poses_only"
+      ]
+    },
+    {
+      "id": "monk_se_attack_prepare",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": true,
+      "support_complete": true,
+      "visible_metric": 0.76146,
+      "body_size_design": [
+        105.06,
+        114.24
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": []
+    },
+    {
+      "id": "monk_se_attack_contact",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": false,
+      "support_complete": false,
+      "visible_metric": 0.74021,
+      "body_size_design": [
+        101.66,
+        113.22
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": [
+        "left_image_foot_support_uncertain"
+      ]
+    },
+    {
+      "id": "monk_ne_idle",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": true,
+      "support_complete": true,
+      "visible_metric": 0.66937,
+      "body_size_design": [
+        90.1,
+        122.06
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": []
+    },
+    {
+      "id": "monk_ne_move_a",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": false,
+      "support_complete": true,
+      "visible_metric": 0.72604,
+      "body_size_design": [
+        87.72,
+        120.02
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": [
+        "same_leg_phase_no_alternating_cycle"
+      ]
+    },
+    {
+      "id": "monk_ne_move_b",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": false,
+      "support_complete": true,
+      "visible_metric": 0.68354,
+      "body_size_design": [
+        80.58,
+        117.64
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": [
+        "same_leg_phase_no_alternating_cycle"
+      ]
+    },
+    {
+      "id": "monk_ne_attack_prepare",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": true,
+      "support_complete": true,
+      "visible_metric": 0.72604,
+      "body_size_design": [
+        98.26,
+        120.36
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": []
+    },
+    {
+      "id": "monk_ne_attack_contact",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": true,
+      "support_complete": true,
+      "visible_metric": 0.68354,
+      "body_size_design": [
+        100.64,
+        117.3
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": []
+    },
+    {
+      "id": "wolf_se_idle",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": true,
+      "support_complete": true,
+      "visible_metric": 0.77208,
+      "body_size_design": [
+        102.34,
+        112.2
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": []
+    },
+    {
+      "id": "wolf_se_move_a",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": false,
+      "support_complete": true,
+      "visible_metric": 0.8075,
+      "body_size_design": [
+        103.7,
+        107.78
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": [
+        "no_clear_diagonal_pair_exchange"
+      ]
+    },
+    {
+      "id": "wolf_se_move_b",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": false,
+      "support_complete": false,
+      "visible_metric": 0.81812,
+      "body_size_design": [
+        99.62,
+        106.08
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": [
+        "no_clear_diagonal_pair_exchange",
+        "far_feet_fused_unverifiable"
+      ]
+    },
+    {
+      "id": "wolf_se_attack_prepare",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": false,
+      "support_complete": false,
+      "visible_metric": 0.76854,
+      "body_size_design": [
+        103.7,
+        93.16
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": [
+        "far_hind_sole_occluded"
+      ]
+    },
+    {
+      "id": "wolf_se_attack_contact",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": false,
+      "support_complete": false,
+      "visible_metric": 0.765,
+      "body_size_design": [
+        114.58,
+        97.58
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": [
+        "far_hind_sole_occluded",
+        "far_front_support_uncertain"
+      ]
+    },
+    {
+      "id": "wolf_ne_idle",
+      "safe_visible_foot_envelope": true,
+      "all_ground_known": true,
+      "support_complete": true,
+      "visible_metric": 0.71542,
+      "body_size_design": [
+        103.7,
+        127.16
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": []
+    },
+    {
+      "id": "wolf_ne_move_a",
+      "safe_visible_foot_envelope": false,
+      "all_ground_known": false,
+      "support_complete": true,
+      "visible_metric": 1.06604,
+      "body_size_design": [
+        101.66,
+        125.12
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": [
+        "no_clear_diagonal_pair_exchange"
+      ]
+    },
+    {
+      "id": "wolf_ne_move_b",
+      "safe_visible_foot_envelope": false,
+      "all_ground_known": false,
+      "support_complete": true,
+      "visible_metric": 1.02354,
+      "body_size_design": [
+        106.42,
+        123.08
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": [
+        "no_clear_diagonal_pair_exchange"
+      ]
+    },
+    {
+      "id": "wolf_ne_attack_prepare",
+      "safe_visible_foot_envelope": false,
+      "all_ground_known": false,
+      "support_complete": false,
+      "visible_metric": 0.95625,
+      "body_size_design": [
+        100.98,
+        111.86
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": [
+        "small_partial_under_belly_paw",
+        "front_support_uncertain"
+      ]
+    },
+    {
+      "id": "wolf_ne_attack_contact",
+      "safe_visible_foot_envelope": false,
+      "all_ground_known": false,
+      "support_complete": true,
+      "visible_metric": 1.29271,
+      "body_size_design": [
+        106.42,
+        119.68
+      ],
+      "preserved_rgba": true,
+      "mirror_metric_equal": true,
+      "issues": [
+        "front_paws_airborne_key_pose_only"
+      ]
+    }
+  ],
+  "warnings": []
+}
