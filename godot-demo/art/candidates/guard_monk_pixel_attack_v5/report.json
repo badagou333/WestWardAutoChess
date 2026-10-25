@@ -1,0 +1,204 @@
+{
+  "result": "structural_packaging_pass",
+  "overridden_existing_body_ids": [
+    4
+  ],
+  "inserted_body_ids": [
+    6
+  ],
+  "preserved_body_ids_rgba_exact_to_saved_v4": [
+    0,
+    2,
+    3,
+    5
+  ],
+  "preserved_new_stage_indices": [
+    0,
+    2,
+    3,
+    4,
+    5,
+    7,
+    8
+  ],
+  "all_preserved_stages_equal_saved_v4_at_same_time": true,
+  "selected_body_opaque_rgba_exact": true,
+  "all_bodies_unchanged": false,
+  "body_resampling": false,
+  "fx_refitted": false,
+  "render_stage_count": 9,
+  "distinct_body_pose_count": 6,
+  "contact_seconds": 0.23,
+  "action_duration_seconds": 0.8,
+  "preview_cycle_seconds": 1.15,
+  "first_last_body0_identical": true,
+  "additional_fx_palette_count": 127,
+  "total_gif_palette_count": 225,
+  "previews": {
+    "preview.gif": {
+      "stage_starts_seconds": [
+        0.0,
+        0.1,
+        0.2,
+        0.23,
+        0.26,
+        0.3,
+        0.34,
+        0.5,
+        0.68
+      ],
+      "duration_ms": [
+        100,
+        100,
+        30,
+        30,
+        40,
+        40,
+        160,
+        180,
+        470
+      ],
+      "total_ms": 1150,
+      "action_speed_factor": 1,
+      "extra_idle_seconds": 0.35,
+      "boundary_rounding_error_ms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "file": "preview.gif",
+      "sha256": "2f80e7d6ac74aa58f63502b55460536c88902242d293b20cac7774735923be12",
+      "requested_samples": 9,
+      "encoded_frames": 9,
+      "encoded_duration_ms": 1150,
+      "reserved_rgb_pixels_checked": 1784040,
+      "reserved_rgb_preserved_exactly": true,
+      "maximum_unreserved_fx_channel_error": 24
+    },
+    "preview_slow.gif": {
+      "stage_starts_seconds": [
+        0.0,
+        0.2,
+        0.4,
+        0.46,
+        0.52,
+        0.6,
+        0.68,
+        1.0,
+        1.36
+      ],
+      "duration_ms": [
+        200,
+        200,
+        60,
+        60,
+        80,
+        80,
+        320,
+        360,
+        590
+      ],
+      "total_ms": 1950,
+      "action_speed_factor": 2,
+      "extra_idle_seconds": 0.35,
+      "boundary_rounding_error_ms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -2.2737367544323206e-13
+      ],
+      "file": "preview_slow.gif",
+      "sha256": "e1b2e0e8b1c4df0ddb69b04ddfd8d72db6169cb10278cafd58f78d718b1bf6cd",
+      "requested_samples": 9,
+      "encoded_frames": 9,
+      "encoded_duration_ms": 1950,
+      "reserved_rgb_pixels_checked": 1784040,
+      "reserved_rgb_preserved_exactly": true,
+      "maximum_unreserved_fx_channel_error": 24
+    },
+    "comparison.gif": {
+      "union_event_boundaries_seconds": [
+        0.0,
+        0.1,
+        0.2,
+        0.23,
+        0.26,
+        0.3,
+        0.34,
+        0.5,
+        0.68,
+        0.8,
+        1.15
+      ],
+      "duration_ms": [
+        100,
+        100,
+        30,
+        30,
+        40,
+        40,
+        160,
+        180,
+        120,
+        350
+      ],
+      "total_ms": 1150,
+      "left": "v4",
+      "right": "v5",
+      "absolute_time_alignment": true,
+      "same_cycle_seconds": 1.15,
+      "before_stage_indices": [
+        0,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7
+      ],
+      "after_stage_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        8
+      ],
+      "includes_new_step_event_seconds": 0.1,
+      "file": "comparison.gif",
+      "sha256": "e241ce0c34ac820a89e55b18af1b97e14a3e5e87042afac71da26c7bd67aeb08",
+      "requested_samples": 10,
+      "encoded_frames": 9,
+      "encoded_duration_ms": 1150,
+      "reserved_rgb_pixels_checked": 4251838,
+      "reserved_rgb_preserved_exactly": true,
+      "maximum_unreserved_fx_channel_error": 26
+    }
+  },
+  "not_verified": [
+    "grip_and_foot_visual_continuity",
+    "owner_approval",
+    "runtime_integration",
+    "gameplay_damage"
+  ]
+}

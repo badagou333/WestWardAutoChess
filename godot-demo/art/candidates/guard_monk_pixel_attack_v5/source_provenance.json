@@ -1,0 +1,39 @@
+{
+  "tool": "built-in image_gen",
+  "canonical_encoding": "lossless WebP exact=True",
+  "sources": [
+    {
+      "file": "source/recovery_generated.webp",
+      "original_png_sha256": "6f56b596ded784a0780f0faefa540ae7cd6bdb4335a1ffde50c46ad564878281",
+      "webp_sha256": "94c2f4920d159e7e13360dfd6dd3b206e1496b32dc195bf1a837eb7476f5fda5",
+      "rgba_sha256": "2a047eebd9767811d9085d82a1bd7c6281ccada3b88562b4824f36aedaad8066",
+      "size": [
+        1254,
+        1254
+      ],
+      "lossless_rgba_equal": true
+    },
+    {
+      "file": "source/recovery_arm_geometry.webp",
+      "original_png_sha256": "06b913276c72eef170bf764e901efd67cc6944dbfa4e9eb65c5c7e3b676b1ed7",
+      "webp_sha256": "e520f9e7a9e6cc3dd8212b5bf566d3e6f9d2180b974958021cb71e6cb6a3addd",
+      "rgba_sha256": "4af6c90a35d1a4cb6c22f6f27be51f9c8fcff80de744b42c9c53ea721d16c38f",
+      "size": [
+        1254,
+        1254
+      ],
+      "lossless_rgba_equal": true
+    },
+    {
+      "file": "source/step_generated.webp",
+      "original_png_sha256": "ddad733663a624ffff77147fb9523f5ce6df6e4727c2eb0d618ac1973fb09eec",
+      "webp_sha256": "e48f573538733d8556e5caea9ba05c4ea4e04e87d8adffa58633bdf32e9a819e",
+      "rgba_sha256": "bff5e83dc44593b70342079192343c7df3f5c49a600e18342f11a22abda5ceae",
+      "size": [
+        1229,
+        1280
+      ],
+      "lossless_rgba_equal": true
+    }
+  ]
+}

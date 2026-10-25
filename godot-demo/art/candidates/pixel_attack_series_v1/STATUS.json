@@ -1,0 +1,71 @@
+{
+  "updated": "2026-10-26",
+  "scope": "attack_or_primary_action_only",
+  "excluded": "tangseng_has_no_attack",
+  "runtime_integrated": false,
+  "quality_gate": "all_keyframes_and_transitions_reviewed_no_known_must_fix",
+  "roles": [
+    {
+      "id": "guard_monk",
+      "name": "护寺棍僧",
+      "action": "staff_finish",
+      "status": "candidate_pass",
+      "path": "../guard_monk_pixel_attack_v5/README.md"
+    },
+    {
+      "id": "wild_hunter",
+      "name": "山野猎户",
+      "action": "bow_shot",
+      "status": "visual_must_fix",
+      "path": "wild_hunter/README.md"
+    },
+    {
+      "id": "foxfire_imp",
+      "name": "狐火小妖",
+      "action": "alternating_fire",
+      "status": "in_progress",
+      "path": "foxfire_imp/"
+    },
+    {
+      "id": "sparrow_spirit",
+      "name": "山雀精",
+      "action": "wing_wind",
+      "status": "in_progress",
+      "path": "sparrow_spirit/"
+    },
+    {
+      "id": "mountain_wolf",
+      "name": "山狼",
+      "action": "bite",
+      "status": "visual_must_fix",
+      "path": "mountain_wolf/README.md"
+    },
+    {
+      "id": "boar",
+      "name": "山猪",
+      "action": "mace_strike",
+      "status": "queued"
+    },
+    {
+      "id": "gray_rat",
+      "name": "灰鼠",
+      "action": "sling",
+      "status": "queued_after_hunter_repair",
+      "path": "gray_rat/"
+    },
+    {
+      "id": "bear_lord",
+      "name": "熊山君",
+      "action": "heavy_club",
+      "status": "candidate_pass",
+      "path": "bear_lord/README.md"
+    },
+    {
+      "id": "herbal_spirit_child",
+      "name": "药灵童子",
+      "action": "healing",
+      "status": "queued_default_pending_optional_reply"
+    }
+  ],
+  "complete": false
+}

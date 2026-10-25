@@ -1,0 +1,33 @@
+{
+  "updated": "2026-10-26",
+  "result": "candidate_pass_no_known_must_fix",
+  "visual_review": "independent_all_six_bodies_and_adjacent_poses_pass",
+  "owner_continuous_experience": false,
+  "runtime_integrated": false,
+  "technical_review": "independent_structural_pass",
+  "body_changed_pixels": {
+    "4": 12264,
+    "6": 2829
+  },
+  "inherited_body_ids_rgba_exact": [
+    0,
+    2,
+    3,
+    5
+  ],
+  "new_sources_all_rgba_lossless": true,
+  "first_last_equal": true,
+  "gif_duration_ms": [
+    1150,
+    1950,
+    1150
+  ],
+  "gif_body_rgb_max_channel_error": 0,
+  "fx_unchanged_from_v2": true,
+  "contact_ms": 230,
+  "action_ms": 800,
+  "idle_ms": 350,
+  "atlas_and_manifest_pass": true,
+  "remaining_must_fix": [],
+  "details": "REVIEW.md"
+}

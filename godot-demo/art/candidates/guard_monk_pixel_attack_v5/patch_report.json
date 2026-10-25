@@ -1,0 +1,68 @@
+{
+  "alignment_notes": {
+    "recovery_arm_translation": [
+      -20,
+      36
+    ],
+    "return_leg_translation": [
+      0,
+      -8
+    ],
+    "step_crop_top_left": [
+      225,
+      300
+    ]
+  },
+  "removed_source_specks": [
+    {
+      "pixels": 1,
+      "points_yx": [
+        [
+          212,
+          292
+        ]
+      ]
+    },
+    {
+      "pixels": 3,
+      "points_yx": [
+        [
+          214,
+          293
+        ],
+        [
+          215,
+          294
+        ],
+        [
+          215,
+          293
+        ]
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "file": "body/04_recovery_fixed.png",
+      "sha256": "d35eec5c4e4a44da491ef370f87a5a97ffcc35f4b71fa312ece2ebb1a79eeb12",
+      "changed_pixels": 12264,
+      "changed_bbox": [
+        172,
+        138,
+        335,
+        392
+      ]
+    },
+    {
+      "file": "body/06_step_lift.png",
+      "sha256": "a7c86110a510282bd8b7a6b13b966f86e63901b35a01d76a256bcbdd618cbef1",
+      "changed_pixels": 2829,
+      "changed_bbox": [
+        232,
+        333,
+        307,
+        399
+      ]
+    }
+  ]
+}

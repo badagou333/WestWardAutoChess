@@ -1,0 +1,65 @@
+{
+  "base_v1_dir": "../guard_monk_pixel_attack_v1",
+  "base_v2_dir": "../guard_monk_pixel_attack_v2",
+  "base_v4_dir": "../guard_monk_pixel_attack_v4",
+  "body_overrides": {
+    "4": "body/04_recovery_fixed.png",
+    "6": "body/06_step_lift.png"
+  },
+  "track": [
+    {
+      "at": 0,
+      "body_frame": 0,
+      "fx_opacity": 0,
+      "name": "windup"
+    },
+    {
+      "at": 0.1,
+      "body_frame": 6,
+      "fx_opacity": 0,
+      "name": "step_lift"
+    },
+    {
+      "at": 0.2,
+      "body_frame": 2,
+      "fx_opacity": 0.45,
+      "name": "fast_drop"
+    },
+    {
+      "at": 0.23,
+      "body_frame": 3,
+      "fx_opacity": 0.7,
+      "name": "contact_trail"
+    },
+    {
+      "at": 0.26,
+      "body_frame": 3,
+      "fx_opacity": 0.28,
+      "name": "trail_fade"
+    },
+    {
+      "at": 0.3,
+      "body_frame": 3,
+      "fx_opacity": 0,
+      "name": "clean_contact_hold"
+    },
+    {
+      "at": 0.34,
+      "body_frame": 4,
+      "fx_opacity": 0,
+      "name": "recover"
+    },
+    {
+      "at": 0.5,
+      "body_frame": 5,
+      "fx_opacity": 0,
+      "name": "upright_return"
+    },
+    {
+      "at": 0.68,
+      "body_frame": 0,
+      "fx_opacity": 0,
+      "name": "ready"
+    }
+  ]
+}
