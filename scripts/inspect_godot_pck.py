@@ -88,6 +88,7 @@ REQUIRED_RELEASE_FILES = (
 )
 
 FORBIDDEN_RELEASE_PREFIXES = (
+    "art/candidates/",
     "art/boards/perspective_stage_v1/review/",
     "art/boards/formation_trial_v2/review/",
     "art/reviews/formation-ui-v2/",
@@ -205,6 +206,7 @@ def main() -> int:
     parser.add_argument("pck", type=Path)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--release-policy", action="store_true")
+    parser.add_argument("--diamond-duel", action="store_true", help="verify exact isolated 17-frame duel assets")
     parser.add_argument("--usage", choices=("commercial", "noncommercial"), default="commercial")
     args = parser.parse_args()
 
@@ -242,6 +244,26 @@ def main() -> int:
         except (ValueError, KeyError, TypeError, OSError) as error:
             raise SystemExit(str(error)) from error
         print(f"PCK_POLICY_OK files={len(paths)} usage={args.usage} (PCM behavior/hash verified separately by Godot runtime test)")
+    if args.diamond_duel:
+        base = "art/runtime/diamond_duel_v1/"
+        name = base + "manifest.json"
+        manifest = json.loads(packed_text(args.pck, entries, name))
+        reference = json.loads((Path(__file__).resolve().parents[1] / "godot-demo" / name).read_text())
+        if manifest != reference or manifest.get("schema") != "diamond-duel-runtime-v1":
+            raise SystemExit("Duel packed manifest differs from the complete source adapter metadata")
+        frames = manifest.get("frames", [])
+        rejected = {"monk_ne_move_b", "wolf_se_move_b", "wolf_ne_move_b"}
+        if len(frames) != 17 or len({frame["id"] for frame in frames}) != 17 or any(frame["id"] in rejected for frame in frames):
+            raise SystemExit("Duel frame whitelist is not the seventeen approved isolated images")
+        expected = {name} | {base + frame["image"] + ".import" for frame in frames}
+        if {path for path in paths if path.startswith(base)} != expected:
+            raise SystemExit("Duel runtime contains extra/missing images, sources or review documents")
+        if any(path.startswith("art/candidates/") for path in paths):
+            raise SystemExit("Duel candidates must remain outside the PCK")
+        for required in ("scenes/diamond_duel.tscn.remap", "scripts/diamond_duel.gd.remap", "scripts/presentation/diamond_duel_view.gd.remap"):
+            if required not in entries:
+                raise SystemExit("Duel package missing entry/adapter: " + required)
+        print("DIAMOND_DUEL_PACK_OK frames=17 metadata=source_exact candidates=excluded")
     return 0
 
 

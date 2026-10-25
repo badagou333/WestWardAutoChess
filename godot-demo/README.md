@@ -14,6 +14,31 @@ godot --path godot-demo
 
 启动器需要本机安装引擎。旧 `scenes/main.tscn` 固定棋盘保留作对照；经营规则与角色素材共用新版，不再保留旧免费券/五候选玩法。
 
+## 独立菱格双角色小样（2026-10-19，作者自测）
+
+双击`launch-diamond-duel.command`，或运行`godot --path godot-demo --audio-driver Dummy res://scenes/diamond_duel.tscn`。只保留护寺棍僧、山狼各一名：点击左侧角色卡，再点完整菱格布置；成功放置自动清选，另一阵营占格拒绝，右键/Esc取消。开始后真实自动接敌/攻击/扣血，支持P暂停、1×/2×、同阵重试和返回开战前布置；战斗及暂停均锁阵。无唐僧、增删单位、经营或技能，不替换任何旧入口。声音默认静音/Dummy，原声表和非商业用途限制保持。
+
+横向矩形场地内有71个完整192×96菱格；绘制、正逆映射、布置、四邻、搜索和实际移动使用同一合法格集合。残格/石框不吸附到可走格。整数轴坐标是格心，`(-1,-1)`也是合法格，失败拾取另用`(-9999,-9999)`；这套坐标不改变旧矩形棋盘。角色节点保持1倍，原PNG以脚锚只乘一次0.34，未加旧0.72或逐帧缩放。只复制05推荐的17帧，未推荐3帧及镜像不用；仅棍僧斜前的两张腿姿交替，其余为有限移动姿势，受击闪光/退场淡出沿用原反馈，不冒称完整步态/死亡动画。未知、遮挡、腾空脚底仍为空，不画虚构足点。原HP/伤害/射程/攻速、命中时钟、0.50秒格段和双端占格不变。
+
+作者source/实际PCK各6925几何检查通过；新小样source3151、pack3177检查/各5局完整真实对打通过，含四向、远近与边缘、30FPS/2×/暂停、原事件时钟/唯一占格/锁阵与重试。5局完整报告及攻击/命中/声音事件包源相同，原主棋盘9局、音效试场9边界/6局、旧7入口与旧整局最小回归保持。证据与准确边界见[本批摘要](tests/board-trial-runtime/diamond-duel-20261019/summary.json)。首几何脚本类型解析失败及完整修复复跑留证，不把退出0误算通过。
+
+本轮已在获授权的专用1440×810新窗口采集[布置](tests/board-trial-runtime/diamond-duel-20261019/actual-window/01-deployment.png)、[接近](tests/board-trial-runtime/diamond-duel-20261019/actual-window/02-approaching.png)、[起手](tests/board-trial-runtime/diamond-duel-20261019/actual-window/03-attack-windup.png)、[实际扣血](tests/board-trial-runtime/diamond-duel-20261019/actual-window/04-actual-contact.png)、[即时结果](tests/board-trial-runtime/diamond-duel-20261019/actual-window/05-result.png)，均为实际OpenGL/Metal Viewport，不是离线合成。作者查看布置/接触/结果，格心归属、角色尺度、HUD与实际HP变化可辨；即时结果帧不是退场淡出完成证据。**原生鼠标、连续视觉/05、07独立及负责人体验仍未验**，不把5张图称为完整动画通过。
+
+本批实现/资源/证据已按持续授权提交并推送`origin/master`，工作区干净。此前两次限定提交审批超时（含一次允许的重试）确已发生并保留在本工作流与summary中；恢复后未绕过审批、未强推、未改历史。
+
+首次图形启动遇系统XPC限制；随后自动审批服务一度容量不足。服务实际恢复执行后，先按本轮日志路径核对并停止唯一失败PID30013，再成功运行专用采集并自行退出；未绕过审批、换模型或操作用户原窗口。额外补采审批超时未执行；未提交未运行的额外测试，无设备听感。`diamond_duel_capture.gd`只允许真实图形后端保存Viewport，拒绝headless假截图。
+
+独立导出预设为`Diamond Duel PCK`，自定义feature只改变该包的默认入口；旧Windows预设与源工程默认护送不变。最终临时包`/tmp/diamond-duel-20261019.1lR3WG/diamond-duel-final.pck`共400项，SHA仅维护本批summary；未分发EXE/ZIP，PCK不入Git。为验证旧入口，该包也保留原有入口依赖，但本批只增17帧/运行manifest/程序，不含原候选、源图、审阅图、测试或独立3D工程。
+
+```sh
+godot --headless --path godot-demo --script res://tests/diamond_duel_geometry_test.gd -- --output=/tmp/duel-geometry-source.json
+godot --headless --path godot-demo --audio-driver Dummy --script res://tests/diamond_duel_test.gd -- --output=/tmp/duel-source.json
+godot --headless --path godot-demo --export-pack 'Diamond Duel PCK' /tmp/diamond-duel.pck
+python3 scripts/inspect_godot_pck.py /tmp/diamond-duel.pck --release-policy --usage noncommercial --diamond-duel --output /tmp/duel-pck-files.txt
+```
+
+包内复核必须直接调用引擎，不经启动器；在新建的空目录作工作目录和`--path`，传`--main-pack /tmp/diamond-duel.pck --script <仓库绝对路径>/godot-demo/tests/diamond_duel_test.gd -- --expect-packed --source=/tmp/duel-source.json --output=/tmp/duel-pack.json`。该测试核包默认入口、拒绝宿主原PNG/源码fallback，逐帧比较实际导入RGBA及完整战斗事件。图形采样需审批恢复后以专用新窗口运行`--script res://tests/diamond_duel_capture.gd -- --output=/tmp/duel-window`，不能用离线合成替代。
+
 ## 当前棋盘：正面轻透视森林石台（2026-10-17）
 
 双击`launch-board-trial.command`，或运行`godot --path godot-demo res://scenes/board_trial.tscn`。仍是12×7、左友右敌，原布阵/选择/换位/R撤下/右键取消、暂停倍速和重试均保留；不是把概念图误画的14列变成玩法。普通启动器仍进护送，旧矩形棋盘、独立音效试场和独立狐火3D工程保持原入口。

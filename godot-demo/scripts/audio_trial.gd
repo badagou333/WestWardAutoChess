@@ -95,7 +95,11 @@ func add_units(friendly: bool, key: String, count := 1) -> bool:
 	for row in [3,2,4,1,5,0,6]:
 		for col in cols:
 			var cell:=Vector2i(col,row)
-			if not used.has(cell): cells.append(cell)
+			if valid_cell(cell) and not used.has(cell): cells.append(cell)
+	# Preserve the default audition ordering above, while allowing an independent
+	# instance mask (including negative lattice coordinates) to supply extra cells.
+	for cell in legal_cells():
+		if valid_cell(cell) and not used.has(cell) and not cells.has(cell): cells.append(cell)
 	if cells.size()<count:
 		_notice("没有足够合法空格")
 		return false
@@ -110,7 +114,7 @@ func add_units(friendly: bool, key: String, count := 1) -> bool:
 	return true
 
 func place(id: String, cell: Vector2i) -> bool:
-	if phase!=Phase.DEPLOY or not Config.valid(cell):
+	if phase!=Phase.DEPLOY or not valid_cell(cell):
 		_notice("仅战前合法棋盘格可移位 · 原位置保留")
 		return false
 	var actor: Dictionary=_record(id)
@@ -182,7 +186,7 @@ func start_battle() -> bool:
 		return false
 	var occupied := {}
 	for spec in setup_specs:
-		if not Config.valid(spec.cell) or occupied.has(spec.cell):
+		if not valid_cell(spec.cell) or occupied.has(spec.cell):
 			_notice("不能开战：存在非法或重复落点")
 			return false
 		occupied[spec.cell]=true
@@ -281,8 +285,8 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif event.keycode==KEY_ESCAPE: select("")
 		return
 	if not event is InputEventMouseButton or event.button_index!=MOUSE_BUTTON_LEFT: return
-	var cell: Vector2i=Config.cell_at(event.position)
-	if not Config.valid(cell):
+	var cell: Vector2i=display_cell_at(event.position)
+	if not valid_cell(cell):
 		if not event.pressed: pointer_drag=false
 		return
 	var occupant: Dictionary=_occupant(cell)

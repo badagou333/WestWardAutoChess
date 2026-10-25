@@ -18,9 +18,9 @@ static func releases(game, actor: Dictionary, target: Dictionary) -> Dictionary:
 	result[target.cell]=NEVER
 	return result
 
-static func route(first: Vector2i, actor: Dictionary, target: Dictionary, occupied: Dictionary) -> Dictionary:
+static func route(first: Vector2i, actor: Dictionary, target: Dictionary, occupied: Dictionary, valid_cell: Callable = Callable()) -> Dictionary:
 	var release: int=occupied.get(first,0)
-	if release>=NEVER or not Config.valid(first): return {}
+	if release>=NEVER or not Space._valid(first,valid_cell): return {}
 	var duration: int=int(round(actor.walk/Config.STEP))
 	var times := {first:release+duration}
 	var parents := {first:actor.cell}
@@ -40,7 +40,7 @@ static func route(first: Vector2i, actor: Dictionary, target: Dictionary, occupi
 			return {"cell":first,"cost":time,"path":path,"wait_ticks":release,"wait":{}}
 		for direction in Space.DIRECTIONS:
 			var next: Vector2i=cell+direction
-			if not Config.valid(next) or next==actor.cell: continue
+			if not Space._valid(next,valid_cell) or next==actor.cell: continue
 			var available: int=occupied.get(next,0)
 			if available>=NEVER: continue
 			# Dual-end locking means the destination must be free when the
@@ -59,7 +59,7 @@ static func candidates(game, actor: Dictionary, target: Dictionary) -> Array[Dic
 	var occupied := releases(game,actor,target)
 	var best := NEVER
 	for direction in Space.DIRECTIONS:
-		var option := route(actor.cell+direction,actor,target,occupied)
+		var option := route(actor.cell+direction,actor,target,occupied,game.valid_cell)
 		if option.is_empty(): continue
 		if option.cost<best:
 			best=option.cost

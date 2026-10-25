@@ -1,0 +1,13 @@
+{
+	"OS_input_verified": false,
+	"boundary_edges_checked": 44,
+	"cells": 71,
+	"checks": 6925,
+	"failures": [],
+	"interior_samples_per_cell": 25,
+	"max_roundtrip_error": 0.000000859630404193013,
+	"projection": "rect-arena-diamond-lattice-v1",
+	"rendered_pixels_verified": false,
+	"residual_cells_checked": 26,
+	"shared_edge_side_samples": 720
+}

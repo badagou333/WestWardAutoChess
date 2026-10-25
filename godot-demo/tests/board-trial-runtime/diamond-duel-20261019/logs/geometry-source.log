@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+SCRIPT ERROR: Parse Error: Cannot infer the type of "on_edge" variable because the value doesn't have a set type.
+   at: GDScript::reload (res://tests/diamond_duel_geometry_test.gd:75)
+ERROR: Failed to load script "res://tests/diamond_duel_geometry_test.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript_resource_format.cpp:46)

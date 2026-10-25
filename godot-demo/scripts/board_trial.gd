@@ -75,7 +75,18 @@ func _alive(actor: Dictionary) -> bool:
 	return not actor.is_empty() and not actor.dead and is_instance_valid(actor.node) and Events.alive(actor.node)
 
 func _active(actor: Dictionary) -> bool:
-	return _alive(actor) and Config.valid(actor.cell)
+	return _alive(actor) and valid_cell(actor.cell)
+
+func valid_cell(cell: Vector2i) -> bool:
+	# Instance hook: independent board samples may expose a connected tile mask.
+	# The existing rectangular trials retain exactly their original legal domain.
+	return Config.valid(cell)
+
+func legal_cells() -> Array[Vector2i]:
+	var result: Array[Vector2i]=[]
+	for row in range(Config.ROWS):
+		for col in range(Config.COLS): result.append(Vector2i(col,row))
+	return result
 
 func _hp(actor: Dictionary) -> float:
 	return float(actor.node.health) if _alive(actor) else 0.0
@@ -138,8 +149,8 @@ func _register(id: String, key: String, node, friendly: bool, cell: Vector2i) ->
 	node.move_interval = Config.MOVE_SECONDS_PER_CELL
 	if key=="guard_monk": node.presentation.set_motion_sample(monk_sample_enabled)
 	node.scale = Vector2.ONE*0.72
-	node.visible = Config.valid(cell)
-	node.position = display_center(cell) if Config.valid(cell) else Vector2.ZERO
+	node.visible = valid_cell(cell)
+	node.position = display_center(cell) if valid_cell(cell) else Vector2.ZERO
 	node.z_index = int(node.position.y)
 	_default_face(node,friendly)
 	var hud := Style.new()
@@ -188,14 +199,14 @@ func place(id: String, cell: Vector2i) -> bool:
 	if phase!=Phase.DEPLOY:
 		_notice("战中/结果锁阵 · 请重试后调整")
 		return false
-	if not Config.deployable(cell):
+	if not valid_cell(cell) or not Config.deployable(cell):
 		_notice("部署失败：友军仅可放在第1—6列、第1—7行 · 原位置保留")
 		return false
 	var actor := _record(id)
 	if actor.is_empty() or not actor.friendly: return false
 	var other := _occupant(cell,id)
 	if not other.is_empty():
-		if not other.friendly or not Config.deployable(actor.cell):
+		if not other.friendly or not valid_cell(actor.cell) or not Config.deployable(actor.cell):
 			_notice("目标格已占用 · 未部署单位请先选空格")
 			return false
 		deployment[other.id] = actor.cell
@@ -208,10 +219,10 @@ func place(id: String, cell: Vector2i) -> bool:
 func _set_cell(actor: Dictionary, cell: Vector2i) -> void:
 	actor.cell = cell
 	actor.anchor = cell
-	actor.node.position = display_center(cell) if Config.valid(cell) else Vector2.ZERO
+	actor.node.position = display_center(cell) if valid_cell(cell) else Vector2.ZERO
 	actor.node.z_index = int(actor.node.position.y)
 	sync_display_actor(actor)
-	actor.node.visible = Config.valid(cell)
+	actor.node.visible = valid_cell(cell)
 	_default_face(actor.node,actor.friendly)
 	if actor.friendly and actor.key!="tangseng":
 		actor.node.board_row = cell.y
@@ -230,12 +241,12 @@ func withdraw() -> void:
 
 func start_battle() -> bool:
 	if phase!=Phase.DEPLOY: return false
-	if not deployment.has("tangseng") or not Config.deployable(deployment.tangseng):
+	if not deployment.has("tangseng") or not valid_cell(deployment.tangseng) or not Config.deployable(deployment.tangseng):
 		_notice("不能开战：请先把唐僧放入左半合法空格")
 		return false
 	start_deployment = deployment.duplicate()
 	for actor in actors:
-		if actor.friendly and actor.key!="tangseng" and Config.valid(actor.cell): actor.node.begin_battle()
+		if actor.friendly and actor.key!="tangseng" and valid_cell(actor.cell): actor.node.begin_battle()
 		actor.anchor = actor.cell
 		actor.target = ""
 		if Melee.applies(actor): Melee.release(actor)
@@ -262,7 +273,7 @@ func _occupant(cell: Vector2i, excluded := "") -> Dictionary:
 	return {}
 
 func _path(actor: Dictionary, goal: Vector2i, reach: int) -> Array[Vector2i]:
-	return Space.path(actor.cell,goal,reach,func(cell): return not _occupant(cell,actor.id).is_empty())
+	return Space.path(actor.cell,goal,reach,func(cell): return not _occupant(cell,actor.id).is_empty(),Vector2i(-1,-1),-1,valid_cell)
 
 func _pursuit_path(actor: Dictionary, target: Dictionary) -> Array[Vector2i]:
 	var path := _path(actor,target.cell,actor.reach)
@@ -324,7 +335,7 @@ func _attack(actor: Dictionary, target: Dictionary, healing := false) -> void:
 	if not metrics.first_engagement.has(actor.id): metrics.first_engagement[actor.id] = {"target":target.id,"time":elapsed,"healing":healing}
 
 func _move(actor: Dictionary, next: Vector2i) -> bool:
-	if not _active(actor) or not Config.valid(next) or not actor.move.is_empty() or actor.node.presentation.pose=="basic_attack": return false
+	if not _active(actor) or not valid_cell(next) or not actor.move.is_empty() or actor.node.presentation.pose=="basic_attack": return false
 	if Config.distance(actor.cell,next)!=1 or not _occupant(next,actor.id).is_empty(): return false
 	if actor.friendly and not Melee.applies(actor) and not _mobile_ranged(actor) and Config.distance(actor.anchor,next)>Config.LEASH: return false
 	actor.move = {"from":actor.cell,"to":next,"time":0.0,"duration":actor.walk}
@@ -354,7 +365,7 @@ func _refresh_landed_target(actor: Dictionary) -> void:
 	actor.target=candidate.get("id","")
 	_clear_step_request(actor)
 	actor.step_target=""
-	actor.step_hint=Vector2i(-1,-1)
+	actor.step_hint=actor.get("invalid_cell",Vector2i(-1,-1))
 
 func _request_step(actor: Dictionary) -> void:
 	if not _active(actor) or not _step_mobile(actor) or not actor.move.is_empty() or actor.node.presentation.pose=="basic_attack": return
@@ -362,7 +373,7 @@ func _request_step(actor: Dictionary) -> void:
 	if not _active(target) or Config.distance(actor.cell,target.cell)<=actor.reach: return
 	if actor.step_target!=target.id:
 		_clear_step_request(actor)
-		actor.step_hint=Vector2i(-1,-1)
+		actor.step_hint=actor.get("invalid_cell",Vector2i(-1,-1))
 		actor.step_target=target.id
 	if actor.step_age<0: actor.step_age=elapsed
 	for pending in step_requests:
@@ -395,7 +406,7 @@ func _dispatch_steps() -> void:
 				if wait.is_empty() and not option.wait.is_empty(): wait=option.wait
 				continue
 			if not _move(actor,option.cell): continue
-			actor.step_hint=option.path[2] if option.path.size()>2 else Vector2i(-1,-1)
+			actor.step_hint=option.path[2] if option.path.size()>2 else actor.get("invalid_cell",Vector2i(-1,-1))
 			_clear_step_request(actor)
 			committed=true
 			break
@@ -437,7 +448,7 @@ func _brain(actor: Dictionary, delta: float) -> void:
 	if target.is_empty():
 		_clear_step_request(actor)
 		actor.step_target=""
-		actor.step_hint=Vector2i(-1,-1)
+		actor.step_hint=actor.get("invalid_cell",Vector2i(-1,-1))
 		actor.mode = "无可达目标" if not actor.friendly else "等待 / 超射程"
 		return
 	actor.mode = "接敌 → "+target.id
@@ -580,13 +591,13 @@ func _finish(won: bool) -> void:
 		if not actor.friendly: continue
 		damage += float(metrics.damage.get(actor.id,0))
 		healing += float(metrics.healing.get(actor.id,0))
-		if Config.valid(actor.anchor) and not _alive(actor): losses.append(actor.name)
+		if valid_cell(actor.anchor) and not _alive(actor): losses.append(actor.name)
 	_notice(("胜利：唐僧存活且全敌清除" if won else "失败：唐僧阵亡 · 同时清敌仍失败优先")+"\n友军实际伤害 %.0f · 有效治疗 %.0f · 阵亡：%s · 重试可修改开战前站位" % [damage,healing,"无" if losses.is_empty() else "、".join(losses)])
 
 func report() -> Dictionary:
 	var fallen: Array[String] = []
 	for actor in actors:
-		if actor.friendly and Config.valid(actor.anchor) and not _alive(actor): fallen.append(actor.id)
+		if actor.friendly and valid_cell(actor.anchor) and not _alive(actor): fallen.append(actor.id)
 	var parameters := []
 	var specs: Array=Config.enemy_specs(enemy_profile)
 	for index in specs.size():
@@ -650,7 +661,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if not event is InputEventMouseButton or event.button_index!=MOUSE_BUTTON_LEFT: return
 	var cell := display_cell_at(event.position)
-	if not Config.valid(cell):
+	if not valid_cell(cell):
 		if not event.pressed: pointer_drag = false # Failed off-board drop ends gesture, not selection.
 		return
 	var occupant := _occupant(cell)
@@ -689,10 +700,8 @@ func range_cells() -> Array[Vector2i]:
 	var result: Array[Vector2i] = []
 	var actor := _record(selected)
 	if actor.is_empty() or not _active(actor): return result
-	for row in range(Config.ROWS):
-		for col in range(Config.COLS):
-			var cell := Vector2i(col,row)
-			if Config.distance(actor.cell,cell)<=actor.reach: result.append(cell)
+	for cell in legal_cells():
+		if Config.distance(actor.cell,cell)<=actor.reach: result.append(cell)
 	return result
 
 func hover_cell() -> Vector2i:
@@ -706,7 +715,7 @@ func _draw() -> void:
 	for cell in range_cells():
 		draw_rect(Rect2(Config.ORIGIN+Vector2(cell)*Config.CELL,Config.CELL),Color(0.459,0.651,0.714,0.09))
 	var hovered := hover_cell()
-	if Config.valid(hovered):
+	if valid_cell(hovered):
 		draw_rect(Rect2(Config.ORIGIN+Vector2(hovered)*Config.CELL,Config.CELL),Color(0.925,0.882,0.725,0.10))
 	for col in range(Config.COLS+1):
 		var at := Config.ORIGIN+Vector2(col*Config.CELL.x,0)
@@ -726,7 +735,7 @@ func _draw_overlay() -> void:
 	if not actor.is_empty() and _active(actor):
 		board_overlay.draw_rect(Rect2(Config.ORIGIN+Vector2(actor.cell)*Config.CELL+Vector2(2,2),Config.CELL-Vector2(4,4)),Style.GOLD,false,3)
 	var hovered := hover_cell()
-	if Config.valid(hovered):
+	if valid_cell(hovered):
 		var rect := Rect2(Config.ORIGIN+Vector2(hovered)*Config.CELL+Vector2(3,3),Config.CELL-Vector2(6,6))
 		var invalid: bool = phase==Phase.DEPLOY and not actor.is_empty() and actor.friendly and hovered.x>=Config.DEPLOY_COLS
 		board_overlay.draw_rect(rect,Color("c96653") if invalid else Color("ece1b9"),false,2)

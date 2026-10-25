@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+DEMO_INTEGRATION: failures=0 result={ "hp": 300.0, "coins": 20, "counts": { "attacks": 245, "projectiles": 132, "hits": 198, "heals": 43, "cancelled": 4 }, "elapsed": 68.7000000000007 }

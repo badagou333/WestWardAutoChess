@@ -1,0 +1,336 @@
+{
+	"OS_mouse": false,
+	"dedicated_title": "D002 菱格对打测试 · 专用取证",
+	"device_audio": false,
+	"offline_composite": false,
+	"records": [
+		{
+			"actors": [
+				{
+					"cell": [
+						-3,
+						0
+					],
+					"foot": [
+						672.0,
+						444.0
+					],
+					"frame": "monk_se_idle",
+					"hp": 310.0,
+					"id": "monk",
+					"moving": false,
+					"pose": "idle",
+					"pose_time": 0.0
+				},
+				{
+					"cell": [
+						3,
+						0
+					],
+					"foot": [
+						1248.0,
+						732.0
+					],
+					"frame": "wolf_ne_idle",
+					"hp": 180.0,
+					"id": "wolf",
+					"moving": false,
+					"pose": "idle",
+					"pose_time": 0.0
+				}
+			],
+			"name": "01-deployment",
+			"phase": 0,
+			"saved": true,
+			"time": 0.0,
+			"viewport": [
+				1440,
+				810
+			]
+		},
+		{
+			"actors": [
+				{
+					"cell": [
+						-3,
+						0
+					],
+					"foot": [
+						712.0,
+						464.0
+					],
+					"frame": "monk_se_move_a",
+					"hp": 310.0,
+					"id": "monk",
+					"moving": true,
+					"pose": "move",
+					"pose_time": 0.208333333333333
+				},
+				{
+					"cell": [
+						3,
+						0
+					],
+					"foot": [
+						1208.0,
+						712.0
+					],
+					"frame": "wolf_ne_move_a",
+					"hp": 180.0,
+					"id": "wolf",
+					"moving": true,
+					"pose": "move",
+					"pose_time": 0.208333333333333
+				}
+			],
+			"name": "02-approaching",
+			"phase": 1,
+			"saved": true,
+			"time": 0.216666666666667,
+			"viewport": [
+				1440,
+				810
+			]
+		},
+		{
+			"actors": [
+				{
+					"cell": [
+						0,
+						0
+					],
+					"foot": [
+						960.0,
+						588.0
+					],
+					"frame": "monk_se_attack_prepare",
+					"hp": 310.0,
+					"id": "monk",
+					"moving": false,
+					"pose": "basic_attack",
+					"pose_time": 0.0833333333333333
+				},
+				{
+					"cell": [
+						1,
+						0
+					],
+					"foot": [
+						1056.0,
+						636.0
+					],
+					"frame": "wolf_ne_attack_prepare",
+					"hp": 180.0,
+					"id": "wolf",
+					"moving": false,
+					"pose": "basic_attack",
+					"pose_time": 0.0833333333333333
+				}
+			],
+			"name": "03-attack-windup",
+			"phase": 1,
+			"saved": true,
+			"time": 1.59166666666666,
+			"viewport": [
+				1440,
+				810
+			]
+		},
+		{
+			"actors": [
+				{
+					"cell": [
+						0,
+						0
+					],
+					"foot": [
+						960.0,
+						588.0
+					],
+					"frame": "monk_se_attack_prepare",
+					"hp": 293.0,
+					"id": "monk",
+					"moving": false,
+					"pose": "basic_attack",
+					"pose_time": 0.166666666666667
+				},
+				{
+					"cell": [
+						1,
+						0
+					],
+					"foot": [
+						1056.0,
+						636.0
+					],
+					"frame": "wolf_ne_attack_contact",
+					"hp": 180.0,
+					"id": "wolf",
+					"moving": false,
+					"pose": "basic_attack",
+					"pose_time": 0.166666666666667
+				}
+			],
+			"name": "04-actual-contact",
+			"phase": 1,
+			"saved": true,
+			"time": 1.675,
+			"viewport": [
+				1440,
+				810
+			]
+		},
+		{
+			"actors": [
+				{
+					"cell": [
+						0,
+						0
+					],
+					"foot": [
+						960.0,
+						588.0
+					],
+					"frame": "monk_se_attack_contact",
+					"hp": 38.0,
+					"id": "monk",
+					"moving": false,
+					"pose": "basic_attack",
+					"pose_time": 0.241666666666667
+				},
+				{
+					"cell": [
+						1,
+						0
+					],
+					"foot": [
+						1056.0,
+						636.0
+					],
+					"frame": "wolf_ne_idle",
+					"hp": 0.0,
+					"id": "wolf",
+					"moving": false,
+					"pose": "retreat",
+					"pose_time": 0.0
+				}
+			],
+			"name": "05-result",
+			"phase": 2,
+			"saved": true,
+			"time": 15.5499999999998,
+			"viewport": [
+				1440,
+				810
+			]
+		}
+	],
+	"report": {
+		"config": "diamond-duel-v1",
+		"coordinates": "integer axial cell centers; initial_cell retains inherited +1 report convention",
+		"legal_cell_count": 71,
+		"metrics": {
+			"attack_times": {
+				"monk": [
+					1.50833333333333,
+					2.65833333333333,
+					3.80833333333332,
+					4.95833333333337,
+					6.10833333333343,
+					7.25833333333348,
+					8.4083333333335,
+					9.55833333333343,
+					10.7083333333334,
+					11.8583333333333,
+					13.0083333333332,
+					14.1583333333332,
+					15.3083333333331
+				],
+				"wolf": [
+					1.50833333333333,
+					2.40833333333333,
+					3.30833333333332,
+					4.20833333333333,
+					5.10833333333338,
+					6.00833333333342,
+					6.90833333333347,
+					7.80833333333351,
+					8.70833333333348,
+					9.60833333333343,
+					10.5083333333334,
+					11.4083333333333,
+					12.3083333333333,
+					13.2083333333332,
+					14.1083333333332,
+					15.0083333333331
+				]
+			},
+			"damage": {
+				"monk": 180.0,
+				"wolf": 272.0
+			},
+			"first_engagement": {
+				"monk": {
+					"healing": false,
+					"target": "wolf",
+					"time": 1.50833333333333
+				},
+				"wolf": {
+					"healing": false,
+					"target": "monk",
+					"time": 1.50833333333333
+				}
+			},
+			"first_hit": {
+				"monk": {
+					"target": "wolf",
+					"time": 1.775
+				},
+				"wolf": {
+					"target": "monk",
+					"time": 1.675
+				}
+			},
+			"healing": {}
+		},
+		"phase": 2,
+		"result_count": 1,
+		"roster": [
+			{
+				"damage": 14.0,
+				"dead": false,
+				"friendly": true,
+				"hp": 38.0,
+				"hp_max": 310.0,
+				"id": "monk",
+				"initial_cell": [
+					-2,
+					1
+				],
+				"initial_hp_ratio": 1.0,
+				"interval": 1.15,
+				"key": "guard_monk",
+				"range": 1
+			},
+			{
+				"damage": 17.0,
+				"dead": true,
+				"friendly": false,
+				"hp": 0.0,
+				"hp_max": 180.0,
+				"id": "wolf",
+				"initial_cell": [
+					4,
+					1
+				],
+				"initial_hp_ratio": 1.0,
+				"interval": 0.9,
+				"key": "wolf",
+				"range": 1
+			}
+		],
+		"seconds": 15.5499999999998,
+		"victory": true
+	},
+	"scope": "D002 actual production viewport capture"
+}

@@ -9,7 +9,7 @@ static func applies(actor: Dictionary) -> bool:
 static func release(actor: Dictionary) -> void:
 	actor.target = ""
 	actor.route = []
-	actor.route_goal = Vector2i(-1,-1)
+	actor.route_goal = actor.get("invalid_cell",Vector2i(-1,-1))
 	actor.blocked = false
 	actor.blocked_elapsed = 0.0
 	actor.progress_time = -1.0
@@ -18,7 +18,7 @@ static func release(actor: Dictionary) -> void:
 	actor.step_wait = {}
 	actor.step_wait_reason = ""
 	actor.step_target = ""
-	actor.step_hint = Vector2i(-1,-1)
+	actor.step_hint = actor.get("invalid_cell",Vector2i(-1,-1))
 
 static func route_valid(game, actor: Dictionary, target: Dictionary) -> bool:
 	var route: Array = actor.route
@@ -26,7 +26,7 @@ static func route_valid(game, actor: Dictionary, target: Dictionary) -> bool:
 	if Config.distance(route.back(),target.cell)>actor.reach: return false
 	for index in range(route.size()):
 		var cell: Vector2i = route[index]
-		if not Config.valid(cell): return false
+		if not game.valid_cell(cell): return false
 		if index>0 and (Config.distance(route[index-1],cell)!=1 or not game._occupant(cell,actor.id).is_empty()): return false
 	return true
 
@@ -106,5 +106,5 @@ static func tick(game, actor: Dictionary) -> void:
 		return
 	# The combat target is persistent; an old attack endpoint is not a command.
 	actor.route = []
-	actor.route_goal = Vector2i(-1,-1)
+	actor.route_goal = actor.get("invalid_cell",Vector2i(-1,-1))
 	game._request_step(actor)
