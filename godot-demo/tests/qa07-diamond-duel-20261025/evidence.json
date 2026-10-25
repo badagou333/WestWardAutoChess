@@ -1,0 +1,529 @@
+{
+	"scope": "D-20261018-002 independent QA by 07; source rebuild plus re-exported PCK; headless logical input only",
+	"date": "2026-10-25",
+	"commit": "4982639d8a6a6cb538c478709037996daebb80bb",
+	"engine": "4.7.2.stable.official.ed1daf0bf",
+	"baseline": "origin/master 4982639; 0 0 at start; clean worktree",
+	"geometry": {
+		"source": {
+			"checks": 25860,
+			"failures": [],
+			"legal_cells": 71,
+			"rim_cells": 26,
+			"grid_samples": 12096,
+			"shared_edge_samples": 568
+		},
+		"pack": {
+			"checks": 25860,
+			"failures": [],
+			"legal_cells": 71,
+			"rim_cells": 26,
+			"grid_samples": 12096,
+			"shared_edge_samples": 568
+		},
+		"independent_derivation": "|gx-gy|<=6 and |gx+gy|<=5 from 1344x576 frame and 192x96 tile; 71 cells; not using Board.valid to build expectations",
+		"legacy_domain": {
+			"cells": 84,
+			"config_unchanged": true,
+			"source_default_main_scene": "res://scenes/escort_route.tscn"
+		}
+	},
+	"deployment_and_input": {
+		"checks": 3998,
+		"failures": [],
+		"legal_cells": 71,
+		"rim_rejected": 26,
+		"OS_mouse": false,
+		"logical_InputEvent_and_Button_only": true
+	},
+	"battles": {
+		"count": 6,
+		"list": [
+			{
+				"label": "SE_NW_far",
+				"start": {
+					"monk": [
+						-3,
+						0
+					],
+					"wolf": [
+						3,
+						0
+					]
+				},
+				"start_distance": 6,
+				"fps": 120,
+				"speed": 1,
+				"paused": false,
+				"result": "monk_win",
+				"seconds": 15.5499999999998,
+				"monk_hp": 38.0,
+				"wolf_hp": 0.0,
+				"result_count": 1,
+				"contacts": 29,
+				"attacks": 29,
+				"completed_steps": 5,
+				"first_contact": 1.675,
+				"source_report_sha": "e878dded52daad1262466c0c5d02bb98709b39958290aae8e863a80f712445c9",
+				"source_trace_sha": "6aa92d7cafb36c515fc6ed77ac48449575e1b7dfe0e64783f4628e0b99d7d91c",
+				"pack_report_sha": "e878dded52daad1262466c0c5d02bb98709b39958290aae8e863a80f712445c9",
+				"pack_trace_sha": "6aa92d7cafb36c515fc6ed77ac48449575e1b7dfe0e64783f4628e0b99d7d91c",
+				"source_pack_report_equal": true,
+				"source_pack_trace_equal": true
+			},
+			{
+				"label": "NW_SE_near",
+				"start": {
+					"monk": [
+						1,
+						0
+					],
+					"wolf": [
+						-1,
+						0
+					]
+				},
+				"start_distance": 2,
+				"fps": 120,
+				"speed": 1,
+				"paused": false,
+				"result": "monk_win",
+				"seconds": 14.5499999999998,
+				"monk_hp": 38.0,
+				"wolf_hp": 0.0,
+				"result_count": 1,
+				"contacts": 29,
+				"attacks": 29,
+				"completed_steps": 1,
+				"first_contact": 0.675,
+				"source_report_sha": "a5ec63a5c31e6394cb011e6ef957f3cff64af4d7bcb623406f7d1f7cc05bed4b",
+				"source_trace_sha": "1aedc891907bd947bd4ae36b037e316c5a508fe4569ee2334a497d197f59f801",
+				"pack_report_sha": "a5ec63a5c31e6394cb011e6ef957f3cff64af4d7bcb623406f7d1f7cc05bed4b",
+				"pack_trace_sha": "1aedc891907bd947bd4ae36b037e316c5a508fe4569ee2334a497d197f59f801",
+				"source_pack_report_equal": true,
+				"source_pack_trace_equal": true
+			},
+			{
+				"label": "SW_NE_far",
+				"start": {
+					"monk": [
+						0,
+						-3
+					],
+					"wolf": [
+						0,
+						3
+					]
+				},
+				"start_distance": 6,
+				"fps": 120,
+				"speed": 1,
+				"paused": false,
+				"result": "monk_win",
+				"seconds": 15.5499999999998,
+				"monk_hp": 38.0,
+				"wolf_hp": 0.0,
+				"result_count": 1,
+				"contacts": 29,
+				"attacks": 29,
+				"completed_steps": 5,
+				"first_contact": 1.675,
+				"source_report_sha": "1b37c6f3b62dd91235243592c5d788b845607ea7b361e4039578428f5f509102",
+				"source_trace_sha": "51729fd1789abe9a667b8bf0b2aff89fd03db219a84ff251627bb94a0e348c82",
+				"pack_report_sha": "1b37c6f3b62dd91235243592c5d788b845607ea7b361e4039578428f5f509102",
+				"pack_trace_sha": "51729fd1789abe9a667b8bf0b2aff89fd03db219a84ff251627bb94a0e348c82",
+				"source_pack_report_equal": true,
+				"source_pack_trace_equal": true
+			},
+			{
+				"label": "corner_extreme",
+				"start": {
+					"monk": [
+						-3,
+						3
+					],
+					"wolf": [
+						3,
+						-3
+					]
+				},
+				"start_distance": 12,
+				"fps": 120,
+				"speed": 1,
+				"paused": false,
+				"result": "monk_win",
+				"seconds": 17.0499999999997,
+				"monk_hp": 38.0,
+				"wolf_hp": 0.0,
+				"result_count": 1,
+				"contacts": 29,
+				"attacks": 29,
+				"completed_steps": 11,
+				"first_contact": 3.17499999999999,
+				"source_report_sha": "9d855133f5f76cf5fcc7244c81f81ff8642e60dce0adfb28753fd5113d22c0ff",
+				"source_trace_sha": "8f83e21eecba1a0e149bd580539e75d2e739e5eb2de94fe84cba68d5ad13b328",
+				"pack_report_sha": "9d855133f5f76cf5fcc7244c81f81ff8642e60dce0adfb28753fd5113d22c0ff",
+				"pack_trace_sha": "8f83e21eecba1a0e149bd580539e75d2e739e5eb2de94fe84cba68d5ad13b328",
+				"source_pack_report_equal": true,
+				"source_pack_trace_equal": true
+			},
+			{
+				"label": "rim_edge",
+				"start": {
+					"monk": [
+						1,
+						4
+					],
+					"wolf": [
+						1,
+						-4
+					]
+				},
+				"start_distance": 8,
+				"fps": 120,
+				"speed": 1,
+				"paused": false,
+				"result": "monk_win",
+				"seconds": 16.0499999999997,
+				"monk_hp": 38.0,
+				"wolf_hp": 0.0,
+				"result_count": 1,
+				"contacts": 29,
+				"attacks": 29,
+				"completed_steps": 7,
+				"first_contact": 2.17499999999999,
+				"source_report_sha": "3e82b15181d3b915af5a1b3d4f064e30cabbb234a15955faeca1410fc96a4bea",
+				"source_trace_sha": "dc05d8c33670a5f97e9089d5b1965d684c10c63c86cfb9838d84ee348a33cffb",
+				"pack_report_sha": "3e82b15181d3b915af5a1b3d4f064e30cabbb234a15955faeca1410fc96a4bea",
+				"pack_trace_sha": "dc05d8c33670a5f97e9089d5b1965d684c10c63c86cfb9838d84ee348a33cffb",
+				"source_pack_report_equal": true,
+				"source_pack_trace_equal": true
+			},
+			{
+				"label": "SE_NW_far_paused_2x",
+				"start": {
+					"monk": [
+						-3,
+						0
+					],
+					"wolf": [
+						3,
+						0
+					]
+				},
+				"start_distance": 6,
+				"fps": 30,
+				"speed": 2,
+				"paused": true,
+				"result": "monk_win",
+				"seconds": 15.5499999999998,
+				"monk_hp": 38.0,
+				"wolf_hp": 0.0,
+				"result_count": 1,
+				"contacts": 29,
+				"attacks": 29,
+				"completed_steps": 5,
+				"first_contact": 1.675,
+				"source_report_sha": "e878dded52daad1262466c0c5d02bb98709b39958290aae8e863a80f712445c9",
+				"source_trace_sha": "6aa92d7cafb36c515fc6ed77ac48449575e1b7dfe0e64783f4628e0b99d7d91c",
+				"pack_report_sha": "e878dded52daad1262466c0c5d02bb98709b39958290aae8e863a80f712445c9",
+				"pack_trace_sha": "6aa92d7cafb36c515fc6ed77ac48449575e1b7dfe0e64783f4628e0b99d7d91c",
+				"source_pack_report_equal": true,
+				"source_pack_trace_equal": true
+			}
+		],
+		"all_source_pack_equal": true
+	},
+	"defeat_probe": {
+		"synthetic_low_hp": true,
+		"monk_hp_after_retry": 310.0,
+		"contacts": 1,
+		"note": "loss branch is not reachable in a natural 1v1 at shipped numbers; exercised with a test-only 10-HP monk, then retried to full HP"
+	},
+	"assets": {
+		"runtime_frames": 17,
+		"rejected": [
+			"monk_ne_move_b",
+			"wolf_ne_move_b",
+			"wolf_se_move_b"
+		],
+		"checks": 286,
+		"failures": [],
+		"raw_png_and_rgba_equal_candidate": true,
+		"source_imported_frames": 17,
+		"pack_checks": 122,
+		"pack_failures": [],
+		"pack_rgba_equals_source_imported": true
+	},
+	"pck": {
+		"sha256": "89d060a10a8d8463beb630859333446b845302cbd95d278fcc31ab329bb7d795",
+		"sha_matches_summary": true,
+		"files": 400,
+		"list_matches_committed": true,
+		"policy_ok": true,
+		"diamond_pack_ok": true,
+		"candidate_rect_iso_packed": false,
+		"tests_packed": false,
+		"diamond_3d_packed": false,
+		"legacy_candidate_dependency_entries": [
+			"art/reviews/animation-samples-20261004/guard_monk/body-atlas.png.import",
+			"art/reviews/animation-samples-20261004/guard_monk/manifest.json",
+			"art/reviews/style-unification-v1/battlefield-candidate.png.import",
+			"audio/candidates/foxfire-dwoboyle-v1/foxfire_A_faithful.wav.import",
+			"audio/candidates/v1/adoption.json",
+			"audio/candidates/v1/manifest.json",
+			"audio/candidates/v1/wav/bear_lord_attack.wav.import",
+			"audio/candidates/v1/wav/bear_lord_death.wav.import",
+			"audio/candidates/v1/wav/boar_attack.wav.import",
+			"audio/candidates/v1/wav/boar_death.wav.import",
+			"audio/candidates/v1/wav/foxfire_imp_attack.wav.import",
+			"audio/candidates/v1/wav/guard_monk_attack.wav.import",
+			"audio/candidates/v1/wav/herbal_spirit_child_attack.wav.import",
+			"audio/candidates/v1/wav/rat_attack.wav.import",
+			"audio/candidates/v1/wav/rat_death.wav.import",
+			"audio/candidates/v1/wav/shared_hit_armor.wav.import",
+			"audio/candidates/v1/wav/shared_hit_flesh.wav.import",
+			"audio/candidates/v1/wav/shared_hit_fur.wav.import",
+			"audio/candidates/v1/wav/sparrow_spirit_attack.wav.import",
+			"audio/candidates/v1/wav/tangseng_hurt_warning.wav.import",
+			"audio/candidates/v1/wav/wild_hunter_attack.wav.import",
+			"audio/candidates/v1/wav/wolf_attack.wav.import",
+			"audio/candidates/v1/wav/wolf_death.wav.import"
+		],
+		"note": "23 pre-existing legacy candidate/review dependency entries are unchanged from the prior 293-item package; the new rect_iso_duel_v1 candidate, tests and 3D projects are absent"
+	},
+	"old_regression": {
+		"own_checks": 53,
+		"own_failures": [],
+		"chapter": {
+			"actors": 13,
+			"legal_cells": 84,
+			"moving_after_1s": 9,
+			"scene": "board_trial.tscn"
+		},
+		"legacy": {
+			"actors": 13,
+			"elapsed": 0.999999999999999,
+			"legal_cells": 84,
+			"scene": "board_trial_legacy.tscn"
+		},
+		"audio": {
+			"actors": 7,
+			"legal_cells": 84,
+			"moving_after_1s": 5,
+			"scene": "audio_trial.tscn"
+		},
+		"perspective_suite": {
+			"checks": 540,
+			"failures": 0,
+			"natural_count": 9,
+			"legacy_control_count": 3,
+			"new_scene_natural_count": 6,
+			"naturals": [
+				{
+					"formation": "A",
+					"fps": 30,
+					"speed": 1,
+					"paused": false,
+					"seconds": 18.6166666666663,
+					"victory": true,
+					"tangseng_hp": 148.0,
+					"legacy_report_equal": null,
+					"critical_trace_equal": null
+				},
+				{
+					"formation": "A",
+					"fps": 30,
+					"speed": 1,
+					"paused": false,
+					"seconds": 18.6166666666663,
+					"victory": true,
+					"tangseng_hp": 148.0,
+					"legacy_report_equal": true,
+					"critical_trace_equal": true
+				},
+				{
+					"formation": "A",
+					"fps": 120,
+					"speed": 2,
+					"paused": true,
+					"seconds": 18.6166666666663,
+					"victory": true,
+					"tangseng_hp": 148.0,
+					"legacy_report_equal": true,
+					"critical_trace_equal": true
+				},
+				{
+					"formation": "R",
+					"fps": 30,
+					"speed": 1,
+					"paused": false,
+					"seconds": 25.4166666666659,
+					"victory": true,
+					"tangseng_hp": 168.0,
+					"legacy_report_equal": null,
+					"critical_trace_equal": null
+				},
+				{
+					"formation": "R",
+					"fps": 30,
+					"speed": 1,
+					"paused": false,
+					"seconds": 25.4166666666659,
+					"victory": true,
+					"tangseng_hp": 168.0,
+					"legacy_report_equal": true,
+					"critical_trace_equal": true
+				},
+				{
+					"formation": "R",
+					"fps": 120,
+					"speed": 2,
+					"paused": true,
+					"seconds": 25.4166666666659,
+					"victory": true,
+					"tangseng_hp": 168.0,
+					"legacy_report_equal": true,
+					"critical_trace_equal": true
+				},
+				{
+					"formation": "B",
+					"fps": 30,
+					"speed": 1,
+					"paused": false,
+					"seconds": 7.17500000000015,
+					"victory": false,
+					"tangseng_hp": 0.0,
+					"legacy_report_equal": null,
+					"critical_trace_equal": null
+				},
+				{
+					"formation": "B",
+					"fps": 30,
+					"speed": 1,
+					"paused": false,
+					"seconds": 7.17500000000015,
+					"victory": false,
+					"tangseng_hp": 0.0,
+					"legacy_report_equal": true,
+					"critical_trace_equal": true
+				},
+				{
+					"formation": "B",
+					"fps": 120,
+					"speed": 2,
+					"paused": true,
+					"seconds": 7.17500000000015,
+					"victory": false,
+					"tangseng_hp": 0.0,
+					"legacy_report_equal": true,
+					"critical_trace_equal": true
+				}
+			]
+		},
+		"audio_suite": {
+			"case_count": 9,
+			"natural_count": 6,
+			"failures": 0,
+			"natural_reports": [
+				{
+					"seconds": 14.5499999999998,
+					"victory": true
+				},
+				{
+					"seconds": 14.5499999999998,
+					"victory": true
+				},
+				{
+					"seconds": 14.5499999999998,
+					"victory": true
+				},
+				{
+					"seconds": 14.5499999999998,
+					"victory": true
+				},
+				{
+					"seconds": 14.5499999999998,
+					"victory": true
+				},
+				{
+					"seconds": 15.5499999999998,
+					"victory": true
+				}
+			]
+		},
+		"scene_boots": {
+			"main": {
+				"exit": 0,
+				"seconds": 1.23,
+				"script_errors": []
+			},
+			"escort_route": {
+				"exit": 0,
+				"seconds": 0.57,
+				"script_errors": []
+			},
+			"free_escort": {
+				"exit": 0,
+				"seconds": 0.88,
+				"script_errors": []
+			},
+			"monk_animation_trial": {
+				"exit": 0,
+				"seconds": 0.79,
+				"script_errors": []
+			},
+			"board_trial": {
+				"exit": 0,
+				"seconds": 0.9,
+				"script_errors": []
+			},
+			"board_trial_legacy": {
+				"exit": 0,
+				"seconds": 0.47,
+				"script_errors": []
+			},
+			"audio_trial": {
+				"exit": 0,
+				"seconds": 0.47,
+				"script_errors": []
+			},
+			"diamond_duel": {
+				"exit": 0,
+				"seconds": 0.55,
+				"script_errors": []
+			}
+		}
+	},
+	"native_window": {
+		"attempted": false,
+		"blocked": true,
+		"reasons": [
+			"/bin/ps is denied by the file sandbox, so existing Godot/Spine windows cannot be enumerated or a new window identified without risking the user's windows",
+			"no cliclick and no PyObjC/Quartz in the available runtimes; OS-level click injection would require Accessibility/System Events permission that is not granted and cannot be requested because approval prompts are disabled",
+			"screencapture exists but capturing only a dedicated window needs a window id and Screen Recording permission; full-screen capture would record unrelated desktop content and is forbidden"
+		],
+		"author_capture_checked_as_file": {
+			"frames": 5,
+			"size": [
+				1440,
+				810
+			],
+			"distinct": true,
+			"metadata_OS_mouse": false,
+			"accepted_as_native_input": false
+		}
+	},
+	"limitations": [
+		"not 05 visual acceptance; no smooth gait/fade/occlusion judgment",
+		"not owner human play",
+		"no native OS mouse/keyboard or real window/DPI",
+		"no Windows build",
+		"not all historical suites or old full main run rerun",
+		"audio disabled/Dummy",
+		"headless logical input is not OS input",
+		"natural 1v1 always ends in a monk win at shipped numbers; defeat path is synthetic"
+	],
+	"result": "PASS (limited technical scope) with no production must-fix",
+	"worktree_at_start": "clean; origin/master...HEAD 0 0"
+}
