@@ -1,0 +1,175 @@
+{
+  "canvas": [
+    448,
+    448
+  ],
+  "foot_anchor": [
+    95,
+    393
+  ],
+  "palette_colors": 96,
+  "anchor_definition": "rear_sandal_ground_reference",
+  "sources": {
+    "poses": {
+      "file": "source/upward_attack_sheet.png",
+      "scale": 0.66
+    }
+  },
+  "frames": [
+    {
+      "id": 0,
+      "name": "raised_windup",
+      "source": "poses",
+      "source_box": [
+        500,
+        3,
+        839,
+        447
+      ],
+      "component_seed": [
+        660,
+        200
+      ],
+      "source_foot_anchor": [
+        525.0,
+        434
+      ]
+    },
+    {
+      "id": 1,
+      "name": "arc_up",
+      "source": "poses",
+      "source_box": [
+        895,
+        24,
+        1287,
+        441
+      ],
+      "component_seed": [
+        1100,
+        200
+      ],
+      "source_foot_anchor": [
+        921.0,
+        436
+      ]
+    },
+    {
+      "id": 2,
+      "name": "accelerate_up",
+      "source": "poses",
+      "source_box": [
+        1288,
+        52,
+        1741,
+        445
+      ],
+      "component_seed": [
+        1500,
+        200
+      ],
+      "source_foot_anchor": [
+        1313.0,
+        436
+      ]
+    },
+    {
+      "id": 3,
+      "name": "contact_up",
+      "source": "poses",
+      "source_box": [
+        20,
+        494,
+        563,
+        872
+      ],
+      "component_seed": [
+        220,
+        650
+      ],
+      "source_foot_anchor": [
+        48.5,
+        853
+      ]
+    },
+    {
+      "id": 4,
+      "name": "pullback",
+      "source": "poses",
+      "source_box": [
+        500,
+        468,
+        889,
+        866
+      ],
+      "component_seed": [
+        700,
+        650
+      ],
+      "source_foot_anchor": [
+        528.0,
+        860
+      ]
+    },
+    {
+      "id": 5,
+      "name": "upright_return",
+      "source": "poses",
+      "source_box": [
+        944,
+        432,
+        1280,
+        868
+      ],
+      "component_seed": [
+        1100,
+        650
+      ],
+      "source_foot_anchor": [
+        973.5,
+        858
+      ]
+    }
+  ],
+  "track": [
+    {
+      "frame": 0,
+      "at": 0
+    },
+    {
+      "frame": 1,
+      "at": 0.16
+    },
+    {
+      "frame": 2,
+      "at": 0.24
+    },
+    {
+      "frame": 3,
+      "at": 0.3
+    },
+    {
+      "frame": 4,
+      "at": 0.42
+    },
+    {
+      "frame": 5,
+      "at": 0.57
+    },
+    {
+      "frame": 0,
+      "at": 0.73
+    }
+  ],
+  "duration_seconds": 0.82,
+  "contact_seconds": 0.3,
+  "preview_extra_idle_ms": 350,
+  "motion_authority": [
+    "inputs/owner_raised_staff.png",
+    "inputs/owner_upward_strike.png"
+  ],
+  "style_authority": "inputs/owner_detailed_pixel_guard.png",
+  "timing_status": "新动作审阅节奏，不是运行攻速或伤害事件",
+  "footnote": "以后脚鞋底参考对齐，前脚有弓步变化；不宣称双脚像素锁定",
+  "selection_note": "以新图竖棍作为起止，只取sheet的1~6六张有效姿势；长棍投影明显较长的旧斜持0/7不采用。"
+}

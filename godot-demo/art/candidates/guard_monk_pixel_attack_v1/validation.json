@@ -1,0 +1,200 @@
+{
+  "date": "2026-10-25",
+  "result": "pass",
+  "verification": "independent_read_only_asset_review",
+  "frames": [
+    {
+      "file": "frames/00_raised_windup.png",
+      "size": [
+        448,
+        448
+      ],
+      "sha256": "b57ae63a132303237eb6ddffd186aec5cb3705c6a4fb040b5423e95740b14ab4",
+      "bbox": [
+        81,
+        111,
+        299,
+        399
+      ],
+      "margins_ltrb": [
+        81,
+        111,
+        149,
+        49
+      ],
+      "opaque_colors": 96
+    },
+    {
+      "file": "frames/01_arc_up.png",
+      "size": [
+        448,
+        448
+      ],
+      "sha256": "8b1da23589bdb031ce6f072a91d0aed3726680d9f15a4282ef51489f17c032fd",
+      "bbox": [
+        80,
+        124,
+        333,
+        394
+      ],
+      "margins_ltrb": [
+        80,
+        124,
+        115,
+        54
+      ],
+      "opaque_colors": 96
+    },
+    {
+      "file": "frames/02_accelerate_up.png",
+      "size": [
+        448,
+        448
+      ],
+      "sha256": "d44666a8aa359f946126a801c3ea8d4209eb87e53d508555238bc6b6b269b2ba",
+      "bbox": [
+        81,
+        142,
+        374,
+        395
+      ],
+      "margins_ltrb": [
+        81,
+        142,
+        74,
+        53
+      ],
+      "opaque_colors": 96
+    },
+    {
+      "file": "frames/03_contact_up.png",
+      "size": [
+        448,
+        448
+      ],
+      "sha256": "23125c59b850b9baba2dd73600b10a503368169dcde4b4055f5c65b8b47eba20",
+      "bbox": [
+        79,
+        159,
+        431,
+        403
+      ],
+      "margins_ltrb": [
+        79,
+        159,
+        17,
+        45
+      ],
+      "opaque_colors": 96
+    },
+    {
+      "file": "frames/04_pullback.png",
+      "size": [
+        448,
+        448
+      ],
+      "sha256": "d76aa35351ed9a829db5f0c9fb03f5eb547e521bd3f71e39d18b4c0c36793fee",
+      "bbox": [
+        79,
+        137,
+        330,
+        394
+      ],
+      "margins_ltrb": [
+        79,
+        137,
+        118,
+        54
+      ],
+      "opaque_colors": 96
+    },
+    {
+      "file": "frames/05_upright_return.png",
+      "size": [
+        448,
+        448
+      ],
+      "sha256": "5dd2c6af026f11174f3963774b17a7733100232bce1add6b68fc3b8c1afbb374",
+      "bbox": [
+        78,
+        114,
+        294,
+        396
+      ],
+      "margins_ltrb": [
+        78,
+        114,
+        154,
+        52
+      ],
+      "opaque_colors": 96
+    }
+  ],
+  "checks": {
+    "six_unique_pixel_frames": true,
+    "all_rgba_binary_alpha": true,
+    "all_transparent_rgb_zero": true,
+    "shared_opaque_colors": 96,
+    "minimum_margin_px": 17,
+    "uniform_source_scale": 0.66,
+    "max_anchor_rounding_error_px": 0.49,
+    "explicit_boxes_and_component_seed_rebuild_pixels_match": true,
+    "atlas_matches_all_frames": true,
+    "three_owner_input_snapshots_byte_identical": true,
+    "gdignore_present": true
+  },
+  "previews": {
+    "preview.gif": {
+      "decoded_frames": 7,
+      "track": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "total_ms": 1170,
+      "contact_reference_ms": 300,
+      "max_rgb_difference_from_png_on_background": 0,
+      "sha256": "91731b13221d42736d6c4eb48858602a9d03d9996d2758b659a2b997dbb54c8f"
+    },
+    "preview_slow.gif": {
+      "decoded_frames": 7,
+      "track": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "total_ms": 1990,
+      "contact_reference_ms": 600,
+      "max_rgb_difference_from_png_on_background": 0,
+      "sha256": "bb93a1deca2757772c1497763def9651a7c06782f5c693514c9b718cf873b2ea"
+    }
+  },
+  "first_last_preview_pixels_identical": true,
+  "first_pass_note": "首次GIF二次量化引入最大5/255非阻塞色偏；改为精确RGB索引映射后重建，六PNG哈希未变，独立复验色差0。",
+  "visual_review": {
+    "result": "six_pose_candidate_no_must_fix",
+    "evidence": "contact_sheet.png",
+    "matches_latest_raised_staff_and_upward_contact_references": true,
+    "complete_straight_staff_caps_and_two_hand_grips": true,
+    "limitations": [
+      "轻微投影棍长与握位重画差异",
+      "前腿弓步，不是双脚像素锁定",
+      "没有声称真人连续观看GIF或严格无跳变"
+    ]
+  },
+  "not_verified": [
+    "owner_continuous_visual_acceptance",
+    "runtime_integration",
+    "in_game_foot_contacts",
+    "damage_synchronization",
+    "other_directions_and_actions"
+  ]
+}

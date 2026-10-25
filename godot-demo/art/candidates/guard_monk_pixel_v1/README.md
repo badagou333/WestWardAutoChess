@@ -1,6 +1,8 @@
 # 护寺棍僧像素站姿（独立候选）
 
-2026-10-25续作交付：主稿为[完成包v4的64×64透明PNG](completed_v4/monk_idle_64.png)，另有[8倍最近邻预览](completed_v4/monk_idle_64_x8.png)及[浅深底/1×对照](completed_v4/review_light_dark.png)。**当前权威说明为[完成包README](completed_v4/README.md)**。
+2026-10-25负责人复审修订：下方64px简化成品被负责人否定，不再作为采用方向；负责人选回细节版，并指定新抬棍/右上出棍两图制作[像素攻击动画](../guard_monk_pixel_attack_v1/README.md)。旧文件保留历史，下方“主稿/推荐”仅描述上一批交付，不代表当前选择。
+
+2026-10-25上一批交付（历史）：当时主稿为[完成包v4的64×64透明PNG](completed_v4/monk_idle_64.png)，另有[8倍最近邻预览](completed_v4/monk_idle_64_x8.png)及[浅深底/1×对照](completed_v4/review_light_dark.png)。上一批制作记录见[完成包README](completed_v4/README.md)。
 
 本轮使用内置imagegen精修一次并做一次粗像素简化，再确定性导出24色、二值透明站姿。仅完成单张候选，最终画风待负责人确认，没有动作帧或运行接入。根目录旧试稿原样留在本地；其他Seedream命名文件的完整来源未记录，不推断或一并采用。本轮仅提交完成包、两份必要输入快照、本说明和`.gdignore`；以下初始说明保留为历史，不再作当前状态或完成包来源描述。
 

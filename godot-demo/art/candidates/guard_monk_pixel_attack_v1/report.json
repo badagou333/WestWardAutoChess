@@ -1,0 +1,144 @@
+{
+  "result": "structural_packaging_pass",
+  "frame_count": 6,
+  "unique_frame_pixel_hashes": 6,
+  "shared_opaque_colors": 96,
+  "canvas": [
+    448,
+    448
+  ],
+  "all_alpha_binary": true,
+  "all_transparent_rgb_zero": true,
+  "all_visible_content_within_canvas": true,
+  "crop_edge_review_required_frame_ids": [],
+  "per_source_uniform_scale": {
+    "poses": 0.66
+  },
+  "first_last_track_frame_identical": true,
+  "atlas_sha256": "0295d76f2dda49bc95664e9667396aac24f00b92c54353689e379c3a82d2f418",
+  "previews": {
+    "preview.gif": {
+      "slow_factor": 1.0,
+      "extra_idle_ms": 350,
+      "frame_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "ideal_start_ms": [
+        0.0,
+        160.0,
+        240.0,
+        300.0,
+        420.0,
+        570.0,
+        730.0
+      ],
+      "gif_start_ms": [
+        0,
+        160,
+        240,
+        300,
+        420,
+        570,
+        730
+      ],
+      "gif_frame_duration_ms": [
+        160,
+        80,
+        60,
+        120,
+        150,
+        160,
+        440
+      ],
+      "ideal_total_ms": 1170.0,
+      "gif_total_ms": 1170,
+      "boundary_rounding_error_ms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "contact_reference_ideal_ms": 300.0,
+      "contact_reference_nearest_tick_ms": 300,
+      "contact_is_metadata_only": true,
+      "sha256": "91731b13221d42736d6c4eb48858602a9d03d9996d2758b659a2b997dbb54c8f",
+      "encoded_frames": 7,
+      "encoded_duration_ms": 1170
+    },
+    "preview_slow.gif": {
+      "slow_factor": 2.0,
+      "extra_idle_ms": 350,
+      "frame_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "ideal_start_ms": [
+        0.0,
+        320.0,
+        480.0,
+        600.0,
+        840.0,
+        1140.0,
+        1460.0
+      ],
+      "gif_start_ms": [
+        0,
+        320,
+        480,
+        600,
+        840,
+        1140,
+        1460
+      ],
+      "gif_frame_duration_ms": [
+        320,
+        160,
+        120,
+        240,
+        300,
+        320,
+        530
+      ],
+      "ideal_total_ms": 1990.0,
+      "gif_total_ms": 1990,
+      "boundary_rounding_error_ms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "contact_reference_ideal_ms": 600.0,
+      "contact_reference_nearest_tick_ms": 600,
+      "contact_is_metadata_only": true,
+      "sha256": "bb93a1deca2757772c1497763def9651a7c06782f5c693514c9b718cf873b2ea",
+      "encoded_frames": 7,
+      "encoded_duration_ms": 1990
+    }
+  },
+  "not_verified": [
+    "visual_pose_quality",
+    "ground_contact",
+    "runtime_integration",
+    "gameplay_damage_timing",
+    "owner_final_approval"
+  ]
+}

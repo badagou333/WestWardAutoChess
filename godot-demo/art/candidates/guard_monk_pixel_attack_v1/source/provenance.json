@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-25",
+  "user_authorization": "按照新发的两张抬竖棍与向右上斜出棍图制作像素攻击动画",
+  "tool": "built-in image_gen.imagegen",
+  "transparent_background_requested": true,
+  "inputs": [
+    {
+      "file": "inputs/owner_raised_staff.png",
+      "clipboard_file": "codex-clipboard-6b3227e1-98dd-4173-983a-f3c56e9e5e74.png",
+      "role": "new_authoritative_windup_pose",
+      "sha256": "40cf78a8b870e091904f284815e0552209157ba19ccba9ca3552518adc38ae97"
+    },
+    {
+      "file": "inputs/owner_upward_strike.png",
+      "clipboard_file": "codex-clipboard-f1331d1b-57d7-497b-aa39-98b03e6c95f5.png",
+      "role": "new_authoritative_upward_contact_pose",
+      "sha256": "23bb6d17701634081d14f325028d467c296c56c70176e6032ef7a6fccb3cb459"
+    },
+    {
+      "file": "inputs/owner_detailed_pixel_guard.png",
+      "clipboard_file": "codex-clipboard-e985f90a-b5b7-4846-9135-a4ab07be7bc4.png",
+      "role": "selected_detailed_pixel_identity_and_style_only",
+      "sha256": "30085146de837714d9aa9a7a7b126c4e987118f7e26774bcfe5658f2c415885e"
+    }
+  ],
+  "adopted_generation": {
+    "file": "source/upward_attack_sheet.png",
+    "sha256": "e56b96c898db033777547b03e39b9ef6770c612b0ea0b2c3a4c9191314d03c25",
+    "canvas": [
+      1774,
+      887
+    ],
+    "prompt": "source/PROMPT_UPWARD_ATTACK.txt",
+    "generation_artifact": "exec-7529adbc-9e11-4df4-bcff-a921782f943f.png",
+    "selected_zero_based_pose_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "excluded_pose_indices": [
+      0,
+      7
+    ],
+    "exclusion_reason": "斜持棍身显著较长，按最新竖棍起止动作不采用"
+  },
+  "superseded": [
+    "64px简化站姿被负责人否定",
+    "旧13帧横向动作参考被负责人纠正，错误首轮不采用"
+  ],
+  "processing": "显式裁框+8邻域主体种子，source统一0.66等比最近邻，后脚鞋底参考对齐，全组96色无抖动量化；没有肢体插值或程序补画",
+  "runtime_integrated": false,
+  "visual_review_status": "limited_static_keypose_sequence_accepted",
+  "limitations": [
+    "轻微投影棍长、握位、衣褶及鞋位重画变化",
+    "前腿弓步，非双脚像素锁定",
+    "未代负责人连续观感与运行验收"
+  ]
+}
