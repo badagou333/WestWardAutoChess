@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-25",
+  "user_authorization": "抽掉棍子下落的一些帧，优化并加棍子残影特效",
+  "tool": "built-in image_gen.imagegen",
+  "generated_content": "effect_only_no_character_redraw",
+  "transparent_background_requested": true,
+  "references": [
+    {
+      "file": "../guard_monk_pixel_attack_v1/frames/00_raised_windup.png",
+      "role": "staff_motion_geometry_only",
+      "sha256": "b57ae63a132303237eb6ddffd186aec5cb3705c6a4fb040b5423e95740b14ab4"
+    },
+    {
+      "file": "../guard_monk_pixel_attack_v1/frames/02_accelerate_up.png",
+      "role": "staff_motion_geometry_only",
+      "sha256": "d44666a8aa359f946126a801c3ea8d4209eb87e53d508555238bc6b6b269b2ba"
+    },
+    {
+      "file": "../guard_monk_pixel_attack_v1/frames/03_contact_up.png",
+      "role": "staff_motion_geometry_only",
+      "sha256": "23125c59b850b9baba2dd73600b10a503368169dcde4b4055f5c65b8b47eba20"
+    }
+  ],
+  "raw_fx": {
+    "file": "source/trail_generated.png",
+    "sha256": "f16a0e4c40804447bbf24041bde043b0eeeb5ed84dc91cd596ce4e9b2ed2daf4",
+    "canvas": [
+      1254,
+      1254
+    ],
+    "generation_artifact": "exec-e74681eb-250c-4a55-b20c-8a7ec9c0fac8.png",
+    "prompt_file": "source/PROMPT_TRAIL.txt"
+  },
+  "normalization": "人工显式裁框提取主效果，NEAREST映射到448画布目标区域，保留部分alpha；不重采样人物",
+  "timing": "省略frame1；200ms蓄力，30ms快速出手，230ms接触并停留110ms，FX仅200~300ms",
+  "runtime_integrated": false
+}

@@ -1,0 +1,89 @@
+{
+  "canvas": [
+    448,
+    448
+  ],
+  "background": [
+    35,
+    40,
+    48
+  ],
+  "base_dir": "../guard_monk_pixel_attack_v1",
+  "trail": {
+    "file": "source/trail_generated.png",
+    "crop": [
+      408,
+      264,
+      1228,
+      806
+    ],
+    "target_rect": [
+      145,
+      88,
+      436,
+      299
+    ]
+  },
+  "track": [
+    {
+      "at": 0,
+      "body_frame": 0,
+      "fx_opacity": 0,
+      "name": "windup"
+    },
+    {
+      "at": 0.2,
+      "body_frame": 2,
+      "fx_opacity": 0.45,
+      "name": "fast_drop"
+    },
+    {
+      "at": 0.23,
+      "body_frame": 3,
+      "fx_opacity": 0.7,
+      "name": "contact_trail"
+    },
+    {
+      "at": 0.26,
+      "body_frame": 3,
+      "fx_opacity": 0.28,
+      "name": "trail_fade"
+    },
+    {
+      "at": 0.3,
+      "body_frame": 3,
+      "fx_opacity": 0,
+      "name": "clean_contact_hold"
+    },
+    {
+      "at": 0.34,
+      "body_frame": 4,
+      "fx_opacity": 0,
+      "name": "recover"
+    },
+    {
+      "at": 0.5,
+      "body_frame": 5,
+      "fx_opacity": 0,
+      "name": "upright_return"
+    },
+    {
+      "at": 0.68,
+      "body_frame": 0,
+      "fx_opacity": 0,
+      "name": "ready"
+    }
+  ],
+  "action_duration": 0.8,
+  "preview_extra_idle": 0.35,
+  "contact_seconds": 0.23,
+  "skip_body_frames": [
+    1
+  ],
+  "fx_window_seconds": [
+    0.2,
+    0.3
+  ],
+  "fx_layer_order": "behind_unchanged_body",
+  "timing_note": "0.20秒蓄力，0.03秒快速出手，0.11秒接触停留；仅候选预览节奏，不接游戏伤害。"
+}

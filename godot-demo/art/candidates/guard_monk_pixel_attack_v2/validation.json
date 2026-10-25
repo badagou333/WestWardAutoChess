@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-25",
+  "result": "pass",
+  "verification": "independent_read_only_asset_integrity",
+  "render_stages": 8,
+  "used_body_ids": [
+    0,
+    2,
+    3,
+    4,
+    5
+  ],
+  "skipped_body_ids": [
+    1
+  ],
+  "stage_start_seconds": [
+    0,
+    0.2,
+    0.23,
+    0.26,
+    0.3,
+    0.34,
+    0.5,
+    0.68
+  ],
+  "fx_opacities": [
+    0,
+    0.45,
+    0.7,
+    0.28,
+    0,
+    0,
+    0,
+    0
+  ],
+  "action_ms": 800,
+  "preview_idle_ms": 350,
+  "contact_reference_ms": 230,
+  "contact_is_gameplay_damage": false,
+  "checks": {
+    "original_opaque_body_rgba_identical_all_stages": true,
+    "no_fx_stages_identical_to_source_png": true,
+    "first_last_stage_identical": true,
+    "fx_behind_body": true,
+    "fx_active_interval_ms": [
+      200,
+      300
+    ],
+    "partial_fx_alpha_preserved": true,
+    "fx_mapping_and_composites_memory_rebuild_exact": true,
+    "atlas_cells_match_png": true,
+    "all_source_hashes_match": true,
+    "gif_body_and_reserved_rgb_max_difference": 0,
+    "gif_fx_color_quantization_max_channel_error": 26,
+    "comparison_time_aligned": true,
+    "comparison_after_extra_last_idle_ms": 20,
+    "gdignore_present": true,
+    "readme_relative_links_valid": true
+  },
+  "gifs": {
+    "preview.gif": {
+      "sha256": "1fbaf7720c99a8d93b6b696d60143cb103058fc71047ccab5118c08480e8c9b0",
+      "duration_ms": 1150,
+      "decoded_frames": 8
+    },
+    "preview_slow.gif": {
+      "sha256": "ebe577ec45925bc0beb7e02262348f663067d41132eb9ca8951b85635d5ed766",
+      "duration_ms": 1950,
+      "decoded_frames": 8
+    },
+    "preview_timing_only.gif": {
+      "sha256": "1c4ec0ce16b5f8dba91b3980208479eae09a971cd739372bf495443c9b04eaf3",
+      "duration_ms": 1150,
+      "decoded_frames": 6
+    },
+    "comparison.gif": {
+      "sha256": "54513286e373afe45815bf97679c7cf4e312e3cb80c21c56de3388a01db56dbc",
+      "duration_ms": 1170,
+      "decoded_frames": 13
+    }
+  },
+  "visual_peak_review": {
+    "evidence": "contact_sheet.png and peak overlay review",
+    "result": "no_must_fix_face_occlusion_or_path_issue",
+    "notes": [
+      "窄弧与淡棕棍影可保留，不再增亮或加粗",
+      "仅有限峰值静态判断，不代正常速度力量感体验"
+    ]
+  },
+  "not_verified": [
+    "owner_continuous_force_impression",
+    "runtime_integration",
+    "in_game_damage_timing",
+    "strict_foot_lock_or_projection_consistency"
+  ]
+}
