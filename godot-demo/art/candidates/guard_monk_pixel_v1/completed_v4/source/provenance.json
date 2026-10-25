@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-25",
+  "tool": "built-in image_gen.imagegen",
+  "transparent_background_requested": true,
+  "user_authorization": "把本地的像素风棍僧继续完成",
+  "inputs": [
+    {
+      "file": "inputs/owner_reference.webp",
+      "role": "identity_reference",
+      "sha256": "298a715efc62ca1852ccff93261bbe720eb526cadb821b73e4e4997ee4bd9cc1",
+      "origin_note": "原本地README记载为负责人提供；本轮原样快照",
+      "original_local_file": "source_reference.webp"
+    },
+    {
+      "file": "inputs/local_pixel_v3_64.png",
+      "role": "pixel_direction_reference",
+      "sha256": "ef1e5b7fb41d51f212801246b2aaf5890b340506085b7b40642c5c0b5995d6f5",
+      "origin_note": "用户授权续做的本地最新像素稿；原生成参数未记录，不据文件名推断模型/许可",
+      "original_local_file": "seedream_v3_nearest_64.png"
+    }
+  ],
+  "passes": [
+    {
+      "id": "detail_pass",
+      "adopted": false,
+      "raw_file": "history/detail_pass_generated.png",
+      "sha256": "ff01affe0b9edd5f57f984528e98370be8f20c25af130f3586e77debe4f4df0a",
+      "prompt_file": "source/prompt-detail-pass.txt",
+      "references": [
+        "inputs/owner_reference.webp",
+        "inputs/local_pixel_v3_64.png"
+      ],
+      "reason_not_adopted": "低分辨率导出后眼鼻与念珠混杂"
+    },
+    {
+      "id": "simplified_pass",
+      "adopted": true,
+      "raw_file": "source/generated_edit.png",
+      "sha256": "71ef55d446e6920c55ad3826360882dc2e0808070f6a804f1973d2fffd791c1b",
+      "prompt_file": "source/prompt-simplified-pass.txt",
+      "references": [
+        "inputs/local_pixel_v3_64.png"
+      ],
+      "actual_raw_size": [
+        1254,
+        1254
+      ],
+      "raw_does_not_satisfy_native_64_grid": true
+    }
+  ],
+  "processing": "以保存原件导出：alpha>=128、裁切、最近邻、无抖动24色量化、透明留边；不是逐格手绘",
+  "runtime_integrated": false
+}

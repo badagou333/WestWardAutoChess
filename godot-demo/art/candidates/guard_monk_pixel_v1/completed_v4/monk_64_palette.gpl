@@ -1,0 +1,28 @@
+GIMP Palette
+Name: Guard Monk 64 v4
+Columns: 6
+# 24 opaque RGB colors; transparency is separate
+ 16  12  17 color_00
+ 19  16  21 color_01
+ 24  17  21 color_02
+ 24  18  22 color_03
+ 25  16  19 color_04
+ 25  20  26 color_05
+ 34  19  19 color_06
+ 40  37  44 color_07
+ 46  43  50 color_08
+ 48  33  31 color_09
+ 77  15  17 color_10
+105  63  33 color_11
+158  93  22 color_12
+172 110  32 color_13
+191 115  41 color_14
+194  28  31 color_15
+230 167  57 color_16
+235 174  67 color_17
+242 194 102 color_18
+250 174  38 color_19
+250 175  38 color_20
+251 176  40 color_21
+252 230 190 color_22
+253 235 197 color_23

@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-25",
+  "kind": "independent_read_only_asset_integrity",
+  "result": "pass",
+  "issues": [],
+  "checks": {
+    "monk_idle_64.png": {
+      "canvas": [
+        64,
+        64
+      ],
+      "mode": "RGBA",
+      "opaque_colors": 24,
+      "visible_bbox": [
+        5,
+        3,
+        59,
+        61
+      ],
+      "margins_ltrb": [
+        5,
+        3,
+        5,
+        3
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "transparent_rgb_zero": true,
+      "opaque_8_connected_components": 1,
+      "opaque_pixels": 1441,
+      "sha256": "c080774a1ebc6b08939d05f4a6bd7c986154b3b2ddd519e35f354c2f5f2785f6"
+    },
+    "monk_idle_48x56.png": {
+      "canvas": [
+        48,
+        56
+      ],
+      "mode": "RGBA",
+      "opaque_colors": 24,
+      "visible_bbox": [
+        3,
+        8,
+        45,
+        53
+      ],
+      "margins_ltrb": [
+        3,
+        8,
+        3,
+        3
+      ],
+      "alpha_values": [
+        0,
+        255
+      ],
+      "transparent_rgb_zero": true,
+      "opaque_8_connected_components": 1,
+      "opaque_pixels": 867,
+      "sha256": "c97208497df7d36eb8a5d734652889b233a465c1248327690c6e3e713c9edb62"
+    }
+  },
+  "manifest_export_source_hashes_match": true,
+  "input_snapshots_match_local_originals": true,
+  "two_prompts_present": true,
+  "gdignore_present": true,
+  "readme_relative_links_valid": true,
+  "in_memory_rebuild_pixel_equality": [
+    "monk_idle_64.png",
+    "monk_idle_48x56.png",
+    "monk_idle_64_x8.png",
+    "monk_idle_48x56_x8.png",
+    "review_light_dark.png"
+  ],
+  "final_visual_review": {
+    "result": "completed_single_pose_candidate_no_must_fix",
+    "evidence": [
+      "monk_idle_64_x8.png",
+      "review_light_dark.png"
+    ],
+    "limitations": [
+      "念珠只读作短段深色饰物，不能逐粒辨认",
+      "48x56仅为尺寸参考",
+      "最终画风未获负责人认可"
+    ]
+  },
+  "not_verified": [
+    "runtime_integration",
+    "camera_match",
+    "animation",
+    "other_directions",
+    "owner_final_approval"
+  ]
+}

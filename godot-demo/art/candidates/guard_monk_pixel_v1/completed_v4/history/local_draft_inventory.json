@@ -1,0 +1,257 @@
+{
+  "note": "仅文件清单/哈希，不代表已逐张查看或采用；不包含__pycache__",
+  "files": [
+    {
+      "file": "convert_pixel.py",
+      "bytes": 6049,
+      "sha256": "5a6d93ec9333eb4908686f4b0064db3014d4a06679873f8d62845a8dc354bac2",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "monk_hand_48.png",
+      "bytes": 1144,
+      "sha256": "0016dc694133a55f4839bc51311c7cd44f0fb22f0fd138c221a6a072010fb439",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "pixel_128.png",
+      "bytes": 14414,
+      "sha256": "4bbda857a5f18cf7a4d0609c3fee175b6c23d306ddee76adb286f21b44bfdf36",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "pixel_128_square.png",
+      "bytes": 12137,
+      "sha256": "f69e769161b069bf979a60d0c776224e558f06b6b44c8a2836dd8c6f8551a374",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "pixel_48_square.png",
+      "bytes": 2399,
+      "sha256": "e73d6c5c6d7f4d88e38ff3b0495d2c2414ef25f4a13a74840faee84008462f3a",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "pixel_56_square.png",
+      "bytes": 3124,
+      "sha256": "a18582d4cd1ff8af423250fee4293d8a1cd5fbb65501a096a0dda820c326c65b",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "pixel_96.png",
+      "bytes": 9619,
+      "sha256": "b4435720ea14b2cc391842a725f83b0a0f1220db9889b73c33d4f65101fbc72d",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_128_square_x4.png",
+      "bytes": 23291,
+      "sha256": "701b141e69f751a095d4e8c5a758a16fc1a71e3f3ac932914bd8492bd4a331f8",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_128_x4.png",
+      "bytes": 21981,
+      "sha256": "8e044107593f7df29f18dca777da056b98bb4be9cf8b8d0e6a10765350e45129",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_48_square_x8.png",
+      "bytes": 6173,
+      "sha256": "06f7eacea8697e5dd2ee2d417598d3ec69c3cf84287afd33f391027e6c561e95",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_56_square_x8.png",
+      "bytes": 7908,
+      "sha256": "7ff00f97d3240c0c6949fb9ac00b04517e1d1b2087579c764ff7230c9c4acbab",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_96_x4.png",
+      "bytes": 14040,
+      "sha256": "558bc8b8685004e4c288fce3e0197ee7329b4f74a359d1460be7bbf4657337b4",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_monk_hand_x8.png",
+      "bytes": 4172,
+      "sha256": "1fbe4911e47ffbfe38af2aa83d936e402da9d75eee09c918329c001fc5af1cb8",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_seedream_48_x8.png",
+      "bytes": 6178,
+      "sha256": "8479d3cb84dbe4f5199074281fa6c82c83aa1365644701d3389b8f59cbd0c424",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_seedream_56_x8.png",
+      "bytes": 7700,
+      "sha256": "93065964d53b31b0acaf6fef89bf6d882a6648c0e827f7b7bafca23281eaf9a4",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_seedream_64_x8.png",
+      "bytes": 10049,
+      "sha256": "60c2df9dba2b4f8f69bd1cf5f0c2e6d27f14f847aeddaa20c7e99464908175f7",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_seedream_96_x6.png",
+      "bytes": 17976,
+      "sha256": "53c7539eb3e91555fd1fde92e1842eb3082fb623a00b2d45e76dd0789fade043",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_v2_native_x6.png",
+      "bytes": 29409,
+      "sha256": "829da5a69cea87858abac6dfa8e11015a2419102d15e28799ae18323ba120f9e",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_v3_48_outline.png",
+      "bytes": 6912,
+      "sha256": "07e2504ca27d8818a5178e3ee792fca52e117ef15ad0774961360be007b23195",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_v3_64.png",
+      "bytes": 8892,
+      "sha256": "1f9e5f62377d2b94022b1dcf3991c0f927aea457fcfca12af7c6bf894ef6506c",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_v3_64_outline.png",
+      "bytes": 11237,
+      "sha256": "c36c91695e36ea476db82be119cfd9fe056829426317a90e1b54afbb2b71a805",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_v3_96.png",
+      "bytes": 14954,
+      "sha256": "a9f177905a247ae770c414d262985c9fbe6eb6b8ba2c277e5e2826266766eeb4",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_v3_native_x6.png",
+      "bytes": 32035,
+      "sha256": "76e38b38da35fcfcb80612f4fb88c571e78a47228c89b5d82860a2149e130c24",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_v3_nearest_48.png",
+      "bytes": 6641,
+      "sha256": "f05f11e36d0e95ab33c94db5709729f2b3c5fb4c008eeb4a50742dcd53a7a2d9",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "preview_v3_nearest_64.png",
+      "bytes": 10834,
+      "sha256": "c3856131ccc1f01e6d237764a6cd14f3f6fef00a9c97d31acb85620fd17c9d13",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "redraw_monk.py",
+      "bytes": 4756,
+      "sha256": "80f6dc937b7b60da68d0fa68e4133e82c72d9a0f848c20781a65bbfec3bbcffd",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "seedream_48.png",
+      "bytes": 2513,
+      "sha256": "b3540783613bb8105f3eeed5e5f85080d19fb625cbd4579c4ac143caff500aec",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "seedream_56.png",
+      "bytes": 3058,
+      "sha256": "f248636ab3e28cd3de4ccb0315e7a2ae174884a3d026006d44126c3a65b16e55",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "seedream_64.png",
+      "bytes": 3733,
+      "sha256": "4dfce4859e1d3a88d8b07595b3f480de21a0ce237ae94b0706d24362a99b7c72",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "seedream_96.png",
+      "bytes": 7381,
+      "sha256": "c842fc19559b09bce86ae3790e81cd621b0c87c56727afa99051574da84267bf",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "seedream_v1.jpg",
+      "bytes": 303242,
+      "sha256": "3db6c31e6ad76ec83b6933b243a49d81b0c843924d25563abdb7af09aaaaf88c",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "seedream_v2.jpg",
+      "bytes": 181121,
+      "sha256": "57cfc37668e66d86d91be0a3dc496619014fd97f2f31bd65a21171fd0a3300f2",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "seedream_v2_native.png",
+      "bytes": 18162,
+      "sha256": "3c9858c56b875fae56f911c45921d9653c5b62b1c8dcca71edc0640fc6fd6031",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "seedream_v3.jpg",
+      "bytes": 216244,
+      "sha256": "dbb3d95e9b1dc2206dda3037aac19a76886d88dd0bcd1b2b02b2ca195cb58d30",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "seedream_v3_64.png",
+      "bytes": 3285,
+      "sha256": "f68b589876306281aced622f5c31f1c914d878c13a75e14ce15ec457b4f1d51d",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "seedream_v3_96.png",
+      "bytes": 5660,
+      "sha256": "948a8b54decf38890bc87a3a18561d52d57cfe8f2d1dee54d6a31b4a86ba0952",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "seedream_v3_native.png",
+      "bytes": 18841,
+      "sha256": "2c83a280c2570e75d943dd08d8d1b3e542622cd4dc60f6e0ab099ccc25059b35",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "seedream_v3_nearest_48.png",
+      "bytes": 3086,
+      "sha256": "1ba03c825ca50e04c83afe244f78d63940b6fb407500db7932124081f51a0c88",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "seedream_v3_nearest_48_outline.png",
+      "bytes": 3224,
+      "sha256": "acb06c54775a2077a7ff9cb6b4f6874397feb476612380100a398b5d173b375e",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "seedream_v3_nearest_64.png",
+      "bytes": 5058,
+      "sha256": "ef1e5b7fb41d51f212801246b2aaf5890b340506085b7b40642c5c0b5995d6f5",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "seedream_v3_nearest_64_outline.png",
+      "bytes": 5226,
+      "sha256": "63686a9b3038d343888846b79a1816bf3d3c01bb8e8321c604854b708b6b39c5",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    },
+    {
+      "file": "source_reference.webp",
+      "bytes": 228458,
+      "sha256": "298a715efc62ca1852ccff93261bbe720eb526cadb821b73e4e4997ee4bd9cc1",
+      "status": "保留本地旧稿，未作为本轮最终资产提交"
+    }
+  ]
+}
