@@ -1,0 +1,95 @@
+{
+  "base_v1_dir": "../guard_monk_pixel_attack_v1",
+  "base_v2_dir": "../guard_monk_pixel_attack_v2",
+  "base_v3_dir": "../guard_monk_pixel_attack_v3",
+  "patches": [
+    {
+      "id": 2,
+      "base_file": "../guard_monk_pixel_attack_v1/frames/02_accelerate_up.png",
+      "edit_file": "source/accelerate_edit.png",
+      "crop_box": [
+        185,
+        235,
+        273,
+        323
+      ],
+      "edit_polygons": [
+        [
+          [
+            207,
+            253
+          ],
+          [
+            225,
+            247
+          ],
+          [
+            248,
+            258
+          ],
+          [
+            259,
+            276
+          ],
+          [
+            252,
+            297
+          ],
+          [
+            218,
+            300
+          ],
+          [
+            207,
+            289
+          ]
+        ]
+      ],
+      "output_file": "body/02_accelerate_left_grip.png"
+    },
+    {
+      "id": 3,
+      "base_file": "../guard_monk_pixel_attack_v3/body/03_contact_lowered.png",
+      "edit_file": "source/contact_edit.png",
+      "crop_box": [
+        185,
+        235,
+        273,
+        323
+      ],
+      "edit_polygons": [
+        [
+          [
+            211,
+            263
+          ],
+          [
+            230,
+            259
+          ],
+          [
+            252,
+            267
+          ],
+          [
+            263,
+            283
+          ],
+          [
+            253,
+            302
+          ],
+          [
+            224,
+            303
+          ],
+          [
+            210,
+            288
+          ]
+        ]
+      ],
+      "output_file": "body/03_contact_left_grip.png"
+    }
+  ]
+}

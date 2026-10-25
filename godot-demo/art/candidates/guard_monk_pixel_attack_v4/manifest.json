@@ -1,0 +1,2238 @@
+{
+  "schema": "pixel-attack-hand-repair-v4",
+  "character": "guard_monk",
+  "status": "standalone_masked_hand_edit_candidate",
+  "canvas": [
+    448,
+    448
+  ],
+  "inputs": {
+    "base_v1_dir": "../guard_monk_pixel_attack_v1",
+    "base_v2_dir": "../guard_monk_pixel_attack_v2",
+    "base_v3_dir": "../guard_monk_pixel_attack_v3",
+    "original_v1_bodies": [
+      {
+        "id": 0,
+        "file": "frames/00_raised_windup.png",
+        "sha256": "b57ae63a132303237eb6ddffd186aec5cb3705c6a4fb040b5423e95740b14ab4",
+        "matches_original_manifest": true
+      },
+      {
+        "id": 1,
+        "file": "frames/01_arc_up.png",
+        "sha256": "8b1da23589bdb031ce6f072a91d0aed3726680d9f15a4282ef51489f17c032fd",
+        "matches_original_manifest": true
+      },
+      {
+        "id": 2,
+        "file": "frames/02_accelerate_up.png",
+        "sha256": "d44666a8aa359f946126a801c3ea8d4209eb87e53d508555238bc6b6b269b2ba",
+        "matches_original_manifest": true
+      },
+      {
+        "id": 3,
+        "file": "frames/03_contact_up.png",
+        "sha256": "23125c59b850b9baba2dd73600b10a503368169dcde4b4055f5c65b8b47eba20",
+        "matches_original_manifest": true
+      },
+      {
+        "id": 4,
+        "file": "frames/04_pullback.png",
+        "sha256": "d76aa35351ed9a829db5f0c9fb03f5eb547e521bd3f71e39d18b4c0c36793fee",
+        "matches_original_manifest": true
+      },
+      {
+        "id": 5,
+        "file": "frames/05_upright_return.png",
+        "sha256": "5dd2c6af026f11174f3963774b17a7733100232bce1add6b68fc3b8c1afbb374",
+        "matches_original_manifest": true
+      }
+    ],
+    "inherited_v3_lowered_contact": {
+      "id": 3,
+      "file": "body/03_contact_lowered.png",
+      "sha256": "ef4aef7467fa53efaba33f818909c8f209735ff5090609d2beae50a586c2cc93",
+      "original_sha256": "23125c59b850b9baba2dd73600b10a503368169dcde4b4055f5c65b8b47eba20",
+      "palette_matches_original": true,
+      "changed_pixels": 9675,
+      "changed_bbox": [
+        201,
+        159,
+        443,
+        313
+      ]
+    },
+    "reused_fx": {
+      "file": "../guard_monk_pixel_attack_v2/fx/trail.png",
+      "sha256": "b3583abbbe58e48c151c9b2f4513cc3ac46c4c0207212a2ad74fe483c3b6540d",
+      "refitted": false
+    },
+    "v2_track_spec_sha256": "2e8964a7d2b5ca05c4a48abfc6a0feb3c1645d4b1cb88d3a74c2feaea6456015",
+    "before_v3_manifest_sha256": "d88d385618461f36850348236a9b9a29f1ab3e5dd8295e9b42619b82cc1b4c82"
+  },
+  "hand_override_body_ids": [
+    2,
+    3
+  ],
+  "patches": [
+    {
+      "id": 2,
+      "changed_pixels": 1891,
+      "changed_bbox": [
+        207,
+        247,
+        260,
+        301
+      ],
+      "crop_box": [
+        185,
+        235,
+        273,
+        323
+      ],
+      "edit_polygons": [
+        [
+          [
+            207,
+            253
+          ],
+          [
+            225,
+            247
+          ],
+          [
+            248,
+            258
+          ],
+          [
+            259,
+            276
+          ],
+          [
+            252,
+            297
+          ],
+          [
+            218,
+            300
+          ],
+          [
+            207,
+            289
+          ]
+        ]
+      ],
+      "effective_mask_pixels": 2203,
+      "requested_mask_pixels_outside_crop_discarded": 0,
+      "outside_mask_rgba_exact": true,
+      "outside_mask_changed_pixels": 0,
+      "tool_raw_canvas": [
+        1254,
+        1254
+      ],
+      "normalized_region_canvas": [
+        88,
+        88
+      ],
+      "resampling": "nearest",
+      "palette_source": "v1 original 96 colors",
+      "alpha_values": [
+        0,
+        255
+      ],
+      "base_file": "../guard_monk_pixel_attack_v1/frames/02_accelerate_up.png",
+      "base_sha256": "d44666a8aa359f946126a801c3ea8d4209eb87e53d508555238bc6b6b269b2ba",
+      "edit_file": "source/accelerate_edit.png",
+      "edit_sha256": "21536660c59ad561e2918abf655084dbef8bb0a599412ec0b8aa62054aec4d46",
+      "output_file": "body/02_accelerate_left_grip.png",
+      "output_sha256": "036e8f9e9f485509d889053c6f96e24a79bf37d9446cd85f16cfbd6fc2d933ce",
+      "normalized_region_file": "source/2_edit_region.png",
+      "normalized_region_sha256": "6d6c9b51e66632bbe89bd125f4aa78156a60dc08c7604a3f26f177f45eab35a2"
+    },
+    {
+      "id": 3,
+      "changed_pixels": 1343,
+      "changed_bbox": [
+        210,
+        259,
+        263,
+        304
+      ],
+      "crop_box": [
+        185,
+        235,
+        273,
+        323
+      ],
+      "edit_polygons": [
+        [
+          [
+            211,
+            263
+          ],
+          [
+            230,
+            259
+          ],
+          [
+            252,
+            267
+          ],
+          [
+            263,
+            283
+          ],
+          [
+            253,
+            302
+          ],
+          [
+            224,
+            303
+          ],
+          [
+            210,
+            288
+          ]
+        ]
+      ],
+      "effective_mask_pixels": 1832,
+      "requested_mask_pixels_outside_crop_discarded": 0,
+      "outside_mask_rgba_exact": true,
+      "outside_mask_changed_pixels": 0,
+      "tool_raw_canvas": [
+        1254,
+        1254
+      ],
+      "normalized_region_canvas": [
+        88,
+        88
+      ],
+      "resampling": "nearest",
+      "palette_source": "v1 original 96 colors",
+      "alpha_values": [
+        0,
+        255
+      ],
+      "base_file": "../guard_monk_pixel_attack_v3/body/03_contact_lowered.png",
+      "base_sha256": "ef4aef7467fa53efaba33f818909c8f209735ff5090609d2beae50a586c2cc93",
+      "edit_file": "source/contact_edit.png",
+      "edit_sha256": "06c09c44b7e0b7371ac99a460d1d0af011b5e66da90d8344d0d364bdd66555c6",
+      "output_file": "body/03_contact_left_grip.png",
+      "output_sha256": "0e11e653fd7ad038f66350e9e61e55e679465300b3ed45f63c5ca02f04947631",
+      "normalized_region_file": "source/3_edit_region.png",
+      "normalized_region_sha256": "88cf5a09c0fdc3e10ae18165c20829d3c881795e5afae0cd71739eda2683d871"
+    }
+  ],
+  "body_3_inherits_v3_lowered_pose_before_hand_edit": true,
+  "unchanged_used_body_ids": [
+    0,
+    4,
+    5
+  ],
+  "used_body_ids": [
+    0,
+    2,
+    3,
+    4,
+    5
+  ],
+  "body_pixels_resampled": false,
+  "fx_reused_without_refit": true,
+  "track_unchanged_from_v2_v3": true,
+  "track": [
+    {
+      "at": 0,
+      "body_frame": 0,
+      "fx_opacity": 0,
+      "name": "windup"
+    },
+    {
+      "at": 0.2,
+      "body_frame": 2,
+      "fx_opacity": 0.45,
+      "name": "fast_drop"
+    },
+    {
+      "at": 0.23,
+      "body_frame": 3,
+      "fx_opacity": 0.7,
+      "name": "contact_trail"
+    },
+    {
+      "at": 0.26,
+      "body_frame": 3,
+      "fx_opacity": 0.28,
+      "name": "trail_fade"
+    },
+    {
+      "at": 0.3,
+      "body_frame": 3,
+      "fx_opacity": 0,
+      "name": "clean_contact_hold"
+    },
+    {
+      "at": 0.34,
+      "body_frame": 4,
+      "fx_opacity": 0,
+      "name": "recover"
+    },
+    {
+      "at": 0.5,
+      "body_frame": 5,
+      "fx_opacity": 0,
+      "name": "upright_return"
+    },
+    {
+      "at": 0.68,
+      "body_frame": 0,
+      "fx_opacity": 0,
+      "name": "ready"
+    }
+  ],
+  "stages": [
+    {
+      "at": 0,
+      "body_frame": 0,
+      "fx_opacity": 0,
+      "name": "windup",
+      "body_opaque_rgba_exact": true,
+      "body_opaque_pixels_checked": 26766,
+      "rgba_alpha_binary": true,
+      "semi_transparent_pixels": 0,
+      "body_is_hand_override": false,
+      "body_preservation_target": "unchanged v3 body",
+      "difference_from_v3": {
+        "changed_pixels": 0,
+        "changed_bbox": null
+      },
+      "outside_hand_mask_rgba_exact_to_v3": true,
+      "file": "render_frames/00_windup.png",
+      "sha256": "b57ae63a132303237eb6ddffd186aec5cb3705c6a4fb040b5423e95740b14ab4"
+    },
+    {
+      "at": 0.2,
+      "body_frame": 2,
+      "fx_opacity": 0.45,
+      "name": "fast_drop",
+      "body_opaque_rgba_exact": true,
+      "body_opaque_pixels_checked": 27640,
+      "rgba_alpha_binary": false,
+      "semi_transparent_pixels": 7002,
+      "body_is_hand_override": true,
+      "body_preservation_target": "v4 hand override",
+      "difference_from_v3": {
+        "changed_pixels": 1891,
+        "changed_bbox": [
+          207,
+          247,
+          260,
+          301
+        ]
+      },
+      "outside_hand_mask_rgba_exact_to_v3": true,
+      "file": "render_frames/01_fast_drop.png",
+      "sha256": "9a5ea352fb2594043c3f26a47739a9af852af899c985422239b551644f31d3f4"
+    },
+    {
+      "at": 0.23,
+      "body_frame": 3,
+      "fx_opacity": 0.7,
+      "name": "contact_trail",
+      "body_opaque_rgba_exact": true,
+      "body_opaque_pixels_checked": 29265,
+      "rgba_alpha_binary": false,
+      "semi_transparent_pixels": 9415,
+      "body_is_hand_override": true,
+      "body_preservation_target": "v4 hand override",
+      "difference_from_v3": {
+        "changed_pixels": 1343,
+        "changed_bbox": [
+          210,
+          259,
+          263,
+          304
+        ]
+      },
+      "outside_hand_mask_rgba_exact_to_v3": true,
+      "file": "render_frames/02_contact_trail.png",
+      "sha256": "c28d3711396c5bbb7d1c6afda1ba07804c46b1793d7ba2dc490c308a75ff6d80"
+    },
+    {
+      "at": 0.26,
+      "body_frame": 3,
+      "fx_opacity": 0.28,
+      "name": "trail_fade",
+      "body_opaque_rgba_exact": true,
+      "body_opaque_pixels_checked": 29265,
+      "rgba_alpha_binary": false,
+      "semi_transparent_pixels": 7744,
+      "body_is_hand_override": true,
+      "body_preservation_target": "v4 hand override",
+      "difference_from_v3": {
+        "changed_pixels": 1343,
+        "changed_bbox": [
+          210,
+          259,
+          263,
+          304
+        ]
+      },
+      "outside_hand_mask_rgba_exact_to_v3": true,
+      "file": "render_frames/03_trail_fade.png",
+      "sha256": "260d9923811caf75178b9249e1e7f5b4cbc846be951da656c29870fa92edbebe"
+    },
+    {
+      "at": 0.3,
+      "body_frame": 3,
+      "fx_opacity": 0,
+      "name": "clean_contact_hold",
+      "body_opaque_rgba_exact": true,
+      "body_opaque_pixels_checked": 29265,
+      "rgba_alpha_binary": true,
+      "semi_transparent_pixels": 0,
+      "body_is_hand_override": true,
+      "body_preservation_target": "v4 hand override",
+      "difference_from_v3": {
+        "changed_pixels": 1343,
+        "changed_bbox": [
+          210,
+          259,
+          263,
+          304
+        ]
+      },
+      "outside_hand_mask_rgba_exact_to_v3": true,
+      "file": "render_frames/04_clean_contact_hold.png",
+      "sha256": "0e11e653fd7ad038f66350e9e61e55e679465300b3ed45f63c5ca02f04947631"
+    },
+    {
+      "at": 0.34,
+      "body_frame": 4,
+      "fx_opacity": 0,
+      "name": "recover",
+      "body_opaque_rgba_exact": true,
+      "body_opaque_pixels_checked": 27427,
+      "rgba_alpha_binary": true,
+      "semi_transparent_pixels": 0,
+      "body_is_hand_override": false,
+      "body_preservation_target": "unchanged v3 body",
+      "difference_from_v3": {
+        "changed_pixels": 0,
+        "changed_bbox": null
+      },
+      "outside_hand_mask_rgba_exact_to_v3": true,
+      "file": "render_frames/05_recover.png",
+      "sha256": "d76aa35351ed9a829db5f0c9fb03f5eb547e521bd3f71e39d18b4c0c36793fee"
+    },
+    {
+      "at": 0.5,
+      "body_frame": 5,
+      "fx_opacity": 0,
+      "name": "upright_return",
+      "body_opaque_rgba_exact": true,
+      "body_opaque_pixels_checked": 27413,
+      "rgba_alpha_binary": true,
+      "semi_transparent_pixels": 0,
+      "body_is_hand_override": false,
+      "body_preservation_target": "unchanged v3 body",
+      "difference_from_v3": {
+        "changed_pixels": 0,
+        "changed_bbox": null
+      },
+      "outside_hand_mask_rgba_exact_to_v3": true,
+      "file": "render_frames/06_upright_return.png",
+      "sha256": "5dd2c6af026f11174f3963774b17a7733100232bce1add6b68fc3b8c1afbb374"
+    },
+    {
+      "at": 0.68,
+      "body_frame": 0,
+      "fx_opacity": 0,
+      "name": "ready",
+      "body_opaque_rgba_exact": true,
+      "body_opaque_pixels_checked": 26766,
+      "rgba_alpha_binary": true,
+      "semi_transparent_pixels": 0,
+      "body_is_hand_override": false,
+      "body_preservation_target": "unchanged v3 body",
+      "difference_from_v3": {
+        "changed_pixels": 0,
+        "changed_bbox": null
+      },
+      "outside_hand_mask_rgba_exact_to_v3": true,
+      "file": "render_frames/07_ready.png",
+      "sha256": "b57ae63a132303237eb6ddffd186aec5cb3705c6a4fb040b5423e95740b14ab4"
+    }
+  ],
+  "contact_seconds": 0.23,
+  "contact_is_preview_metadata_only": true,
+  "action_duration_seconds": 0.8,
+  "preview_cycle_seconds": 1.15,
+  "first_last_ready_identical": true,
+  "previews": {
+    "preview.gif": {
+      "stage_starts_seconds": [
+        0.0,
+        0.2,
+        0.23,
+        0.26,
+        0.3,
+        0.34,
+        0.5,
+        0.68
+      ],
+      "duration_ms": [
+        200,
+        30,
+        30,
+        40,
+        40,
+        160,
+        180,
+        470
+      ],
+      "total_ms": 1150,
+      "action_speed_factor": 1,
+      "extra_idle_seconds": 0.35,
+      "boundary_rounding_error_ms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "file": "preview.gif",
+      "sha256": "21a8d8b7b3e3b35ce6ab7ca6a734c762269726f4160acd7fb4efc3bc1e593701",
+      "requested_samples": 8,
+      "encoded_frames": 8,
+      "encoded_duration_ms": 1150,
+      "reserved_rgb_pixels_checked": 1583336,
+      "reserved_rgb_preserved_exactly": true,
+      "maximum_unreserved_fx_channel_error": 24
+    },
+    "preview_slow.gif": {
+      "stage_starts_seconds": [
+        0.0,
+        0.4,
+        0.46,
+        0.52,
+        0.6,
+        0.68,
+        1.0,
+        1.36
+      ],
+      "duration_ms": [
+        400,
+        60,
+        60,
+        80,
+        80,
+        320,
+        360,
+        590
+      ],
+      "total_ms": 1950,
+      "action_speed_factor": 2,
+      "extra_idle_seconds": 0.35,
+      "boundary_rounding_error_ms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -2.2737367544323206e-13
+      ],
+      "file": "preview_slow.gif",
+      "sha256": "a2b268d53d8a217ff8f12b556338649eb13d572dfadeb0b4598ea3ccf58ef3f5",
+      "requested_samples": 8,
+      "encoded_frames": 8,
+      "encoded_duration_ms": 1950,
+      "reserved_rgb_pixels_checked": 1583336,
+      "reserved_rgb_preserved_exactly": true,
+      "maximum_unreserved_fx_channel_error": 24
+    },
+    "comparison.gif": {
+      "union_event_boundaries_seconds": [
+        0.0,
+        0.2,
+        0.23,
+        0.26,
+        0.3,
+        0.34,
+        0.5,
+        0.68,
+        0.8,
+        1.15
+      ],
+      "duration_ms": [
+        200,
+        30,
+        30,
+        40,
+        40,
+        160,
+        180,
+        120,
+        350
+      ],
+      "total_ms": 1150,
+      "absolute_time_alignment": true,
+      "same_before_after_track": true,
+      "before_stage_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7
+      ],
+      "after_stage_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        7
+      ],
+      "left": "v3",
+      "right": "v4",
+      "extra_cycle_padding_seconds": 0,
+      "file": "comparison.gif",
+      "sha256": "38d7b679ec555127a7d51ed2ac5bd7fdff6c4f0f016d3189fd845157399359de",
+      "requested_samples": 9,
+      "encoded_frames": 8,
+      "encoded_duration_ms": 1150,
+      "reserved_rgb_pixels_checked": 3822402,
+      "reserved_rgb_preserved_exactly": true,
+      "maximum_unreserved_fx_channel_error": 26
+    }
+  },
+  "gif_palette": {
+    "exact_body_rgb": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        0,
+        1
+      ],
+      [
+        7,
+        3,
+        2
+      ],
+      [
+        9,
+        4,
+        3
+      ],
+      [
+        12,
+        8,
+        7
+      ],
+      [
+        19,
+        6,
+        3
+      ],
+      [
+        19,
+        11,
+        7
+      ],
+      [
+        20,
+        14,
+        12
+      ],
+      [
+        27,
+        17,
+        11
+      ],
+      [
+        30,
+        21,
+        17
+      ],
+      [
+        32,
+        10,
+        4
+      ],
+      [
+        34,
+        27,
+        24
+      ],
+      [
+        40,
+        31,
+        28
+      ],
+      [
+        41,
+        17,
+        6
+      ],
+      [
+        43,
+        35,
+        32
+      ],
+      [
+        46,
+        24,
+        10
+      ],
+      [
+        47,
+        31,
+        21
+      ],
+      [
+        49,
+        38,
+        36
+      ],
+      [
+        50,
+        36,
+        28
+      ],
+      [
+        51,
+        41,
+        38
+      ],
+      [
+        53,
+        43,
+        40
+      ],
+      [
+        55,
+        45,
+        42
+      ],
+      [
+        59,
+        47,
+        45
+      ],
+      [
+        61,
+        47,
+        40
+      ],
+      [
+        61,
+        48,
+        46
+      ],
+      [
+        62,
+        51,
+        49
+      ],
+      [
+        63,
+        51,
+        46
+      ],
+      [
+        64,
+        26,
+        10
+      ],
+      [
+        64,
+        40,
+        22
+      ],
+      [
+        65,
+        52,
+        49
+      ],
+      [
+        66,
+        56,
+        53
+      ],
+      [
+        67,
+        55,
+        50
+      ],
+      [
+        69,
+        55,
+        52
+      ],
+      [
+        70,
+        56,
+        53
+      ],
+      [
+        70,
+        59,
+        55
+      ],
+      [
+        73,
+        60,
+        57
+      ],
+      [
+        74,
+        62,
+        58
+      ],
+      [
+        75,
+        61,
+        57
+      ],
+      [
+        76,
+        62,
+        56
+      ],
+      [
+        76,
+        62,
+        59
+      ],
+      [
+        77,
+        63,
+        60
+      ],
+      [
+        77,
+        64,
+        61
+      ],
+      [
+        78,
+        58,
+        49
+      ],
+      [
+        78,
+        64,
+        60
+      ],
+      [
+        81,
+        35,
+        15
+      ],
+      [
+        84,
+        49,
+        22
+      ],
+      [
+        90,
+        69,
+        55
+      ],
+      [
+        100,
+        55,
+        17
+      ],
+      [
+        103,
+        64,
+        32
+      ],
+      [
+        118,
+        56,
+        18
+      ],
+      [
+        119,
+        79,
+        44
+      ],
+      [
+        120,
+        70,
+        23
+      ],
+      [
+        124,
+        38,
+        29
+      ],
+      [
+        133,
+        108,
+        84
+      ],
+      [
+        134,
+        72,
+        13
+      ],
+      [
+        135,
+        87,
+        37
+      ],
+      [
+        143,
+        80,
+        15
+      ],
+      [
+        158,
+        90,
+        15
+      ],
+      [
+        166,
+        47,
+        40
+      ],
+      [
+        173,
+        97,
+        10
+      ],
+      [
+        177,
+        107,
+        16
+      ],
+      [
+        178,
+        56,
+        45
+      ],
+      [
+        185,
+        129,
+        56
+      ],
+      [
+        188,
+        58,
+        47
+      ],
+      [
+        188,
+        111,
+        11
+      ],
+      [
+        191,
+        68,
+        44
+      ],
+      [
+        191,
+        154,
+        117
+      ],
+      [
+        193,
+        59,
+        48
+      ],
+      [
+        197,
+        115,
+        9
+      ],
+      [
+        208,
+        173,
+        135
+      ],
+      [
+        209,
+        129,
+        13
+      ],
+      [
+        218,
+        133,
+        9
+      ],
+      [
+        220,
+        188,
+        157
+      ],
+      [
+        223,
+        196,
+        175
+      ],
+      [
+        225,
+        142,
+        14
+      ],
+      [
+        227,
+        142,
+        5
+      ],
+      [
+        230,
+        150,
+        17
+      ],
+      [
+        238,
+        152,
+        7
+      ],
+      [
+        238,
+        154,
+        16
+      ],
+      [
+        240,
+        215,
+        185
+      ],
+      [
+        244,
+        155,
+        7
+      ],
+      [
+        244,
+        160,
+        7
+      ],
+      [
+        244,
+        225,
+        205
+      ],
+      [
+        245,
+        157,
+        10
+      ],
+      [
+        246,
+        160,
+        12
+      ],
+      [
+        246,
+        160,
+        16
+      ],
+      [
+        247,
+        161,
+        11
+      ],
+      [
+        248,
+        161,
+        7
+      ],
+      [
+        249,
+        164,
+        12
+      ],
+      [
+        249,
+        232,
+        208
+      ],
+      [
+        250,
+        166,
+        13
+      ],
+      [
+        250,
+        238,
+        222
+      ],
+      [
+        251,
+        174,
+        24
+      ],
+      [
+        251,
+        237,
+        214
+      ],
+      [
+        252,
+        236,
+        206
+      ],
+      [
+        253,
+        248,
+        232
+      ]
+    ],
+    "reserved": [
+      [
+        35,
+        40,
+        48
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        0,
+        1
+      ],
+      [
+        7,
+        3,
+        2
+      ],
+      [
+        9,
+        4,
+        3
+      ],
+      [
+        12,
+        8,
+        7
+      ],
+      [
+        19,
+        6,
+        3
+      ],
+      [
+        19,
+        11,
+        7
+      ],
+      [
+        20,
+        14,
+        12
+      ],
+      [
+        27,
+        17,
+        11
+      ],
+      [
+        30,
+        21,
+        17
+      ],
+      [
+        32,
+        10,
+        4
+      ],
+      [
+        34,
+        27,
+        24
+      ],
+      [
+        40,
+        31,
+        28
+      ],
+      [
+        41,
+        17,
+        6
+      ],
+      [
+        43,
+        35,
+        32
+      ],
+      [
+        46,
+        24,
+        10
+      ],
+      [
+        47,
+        31,
+        21
+      ],
+      [
+        49,
+        38,
+        36
+      ],
+      [
+        50,
+        36,
+        28
+      ],
+      [
+        51,
+        41,
+        38
+      ],
+      [
+        53,
+        43,
+        40
+      ],
+      [
+        55,
+        45,
+        42
+      ],
+      [
+        59,
+        47,
+        45
+      ],
+      [
+        61,
+        47,
+        40
+      ],
+      [
+        61,
+        48,
+        46
+      ],
+      [
+        62,
+        51,
+        49
+      ],
+      [
+        63,
+        51,
+        46
+      ],
+      [
+        64,
+        26,
+        10
+      ],
+      [
+        64,
+        40,
+        22
+      ],
+      [
+        65,
+        52,
+        49
+      ],
+      [
+        66,
+        56,
+        53
+      ],
+      [
+        67,
+        55,
+        50
+      ],
+      [
+        69,
+        55,
+        52
+      ],
+      [
+        70,
+        56,
+        53
+      ],
+      [
+        70,
+        59,
+        55
+      ],
+      [
+        73,
+        60,
+        57
+      ],
+      [
+        74,
+        62,
+        58
+      ],
+      [
+        75,
+        61,
+        57
+      ],
+      [
+        76,
+        62,
+        56
+      ],
+      [
+        76,
+        62,
+        59
+      ],
+      [
+        77,
+        63,
+        60
+      ],
+      [
+        77,
+        64,
+        61
+      ],
+      [
+        78,
+        58,
+        49
+      ],
+      [
+        78,
+        64,
+        60
+      ],
+      [
+        81,
+        35,
+        15
+      ],
+      [
+        84,
+        49,
+        22
+      ],
+      [
+        90,
+        69,
+        55
+      ],
+      [
+        100,
+        55,
+        17
+      ],
+      [
+        103,
+        64,
+        32
+      ],
+      [
+        118,
+        56,
+        18
+      ],
+      [
+        119,
+        79,
+        44
+      ],
+      [
+        120,
+        70,
+        23
+      ],
+      [
+        124,
+        38,
+        29
+      ],
+      [
+        133,
+        108,
+        84
+      ],
+      [
+        134,
+        72,
+        13
+      ],
+      [
+        135,
+        87,
+        37
+      ],
+      [
+        143,
+        80,
+        15
+      ],
+      [
+        158,
+        90,
+        15
+      ],
+      [
+        166,
+        47,
+        40
+      ],
+      [
+        173,
+        97,
+        10
+      ],
+      [
+        177,
+        107,
+        16
+      ],
+      [
+        178,
+        56,
+        45
+      ],
+      [
+        185,
+        129,
+        56
+      ],
+      [
+        188,
+        58,
+        47
+      ],
+      [
+        188,
+        111,
+        11
+      ],
+      [
+        191,
+        68,
+        44
+      ],
+      [
+        191,
+        154,
+        117
+      ],
+      [
+        193,
+        59,
+        48
+      ],
+      [
+        197,
+        115,
+        9
+      ],
+      [
+        208,
+        173,
+        135
+      ],
+      [
+        209,
+        129,
+        13
+      ],
+      [
+        218,
+        133,
+        9
+      ],
+      [
+        220,
+        188,
+        157
+      ],
+      [
+        223,
+        196,
+        175
+      ],
+      [
+        225,
+        142,
+        14
+      ],
+      [
+        227,
+        142,
+        5
+      ],
+      [
+        230,
+        150,
+        17
+      ],
+      [
+        238,
+        152,
+        7
+      ],
+      [
+        238,
+        154,
+        16
+      ],
+      [
+        240,
+        215,
+        185
+      ],
+      [
+        244,
+        155,
+        7
+      ],
+      [
+        244,
+        160,
+        7
+      ],
+      [
+        244,
+        225,
+        205
+      ],
+      [
+        245,
+        157,
+        10
+      ],
+      [
+        246,
+        160,
+        12
+      ],
+      [
+        246,
+        160,
+        16
+      ],
+      [
+        247,
+        161,
+        11
+      ],
+      [
+        248,
+        161,
+        7
+      ],
+      [
+        249,
+        164,
+        12
+      ],
+      [
+        249,
+        232,
+        208
+      ],
+      [
+        250,
+        166,
+        13
+      ],
+      [
+        250,
+        238,
+        222
+      ],
+      [
+        251,
+        174,
+        24
+      ],
+      [
+        251,
+        237,
+        214
+      ],
+      [
+        252,
+        236,
+        206
+      ],
+      [
+        253,
+        248,
+        232
+      ],
+      [
+        237,
+        230,
+        211
+      ]
+    ],
+    "additional_fx_rgb": [
+      [
+        35,
+        41,
+        48
+      ],
+      [
+        36,
+        40,
+        47
+      ],
+      [
+        36,
+        40,
+        48
+      ],
+      [
+        36,
+        40,
+        49
+      ],
+      [
+        36,
+        41,
+        47
+      ],
+      [
+        36,
+        41,
+        48
+      ],
+      [
+        36,
+        41,
+        49
+      ],
+      [
+        37,
+        40,
+        48
+      ],
+      [
+        37,
+        41,
+        47
+      ],
+      [
+        37,
+        41,
+        48
+      ],
+      [
+        37,
+        41,
+        49
+      ],
+      [
+        37,
+        42,
+        49
+      ],
+      [
+        38,
+        41,
+        47
+      ],
+      [
+        38,
+        41,
+        48
+      ],
+      [
+        38,
+        42,
+        47
+      ],
+      [
+        38,
+        42,
+        48
+      ],
+      [
+        39,
+        41,
+        47
+      ],
+      [
+        39,
+        42,
+        46
+      ],
+      [
+        39,
+        42,
+        47
+      ],
+      [
+        39,
+        42,
+        48
+      ],
+      [
+        39,
+        43,
+        49
+      ],
+      [
+        40,
+        41,
+        46
+      ],
+      [
+        40,
+        42,
+        46
+      ],
+      [
+        40,
+        42,
+        47
+      ],
+      [
+        40,
+        42,
+        48
+      ],
+      [
+        40,
+        43,
+        46
+      ],
+      [
+        40,
+        43,
+        48
+      ],
+      [
+        41,
+        42,
+        47
+      ],
+      [
+        41,
+        43,
+        46
+      ],
+      [
+        41,
+        43,
+        47
+      ],
+      [
+        41,
+        43,
+        48
+      ],
+      [
+        41,
+        44,
+        49
+      ],
+      [
+        42,
+        43,
+        47
+      ],
+      [
+        42,
+        44,
+        48
+      ],
+      [
+        42,
+        45,
+        49
+      ],
+      [
+        43,
+        43,
+        46
+      ],
+      [
+        43,
+        44,
+        47
+      ],
+      [
+        43,
+        44,
+        48
+      ],
+      [
+        43,
+        46,
+        50
+      ],
+      [
+        44,
+        44,
+        46
+      ],
+      [
+        44,
+        44,
+        47
+      ],
+      [
+        44,
+        45,
+        47
+      ],
+      [
+        45,
+        44,
+        46
+      ],
+      [
+        45,
+        45,
+        46
+      ],
+      [
+        45,
+        45,
+        47
+      ],
+      [
+        45,
+        47,
+        50
+      ],
+      [
+        46,
+        45,
+        46
+      ],
+      [
+        46,
+        46,
+        47
+      ],
+      [
+        47,
+        46,
+        47
+      ],
+      [
+        47,
+        48,
+        50
+      ],
+      [
+        48,
+        46,
+        45
+      ],
+      [
+        48,
+        46,
+        46
+      ],
+      [
+        48,
+        47,
+        47
+      ],
+      [
+        49,
+        46,
+        45
+      ],
+      [
+        49,
+        47,
+        47
+      ],
+      [
+        50,
+        47,
+        45
+      ],
+      [
+        50,
+        47,
+        46
+      ],
+      [
+        50,
+        48,
+        47
+      ],
+      [
+        50,
+        49,
+        49
+      ],
+      [
+        51,
+        47,
+        45
+      ],
+      [
+        51,
+        48,
+        46
+      ],
+      [
+        52,
+        49,
+        47
+      ],
+      [
+        52,
+        52,
+        51
+      ],
+      [
+        53,
+        49,
+        46
+      ],
+      [
+        54,
+        49,
+        46
+      ],
+      [
+        55,
+        51,
+        47
+      ],
+      [
+        55,
+        53,
+        49
+      ],
+      [
+        56,
+        50,
+        45
+      ],
+      [
+        57,
+        51,
+        45
+      ],
+      [
+        57,
+        53,
+        47
+      ],
+      [
+        59,
+        52,
+        46
+      ],
+      [
+        59,
+        55,
+        50
+      ],
+      [
+        60,
+        53,
+        46
+      ],
+      [
+        63,
+        53,
+        44
+      ],
+      [
+        64,
+        56,
+        46
+      ],
+      [
+        65,
+        57,
+        47
+      ],
+      [
+        66,
+        56,
+        45
+      ],
+      [
+        66,
+        58,
+        48
+      ],
+      [
+        68,
+        59,
+        48
+      ],
+      [
+        68,
+        61,
+        52
+      ],
+      [
+        71,
+        60,
+        46
+      ],
+      [
+        73,
+        61,
+        46
+      ],
+      [
+        75,
+        64,
+        50
+      ],
+      [
+        75,
+        66,
+        52
+      ],
+      [
+        77,
+        62,
+        44
+      ],
+      [
+        79,
+        70,
+        55
+      ],
+      [
+        81,
+        66,
+        47
+      ],
+      [
+        85,
+        73,
+        56
+      ],
+      [
+        86,
+        67,
+        44
+      ],
+      [
+        87,
+        79,
+        64
+      ],
+      [
+        88,
+        70,
+        47
+      ],
+      [
+        91,
+        85,
+        69
+      ],
+      [
+        93,
+        72,
+        45
+      ],
+      [
+        93,
+        88,
+        74
+      ],
+      [
+        94,
+        88,
+        69
+      ],
+      [
+        94,
+        91,
+        80
+      ],
+      [
+        94,
+        95,
+        91
+      ],
+      [
+        95,
+        78,
+        53
+      ],
+      [
+        95,
+        97,
+        97
+      ],
+      [
+        95,
+        98,
+        102
+      ],
+      [
+        97,
+        98,
+        97
+      ],
+      [
+        101,
+        76,
+        44
+      ],
+      [
+        104,
+        100,
+        90
+      ],
+      [
+        105,
+        81,
+        48
+      ],
+      [
+        105,
+        92,
+        69
+      ],
+      [
+        107,
+        84,
+        52
+      ],
+      [
+        120,
+        87,
+        44
+      ],
+      [
+        120,
+        108,
+        80
+      ],
+      [
+        126,
+        94,
+        50
+      ],
+      [
+        127,
+        121,
+        102
+      ],
+      [
+        130,
+        120,
+        92
+      ],
+      [
+        130,
+        132,
+        130
+      ],
+      [
+        131,
+        120,
+        93
+      ],
+      [
+        132,
+        132,
+        127
+      ],
+      [
+        132,
+        134,
+        134
+      ],
+      [
+        133,
+        113,
+        75
+      ],
+      [
+        134,
+        102,
+        55
+      ],
+      [
+        145,
+        123,
+        85
+      ],
+      [
+        166,
+        140,
+        91
+      ],
+      [
+        176,
+        154,
+        106
+      ],
+      [
+        181,
+        167,
+        130
+      ],
+      [
+        183,
+        157,
+        100
+      ],
+      [
+        183,
+        162,
+        109
+      ],
+      [
+        183,
+        182,
+        172
+      ],
+      [
+        184,
+        177,
+        154
+      ],
+      [
+        185,
+        185,
+        175
+      ],
+      [
+        185,
+        186,
+        183
+      ]
+    ],
+    "only_unreserved_fx_colors_may_be_approximated": true
+  },
+  "rgba_alpha_policy": "Bodies binary; FX composites may remain semitransparent"
+}

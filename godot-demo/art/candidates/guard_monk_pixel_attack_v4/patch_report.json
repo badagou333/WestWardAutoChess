@@ -1,0 +1,158 @@
+{
+  "override_body_ids": [
+    2,
+    3
+  ],
+  "patches": [
+    {
+      "id": 2,
+      "changed_pixels": 1891,
+      "changed_bbox": [
+        207,
+        247,
+        260,
+        301
+      ],
+      "crop_box": [
+        185,
+        235,
+        273,
+        323
+      ],
+      "edit_polygons": [
+        [
+          [
+            207,
+            253
+          ],
+          [
+            225,
+            247
+          ],
+          [
+            248,
+            258
+          ],
+          [
+            259,
+            276
+          ],
+          [
+            252,
+            297
+          ],
+          [
+            218,
+            300
+          ],
+          [
+            207,
+            289
+          ]
+        ]
+      ],
+      "effective_mask_pixels": 2203,
+      "requested_mask_pixels_outside_crop_discarded": 0,
+      "outside_mask_rgba_exact": true,
+      "outside_mask_changed_pixels": 0,
+      "tool_raw_canvas": [
+        1254,
+        1254
+      ],
+      "normalized_region_canvas": [
+        88,
+        88
+      ],
+      "resampling": "nearest",
+      "palette_source": "v1 original 96 colors",
+      "alpha_values": [
+        0,
+        255
+      ],
+      "base_file": "../guard_monk_pixel_attack_v1/frames/02_accelerate_up.png",
+      "base_sha256": "d44666a8aa359f946126a801c3ea8d4209eb87e53d508555238bc6b6b269b2ba",
+      "edit_file": "source/accelerate_edit.png",
+      "edit_sha256": "21536660c59ad561e2918abf655084dbef8bb0a599412ec0b8aa62054aec4d46",
+      "output_file": "body/02_accelerate_left_grip.png",
+      "output_sha256": "036e8f9e9f485509d889053c6f96e24a79bf37d9446cd85f16cfbd6fc2d933ce",
+      "normalized_region_file": "source/2_edit_region.png",
+      "normalized_region_sha256": "6d6c9b51e66632bbe89bd125f4aa78156a60dc08c7604a3f26f177f45eab35a2"
+    },
+    {
+      "id": 3,
+      "changed_pixels": 1343,
+      "changed_bbox": [
+        210,
+        259,
+        263,
+        304
+      ],
+      "crop_box": [
+        185,
+        235,
+        273,
+        323
+      ],
+      "edit_polygons": [
+        [
+          [
+            211,
+            263
+          ],
+          [
+            230,
+            259
+          ],
+          [
+            252,
+            267
+          ],
+          [
+            263,
+            283
+          ],
+          [
+            253,
+            302
+          ],
+          [
+            224,
+            303
+          ],
+          [
+            210,
+            288
+          ]
+        ]
+      ],
+      "effective_mask_pixels": 1832,
+      "requested_mask_pixels_outside_crop_discarded": 0,
+      "outside_mask_rgba_exact": true,
+      "outside_mask_changed_pixels": 0,
+      "tool_raw_canvas": [
+        1254,
+        1254
+      ],
+      "normalized_region_canvas": [
+        88,
+        88
+      ],
+      "resampling": "nearest",
+      "palette_source": "v1 original 96 colors",
+      "alpha_values": [
+        0,
+        255
+      ],
+      "base_file": "../guard_monk_pixel_attack_v3/body/03_contact_lowered.png",
+      "base_sha256": "ef4aef7467fa53efaba33f818909c8f209735ff5090609d2beae50a586c2cc93",
+      "edit_file": "source/contact_edit.png",
+      "edit_sha256": "06c09c44b7e0b7371ac99a460d1d0af011b5e66da90d8344d0d364bdd66555c6",
+      "output_file": "body/03_contact_left_grip.png",
+      "output_sha256": "0e11e653fd7ad038f66350e9e61e55e679465300b3ed45f63c5ca02f04947631",
+      "normalized_region_file": "source/3_edit_region.png",
+      "normalized_region_sha256": "88cf5a09c0fdc3e10ae18165c20829d3c881795e5afae0cd71739eda2683d871"
+    }
+  ],
+  "body_3_inherits_v3_lowered_pose_before_hand_edit": true,
+  "all_outside_mask_rgba_exact": true
+}

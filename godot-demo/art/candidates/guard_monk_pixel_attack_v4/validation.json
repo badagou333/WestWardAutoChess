@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-26",
+  "result": "pass",
+  "verification": "independent_read_only_patch_and_asset_integrity",
+  "patch_changed_pixels": {
+    "body2": 1891,
+    "body3": 1343
+  },
+  "checks": {
+    "patches_memory_rebuild_exact": true,
+    "outside_hand_masks_rgba_exact": true,
+    "face_feet_front_hand_unchanged": true,
+    "body3_far_staff_x_ge_300_exact_to_v3": true,
+    "far_tip_right_margin_px": 5,
+    "original_palette_limit": 96,
+    "body_alpha_binary": true,
+    "transparent_rgb_zero": true,
+    "target_704_inputs_exact_88_crop_x8_nearest": true,
+    "only_stage_indices_changed": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "unchanged_stage_indices_equal_v3": [
+      0,
+      5,
+      6,
+      7
+    ],
+    "track_identical_to_v2": true,
+    "fitted_fx_identical_to_v2": true,
+    "first_last_preview_equal": true,
+    "comparison_absolute_time_aligned": true,
+    "gif_body_rgb_max_difference": 0,
+    "gif_fx_quantization_max_channel_difference": 24,
+    "atlas_cells_match_png": true,
+    "all_source_and_output_hashes_match": true,
+    "gdignore_present": true,
+    "gitignore_present": true,
+    "readme_relative_links_valid": true,
+    "reference_crop_pixels_and_hash_match": true,
+    "target_and_edit_provenance_hashes_match": true,
+    "two_full_prompt_files_present": true
+  },
+  "gifs": {
+    "preview.gif": {
+      "sha256": "21a8d8b7b3e3b35ce6ab7ca6a734c762269726f4160acd7fb4efc3bc1e593701",
+      "decoded_frames": 8,
+      "total_ms": 1150
+    },
+    "preview_slow.gif": {
+      "sha256": "a2b268d53d8a217ff8f12b556338649eb13d572dfadeb0b4598ea3ccf58ef3f5",
+      "decoded_frames": 8,
+      "total_ms": 1950
+    },
+    "comparison.gif": {
+      "sha256": "38d7b679ec555127a7d51ed2ac5bd7fdff6c4f0f016d3189fd845157399359de",
+      "decoded_frames": 8,
+      "total_ms": 1150
+    }
+  },
+  "visual_review": {
+    "result": "limited_left_hand_grip_pass_no_must_fix",
+    "evidence": [
+      "hands_before_after.png",
+      "body/02_accelerate_left_grip.png",
+      "body/03_contact_left_grip.png"
+    ],
+    "notes": [
+      "掌侧从棍下承托，弯指／拇指侧和腕口更明确",
+      "对照负责人原参考，浅色腕内侧／拇指形未仅凭颜色武断判错",
+      "无明确空握、断棍、腕口开缝或贴回浮边"
+    ]
+  },
+  "not_verified": [
+    "owner_final_hand_preference",
+    "complete_finger_anatomy",
+    "continuous_playback_impression",
+    "runtime_integration_and_damage_sync"
+  ]
+}

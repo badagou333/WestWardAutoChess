@@ -1,0 +1,48 @@
+{
+  "completed_date": "2026-10-26",
+  "review_date": "2026-10-25",
+  "user_authorization": "修（两处下方左手的掌背与握法）",
+  "tool": "built-in image_gen.imagegen",
+  "crop_box_on_original_canvas": [
+    185,
+    235,
+    273,
+    323
+  ],
+  "target_input_preparation": "88x88 logical crop enlarged x8 nearest to704x704",
+  "reference": {
+    "file": "inputs/owner_hand_reference.png",
+    "source_file": "../guard_monk_pixel_attack_v1/inputs/owner_upward_strike.png",
+    "source_crop": [
+      680,
+      355,
+      920,
+      510
+    ],
+    "sha256": "2abae3f7230f88adbb0141c3a1c5805fa9b99f82674ea828c2d5fa6b998ef8db",
+    "role": "underhand left-paw shape and wrist relation only"
+  },
+  "edits": [
+    {
+      "pose": "accelerate",
+      "target_input": "inputs/accelerate_hand_target_x8.png",
+      "target_input_sha256": "c33c85fef8957d8826bf3d083f28699868187c32980491539155dc49fbe63f9d",
+      "raw_edit": "source/accelerate_edit.png",
+      "raw_sha256": "21536660c59ad561e2918abf655084dbef8bb0a599412ec0b8aa62054aec4d46",
+      "generation_artifact": "exec-1dd6daa1-c4bb-4168-93f4-5ac88f5defb1.png",
+      "prompt_file": "source/PROMPT_ACCELERATE_HAND.txt"
+    },
+    {
+      "pose": "contact",
+      "target_input": "inputs/contact_hand_target_x8.png",
+      "target_input_sha256": "e6de409e8a038d98ec8a160b6da38db2960810ad07e2a3e6e74a9379fadadbb2",
+      "raw_edit": "source/contact_edit.png",
+      "raw_sha256": "06c09c44b7e0b7371ac99a460d1d0af011b5e66da90d8344d0d364bdd66555c6",
+      "generation_artifact": "exec-6ac579ef-a006-439d-871b-d9d88b8cc443.png",
+      "prompt_file": "source/PROMPT_CONTACT_HAND.txt"
+    }
+  ],
+  "processing": "Each generated crop NEAREST to88x88, original96 color palette, binary alpha, explicit small polygon composited into original448x448 body. No whole-character rotation/mirror/warp.",
+  "preserved": "outside mask, face/feet/front hand/far staff end, v2 timing and fitted FX",
+  "runtime_integrated": false
+}
