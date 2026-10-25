@@ -1,0 +1,478 @@
+{
+  "schema": "bear-lord-masked-source-preparation-v1",
+  "base_source": "source/sheet_base.webp",
+  "base_rgba_sha256": "9d0edc63194fc17e2fd1453ed67b768e4c0fbc342c7e80034be8f6b1e7b7bc9e",
+  "patches": [
+    {
+      "edit": "ready_hand",
+      "source_crop": [
+        140,
+        90,
+        350,
+        335
+      ],
+      "input_pad": [
+        45,
+        27
+      ],
+      "normalize_canvas": [
+        300,
+        300
+      ],
+      "resampling": "nearest",
+      "registration": [
+        8,
+        -9
+      ],
+      "mask_polygon": [
+        [
+          70,
+          80
+        ],
+        [
+          118,
+          35
+        ],
+        [
+          164,
+          42
+        ],
+        [
+          182,
+          96
+        ],
+        [
+          164,
+          137
+        ],
+        [
+          207,
+          147
+        ],
+        [
+          251,
+          179
+        ],
+        [
+          257,
+          225
+        ],
+        [
+          243,
+          257
+        ],
+        [
+          200,
+          263
+        ],
+        [
+          140,
+          250
+        ],
+        [
+          110,
+          215
+        ],
+        [
+          95,
+          179
+        ],
+        [
+          84,
+          140
+        ]
+      ],
+      "mask_outside_source_crop": false,
+      "changed_rgba_pixels": 25203,
+      "changed_bbox": [
+        165,
+        98,
+        353,
+        327
+      ],
+      "outside_mask_rgba_exact": true
+    },
+    {
+      "edit": "load_hand",
+      "source_crop": [
+        620,
+        35,
+        830,
+        300
+      ],
+      "input_pad": [
+        45,
+        17
+      ],
+      "normalize_canvas": [
+        300,
+        300
+      ],
+      "resampling": "nearest",
+      "registration": [
+        0,
+        0
+      ],
+      "mask_polygon": [
+        [
+          73,
+          71
+        ],
+        [
+          115,
+          43
+        ],
+        [
+          159,
+          39
+        ],
+        [
+          181,
+          91
+        ],
+        [
+          165,
+          131
+        ],
+        [
+          205,
+          146
+        ],
+        [
+          254,
+          183
+        ],
+        [
+          257,
+          222
+        ],
+        [
+          238,
+          258
+        ],
+        [
+          193,
+          264
+        ],
+        [
+          140,
+          248
+        ],
+        [
+          109,
+          214
+        ],
+        [
+          91,
+          174
+        ],
+        [
+          82,
+          126
+        ]
+      ],
+      "mask_outside_source_crop": false,
+      "changed_rgba_pixels": 24853,
+      "changed_bbox": [
+        648,
+        57,
+        833,
+        283
+      ],
+      "outside_mask_rgba_exact": true
+    },
+    {
+      "edit": "recovery_grip",
+      "source_crop": [
+        630,
+        610,
+        890,
+        830
+      ],
+      "input_pad": [
+        20,
+        40
+      ],
+      "normalize_canvas": [
+        300,
+        300
+      ],
+      "resampling": "nearest",
+      "registration": [
+        0,
+        0
+      ],
+      "mask_polygon": [
+        [
+          20,
+          95
+        ],
+        [
+          67,
+          95
+        ],
+        [
+          121,
+          125
+        ],
+        [
+          183,
+          146
+        ],
+        [
+          207,
+          177
+        ],
+        [
+          203,
+          210
+        ],
+        [
+          147,
+          216
+        ],
+        [
+          91,
+          202
+        ],
+        [
+          30,
+          180
+        ]
+      ],
+      "mask_outside_source_crop": false,
+      "changed_rgba_pixels": 14872,
+      "changed_bbox": [
+        630,
+        665,
+        818,
+        787
+      ],
+      "outside_mask_rgba_exact": true
+    },
+    {
+      "edit": "recover_front",
+      "source_crop": [
+        830,
+        825,
+        992,
+        1008
+      ],
+      "input_pad": [
+        69,
+        58
+      ],
+      "normalize_canvas": [
+        300,
+        300
+      ],
+      "resampling": "nearest",
+      "registration": [
+        0,
+        0
+      ],
+      "mask_polygon": [
+        [
+          69,
+          91
+        ],
+        [
+          131,
+          105
+        ],
+        [
+          179,
+          139
+        ],
+        [
+          224,
+          179
+        ],
+        [
+          253,
+          227
+        ],
+        [
+          253,
+          264
+        ],
+        [
+          110,
+          264
+        ],
+        [
+          77,
+          222
+        ],
+        [
+          68,
+          166
+        ]
+      ],
+      "mask_outside_source_crop": false,
+      "changed_rgba_pixels": 21476,
+      "changed_bbox": [
+        829,
+        858,
+        1015,
+        1024
+      ],
+      "outside_mask_rgba_exact": true
+    },
+    {
+      "edit": "step_front",
+      "source_crop": [
+        850,
+        355,
+        992,
+        539
+      ],
+      "input_pad": [
+        79,
+        58
+      ],
+      "normalize_canvas": [
+        300,
+        300
+      ],
+      "resampling": "nearest",
+      "registration": [
+        24,
+        4
+      ],
+      "mask_polygon": [
+        [
+          79,
+          81
+        ],
+        [
+          126,
+          87
+        ],
+        [
+          172,
+          117
+        ],
+        [
+          219,
+          164
+        ],
+        [
+          239,
+          207
+        ],
+        [
+          239,
+          261
+        ],
+        [
+          93,
+          261
+        ],
+        [
+          73,
+          220
+        ],
+        [
+          65,
+          164
+        ]
+      ],
+      "mask_outside_source_crop": false,
+      "changed_rgba_pixels": 24036,
+      "changed_bbox": [
+        836,
+        378,
+        1011,
+        559
+      ],
+      "outside_mask_rgba_exact": true,
+      "purpose": "Coil planted toe registered to ready; not an animation-time shoe translation."
+    },
+    {
+      "edit": "step_front",
+      "source_crop": [
+        850,
+        355,
+        992,
+        539
+      ],
+      "input_pad": [
+        79,
+        58
+      ],
+      "normalize_canvas": [
+        300,
+        300
+      ],
+      "resampling": "nearest",
+      "registration": [
+        -12,
+        -12
+      ],
+      "mask_polygon": [
+        [
+          79,
+          81
+        ],
+        [
+          126,
+          87
+        ],
+        [
+          172,
+          117
+        ],
+        [
+          219,
+          164
+        ],
+        [
+          239,
+          207
+        ],
+        [
+          239,
+          261
+        ],
+        [
+          93,
+          261
+        ],
+        [
+          73,
+          220
+        ],
+        [
+          65,
+          164
+        ]
+      ],
+      "mask_outside_source_crop": false,
+      "changed_rgba_pixels": 12520,
+      "changed_bbox": [
+        843,
+        378,
+        998,
+        550
+      ],
+      "outside_mask_rgba_exact": true
+    }
+  ],
+  "outputs": [
+    {
+      "file": "source/sheet_prepared.webp",
+      "sha256": "da705f03a25dcde13f697a789ca644a89489b2df0dd85c6c2899a8496166207b",
+      "rgba_pixel_sha256": "52cef29228106a99b7fd89283867014db7f2fc779a53836e180eb6af0dc820de",
+      "lossless_rgba_exact": true
+    },
+    {
+      "file": "source/sheet_step.webp",
+      "sha256": "2c272dad9d49644bd126c36d66323f725ce6b85997f5efb9b23d7e1b5754be5b",
+      "rgba_pixel_sha256": "3c7e61e81ddb3a4a58ac155684dc87157e9c87d584cb35d250a4e3406219b17d",
+      "lossless_rgba_exact": true
+    }
+  ],
+  "whole_body_transform": false,
+  "new_art": "All changed limbs were redrawn by built-in image_gen; fixed crop normalization and declared limb registration only."
+}

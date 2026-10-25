@@ -1,0 +1,23 @@
+{
+  "result": "deterministic_rebuild_pass",
+  "checked_files": 16,
+  "all_file_sha256_equal": true,
+  "files": {
+    "source/sheet_prepared.webp": "da705f03a25dcde13f697a789ca644a89489b2df0dd85c6c2899a8496166207b",
+    "source/sheet_step.webp": "2c272dad9d49644bd126c36d66323f725ce6b85997f5efb9b23d7e1b5754be5b",
+    "source/preparation_report.json": "450e7322e6d338affb050162d4b11cb93718b637b1443be2c5a12ca09aae91d1",
+    "frames/00_ready.png": "8558fa7470eb831829ae5e09b507d7a626b8151369419bb268016eab3c6c2827",
+    "frames/01_load.png": "9bca98363bf778d51bacbc45045c824e71beb2cf238fad3dcc4d3ccd9540496d",
+    "frames/02_step.png": "69c106899fd82f890c80286cbbd014924f74b620cc2802d375aded91e2500f1e",
+    "frames/03_accelerate.png": "74c443ffeec68d854282b9daa1de2fa05b673167ab731346f6af90e1dc9dedcd",
+    "frames/04_impact.png": "878876aa8c9f8d7a2c0dff9b98854a09025f18c0bf58129c7e4dad04eb4729cc",
+    "frames/05_recover.png": "3b97b79c8ae15a0ef54a323b38cc4ea100a39e5ca29d0f4a732117820229ebce",
+    "atlas.png": "096511d386599df781960577b8c005c3d73eefa641dbc19879a76f2cb5b9d4a4",
+    "contact_sheet.png": "2d9dd4656a0c68bcbea705ab344de5092d46d5e96545438a422c9cc34ecd8d5e",
+    "preview.gif": "1694cfb3f842332934f76ed3786222c9418714d64e488688c8191301a6d66420",
+    "preview_slow.gif": "2749b8c33d4595ce2ae33f18f0dbf4d126829d5e1c12bdffe8b8189073b3bf98",
+    "manifest.json": "7323e0d5ada8552de7bffa7ff62aadab77c66ffa3b20b112fc123b8c40b0c70f",
+    "structural_report.json": "ab6664389876b8e4aa2aaf923d2b91f5bc959bb9f522aefbf2ef2f75e64beeb2",
+    "validation.json": "5bfd8c03cf45643af1fa052f5c27b93a479caaa96356b61ed5ad8b4741a55585"
+  }
+}

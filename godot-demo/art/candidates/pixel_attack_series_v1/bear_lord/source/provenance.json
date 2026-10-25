@@ -1,0 +1,123 @@
+{
+  "tool": "built-in image_gen",
+  "selected_sources": [
+    {
+      "id": "sheet_base",
+      "tool_png_path": "/Users/leqiong/.codex/generated_images/01a1735c-6b26-75b3-926c-7953e37a8ff7/exec-40e4fa34-9ff4-470f-a326-d725e3a12bbf.png",
+      "tool_png_sha256": "0a7ece655891a03c5d461f9b23f1d9cd560661b6452f1c4856e6c5230df39b63",
+      "webp_file": "sheet_base.webp",
+      "webp_sha256": "fba52e7661436491abc2257b9b0cd387ceb970b62672a46afcf633ac2d7569fb",
+      "rgba_sha256": "9d0edc63194fc17e2fd1453ed67b768e4c0fbc342c7e80034be8f6b1e7b7bc9e",
+      "canvas": [
+        1536,
+        1024
+      ],
+      "lossless_webp_rgba_exact": true
+    },
+    {
+      "id": "ready_hand",
+      "tool_png_path": "/Users/leqiong/.codex/generated_images/01a1735c-6b26-75b3-926c-7953e37a8ff7/exec-cefd54ff-ef71-49f2-82dd-2f249db7eff9.png",
+      "tool_png_sha256": "db9af04f3b7ba9788db8fb0f9afa37aefa8d54920b9962bd96820d46130a0efa",
+      "webp_file": "ready_hand_edit.webp",
+      "webp_sha256": "291ac9b4502a4746473355b661d363481c46b71530fc3a9749d6971506366d57",
+      "rgba_sha256": "cbf09e704bc66d05f0dbdd6cf7b36ed16f0495bbdd689c5db544f68528698d12",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "lossless_webp_rgba_exact": true
+    },
+    {
+      "id": "load_hand",
+      "tool_png_path": "/Users/leqiong/.codex/generated_images/01a1735c-6b26-75b3-926c-7953e37a8ff7/exec-e5ecda9e-651d-4d9b-972a-1956e392f734.png",
+      "tool_png_sha256": "0d68e0074ca8a84ad8e07e5c051936d1aaa91d55f916c642e3c0170f4050ae16",
+      "webp_file": "load_hand_edit.webp",
+      "webp_sha256": "ab21b71ce28a78196f889cd1a12e7c477ed87c793d3651e2412718921f230591",
+      "rgba_sha256": "6a5c56403edb0c66df7f4f26446c6b76349053fa3d660f3bd12174b0ab61652d",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "lossless_webp_rgba_exact": true
+    },
+    {
+      "id": "step_front",
+      "tool_png_path": "/Users/leqiong/.codex/generated_images/01a1735c-6b26-75b3-926c-7953e37a8ff7/exec-faa462fc-0779-4925-af9c-0ce88137b983.png",
+      "tool_png_sha256": "9938dabe8b6fce3a36713e2659a0ad964e7ca631acc9f3c6ceb4cb78e0249802",
+      "webp_file": "step_front_edit.webp",
+      "webp_sha256": "ffed030d436912fbf7351eecc8a7c121e145ce6915f263c4885968074f9bc012",
+      "rgba_sha256": "7ce9a6d42a5712c10f278295c16e51d86284cf8886261f8c4425620f013f38fe",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "lossless_webp_rgba_exact": true
+    },
+    {
+      "id": "recover_front",
+      "tool_png_path": "/Users/leqiong/.codex/generated_images/01a1735c-6b26-75b3-926c-7953e37a8ff7/exec-232d1592-b4d8-4c04-ae4b-fd55203b26a6.png",
+      "tool_png_sha256": "d8ea7ff0ef6312b1e8ec2acf5352999bc9d6f2bde6947380c4725abc4eda7253",
+      "webp_file": "recover_front_edit.webp",
+      "webp_sha256": "fb1a1c20056695602c9e69a4a8fe4c82be0fbc5beb99b128de6422b7e861c22b",
+      "rgba_sha256": "7b758c134c5caeaa094e155ede894f4b23f8c19718da305c5cf55fe37ae116fb",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "lossless_webp_rgba_exact": true
+    },
+    {
+      "id": "recovery_grip",
+      "tool_png_path": "/Users/leqiong/.codex/generated_images/01a1735c-6b26-75b3-926c-7953e37a8ff7/exec-034fa752-db4b-4a87-bfff-5b1648b06836.png",
+      "tool_png_sha256": "49235589319be3bf48f08e15c232e9df3cf9eb2f501ab2ec01d28f72326fc6be",
+      "webp_file": "recovery_grip_edit.webp",
+      "webp_sha256": "f770df2259fd4ce3f8ab58868e0f108228a34a68119d4573de8b55f3477c7521",
+      "rgba_sha256": "c744e5a73676a6a2aad839173525b365d99ea253803e76b590c2244d20b739e3",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "lossless_webp_rgba_exact": true
+    }
+  ],
+  "notes": [
+    "Ready/load hand edits and recovery grip replace only explicit masked limb regions.",
+    "Return-hand edit retained as experiment, not used in playback.",
+    "Source PNGs stored as exact lossless WebP; decoded RGBA equality verified for every stored source."
+  ],
+  "discarded_edits": [
+    {
+      "id": "return_hand",
+      "tool_png_path": "/Users/leqiong/.codex/generated_images/01a1735c-6b26-75b3-926c-7953e37a8ff7/exec-613c9c87-6859-49b6-9f5b-f4d0c9d0b31e.png",
+      "tool_png_sha256": "cb39847af91456ebf45fbc13016312305f990a6d656cea955f06d5bda821bb3c",
+      "webp_file": "return_hand_edit.webp",
+      "webp_sha256": "3414878ab97c1ed1ddaba2b9f7df6f9eff65f164bd58ad736dc119b46546447e",
+      "rgba_sha256": "8fb0a3f4b0aa44e427a50a30f651f478df6242230ee5d2ee315a77dfc5cba7c4",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "lossless_webp_rgba_exact": true,
+      "not_stored_reason": "Not used in final six-pose animation; first/last reuse the ready frame instead."
+    }
+  ],
+  "edit_reference": {
+    "file": "source/sheet_before_correction.webp",
+    "tool_png_path": "/Users/leqiong/.codex/generated_images/01a1735c-6b26-75b3-926c-7953e37a8ff7/exec-d7470364-f3b0-46cc-904d-4e1a696ad15a.png",
+    "tool_png_sha256": "0192911d7cfc21129969b662f90f5e2b4e4e6722aed5790be5d2dd90f7cfb3dd",
+    "webp_sha256": "578e865b58ac2a22937ed9ae58496df3597df3a62fc8320542be4d1a843343b7",
+    "rgba_sha256": "3a522afadc135357a5ae1888bbac6925eea9984e7d02155de0b182f80dce5692",
+    "lossless_webp_rgba_exact": true,
+    "purpose": "Exact target image for the adopted sheet correction; original clipped/repeated pose is not extracted."
+  },
+  "character_references": [
+    {
+      "file": "../../../concepts/bear_lord/nine_sols_v1/bear-lord-nine-sols-candidate.png",
+      "sha256": "aa0b1ad5a98dde3c03f9171fb1ac013d094c003276d4150f19ab26cf30f85f3d"
+    },
+    {
+      "file": "../../../concepts/bear_lord/nine_sols_actions_v1/four-action-keyposes.png",
+      "sha256": "07b6d6c5b0ea5a11f211bb78554d83ea9eac79f02c0d990b7660778e5453bbed"
+    }
+  ]
+}
