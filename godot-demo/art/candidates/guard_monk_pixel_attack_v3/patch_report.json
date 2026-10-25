@@ -1,0 +1,22 @@
+{
+  "source_sha256": "23125c59b850b9baba2dd73600b10a503368169dcde4b4055f5c65b8b47eba20",
+  "edit_sha256": "8c2b226ff85fcb38d62d3185ba4e1213d0f2cea009e228104126de44bb26f1c0",
+  "output_sha256": "ef4aef7467fa53efaba33f818909c8f209735ff5090609d2beae50a586c2cc93",
+  "generated_canvas": [
+    1254,
+    1254
+  ],
+  "canvas": [
+    448,
+    448
+  ],
+  "changed_pixels": 9675,
+  "changed_bbox": [
+    201,
+    159,
+    443,
+    313
+  ],
+  "outside_edit_region_rgba_exact": true,
+  "normalization": "nearest, original palette, binary alpha; no body warp"
+}

@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-25",
+  "result": "pass",
+  "verification": "independent_read_only_patch_and_asset_integrity",
+  "changed_pixels": 9675,
+  "changed_bbox": [
+    201,
+    159,
+    443,
+    313
+  ],
+  "checks": {
+    "patch_in_memory_rebuild_exact": true,
+    "outside_edit_mask_rgba_unchanged": true,
+    "face_protection_rgba_unchanged": true,
+    "lower_body_y_ge_313_unchanged": true,
+    "original_palette_colors": 96,
+    "binary_body_alpha": true,
+    "right_margin_px": 5,
+    "far_right_cap_x_ge_420_before_y_range": [
+      159,
+      178
+    ],
+    "far_right_cap_x_ge_420_after_y_range": [
+      198,
+      220
+    ],
+    "overridden_body_id": 3,
+    "unchanged_stages_equal_v2": [
+      0,
+      1,
+      5,
+      6,
+      7
+    ],
+    "v2_track_and_opacity_identical": true,
+    "v2_fx_reference_and_hash_identical": true,
+    "first_last_preview_identical": true,
+    "comparison_absolute_time_aligned": true,
+    "gif_body_rgb_max_difference": 0,
+    "gif_fx_quantization_max_channel_difference": 24,
+    "atlas_cells_match_png": true,
+    "all_source_output_hashes_match": true,
+    "gdignore_present": true,
+    "readme_relative_links_valid": true
+  },
+  "gifs": {
+    "preview.gif": {
+      "sha256": "48b8dc939e90415bceec4eba18ad95f5495dc854a3891ea3b62bc8344bad3901",
+      "decoded_frames": 8,
+      "total_ms": 1150
+    },
+    "preview_slow.gif": {
+      "sha256": "65c45bd70a438888436367184842b0be8a01fd115039700ff9657e873ee86250",
+      "decoded_frames": 8,
+      "total_ms": 1950
+    },
+    "comparison.gif": {
+      "sha256": "0e1ad7723abb80ca36dde4b441cceb40adf04215f2b5b2eff8b9a29ed4cf1a7e",
+      "decoded_frames": 8,
+      "total_ms": 1150
+    }
+  },
+  "static_review": {
+    "evidence": "contact_before_after.png",
+    "result": "no_new_must_fix",
+    "notes": [
+      "棍端稍下压仍向右上斜出",
+      "双手与直棍连接，袖口无明显开缝/残片",
+      "脸和站位观感保持"
+    ]
+  },
+  "not_verified": [
+    "owner_preference_for_final_angle",
+    "continuous_playback_impression",
+    "runtime_integration",
+    "in_game_damage_timing"
+  ]
+}

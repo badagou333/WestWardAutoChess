@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-25",
+  "user_authorization": "好很多了，再把最后攻击的棍尾往下面压一点",
+  "interpretation": "最后出手前方右侧棍端略下压，配合前手和腕部，不改认可的时序与残影",
+  "tool": "built-in image_gen.imagegen",
+  "input": {
+    "file": "../guard_monk_pixel_attack_v1/frames/03_contact_up.png",
+    "sha256": "23125c59b850b9baba2dd73600b10a503368169dcde4b4055f5c65b8b47eba20"
+  },
+  "generated_edit": {
+    "file": "source/contact_generated.png",
+    "sha256": "8c2b226ff85fcb38d62d3185ba4e1213d0f2cea009e228104126de44bb26f1c0",
+    "actual_canvas": [
+      1254,
+      1254
+    ],
+    "generation_artifact": "exec-63f62c93-8db7-4275-b92d-013739d884d6.png",
+    "prompt": "source/PROMPT_LOWER_TIP.txt"
+  },
+  "applied_patch": {
+    "spec": "patch_spec.json",
+    "mask": "source/edit_region.png",
+    "body_file": "body/03_contact_lowered.png",
+    "sha256": "ef4aef7467fa53efaba33f818909c8f209735ff5090609d2beae50a586c2cc93",
+    "changed_pixels": 9675,
+    "changed_bbox": [
+      201,
+      159,
+      443,
+      313
+    ],
+    "outside_mask_rgba_identical": true,
+    "normalization": "NEAREST匹配448画布、原96色、二值alpha；局部贴回，不变形角色"
+  },
+  "unchanged_authorities": {
+    "timing": "../guard_monk_pixel_attack_v2/impact_spec.json",
+    "fx": "../guard_monk_pixel_attack_v2/fx/trail.png",
+    "fx_sha256": "b3583abbbe58e48c151c9b2f4513cc3ac46c4c0207212a2ad74fe483c3b6540d"
+  },
+  "static_review": "前后接触图复核无新增臂棍连接／残片必修",
+  "runtime_integrated": false
+}

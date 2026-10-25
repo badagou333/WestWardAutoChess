@@ -1,0 +1,6 @@
+{
+  "base_v1_dir": "../guard_monk_pixel_attack_v1",
+  "base_v2_dir": "../guard_monk_pixel_attack_v2",
+  "override_file": "body/03_contact_lowered.png",
+  "override_id": 3
+}
