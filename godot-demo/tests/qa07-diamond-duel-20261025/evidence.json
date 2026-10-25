@@ -522,7 +522,7 @@
 		"not all historical suites or old full main run rerun",
 		"audio disabled/Dummy",
 		"headless logical input is not OS input",
-		"natural 1v1 always ends in a monk win at shipped numbers; defeat path is synthetic"
+		"the six observed natural 1v1 runs all ended in a monk win; defeat path is synthetic"
 	],
 	"result": "PASS (limited technical scope) with no production must-fix",
 	"worktree_at_start": "clean; origin/master...HEAD 0 0"

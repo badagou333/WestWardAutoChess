@@ -60,4 +60,4 @@ $GODOT --headless --main-pack /tmp/qa-diamond.pck --audio-driver Dummy \
 - 原生窗口/鼠标：**未做**。沙箱拒绝 `ps`，无法枚举/识别新窗口；无 cliclick/PyObjC；
   `screencapture` 只能全屏且无窗口 id/录屏权限许可；审批提示已禁用。详见 `evidence.json`。
 - 05 实际视觉/连续步态/遮挡/血条、负责人真人体验、Windows、任意 DPI/拥堵、设备听感未验。
-- 自然 1v1 在现有数值下总是 monk 胜；失败分支仅用测试专用 10 HP 探针验证，不是自然平衡结论。
+- 本轮 6 局自然 1v1 均为 monk 胜（未穷举全部格位）；失败分支仅用测试专用 10 HP 探针验证，不是自然平衡结论。
