@@ -1,0 +1,17 @@
+# 灰鼠投石索攻击候选
+
+2026-10-26。独立448×448像素攻击包，作者检查及独立代理C的视觉、技术复核均通过，现已冻结。尚未接入游戏，不含受击、行走或死亡。
+
+权威身份源为 `art/concepts/gray_rat/nine_sols_v1/gray-rat-nine-sols-candidate.png`：灰毛圆耳、白头巾、旧布衣、赤足、屏右同髋裸长尾。武器是真实双索皮兜投石索。屏左原投掷右手留住指环，只松另一端；皮兜两端持续连接两索，细棕索与粗粉尾分开。
+
+8张真实关键姿势：准备单石→装入皮兜→后绕→越头→单端释放→空掌接回自由端→复握两端并取下一石→举石→复用同一准备。13显示阶段；正常1850ms、慢速3350ms，其中末尾额外静待350ms，释放事件580ms仅为预览元数据。
+
+主要交付：`frames/` 单帧、`atlas.png`、`preview.gif`、`preview_slow.gif`、`contact_sheet.png`、`foot_alignment_review.png`、`manifest.json`、`structural_report.json`、`validation.json`。当前独立验收结论以 `validation.json` 和 `REVIEW.md` 为准，导出记录中的待审状态保留为导出时历史。
+
+独立C确认八姿势同臂投掷、单端释放、双手捕索后复握成立，单石、索尾分离及足踝无必修；准备链原件、中间件、蒙版、8身体、13阶段与4石层精确重建，GIF逐字节一致。正常/慢速各13帧1850/3350ms，角色RGB误差0、石层最大通道误差7，03与04在y≥190处RGBA一致。前足底跨度0.429665px（y404）、后足0.938431px（y400）。这是另一代理的视觉与技术复核，未宣称真人连续体验或运行通过。
+
+生成原件使用内置imagegen。`source/mechanics_sheet.webp` 的坏释放/收索整身没有直接采用；装石与释放使用定向局部新稿，收索以原本干净准备身体加既有正确抓索空掌、皮兜与索材重组，未因工具401跳过收索。完整提示词、原PNG SHA、无损WebP与逐RGBA相等证据见 `source/provenance.json`。未改用外部API或其他模型。
+
+完整人物按实际连通bbox与seed提取，共同0.84最近邻缩放；局部武器注册、足底注册和蒙版在 `prepare_sources.py` 与 `source/preparation_report.json` 中记录，未逐人物高度拟合。最终1.0仅为448格重新封装。`build_spec.py` 生成本包规格，再交公共 `tools/build_attack.py --spec gray_rat/spec.json` 导出，公共引擎没有修改。
+
+具体逐姿势检查、失败修正与观察边界见 `REVIEW.md`。负责人最终连续观感、运行采用和事件同步仍待完成。

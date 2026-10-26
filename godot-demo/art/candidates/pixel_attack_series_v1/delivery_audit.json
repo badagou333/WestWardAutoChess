@@ -1,0 +1,194 @@
+{
+  "updated": "2026-10-26",
+  "role_count": 9,
+  "body_count": 56,
+  "stage_count": 90,
+  "all_declared_media_decode": true,
+  "normal_and_slow_timing_matches_manifests": true,
+  "local_html_file_reference_count": 225,
+  "all_local_html_file_references_exist": true,
+  "html_verification": "static references and media decode; browser interaction not verified (local file URL policy)",
+  "runtime_integrated": false,
+  "roles": [
+    {
+      "id": "guard_monk",
+      "title": "护寺棍僧",
+      "action": "右上出棍",
+      "status": "candidate_pass",
+      "body_count": 6,
+      "stage_count": 9,
+      "folder": "../guard_monk_pixel_attack_v5",
+      "normal": {
+        "frames": 9,
+        "total_ms": 1150,
+        "sha256": "2f80e7d6ac74aa58f63502b55460536c88902242d293b20cac7774735923be12"
+      },
+      "slow": {
+        "frames": 9,
+        "total_ms": 1950,
+        "sha256": "e1b2e0e8b1c4df0ddb69b04ddfd8d72db6169cb10278cafd58f78d718b1bf6cd"
+      },
+      "all_stage_files_exist_and_decode": true
+    },
+    {
+      "id": "wild_hunter",
+      "title": "山野猎户",
+      "action": "拉弓放箭",
+      "status": "candidate_pass",
+      "body_count": 6,
+      "stage_count": 12,
+      "folder": "wild_hunter",
+      "normal": {
+        "frames": 11,
+        "total_ms": 1760,
+        "sha256": "87e40786ce63e5dddaabda7158a42c416a6ae1aabc3e915a37b5f6e070e8b09f"
+      },
+      "slow": {
+        "frames": 11,
+        "total_ms": 3220,
+        "sha256": "0d82fbf93a713e2557126ae9d8bf010c36c47de1f1db73d070f2334ceb5fa339"
+      },
+      "all_stage_files_exist_and_decode": true
+    },
+    {
+      "id": "foxfire_imp",
+      "title": "狐火小妖",
+      "action": "双掌交替火攻",
+      "status": "candidate_pass",
+      "body_count": 6,
+      "stage_count": 14,
+      "folder": "foxfire_imp",
+      "normal": {
+        "frames": 14,
+        "total_ms": 1750,
+        "sha256": "6bbe56aef0c137844078e309d18b02ab78fa80e219a112c95a06eebc8f952f17"
+      },
+      "slow": {
+        "frames": 14,
+        "total_ms": 3150,
+        "sha256": "b4a16f95e231a5f8b565f5f3ae55f71014bd30d213914f392463c1e890338d3f"
+      },
+      "all_stage_files_exist_and_decode": true
+    },
+    {
+      "id": "sparrow_spirit",
+      "title": "山雀精",
+      "action": "挥翼风刃",
+      "status": "candidate_pass",
+      "body_count": 6,
+      "stage_count": 11,
+      "folder": "sparrow_spirit",
+      "normal": {
+        "frames": 11,
+        "total_ms": 1350,
+        "sha256": "b9d6ab8c9842e9f7ada3b4811c489bace59c2b80b6b8c3a9ce2e48403eeff80e"
+      },
+      "slow": {
+        "frames": 11,
+        "total_ms": 2400,
+        "sha256": "a2f31c975ab1545bd8adeff644eea1f07060dee5318895eae6641497b08c66d4"
+      },
+      "all_stage_files_exist_and_decode": true
+    },
+    {
+      "id": "mountain_wolf",
+      "title": "山狼",
+      "action": "前探咬合",
+      "status": "candidate_pass",
+      "body_count": 6,
+      "stage_count": 7,
+      "folder": "mountain_wolf",
+      "normal": {
+        "frames": 7,
+        "total_ms": 1170,
+        "sha256": "ee0d9c52dad580523eab9e0eada108ceec05334a02b0b7c572fa14069c4c7515"
+      },
+      "slow": {
+        "frames": 7,
+        "total_ms": 1990,
+        "sha256": "3bc0c934f6e9cc1d99f5e337c993a440a175654525183da54cba881d45d163c6"
+      },
+      "all_stage_files_exist_and_decode": true
+    },
+    {
+      "id": "boar",
+      "title": "山猪",
+      "action": "单手挥锤",
+      "status": "candidate_pass",
+      "body_count": 6,
+      "stage_count": 7,
+      "folder": "boar",
+      "normal": {
+        "frames": 7,
+        "total_ms": 1400,
+        "sha256": "3cf006cc696a7763e18d529a712092b69c39fc2cba2738c17721b7f5111139fd"
+      },
+      "slow": {
+        "frames": 7,
+        "total_ms": 2450,
+        "sha256": "e3432ef52d19783c510d51ca2a25b02972756009540018cc34c8a86314055915"
+      },
+      "all_stage_files_exist_and_decode": true
+    },
+    {
+      "id": "gray_rat",
+      "title": "灰鼠",
+      "action": "投石与收索",
+      "status": "candidate_pass",
+      "body_count": 8,
+      "stage_count": 13,
+      "folder": "gray_rat",
+      "normal": {
+        "frames": 13,
+        "total_ms": 1850,
+        "sha256": "3ba063115ea438867684f3a673bfd11e0adaebff7ceda432e6f26cd2531d3cb6"
+      },
+      "slow": {
+        "frames": 13,
+        "total_ms": 3350,
+        "sha256": "6afff03cbaf113afbac3d4531d8c632b04f6b6b6344b725e8fb7344424ef2eae"
+      },
+      "all_stage_files_exist_and_decode": true
+    },
+    {
+      "id": "bear_lord",
+      "title": "熊山君",
+      "action": "双手重棍",
+      "status": "candidate_pass",
+      "body_count": 6,
+      "stage_count": 7,
+      "folder": "bear_lord",
+      "normal": {
+        "frames": 7,
+        "total_ms": 1650,
+        "sha256": "1694cfb3f842332934f76ed3786222c9418714d64e488688c8191301a6d66420"
+      },
+      "slow": {
+        "frames": 7,
+        "total_ms": 2900,
+        "sha256": "2749b8c33d4595ce2ae33f18f0dbf4d126829d5e1c12bdffe8b8189073b3bf98"
+      },
+      "all_stage_files_exist_and_decode": true
+    },
+    {
+      "id": "herbal_spirit_child",
+      "title": "药灵童子",
+      "action": "治疗施放",
+      "status": "candidate_pass",
+      "body_count": 6,
+      "stage_count": 10,
+      "folder": "herbal_spirit_child",
+      "normal": {
+        "frames": 10,
+        "total_ms": 1630,
+        "sha256": "bd709a65bd556c14beb2d1d183a7a732e911030899df629bca334e686befda52"
+      },
+      "slow": {
+        "frames": 10,
+        "total_ms": 2910,
+        "sha256": "aeee8d7881867f9d364dbfca83972e7832f7ee355fd15ecc2db822e2893bc948"
+      },
+      "all_stage_files_exist_and_decode": true
+    }
+  ]
+}

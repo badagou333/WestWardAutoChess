@@ -44,14 +44,14 @@
       "id": "boar",
       "name": "山猪",
       "action": "mace_strike",
-      "status": "independent_review",
+      "status": "candidate_pass",
       "path": "boar/README.md"
     },
     {
       "id": "gray_rat",
       "name": "灰鼠",
       "action": "sling",
-      "status": "independent_review",
+      "status": "candidate_pass",
       "path": "gray_rat/README.md"
     },
     {
@@ -69,6 +69,18 @@
       "path": "herbal_spirit_child/README.md"
     }
   ],
-  "complete": false,
-  "healing_scope": "owner_confirmed"
+  "complete": true,
+  "healing_scope": "owner_confirmed",
+  "body_pose_count": 56,
+  "display_stage_count": 90,
+  "attack_packs": 8,
+  "healing_packs": 1,
+  "remote_sync": "blocked_by_repository_quota",
+  "last_successfully_pushed_commit": "7097d075b91e1404c773c38928c26bb6aa4beebe",
+  "sync_blocker": {
+    "limit_mb": 1024,
+    "reported_rejected_size_mb": 1050.203,
+    "reason": "Gitee pre-receive hook: repository size exceeds limit",
+    "history_rewritten": false
+  }
 }

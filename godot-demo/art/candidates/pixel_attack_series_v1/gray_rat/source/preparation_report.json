@@ -1,0 +1,630 @@
+{
+  "source_scale_common": 0.84,
+  "body_height_fitting": false,
+  "upstream_complete_extraction": [
+    {
+      "index": 0,
+      "complete_bbox": [
+        140,
+        5,
+        489,
+        332
+      ],
+      "seed": [
+        300,
+        230
+      ],
+      "paste": [
+        81,
+        92
+      ]
+    },
+    {
+      "index": 1,
+      "complete_bbox": [
+        633,
+        6,
+        951,
+        331
+      ],
+      "seed": [
+        780,
+        240
+      ],
+      "paste": [
+        97,
+        93
+      ]
+    },
+    {
+      "index": 2,
+      "complete_bbox": [
+        1006,
+        8,
+        1474,
+        331
+      ],
+      "seed": [
+        1300,
+        240
+      ],
+      "paste": [
+        22,
+        94
+      ]
+    },
+    {
+      "index": 3,
+      "complete_bbox": [
+        157,
+        334,
+        492,
+        682
+      ],
+      "seed": [
+        310,
+        580
+      ],
+      "paste": [
+        88,
+        82
+      ]
+    },
+    {
+      "index": 4,
+      "complete_bbox": [
+        643,
+        365,
+        1111,
+        682
+      ],
+      "seed": [
+        800,
+        580
+      ],
+      "paste": [
+        22,
+        97
+      ]
+    },
+    {
+      "index": 5,
+      "complete_bbox": [
+        1132,
+        363,
+        1475,
+        683
+      ],
+      "seed": [
+        1310,
+        580
+      ],
+      "paste": [
+        84,
+        96
+      ]
+    },
+    {
+      "index": 6,
+      "complete_bbox": [
+        148,
+        691,
+        503,
+        1011
+      ],
+      "seed": [
+        310,
+        890
+      ],
+      "paste": [
+        78,
+        96
+      ]
+    },
+    {
+      "index": 7,
+      "complete_bbox": [
+        629,
+        690,
+        987,
+        1011
+      ],
+      "seed": [
+        800,
+        900
+      ],
+      "paste": [
+        77,
+        95
+      ]
+    }
+  ],
+  "repairs": [
+    {
+      "id": "01_load_stone",
+      "donor": "load_local.webp at .4 to original512 input",
+      "mask": "source/load_patch_mask.png",
+      "outside_mask_rgba_preserved": true
+    },
+    {
+      "id": "04_release",
+      "base": "source pose3 overhead",
+      "wrist": "release_local.webp",
+      "mask": "source/release_wrist_mask.png",
+      "empty_cradle": "release_local.webp crop321,49,405,99 ->50x30",
+      "free_cord": "same source crop403,57,501,152, unscaled; rooted at other cradle knot",
+      "retained_cord_only_at_hand": true
+    },
+    {
+      "id": "05_catch_end",
+      "base": "source pose0 clean ready torso",
+      "paw_donor": "source pose5 originally valid empty pinch paw only",
+      "paw_translation": [
+        6,
+        -4
+      ],
+      "mask": "source/catch_paw_mask.png",
+      "extra_waist_rope_and_tassel_never_adopted": true,
+      "sling_graph": "throwing paw -> retention cord -> empty cradle -> release cord -> free paw",
+      "body_outside_paw_and_weapon_masks_preserved": true
+    }
+  ],
+  "cords": {
+    "02_wind_back": [
+      {
+        "p": [
+          168.0,
+          146.0
+        ],
+        "q": [
+          76.99137250803551,
+          193.58318236534075
+        ],
+        "chord_px_before_common_scale": 102.69727124896957
+      },
+      {
+        "p": [
+          176.0,
+          151.0
+        ],
+        "q": [
+          96.59838528466409,
+          224.9609619231285
+        ],
+        "chord_px_before_common_scale": 108.51193624665036
+      }
+    ],
+    "03_overhead": [
+      {
+        "p": [
+          143.0,
+          130.0
+        ],
+        "q": [
+          246.5344987439019,
+          135.62850921247468
+        ],
+        "chord_px_before_common_scale": 103.68737891424364
+      },
+      {
+        "p": [
+          146.0,
+          135.0
+        ],
+        "q": [
+          238.8417661836448,
+          99.43704798532389
+        ],
+        "chord_px_before_common_scale": 99.41990295759058
+      }
+    ],
+    "04_release": [
+      {
+        "p": [
+          147.0,
+          130.0
+        ],
+        "q": [
+          251.0,
+          96.0
+        ],
+        "chord_px_before_common_scale": 109.41663493271945
+      }
+    ],
+    "05_catch_end": [
+      {
+        "p": [
+          115.0,
+          212.0
+        ],
+        "q": [
+          108.0,
+          325.0
+        ],
+        "chord_px_before_common_scale": 113.21660655575224
+      },
+      {
+        "p": [
+          145.0,
+          325.0
+        ],
+        "q": [
+          252.0,
+          297.0
+        ],
+        "chord_px_before_common_scale": 110.60289327137876
+      }
+    ]
+  },
+  "source_changes": [
+    {
+      "id": "00_ready",
+      "body_source_index": 0,
+      "changed_rgba_pixels": 0,
+      "change_bbox": null
+    },
+    {
+      "id": "01_load_stone",
+      "body_source_index": 1,
+      "changed_rgba_pixels": 6805,
+      "change_bbox": [
+        131,
+        271,
+        232,
+        355
+      ]
+    },
+    {
+      "id": "02_wind_back",
+      "body_source_index": 2,
+      "changed_rgba_pixels": 6861,
+      "change_bbox": [
+        22,
+        141,
+        181,
+        252
+      ]
+    },
+    {
+      "id": "03_overhead",
+      "body_source_index": 3,
+      "changed_rgba_pixels": 6959,
+      "change_bbox": [
+        142,
+        82,
+        341,
+        146
+      ]
+    },
+    {
+      "id": "04_release",
+      "body_source_index": 3,
+      "changed_rgba_pixels": 8168,
+      "change_bbox": [
+        105,
+        82,
+        386,
+        176
+      ]
+    },
+    {
+      "id": "05_catch_end",
+      "body_source_index": 0,
+      "changed_rgba_pixels": 8988,
+      "change_bbox": [
+        81,
+        211,
+        299,
+        367
+      ]
+    },
+    {
+      "id": "06_take_stone",
+      "body_source_index": 6,
+      "changed_rgba_pixels": 0,
+      "change_bbox": null
+    },
+    {
+      "id": "07_lift_stone",
+      "body_source_index": 7,
+      "changed_rgba_pixels": 0,
+      "change_bbox": null
+    }
+  ],
+  "sole_registration": [
+    {
+      "id": "00_ready",
+      "source_rear_sole": [
+        161.6451612903226,
+        413
+      ],
+      "common_scale": 0.84,
+      "paste": [
+        -6,
+        53
+      ],
+      "rear_raster_correction": [
+        0,
+        0
+      ],
+      "front_before": [
+        286.0,
+        404
+      ],
+      "front_correction_at_sole": [
+        0,
+        0
+      ],
+      "front_after": [
+        286.0,
+        404
+      ],
+      "rear_after": [
+        129.58823529411765,
+        400
+      ],
+      "taper_band_y": [
+        354,
+        387
+      ]
+    },
+    {
+      "id": "01_load_stone",
+      "source_rear_sole": [
+        146.53333333333333,
+        413
+      ],
+      "common_scale": 0.84,
+      "paste": [
+        7,
+        53
+      ],
+      "rear_raster_correction": [
+        -1,
+        0
+      ],
+      "front_before": [
+        290.1875,
+        403
+      ],
+      "front_correction_at_sole": [
+        -4,
+        1
+      ],
+      "front_after": [
+        286.1875,
+        404
+      ],
+      "rear_after": [
+        129.14,
+        400
+      ],
+      "taper_band_y": [
+        354,
+        387
+      ]
+    },
+    {
+      "id": "02_wind_back",
+      "source_rear_sole": [
+        192.01666666666668,
+        413
+      ],
+      "common_scale": 0.84,
+      "paste": [
+        -31,
+        53
+      ],
+      "rear_raster_correction": [
+        0,
+        0
+      ],
+      "front_before": [
+        298.22826086956525,
+        402
+      ],
+      "front_correction_at_sole": [
+        -12,
+        2
+      ],
+      "front_after": [
+        286.22826086956525,
+        404
+      ],
+      "rear_after": [
+        130.078431372549,
+        400
+      ],
+      "taper_band_y": [
+        354,
+        387
+      ]
+    },
+    {
+      "id": "03_overhead",
+      "source_rear_sole": [
+        125.02173913043478,
+        429
+      ],
+      "common_scale": 0.84,
+      "paste": [
+        25,
+        40
+      ],
+      "rear_raster_correction": [
+        3,
+        0
+      ],
+      "front_before": [
+        305.9157894736842,
+        400
+      ],
+      "front_correction_at_sole": [
+        -20,
+        4
+      ],
+      "front_after": [
+        285.9157894736842,
+        404
+      ],
+      "rear_after": [
+        129.90196078431373,
+        400
+      ],
+      "taper_band_y": [
+        354,
+        387
+      ]
+    },
+    {
+      "id": "04_release",
+      "source_rear_sole": [
+        125.02173913043478,
+        429
+      ],
+      "common_scale": 0.84,
+      "paste": [
+        25,
+        40
+      ],
+      "rear_raster_correction": [
+        3,
+        0
+      ],
+      "front_before": [
+        305.9157894736842,
+        400
+      ],
+      "front_correction_at_sole": [
+        -20,
+        4
+      ],
+      "front_after": [
+        285.9157894736842,
+        404
+      ],
+      "rear_after": [
+        129.90196078431373,
+        400
+      ],
+      "taper_band_y": [
+        354,
+        387
+      ]
+    },
+    {
+      "id": "05_catch_end",
+      "source_rear_sole": [
+        161.6451612903226,
+        413
+      ],
+      "common_scale": 0.84,
+      "paste": [
+        -6,
+        53
+      ],
+      "rear_raster_correction": [
+        0,
+        0
+      ],
+      "front_before": [
+        286.0,
+        404
+      ],
+      "front_correction_at_sole": [
+        0,
+        0
+      ],
+      "front_after": [
+        286.0,
+        404
+      ],
+      "rear_after": [
+        129.58823529411765,
+        400
+      ],
+      "taper_band_y": [
+        354,
+        387
+      ]
+    },
+    {
+      "id": "06_take_stone",
+      "source_rear_sole": [
+        159.57692307692307,
+        412
+      ],
+      "common_scale": 0.84,
+      "paste": [
+        -4,
+        54
+      ],
+      "rear_raster_correction": [
+        0,
+        0
+      ],
+      "front_before": [
+        288.3454545454546,
+        402
+      ],
+      "front_correction_at_sole": [
+        -2,
+        2
+      ],
+      "front_after": [
+        286.3454545454546,
+        404
+      ],
+      "rear_after": [
+        129.84615384615384,
+        400
+      ],
+      "taper_band_y": [
+        354,
+        387
+      ]
+    },
+    {
+      "id": "07_lift_stone",
+      "source_rear_sole": [
+        156.1375,
+        412
+      ],
+      "common_scale": 0.84,
+      "paste": [
+        -1,
+        54
+      ],
+      "rear_raster_correction": [
+        -1,
+        0
+      ],
+      "front_before": [
+        287.29357798165137,
+        402
+      ],
+      "front_correction_at_sole": [
+        -1,
+        2
+      ],
+      "front_after": [
+        286.29357798165137,
+        404
+      ],
+      "rear_after": [
+        129.17910447761193,
+        400
+      ],
+      "taper_band_y": [
+        354,
+        387
+      ]
+    }
+  ],
+  "front_target": [
+    286.0,
+    404
+  ],
+  "registered_source_sha256": "84b578fe5332e7da8f92c77ae78aee646551f195b60b5de19b16e8ff26038eef",
+  "registered_rgba_sha256": "d0d897cfb2e2b81bffe4f4668f3b95b438ccc062cfb39d3f3805f0959d63cc8d"
+}

@@ -1,0 +1,153 @@
+{
+  "date": "2026-10-26",
+  "identity_reference": {
+    "file": "godot-demo/art/concepts/gray_rat/nine_sols_v1/gray-rat-nine-sols-candidate.png",
+    "sha256": "c3544a1c99e25074c7991c361f0ac8160c64bd77e881f224f6143142bf65f516"
+  },
+  "passes": [
+    {
+      "id": "initial",
+      "tool": "built-in imagegen",
+      "original_png_basename": "exec-6bd9728c-f1f8-4c77-833f-c50a6012e82f.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "original_png_sha256": "b65443048db69f7af036b67a847025db87f6e049cf9ed774c0c6b0e828f37cf3",
+      "rgba_pixel_sha256": "1737b07ac03b45b27c886eab378616488578366c07b46e8e8a55eef2df774623",
+      "stored": false,
+      "adopted": false,
+      "reason": "Not adopted: double load stone, missing overhead rotation, wrong release graph and extra collect rope."
+    },
+    {
+      "id": "mechanics_repair",
+      "tool": "built-in imagegen",
+      "original_png_basename": "exec-8f16bd20-10e9-4bee-8ed8-d7ca5ddde0e6.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "original_png_sha256": "0ddc944aa4f743608780c1013b367ad0eb46de59ec22e8b07a3871b08fc35502",
+      "rgba_pixel_sha256": "bf7d39f86d0b2005670be87cf3d019217e2e7210045f12972a5e62aa812cddac",
+      "stored": true,
+      "adopted": true,
+      "reason": "Whole source is not passed as drawn; only corrected/recorded subsets form final candidate.",
+      "file": "source/mechanics_sheet.webp",
+      "sha256": "8a7cacb013a2612378003c6e97490dc85f3350f20cd13b167090302b0b5c32f7",
+      "lossless_webp_exact_rgba_verified": true,
+      "adoption_scope": "complete selected original bodies0,1,2,3,6,7; collect5 empty catching paw only; stone8. Wrong original release4 and collect torso5 are not adopted. All local changes and weapon rebuilding in preparation_report.json"
+    }
+  ],
+  "status": "author_visual_review_pass_pending_independent",
+  "runtime_integrated": false,
+  "local_passes": [
+    {
+      "id": "load_local",
+      "file": "source/load_local.webp",
+      "original_png_sha256": "b1dc8e8a567d73180af7fd6516d12d7f6326b2c61293c3deeac036152fef0611",
+      "webp_sha256": "53e856be48d82fde487c3a9d933f4c60d1e0f2f4826dbfd1a355f9255e55f722",
+      "rgba_sha256": "369315740a394d869119947d2162d70ae79294a0c7ccd004331a000d127283a4",
+      "lossless_rgba_equal": true,
+      "generated_size": [
+        1254,
+        1254
+      ],
+      "status": "masked_parts_adopted",
+      "original_png": "/Users/leqiong/.codex/generated_images/01a1736b-42cd-75c0-aced-f1181f57304b/exec-48352c8a-d25f-48e6-94c7-c0e71a67d346.png",
+      "tool": "built-in imagegen",
+      "prompt_file": "source/prompt-load-local.txt",
+      "adopted": true,
+      "adoption_scope": "load fingers/stone/cradle mask only",
+      "input_reference": "source/inputs/load.webp"
+    },
+    {
+      "id": "release_local",
+      "file": "source/release_local.webp",
+      "original_png_sha256": "d3728e39c8c3fa186fd8c71243f16c0957652f4c6e07af7585cb817647a09f38",
+      "webp_sha256": "598e341b23ebc5e87da978c722971642a1872a0bfe8269dca31957a29f52e5fc",
+      "rgba_sha256": "29e4cba2a17438a85adcf1a8dd3bcd22e181bc938366cfd6ed0d665640a9077c",
+      "lossless_rgba_equal": true,
+      "generated_size": [
+        1254,
+        1254
+      ],
+      "status": "masked_parts_adopted",
+      "original_png": "/Users/leqiong/.codex/generated_images/01a1736b-42cd-75c0-aced-f1181f57304b/exec-25892c14-e083-4f2f-849d-afdd2a85f338.png",
+      "tool": "built-in imagegen",
+      "prompt_file": "source/prompt-release-local.txt",
+      "adopted": true,
+      "adoption_scope": "wrist mask, straight cord texture, empty open cradle and released free cord; body remains original overhead pose",
+      "input_reference": "source/inputs/release.webp"
+    }
+  ],
+  "failed_calls": [
+    {
+      "id": "collect_local",
+      "tool": "built-in imagegen",
+      "prompt_file": "source/prompt-collect-local.txt",
+      "error": "HTTP401 Unauthorized: Your IP is not authorized to make this request.",
+      "result_saved": false,
+      "fallback_used": false
+    },
+    {
+      "id": "collect_retry",
+      "tool": "built-in imagegen",
+      "prompt_file": "source/prompt-collect-retry.txt",
+      "error": "HTTP401 Unauthorized: Your IP is not authorized to make this request.",
+      "result_saved": false,
+      "fallback_used": false,
+      "resolution": "no more retries; reconstructed with existing generated clean torso/pinch paw, cradle and cord pixels under parent authorization"
+    }
+  ],
+  "style_reference": {
+    "file": "godot-demo/art/candidates/guard_monk_pixel_v1/completed_v4/history/detail_pass_generated.png",
+    "role": "detailed pixel style only; identity comes solely from gray rat concept"
+  },
+  "preserved_edit_inputs": [
+    {
+      "role": "load",
+      "original_tool_input_basename": "edit_load.png",
+      "file": "source/inputs/load.webp",
+      "input_png_sha256": "1b0aef3ff493c0121e50a923a05e4bff0b79526b994b2e8ea22e828bc9aa9b9b",
+      "webp_sha256": "d355cf9cde383b931037666e614460c5eda3f523797f0ea91c94b55c1908e88b",
+      "rgba_pixel_sha256": "862ffc3425c071e79d5db70dd8393da4401b1c3ee0daa514e88a0b58cc16d5cd",
+      "exact_rgba_equal": true,
+      "reconstruction": "component_layout.json and edit_layout.json from mechanics_sheet.webp"
+    },
+    {
+      "role": "release",
+      "original_tool_input_basename": "edit_release.png",
+      "file": "source/inputs/release.webp",
+      "input_png_sha256": "05db20e755e236f58245b322fb4002f59e4ca1f79b21de3dbd88236a34c20788",
+      "webp_sha256": "c383bce29fc5325e70f6764ca7eb7682c854b3b25bd6a9da865acf93544de6de",
+      "rgba_pixel_sha256": "e56ee0ac0d9624512462eaef0a3fa0f89bf1467c967d928151fc1606ac40d8f8",
+      "exact_rgba_equal": true,
+      "reconstruction": "component_layout.json and edit_layout.json from mechanics_sheet.webp"
+    },
+    {
+      "role": "collect",
+      "original_tool_input_basename": "edit_collect.png",
+      "file": "source/inputs/collect.webp",
+      "input_png_sha256": "516ab0160b1fe160d9ffd28dceda07b810a0b60d6f9d3098dd51a33ff06db797",
+      "webp_sha256": "fc2e0031297f8765a93896f0d31f518a82961928224596c6ac37dc0f08485d22",
+      "rgba_pixel_sha256": "a2bd1f862a590ce234bdc19995943222442cb2c057d1238bbc93e0fab1554246",
+      "exact_rgba_equal": true,
+      "reconstruction": "component_layout.json and edit_layout.json from mechanics_sheet.webp"
+    }
+  ],
+  "deterministic_preparation": {
+    "script": "prepare_sources.py",
+    "common_body_scale": 0.84,
+    "whole_body_height_fit": false,
+    "packaging_scale": 1.0,
+    "complete_bbox_and_seed": "source/component_layout.json",
+    "local_masks": "source/repair_masks.png",
+    "report": "source/preparation_report.json",
+    "standing_windup_release_cord_chords": "approximately100–113 original512px; rendered .84, replacing previous exaggerated180–230px radius",
+    "local_front_foot_taper_y": [
+      354,
+      387
+    ],
+    "independent_gate": "pending"
+  }
+}

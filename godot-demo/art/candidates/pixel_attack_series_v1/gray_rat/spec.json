@@ -1,0 +1,272 @@
+{
+  "character": "gray_rat",
+  "display_name": "灰鼠 / single-stone sling attack",
+  "canvas": [
+    448,
+    448
+  ],
+  "anchor": [
+    130,
+    400
+  ],
+  "palette_colors": 96,
+  "sources": {
+    "registered": {
+      "file": "source/registered_poses.webp",
+      "sha256": "84b578fe5332e7da8f92c77ae78aee646551f195b60b5de19b16e8ff26038eef",
+      "expected_pixel_sha256": "d0d897cfb2e2b81bffe4f4668f3b95b438ccc062cfb39d3f3805f0959d63cc8d",
+      "scale": 1.0
+    }
+  },
+  "bodies": [
+    {
+      "id": "00_ready",
+      "name": "00_ready",
+      "source": "registered",
+      "source_box": [
+        0,
+        0,
+        448,
+        448
+      ],
+      "source_anchor": [
+        130,
+        400
+      ]
+    },
+    {
+      "id": "01_load_stone",
+      "name": "01_load_stone",
+      "source": "registered",
+      "source_box": [
+        448,
+        0,
+        896,
+        448
+      ],
+      "source_anchor": [
+        578,
+        400
+      ]
+    },
+    {
+      "id": "02_wind_back",
+      "name": "02_wind_back",
+      "source": "registered",
+      "source_box": [
+        896,
+        0,
+        1344,
+        448
+      ],
+      "source_anchor": [
+        1026,
+        400
+      ]
+    },
+    {
+      "id": "03_overhead",
+      "name": "03_overhead",
+      "source": "registered",
+      "source_box": [
+        1344,
+        0,
+        1792,
+        448
+      ],
+      "source_anchor": [
+        1474,
+        400
+      ]
+    },
+    {
+      "id": "04_release",
+      "name": "04_release",
+      "source": "registered",
+      "source_box": [
+        0,
+        448,
+        448,
+        896
+      ],
+      "source_anchor": [
+        130,
+        848
+      ]
+    },
+    {
+      "id": "05_catch_end",
+      "name": "05_catch_end",
+      "source": "registered",
+      "source_box": [
+        448,
+        448,
+        896,
+        896
+      ],
+      "source_anchor": [
+        578,
+        848
+      ]
+    },
+    {
+      "id": "06_take_stone",
+      "name": "06_take_stone",
+      "source": "registered",
+      "source_box": [
+        896,
+        448,
+        1344,
+        896
+      ],
+      "source_anchor": [
+        1026,
+        848
+      ]
+    },
+    {
+      "id": "07_lift_stone",
+      "name": "07_lift_stone",
+      "source": "registered",
+      "source_box": [
+        1344,
+        448,
+        1792,
+        896
+      ],
+      "source_anchor": [
+        1474,
+        848
+      ]
+    }
+  ],
+  "layers": {
+    "flight_0": {
+      "file": "source/stone_layers/flight_0.png",
+      "sha256": "a38198e5154bdd1a0a7871730612a08d96d1cb3e110e17deed5237d501129848",
+      "expected_pixel_sha256": "6fe3c7cdb0765f5e7f8a56b056e064b1756bd6cf492be1be89229aaed1b6fd88",
+      "order": "behind"
+    },
+    "flight_1": {
+      "file": "source/stone_layers/flight_1.png",
+      "sha256": "0f8d9e8f918bfddf95ab5c32c82e9f244cf5767db2b9733e56f29fabdf85e007",
+      "expected_pixel_sha256": "c80e608a9ef832a1cde590062889cf54ab7035791b8fdf5e330fbd1f9ca9c16b",
+      "order": "behind"
+    },
+    "flight_2": {
+      "file": "source/stone_layers/flight_2.png",
+      "sha256": "0faeb94b102969344babfbe762debf789f5f5862d8544256fa3790161a54f2be",
+      "expected_pixel_sha256": "cb575bf1c77a9d0fd92186dce0583147efe493b6e1a59d4ea686bde1bd452c3f",
+      "order": "behind"
+    },
+    "flight_3": {
+      "file": "source/stone_layers/flight_3.png",
+      "sha256": "b16394f1a172e31a18b0a0788a1f38be65916526b44f1370fa85b52bbfc31e15",
+      "expected_pixel_sha256": "b50ed5ad3e300334c1716705baaa161db5e8c7dfef53ae0a9139761acbace6c9",
+      "order": "behind"
+    }
+  },
+  "track": [
+    {
+      "at_ms": 0,
+      "body": "00_ready"
+    },
+    {
+      "at_ms": 120,
+      "body": "01_load_stone"
+    },
+    {
+      "at_ms": 340,
+      "body": "02_wind_back"
+    },
+    {
+      "at_ms": 490,
+      "body": "03_overhead"
+    },
+    {
+      "at_ms": 580,
+      "body": "04_release",
+      "layers": [
+        {
+          "id": "flight_0",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "at_ms": 620,
+      "body": "04_release",
+      "layers": [
+        {
+          "id": "flight_1",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "at_ms": 660,
+      "body": "04_release",
+      "layers": [
+        {
+          "id": "flight_2",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "at_ms": 700,
+      "body": "04_release",
+      "layers": [
+        {
+          "id": "flight_3",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "at_ms": 740,
+      "body": "04_release"
+    },
+    {
+      "at_ms": 820,
+      "body": "05_catch_end"
+    },
+    {
+      "at_ms": 1040,
+      "body": "06_take_stone"
+    },
+    {
+      "at_ms": 1220,
+      "body": "07_lift_stone"
+    },
+    {
+      "at_ms": 1380,
+      "body": "00_ready"
+    }
+  ],
+  "duration_ms": 1500,
+  "idle_ms": 350,
+  "events": [
+    {
+      "name": "sling_stone_release",
+      "at_ms": 580
+    }
+  ],
+  "review_profile": [
+    "real sling, two cords, one retained finger loop, release only one end",
+    "single loaded/projectile stone, separate from belt reserve stones",
+    "same screen-right bare tail root",
+    "both planted foot soles registered"
+  ],
+  "review_annotations": {
+    "actual_pose_count": 8,
+    "preparation_report": "source/preparation_report.json",
+    "common_upstream_body_scale": 0.84,
+    "normalized_packaging_scale": 1.0,
+    "body_height_fitting": false,
+    "catch_body": "clean original ready torso plus generated empty catching paw; no copied extra waist rope",
+    "weapon_parts": "only generated existing cord/cradle/stone pixels; mask and local registration recorded",
+    "runtime_integrated": false,
+    "author_visual_gate": "author_pass_pending_independent"
+  }
+}

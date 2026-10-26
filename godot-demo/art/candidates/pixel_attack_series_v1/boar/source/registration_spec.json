@@ -1,0 +1,315 @@
+{
+  "raw_source": "source/attack_sheet.webp",
+  "shared_raw_scale": 0.6,
+  "canvas": [
+    448,
+    448
+  ],
+  "waist_anchor": [
+    204,
+    286
+  ],
+  "poses": [
+    {
+      "id": "0",
+      "name": "ready",
+      "source_box": [
+        0,
+        0,
+        540,
+        530
+      ],
+      "source_anchor": [
+        316,
+        323
+      ],
+      "component_seeds": [
+        [
+          315,
+          260
+        ]
+      ]
+    },
+    {
+      "id": "1",
+      "name": "windup",
+      "source_box": [
+        540,
+        0,
+        1040,
+        530
+      ],
+      "source_anchor": [
+        785,
+        323
+      ],
+      "component_seeds": [
+        [
+          780,
+          260
+        ]
+      ]
+    },
+    {
+      "id": "2",
+      "name": "crest",
+      "source_box": [
+        1040,
+        0,
+        1536,
+        530
+      ],
+      "source_anchor": [
+        1308,
+        323
+      ],
+      "component_seeds": [
+        [
+          1320,
+          260
+        ]
+      ]
+    },
+    {
+      "id": "3",
+      "name": "mid_swing",
+      "source_box": [
+        0,
+        530,
+        570,
+        1024
+      ],
+      "source_anchor": [
+        210,
+        783
+      ],
+      "component_seeds": [
+        [
+          210,
+          730
+        ]
+      ]
+    },
+    {
+      "id": "4",
+      "name": "contact",
+      "source_box": [
+        515,
+        530,
+        1130,
+        1024
+      ],
+      "source_anchor": [
+        731,
+        788
+      ],
+      "component_seeds": [
+        [
+          740,
+          730
+        ]
+      ]
+    },
+    {
+      "id": "5",
+      "name": "recover",
+      "source_box": [
+        1120,
+        530,
+        1536,
+        1024
+      ],
+      "source_anchor": [
+        1321,
+        791
+      ],
+      "component_seeds": [
+        [
+          1320,
+          740
+        ]
+      ]
+    }
+  ],
+  "fixed_lower_body": {
+    "from_body": "0",
+    "cut_y": 293,
+    "polygon": [
+      [
+        152,
+        293
+      ],
+      [
+        278,
+        293
+      ],
+      [
+        337,
+        298
+      ],
+      [
+        343,
+        335
+      ],
+      [
+        332,
+        350
+      ],
+      [
+        335,
+        410
+      ],
+      [
+        98,
+        410
+      ],
+      [
+        100,
+        350
+      ],
+      [
+        133,
+        304
+      ]
+    ],
+    "reason": "Shared lower-body component for the explicitly chosen fixed two-hoof stance. Upper-body poses are independently drawn; no whole-character transform is used as animation.",
+    "foreground_from_original": {
+      "4": [
+        [
+          276,
+          278
+        ],
+        [
+          312,
+          278
+        ],
+        [
+          337,
+          293
+        ],
+        [
+          362,
+          302
+        ],
+        [
+          372,
+          285
+        ],
+        [
+          403,
+          282
+        ],
+        [
+          435,
+          301
+        ],
+        [
+          445,
+          340
+        ],
+        [
+          434,
+          367
+        ],
+        [
+          409,
+          380
+        ],
+        [
+          371,
+          375
+        ],
+        [
+          350,
+          347
+        ],
+        [
+          331,
+          330
+        ],
+        [
+          308,
+          319
+        ],
+        [
+          292,
+          311
+        ],
+        [
+          281,
+          300
+        ]
+      ],
+      "5": [
+        [
+          143,
+          276
+        ],
+        [
+          177,
+          276
+        ],
+        [
+          185,
+          292
+        ],
+        [
+          223,
+          307
+        ],
+        [
+          247,
+          316
+        ],
+        [
+          263,
+          315
+        ],
+        [
+          284,
+          324
+        ],
+        [
+          300,
+          347
+        ],
+        [
+          299,
+          372
+        ],
+        [
+          280,
+          387
+        ],
+        [
+          254,
+          390
+        ],
+        [
+          237,
+          375
+        ],
+        [
+          224,
+          353
+        ],
+        [
+          199,
+          339
+        ],
+        [
+          177,
+          325
+        ],
+        [
+          158,
+          315
+        ],
+        [
+          145,
+          303
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+# 山猪｜绿铜甲圆钉锤攻击候选
+
+更新时间：2026-10-26。生产ID：`boar`。六身体、七阶段回环。独立B已看全六姿势及相邻关系，并局部复看03护腕／白缠带补丁，唯一必修关闭、无新增明确必修；root已重新验证六体、两GIF与保护区域并绑定当前哈希，本批候选通过。此包没有游戏接入，非真人连续体验结论；详见validation_independent.json。
+
+角色基于[已认可山猪源](../../../concepts/mountain_boar/nine_sols_v1/mountain-boar-nine-sols-candidate.png)：双足棕毛、绿铜甲和绿巾、鼻盘獠牙、短尾、单手圆钉头短锤。采用固定双蹄支撑，上身通过肩、肘、胸腰与锤弧形成攻击；没有用整只角色的平移、缩放或压缩代替动作。
+
+- [正常预览](preview.gif)：1400ms；[半速预览](preview_slow.gif)：2450ms。
+- [完整阶段图](contact_sheet.png)、[六帧横图集](atlas.png)、[六张透明单帧](frames/)。每帧448×448，身体约246–262px高（举锤另计）。
+- [逐姿势和相邻阶段作者复核](REVIEW.md)、[作者技术检查](validation_author.json)、[公共导出结构报告](structural_report.json)。
+- [帧序与接触参考时刻](manifest.json)、[导出配置](spec.json)。命中参考为440ms，半速880ms；只是预览元数据，未绑定伤害。
+- [原始生成图无损WebP](source/attack_sheet.webp)、[完整来源/原PNG哈希/五次实发prompt记录](source/provenance.json)。只保留选用原图的无损存档；弃稿保留哈希、prompt及弃用理由。
+- [注册与共用下身配置](source/registration_spec.json)、[准备报告](source/preparation_report.json)、[共用部件后的无损工作图](source/prepared_sheet.webp)。
+
+时间表为ready@0、windup@160、crest@260、mid_swing@360、contact@440、recover@620、ready@850ms。动作1050ms，额外待机350ms。半速仅拉长动作，额外待机仍350ms。首尾复用同一ready全RGBA。
+
+原图六姿势统一以0.6倍最近邻注册到448方帧，用ready的腰带下缘以下作为共用下身，contact/recover的原绘手与锤按显式多边形保留在前景。身体几何不作仿射变形。03局部修腕使用既有contact同臂护腕/白带像素，先复现原同组96色映射，再在[明确蒙版](source/wrist_patch_spec.json)内注册服装，公共工具以1.0原尺寸包装，避免重训颜色影响其他五帧。生成原图含半透明边缘，身体按alpha≥128归二值、透明RGB归零；不宣称原图是手工原生网格绘制。
+
+[03护腕修正对照](review_wrist_clothing.png)及[允许修改范围](source/wrist_patch_mask.png)显示343个RGBA像素改动。手指、掌部、锤柄轴与柄尾保护区、蒙版外全部RGBA以及另外五张PNG全字节保持。旧03和旧报告见[修前快照](history/before_wrist_fix/)。本轮不重生整只角色，独立记录仍由root和B更新，作者不代签独立通过。
+
+复建顺序：在Pillow/NumPy环境中运行本包`prepare_fixed_stance.py`，再运行公共`../tools/build_attack.py --spec <本包spec.json绝对路径>`，最后运行本包`validate_author.py`。准备脚本和公共工具都可导入作内存重建；局部调试PNG位于忽略的`source/prepared_bodies/`，不是权威输入。Godot由本包[.gdignore](.gdignore)隔离，未改运行角色或公共工具。
+
+作者技术检查通过不代表独立美术验收、真人连续观看、负责人批准或运行验收。root转达独立B未将臂归属、头部投影和圆锤视长另判必修；当前只等03护腕单点关闭，详见REVIEW。

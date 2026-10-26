@@ -1,0 +1,173 @@
+{
+  "date": "2026-10-26",
+  "author": "pixel_asset_integrity / boar author",
+  "result": "failed",
+  "raw_png_available_during_audit": true,
+  "raw_png_webp_all_rgba_equal": true,
+  "all_actual_prompt_hashes_match": true,
+  "shared_opaque_colors": 96,
+  "prepared_sheet_replay_equal": true,
+  "public_builder_replay_equal": true,
+  "body_records": [
+    {
+      "id": "0",
+      "bbox": [
+        19,
+        138,
+        329,
+        400
+      ],
+      "minimum_margin_px": 19,
+      "opaque_components_from_torso_seed": 1,
+      "sha256": "c78c16221adef8a3870ecba351f2d9a52c1050aa3b9fd46df38fc52ddc091da2"
+    },
+    {
+      "id": "1",
+      "bbox": [
+        65,
+        119,
+        329,
+        400
+      ],
+      "minimum_margin_px": 48,
+      "opaque_components_from_torso_seed": 1,
+      "sha256": "ed0839a45e263227aaddd39020dc9dd65610e14d1d71ddbe0e10c6f8e3d35a77"
+    },
+    {
+      "id": "2",
+      "bbox": [
+        82,
+        101,
+        341,
+        400
+      ],
+      "minimum_margin_px": 48,
+      "opaque_components_from_torso_seed": 1,
+      "sha256": "79c09f271cfa7e80221141063807a39f4d7a1498898c5a7648275ffd9775b264"
+    },
+    {
+      "id": "3",
+      "bbox": [
+        102,
+        140,
+        413,
+        400
+      ],
+      "minimum_margin_px": 35,
+      "opaque_components_from_torso_seed": 1,
+      "sha256": "a10a3dc874858a3cf39c5e70ffe71ef4edeb054f3be52b27b710c0039f4a19ee"
+    },
+    {
+      "id": "4",
+      "bbox": [
+        90,
+        146,
+        435,
+        400
+      ],
+      "minimum_margin_px": 13,
+      "opaque_components_from_torso_seed": 1,
+      "sha256": "005941dce5735afdafa4cbcf39b15b240aead500c985987f618a0e374f506ecb"
+    },
+    {
+      "id": "5",
+      "bbox": [
+        107,
+        140,
+        329,
+        400
+      ],
+      "minimum_margin_px": 48,
+      "opaque_components_from_torso_seed": 1,
+      "sha256": "18e82bbd2ba01408ed735be51094d33bf88ce4b9f4dbfc3af2bab09d6f12cec4"
+    }
+  ],
+  "previews": {
+    "preview.gif": {
+      "fully_decoded_frames": 7,
+      "durations_ms": [
+        160,
+        100,
+        100,
+        80,
+        180,
+        230,
+        550
+      ],
+      "total_ms": 1400,
+      "maximum_rgb_channel_error": 0,
+      "public_replay_byte_identical": true,
+      "sha256": "2e6ff551b28bde0fb0ec3bc21f92e3d0c8d365dd2de0e255590eb5d1b0cab41a"
+    },
+    "preview_slow.gif": {
+      "fully_decoded_frames": 7,
+      "durations_ms": [
+        320,
+        200,
+        200,
+        160,
+        360,
+        460,
+        750
+      ],
+      "total_ms": 2450,
+      "maximum_rgb_channel_error": 0,
+      "public_replay_byte_identical": true,
+      "sha256": "815daa73d8eb5702f98a6293c0249b7c6c8a5044700723ee475dfa79bb87b1e0"
+    }
+  },
+  "stance_checks": [
+    {
+      "id": "0",
+      "sole_roi_equal_ready": true,
+      "prepared_y_lt_293_equal_registered": true
+    },
+    {
+      "id": "1",
+      "sole_roi_equal_ready": true,
+      "prepared_y_lt_293_equal_registered": true
+    },
+    {
+      "id": "2",
+      "sole_roi_equal_ready": true,
+      "prepared_y_lt_293_equal_registered": true
+    },
+    {
+      "id": "3",
+      "sole_roi_equal_ready": true,
+      "prepared_y_lt_293_equal_registered": true
+    },
+    {
+      "id": "4",
+      "sole_roi_equal_ready": true,
+      "prepared_y_lt_293_equal_registered": true
+    },
+    {
+      "id": "5",
+      "sole_roi_equal_ready": true,
+      "prepared_y_lt_293_equal_registered": true
+    }
+  ],
+  "source_png_sha256": "f5c9a754bc0524047a8944899aa4c5775229c4587cd94abd6fead53ea2dbc7b3",
+  "source_webp_sha256": "616ced8ba04342ba4f09d04ecea76003246f14d0b8c19d23b44fd81659131c14",
+  "source_rgba_pixel_sha256": "c17d3d0b19ba6a986a4301221c5cf27fcd4ad9437adeadb9d27c9ddf9a56bad3",
+  "public_builder_sha256": "1c196fdb6bf7430e94cf8737e802eb90736aeeea6546520a7792543f71e3e036",
+  "contact_ms": 440,
+  "slow_contact_ms": 880,
+  "event_preview_metadata_only": true,
+  "failures": [
+    "contact sheet replay",
+    "hoof sole pixels 1",
+    "hoof sole pixels 2",
+    "hoof sole pixels 3",
+    "hoof sole pixels 4",
+    "hoof sole pixels 5"
+  ],
+  "not_verified": [
+    "independent pose/adjacent-animation acceptance",
+    "owner approval",
+    "human continuous playback",
+    "runtime integration",
+    "damage binding"
+  ]
+}

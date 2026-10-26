@@ -1,0 +1,37 @@
+{
+  "updated": "2026-10-26",
+  "reviewer": "root independent of boar author",
+  "result": "candidate_pass_no_known_must_fix",
+  "six_current_body_rebuild_equal": true,
+  "foot_ROI_all_RGBA_equal": true,
+  "gif_all_frames_decoded": true,
+  "gif_frame_counts": [
+    7,
+    7
+  ],
+  "gif_duration_ms": [
+    1400,
+    2450
+  ],
+  "gif_rgb_all_pixels_max_error": 0,
+  "sources_verified_by_public_decoder": true,
+  "not_verified": [
+    "owner_continuous_experience",
+    "runtime_integration"
+  ],
+  "bound_files": {
+    "spec.json": "09ace470248482e1a9002f317a9822e023b9cdeba27afa38c5b736c4bfe14ab0",
+    "manifest.json": "266b7bc2c08fd1c4f8f574ea5639231d902cd31d0af6304034470c51e4e91eba",
+    "preview.gif": "3cf006cc696a7763e18d529a712092b69c39fc2cba2738c17721b7f5111139fd",
+    "preview_slow.gif": "e3432ef52d19783c510d51ca2a25b02972756009540018cc34c8a86314055915",
+    "frames/3.png": "89f637c5d29cc06b7ad3fef94b2148e382254a4d65fbe97bc5e425e08ede364e"
+  },
+  "wrist_patch_changed_pixels": 343,
+  "wrist_mask_outside_RGBA_exact": true,
+  "wrist_full_alpha_unchanged": true,
+  "other_five_body_pixel_hashes_equal_before_repair": true,
+  "visual_review": "all_six_full_bodies_and_adjacent_poses; independent B review plus final wrist-clothing localized recheck pass",
+  "wrist_clothing_must_fix_closed": true,
+  "remaining_must_fix": [],
+  "projection_limit": "head/mace projection differences not judged a clear must-fix; no claim of exact 3D dimensions"
+}

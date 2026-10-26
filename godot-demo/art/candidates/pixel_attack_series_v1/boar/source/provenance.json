@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-26",
+  "generator": "built-in imagegen; actual prompts archived",
+  "approved_reference": {
+    "file": "../../../concepts/mountain_boar/nine_sols_v1/mountain-boar-nine-sols-candidate.png",
+    "sha256": "9193ae3df1fbb49e192ae3442cf8ade44d36bf40ce523f7ea388782a2a54934f"
+  },
+  "source": {
+    "file": "source/attack_sheet.webp",
+    "sha256": "616ced8ba04342ba4f09d04ecea76003246f14d0b8c19d23b44fd81659131c14",
+    "original_png_sha256": "f5c9a754bc0524047a8944899aa4c5775229c4587cd94abd6fead53ea2dbc7b3",
+    "rgba_pixel_sha256": "c17d3d0b19ba6a986a4301221c5cf27fcd4ad9437adeadb9d27c9ddf9a56bad3",
+    "lossless": true,
+    "webp_exact": true,
+    "full_rgba_png_webp_equal": true,
+    "size": [
+      1536,
+      1024
+    ]
+  },
+  "iterations": [
+    {
+      "iteration": 1,
+      "original_tool_png": "/Users/leqiong/.codex/generated_images/01a17365-3af0-7a23-a8cd-fc19596fce03/exec-83724a9e-4bc1-4de8-b131-035b378a967f.png",
+      "original_png_sha256": "0c31bb46d29158ff933028bcdbfdfac49a112db608fc17959eff3fd87e91c9a6",
+      "rgba_pixel_sha256": "1f7a31c88104178149a61e2b3dab4d528528ed3a67d1f45c8ae011778972db5d",
+      "size": [
+        1536,
+        1024
+      ],
+      "actual_prompt": "source/prompts/01_initial.txt",
+      "prompt_sha256": "b9e0b7280a86ea53ff18e5ca63296c2d94a4a1eec60e3579bda2a517876ce09a",
+      "decision": "Rejected: ready/recover face left, extra grip in mid-swing.",
+      "retained": false
+    },
+    {
+      "iteration": 2,
+      "original_tool_png": "/Users/leqiong/.codex/generated_images/01a17365-3af0-7a23-a8cd-fc19596fce03/exec-bc8b9bc6-92e9-457e-8e21-f08cb40f60d3.png",
+      "original_png_sha256": "2f0647192a119aa7ff8cff0f27758a735d8e8b6bd25d237809d21bcca7c40aca",
+      "rgba_pixel_sha256": "91d3affb2b069701c4086357d02f2081354af46ab5ae98f1bed4c190f6563b12",
+      "size": [
+        1536,
+        1024
+      ],
+      "actual_prompt": "source/prompts/02_orientation_and_grip.txt",
+      "prompt_sha256": "91bd1a1b9bc114e8780771bcd29c25eb0647652330e9c6b879a1ce2e8dae4263",
+      "decision": "Rejected: orientation fixed, mid-swing still has two grip hands.",
+      "retained": false
+    },
+    {
+      "iteration": 3,
+      "original_tool_png": "/Users/leqiong/.codex/generated_images/01a17365-3af0-7a23-a8cd-fc19596fce03/exec-49fb84bf-aaf2-4975-b67c-54d71f1bd11a.png",
+      "original_png_sha256": "4ebfa0381d101bf41ee4ff0e35bf1a0624fd0ff6e34be400d6f59cb755a590fc",
+      "rgba_pixel_sha256": "a55a63a4dee80934f9a473a01fef3219a69f75cb8a4cc858cc903b0fbe51d97a",
+      "size": [
+        1536,
+        1024
+      ],
+      "actual_prompt": "source/prompts/03_single_hand_contact.txt",
+      "prompt_sha256": "1de47b34309250b16689ba2f0c8e00b8bcc85d9576586f758d9d597d50f042af",
+      "decision": "Rejected: grip fixed, mid-swing too low/short apparent handle.",
+      "retained": false
+    },
+    {
+      "iteration": 4,
+      "original_tool_png": "/Users/leqiong/.codex/generated_images/01a17365-3af0-7a23-a8cd-fc19596fce03/exec-e63639d3-db89-4943-8f26-f81a496736b5.png",
+      "original_png_sha256": "1ab053fad1cb8987d1b94bd65bc2fb2fce8b778e5272084b28ec8d8882d76b87",
+      "rgba_pixel_sha256": "ae15e793b29ec9d44ae4fac4e67470667360bf0a93b53413ebd98fc4bb5af479",
+      "size": [
+        1536,
+        1024
+      ],
+      "actual_prompt": "source/prompts/04_mid_swing.txt",
+      "prompt_sha256": "78581a702f3c7ba3535d5a4741647808b2b88df127ae7c20211c374180b30e95",
+      "decision": "Rejected: mid-swing improved, free shoulderplate missing.",
+      "retained": false
+    },
+    {
+      "iteration": 5,
+      "original_tool_png": "/Users/leqiong/.codex/generated_images/01a17365-3af0-7a23-a8cd-fc19596fce03/exec-dbff470e-f7c3-422d-a889-e3b8a2a67b2d.png",
+      "original_png_sha256": "f5c9a754bc0524047a8944899aa4c5775229c4587cd94abd6fead53ea2dbc7b3",
+      "rgba_pixel_sha256": "c17d3d0b19ba6a986a4301221c5cf27fcd4ad9437adeadb9d27c9ddf9a56bad3",
+      "size": [
+        1536,
+        1024
+      ],
+      "actual_prompt": "source/prompts/05_restore_free_shoulder_plate.txt",
+      "prompt_sha256": "41edcdac849734a6de1521593b31bc45b96fba0ce3c3551b271594836d48fe07",
+      "decision": "Adopted: all six right-facing, distinct high-to-low arc, one grip and free-arm plate.",
+      "retained": true
+    }
+  ],
+  "scope": "candidate attack only; not runtime; author review is not independent/human playthrough",
+  "local_wrist_clothing_repair": {
+    "date": "2026-10-26",
+    "request": "root relayed independent B mandatory: body3 missing carrying bracer/ivory wrap",
+    "method": "existing same-character body4 contact-wrist pixels, declared nearest affine registration inside wrist mask; no new imagegen needed or attempted",
+    "policy": "source/wrist_patch_spec.json",
+    "policy_sha256": "2d6a643cece960cd029096ee4de355a3c66abb7eef93e6e0fbee6f15a0ff36bc",
+    "mask": "source/wrist_patch_mask.png",
+    "mask_sha256": "eda17621f4ee90c699435d0af0215c81a9ef766b16e8021c4af26a4130aacebd",
+    "prepared_pipeline": "prepare_fixed_stance.py: reproduce original group96 palette first, then copy bounded clothing, no post-patch recolor",
+    "script_sha256": "de1d0fa6e453881629ba77181d50e85c5822a39e8d5b1972008a98b6e8150e4a",
+    "original_tool_PNG_and_WebP_unchanged": true,
+    "report": {
+      "policy": "source/wrist_patch_spec.json",
+      "body": "3",
+      "donor_body": "4",
+      "palette_locked_before_local_copy": true,
+      "before_body_pixel_hashes": {
+        "0": "d827f6e8c47d58db9dbbb4bd97e8760581bb7b8a12a15473de6130c6932d7137",
+        "1": "cadccfc5693449d8f0f302a41eefab52895bd60cd63584828dce3a1d7244797a",
+        "2": "4292e70f1539ea6ca854815dc6a48edd80aca74f1adcf9fc53d1868256ae71d3",
+        "3": "34bf9195bfe71db58d745db1f7b2cf55929fc21a726dd683d01922ce7db0163b",
+        "4": "6d2981fc70092a55dd43afc5caa3bd2380e1567b21bc59a323547fbef94001bb",
+        "5": "b83275bdb31a70682f231e89f437c8a08dd148b09f49cfdaf9cedb50706fc902"
+      },
+      "after_body_pixel_hashes": {
+        "0": "d827f6e8c47d58db9dbbb4bd97e8760581bb7b8a12a15473de6130c6932d7137",
+        "1": "cadccfc5693449d8f0f302a41eefab52895bd60cd63584828dce3a1d7244797a",
+        "2": "4292e70f1539ea6ca854815dc6a48edd80aca74f1adcf9fc53d1868256ae71d3",
+        "3": "837331d216f46823f60cf53ddd7d9a6421b33b6e9f5c08f519ec639249158db5",
+        "4": "6d2981fc70092a55dd43afc5caa3bd2380e1567b21bc59a323547fbef94001bb",
+        "5": "b83275bdb31a70682f231e89f437c8a08dd148b09f49cfdaf9cedb50706fc902"
+      },
+      "changed_rgba_pixels": 343,
+      "change_bbox": [
+        254,
+        240,
+        291,
+        264
+      ],
+      "outside_allowed_mask_rgba_exact": true,
+      "all_alpha_exact": true,
+      "fingers_palm_mace_axis_protected": true,
+      "other_five_body_rgba_exact": true,
+      "mask_file_sha256": "eda17621f4ee90c699435d0af0215c81a9ef766b16e8021c4af26a4130aacebd"
+    },
+    "status": "author_checked_pending_independent_B_local_recheck"
+  }
+}

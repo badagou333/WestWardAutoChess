@@ -1,0 +1,210 @@
+{
+  "date": "2026-10-26",
+  "authorized_scope": "Fix only mid_swing carrying wrist green/brass bracer and ivory wraps; root relayed one independent B finding. Existing character clothing pixels explicitly authorized as donor.",
+  "body": "3",
+  "baseline_body3_file": "history/before_wrist_fix/3.png",
+  "baseline_body3_sha256": "0b5eba4208b200559f66db4e5d4a3230b6230fbc8187a4008e21b209b5d7d412",
+  "before_body_pixel_hashes": {
+    "0": "d827f6e8c47d58db9dbbb4bd97e8760581bb7b8a12a15473de6130c6932d7137",
+    "1": "cadccfc5693449d8f0f302a41eefab52895bd60cd63584828dce3a1d7244797a",
+    "2": "4292e70f1539ea6ca854815dc6a48edd80aca74f1adcf9fc53d1868256ae71d3",
+    "3": "34bf9195bfe71db58d745db1f7b2cf55929fc21a726dd683d01922ce7db0163b",
+    "4": "6d2981fc70092a55dd43afc5caa3bd2380e1567b21bc59a323547fbef94001bb",
+    "5": "b83275bdb31a70682f231e89f437c8a08dd148b09f49cfdaf9cedb50706fc902"
+  },
+  "donor_body": "4",
+  "donor_stage": "contact, same character and carrying arm",
+  "source_polygon": [
+    [
+      274,
+      255
+    ],
+    [
+      283,
+      257
+    ],
+    [
+      289,
+      261
+    ],
+    [
+      294,
+      268
+    ],
+    [
+      297,
+      272
+    ],
+    [
+      303,
+      277
+    ],
+    [
+      306,
+      281
+    ],
+    [
+      300,
+      284
+    ],
+    [
+      296,
+      288
+    ],
+    [
+      296,
+      296
+    ],
+    [
+      289,
+      293
+    ],
+    [
+      285,
+      291
+    ],
+    [
+      278,
+      291
+    ],
+    [
+      270,
+      287
+    ],
+    [
+      265,
+      283
+    ],
+    [
+      261,
+      276
+    ],
+    [
+      262,
+      269
+    ],
+    [
+      266,
+      262
+    ]
+  ],
+  "source_pivot": [
+    296,
+    282
+  ],
+  "target_pivot": [
+    282,
+    243
+  ],
+  "scale": 0.8,
+  "rotate_ccw_degrees": 57,
+  "resampling": "nearest, exact existing 96 RGB colors",
+  "target_polygon": [
+    [
+      252,
+      240
+    ],
+    [
+      263,
+      234
+    ],
+    [
+      276,
+      234
+    ],
+    [
+      287,
+      239
+    ],
+    [
+      291,
+      247
+    ],
+    [
+      283,
+      255
+    ],
+    [
+      266,
+      263
+    ],
+    [
+      255,
+      261
+    ],
+    [
+      249,
+      254
+    ]
+  ],
+  "protect_polygons": {
+    "fingers_and_palm": [
+      [
+        282,
+        216
+      ],
+      [
+        306,
+        218
+      ],
+      [
+        312,
+        230
+      ],
+      [
+        305,
+        239
+      ],
+      [
+        294,
+        246
+      ],
+      [
+        287,
+        244
+      ],
+      [
+        283,
+        239
+      ]
+    ],
+    "mace_butt_and_axis": [
+      [
+        264,
+        237
+      ],
+      [
+        280,
+        234
+      ],
+      [
+        285,
+        238
+      ],
+      [
+        286,
+        243
+      ],
+      [
+        280,
+        249
+      ],
+      [
+        270,
+        254
+      ],
+      [
+        264,
+        251
+      ],
+      [
+        261,
+        245
+      ]
+    ]
+  },
+  "preserve_existing_alpha": true,
+  "mask_file": "source/wrist_patch_mask.png",
+  "retraining_after_patch": false,
+  "palette_lock": "Reproduce the original unpatched group96 palette before the local copy; do not retrain it after insertion. Other five frame RGBA must stay identical."
+}
