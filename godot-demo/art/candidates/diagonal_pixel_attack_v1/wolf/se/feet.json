@@ -1,0 +1,771 @@
+{
+  "status": "manual_2d_ROI_reference_independently_crosschecked; not geometric or runtime acceptance",
+  "direction": "SE",
+  "canvas": [
+    448,
+    448
+  ],
+  "anchor": [
+    224,
+    344
+  ],
+  "character_display_scale": 0.5,
+  "forward_screen": [
+    2,
+    1
+  ],
+  "forward_normalized": [
+    0.8944271909999159,
+    0.4472135954999579
+  ],
+  "source_basis": "rect_iso_duel_v1 same direction idle/prepare/contact",
+  "frames": [
+    {
+      "body": "0",
+      "anchor": [
+        224,
+        344
+      ],
+      "feet": [
+        {
+          "id": "hind_near",
+          "visibility": "visible",
+          "support": "contact",
+          "visible_review_bounds": [
+            131,
+            307,
+            170,
+            336
+          ],
+          "foot_review_roi": [
+            128,
+            307,
+            171,
+            340
+          ],
+          "visible_low_proxy_px": [
+            152.5,
+            335
+          ],
+          "ground_projection": [
+            152.5,
+            335
+          ],
+          "contact_proxy": [
+            152.5,
+            335
+          ],
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "hind_far",
+          "visibility": "partial",
+          "support": "contact",
+          "visible_review_bounds": [
+            196,
+            294,
+            223,
+            318
+          ],
+          "foot_review_roi": [
+            195,
+            294,
+            223,
+            322
+          ],
+          "visible_low_proxy_px": [
+            222.0,
+            317
+          ],
+          "ground_projection": null,
+          "contact_proxy": null,
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "fore_near",
+          "visibility": "visible",
+          "support": "contact",
+          "visible_review_bounds": [
+            228,
+            348,
+            268,
+            380
+          ],
+          "foot_review_roi": [
+            225,
+            348,
+            275,
+            385
+          ],
+          "visible_low_proxy_px": [
+            247.0,
+            379
+          ],
+          "ground_projection": [
+            247.0,
+            379
+          ],
+          "contact_proxy": [
+            247.0,
+            379
+          ],
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "fore_far",
+          "visibility": "visible",
+          "support": "contact",
+          "visible_review_bounds": [
+            280,
+            336,
+            316,
+            365
+          ],
+          "foot_review_roi": [
+            280,
+            336,
+            323,
+            372
+          ],
+          "visible_low_proxy_px": [
+            302.0,
+            364
+          ],
+          "ground_projection": [
+            302.0,
+            364
+          ],
+          "contact_proxy": [
+            302.0,
+            364
+          ],
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        }
+      ]
+    },
+    {
+      "body": "1",
+      "anchor": [
+        224,
+        344
+      ],
+      "feet": [
+        {
+          "id": "hind_near",
+          "visibility": "visible",
+          "support": "contact",
+          "visible_review_bounds": [
+            131,
+            307,
+            170,
+            336
+          ],
+          "foot_review_roi": [
+            128,
+            307,
+            171,
+            340
+          ],
+          "visible_low_proxy_px": [
+            152.5,
+            335
+          ],
+          "ground_projection": [
+            152.5,
+            335
+          ],
+          "contact_proxy": [
+            152.5,
+            335
+          ],
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "hind_far",
+          "visibility": "partial",
+          "support": "contact",
+          "visible_review_bounds": [
+            196,
+            294,
+            223,
+            318
+          ],
+          "foot_review_roi": [
+            195,
+            294,
+            223,
+            322
+          ],
+          "visible_low_proxy_px": [
+            222.0,
+            317
+          ],
+          "ground_projection": null,
+          "contact_proxy": null,
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "fore_near",
+          "visibility": "visible",
+          "support": "contact",
+          "visible_review_bounds": [
+            228,
+            348,
+            268,
+            380
+          ],
+          "foot_review_roi": [
+            225,
+            348,
+            275,
+            385
+          ],
+          "visible_low_proxy_px": [
+            247.0,
+            379
+          ],
+          "ground_projection": [
+            247.0,
+            379
+          ],
+          "contact_proxy": [
+            247.0,
+            379
+          ],
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "fore_far",
+          "visibility": "visible",
+          "support": "contact",
+          "visible_review_bounds": [
+            280,
+            336,
+            323,
+            365
+          ],
+          "foot_review_roi": [
+            280,
+            336,
+            323,
+            372
+          ],
+          "visible_low_proxy_px": [
+            302.0,
+            364
+          ],
+          "ground_projection": [
+            302.0,
+            364
+          ],
+          "contact_proxy": [
+            302.0,
+            364
+          ],
+          "same_ready_foot_roi_RGBA": false,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        }
+      ]
+    },
+    {
+      "body": "2",
+      "anchor": [
+        224,
+        344
+      ],
+      "feet": [
+        {
+          "id": "hind_near",
+          "visibility": "visible",
+          "support": "contact",
+          "visible_review_bounds": [
+            131,
+            307,
+            170,
+            336
+          ],
+          "foot_review_roi": [
+            128,
+            307,
+            171,
+            340
+          ],
+          "visible_low_proxy_px": [
+            152.5,
+            335
+          ],
+          "ground_projection": [
+            152.5,
+            335
+          ],
+          "contact_proxy": [
+            152.5,
+            335
+          ],
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "hind_far",
+          "visibility": "partial",
+          "support": "contact",
+          "visible_review_bounds": [
+            196,
+            294,
+            223,
+            318
+          ],
+          "foot_review_roi": [
+            195,
+            294,
+            223,
+            322
+          ],
+          "visible_low_proxy_px": [
+            222.0,
+            317
+          ],
+          "ground_projection": null,
+          "contact_proxy": null,
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "fore_near",
+          "visibility": "visible",
+          "support": "airborne",
+          "visible_review_bounds": [
+            225,
+            300,
+            279,
+            361
+          ],
+          "foot_review_roi": [
+            225,
+            300,
+            279,
+            365
+          ],
+          "visible_low_proxy_px": [
+            260.0,
+            360
+          ],
+          "ground_projection": null,
+          "contact_proxy": null,
+          "same_ready_foot_roi_RGBA": null,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "fore_far",
+          "visibility": "visible",
+          "support": "contact",
+          "visible_review_bounds": [
+            280,
+            336,
+            323,
+            365
+          ],
+          "foot_review_roi": [
+            280,
+            336,
+            323,
+            372
+          ],
+          "visible_low_proxy_px": [
+            302.0,
+            364
+          ],
+          "ground_projection": [
+            302.0,
+            364
+          ],
+          "contact_proxy": [
+            302.0,
+            364
+          ],
+          "same_ready_foot_roi_RGBA": false,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        }
+      ]
+    },
+    {
+      "body": "3",
+      "anchor": [
+        224,
+        344
+      ],
+      "feet": [
+        {
+          "id": "hind_near",
+          "visibility": "visible",
+          "support": "contact",
+          "visible_review_bounds": [
+            131,
+            307,
+            170,
+            336
+          ],
+          "foot_review_roi": [
+            128,
+            307,
+            171,
+            340
+          ],
+          "visible_low_proxy_px": [
+            152.5,
+            335
+          ],
+          "ground_projection": [
+            152.5,
+            335
+          ],
+          "contact_proxy": [
+            152.5,
+            335
+          ],
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "hind_far",
+          "visibility": "partial",
+          "support": "contact",
+          "visible_review_bounds": [
+            196,
+            294,
+            223,
+            318
+          ],
+          "foot_review_roi": [
+            195,
+            294,
+            223,
+            322
+          ],
+          "visible_low_proxy_px": [
+            222.0,
+            317
+          ],
+          "ground_projection": null,
+          "contact_proxy": null,
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "fore_near",
+          "visibility": "visible",
+          "support": "airborne",
+          "visible_review_bounds": [
+            225,
+            300,
+            279,
+            356
+          ],
+          "foot_review_roi": [
+            225,
+            300,
+            279,
+            365
+          ],
+          "visible_low_proxy_px": [
+            257.0,
+            355
+          ],
+          "ground_projection": null,
+          "contact_proxy": null,
+          "same_ready_foot_roi_RGBA": null,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "fore_far",
+          "visibility": "visible",
+          "support": "contact",
+          "visible_review_bounds": [
+            280,
+            336,
+            323,
+            365
+          ],
+          "foot_review_roi": [
+            280,
+            336,
+            323,
+            372
+          ],
+          "visible_low_proxy_px": [
+            302.0,
+            364
+          ],
+          "ground_projection": [
+            302.0,
+            364
+          ],
+          "contact_proxy": [
+            302.0,
+            364
+          ],
+          "same_ready_foot_roi_RGBA": false,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        }
+      ]
+    },
+    {
+      "body": "4",
+      "anchor": [
+        224,
+        344
+      ],
+      "feet": [
+        {
+          "id": "hind_near",
+          "visibility": "visible",
+          "support": "contact",
+          "visible_review_bounds": [
+            131,
+            307,
+            170,
+            336
+          ],
+          "foot_review_roi": [
+            128,
+            307,
+            171,
+            340
+          ],
+          "visible_low_proxy_px": [
+            152.5,
+            335
+          ],
+          "ground_projection": [
+            152.5,
+            335
+          ],
+          "contact_proxy": [
+            152.5,
+            335
+          ],
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "hind_far",
+          "visibility": "partial",
+          "support": "contact",
+          "visible_review_bounds": [
+            196,
+            294,
+            223,
+            318
+          ],
+          "foot_review_roi": [
+            195,
+            294,
+            223,
+            322
+          ],
+          "visible_low_proxy_px": [
+            222.0,
+            317
+          ],
+          "ground_projection": null,
+          "contact_proxy": null,
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "fore_near",
+          "visibility": "visible",
+          "support": "airborne",
+          "visible_review_bounds": [
+            225,
+            300,
+            279,
+            343
+          ],
+          "foot_review_roi": [
+            225,
+            300,
+            279,
+            365
+          ],
+          "visible_low_proxy_px": [
+            278.0,
+            342
+          ],
+          "ground_projection": null,
+          "contact_proxy": null,
+          "same_ready_foot_roi_RGBA": null,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "fore_far",
+          "visibility": "visible",
+          "support": "contact",
+          "visible_review_bounds": [
+            280,
+            336,
+            316,
+            365
+          ],
+          "foot_review_roi": [
+            280,
+            336,
+            323,
+            372
+          ],
+          "visible_low_proxy_px": [
+            302.0,
+            364
+          ],
+          "ground_projection": [
+            302.0,
+            364
+          ],
+          "contact_proxy": [
+            302.0,
+            364
+          ],
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        }
+      ]
+    },
+    {
+      "body": "5",
+      "anchor": [
+        224,
+        344
+      ],
+      "feet": [
+        {
+          "id": "hind_near",
+          "visibility": "visible",
+          "support": "contact",
+          "visible_review_bounds": [
+            131,
+            307,
+            170,
+            336
+          ],
+          "foot_review_roi": [
+            128,
+            307,
+            171,
+            340
+          ],
+          "visible_low_proxy_px": [
+            152.5,
+            335
+          ],
+          "ground_projection": [
+            152.5,
+            335
+          ],
+          "contact_proxy": [
+            152.5,
+            335
+          ],
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "hind_far",
+          "visibility": "partial",
+          "support": "contact",
+          "visible_review_bounds": [
+            196,
+            294,
+            223,
+            318
+          ],
+          "foot_review_roi": [
+            195,
+            294,
+            223,
+            322
+          ],
+          "visible_low_proxy_px": [
+            222.0,
+            317
+          ],
+          "ground_projection": null,
+          "contact_proxy": null,
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "fore_near",
+          "visibility": "visible",
+          "support": "contact",
+          "visible_review_bounds": [
+            228,
+            348,
+            268,
+            380
+          ],
+          "foot_review_roi": [
+            225,
+            348,
+            275,
+            385
+          ],
+          "visible_low_proxy_px": [
+            247.0,
+            379
+          ],
+          "ground_projection": [
+            247.0,
+            379
+          ],
+          "contact_proxy": [
+            247.0,
+            379
+          ],
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        },
+        {
+          "id": "fore_far",
+          "visibility": "visible",
+          "support": "contact",
+          "visible_review_bounds": [
+            280,
+            336,
+            316,
+            365
+          ],
+          "foot_review_roi": [
+            280,
+            336,
+            323,
+            372
+          ],
+          "visible_low_proxy_px": [
+            302.0,
+            364
+          ],
+          "ground_projection": [
+            302.0,
+            364
+          ],
+          "contact_proxy": [
+            302.0,
+            364
+          ],
+          "same_ready_foot_roi_RGBA": true,
+          "confidence": "manual_2d_review_proxy_not_3D_sole"
+        }
+      ]
+    }
+  ],
+  "mirror_direction": "SW",
+  "mirrored_source_generated": false,
+  "ground_proxy_limit": "Partial or airborne paws have no invented ground projection; envelope is only visible 2D review evidence."
+}

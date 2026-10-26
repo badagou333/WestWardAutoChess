@@ -1,0 +1,463 @@
+{
+  "raw_source": "source/attack-sheet-v3.webp",
+  "raw_source_sha256": "41ca9ef415a65c097ec0b0b294aef3f5bdec1ecf6b2b120c7740a8d981e865cc",
+  "source_scale": 0.55,
+  "canvas": [
+    448,
+    448
+  ],
+  "anchor": [
+    224,
+    344
+  ],
+  "registration": "whole-frame rear-visible-paw contact registration only; no local leg movement/warp",
+  "reference_rear_proxy_local": [
+    112.5,
+    374
+  ],
+  "body_count": 6,
+  "poses": [
+    {
+      "id": "0",
+      "source_box": [
+        0,
+        0,
+        515,
+        505
+      ],
+      "source_anchor": [
+        256.0,
+        390
+      ],
+      "component_seeds": [
+        [
+          250,
+          200
+        ]
+      ],
+      "raw_rear_contact_proxy_local": [
+        112.5,
+        374
+      ],
+      "input_file": "source/edit-inputs/ready-reference.png",
+      "input_png_sha256": "5523dbb36b23ce61abc8d452e55a167fa105874c5112f086abbde7b87fc2e1a0",
+      "input_rgba_sha256": "184508e9c9df6f1999ecda8806920ef83a7a6bc380b5ab1258a0f417bbf8dd39",
+      "extract_report": {
+        "source_box": [
+          0,
+          0,
+          515,
+          505
+        ],
+        "source_anchor": [
+          256.0,
+          390
+        ],
+        "scale": 0.55,
+        "component_seeds": [
+          [
+            250,
+            200
+          ]
+        ],
+        "selection": "seed_union_8",
+        "selected_components": 1,
+        "duplicate_seeds": 0,
+        "removed_unselected_opaque_pixels": 0,
+        "selected_components_pixels_after_scale": [
+          34652
+        ],
+        "source_crop_cuts_component": false,
+        "raster_offset": [
+          91,
+          144
+        ],
+        "anchor_rounding_error_px": [
+          -0.44999999999998863,
+          -0.35000000000002274
+        ],
+        "visible_bbox": [
+          91,
+          144,
+          347,
+          384
+        ],
+        "body_alpha_binary": true
+      },
+      "whole_frame_raster_registration_xy": [
+        0,
+        0
+      ],
+      "raster_registration_reason": "whole-frame rear visible-paw anchor only, never a local limb warp"
+    },
+    {
+      "id": "1",
+      "source_box": [
+        515,
+        0,
+        1045,
+        505
+      ],
+      "source_anchor": [
+        767.5,
+        390
+      ],
+      "component_seeds": [
+        [
+          760,
+          200
+        ]
+      ],
+      "raw_rear_contact_proxy_local": [
+        112.0,
+        374
+      ],
+      "input_file": "source/edit-inputs/pose-1-before.png",
+      "input_png_sha256": "9c3327bc8465a9b09c5d4c2813904e8fec107d4fb0ffaa837822e62930b3d6f1",
+      "input_rgba_sha256": "b0eae50202d72ee5e201c40efb7f5b21228b783abe573ccaa96dcf3471390b77",
+      "extract_report": {
+        "source_box": [
+          515,
+          0,
+          1045,
+          505
+        ],
+        "source_anchor": [
+          767.5,
+          390
+        ],
+        "scale": 0.55,
+        "component_seeds": [
+          [
+            760,
+            200
+          ]
+        ],
+        "selection": "seed_union_8",
+        "selected_components": 1,
+        "duplicate_seeds": 0,
+        "removed_unselected_opaque_pixels": 0,
+        "selected_components_pixels_after_scale": [
+          31737
+        ],
+        "source_crop_cuts_component": false,
+        "raster_offset": [
+          103,
+          144
+        ],
+        "anchor_rounding_error_px": [
+          0.2750000000000057,
+          -0.35000000000002274
+        ],
+        "visible_bbox": [
+          103,
+          144,
+          360,
+          386
+        ],
+        "body_alpha_binary": true
+      },
+      "whole_frame_raster_registration_xy": [
+        -4,
+        0
+      ],
+      "raster_registration_reason": "whole-frame rear visible-paw anchor only, never a local limb warp"
+    },
+    {
+      "id": "2",
+      "source_box": [
+        1045,
+        0,
+        1536,
+        505
+      ],
+      "source_anchor": [
+        1292.5,
+        391
+      ],
+      "component_seeds": [
+        [
+          1270,
+          200
+        ]
+      ],
+      "raw_rear_contact_proxy_local": [
+        125.0,
+        375
+      ],
+      "input_file": "source/edit-inputs/pose-2-before.png",
+      "input_png_sha256": "8634441ac4a89138c34f27d185f6a837327eac3339beba7c1680767229f059e9",
+      "input_rgba_sha256": "d42ed1178c1f0b2bb9d891e6204930aa28eebd377bc9b934db207d8005653f7a",
+      "extract_report": {
+        "source_box": [
+          1045,
+          0,
+          1536,
+          505
+        ],
+        "source_anchor": [
+          1292.5,
+          391
+        ],
+        "scale": 0.55,
+        "component_seeds": [
+          [
+            1270,
+            200
+          ]
+        ],
+        "selection": "seed_union_8",
+        "selected_components": 1,
+        "duplicate_seeds": 0,
+        "removed_unselected_opaque_pixels": 0,
+        "selected_components_pixels_after_scale": [
+          30422
+        ],
+        "source_crop_cuts_component": false,
+        "raster_offset": [
+          98,
+          144
+        ],
+        "anchor_rounding_error_px": [
+          0.22500000000002274,
+          -0.35000000000002274
+        ],
+        "visible_bbox": [
+          98,
+          144,
+          349,
+          382
+        ],
+        "body_alpha_binary": true
+      },
+      "whole_frame_raster_registration_xy": [
+        -1,
+        -1
+      ],
+      "raster_registration_reason": "whole-frame rear visible-paw anchor only, never a local limb warp"
+    },
+    {
+      "id": "3",
+      "source_box": [
+        0,
+        505,
+        560,
+        1024
+      ],
+      "source_anchor": [
+        251.5,
+        904
+      ],
+      "component_seeds": [
+        [
+          250,
+          720
+        ]
+      ],
+      "raw_rear_contact_proxy_local": [
+        108.0,
+        376
+      ],
+      "input_file": "source/edit-inputs/pose-3-before.png",
+      "input_png_sha256": "e3d1dafda5453d0f4468da113397ecc3cfb3373cde64bc4bce272ae1040015ba",
+      "input_rgba_sha256": "220f34ef56d3e2e6594431f1b4fd7902e8b8e153b5ef7b613ae5a4305c62e8ee",
+      "extract_report": {
+        "source_box": [
+          0,
+          505,
+          560,
+          1024
+        ],
+        "source_anchor": [
+          251.5,
+          904
+        ],
+        "scale": 0.55,
+        "component_seeds": [
+          [
+            250,
+            720
+          ]
+        ],
+        "selection": "seed_union_8",
+        "selected_components": 1,
+        "duplicate_seeds": 0,
+        "removed_unselected_opaque_pixels": 3277,
+        "selected_components_pixels_after_scale": [
+          35153
+        ],
+        "source_crop_cuts_component": false,
+        "raster_offset": [
+          102,
+          127
+        ],
+        "anchor_rounding_error_px": [
+          -0.17500000000001137,
+          0.25
+        ],
+        "visible_bbox": [
+          102,
+          127,
+          381,
+          377
+        ],
+        "body_alpha_binary": true
+      },
+      "whole_frame_raster_registration_xy": [
+        -4,
+        -1
+      ],
+      "raster_registration_reason": "whole-frame rear visible-paw anchor only, never a local limb warp"
+    },
+    {
+      "id": "4",
+      "source_box": [
+        515,
+        505,
+        1060,
+        1024
+      ],
+      "source_anchor": [
+        767.5,
+        904
+      ],
+      "component_seeds": [
+        [
+          760,
+          720
+        ]
+      ],
+      "raw_rear_contact_proxy_local": [
+        112.0,
+        376
+      ],
+      "input_file": "source/edit-inputs/pose-4-before.png",
+      "input_png_sha256": "f6298e3f96ef5d146f0e61519add5b64159015a9e6ff685e82ffffb4fa1ea078",
+      "input_rgba_sha256": "e581c69c3573f5ca709bf028edc1a01018dd919e720700ecd7d2ce258e9d08db",
+      "extract_report": {
+        "source_box": [
+          515,
+          505,
+          1060,
+          1024
+        ],
+        "source_anchor": [
+          767.5,
+          904
+        ],
+        "scale": 0.55,
+        "component_seeds": [
+          [
+            760,
+            720
+          ]
+        ],
+        "selection": "seed_union_8",
+        "selected_components": 1,
+        "duplicate_seeds": 0,
+        "removed_unselected_opaque_pixels": 2914,
+        "selected_components_pixels_after_scale": [
+          32113
+        ],
+        "source_crop_cuts_component": false,
+        "raster_offset": [
+          88,
+          159
+        ],
+        "anchor_rounding_error_px": [
+          -0.42499999999998295,
+          -0.19999999999998863
+        ],
+        "visible_bbox": [
+          88,
+          159,
+          357,
+          376
+        ],
+        "body_alpha_binary": true
+      },
+      "whole_frame_raster_registration_xy": [
+        -4,
+        0
+      ],
+      "raster_registration_reason": "whole-frame rear visible-paw anchor only, never a local limb warp"
+    },
+    {
+      "id": "5",
+      "source_box": [
+        1024,
+        505,
+        1536,
+        1024
+      ],
+      "source_anchor": [
+        1280.0,
+        904
+      ],
+      "component_seeds": [
+        [
+          1270,
+          720
+        ]
+      ],
+      "raw_rear_contact_proxy_local": [
+        112.5,
+        376
+      ],
+      "input_file": "source/edit-inputs/pose-5-before.png",
+      "input_png_sha256": "e1991e2812e81931b1379b06b03c8241484ec3c3811c24238d072ce61f7cb1fd",
+      "input_rgba_sha256": "f111634b4cecfb93cf51532fcab2bb7051ef1cfc5ca0aa9b40949273f3024028",
+      "extract_report": {
+        "source_box": [
+          1024,
+          505,
+          1536,
+          1024
+        ],
+        "source_anchor": [
+          1280.0,
+          904
+        ],
+        "scale": 0.55,
+        "component_seeds": [
+          [
+            1270,
+            720
+          ]
+        ],
+        "selection": "seed_union_8",
+        "selected_components": 1,
+        "duplicate_seeds": 0,
+        "removed_unselected_opaque_pixels": 0,
+        "selected_components_pixels_after_scale": [
+          34577
+        ],
+        "source_crop_cuts_component": false,
+        "raster_offset": [
+          88,
+          156
+        ],
+        "anchor_rounding_error_px": [
+          0.4000000000000057,
+          0.10000000000002274
+        ],
+        "visible_bbox": [
+          88,
+          156,
+          352,
+          388
+        ],
+        "body_alpha_binary": true
+      },
+      "whole_frame_raster_registration_xy": [
+        -4,
+        -1
+      ],
+      "raster_registration_reason": "whole-frame rear visible-paw anchor only, never a local limb warp"
+    }
+  ],
+  "final_rear_anchor_proxy_crop": [
+    144.0,
+    334
+  ]
+}

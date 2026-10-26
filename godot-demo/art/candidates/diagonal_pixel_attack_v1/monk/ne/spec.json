@@ -1,0 +1,212 @@
+{
+  "schema": "pixel-attack-series-v1",
+  "character": "guard_monk_ne",
+  "display_name": "斜向棍僧 NE",
+  "status": "reviewed_candidate",
+  "canvas": [
+    448,
+    448
+  ],
+  "anchor": [
+    224,
+    344
+  ],
+  "palette_colors": 96,
+  "sources": {
+    "prepared": {
+      "file": "../source/ne_prepared.webp",
+      "sha256": "048dd99ca0c253d2a03bb414bff4f07fe61bb9f903848e2a9a73d9beef167aa4",
+      "expected_pixel_sha256": "f80f645e5f7323ff5802ce3cd7e6f117c41c774621b8bdfb4a9c9f20aab3614b",
+      "scale": 1.0
+    }
+  },
+  "bodies": [
+    {
+      "id": "0",
+      "name": "ready",
+      "source": "prepared",
+      "source_box": [
+        0,
+        0,
+        448,
+        448
+      ],
+      "source_anchor": [
+        224,
+        344
+      ]
+    },
+    {
+      "id": "1",
+      "name": "load",
+      "source": "prepared",
+      "source_box": [
+        448,
+        0,
+        896,
+        448
+      ],
+      "source_anchor": [
+        672,
+        344
+      ]
+    },
+    {
+      "id": "2",
+      "name": "peak",
+      "source": "prepared",
+      "source_box": [
+        896,
+        0,
+        1344,
+        448
+      ],
+      "source_anchor": [
+        1120,
+        344
+      ]
+    },
+    {
+      "id": "3",
+      "name": "impact",
+      "source": "prepared",
+      "source_box": [
+        0,
+        448,
+        448,
+        896
+      ],
+      "source_anchor": [
+        224,
+        792
+      ]
+    },
+    {
+      "id": "4",
+      "name": "recoil",
+      "source": "prepared",
+      "source_box": [
+        448,
+        448,
+        896,
+        896
+      ],
+      "source_anchor": [
+        672,
+        792
+      ]
+    },
+    {
+      "id": "5",
+      "name": "recover",
+      "source": "prepared",
+      "source_box": [
+        896,
+        448,
+        1344,
+        896
+      ],
+      "source_anchor": [
+        1120,
+        792
+      ]
+    }
+  ],
+  "duration_ms": 1070,
+  "idle_ms": 400,
+  "events": [
+    {
+      "name": "preview_contact_only",
+      "at_ms": 370
+    }
+  ],
+  "track": [
+    {
+      "at_ms": 0,
+      "body": "0"
+    },
+    {
+      "at_ms": 130,
+      "body": "1"
+    },
+    {
+      "at_ms": 260,
+      "body": "2"
+    },
+    {
+      "at_ms": 370,
+      "body": "3",
+      "layers": [
+        {
+          "id": "staff_trail",
+          "opacity": 0.38,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 410,
+      "body": "3",
+      "layers": [
+        {
+          "id": "staff_trail",
+          "opacity": 0.16,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 450,
+      "body": "3"
+    },
+    {
+      "at_ms": 600,
+      "body": "4"
+    },
+    {
+      "at_ms": 760,
+      "body": "5"
+    },
+    {
+      "at_ms": 950,
+      "body": "0"
+    }
+  ],
+  "orientation": {
+    "source_direction": "NE",
+    "mirrored_direction": "NW",
+    "reference": "../../../rect_iso_duel_v1/frames/monk_ne_idle.png",
+    "camera": "matched oblique reference; not calibrated degrees",
+    "game_preview_scale": 0.5
+  },
+  "review_annotations": {
+    "author_visual_review": "limited_offline_pass; all poses, adjacent stages and fixed-scale diamond views inspected",
+    "independent_visual_review": "limited_offline_pass; see ../REVIEW_STATUS.json and REVIEW.md",
+    "human_acceptance": "pending",
+    "runtime_integration": false
+  },
+  "layers": {
+    "staff_trail": {
+      "file": "../source/staff_trails.webp",
+      "crop": [
+        950,
+        418,
+        1664,
+        662
+      ],
+      "target_rect": [
+        328,
+        120,
+        445,
+        178
+      ],
+      "order": "behind"
+    }
+  }
+}

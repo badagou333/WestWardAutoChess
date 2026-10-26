@@ -1,0 +1,90 @@
+[
+  {
+    "source_input": "pose-3-before.png",
+    "crop_box": [
+      273,
+      304,
+      361,
+      392
+    ],
+    "transparent_extraction_polygon": [
+      [
+        286,
+        316
+      ],
+      [
+        301,
+        315
+      ],
+      [
+        315,
+        326
+      ],
+      [
+        335,
+        343
+      ],
+      [
+        342,
+        372
+      ],
+      [
+        329,
+        382
+      ],
+      [
+        300,
+        382
+      ],
+      [
+        287,
+        355
+      ]
+    ],
+    "upscale_for_tool": 8,
+    "file": "source/edit-inputs/contact-far-foreleg-x8.png",
+    "sha256": "43526108ebdd9e3bb85d0a09ccca81b8ba98510309182d1e4987e80b43bfb861"
+  },
+  {
+    "source_input": "ready-reference.png",
+    "crop_box": [
+      273,
+      304,
+      361,
+      392
+    ],
+    "transparent_extraction_polygon": [
+      [
+        276,
+        304
+      ],
+      [
+        296,
+        304
+      ],
+      [
+        310,
+        323
+      ],
+      [
+        323,
+        345
+      ],
+      [
+        323,
+        367
+      ],
+      [
+        290,
+        371
+      ],
+      [
+        278,
+        345
+      ]
+    ],
+    "upscale_for_tool": 8,
+    "file": "source/edit-inputs/ready-far-foreleg-x8.png",
+    "sha256": "307839bba337c97b56ba7787d721f2dac5d7070a3ec70aa1d06536ed17cc1e25"
+  }
+]

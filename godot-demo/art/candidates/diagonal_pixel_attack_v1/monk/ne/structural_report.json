@@ -1,0 +1,159 @@
+{
+  "result": "structural_pass_not_visual_acceptance",
+  "character": "guard_monk_ne",
+  "body_count": 6,
+  "stage_count": 9,
+  "unique_body_rgba_pixel_hashes": 6,
+  "shared_source_scale": 1.0,
+  "body_palette_colors": 96,
+  "body_alpha_binary": true,
+  "visible_pixels_within_canvas": true,
+  "first_last_full_rgba_identical": true,
+  "opaque_body_rgba_preserved_after_layers": true,
+  "layer_partial_alpha_allowed": true,
+  "gif_exact_reserved_colors": 98,
+  "gif_additional_fx_colors": 157,
+  "gif_palette_total": 255,
+  "previews": {
+    "preview.gif": {
+      "durations_ms": [
+        130,
+        130,
+        110,
+        40,
+        40,
+        150,
+        160,
+        190,
+        520
+      ],
+      "total_ms": 1470,
+      "slow_factor": 1,
+      "stage_starts_ideal_ms": [
+        0,
+        130,
+        260,
+        370,
+        410,
+        450,
+        600,
+        760,
+        950
+      ],
+      "stage_starts_gif_ms": [
+        0,
+        130,
+        260,
+        370,
+        410,
+        450,
+        600,
+        760,
+        950
+      ],
+      "boundary_rounding_error_ms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "events": [
+        {
+          "name": "preview_contact_only",
+          "at_ms": 370,
+          "gameplay_binding": false,
+          "ideal_preview_ms": 370,
+          "nearest_gif_tick_ms": 370
+        }
+      ],
+      "idle_ms": 400,
+      "encoded_frames": 9,
+      "requested_samples": 9,
+      "sha256": "18c41f1b67db95cbd6a69faf2d8a5be3a58e25a9060eaf164b131f54c5490cc6",
+      "reserved_rgb_pixels_checked": 1804655,
+      "reserved_rgb_exact": true,
+      "maximum_unreserved_fx_channel_error": 13
+    },
+    "preview_slow.gif": {
+      "durations_ms": [
+        260,
+        260,
+        220,
+        80,
+        80,
+        300,
+        320,
+        380,
+        640
+      ],
+      "total_ms": 2540,
+      "slow_factor": 2,
+      "stage_starts_ideal_ms": [
+        0,
+        260,
+        520,
+        740,
+        820,
+        900,
+        1200,
+        1520,
+        1900
+      ],
+      "stage_starts_gif_ms": [
+        0,
+        260,
+        520,
+        740,
+        820,
+        900,
+        1200,
+        1520,
+        1900
+      ],
+      "boundary_rounding_error_ms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "events": [
+        {
+          "name": "preview_contact_only",
+          "at_ms": 370,
+          "gameplay_binding": false,
+          "ideal_preview_ms": 740,
+          "nearest_gif_tick_ms": 740
+        }
+      ],
+      "idle_ms": 400,
+      "encoded_frames": 9,
+      "requested_samples": 9,
+      "sha256": "4c76aaab8cd0531ab8cb6acfbc65c300c43fe9039c2769cfcba95b188d31b4d1",
+      "reserved_rgb_pixels_checked": 1804655,
+      "reserved_rgb_exact": true,
+      "maximum_unreserved_fx_channel_error": 13
+    }
+  },
+  "unused_body_ids": [],
+  "not_verified": [
+    "anatomy",
+    "grip_and_weapon_continuity",
+    "support_contacts",
+    "visual_transitions",
+    "owner_approval",
+    "runtime_integration",
+    "gameplay_event_binding"
+  ]
+}

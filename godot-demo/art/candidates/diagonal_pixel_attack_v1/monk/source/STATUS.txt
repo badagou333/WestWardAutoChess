@@ -1,0 +1,5 @@
+2026-10-27: source archive complete. Original tool PNGs are preserved as complete-RGBA lossless WebP; original file names and hashes are in provenance.json.
+provenance.current_use defines adopted regions; raw drafts are not individually approved final frames.
+*_preparation.json records the preparation stage before visual review. Final direction status and inspected output hashes belong to ../REVIEW_STATUS.json and ../../STATUS.json, not the intermediate preparation records.
+SE: original ready lower-body pixels protected; new tool upper body/foreground staff used for impact.
+NE: 0/3/4/5 old exposed rear rods removed by imagegen edit; independent imagegen staff segment rigidly aligned behind body to visible front rod. 1/2 unchanged.

@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-27",
+  "status": "limited_offline_pass",
+  "author": "05 author self-review",
+  "independent_review": "diagonal_basis_audit",
+  "scope": "12 standard bodies, 14 displayed stages, all 28 individual 320x320 fixed-scale diamond stages and adjacent poses",
+  "no_known_visual_must_fix_within_scope": true,
+  "human_acceptance": "pending",
+  "runtime_integration": false,
+  "directions": {
+    "se": {
+      "status": "limited_offline_pass",
+      "prepared_sha256": "3b32884b8e55b66e6a50dc650437504d61b010f992acdaba73461633c7e354b6",
+      "bodies": [
+        {
+          "id": "0",
+          "file": "frames/0.png",
+          "sha256": "e9e460451ab98263e918c90070531d6141a913ceb12076ceffa1a802f3b6e6b1"
+        },
+        {
+          "id": "1",
+          "file": "frames/1.png",
+          "sha256": "302665bd407ec4beb03e0148594aaacb99928c7ef407cbf55199835b93726b0a"
+        },
+        {
+          "id": "2",
+          "file": "frames/2.png",
+          "sha256": "19963b1385559d9710be59e0e7297512d62442f6db8b8a393c72837904209844"
+        },
+        {
+          "id": "3",
+          "file": "frames/3.png",
+          "sha256": "a3b1a8ba0244f94b6e2b6ec744792f814b7ed2606955bf262286c1a523d8ad2f"
+        },
+        {
+          "id": "4",
+          "file": "frames/4.png",
+          "sha256": "675b195aebacca01f76af3cc37cd548bdd1cb0aa05b9df7e0ee03e6e4630a911"
+        },
+        {
+          "id": "5",
+          "file": "frames/5.png",
+          "sha256": "75e8c27f07bac30b08841dd2723b4b71fe642c5ba53e42e699ac911666a8b8cb"
+        }
+      ],
+      "renders": [
+        {
+          "file": "frames/0.png",
+          "sha256": "e9e460451ab98263e918c90070531d6141a913ceb12076ceffa1a802f3b6e6b1"
+        },
+        {
+          "file": "frames/1.png",
+          "sha256": "302665bd407ec4beb03e0148594aaacb99928c7ef407cbf55199835b93726b0a"
+        },
+        {
+          "file": "frames/2.png",
+          "sha256": "19963b1385559d9710be59e0e7297512d62442f6db8b8a393c72837904209844"
+        },
+        {
+          "file": "frames/3.png",
+          "sha256": "a3b1a8ba0244f94b6e2b6ec744792f814b7ed2606955bf262286c1a523d8ad2f"
+        },
+        {
+          "file": "frames/4.png",
+          "sha256": "675b195aebacca01f76af3cc37cd548bdd1cb0aa05b9df7e0ee03e6e4630a911"
+        },
+        {
+          "file": "frames/5.png",
+          "sha256": "75e8c27f07bac30b08841dd2723b4b71fe642c5ba53e42e699ac911666a8b8cb"
+        },
+        {
+          "file": "frames/0.png",
+          "sha256": "e9e460451ab98263e918c90070531d6141a913ceb12076ceffa1a802f3b6e6b1"
+        }
+      ]
+    },
+    "ne": {
+      "status": "limited_offline_pass",
+      "prepared_sha256": "c36df0ac17b9946ad6674cd05e7894fa977ca0e53b76b695986c7f5b0b81bfdd",
+      "bodies": [
+        {
+          "id": "0",
+          "file": "frames/0.png",
+          "sha256": "4086213424b8556c1f657a1f728aa268b63ef483f4e89bf0d299494f0f1bd297"
+        },
+        {
+          "id": "1",
+          "file": "frames/1.png",
+          "sha256": "f7e2d308367ba8891ae1ddf18786bf453f378ff59e110dd57deb21688aa4c3a1"
+        },
+        {
+          "id": "2",
+          "file": "frames/2.png",
+          "sha256": "33a207cf469f0e65715cf589563ca55452b7a20019343c3275be1e81c478abff"
+        },
+        {
+          "id": "3",
+          "file": "frames/3.png",
+          "sha256": "89cbbe0dc0e765d56bf6e41a63c07e65e8f6ca25306e41bfd113c0346522308e"
+        },
+        {
+          "id": "4",
+          "file": "frames/4.png",
+          "sha256": "950475d1afa047fded7a066802cc19200c685955e55be556a1ed9b33d71c7de9"
+        },
+        {
+          "id": "5",
+          "file": "frames/5.png",
+          "sha256": "6164ef23a5ff40653a2359e856ee5bbe45812661e1ed7ddb0ed94c477ae43854"
+        }
+      ],
+      "renders": [
+        {
+          "file": "frames/0.png",
+          "sha256": "4086213424b8556c1f657a1f728aa268b63ef483f4e89bf0d299494f0f1bd297"
+        },
+        {
+          "file": "frames/1.png",
+          "sha256": "f7e2d308367ba8891ae1ddf18786bf453f378ff59e110dd57deb21688aa4c3a1"
+        },
+        {
+          "file": "frames/2.png",
+          "sha256": "33a207cf469f0e65715cf589563ca55452b7a20019343c3275be1e81c478abff"
+        },
+        {
+          "file": "frames/3.png",
+          "sha256": "89cbbe0dc0e765d56bf6e41a63c07e65e8f6ca25306e41bfd113c0346522308e"
+        },
+        {
+          "file": "frames/4.png",
+          "sha256": "950475d1afa047fded7a066802cc19200c685955e55be556a1ed9b33d71c7de9"
+        },
+        {
+          "file": "frames/5.png",
+          "sha256": "6164ef23a5ff40653a2359e856ee5bbe45812661e1ed7ddb0ed94c477ae43854"
+        },
+        {
+          "file": "frames/0.png",
+          "sha256": "4086213424b8556c1f657a1f728aa268b63ef483f4e89bf0d299494f0f1bd297"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "direction": "SE",
+  "date": "2026-10-26",
+  "generator": "built-in imagegen",
+  "references": [
+    {
+      "file": "godot-demo/art/candidates/rect_iso_duel_v1/frames/wolf_se_idle.png",
+      "sha256": "b09215b028524cc63fc74351f2db19aef7f1f0be75841dd58d3e338d1cbae943",
+      "role": "identity_and_elevated_SE_camera"
+    },
+    {
+      "file": "godot-demo/art/candidates/rect_iso_duel_v1/frames/wolf_se_attack_prepare.png",
+      "sha256": "bebe302622807acdeb0b814cc3c055381a6835b289b47f89942e4fc7db3db21a",
+      "role": "direction_only_pose_with_published_occlusion_limits"
+    },
+    {
+      "file": "godot-demo/art/candidates/rect_iso_duel_v1/frames/wolf_se_attack_contact.png",
+      "sha256": "7e3f166ef35890ee52b7d082240f6e6c9aebaec39b723b5cf42d0a06cd1ce1a0",
+      "role": "direction_only_pose_with_published_occlusion_limits"
+    }
+  ],
+  "passes": [
+    {
+      "id": "initial",
+      "original_tool_png": "/Users/leqiong/.codex/generated_images/01a17365-3af0-7a23-a8cd-fc19596fce03/exec-e236812a-8078-4ea1-8a8a-acd33bf3863a.png",
+      "original_png_sha256": "41660015c4fcdb0049faa9a098b583ae265a67cde913fd24e296630930b996e4",
+      "file": "source/attack-sheet-v1.webp",
+      "webp_sha256": "1fc970a9948c057cd1b2784690dd7d3b53d9ead7611ff70445969eed234dea87",
+      "rgba_pixel_sha256": "4b3ca072234abfcbff7712166b5fffbbfed0dca0c6e74debaf8a834f507fad0c",
+      "size": [
+        1536,
+        1024
+      ],
+      "webp_lossless_exact": true,
+      "all_RGBA_equal": true,
+      "prompt": "source/prompt-01-initial.txt",
+      "status": "author_repair_needed",
+      "findings": "Elevated SE camera is present; generated near rather than far forepaw lift can be used if consistently tracked. Planted hind/far-front stations and settle footprints differ visibly, requiring targeted foot repair before acceptance.",
+      "current_use": "Intermediate or failed source archived for traceability; no pixels in final prepared body."
+    },
+    {
+      "id": "pass2",
+      "original_tool_png": "/Users/leqiong/.codex/generated_images/01a17365-3af0-7a23-a8cd-fc19596fce03/exec-07abf2d8-7679-4ee7-919d-858e26db95d3.png",
+      "original_png_sha256": "a47ac612feb5e26c38a4b693e524df819254d58762f85cd3f7b44ea9b8b60103",
+      "file": "source/attack-sheet-v2.webp",
+      "webp_sha256": "2ee3cb05334e073cebcea82e39506fcb1615eea92deefd4adea32f46a90e7617",
+      "rgba_pixel_sha256": "f936a63d732c67208e11bb643a765c03775895dbb979f8bf473e9b224fa99856",
+      "size": [
+        1536,
+        1024
+      ],
+      "webp_lossless_exact": true,
+      "all_RGBA_equal": true,
+      "prompt": "source/prompt-02-support-repair.txt",
+      "status": "not_accepted_support_still_drifts",
+      "current_use": "Intermediate or failed source archived for traceability; no pixels in final prepared body."
+    },
+    {
+      "id": "pass3",
+      "original_tool_png": "/Users/leqiong/.codex/generated_images/01a17365-3af0-7a23-a8cd-fc19596fce03/exec-a7fb0078-ac0f-4dc9-bbef-146cf8ee1bb9.png",
+      "original_png_sha256": "adca4b9747229bd4ea798e64f74cad06331d0e39e7098c651280fd7bb1a9a3f6",
+      "file": "source/attack-sheet-v3.webp",
+      "webp_sha256": "41ca9ef415a65c097ec0b0b294aef3f5bdec1ecf6b2b120c7740a8d981e865cc",
+      "rgba_pixel_sha256": "b2db9b7bc21f14a2c9f019bc2b3abe324282f3d33dfec5d3073d3b1c6f9d4bff",
+      "size": [
+        1536,
+        1024
+      ],
+      "webp_lossless_exact": true,
+      "all_RGBA_equal": true,
+      "prompt": "source/prompt-03-tail-recovery.txt",
+      "status": "tail_recovery_fixed_lower_leg_local_repair_pending",
+      "current_use": "Selected raw ready/upper-body source, combined through explicit protection and exclusion masks."
+    },
+    {
+      "id": "contact_support_attempt1",
+      "file": "source/contact-support-attempt1.webp",
+      "original_tool_png": "/Users/leqiong/.codex/generated_images/01a17365-3af0-7a23-a8cd-fc19596fce03/exec-a45809af-037b-461e-a39b-fbcd48653b8f.png",
+      "original_png_sha256": "aad60fa828b77cba3e31bc866d57f034870790884e2c61a208a36d7db254c52a",
+      "webp_sha256": "8947076073b7de8976d4c3f05f7b7a6447981fbe281472f4609a7317f784efcd",
+      "rgba_pixel_sha256": "c1cc421743145bab2a39799ec679c732690c8e9a328af218a0f34e0e7ce20c18",
+      "size": [
+        1254,
+        1254
+      ],
+      "all_RGBA_equal": true,
+      "prompt": "source/prompt-04-contact-support-failed.txt",
+      "adopted": false,
+      "reason": "Tool removed/occluded the supporting far foreleg instead of redrawing the required planted paw station; no pixels used.",
+      "current_use": "Intermediate or failed source archived for traceability; no pixels in final prepared body."
+    },
+    {
+      "id": "contact_support_attempt2",
+      "file": "source/contact-support-attempt2.webp",
+      "original_tool_png": "/Users/leqiong/.codex/generated_images/01a17365-3af0-7a23-a8cd-fc19596fce03/exec-35748393-b48e-4157-93f7-9cc17c26cbd2.png",
+      "original_png_sha256": "4fc71a3cdd7ae6634a36903790b577c00295c6067ef16bdc7b70429c3404d6c7",
+      "webp_sha256": "490dcb9b260ec945ab5d0450320993b38e3c0142a97b2f07648532cbf72ad03f",
+      "rgba_pixel_sha256": "8a311da9d6a1b6c8168abb724188f7bd25a2c0fe659b53ed3340b6d5e5b5ff2f",
+      "size": [
+        1254,
+        1254
+      ],
+      "all_RGBA_equal": true,
+      "prompt": "source/prompt-05-contact-crop-failed.txt",
+      "adopted": false,
+      "reason": "Generated foot still missed the protected reference station; no pixels used.",
+      "current_use": "Intermediate or failed source archived for traceability; no pixels in final prepared body."
+    },
+    {
+      "id": "contact_support_attempt3",
+      "file": "source/contact-support-attempt3.webp",
+      "original_tool_png": "/Users/leqiong/.codex/generated_images/01a17365-3af0-7a23-a8cd-fc19596fce03/exec-7948fd7e-5170-4483-84c5-b8f444adb46b.png",
+      "original_png_sha256": "b2539b7601c1db8e6191976460c76534e8cd6aeb804379015cfed2a9f88e86c3",
+      "webp_sha256": "7f173ec1f4a92143aa70b79a22cc32dd2ff812a685266eb950a604eddfe72c85",
+      "rgba_pixel_sha256": "2bc144016d150add1908cea94cb7383831103e36d84a9ca9bea82c225a7b8e45",
+      "size": [
+        1254,
+        1254
+      ],
+      "all_RGBA_equal": true,
+      "prompt": "source/prompt-06-fixed-sole-crop-failed.txt",
+      "adopted": false,
+      "reason": "Generated foot still missed the protected reference station; no pixels used.",
+      "current_use": "Intermediate or failed source archived for traceability; no pixels in final prepared body."
+    }
+  ],
+  "old_side_view_series_used": false,
+  "independent_gate": "Source RGBA and isolated rebuild independently checked; final visual status in ../../REVIEW_STATUS.json, historical per-pass findings retained.",
+  "current_base": "source/attack-sheet-v3.webp",
+  "assembly_strategy_authorized_by_root": "Use original ready as protected edit target. Keep support legs/feet, hips and tail unmoved; copy only actual imagegen head/neck/chest/raised near foreleg inside explicit masks. No leg/paw move or warp.",
+  "completed_date": "2026-10-27"
+}

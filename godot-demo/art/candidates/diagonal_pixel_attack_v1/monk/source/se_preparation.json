@@ -1,0 +1,16 @@
+{
+  "method": "imagegen upper-body edit with original target lower body protected",
+  "tool_source": "se_fixed_legs.webp",
+  "source_canvas": [
+    1254,
+    1254
+  ],
+  "canvas_registration": "whole output canvas nearest to 448; no silhouette fit",
+  "original_extraction": "se_extraction.json",
+  "protected_pixels": 13955,
+  "protected_rgba_exact": true,
+  "no_limb_translation_rotation_or_warp": true,
+  "prepared_sha256": "2bc75ac01c014fb69b89e679f8e4bd0d43cd86b082efbbaba56eee0e4c2a94f8",
+  "prepared_rgba_sha256": "dcd40cbb9707ab9ca673f105411495b5ba4fa5ca14abbea18d40e1017a261b1b",
+  "status": "awaiting_visual_review"
+}

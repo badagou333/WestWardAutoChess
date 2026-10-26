@@ -1,0 +1,181 @@
+{
+  "character": "wolf_se",
+  "display_name": "斜向山狼 SE",
+  "canvas": [
+    448,
+    448
+  ],
+  "anchor": [
+    224,
+    344
+  ],
+  "palette_colors": 96,
+  "background": [
+    35,
+    40,
+    48
+  ],
+  "sources": {
+    "protected_ready_assembly": {
+      "file": "source/prepared_poses.webp",
+      "sha256": "3b32884b8e55b66e6a50dc650437504d61b010f992acdaba73461633c7e354b6",
+      "expected_pixel_sha256": "1aaf05997da4c823caeee679516ce494854f03d73fb01a658c87287d7e920ff7",
+      "scale": 1.0
+    }
+  },
+  "bodies": [
+    {
+      "id": "0",
+      "name": "ready",
+      "source": "protected_ready_assembly",
+      "source_box": [
+        0,
+        0,
+        448,
+        448
+      ],
+      "source_anchor": [
+        224,
+        344
+      ]
+    },
+    {
+      "id": "1",
+      "name": "coil",
+      "source": "protected_ready_assembly",
+      "source_box": [
+        448,
+        0,
+        896,
+        448
+      ],
+      "source_anchor": [
+        672,
+        344
+      ]
+    },
+    {
+      "id": "2",
+      "name": "open_reach",
+      "source": "protected_ready_assembly",
+      "source_box": [
+        896,
+        0,
+        1344,
+        448
+      ],
+      "source_anchor": [
+        1120,
+        344
+      ]
+    },
+    {
+      "id": "3",
+      "name": "clamp_contact",
+      "source": "protected_ready_assembly",
+      "source_box": [
+        0,
+        448,
+        448,
+        896
+      ],
+      "source_anchor": [
+        224,
+        792
+      ]
+    },
+    {
+      "id": "4",
+      "name": "retract",
+      "source": "protected_ready_assembly",
+      "source_box": [
+        448,
+        448,
+        896,
+        896
+      ],
+      "source_anchor": [
+        672,
+        792
+      ]
+    },
+    {
+      "id": "5",
+      "name": "settle",
+      "source": "protected_ready_assembly",
+      "source_box": [
+        896,
+        448,
+        1344,
+        896
+      ],
+      "source_anchor": [
+        1120,
+        792
+      ]
+    }
+  ],
+  "track": [
+    {
+      "at_ms": 0,
+      "body": "0"
+    },
+    {
+      "at_ms": 140,
+      "body": "1"
+    },
+    {
+      "at_ms": 220,
+      "body": "2"
+    },
+    {
+      "at_ms": 300,
+      "body": "3"
+    },
+    {
+      "at_ms": 400,
+      "body": "4"
+    },
+    {
+      "at_ms": 560,
+      "body": "5"
+    },
+    {
+      "at_ms": 700,
+      "body": "0"
+    }
+  ],
+  "duration_ms": 820,
+  "idle_ms": 350,
+  "events": [
+    {
+      "name": "bite_contact_preview_only",
+      "at_ms": 300
+    }
+  ],
+  "review_profile": [
+    "rect_iso_duel_v1 same-direction elevated camera only",
+    "fixed ready support limbs/feet and hips, no paw movement/warp",
+    "real generated neck jaw and near foreleg changes",
+    "protect masks require seam/anatomy review before final approval"
+  ],
+  "review_annotations": {
+    "direction": "SE",
+    "forward_screen": [
+      2,
+      1
+    ],
+    "suggested_display_scale": 0.5,
+    "actual_raw_sampling_scale": 0.5,
+    "joint_96_color_palette": true,
+    "visual_gate": "limited_offline_pass; see ../REVIEW_STATUS.json and REVIEW.md; human acceptance pending",
+    "mirrors_only": [
+      "SW"
+    ],
+    "source_preparation": "../prepare_wolf.py",
+    "assembly_spec": "../assembly_spec.json",
+    "feet_file": "feet.json",
+    "runtime_integrated": false
+  },
+  "status": "reviewed_candidate"
+}

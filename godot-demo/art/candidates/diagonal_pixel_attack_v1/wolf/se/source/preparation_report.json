@@ -1,0 +1,855 @@
+{
+  "date": "2026-10-27",
+  "role": "author_protected_ready_assembly_not_independent_gate",
+  "source": "source/attack-sheet-v3.webp",
+  "source_scale_common": 0.5,
+  "canvas": [
+    448,
+    448
+  ],
+  "anchor": [
+    224,
+    344
+  ],
+  "display_scale": 0.5,
+  "forward_screen": [
+    2,
+    1
+  ],
+  "stance": "Protected ready support legs and hips, static ready tail. Genuine imagegen neck/jaw/chest/near-foreleg art only; no local limb movement or deformation.",
+  "source_extraction": [
+    {
+      "source_box": [
+        0,
+        0,
+        515,
+        505
+      ],
+      "source_anchor": [
+        256,
+        390
+      ],
+      "scale": 0.5,
+      "component_seeds": [
+        [
+          250,
+          200
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [
+        28727
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        104,
+        162
+      ],
+      "anchor_rounding_error_px": [
+        0.5,
+        -0.5
+      ],
+      "visible_bbox": [
+        104,
+        162,
+        337,
+        380
+      ],
+      "body_alpha_binary": true
+    },
+    {
+      "source_box": [
+        515,
+        0,
+        1045,
+        505
+      ],
+      "source_anchor": [
+        768,
+        390
+      ],
+      "scale": 0.5,
+      "component_seeds": [
+        [
+          760,
+          200
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [
+        26216
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        114,
+        162
+      ],
+      "anchor_rounding_error_px": [
+        0.5,
+        -0.5
+      ],
+      "visible_bbox": [
+        114,
+        162,
+        348,
+        382
+      ],
+      "body_alpha_binary": true
+    },
+    {
+      "source_box": [
+        1045,
+        0,
+        1536,
+        505
+      ],
+      "source_anchor": [
+        1280,
+        390
+      ],
+      "scale": 0.5,
+      "component_seeds": [
+        [
+          1270,
+          200
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [
+        25144
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        116,
+        163
+      ],
+      "anchor_rounding_error_px": [
+        0.5,
+        0.0
+      ],
+      "visible_bbox": [
+        116,
+        163,
+        344,
+        379
+      ],
+      "body_alpha_binary": true
+    },
+    {
+      "source_box": [
+        0,
+        505,
+        560,
+        1024
+      ],
+      "source_anchor": [
+        256,
+        902
+      ],
+      "scale": 0.5,
+      "component_seeds": [
+        [
+          250,
+          720
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 3277,
+      "selected_components_pixels_after_scale": [
+        29020
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        111,
+        148
+      ],
+      "anchor_rounding_error_px": [
+        0.0,
+        0.5
+      ],
+      "visible_bbox": [
+        111,
+        148,
+        365,
+        375
+      ],
+      "body_alpha_binary": true
+    },
+    {
+      "source_box": [
+        515,
+        505,
+        1060,
+        1024
+      ],
+      "source_anchor": [
+        768,
+        902
+      ],
+      "scale": 0.5,
+      "component_seeds": [
+        [
+          760,
+          720
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 2914,
+      "selected_components_pixels_after_scale": [
+        26567
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        100,
+        177
+      ],
+      "anchor_rounding_error_px": [
+        -0.5,
+        0.0
+      ],
+      "visible_bbox": [
+        100,
+        177,
+        344,
+        375
+      ],
+      "body_alpha_binary": true
+    },
+    {
+      "source_box": [
+        1024,
+        505,
+        1536,
+        1024
+      ],
+      "source_anchor": [
+        1280,
+        902
+      ],
+      "scale": 0.5,
+      "component_seeds": [
+        [
+          1270,
+          720
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [
+        28522
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        100,
+        174
+      ],
+      "anchor_rounding_error_px": [
+        0.0,
+        0.0
+      ],
+      "visible_bbox": [
+        100,
+        174,
+        340,
+        384
+      ],
+      "body_alpha_binary": true
+    }
+  ],
+  "poses": [
+    {
+      "id": "0",
+      "name": "ready",
+      "source_pose": "0",
+      "edit_target": "ready pose0, same direction",
+      "changed_rgba_pixels_before_palette": 0,
+      "change_bbox": null,
+      "outside_explicit_mask_RGBA_exact": true,
+      "near_foreleg": "contact",
+      "unquantized_pixel_sha256": "78b41976aff440045a435328b9f62849175efdbf550389c5561fab7bca94cff0"
+    },
+    {
+      "id": "1",
+      "name": "coil",
+      "source_pose": "1",
+      "edit_target": "ready pose0, same direction",
+      "changed_rgba_pixels_before_palette": 11217,
+      "change_bbox": [
+        188,
+        170,
+        348,
+        354
+      ],
+      "outside_explicit_mask_RGBA_exact": true,
+      "near_foreleg": "contact",
+      "unquantized_pixel_sha256": "cc3d3ac8bab76e03d3dec22f444c6c23aa10766e76775c081e534032a71f2c92"
+    },
+    {
+      "id": "2",
+      "name": "open_reach",
+      "source_pose": "2",
+      "edit_target": "ready pose0, same direction",
+      "changed_rgba_pixels_before_palette": 14851,
+      "change_bbox": [
+        188,
+        170,
+        344,
+        380
+      ],
+      "outside_explicit_mask_RGBA_exact": true,
+      "near_foreleg": "airborne",
+      "unquantized_pixel_sha256": "c4a741a0987e53d7c29a909ecc162e36ab3a678d40baa4f18f7d3506c5071e34"
+    },
+    {
+      "id": "3",
+      "name": "clamp_contact",
+      "source_pose": "3",
+      "edit_target": "ready pose0, same direction",
+      "changed_rgba_pixels_before_palette": 15922,
+      "change_bbox": [
+        188,
+        170,
+        365,
+        380
+      ],
+      "outside_explicit_mask_RGBA_exact": true,
+      "near_foreleg": "airborne",
+      "unquantized_pixel_sha256": "0921126d3ad36d26baa108c9a614e3566bcc81ffed58f7a825878ffc584c00bd"
+    },
+    {
+      "id": "4",
+      "name": "retract",
+      "source_pose": "4",
+      "edit_target": "ready pose0, same direction",
+      "changed_rgba_pixels_before_palette": 13713,
+      "change_bbox": [
+        188,
+        170,
+        344,
+        380
+      ],
+      "outside_explicit_mask_RGBA_exact": true,
+      "near_foreleg": "airborne",
+      "unquantized_pixel_sha256": "af50ddbca69c971b57b6e2d10d859e914de2f1e24486a7ec1ceb426ef29d95bd"
+    },
+    {
+      "id": "5",
+      "name": "settle",
+      "source_pose": "5",
+      "edit_target": "ready pose0, same direction",
+      "changed_rgba_pixels_before_palette": 10324,
+      "change_bbox": [
+        188,
+        170,
+        340,
+        328
+      ],
+      "outside_explicit_mask_RGBA_exact": true,
+      "near_foreleg": "contact",
+      "unquantized_pixel_sha256": "a1d13fa716743c774c5a6cae04ba2853cf896d8a2e335dff406d9cdf70334f83"
+    }
+  ],
+  "joint_palette_rgb": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      2,
+      1,
+      1
+    ],
+    [
+      4,
+      2,
+      2
+    ],
+    [
+      4,
+      3,
+      3
+    ],
+    [
+      5,
+      4,
+      3
+    ],
+    [
+      7,
+      4,
+      4
+    ],
+    [
+      10,
+      7,
+      6
+    ],
+    [
+      16,
+      11,
+      10
+    ],
+    [
+      21,
+      16,
+      14
+    ],
+    [
+      31,
+      23,
+      19
+    ],
+    [
+      39,
+      32,
+      29
+    ],
+    [
+      47,
+      36,
+      32
+    ],
+    [
+      53,
+      43,
+      40
+    ],
+    [
+      58,
+      48,
+      45
+    ],
+    [
+      62,
+      53,
+      50
+    ],
+    [
+      67,
+      56,
+      52
+    ],
+    [
+      69,
+      58,
+      55
+    ],
+    [
+      74,
+      64,
+      61
+    ],
+    [
+      75,
+      58,
+      52
+    ],
+    [
+      77,
+      66,
+      62
+    ],
+    [
+      82,
+      68,
+      61
+    ],
+    [
+      82,
+      71,
+      67
+    ],
+    [
+      83,
+      72,
+      68
+    ],
+    [
+      85,
+      74,
+      70
+    ],
+    [
+      89,
+      75,
+      68
+    ],
+    [
+      89,
+      77,
+      74
+    ],
+    [
+      92,
+      78,
+      74
+    ],
+    [
+      92,
+      80,
+      77
+    ],
+    [
+      94,
+      81,
+      77
+    ],
+    [
+      95,
+      83,
+      79
+    ],
+    [
+      97,
+      84,
+      80
+    ],
+    [
+      97,
+      85,
+      81
+    ],
+    [
+      98,
+      86,
+      82
+    ],
+    [
+      102,
+      85,
+      76
+    ],
+    [
+      102,
+      88,
+      84
+    ],
+    [
+      104,
+      90,
+      86
+    ],
+    [
+      105,
+      92,
+      87
+    ],
+    [
+      106,
+      94,
+      89
+    ],
+    [
+      109,
+      92,
+      83
+    ],
+    [
+      109,
+      95,
+      90
+    ],
+    [
+      110,
+      97,
+      92
+    ],
+    [
+      113,
+      94,
+      84
+    ],
+    [
+      113,
+      99,
+      94
+    ],
+    [
+      116,
+      97,
+      87
+    ],
+    [
+      117,
+      103,
+      98
+    ],
+    [
+      119,
+      102,
+      94
+    ],
+    [
+      120,
+      105,
+      100
+    ],
+    [
+      121,
+      107,
+      102
+    ],
+    [
+      123,
+      97,
+      80
+    ],
+    [
+      125,
+      109,
+      103
+    ],
+    [
+      129,
+      104,
+      87
+    ],
+    [
+      129,
+      108,
+      95
+    ],
+    [
+      137,
+      109,
+      90
+    ],
+    [
+      137,
+      113,
+      98
+    ],
+    [
+      141,
+      115,
+      98
+    ],
+    [
+      143,
+      119,
+      103
+    ],
+    [
+      151,
+      119,
+      95
+    ],
+    [
+      151,
+      123,
+      102
+    ],
+    [
+      156,
+      128,
+      109
+    ],
+    [
+      157,
+      124,
+      99
+    ],
+    [
+      162,
+      129,
+      101
+    ],
+    [
+      163,
+      131,
+      107
+    ],
+    [
+      165,
+      135,
+      112
+    ],
+    [
+      169,
+      140,
+      116
+    ],
+    [
+      170,
+      136,
+      108
+    ],
+    [
+      174,
+      141,
+      115
+    ],
+    [
+      178,
+      146,
+      120
+    ],
+    [
+      182,
+      143,
+      110
+    ],
+    [
+      184,
+      148,
+      120
+    ],
+    [
+      187,
+      154,
+      126
+    ],
+    [
+      196,
+      156,
+      123
+    ],
+    [
+      198,
+      162,
+      131
+    ],
+    [
+      202,
+      166,
+      135
+    ],
+    [
+      206,
+      170,
+      140
+    ],
+    [
+      215,
+      176,
+      144
+    ],
+    [
+      216,
+      172,
+      132
+    ],
+    [
+      220,
+      181,
+      147
+    ],
+    [
+      226,
+      190,
+      158
+    ],
+    [
+      228,
+      186,
+      146
+    ],
+    [
+      228,
+      188,
+      153
+    ],
+    [
+      235,
+      194,
+      159
+    ],
+    [
+      238,
+      201,
+      168
+    ],
+    [
+      240,
+      200,
+      161
+    ],
+    [
+      243,
+      209,
+      176
+    ],
+    [
+      244,
+      205,
+      169
+    ],
+    [
+      250,
+      211,
+      177
+    ],
+    [
+      250,
+      222,
+      195
+    ],
+    [
+      251,
+      215,
+      182
+    ],
+    [
+      252,
+      218,
+      185
+    ],
+    [
+      253,
+      221,
+      190
+    ],
+    [
+      253,
+      227,
+      198
+    ],
+    [
+      253,
+      236,
+      211
+    ],
+    [
+      254,
+      224,
+      194
+    ]
+  ],
+  "local_paw_translation_or_warp": false,
+  "all_other_directions_mirrors_only": true,
+  "prepared_file": "source/prepared_poses.webp",
+  "prepared_sha256": "3b32884b8e55b66e6a50dc650437504d61b010f992acdaba73461633c7e354b6",
+  "prepared_rgba_pixel_sha256": "1aaf05997da4c823caeee679516ce494854f03d73fb01a658c87287d7e920ff7",
+  "author_visual_status": "draft_requires_full_pose_and_seam_review"
+}

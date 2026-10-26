@@ -1,0 +1,145 @@
+{
+  "tool": "built-in imagegen",
+  "date": "2026-10-26",
+  "status": "source_archive_usage_documented",
+  "sources": [
+    {
+      "direction": "SE",
+      "original_generated_filename": "exec-cd6c64b1-c642-4fcf-b0a8-9bb39fe05c9c.png",
+      "original_png_sha256": "6a49e85353e2451393afc6c04ae93dd2d668c4cfc94ed8d2a15f7d762e98d4c6",
+      "file": "se_initial.webp",
+      "sha256": "c5c852516dcc917d6e2080f8b3c51b77bc48eac88bab26778e928ff3fd7c7c84",
+      "rgba_sha256": "c5d428e3fe9126ecd578b525d100fa9fe071ca9aedbf793665f8435eeb3f9085",
+      "rgba_exact": true,
+      "size": [
+        1536,
+        1024
+      ],
+      "prompt": "prompt_se_initial.txt",
+      "orientation_reference": "godot-demo/art/candidates/rect_iso_duel_v1/frames/monk_se_idle.png",
+      "current_use": "SE0/1/2/4/5主体来源；SE3支撑下肢保护像素来源。"
+    },
+    {
+      "direction": "NE",
+      "original_generated_filename": "exec-2c8e5a1b-d08a-4bf0-8f0f-1f8f478f2505.png",
+      "original_png_sha256": "9aa12905f55baf8a8783f02a28584e9d2788ea54e8cb62c2eec1ac52ea968c8c",
+      "file": "ne_initial.webp",
+      "sha256": "38519cf83d137fe03b6df14ab5de0e76a3e9ad5ae32adbc4ee18bb432e1a2c83",
+      "rgba_sha256": "d7463209eac5897b8994b367e981457b33eaba64ac900bf73067f90e9f85419e",
+      "rgba_exact": true,
+      "size": [
+        1536,
+        1024
+      ],
+      "prompt": "prompt_ne_initial.txt",
+      "orientation_reference": "godot-demo/art/candidates/rect_iso_duel_v1/frames/monk_ne_idle.png",
+      "current_use": "NE0/1/2/5主体来源；0/5旧后杆已局部替换。"
+    },
+    {
+      "direction": "SE",
+      "original_generated_filename": "exec-387be69d-764c-418b-826d-c69f8b27d5da.png",
+      "original_png_sha256": "2f58279a32cecef34b1692a9d2072f3b62273138817fa503c2c61812d733239e",
+      "file": "se_repair.webp",
+      "sha256": "573aed41c685d9db95dfdee8dd031ee8c5ab72401f6c81f5d5267153931928f9",
+      "rgba_sha256": "281b795c9a23e5027f68b62d8bc86bf33f4768ce317c5b3146297c69811edfc4",
+      "rgba_exact": true,
+      "size": [
+        1536,
+        1024
+      ],
+      "prompt": "prompt_se_repair.txt",
+      "current_use": "曾修手与棍端的中间稿；最终SE3上身使用se_fixed_legs，不能将本图当最终整帧。"
+    },
+    {
+      "direction": "NE",
+      "original_generated_filename": "exec-c4f449d0-8c20-4226-8b2b-5c8590b0ac30.png",
+      "original_png_sha256": "25f02dd4501c59ebf1120cffe1850ec8b0830205e693b9cfac6c73f428f99e43",
+      "file": "ne_repair.webp",
+      "sha256": "073fb1c2c4577df6da7c80ce6d9cc3e7ff1a84912dc628f169ac4d2e8c25eb65",
+      "rgba_sha256": "a8610937ae16d9d9f0881d049e58dc22fb1a2237d4fc28fd11bfa864650ce38c",
+      "rgba_exact": true,
+      "size": [
+        1536,
+        1024
+      ],
+      "prompt": "prompt_ne_repair.txt",
+      "current_use": "NE3上身与前杆来源，后杆另由去杆修边及独立杆替换；NE4最终使用ne_recoil_tail。"
+    },
+    {
+      "name": "se_fixed_legs",
+      "original_generated_filename": "exec-e12376a4-ed94-4213-a2dd-5fb447297980.png",
+      "original_png_sha256": "35783602ecef0ac78db4299f51c0597256d58df3dd70c01d12bcb82ee6eec864",
+      "file": "se_fixed_legs.webp",
+      "sha256": "3b42fc38487957f0bb90c19403fb97a15c9788592e65ff678d7f848606c9a03e",
+      "rgba_sha256": "4742199f0619c778bb59b90e6071aafec71224026ab5478878e56681cbc0ce8f",
+      "rgba_exact": true,
+      "size": [
+        1254,
+        1254
+      ],
+      "prompt": "prompt_se_fixed_legs.txt",
+      "current_use": "最终SE3新上身及前手棍局部；模型重画的下肢未采用，准备脚本保留SE0支撑下肢。"
+    },
+    {
+      "name": "ne_recoil_tail",
+      "original_generated_filename": "exec-d39bda09-83fe-429c-8330-2ff4cfd02529.png",
+      "original_png_sha256": "a502847dc2fa0fd7457a1c28f44af336310b378b3d93c2358e33427c569f4802",
+      "file": "ne_recoil_tail.webp",
+      "sha256": "4ce76df8c9e4b995b376a3f4356371f9ea5765ec8e051d9856fed5bbf10aea73",
+      "rgba_sha256": "7e42c103e9bf171dee72ee6390fd2c4d5949799d94b439d6b8d88aaeb9937d88",
+      "rgba_exact": true,
+      "size": [
+        1536,
+        1024
+      ],
+      "prompt": "prompt_ne_recoil_tail.txt",
+      "current_use": "NE4主体与前杆来源；错误后杆经ne_no_rear修边并以独立杆共轴替换。"
+    },
+    {
+      "name": "staff_trails",
+      "original_generated_filename": "exec-6af5c417-f7b4-4b79-8272-306039bd3459.png",
+      "original_png_sha256": "25a2040be321283ec077ea2aae479abfc386c9082dc197dc50ff39f7b6d73881",
+      "file": "staff_trails.webp",
+      "sha256": "c2cd71fc08fceb0e29d05db14c45cf6d32eb85ec85fa58b9e336d4968459cb0d",
+      "rgba_sha256": "3406508acef07f088a52c8c8de97843b197a92938cd5851b6ad65cf986b824af",
+      "rgba_exact": true,
+      "size": [
+        1774,
+        887
+      ],
+      "prompt": "prompt_fx.txt",
+      "current_use": "SE/NE独立短残影；后置，80ms两段渐隐。"
+    },
+    {
+      "name": "ne_no_rear",
+      "original_generated_filename": "exec-67b83423-a64a-482e-9df2-703fac7322e2.png",
+      "original_png_sha256": "cbd5b0677095e2a7db984c72b751bd415b7f33a4f7db195d2ad79955f0a658f4",
+      "file": "ne_no_rear.webp",
+      "sha256": "75ec35bbfc66df0fde78d56908b1406f368762cdbe2523d3d11d0a3f213fd8f3",
+      "rgba_sha256": "47d47904cf1fc2b59e7042942b2e206c96504c85601dc6bc1e9cddf37a9aeab9",
+      "rgba_exact": true,
+      "size": [
+        1536,
+        1024
+      ],
+      "prompt": "prompt_ne_remove_rear.txt",
+      "current_use": "仅NE0/3/4/5显式矩形区采用去旧后杆/衣边修复；区外身体保持。"
+    },
+    {
+      "name": "staff_component",
+      "original_generated_filename": "exec-a2b1e7b2-6acd-459a-84f3-00f6a51643ab.png",
+      "original_png_sha256": "7ab46907e8ba7636430db0b4dee90b9da3528b765dc1c002ef355add698b9a95",
+      "file": "staff_component.webp",
+      "sha256": "236ac2ee4d82a9a2afee70d4dc387c25ef990c97a8347ecda7c4f692a2b67525",
+      "rgba_sha256": "e7bef54fc034d2e23eaf5ac80655d16cb1465f5fbd5f93aa5344681b465898db",
+      "rgba_exact": true,
+      "size": [
+        2172,
+        724
+      ],
+      "prompt": "prompt_staff_component.txt",
+      "current_use": "只取已绘左帽和木杆刚体变换，置于NE0/3/4/5身体背后，与可见前杆同轴。"
+    }
+  ],
+  "completed_date": "2026-10-27"
+}

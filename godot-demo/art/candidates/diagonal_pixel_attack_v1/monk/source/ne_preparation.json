@@ -1,0 +1,149 @@
+{
+  "method": "imagegen local removal and generated equipment compositing",
+  "original_extraction": "ne_extraction.json",
+  "no_body_geometry_change": true,
+  "repairs": [
+    {
+      "body": 0,
+      "visible_front_axis": [
+        [
+          340,
+          184.5
+        ],
+        [
+          355,
+          177.5
+        ]
+      ],
+      "slope": -0.4666666666666667,
+      "intercept": 343.16666666666663,
+      "rear_tip": [
+        100,
+        296.49999999999994
+      ],
+      "shaft_uniform_scale": 0.165,
+      "inverse_affine": [
+        5.492019030274336,
+        -2.5629422141280234,
+        284.7104634615252,
+        2.5629422141280234,
+        5.492019030274336,
+        -1525.1778638891426
+      ],
+      "removal_mask": [
+        85,
+        220,
+        185,
+        294
+      ],
+      "body_geometry_warped": false
+    },
+    {
+      "body": 3,
+      "visible_front_axis": [
+        [
+          360,
+          185
+        ],
+        [
+          390,
+          174
+        ]
+      ],
+      "slope": -0.36666666666666664,
+      "intercept": 317.0,
+      "rear_tip": [
+        100,
+        280.3333333333333
+      ],
+      "shaft_uniform_scale": 0.165,
+      "inverse_affine": [
+        5.690159490221871,
+        -2.0863918130813524,
+        89.86922257828533,
+        2.0863918130813524,
+        5.690159490221871,
+        -1444.280558400333
+      ],
+      "removal_mask": [
+        82,
+        206,
+        195,
+        275
+      ],
+      "body_geometry_warped": false
+    },
+    {
+      "body": 4,
+      "visible_front_axis": [
+        [
+          340,
+          175.5
+        ],
+        [
+          360,
+          167.5
+        ]
+      ],
+      "slope": -0.4,
+      "intercept": 311.5,
+      "rear_tip": [
+        95,
+        273.5
+      ],
+      "shaft_uniform_scale": 0.165,
+      "inverse_affine": [
+        5.627131459910662,
+        -2.250852583964265,
+        155.03069302271354,
+        2.250852583964265,
+        5.627131459910662,
+        -1393.3514497621713
+      ],
+      "removal_mask": [
+        77,
+        201,
+        195,
+        277
+      ],
+      "body_geometry_warped": false
+    },
+    {
+      "body": 5,
+      "visible_front_axis": [
+        [
+          325,
+          188
+        ],
+        [
+          350,
+          176
+        ]
+      ],
+      "slope": -0.48,
+      "intercept": 344.0,
+      "rear_tip": [
+        103,
+        294.56
+      ],
+      "shaft_uniform_scale": 0.165,
+      "inverse_affine": [
+        5.463776105868324,
+        -2.6226125308167956,
+        283.747808172958,
+        2.6226125308167956,
+        5.463776105868324,
+        -1520.0389804187034
+      ],
+      "removal_mask": [
+        82,
+        220,
+        197,
+        313
+      ],
+      "body_geometry_warped": false
+    }
+  ],
+  "prepared_sha256": "048dd99ca0c253d2a03bb414bff4f07fe61bb9f903848e2a9a73d9beef167aa4",
+  "status": "awaiting_visual_review"
+}

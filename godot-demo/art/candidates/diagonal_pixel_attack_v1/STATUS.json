@@ -1,0 +1,32 @@
+{
+  "updated": "2026-10-27",
+  "overall_status": "reviewed_candidate",
+  "visual_review": {
+    "status": "limited_offline_pass",
+    "scope": "24 source body poses, 32 displayed source stages, 64 individual fixed-scale four-direction diamond views; offline only",
+    "human_acceptance": "pending",
+    "runtime_integration": false
+  },
+  "characters": {
+    "monk": {
+      "status": "reviewed_candidate",
+      "visual_review": "limited_offline_pass",
+      "directions": {
+        "se": "limited_offline_pass",
+        "ne": "limited_offline_pass"
+      },
+      "review": "monk/REVIEW_STATUS.json"
+    },
+    "wolf": {
+      "status": "reviewed_candidate",
+      "visual_review": "limited_offline_pass",
+      "directions": {
+        "se": "limited_offline_pass",
+        "ne": "limited_offline_pass"
+      },
+      "review": "wolf/REVIEW_STATUS.json"
+    }
+  },
+  "runtime_integrated": false,
+  "scope": "Two characters, attack only. SE/NE source views; SW/NW derived mirrors. Older nine-character series remains withdrawn."
+}

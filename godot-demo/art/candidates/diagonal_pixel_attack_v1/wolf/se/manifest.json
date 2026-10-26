@@ -1,0 +1,1053 @@
+{
+  "schema": "pixel-attack-series-v1",
+  "character": "wolf_se",
+  "display_name": "斜向山狼 SE",
+  "status": "structural_candidate_requires_visual_review",
+  "canvas": [
+    448,
+    448
+  ],
+  "anchor": [
+    224.0,
+    344.0
+  ],
+  "sources": {
+    "protected_ready_assembly": {
+      "file": "source/prepared_poses.webp",
+      "format": "WEBP",
+      "size": [
+        1344,
+        896
+      ],
+      "sha256": "3b32884b8e55b66e6a50dc650437504d61b010f992acdaba73461633c7e354b6",
+      "rgba_pixel_sha256": "1aaf05997da4c823caeee679516ce494854f03d73fb01a658c87287d7e920ff7",
+      "expected_pixel_hash_verified": true,
+      "lossless_storage": true,
+      "scale": 1.0
+    }
+  },
+  "bodies": [
+    {
+      "id": "0",
+      "name": "ready",
+      "source": "protected_ready_assembly",
+      "source_box": [
+        0,
+        0,
+        448,
+        448
+      ],
+      "source_anchor": [
+        224,
+        344
+      ],
+      "scale": 1.0,
+      "component_seeds": null,
+      "selection": "all_explicit_crop_alpha",
+      "selected_components": null,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        104,
+        162
+      ],
+      "anchor_rounding_error_px": [
+        0.0,
+        0.0
+      ],
+      "visible_bbox": [
+        104,
+        162,
+        337,
+        380
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/0.png",
+      "sha256": "e9e460451ab98263e918c90070531d6141a913ceb12076ceffa1a802f3b6e6b1",
+      "rgba_pixel_sha256": "3fdd4c1319f5535ebcafbc20fb86af76869e12ca4b5842b1d8ebf0bfe0a48494",
+      "opaque_colors": 96,
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "1",
+      "name": "coil",
+      "source": "protected_ready_assembly",
+      "source_box": [
+        448,
+        0,
+        896,
+        448
+      ],
+      "source_anchor": [
+        672,
+        344
+      ],
+      "scale": 1.0,
+      "component_seeds": null,
+      "selection": "all_explicit_crop_alpha",
+      "selected_components": null,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        104,
+        162
+      ],
+      "anchor_rounding_error_px": [
+        0.0,
+        0.0
+      ],
+      "visible_bbox": [
+        104,
+        162,
+        348,
+        380
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/1.png",
+      "sha256": "302665bd407ec4beb03e0148594aaacb99928c7ef407cbf55199835b93726b0a",
+      "rgba_pixel_sha256": "4a99122b5fa60c2ccebea6917692d31bcd0a20617cbd43673ee81f24923cd782",
+      "opaque_colors": 96,
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "2",
+      "name": "open_reach",
+      "source": "protected_ready_assembly",
+      "source_box": [
+        896,
+        0,
+        1344,
+        448
+      ],
+      "source_anchor": [
+        1120,
+        344
+      ],
+      "scale": 1.0,
+      "component_seeds": null,
+      "selection": "all_explicit_crop_alpha",
+      "selected_components": null,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        104,
+        162
+      ],
+      "anchor_rounding_error_px": [
+        0.0,
+        0.0
+      ],
+      "visible_bbox": [
+        104,
+        162,
+        344,
+        365
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/2.png",
+      "sha256": "19963b1385559d9710be59e0e7297512d62442f6db8b8a393c72837904209844",
+      "rgba_pixel_sha256": "da8148b818a505ac8a6dd5a3da219c95f52f9e1621c4139d19bd42b5f94076e0",
+      "opaque_colors": 96,
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "3",
+      "name": "clamp_contact",
+      "source": "protected_ready_assembly",
+      "source_box": [
+        0,
+        448,
+        448,
+        896
+      ],
+      "source_anchor": [
+        224,
+        792
+      ],
+      "scale": 1.0,
+      "component_seeds": null,
+      "selection": "all_explicit_crop_alpha",
+      "selected_components": null,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        104,
+        162
+      ],
+      "anchor_rounding_error_px": [
+        0.0,
+        0.0
+      ],
+      "visible_bbox": [
+        104,
+        162,
+        365,
+        365
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/3.png",
+      "sha256": "a3b1a8ba0244f94b6e2b6ec744792f814b7ed2606955bf262286c1a523d8ad2f",
+      "rgba_pixel_sha256": "2d9f691d9b77d83641c485196dfc7f32deb00e31bfac60cafbaaa5818a2b7441",
+      "opaque_colors": 96,
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "4",
+      "name": "retract",
+      "source": "protected_ready_assembly",
+      "source_box": [
+        448,
+        448,
+        896,
+        896
+      ],
+      "source_anchor": [
+        672,
+        792
+      ],
+      "scale": 1.0,
+      "component_seeds": null,
+      "selection": "all_explicit_crop_alpha",
+      "selected_components": null,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        104,
+        162
+      ],
+      "anchor_rounding_error_px": [
+        0.0,
+        0.0
+      ],
+      "visible_bbox": [
+        104,
+        162,
+        344,
+        365
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/4.png",
+      "sha256": "675b195aebacca01f76af3cc37cd548bdd1cb0aa05b9df7e0ee03e6e4630a911",
+      "rgba_pixel_sha256": "79232d7f061360e39cb8b7695930f3ad3d8fb7e1e49de54623fa5f37bb7fadbe",
+      "opaque_colors": 96,
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "5",
+      "name": "settle",
+      "source": "protected_ready_assembly",
+      "source_box": [
+        896,
+        448,
+        1344,
+        896
+      ],
+      "source_anchor": [
+        1120,
+        792
+      ],
+      "scale": 1.0,
+      "component_seeds": null,
+      "selection": "all_explicit_crop_alpha",
+      "selected_components": null,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        104,
+        162
+      ],
+      "anchor_rounding_error_px": [
+        0.0,
+        0.0
+      ],
+      "visible_bbox": [
+        104,
+        162,
+        340,
+        380
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/5.png",
+      "sha256": "75e8c27f07bac30b08841dd2723b4b71fe642c5ba53e42e699ac911666a8b8cb",
+      "rgba_pixel_sha256": "acf7ce5fa5fffda5a6c0c514e1764f0abea16cb51238e4e175831380d732c69c",
+      "opaque_colors": 96,
+      "alpha_values": [
+        0,
+        255
+      ]
+    }
+  ],
+  "layers": {},
+  "layer_order": "declared list behind opaque body",
+  "body_palette_rgb": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      2,
+      1,
+      1
+    ],
+    [
+      4,
+      2,
+      2
+    ],
+    [
+      4,
+      3,
+      3
+    ],
+    [
+      5,
+      4,
+      3
+    ],
+    [
+      7,
+      4,
+      4
+    ],
+    [
+      10,
+      7,
+      6
+    ],
+    [
+      16,
+      11,
+      10
+    ],
+    [
+      21,
+      16,
+      14
+    ],
+    [
+      31,
+      23,
+      19
+    ],
+    [
+      39,
+      32,
+      29
+    ],
+    [
+      47,
+      36,
+      32
+    ],
+    [
+      53,
+      43,
+      40
+    ],
+    [
+      58,
+      48,
+      45
+    ],
+    [
+      62,
+      53,
+      50
+    ],
+    [
+      67,
+      56,
+      52
+    ],
+    [
+      69,
+      58,
+      55
+    ],
+    [
+      74,
+      64,
+      61
+    ],
+    [
+      75,
+      58,
+      52
+    ],
+    [
+      77,
+      66,
+      62
+    ],
+    [
+      82,
+      68,
+      61
+    ],
+    [
+      82,
+      71,
+      67
+    ],
+    [
+      83,
+      72,
+      68
+    ],
+    [
+      85,
+      74,
+      70
+    ],
+    [
+      89,
+      75,
+      68
+    ],
+    [
+      89,
+      77,
+      74
+    ],
+    [
+      92,
+      78,
+      74
+    ],
+    [
+      92,
+      80,
+      77
+    ],
+    [
+      94,
+      81,
+      77
+    ],
+    [
+      95,
+      83,
+      79
+    ],
+    [
+      97,
+      84,
+      80
+    ],
+    [
+      97,
+      85,
+      81
+    ],
+    [
+      98,
+      86,
+      82
+    ],
+    [
+      102,
+      85,
+      76
+    ],
+    [
+      102,
+      88,
+      84
+    ],
+    [
+      104,
+      90,
+      86
+    ],
+    [
+      105,
+      92,
+      87
+    ],
+    [
+      106,
+      94,
+      89
+    ],
+    [
+      109,
+      92,
+      83
+    ],
+    [
+      109,
+      95,
+      90
+    ],
+    [
+      110,
+      97,
+      92
+    ],
+    [
+      113,
+      94,
+      84
+    ],
+    [
+      113,
+      99,
+      94
+    ],
+    [
+      116,
+      97,
+      87
+    ],
+    [
+      117,
+      103,
+      98
+    ],
+    [
+      119,
+      102,
+      94
+    ],
+    [
+      120,
+      105,
+      100
+    ],
+    [
+      121,
+      107,
+      102
+    ],
+    [
+      123,
+      97,
+      80
+    ],
+    [
+      125,
+      109,
+      103
+    ],
+    [
+      129,
+      104,
+      87
+    ],
+    [
+      129,
+      108,
+      95
+    ],
+    [
+      137,
+      109,
+      90
+    ],
+    [
+      137,
+      113,
+      98
+    ],
+    [
+      141,
+      115,
+      98
+    ],
+    [
+      143,
+      119,
+      103
+    ],
+    [
+      151,
+      119,
+      95
+    ],
+    [
+      151,
+      123,
+      102
+    ],
+    [
+      156,
+      128,
+      109
+    ],
+    [
+      157,
+      124,
+      99
+    ],
+    [
+      162,
+      129,
+      101
+    ],
+    [
+      163,
+      131,
+      107
+    ],
+    [
+      165,
+      135,
+      112
+    ],
+    [
+      169,
+      140,
+      116
+    ],
+    [
+      170,
+      136,
+      108
+    ],
+    [
+      174,
+      141,
+      115
+    ],
+    [
+      178,
+      146,
+      120
+    ],
+    [
+      182,
+      143,
+      110
+    ],
+    [
+      184,
+      148,
+      120
+    ],
+    [
+      187,
+      154,
+      126
+    ],
+    [
+      196,
+      156,
+      123
+    ],
+    [
+      198,
+      162,
+      131
+    ],
+    [
+      202,
+      166,
+      135
+    ],
+    [
+      206,
+      170,
+      140
+    ],
+    [
+      215,
+      176,
+      144
+    ],
+    [
+      216,
+      172,
+      132
+    ],
+    [
+      220,
+      181,
+      147
+    ],
+    [
+      226,
+      190,
+      158
+    ],
+    [
+      228,
+      186,
+      146
+    ],
+    [
+      228,
+      188,
+      153
+    ],
+    [
+      235,
+      194,
+      159
+    ],
+    [
+      238,
+      201,
+      168
+    ],
+    [
+      240,
+      200,
+      161
+    ],
+    [
+      243,
+      209,
+      176
+    ],
+    [
+      244,
+      205,
+      169
+    ],
+    [
+      250,
+      211,
+      177
+    ],
+    [
+      250,
+      222,
+      195
+    ],
+    [
+      251,
+      215,
+      182
+    ],
+    [
+      252,
+      218,
+      185
+    ],
+    [
+      253,
+      221,
+      190
+    ],
+    [
+      253,
+      227,
+      198
+    ],
+    [
+      253,
+      236,
+      211
+    ],
+    [
+      254,
+      224,
+      194
+    ]
+  ],
+  "palette_limit": 96,
+  "body_palette_assignment": "group_median_cut_then_exact_nearest_rgb_without_dither",
+  "track": [
+    {
+      "at_ms": 0,
+      "body": "0",
+      "layers": []
+    },
+    {
+      "at_ms": 140,
+      "body": "1",
+      "layers": []
+    },
+    {
+      "at_ms": 220,
+      "body": "2",
+      "layers": []
+    },
+    {
+      "at_ms": 300,
+      "body": "3",
+      "layers": []
+    },
+    {
+      "at_ms": 400,
+      "body": "4",
+      "layers": []
+    },
+    {
+      "at_ms": 560,
+      "body": "5",
+      "layers": []
+    },
+    {
+      "at_ms": 700,
+      "body": "0",
+      "layers": []
+    }
+  ],
+  "renders": [
+    {
+      "at_ms": 0,
+      "body": "0",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 28727,
+      "composite_has_partial_alpha": false,
+      "file": "frames/0.png",
+      "sha256": "e9e460451ab98263e918c90070531d6141a913ceb12076ceffa1a802f3b6e6b1"
+    },
+    {
+      "at_ms": 140,
+      "body": "1",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 27996,
+      "composite_has_partial_alpha": false,
+      "file": "frames/1.png",
+      "sha256": "302665bd407ec4beb03e0148594aaacb99928c7ef407cbf55199835b93726b0a"
+    },
+    {
+      "at_ms": 220,
+      "body": "2",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 27554,
+      "composite_has_partial_alpha": false,
+      "file": "frames/2.png",
+      "sha256": "19963b1385559d9710be59e0e7297512d62442f6db8b8a393c72837904209844"
+    },
+    {
+      "at_ms": 300,
+      "body": "3",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 29181,
+      "composite_has_partial_alpha": false,
+      "file": "frames/3.png",
+      "sha256": "a3b1a8ba0244f94b6e2b6ec744792f814b7ed2606955bf262286c1a523d8ad2f"
+    },
+    {
+      "at_ms": 400,
+      "body": "4",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 26984,
+      "composite_has_partial_alpha": false,
+      "file": "frames/4.png",
+      "sha256": "675b195aebacca01f76af3cc37cd548bdd1cb0aa05b9df7e0ee03e6e4630a911"
+    },
+    {
+      "at_ms": 560,
+      "body": "5",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 28439,
+      "composite_has_partial_alpha": false,
+      "file": "frames/5.png",
+      "sha256": "75e8c27f07bac30b08841dd2723b4b71fe642c5ba53e42e699ac911666a8b8cb"
+    },
+    {
+      "at_ms": 700,
+      "body": "0",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 28727,
+      "composite_has_partial_alpha": false,
+      "file": "frames/0.png",
+      "sha256": "e9e460451ab98263e918c90070531d6141a913ceb12076ceffa1a802f3b6e6b1"
+    }
+  ],
+  "events": [
+    {
+      "name": "bite_contact_preview_only",
+      "at_ms": 300,
+      "gameplay_binding": false
+    }
+  ],
+  "duration_ms": 820,
+  "idle_ms": 350,
+  "previews": {
+    "preview.gif": {
+      "durations_ms": [
+        140,
+        80,
+        80,
+        100,
+        160,
+        140,
+        470
+      ],
+      "total_ms": 1170,
+      "slow_factor": 1,
+      "stage_starts_ideal_ms": [
+        0,
+        140,
+        220,
+        300,
+        400,
+        560,
+        700
+      ],
+      "stage_starts_gif_ms": [
+        0,
+        140,
+        220,
+        300,
+        400,
+        560,
+        700
+      ],
+      "boundary_rounding_error_ms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "events": [
+        {
+          "name": "bite_contact_preview_only",
+          "at_ms": 300,
+          "gameplay_binding": false,
+          "ideal_preview_ms": 300,
+          "nearest_gif_tick_ms": 300
+        }
+      ],
+      "idle_ms": 350,
+      "encoded_frames": 7,
+      "requested_samples": 7,
+      "sha256": "212a445be2d30d0d4a220efb18c001f52d6eb3f9b45bd917a1272b52ddc2e6fe",
+      "reserved_rgb_pixels_checked": 1404928,
+      "reserved_rgb_exact": true,
+      "maximum_unreserved_fx_channel_error": 0
+    },
+    "preview_slow.gif": {
+      "durations_ms": [
+        280,
+        160,
+        160,
+        200,
+        320,
+        280,
+        590
+      ],
+      "total_ms": 1990,
+      "slow_factor": 2,
+      "stage_starts_ideal_ms": [
+        0,
+        280,
+        440,
+        600,
+        800,
+        1120,
+        1400
+      ],
+      "stage_starts_gif_ms": [
+        0,
+        280,
+        440,
+        600,
+        800,
+        1120,
+        1400
+      ],
+      "boundary_rounding_error_ms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "events": [
+        {
+          "name": "bite_contact_preview_only",
+          "at_ms": 300,
+          "gameplay_binding": false,
+          "ideal_preview_ms": 600,
+          "nearest_gif_tick_ms": 600
+        }
+      ],
+      "idle_ms": 350,
+      "encoded_frames": 7,
+      "requested_samples": 7,
+      "sha256": "ab7b54a3ace60763fb4c32bcc85f96c01bba3e343483c34ba66a8b4f7a8b604a",
+      "reserved_rgb_pixels_checked": 1404928,
+      "reserved_rgb_exact": true,
+      "maximum_unreserved_fx_channel_error": 0
+    }
+  },
+  "first_last_full_rgba_identical": true,
+  "review_profile": [
+    "rect_iso_duel_v1 same-direction elevated camera only",
+    "fixed ready support limbs/feet and hips, no paw movement/warp",
+    "real generated neck jaw and near foreleg changes",
+    "protect masks require seam/anatomy review before final approval"
+  ],
+  "review_annotations": {
+    "direction": "SE",
+    "forward_screen": [
+      2,
+      1
+    ],
+    "suggested_display_scale": 0.5,
+    "actual_raw_sampling_scale": 0.5,
+    "joint_96_color_palette": true,
+    "visual_gate": "limited_offline_pass; see ../REVIEW_STATUS.json and REVIEW.md; human acceptance pending",
+    "mirrors_only": [
+      "SW"
+    ],
+    "source_preparation": "../prepare_wolf.py",
+    "assembly_spec": "../assembly_spec.json",
+    "feet_file": "feet.json",
+    "runtime_integrated": false
+  },
+  "events_are_preview_metadata_only": true
+}

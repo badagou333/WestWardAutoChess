@@ -1,0 +1,60 @@
+{
+  "direction": "NE",
+  "date": "2026-10-27",
+  "generator": "built-in imagegen",
+  "references": [
+    {
+      "file": "godot-demo/art/candidates/rect_iso_duel_v1/frames/wolf_ne_idle.png",
+      "sha256": "ba855dc1943bcf6fd4f6fb79d78c660ea8fe1ec01ce5e7cb07c687fcf172b6c5",
+      "role": "elevated_NE_back_camera_and_identity"
+    },
+    {
+      "file": "godot-demo/art/candidates/rect_iso_duel_v1/frames/wolf_ne_attack_prepare.png",
+      "sha256": "82e97f8e5308d1d5d51a9b8e9afda47ad34c8a2b2e49514eb7122c1baac51a19",
+      "role": "pose_direction_only_with_published_support_limits"
+    },
+    {
+      "file": "godot-demo/art/candidates/rect_iso_duel_v1/frames/wolf_ne_attack_contact.png",
+      "sha256": "3d16237681972fc8c002ca1940e7b6a08cf977ee89049d5149c7fb626c3b9acd",
+      "role": "pose_direction_only_with_published_support_limits"
+    }
+  ],
+  "passes": [
+    {
+      "id": "initial",
+      "file": "source/attack-sheet-v1.webp",
+      "original_tool_png": "/Users/leqiong/.codex/generated_images/01a17365-3af0-7a23-a8cd-fc19596fce03/exec-ff266ff6-39f6-4701-979c-2076f85a7b0d.png",
+      "original_png_sha256": "f8969ccbde5da79d7071aac1217fcc3b12ae1e946163da809e8aeda05b05a5bd",
+      "webp_sha256": "f2c159157b808706a25c111fe3ace698c6c20ed83591d87618248c34854dca39",
+      "rgba_pixel_sha256": "fe864de9996b58d1b6151ff477165c399dec8111e002cb9ded8431a3f18e25f8",
+      "size": [
+        1536,
+        1024
+      ],
+      "all_RGBA_equal": true,
+      "webp_lossless_exact": true,
+      "prompt": "source/prompt-01-initial.txt",
+      "status": "camera_appears_NE_back_but_support_and_return_pending_author_review",
+      "current_use": "Ready support body and actual head/neck/raised-near-foreleg art within explicit assembly masks."
+    },
+    {
+      "id": "shoulder_seam_repair",
+      "file": "source/shoulder-seam-repair.webp",
+      "original_tool_png": "/Users/leqiong/.codex/generated_images/01a17357-4b85-78c3-a221-0f3ae59889f1/exec-7e8c6e2e-3b08-421f-8356-4835b421bc97.png",
+      "original_png_sha256": "ffc99447d91dbf3ed74428c63f52d7df67e73aeab56209d5cafee9db23768c6c",
+      "webp_sha256": "15a52953e1d74ed8b82c93f1a6c2a292cfe53710ac44da52a720f45b2b0f7360",
+      "rgba_pixel_sha256": "c684a1eaaa6e5d61abca21db7ea2b651ab8d112a4a6933676a24d42e23f1ac01",
+      "size": [
+        1254,
+        1254
+      ],
+      "all_RGBA_equal": true,
+      "webp_lossless_exact": true,
+      "prompt": "source/prompt-02-shoulder-seam.txt",
+      "current_use": "NE2 only: exterior silhouette band within [190,140,260,211], whole canvas nearest-registered to448. Interior body and all limbs protected."
+    }
+  ],
+  "old_side_view_series_used": false,
+  "independent_gate": "Source RGBA and isolated rebuild independently checked; final visual status in ../../REVIEW_STATUS.json, historical per-pass findings retained.",
+  "completed_date": "2026-10-27"
+}

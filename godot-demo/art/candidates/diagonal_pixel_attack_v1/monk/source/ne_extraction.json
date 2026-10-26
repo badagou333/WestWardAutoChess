@@ -1,0 +1,319 @@
+{
+  "schema": "pixel-attack-series-v1",
+  "character": "guard_monk_ne",
+  "display_name": "斜向棍僧 NE",
+  "status": "draft_under_visual_review",
+  "canvas": [
+    448,
+    448
+  ],
+  "anchor": [
+    224,
+    344
+  ],
+  "palette_colors": 96,
+  "sources": {
+    "main": {
+      "file": "../source/ne_initial.webp",
+      "sha256": "38519cf83d137fe03b6df14ab5de0e76a3e9ad5ae32adbc4ee18bb432e1a2c83",
+      "expected_pixel_sha256": "d7463209eac5897b8994b367e981457b33eaba64ac900bf73067f90e9f85419e",
+      "scale": 0.6
+    },
+    "repair": {
+      "file": "../source/ne_repair.webp",
+      "sha256": "073fb1c2c4577df6da7c80ce6d9cc3e7ff1a84912dc628f169ac4d2e8c25eb65",
+      "expected_pixel_sha256": "a8610937ae16d9d9f0881d049e58dc22fb1a2237d4fc28fd11bfa864650ce38c",
+      "scale": 0.6
+    },
+    "tail_repair": {
+      "file": "../source/ne_recoil_tail.webp",
+      "sha256": "4ce76df8c9e4b995b376a3f4356371f9ea5765ec8e051d9856fed5bbf10aea73",
+      "expected_pixel_sha256": "7e42c103e9bf171dee72ee6390fd2c4d5949799d94b439d6b8d88aaeb9937d88",
+      "scale": 0.6
+    }
+  },
+  "bodies": [
+    {
+      "id": "0",
+      "name": "ready",
+      "source": "main",
+      "source_box": [
+        6,
+        81,
+        515,
+        519
+      ],
+      "source_anchor": [
+        226.0,
+        487.5
+      ],
+      "component_seeds": [
+        [
+          250,
+          300
+        ]
+      ],
+      "visible_contact_points_source": [
+        [
+          94,
+          468
+        ],
+        [
+          358,
+          507
+        ]
+      ]
+    },
+    {
+      "id": "1",
+      "name": "load",
+      "source": "main",
+      "source_box": [
+        570,
+        0,
+        1026,
+        519
+      ],
+      "source_anchor": [
+        753.0,
+        488.5
+      ],
+      "component_seeds": [
+        [
+          740,
+          300
+        ]
+      ],
+      "visible_contact_points_source": [
+        [
+          619,
+          470
+        ],
+        [
+          887,
+          507
+        ]
+      ]
+    },
+    {
+      "id": "2",
+      "name": "peak",
+      "source": "main",
+      "source_box": [
+        1080,
+        0,
+        1530,
+        519
+      ],
+      "source_anchor": [
+        1263.5,
+        489.0
+      ],
+      "component_seeds": [
+        [
+          1270,
+          320
+        ]
+      ],
+      "visible_contact_points_source": [
+        [
+          1129,
+          470
+        ],
+        [
+          1398,
+          508
+        ]
+      ]
+    },
+    {
+      "id": "3",
+      "name": "impact",
+      "source": "repair",
+      "source_box": [
+        7,
+        571,
+        580,
+        999
+      ],
+      "source_anchor": [
+        230.0,
+        968.5
+      ],
+      "component_seeds": [
+        [
+          250,
+          750
+        ]
+      ],
+      "visible_contact_points_source": [
+        [
+          94,
+          950
+        ],
+        [
+          366,
+          987
+        ]
+      ]
+    },
+    {
+      "id": "4",
+      "name": "recoil",
+      "source": "tail_repair",
+      "source_box": [
+        519,
+        580,
+        1040,
+        1010
+      ],
+      "source_anchor": [
+        743.5,
+        975.5
+      ],
+      "component_seeds": [
+        [
+          750,
+          780
+        ]
+      ],
+      "visible_contact_points_source": [
+        [
+          608,
+          956
+        ],
+        [
+          879,
+          995
+        ]
+      ]
+    },
+    {
+      "id": "5",
+      "name": "recover",
+      "source": "main",
+      "source_box": [
+        1030,
+        575,
+        1524,
+        1005
+      ],
+      "source_anchor": [
+        1253.0,
+        977.0
+      ],
+      "component_seeds": [
+        [
+          1300,
+          780
+        ]
+      ],
+      "visible_contact_points_source": [
+        [
+          1128,
+          959
+        ],
+        [
+          1378,
+          995
+        ]
+      ]
+    }
+  ],
+  "duration_ms": 1070,
+  "idle_ms": 400,
+  "events": [
+    {
+      "name": "preview_contact_only",
+      "at_ms": 370
+    }
+  ],
+  "track": [
+    {
+      "at_ms": 0,
+      "body": "0"
+    },
+    {
+      "at_ms": 130,
+      "body": "1"
+    },
+    {
+      "at_ms": 260,
+      "body": "2"
+    },
+    {
+      "at_ms": 370,
+      "body": "3",
+      "layers": [
+        {
+          "id": "staff_trail",
+          "opacity": 0.38,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 410,
+      "body": "3",
+      "layers": [
+        {
+          "id": "staff_trail",
+          "opacity": 0.16,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 450,
+      "body": "3"
+    },
+    {
+      "at_ms": 600,
+      "body": "4"
+    },
+    {
+      "at_ms": 760,
+      "body": "5"
+    },
+    {
+      "at_ms": 950,
+      "body": "0"
+    }
+  ],
+  "orientation": {
+    "source_direction": "NE",
+    "mirrored_direction": "NW",
+    "reference": "../../../rect_iso_duel_v1/frames/monk_ne_idle.png",
+    "camera": "matched oblique reference; not calibrated degrees",
+    "game_preview_scale": 0.5
+  },
+  "review_annotations": {
+    "author_visual_review": "Corrected imagegen artwork and explicit preserved target regions; final visual review pending.",
+    "independent_visual_review": "pending",
+    "runtime_integration": false
+  },
+  "layers": {
+    "staff_trail": {
+      "file": "../source/staff_trails.webp",
+      "crop": [
+        950,
+        418,
+        1664,
+        662
+      ],
+      "target_rect": [
+        328,
+        120,
+        445,
+        178
+      ],
+      "order": "behind"
+    }
+  }
+}

@@ -1,0 +1,5092 @@
+{
+  "schema": "diagonal-attack-review-v1",
+  "updated": "2026-10-27",
+  "status": "reviewed_candidate",
+  "visual_acceptance_awarded": false,
+  "runtime_integrated": false,
+  "role_count": 2,
+  "visual_status_authority": "parent-maintained STATUS.json; packager never awards a visual pass",
+  "parent_visual_review_status": "limited_offline_pass",
+  "parent_status_file": "STATUS.json",
+  "inherited_visual_evidence": {
+    "monk": {
+      "file": "monk/REVIEW_STATUS.json",
+      "sha256": "079324b6e2b494632003d3b3164c3a8a5139feb0226300390f723d94ad017cdd"
+    },
+    "wolf": {
+      "file": "wolf/REVIEW_STATUS.json",
+      "sha256": "9a1e589185c52b477bfb55d3e0a619fbdad427201752ff4723ede84ab840865c"
+    }
+  },
+  "label_font": {
+    "path": "/System/Library/Fonts/STHeiti Medium.ttc",
+    "sha256": "2d37f927fb4c24a2ba4d318b903a607f6b7ad4e5f365c26aba6aaccb84038beb",
+    "sizes_px": [
+      18,
+      13
+    ],
+    "font_not_bundled": true
+  },
+  "available_source_direction_count": 4,
+  "expected_source_direction_count": 4,
+  "source_direction_names": [
+    "se",
+    "ne"
+  ],
+  "derived_direction_names": [
+    "sw",
+    "nw"
+  ],
+  "grid": {
+    "width": 192,
+    "height": 96,
+    "center": [
+      160,
+      238
+    ],
+    "panel": [
+      320,
+      320
+    ],
+    "one_design_pixel_per_output_pixel": true,
+    "vertices_relative": [
+      [
+        0,
+        -48
+      ],
+      [
+        96,
+        0
+      ],
+      [
+        0,
+        48
+      ],
+      [
+        -96,
+        0
+      ]
+    ],
+    "inner_guide_fraction": 0.9,
+    "anchor_placement_is_not_footprint_acceptance": true
+  },
+  "mirror_policy": "Full-size GIF: RGBA horizontal reflection. Board: fixed nearest resize then horizontal reflection; continuous-edge anchor x'=W-x; no per-frame fitting",
+  "asymmetric_mirror_registration_probe": {
+    "source_canvas": [
+      13,
+      7
+    ],
+    "source_anchor": [
+      2.5,
+      4.5
+    ],
+    "mirrored": true,
+    "mirror_anchor_continuous_edge": [
+      10.5,
+      4.5
+    ],
+    "requested_scale": 1,
+    "effective_scale": [
+      1.0,
+      1.0
+    ],
+    "resized_canvas": [
+      13,
+      7
+    ],
+    "resized_anchor": [
+      10.5,
+      4.5
+    ],
+    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+    "raster_offset": [
+      150,
+      234
+    ],
+    "grid_center": [
+      160,
+      238
+    ],
+    "placed_anchor": [
+      160.5,
+      238.5
+    ],
+    "anchor_rounding_error_px": [
+      0.5,
+      0.5
+    ]
+  },
+  "source_snapshot_stable": true,
+  "source_snapshots": {
+    "monk/se/manifest.json": "740767bb8e4dc88e5147d76f1742534e85496f09ac2ba3244df6e34a865c8107",
+    "monk/se/render_frames/000.png": "7778091cec979898b5644ae5e548d0eafcac1987817773343c123f348fa3bbe5",
+    "monk/se/render_frames/001.png": "b1a98a0917c9d026dc98426cb49e0580533157048968b095b35066c77e7ef180",
+    "monk/se/render_frames/002.png": "63cff2f836397667b000ae6197225bd358a21402543416b8a9e856b440800882",
+    "monk/se/render_frames/003.png": "ebc558b4967a7f6f4fd61dd8ca2eaec868179985bfcfd816d8c6ab62b3bf389c",
+    "monk/se/render_frames/004.png": "75a7f89dfa930140adf3d0d7b74641283b274781d7f615fb0d6142ab1dcde31a",
+    "monk/se/render_frames/005.png": "6d7182a0ec8c6e8b8bbdcb907c8eedc69851fc964641b4ba2147aee9f96ea5bb",
+    "monk/se/render_frames/006.png": "bf91877a63d425e3386aeedc037a113b880e94a49ce096e7ad66c9e05e51958c",
+    "monk/se/render_frames/007.png": "a583d4e960e20842ebee7d0b8c677ba270ad592d543b7e5a8ddb5b39d873a92a",
+    "monk/se/render_frames/008.png": "7778091cec979898b5644ae5e548d0eafcac1987817773343c123f348fa3bbe5",
+    "monk/se/frames/0.png": "7778091cec979898b5644ae5e548d0eafcac1987817773343c123f348fa3bbe5",
+    "monk/se/frames/1.png": "b1a98a0917c9d026dc98426cb49e0580533157048968b095b35066c77e7ef180",
+    "monk/se/frames/2.png": "63cff2f836397667b000ae6197225bd358a21402543416b8a9e856b440800882",
+    "monk/se/frames/3.png": "6d7182a0ec8c6e8b8bbdcb907c8eedc69851fc964641b4ba2147aee9f96ea5bb",
+    "monk/se/frames/4.png": "bf91877a63d425e3386aeedc037a113b880e94a49ce096e7ad66c9e05e51958c",
+    "monk/se/frames/5.png": "a583d4e960e20842ebee7d0b8c677ba270ad592d543b7e5a8ddb5b39d873a92a",
+    "monk/se/preview.gif": "b84cb97ca61e15aa912be8deb89ea882df6eaa773b148b53667e01852587fe97",
+    "monk/se/preview_slow.gif": "a7aafe9f2ad710348276e9a3e77a1a63105819cc29e76e51ceaeba98d82bf2fd",
+    "monk/ne/manifest.json": "46ca96a272d2da3f7b5e494b7bd924eb8c525250da808c842f559a7e772fd6d1",
+    "monk/ne/render_frames/000.png": "e182ceb2a8d455693655cc2f4deade287b52f0a34c93815d04cba990db8bc2ee",
+    "monk/ne/render_frames/001.png": "6d8da4538275469536d9c434b11f89866c0197c22dc3eb3f76082c34396a263e",
+    "monk/ne/render_frames/002.png": "ff143f56ae38d361fbc7f45c6b66ed8883e7a4b40d0ab22593febbeee1263f7c",
+    "monk/ne/render_frames/003.png": "9a3b83fc87d983e1f5a1db341a1c1780594128a5b02c98a02a1a76213f6d86bf",
+    "monk/ne/render_frames/004.png": "d744feef598e2a566bc8ea0cae9a5259fff7fc74856c915c1b0ffee0256a423d",
+    "monk/ne/render_frames/005.png": "5af33439ecb19af0a92cfd29440fe66b915aa688b76b3a536de915d70ed72e1e",
+    "monk/ne/render_frames/006.png": "3bf97bd0af8d3aa12d7e751d584f803cd676e6fe48750ba28c53255bab563904",
+    "monk/ne/render_frames/007.png": "314e61ccc4a060fd843f81c8d3d32c32aad03d4113e3908bedc64236d4c10208",
+    "monk/ne/render_frames/008.png": "e182ceb2a8d455693655cc2f4deade287b52f0a34c93815d04cba990db8bc2ee",
+    "monk/ne/frames/0.png": "e182ceb2a8d455693655cc2f4deade287b52f0a34c93815d04cba990db8bc2ee",
+    "monk/ne/frames/1.png": "6d8da4538275469536d9c434b11f89866c0197c22dc3eb3f76082c34396a263e",
+    "monk/ne/frames/2.png": "ff143f56ae38d361fbc7f45c6b66ed8883e7a4b40d0ab22593febbeee1263f7c",
+    "monk/ne/frames/3.png": "5af33439ecb19af0a92cfd29440fe66b915aa688b76b3a536de915d70ed72e1e",
+    "monk/ne/frames/4.png": "3bf97bd0af8d3aa12d7e751d584f803cd676e6fe48750ba28c53255bab563904",
+    "monk/ne/frames/5.png": "314e61ccc4a060fd843f81c8d3d32c32aad03d4113e3908bedc64236d4c10208",
+    "monk/ne/preview.gif": "18c41f1b67db95cbd6a69faf2d8a5be3a58e25a9060eaf164b131f54c5490cc6",
+    "monk/ne/preview_slow.gif": "4c76aaab8cd0531ab8cb6acfbc65c300c43fe9039c2769cfcba95b188d31b4d1",
+    "wolf/se/manifest.json": "63d2745dbca4e71e3c24761cde543d5830eb5b38e9ecb77382a0f036a3719eee",
+    "wolf/se/frames/0.png": "e9e460451ab98263e918c90070531d6141a913ceb12076ceffa1a802f3b6e6b1",
+    "wolf/se/frames/1.png": "302665bd407ec4beb03e0148594aaacb99928c7ef407cbf55199835b93726b0a",
+    "wolf/se/frames/2.png": "19963b1385559d9710be59e0e7297512d62442f6db8b8a393c72837904209844",
+    "wolf/se/frames/3.png": "a3b1a8ba0244f94b6e2b6ec744792f814b7ed2606955bf262286c1a523d8ad2f",
+    "wolf/se/frames/4.png": "675b195aebacca01f76af3cc37cd548bdd1cb0aa05b9df7e0ee03e6e4630a911",
+    "wolf/se/frames/5.png": "75e8c27f07bac30b08841dd2723b4b71fe642c5ba53e42e699ac911666a8b8cb",
+    "wolf/se/preview.gif": "212a445be2d30d0d4a220efb18c001f52d6eb3f9b45bd917a1272b52ddc2e6fe",
+    "wolf/se/preview_slow.gif": "ab7b54a3ace60763fb4c32bcc85f96c01bba3e343483c34ba66a8b4f7a8b604a",
+    "wolf/ne/manifest.json": "4a181bfea72df2bc08dfb55fcc97b3f0835814fc82f7b4f1556b5920375efef3",
+    "wolf/ne/frames/0.png": "4086213424b8556c1f657a1f728aa268b63ef483f4e89bf0d299494f0f1bd297",
+    "wolf/ne/frames/1.png": "f7e2d308367ba8891ae1ddf18786bf453f378ff59e110dd57deb21688aa4c3a1",
+    "wolf/ne/frames/2.png": "33a207cf469f0e65715cf589563ca55452b7a20019343c3275be1e81c478abff",
+    "wolf/ne/frames/3.png": "89cbbe0dc0e765d56bf6e41a63c07e65e8f6ca25306e41bfd113c0346522308e",
+    "wolf/ne/frames/4.png": "950475d1afa047fded7a066802cc19200c685955e55be556a1ed9b33d71c7de9",
+    "wolf/ne/frames/5.png": "6164ef23a5ff40653a2359e856ee5bbe45812661e1ed7ddb0ed94c477ae43854",
+    "wolf/ne/preview.gif": "29a42416711cf4a770c70fca91702946567fe13753c964993e3393fc913f82bc",
+    "wolf/ne/preview_slow.gif": "617a1daeefdcbb1bec2aba9355f5d41f2fb1359260ed75f655b11a2e2bba5916",
+    "STATUS.json": "efc36749a6c6c882aaeea2b229b4ca5ba0a4ebe86f1d414e1d8343f39762eefe",
+    "monk/REVIEW_STATUS.json": "079324b6e2b494632003d3b3164c3a8a5139feb0226300390f723d94ad017cdd",
+    "wolf/REVIEW_STATUS.json": "9a1e589185c52b477bfb55d3e0a619fbdad427201752ff4723ede84ab840865c"
+  },
+  "local_html_reference_count": 235,
+  "all_local_html_references_exist": true,
+  "browser_verification": "not performed; static files only; local file preview policy is not bypassed",
+  "overview": {
+    "file": "overview.png",
+    "sha256": "e2f64f37f9bbac82f3819003621bf3ffaad182ee66d47ad57f0a3723f8172b3a",
+    "size": [
+      1280,
+      640
+    ]
+  },
+  "contact_sheet": {
+    "file": "contact_sheet.png",
+    "sha256": "0a9f078a2c590327823e24ef4bb9bffa279464a8659eb701a52b484c03402275",
+    "size": [
+      1280,
+      640
+    ]
+  },
+  "roles": [
+    {
+      "id": "monk",
+      "title": "护寺棍僧",
+      "status": "reviewed_candidate",
+      "display_scale": 0.5,
+      "source_directions": {
+        "se": {
+          "status": "limited_offline_pass",
+          "available": true,
+          "manifest": "monk/se/manifest.json",
+          "manifest_sha256": "740767bb8e4dc88e5147d76f1742534e85496f09ac2ba3244df6e34a865c8107",
+          "canvas": [
+            448,
+            448
+          ],
+          "anchor": [
+            224.0,
+            344.0
+          ],
+          "real_body_count": 6,
+          "display_stage_count": 9,
+          "action_duration_ms": 1070,
+          "idle_ms": 400,
+          "source_previews": {
+            "preview.gif": {
+              "size": [
+                448,
+                448
+              ],
+              "encoded_frames": 9,
+              "durations_ms": [
+                130,
+                130,
+                110,
+                40,
+                40,
+                150,
+                160,
+                190,
+                520
+              ],
+              "total_ms": 1470,
+              "sha256": "b84cb97ca61e15aa912be8deb89ea882df6eaa773b148b53667e01852587fe97",
+              "opaque_render_rgb_exact": true,
+              "opaque_pixels_checked": 319377,
+              "factor": 1
+            },
+            "preview_slow.gif": {
+              "size": [
+                448,
+                448
+              ],
+              "encoded_frames": 9,
+              "durations_ms": [
+                260,
+                260,
+                220,
+                80,
+                80,
+                300,
+                320,
+                380,
+                640
+              ],
+              "total_ms": 2540,
+              "sha256": "a7aafe9f2ad710348276e9a3e77a1a63105819cc29e76e51ceaeba98d82bf2fd",
+              "opaque_render_rgb_exact": true,
+              "opaque_pixels_checked": 319377,
+              "factor": 2
+            }
+          },
+          "mirror_gifs": {
+            "normal": {
+              "file": "board_previews/monk-se-mirror-normal.gif",
+              "size": [
+                896,
+                480
+              ],
+              "durations_ms": [
+                130,
+                130,
+                110,
+                40,
+                40,
+                150,
+                160,
+                190,
+                520
+              ],
+              "total_ms": 1470,
+              "slow_factor": 1,
+              "stage_starts_ideal_ms": [
+                0,
+                130,
+                260,
+                370,
+                410,
+                450,
+                600,
+                760,
+                950
+              ],
+              "stage_starts_gif_ms": [
+                0,
+                130,
+                260,
+                370,
+                410,
+                450,
+                600,
+                760,
+                950
+              ],
+              "boundary_rounding_error_ms": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "events": [
+                {
+                  "name": "preview_contact_only",
+                  "at_ms": 370,
+                  "gameplay_binding": false,
+                  "ideal_preview_ms": 370,
+                  "nearest_gif_tick_ms": 370
+                }
+              ],
+              "idle_ms": 400,
+              "encoded_frames": 9,
+              "requested_samples": 9,
+              "sha256": "db629ce6ce9505f83e51914a8c9ae70a993f9847d73ec04aa09e17e23c505e47",
+              "reserved_rgb_pixels_checked": 3829960,
+              "reserved_rgb_exact": true,
+              "maximum_unreserved_fx_channel_error": 25
+            },
+            "slow": {
+              "file": "board_previews/monk-se-mirror-slow.gif",
+              "size": [
+                896,
+                480
+              ],
+              "durations_ms": [
+                260,
+                260,
+                220,
+                80,
+                80,
+                300,
+                320,
+                380,
+                640
+              ],
+              "total_ms": 2540,
+              "slow_factor": 2,
+              "stage_starts_ideal_ms": [
+                0,
+                260,
+                520,
+                740,
+                820,
+                900,
+                1200,
+                1520,
+                1900
+              ],
+              "stage_starts_gif_ms": [
+                0,
+                260,
+                520,
+                740,
+                820,
+                900,
+                1200,
+                1520,
+                1900
+              ],
+              "boundary_rounding_error_ms": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "events": [
+                {
+                  "name": "preview_contact_only",
+                  "at_ms": 370,
+                  "gameplay_binding": false,
+                  "ideal_preview_ms": 740,
+                  "nearest_gif_tick_ms": 740
+                }
+              ],
+              "idle_ms": 400,
+              "encoded_frames": 9,
+              "requested_samples": 9,
+              "sha256": "5520fc52cf80754f9c964e2000ffc713bb3967852abc5572328f785f77dec892",
+              "reserved_rgb_pixels_checked": 3829960,
+              "reserved_rgb_exact": true,
+              "maximum_unreserved_fx_channel_error": 25
+            }
+          },
+          "contact_selection": {
+            "stage": 3,
+            "policy": "event stage"
+          },
+          "docs": {
+            "README.md": "monk/se/README.md",
+            "REVIEW.md": "monk/se/REVIEW.md",
+            "contact_sheet.png": "monk/se/contact_sheet.png"
+          },
+          "stages": [
+            {
+              "index": 0,
+              "at_ms": 0,
+              "body": "0",
+              "source_file": "monk/se/render_frames/000.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/monk-se-stage-000.png",
+                  "sha256": "1244dac6da93b96b8a39df5c4bbe5e1cd97754175783fe6522253fcdb40f4d27",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/monk-sw-stage-000.png",
+                  "sha256": "f5359a264faa1c057b4e51b9ee012299b9e5408eb60cffbac5b6d4a845cb5797",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 1,
+              "at_ms": 130,
+              "body": "1",
+              "source_file": "monk/se/render_frames/001.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/monk-se-stage-001.png",
+                  "sha256": "4904d5efb7c6bb6658f9ac005c7faec44dc278eb707b9d5002194aaa5274ea6e",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/monk-sw-stage-001.png",
+                  "sha256": "49a713217ea17c94332a21558f00bce0363d5a384aa57ccfa11ad510488c4c08",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 2,
+              "at_ms": 260,
+              "body": "2",
+              "source_file": "monk/se/render_frames/002.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/monk-se-stage-002.png",
+                  "sha256": "80f3a31e116c8cd81ffa35c8ed713c4a6de9049603a0dbabbe13804ec291fa1e",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/monk-sw-stage-002.png",
+                  "sha256": "49413c09dba0f319c7c1aed6d63e46d5318200cd6f12f57cca8c840b2809e76a",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 3,
+              "at_ms": 370,
+              "body": "3",
+              "source_file": "monk/se/render_frames/003.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/monk-se-stage-003.png",
+                  "sha256": "da99a09e1ab3eabcf00f18335c609f595ccc861d0bdcfa55587f6ca137d2ba09",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/monk-sw-stage-003.png",
+                  "sha256": "a1bef7689918033ae8e4fdea52281bb0f08d0bdd63409a8903123a3417c5a0a4",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 4,
+              "at_ms": 410,
+              "body": "3",
+              "source_file": "monk/se/render_frames/004.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/monk-se-stage-004.png",
+                  "sha256": "e3a792468377d43f52d0b2b8f412c9f142dd0cd71f4e63504b953a5460ba7cee",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/monk-sw-stage-004.png",
+                  "sha256": "9ce827dc2a3b665b272b2ede68714c117432f3eadecc5fd447d7fe17c5cb9491",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 5,
+              "at_ms": 450,
+              "body": "3",
+              "source_file": "monk/se/render_frames/005.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/monk-se-stage-005.png",
+                  "sha256": "0a744244e1b9276f0570e3b61b5d6e2ac80746a0ca60aa14f7f52ee0dc50a834",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/monk-sw-stage-005.png",
+                  "sha256": "50c457b33c224799c81bc56145ebd715d8dba2fd530ae5e887954a021b5b9d65",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 6,
+              "at_ms": 600,
+              "body": "4",
+              "source_file": "monk/se/render_frames/006.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/monk-se-stage-006.png",
+                  "sha256": "6253c574564e78609272b119dcc4dea25629b5bdcf5dbb823565dd5056f30e3c",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/monk-sw-stage-006.png",
+                  "sha256": "772f0e603c7a6b99245dccf96060c08e3de4040b7d56f9fbd4d95b810c168c23",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 7,
+              "at_ms": 760,
+              "body": "5",
+              "source_file": "monk/se/render_frames/007.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/monk-se-stage-007.png",
+                  "sha256": "2b6600266fa7815c41cc59e1f0ba8e4f6fbd42e80e994f14bafbdcdce39dc709",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/monk-sw-stage-007.png",
+                  "sha256": "aba653c2cfd067c6186076655cfeeb612cb8f9897d804b7e122624073dc67a23",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 8,
+              "at_ms": 950,
+              "body": "0",
+              "source_file": "monk/se/render_frames/008.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/monk-se-stage-008.png",
+                  "sha256": "22be359f148b938a6bb7862d575cb4dc48bd85d0485d6bbed53f0f868e5f71ac",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/monk-sw-stage-008.png",
+                  "sha256": "18fa622b8aa3be972a47873ebcba500e67aa607d7d6aeecbeaf103ad221dc7c1",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "ne": {
+          "status": "limited_offline_pass",
+          "available": true,
+          "manifest": "monk/ne/manifest.json",
+          "manifest_sha256": "46ca96a272d2da3f7b5e494b7bd924eb8c525250da808c842f559a7e772fd6d1",
+          "canvas": [
+            448,
+            448
+          ],
+          "anchor": [
+            224.0,
+            344.0
+          ],
+          "real_body_count": 6,
+          "display_stage_count": 9,
+          "action_duration_ms": 1070,
+          "idle_ms": 400,
+          "source_previews": {
+            "preview.gif": {
+              "size": [
+                448,
+                448
+              ],
+              "encoded_frames": 9,
+              "durations_ms": [
+                130,
+                130,
+                110,
+                40,
+                40,
+                150,
+                160,
+                190,
+                520
+              ],
+              "total_ms": 1470,
+              "sha256": "18c41f1b67db95cbd6a69faf2d8a5be3a58e25a9060eaf164b131f54c5490cc6",
+              "opaque_render_rgb_exact": true,
+              "opaque_pixels_checked": 324204,
+              "factor": 1
+            },
+            "preview_slow.gif": {
+              "size": [
+                448,
+                448
+              ],
+              "encoded_frames": 9,
+              "durations_ms": [
+                260,
+                260,
+                220,
+                80,
+                80,
+                300,
+                320,
+                380,
+                640
+              ],
+              "total_ms": 2540,
+              "sha256": "4c76aaab8cd0531ab8cb6acfbc65c300c43fe9039c2769cfcba95b188d31b4d1",
+              "opaque_render_rgb_exact": true,
+              "opaque_pixels_checked": 324204,
+              "factor": 2
+            }
+          },
+          "mirror_gifs": {
+            "normal": {
+              "file": "board_previews/monk-ne-mirror-normal.gif",
+              "size": [
+                896,
+                480
+              ],
+              "durations_ms": [
+                130,
+                130,
+                110,
+                40,
+                40,
+                150,
+                160,
+                190,
+                520
+              ],
+              "total_ms": 1470,
+              "slow_factor": 1,
+              "stage_starts_ideal_ms": [
+                0,
+                130,
+                260,
+                370,
+                410,
+                450,
+                600,
+                760,
+                950
+              ],
+              "stage_starts_gif_ms": [
+                0,
+                130,
+                260,
+                370,
+                410,
+                450,
+                600,
+                760,
+                950
+              ],
+              "boundary_rounding_error_ms": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "events": [
+                {
+                  "name": "preview_contact_only",
+                  "at_ms": 370,
+                  "gameplay_binding": false,
+                  "ideal_preview_ms": 370,
+                  "nearest_gif_tick_ms": 370
+                }
+              ],
+              "idle_ms": 400,
+              "encoded_frames": 9,
+              "requested_samples": 9,
+              "sha256": "731bc524737cf95fad8c7361520fc8b73885a78aafb6a084964225395394dbe3",
+              "reserved_rgb_pixels_checked": 3836366,
+              "reserved_rgb_exact": true,
+              "maximum_unreserved_fx_channel_error": 29
+            },
+            "slow": {
+              "file": "board_previews/monk-ne-mirror-slow.gif",
+              "size": [
+                896,
+                480
+              ],
+              "durations_ms": [
+                260,
+                260,
+                220,
+                80,
+                80,
+                300,
+                320,
+                380,
+                640
+              ],
+              "total_ms": 2540,
+              "slow_factor": 2,
+              "stage_starts_ideal_ms": [
+                0,
+                260,
+                520,
+                740,
+                820,
+                900,
+                1200,
+                1520,
+                1900
+              ],
+              "stage_starts_gif_ms": [
+                0,
+                260,
+                520,
+                740,
+                820,
+                900,
+                1200,
+                1520,
+                1900
+              ],
+              "boundary_rounding_error_ms": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "events": [
+                {
+                  "name": "preview_contact_only",
+                  "at_ms": 370,
+                  "gameplay_binding": false,
+                  "ideal_preview_ms": 740,
+                  "nearest_gif_tick_ms": 740
+                }
+              ],
+              "idle_ms": 400,
+              "encoded_frames": 9,
+              "requested_samples": 9,
+              "sha256": "c101b0b09692c98dc523462fa7ecfd4374a22fc813a8c7519ffda23a28ff7f67",
+              "reserved_rgb_pixels_checked": 3836366,
+              "reserved_rgb_exact": true,
+              "maximum_unreserved_fx_channel_error": 29
+            }
+          },
+          "contact_selection": {
+            "stage": 3,
+            "policy": "event stage"
+          },
+          "docs": {
+            "README.md": "monk/ne/README.md",
+            "REVIEW.md": "monk/ne/REVIEW.md",
+            "contact_sheet.png": "monk/ne/contact_sheet.png"
+          },
+          "stages": [
+            {
+              "index": 0,
+              "at_ms": 0,
+              "body": "0",
+              "source_file": "monk/ne/render_frames/000.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/monk-ne-stage-000.png",
+                  "sha256": "5ff8abe7ea49adcf9e18ed9a0fc616fddeeffa865fb8ae011ba19def83af1d55",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/monk-nw-stage-000.png",
+                  "sha256": "84e709eb5d2cb0213411a921a5c2dae227d9595a40866fc4c036e2c3c0f8511b",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 1,
+              "at_ms": 130,
+              "body": "1",
+              "source_file": "monk/ne/render_frames/001.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/monk-ne-stage-001.png",
+                  "sha256": "5373e0306f9be233555480e8681efde6dac21f0c8c2175e3b709c9b6d2de7a74",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/monk-nw-stage-001.png",
+                  "sha256": "f33df54f3ed4f164e5f522c5e26ac70cca3886db147f4cd9ddcbfc490176d285",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 2,
+              "at_ms": 260,
+              "body": "2",
+              "source_file": "monk/ne/render_frames/002.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/monk-ne-stage-002.png",
+                  "sha256": "c9015154d0c4fbd11e41277b2faa98324dbff96351e1feeb140e01db47efe321",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/monk-nw-stage-002.png",
+                  "sha256": "8a8a1af9a8b768506781d9c4c93f429587a5e38a0b21c79db77d30c389755ec9",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 3,
+              "at_ms": 370,
+              "body": "3",
+              "source_file": "monk/ne/render_frames/003.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/monk-ne-stage-003.png",
+                  "sha256": "8975cdd4731223e44190f0fac136689adf3395fa6c9a3e50a9dbef3d2bd23d4e",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/monk-nw-stage-003.png",
+                  "sha256": "f6d0d4e5ecc8905e4580023db70d7cd20930bd9afba6d35a8e6335f1a9b82ce0",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 4,
+              "at_ms": 410,
+              "body": "3",
+              "source_file": "monk/ne/render_frames/004.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/monk-ne-stage-004.png",
+                  "sha256": "e3fc33235c51fef19240e1e9ae4b8b84b2e266890dc4264dab952560a7c235f8",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/monk-nw-stage-004.png",
+                  "sha256": "7c3a0d8b0ca933689d53799475ea7db8fb4f904889ec6d9d1a9463dcea8cfc23",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 5,
+              "at_ms": 450,
+              "body": "3",
+              "source_file": "monk/ne/render_frames/005.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/monk-ne-stage-005.png",
+                  "sha256": "3bc766830e4866e64a89f86786fc10e59015535086d5194ef3c566e8aac9be5e",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/monk-nw-stage-005.png",
+                  "sha256": "73637631a51787e47e8187d1988a664c76f7dbc389f3d0ff6af59b3fc4cdf984",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 6,
+              "at_ms": 600,
+              "body": "4",
+              "source_file": "monk/ne/render_frames/006.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/monk-ne-stage-006.png",
+                  "sha256": "cdf7cdbb68b2e2e390fca900f110274c3edb244fc30472575cb552ce8af7e5c6",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/monk-nw-stage-006.png",
+                  "sha256": "935e42c7c616a6a2d44175490fca3e948b21998cf7704a390a4f92baaffb630c",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 7,
+              "at_ms": 760,
+              "body": "5",
+              "source_file": "monk/ne/render_frames/007.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/monk-ne-stage-007.png",
+                  "sha256": "8523f3f220899bb1c51d2e6d6d68b7f4c6bd730db6afd230cabff065202b20fb",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/monk-nw-stage-007.png",
+                  "sha256": "99f4ee2eb487759ae4154df2051c4a160127446a37c750779b45d5611aebd637",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 8,
+              "at_ms": 950,
+              "body": "0",
+              "source_file": "monk/ne/render_frames/008.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/monk-ne-stage-008.png",
+                  "sha256": "3dfb51f68fbe5b0baaf2f1bc102eb82246c81925eb8d538304010c64fda0ed0b",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/monk-nw-stage-008.png",
+                  "sha256": "f0570f54790fe87cec476ad88f9635a2a59843048201ae22d95103f3a1a8b81f",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "board_gifs": {
+        "normal": {
+          "file": "board_previews/monk-board-normal.gif",
+          "size": [
+            1280,
+            320
+          ],
+          "durations_ms": [
+            130,
+            130,
+            110,
+            40,
+            40,
+            150,
+            160,
+            190,
+            120,
+            400
+          ],
+          "total_ms": 1470,
+          "slow_factor": 1,
+          "stage_starts_gif_ms": [
+            0,
+            130,
+            260,
+            370,
+            410,
+            450,
+            600,
+            760,
+            950,
+            1070
+          ],
+          "union_boundaries_ms": [
+            0,
+            130,
+            260,
+            370,
+            410,
+            450,
+            600,
+            760,
+            950,
+            1070,
+            1470
+          ],
+          "alignment": "common absolute time; hold shorter final stage until longest cycle ends",
+          "source_cycles_ms": {
+            "se": 1470,
+            "ne": 1470
+          },
+          "encoded_frames": 9,
+          "requested_samples": 10,
+          "sha256": "bb87fc7c933e0d644aead1cc37af9cf8fc9a58667c22e312a069e12ee53a39da",
+          "reserved_rgb_pixels_checked": 3949994,
+          "reserved_rgb_exact": true,
+          "maximum_unreserved_fx_channel_error": 38,
+          "source_stage_indices": [
+            {
+              "se": 0,
+              "ne": 0
+            },
+            {
+              "se": 1,
+              "ne": 1
+            },
+            {
+              "se": 2,
+              "ne": 2
+            },
+            {
+              "se": 3,
+              "ne": 3
+            },
+            {
+              "se": 4,
+              "ne": 4
+            },
+            {
+              "se": 5,
+              "ne": 5
+            },
+            {
+              "se": 6,
+              "ne": 6
+            },
+            {
+              "se": 7,
+              "ne": 7
+            },
+            {
+              "se": 8,
+              "ne": 8
+            },
+            {
+              "se": 8,
+              "ne": 8
+            }
+          ]
+        },
+        "slow": {
+          "file": "board_previews/monk-board-slow.gif",
+          "size": [
+            1280,
+            320
+          ],
+          "durations_ms": [
+            260,
+            260,
+            220,
+            80,
+            80,
+            300,
+            320,
+            380,
+            240,
+            400
+          ],
+          "total_ms": 2540,
+          "slow_factor": 2,
+          "stage_starts_gif_ms": [
+            0,
+            260,
+            520,
+            740,
+            820,
+            900,
+            1200,
+            1520,
+            1900,
+            2140
+          ],
+          "union_boundaries_ms": [
+            0,
+            260,
+            520,
+            740,
+            820,
+            900,
+            1200,
+            1520,
+            1900,
+            2140,
+            2540
+          ],
+          "alignment": "common absolute time; hold shorter final stage until longest cycle ends",
+          "source_cycles_ms": {
+            "se": 2540,
+            "ne": 2540
+          },
+          "encoded_frames": 9,
+          "requested_samples": 10,
+          "sha256": "ff6a6d5269a277ac14a1f15f92703237c756cf93daa677ec8c001b80dcce2b52",
+          "reserved_rgb_pixels_checked": 3949994,
+          "reserved_rgb_exact": true,
+          "maximum_unreserved_fx_channel_error": 38,
+          "source_stage_indices": [
+            {
+              "se": 0,
+              "ne": 0
+            },
+            {
+              "se": 1,
+              "ne": 1
+            },
+            {
+              "se": 2,
+              "ne": 2
+            },
+            {
+              "se": 3,
+              "ne": 3
+            },
+            {
+              "se": 4,
+              "ne": 4
+            },
+            {
+              "se": 5,
+              "ne": 5
+            },
+            {
+              "se": 6,
+              "ne": 6
+            },
+            {
+              "se": 7,
+              "ne": 7
+            },
+            {
+              "se": 8,
+              "ne": 8
+            },
+            {
+              "se": 8,
+              "ne": 8
+            }
+          ]
+        }
+      },
+      "source_snapshot_stable": true,
+      "all_stage_board_sheet": {
+        "file": "board_previews/monk-all-stages.png",
+        "sha256": "f32795967d7d84fb3d2f2c01dd3f6792ef58e8da166d5a6a422fa7ebfdde379f",
+        "size": [
+          1280,
+          2880
+        ],
+        "row_policy": "display-stage index, not synchronized time; per-panel action timestamps retained"
+      }
+    },
+    {
+      "id": "wolf",
+      "title": "山狼",
+      "status": "reviewed_candidate",
+      "display_scale": 0.5,
+      "source_directions": {
+        "se": {
+          "status": "limited_offline_pass",
+          "available": true,
+          "manifest": "wolf/se/manifest.json",
+          "manifest_sha256": "63d2745dbca4e71e3c24761cde543d5830eb5b38e9ecb77382a0f036a3719eee",
+          "canvas": [
+            448,
+            448
+          ],
+          "anchor": [
+            224.0,
+            344.0
+          ],
+          "real_body_count": 6,
+          "display_stage_count": 7,
+          "action_duration_ms": 820,
+          "idle_ms": 350,
+          "source_previews": {
+            "preview.gif": {
+              "size": [
+                448,
+                448
+              ],
+              "encoded_frames": 7,
+              "durations_ms": [
+                140,
+                80,
+                80,
+                100,
+                160,
+                140,
+                470
+              ],
+              "total_ms": 1170,
+              "sha256": "212a445be2d30d0d4a220efb18c001f52d6eb3f9b45bd917a1272b52ddc2e6fe",
+              "opaque_render_rgb_exact": true,
+              "opaque_pixels_checked": 197608,
+              "factor": 1
+            },
+            "preview_slow.gif": {
+              "size": [
+                448,
+                448
+              ],
+              "encoded_frames": 7,
+              "durations_ms": [
+                280,
+                160,
+                160,
+                200,
+                320,
+                280,
+                590
+              ],
+              "total_ms": 1990,
+              "sha256": "ab7b54a3ace60763fb4c32bcc85f96c01bba3e343483c34ba66a8b4f7a8b604a",
+              "opaque_render_rgb_exact": true,
+              "opaque_pixels_checked": 197608,
+              "factor": 2
+            }
+          },
+          "mirror_gifs": {
+            "normal": {
+              "file": "board_previews/wolf-se-mirror-normal.gif",
+              "size": [
+                896,
+                480
+              ],
+              "durations_ms": [
+                140,
+                80,
+                80,
+                100,
+                160,
+                140,
+                470
+              ],
+              "total_ms": 1170,
+              "slow_factor": 1,
+              "stage_starts_ideal_ms": [
+                0,
+                140,
+                220,
+                300,
+                400,
+                560,
+                700
+              ],
+              "stage_starts_gif_ms": [
+                0,
+                140,
+                220,
+                300,
+                400,
+                560,
+                700
+              ],
+              "boundary_rounding_error_ms": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "events": [
+                {
+                  "name": "bite_contact_preview_only",
+                  "at_ms": 300,
+                  "gameplay_binding": false,
+                  "ideal_preview_ms": 300,
+                  "nearest_gif_tick_ms": 300
+                }
+              ],
+              "idle_ms": 350,
+              "encoded_frames": 7,
+              "requested_samples": 7,
+              "sha256": "281c08292e88554c084799a68fc199c8e215f417284ab119c89329a01f6d7505",
+              "reserved_rgb_pixels_checked": 2987789,
+              "reserved_rgb_exact": true,
+              "maximum_unreserved_fx_channel_error": 4
+            },
+            "slow": {
+              "file": "board_previews/wolf-se-mirror-slow.gif",
+              "size": [
+                896,
+                480
+              ],
+              "durations_ms": [
+                280,
+                160,
+                160,
+                200,
+                320,
+                280,
+                590
+              ],
+              "total_ms": 1990,
+              "slow_factor": 2,
+              "stage_starts_ideal_ms": [
+                0,
+                280,
+                440,
+                600,
+                800,
+                1120,
+                1400
+              ],
+              "stage_starts_gif_ms": [
+                0,
+                280,
+                440,
+                600,
+                800,
+                1120,
+                1400
+              ],
+              "boundary_rounding_error_ms": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "events": [
+                {
+                  "name": "bite_contact_preview_only",
+                  "at_ms": 300,
+                  "gameplay_binding": false,
+                  "ideal_preview_ms": 600,
+                  "nearest_gif_tick_ms": 600
+                }
+              ],
+              "idle_ms": 350,
+              "encoded_frames": 7,
+              "requested_samples": 7,
+              "sha256": "b311031754fb62064854890c2c5dc5e9c72d9a17b23cd7c05f553a79d36b66d7",
+              "reserved_rgb_pixels_checked": 2987789,
+              "reserved_rgb_exact": true,
+              "maximum_unreserved_fx_channel_error": 4
+            }
+          },
+          "contact_selection": {
+            "stage": 3,
+            "policy": "event stage"
+          },
+          "docs": {
+            "README.md": "wolf/se/README.md",
+            "REVIEW.md": "wolf/se/REVIEW.md",
+            "contact_sheet.png": "wolf/se/contact_sheet.png"
+          },
+          "stages": [
+            {
+              "index": 0,
+              "at_ms": 0,
+              "body": "0",
+              "source_file": "wolf/se/frames/0.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/wolf-se-stage-000.png",
+                  "sha256": "eedfebebc3be9696fa0a0759545c52bd00cbfcaf6709d912e6864a5911fa7cbe",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/wolf-sw-stage-000.png",
+                  "sha256": "7d1b011a61c271bf0d26fb0696a16d7c62795782694ef1d43743af6fdb7d3c4b",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 1,
+              "at_ms": 140,
+              "body": "1",
+              "source_file": "wolf/se/frames/1.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/wolf-se-stage-001.png",
+                  "sha256": "686eb10d1619b0a9aae6bf9938e034222fdca0edbc9c75cde4267543dcc03fa4",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/wolf-sw-stage-001.png",
+                  "sha256": "e41a50a8c7a6a9605981d8a95a2232f388ace65bb99532b67f7fb0a2e4348741",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 2,
+              "at_ms": 220,
+              "body": "2",
+              "source_file": "wolf/se/frames/2.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/wolf-se-stage-002.png",
+                  "sha256": "f0c3064f2d8cd4188640fd7e448ed6d249eca041bce31a85727be6c60f232c9f",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/wolf-sw-stage-002.png",
+                  "sha256": "6dbd502ada66deb7b59f2fc403c757bad14a4a73c5d14792541575ea9b10fb3b",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 3,
+              "at_ms": 300,
+              "body": "3",
+              "source_file": "wolf/se/frames/3.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/wolf-se-stage-003.png",
+                  "sha256": "a8b31243d9cb70e7d81f870978cd79d69d2d12a166ce5e3efc18d71eb6ba51a1",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/wolf-sw-stage-003.png",
+                  "sha256": "ef0d270093b39caa803ff7cf7200ea06dc175131f1bbbbac0ee6ce403030d351",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 4,
+              "at_ms": 400,
+              "body": "4",
+              "source_file": "wolf/se/frames/4.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/wolf-se-stage-004.png",
+                  "sha256": "1dd455af1b5c168b591dc27227114f163020fbdf61aabcb2c34dd46ed9473ae5",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/wolf-sw-stage-004.png",
+                  "sha256": "a7ade68ea186a5317c4fbe5d8e2af783369ccda780854950868973d238a08cb6",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 5,
+              "at_ms": 560,
+              "body": "5",
+              "source_file": "wolf/se/frames/5.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/wolf-se-stage-005.png",
+                  "sha256": "31958862d9f7175894d46182b84788471451627743ba6b4cab0eae64b84f9fe9",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/wolf-sw-stage-005.png",
+                  "sha256": "1a11425530a7e2be05e8faf5ddaee650c3c2952e9d26dbbf01d62e1e6875458a",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 6,
+              "at_ms": 700,
+              "body": "0",
+              "source_file": "wolf/se/frames/0.png",
+              "board": {
+                "se": {
+                  "file": "board_previews/wolf-se-stage-006.png",
+                  "sha256": "ed24c80e4538fdc3144d19bd998e31c593ae75ec5102bff749c204cdf5f01fb6",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "sw": {
+                  "file": "board_previews/wolf-sw-stage-006.png",
+                  "sha256": "55b8264e086b4e419fe85a965bfde1879f966192a4bc43d91dbec70a1327f3cc",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "ne": {
+          "status": "limited_offline_pass",
+          "available": true,
+          "manifest": "wolf/ne/manifest.json",
+          "manifest_sha256": "4a181bfea72df2bc08dfb55fcc97b3f0835814fc82f7b4f1556b5920375efef3",
+          "canvas": [
+            448,
+            448
+          ],
+          "anchor": [
+            224.0,
+            344.0
+          ],
+          "real_body_count": 6,
+          "display_stage_count": 7,
+          "action_duration_ms": 820,
+          "idle_ms": 350,
+          "source_previews": {
+            "preview.gif": {
+              "size": [
+                448,
+                448
+              ],
+              "encoded_frames": 7,
+              "durations_ms": [
+                140,
+                80,
+                80,
+                100,
+                160,
+                140,
+                470
+              ],
+              "total_ms": 1170,
+              "sha256": "29a42416711cf4a770c70fca91702946567fe13753c964993e3393fc913f82bc",
+              "opaque_render_rgb_exact": true,
+              "opaque_pixels_checked": 208399,
+              "factor": 1
+            },
+            "preview_slow.gif": {
+              "size": [
+                448,
+                448
+              ],
+              "encoded_frames": 7,
+              "durations_ms": [
+                280,
+                160,
+                160,
+                200,
+                320,
+                280,
+                590
+              ],
+              "total_ms": 1990,
+              "sha256": "617a1daeefdcbb1bec2aba9355f5d41f2fb1359260ed75f655b11a2e2bba5916",
+              "opaque_render_rgb_exact": true,
+              "opaque_pixels_checked": 208399,
+              "factor": 2
+            }
+          },
+          "mirror_gifs": {
+            "normal": {
+              "file": "board_previews/wolf-ne-mirror-normal.gif",
+              "size": [
+                896,
+                480
+              ],
+              "durations_ms": [
+                140,
+                80,
+                80,
+                100,
+                160,
+                140,
+                470
+              ],
+              "total_ms": 1170,
+              "slow_factor": 1,
+              "stage_starts_ideal_ms": [
+                0,
+                140,
+                220,
+                300,
+                400,
+                560,
+                700
+              ],
+              "stage_starts_gif_ms": [
+                0,
+                140,
+                220,
+                300,
+                400,
+                560,
+                700
+              ],
+              "boundary_rounding_error_ms": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "events": [
+                {
+                  "name": "bite_contact_preview_only",
+                  "at_ms": 300,
+                  "gameplay_binding": false,
+                  "ideal_preview_ms": 300,
+                  "nearest_gif_tick_ms": 300
+                }
+              ],
+              "idle_ms": 350,
+              "encoded_frames": 7,
+              "requested_samples": 7,
+              "sha256": "e70d2a9f23f5a35c1504d25c08317a02a66ec482789340f1f67798ef9188dc19",
+              "reserved_rgb_pixels_checked": 2987705,
+              "reserved_rgb_exact": true,
+              "maximum_unreserved_fx_channel_error": 4
+            },
+            "slow": {
+              "file": "board_previews/wolf-ne-mirror-slow.gif",
+              "size": [
+                896,
+                480
+              ],
+              "durations_ms": [
+                280,
+                160,
+                160,
+                200,
+                320,
+                280,
+                590
+              ],
+              "total_ms": 1990,
+              "slow_factor": 2,
+              "stage_starts_ideal_ms": [
+                0,
+                280,
+                440,
+                600,
+                800,
+                1120,
+                1400
+              ],
+              "stage_starts_gif_ms": [
+                0,
+                280,
+                440,
+                600,
+                800,
+                1120,
+                1400
+              ],
+              "boundary_rounding_error_ms": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "events": [
+                {
+                  "name": "bite_contact_preview_only",
+                  "at_ms": 300,
+                  "gameplay_binding": false,
+                  "ideal_preview_ms": 600,
+                  "nearest_gif_tick_ms": 600
+                }
+              ],
+              "idle_ms": 350,
+              "encoded_frames": 7,
+              "requested_samples": 7,
+              "sha256": "b1d39709a744fe7526ef26eb2be880011d5b9013fa25580127c75d1c5485fcfa",
+              "reserved_rgb_pixels_checked": 2987705,
+              "reserved_rgb_exact": true,
+              "maximum_unreserved_fx_channel_error": 4
+            }
+          },
+          "contact_selection": {
+            "stage": 3,
+            "policy": "event stage"
+          },
+          "docs": {
+            "README.md": "wolf/ne/README.md",
+            "REVIEW.md": "wolf/ne/REVIEW.md",
+            "contact_sheet.png": "wolf/ne/contact_sheet.png"
+          },
+          "stages": [
+            {
+              "index": 0,
+              "at_ms": 0,
+              "body": "0",
+              "source_file": "wolf/ne/frames/0.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/wolf-ne-stage-000.png",
+                  "sha256": "b9a77fa9a567b8910562b3da02f37d5c7d217cb72e9609883152fed08a8b7671",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/wolf-nw-stage-000.png",
+                  "sha256": "549ca5ac2040ad89b29c1460b56263105fa15fa478a4bbde4abc7b9c1b58b687",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 1,
+              "at_ms": 140,
+              "body": "1",
+              "source_file": "wolf/ne/frames/1.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/wolf-ne-stage-001.png",
+                  "sha256": "fed78d2bfabca347ce3fe2fff4d1bfa93ccaca882109012e035e298a300de603",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/wolf-nw-stage-001.png",
+                  "sha256": "cddee855dca01526455f9f6b167b7974935c91bdfb450eb67ba9f9ede1d4b6bd",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 2,
+              "at_ms": 220,
+              "body": "2",
+              "source_file": "wolf/ne/frames/2.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/wolf-ne-stage-002.png",
+                  "sha256": "321c1c62cab1c5508032c30a20932e419c2d51e3647315efd40bff89a070749b",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/wolf-nw-stage-002.png",
+                  "sha256": "c29387fb5e7fe3b611bb6ea1ce7694c98391a65cdb87609520a6a735b62a83de",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 3,
+              "at_ms": 300,
+              "body": "3",
+              "source_file": "wolf/ne/frames/3.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/wolf-ne-stage-003.png",
+                  "sha256": "298c29213caf7d944e62bbc27b1591aeba85548dde7bbc76e69a08b07d394d7b",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/wolf-nw-stage-003.png",
+                  "sha256": "29836474e61f01f22b2cb8b6fc074de70a2898dbb7947f106d6803b83d22cc4a",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 4,
+              "at_ms": 400,
+              "body": "4",
+              "source_file": "wolf/ne/frames/4.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/wolf-ne-stage-004.png",
+                  "sha256": "a3b8f7fcfeaef39e542f607bc576a0431c3f0d85f08f45e3d99a38e73fed9f5c",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/wolf-nw-stage-004.png",
+                  "sha256": "d516688d86b29b2e203ae5199b64d731505fcd427c3a294e6067e04eda775d5f",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 5,
+              "at_ms": 560,
+              "body": "5",
+              "source_file": "wolf/ne/frames/5.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/wolf-ne-stage-005.png",
+                  "sha256": "f637be486e2d2d87550fbeb9e52144864ee8fb5b2acbbb89cab92a19cc8b86fc",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/wolf-nw-stage-005.png",
+                  "sha256": "445913d08f66e52638e8f24e645703033e8a348c28cadead0f5c8f7d9560a24e",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "index": 6,
+              "at_ms": 700,
+              "body": "0",
+              "source_file": "wolf/ne/frames/0.png",
+              "board": {
+                "ne": {
+                  "file": "board_previews/wolf-ne-stage-006.png",
+                  "sha256": "8d6c0e07f6f526742992247b4e034e2d3b153ec41c4fe6891a88bfffbc5f7036",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": false,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                },
+                "nw": {
+                  "file": "board_previews/wolf-nw-stage-006.png",
+                  "sha256": "3de04b09f3e5ed546792694308def8eb6ac72e184fa84e8b72376e4a8c719fd2",
+                  "size": [
+                    320,
+                    320
+                  ],
+                  "placement": {
+                    "source_canvas": [
+                      448,
+                      448
+                    ],
+                    "source_anchor": [
+                      224.0,
+                      344.0
+                    ],
+                    "mirrored": true,
+                    "mirror_anchor_continuous_edge": [
+                      224.0,
+                      344.0
+                    ],
+                    "requested_scale": 0.5,
+                    "effective_scale": [
+                      0.5,
+                      0.5
+                    ],
+                    "resized_canvas": [
+                      224,
+                      224
+                    ],
+                    "resized_anchor": [
+                      112.0,
+                      172.0
+                    ],
+                    "board_sampling_order": "nearest resize, then horizontal reflection if mirrored",
+                    "raster_offset": [
+                      48,
+                      66
+                    ],
+                    "grid_center": [
+                      160,
+                      238
+                    ],
+                    "placed_anchor": [
+                      160.0,
+                      238.0
+                    ],
+                    "anchor_rounding_error_px": [
+                      0.0,
+                      0.0
+                    ]
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "board_gifs": {
+        "normal": {
+          "file": "board_previews/wolf-board-normal.gif",
+          "size": [
+            1280,
+            320
+          ],
+          "durations_ms": [
+            140,
+            80,
+            80,
+            100,
+            160,
+            140,
+            120,
+            350
+          ],
+          "total_ms": 1170,
+          "slow_factor": 1,
+          "stage_starts_gif_ms": [
+            0,
+            140,
+            220,
+            300,
+            400,
+            560,
+            700,
+            820
+          ],
+          "union_boundaries_ms": [
+            0,
+            140,
+            220,
+            300,
+            400,
+            560,
+            700,
+            820,
+            1170
+          ],
+          "alignment": "common absolute time; hold shorter final stage until longest cycle ends",
+          "source_cycles_ms": {
+            "se": 1170,
+            "ne": 1170
+          },
+          "encoded_frames": 7,
+          "requested_samples": 8,
+          "sha256": "6cd7d6ef222107f622ccaa3999fc3647ba2609ab6b0520711630590176bd0087",
+          "reserved_rgb_pixels_checked": 3171404,
+          "reserved_rgb_exact": true,
+          "maximum_unreserved_fx_channel_error": 14,
+          "source_stage_indices": [
+            {
+              "se": 0,
+              "ne": 0
+            },
+            {
+              "se": 1,
+              "ne": 1
+            },
+            {
+              "se": 2,
+              "ne": 2
+            },
+            {
+              "se": 3,
+              "ne": 3
+            },
+            {
+              "se": 4,
+              "ne": 4
+            },
+            {
+              "se": 5,
+              "ne": 5
+            },
+            {
+              "se": 6,
+              "ne": 6
+            },
+            {
+              "se": 6,
+              "ne": 6
+            }
+          ]
+        },
+        "slow": {
+          "file": "board_previews/wolf-board-slow.gif",
+          "size": [
+            1280,
+            320
+          ],
+          "durations_ms": [
+            280,
+            160,
+            160,
+            200,
+            320,
+            280,
+            240,
+            350
+          ],
+          "total_ms": 1990,
+          "slow_factor": 2,
+          "stage_starts_gif_ms": [
+            0,
+            280,
+            440,
+            600,
+            800,
+            1120,
+            1400,
+            1640
+          ],
+          "union_boundaries_ms": [
+            0,
+            280,
+            440,
+            600,
+            800,
+            1120,
+            1400,
+            1640,
+            1990
+          ],
+          "alignment": "common absolute time; hold shorter final stage until longest cycle ends",
+          "source_cycles_ms": {
+            "se": 1990,
+            "ne": 1990
+          },
+          "encoded_frames": 7,
+          "requested_samples": 8,
+          "sha256": "5a9cb6770c9f0caeb971193d85c8563de29e9428a9f236c243cea8db5c8ed5be",
+          "reserved_rgb_pixels_checked": 3171404,
+          "reserved_rgb_exact": true,
+          "maximum_unreserved_fx_channel_error": 14,
+          "source_stage_indices": [
+            {
+              "se": 0,
+              "ne": 0
+            },
+            {
+              "se": 1,
+              "ne": 1
+            },
+            {
+              "se": 2,
+              "ne": 2
+            },
+            {
+              "se": 3,
+              "ne": 3
+            },
+            {
+              "se": 4,
+              "ne": 4
+            },
+            {
+              "se": 5,
+              "ne": 5
+            },
+            {
+              "se": 6,
+              "ne": 6
+            },
+            {
+              "se": 6,
+              "ne": 6
+            }
+          ]
+        }
+      },
+      "source_snapshot_stable": true,
+      "all_stage_board_sheet": {
+        "file": "board_previews/wolf-all-stages.png",
+        "sha256": "81e35eb94e7be0e75c8057edaab9e6ca99a0f7280f294dde113ae6a3a023373a",
+        "size": [
+          1280,
+          2240
+        ],
+        "row_policy": "display-stage index, not synchronized time; per-panel action timestamps retained"
+      }
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "schema": "diagonal-review-independent-integrity-v1",
+  "integrity": "pass",
+  "visual_status": "limited_offline_pass",
+  "overall_status": "reviewed_candidate",
+  "visual_acceptance_awarded": false,
+  "visual_status_authority": "parent STATUS.json only",
+  "audit_sha256": "6137a9791904c36f8a67a7b9dd9c8fa659cf4d33d8c229a7a71ff3df9085ad7e",
+  "review_html_sha256": "17404d1fd495c4c3d25ce89f55a012f230016b6b33297567d859950697a74e2f",
+  "source_snapshot_hashes_match": true,
+  "continuous_edge_mirror_asymmetric_fixture_pass": true,
+  "fixed_scale_and_anchor_registration_pass": true,
+  "source_and_derived_gif_times_match": true,
+  "overview_and_contact_match_complete_board_panels": true,
+  "relative_reference_count": 235,
+  "unique_html_media_decode_count": 122,
+  "markdown_relative_reference_count": 65,
+  "all_markdown_references_exist": true,
+  "all_relative_references_exist": true,
+  "browser_or_runtime_verified": false,
+  "limits": "Static pixels, mirrors, timing and links. Inherits parent visual state; does not award a new visual pass. No human continuous playback, browser interaction or runtime test.",
+  "counts": {
+    "available_source_directions": 4,
+    "real_bodies": 24,
+    "display_stages": 32,
+    "board_stage_pngs": 64,
+    "source_gifs": 8,
+    "derived_gifs": 12,
+    "checked_reserved_gif_pixels": 39906376,
+    "maximum_unreserved_fx_or_text_channel_error": 38
+  },
+  "roles": [
+    {
+      "id": "monk",
+      "status": "reviewed_candidate",
+      "directions": {
+        "se": {
+          "available": true,
+          "status": "limited_offline_pass",
+          "bodies": 6,
+          "stages": 9,
+          "source_gif_times": [
+            1470,
+            2540
+          ],
+          "mirror_opaque_rgb_and_reserved_colors_exact": true,
+          "board_actor_rectangle_rgba_exact": true
+        },
+        "ne": {
+          "available": true,
+          "status": "limited_offline_pass",
+          "bodies": 6,
+          "stages": 9,
+          "source_gif_times": [
+            1470,
+            2540
+          ],
+          "mirror_opaque_rgb_and_reserved_colors_exact": true,
+          "board_actor_rectangle_rgba_exact": true
+        }
+      }
+    },
+    {
+      "id": "wolf",
+      "status": "reviewed_candidate",
+      "directions": {
+        "se": {
+          "available": true,
+          "status": "limited_offline_pass",
+          "bodies": 6,
+          "stages": 7,
+          "source_gif_times": [
+            1170,
+            1990
+          ],
+          "mirror_opaque_rgb_and_reserved_colors_exact": true,
+          "board_actor_rectangle_rgba_exact": true
+        },
+        "ne": {
+          "available": true,
+          "status": "limited_offline_pass",
+          "bodies": 6,
+          "stages": 7,
+          "source_gif_times": [
+            1170,
+            1990
+          ],
+          "mirror_opaque_rgb_and_reserved_colors_exact": true,
+          "board_actor_rectangle_rgba_exact": true
+        }
+      }
+    }
+  ]
+}
