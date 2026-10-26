@@ -1,0 +1,33 @@
+{
+  "updated": "2026-10-26",
+  "reviewer": "author-independent visual and technical reviewers; conclusions collected by root",
+  "result": "candidate_pass_no_known_must_fix",
+  "visual_gate": "all_bodies_and_adjacent_poses_pass",
+  "technical_gate": "all_adopted_sources_and_current_preparation_chain_rebuilt_in_memory_pass",
+  "body_count": 6,
+  "display_stages": 12,
+  "gif_encoded_frames": 11,
+  "gif_duration_ms": {
+    "normal": 1760,
+    "slow": 3220
+  },
+  "all_adopted_original_png_to_webp_rgba_exact": true,
+  "all_current_frames_atlas_layers_renders_contact_sheet_rgba_equal": true,
+  "both_gifs_byte_rebuild_equal": true,
+  "body_rgb_max_channel_error": 0,
+  "gif_fx_max_channel_error": 36,
+  "first_last_full_rgba_equal": true,
+  "must_fix": [],
+  "not_verified": [
+    "owner_continuous_experience",
+    "runtime_integration",
+    "gameplay_event_binding"
+  ],
+  "bound_files": {
+    "spec.json": "d200642bc9f2d742f99574494b77b723636fb82407210dd9dc0ccfb01a306838",
+    "manifest.json": "eb11d715db2757f238cfda9d3c3d7397cded656d700b4253b006fea01defca1a",
+    "preview.gif": "87e40786ce63e5dddaabda7158a42c416a6ae1aabc3e915a37b5f6e070e8b09f",
+    "preview_slow.gif": "0d82fbf93a713e2557126ae9d8bf010c36c47de1f1db73d070f2334ceb5fa339"
+  },
+  "historical_limit": "Old spec_before_continuity is a body-only .66 reconstruction record; its discarded 200px arrow layer hashes are not a reproducible full export. Current authority: saved baseline_pose_strip + empty_grip_patch + arrow_repair -> prepare_continuity -> current strip/spec -> public build."
+}

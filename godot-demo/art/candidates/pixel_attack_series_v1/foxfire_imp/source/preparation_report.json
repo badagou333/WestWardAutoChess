@@ -1,0 +1,22 @@
+{
+  "body": "05_right_release",
+  "base": "original right-load pose4",
+  "mask_bbox": [
+    65,
+    85,
+    151,
+    196
+  ],
+  "changed_pixels_before_palette": 4224,
+  "outside_mask_raw_rgba_equal": true,
+  "retained_fire_hand_and_sleeve_raw_rgba_exact": true,
+  "no_hand_mirroring": true,
+  "registered_rgba_sha256": "1fa37bcddbd469eb4016e6ca7ed66e0b4d40815167f9983965749291a8d74948",
+  "not_adopted": [
+    "narrow ready cell0",
+    "same-arm release cell5",
+    "old stepping variants",
+    "full-arm redrawing attempts"
+  ],
+  "final_motion": "screen-left raised palm wrist flick; screen-right palm retains its flame; planted stance"
+}

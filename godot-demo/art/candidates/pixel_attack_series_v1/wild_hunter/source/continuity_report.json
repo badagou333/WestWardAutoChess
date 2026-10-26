@@ -1,0 +1,143 @@
+{
+  "role": "author_local_continuity_repairs_not_independent_gate",
+  "donor_used": "left panel of empty_grip_patch only",
+  "donor_registration_translation": [
+    -9,
+    -11
+  ],
+  "masked_ready_source_pixels": 53696,
+  "ready_hand_overlay_restored_pixels": 1760,
+  "tail_side": "screen_left_all_adopted_poses",
+  "held_arrow_template_length_px": 180,
+  "ready_arrow_angle_down_right_deg": 12,
+  "ready_arrow_tail_target": [
+    110,
+    271
+  ],
+  "source_scale_upstream": 0.66,
+  "packaging_scale": 1.0,
+  "body_height_fitting": false,
+  "front_sole_target": [
+    230.12727272727273,
+    400
+  ],
+  "front_boots": [
+    {
+      "id": "00_ready",
+      "before": [
+        230.12727272727273,
+        400
+      ],
+      "translation_at_sole": [
+        0,
+        0
+      ],
+      "after": [
+        230.12727272727273,
+        400
+      ],
+      "maximum_taper_y": 385,
+      "ankle_taper_starts_y": 348,
+      "grip_and_upper_bow_unchanged": true,
+      "lower_bow_ankle_overlap_registered_together": true
+    },
+    {
+      "id": "01_nock",
+      "before": [
+        238.95592286501378,
+        399
+      ],
+      "translation_at_sole": [
+        -8,
+        1
+      ],
+      "after": [
+        230.56723716381418,
+        400
+      ],
+      "maximum_taper_y": 385,
+      "ankle_taper_starts_y": 348,
+      "grip_and_upper_bow_unchanged": true,
+      "lower_bow_ankle_overlap_registered_together": true
+    },
+    {
+      "id": "02_full_draw",
+      "before": [
+        247.0734463276836,
+        399
+      ],
+      "translation_at_sole": [
+        -16,
+        1
+      ],
+      "after": [
+        230.59600997506234,
+        400
+      ],
+      "maximum_taper_y": 385,
+      "ankle_taper_starts_y": 348,
+      "grip_and_upper_bow_unchanged": true,
+      "lower_bow_ankle_overlap_registered_together": true
+    },
+    {
+      "id": "03_release",
+      "before": [
+        242.66564417177915,
+        398
+      ],
+      "translation_at_sole": [
+        -12,
+        2
+      ],
+      "after": [
+        229.78147268408551,
+        400
+      ],
+      "maximum_taper_y": 385,
+      "ankle_taper_starts_y": 348,
+      "grip_and_upper_bow_unchanged": true,
+      "lower_bow_ankle_overlap_registered_together": true
+    },
+    {
+      "id": "04_reach_quiver",
+      "before": [
+        240.23480662983425,
+        399
+      ],
+      "translation_at_sole": [
+        -10,
+        1
+      ],
+      "after": [
+        229.79756097560977,
+        400
+      ],
+      "maximum_taper_y": 385,
+      "ankle_taper_starts_y": 348,
+      "grip_and_upper_bow_unchanged": true,
+      "lower_bow_ankle_overlap_registered_together": true
+    },
+    {
+      "id": "05_extract_arrow",
+      "before": [
+        244.30749354005167,
+        399
+      ],
+      "translation_at_sole": [
+        -14,
+        1
+      ],
+      "after": [
+        229.93577981651376,
+        400
+      ],
+      "maximum_taper_y": 385,
+      "ankle_taper_starts_y": 348,
+      "grip_and_upper_bow_unchanged": true,
+      "lower_bow_ankle_overlap_registered_together": true
+    }
+  ],
+  "removed_original_pose": "06_lower_arrow",
+  "remaining_body_count": 6,
+  "registered_source_sha256": "0daf9d7795967c878267d32097921a25f88bf62054e07abb1ecba24846897079"
+}

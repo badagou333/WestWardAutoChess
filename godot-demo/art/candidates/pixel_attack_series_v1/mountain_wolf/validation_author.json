@@ -1,0 +1,143 @@
+{
+  "date": "2026-10-26",
+  "reviewer": "author_repair_recheck_not_independent",
+  "result": "author_support_fix_pass",
+  "baseline": "history/before_foot_fix",
+  "body_0_1_2_RGBA_unchanged": true,
+  "foreleg_only_masks_preserve_outside_RGBA": true,
+  "near_paw2_to3_exact_RGBA_box": [
+    244,
+    350,
+    300,
+    388
+  ],
+  "near_paw2_to3_exact_RGBA": true,
+  "far_paw3_to4_exact_RGBA_box": [
+    301,
+    350,
+    359,
+    387
+  ],
+  "far_paw3_to4_exact_RGBA": true,
+  "far_paw_samples": [
+    {
+      "body": "0",
+      "forepaw_region": [
+        303,
+        315,
+        390,
+        390
+      ],
+      "lowest_visible_y": 371,
+      "ground_clearance_vs_contact": 7
+    },
+    {
+      "body": "2",
+      "forepaw_region": [
+        303,
+        315,
+        390,
+        390
+      ],
+      "lowest_visible_y": 357,
+      "ground_clearance_vs_contact": 21
+    },
+    {
+      "body": "3",
+      "forepaw_region": [
+        303,
+        315,
+        390,
+        390
+      ],
+      "lowest_visible_y": 378,
+      "ground_clearance_vs_contact": 0
+    },
+    {
+      "body": "4",
+      "forepaw_region": [
+        303,
+        315,
+        390,
+        390
+      ],
+      "lowest_visible_y": 378,
+      "ground_clearance_vs_contact": 0
+    },
+    {
+      "body": "5",
+      "forepaw_region": [
+        303,
+        315,
+        390,
+        390
+      ],
+      "lowest_visible_y": 357,
+      "ground_clearance_vs_contact": 21
+    }
+  ],
+  "current_source_scale": 1.0,
+  "original_extraction_scale": 0.65,
+  "native_registration_not_body_resampling": true,
+  "body_checks": [
+    {
+      "body": "0",
+      "all_visible_pixels_connected_to_torso": true,
+      "sha256": "a708f2bcb77b8dcadd14ece6492720ae62f58f4d4381e841eb3442856e528a52"
+    },
+    {
+      "body": "1",
+      "all_visible_pixels_connected_to_torso": true,
+      "sha256": "e7236d62480bf0f068ab5362d7c5115212cf3b8fd61a79900e2780e392fa5ac3"
+    },
+    {
+      "body": "2",
+      "all_visible_pixels_connected_to_torso": true,
+      "sha256": "e850f1a16af35e6a8cb94170840199375cd5596d7d57aa92a72c9b1e001f74b2"
+    },
+    {
+      "body": "3",
+      "all_visible_pixels_connected_to_torso": true,
+      "sha256": "7042377c82e2aacd854f3483ed709cee87c4899fd803c35e2d3c91a97033a089"
+    },
+    {
+      "body": "4",
+      "all_visible_pixels_connected_to_torso": true,
+      "sha256": "6a64da626157fa1fce3924d749ce04f1fbd57cd3d5f4fac387d9d986f4979185"
+    },
+    {
+      "body": "5",
+      "all_visible_pixels_connected_to_torso": true,
+      "sha256": "a597a79989d24b61ac75bedef424f38bf2c697c3d1ad3be0b458bf0530739b33"
+    }
+  ],
+  "shared_palette_colors": 96,
+  "previews": [
+    {
+      "file": "preview.gif",
+      "encoded_frames": 7,
+      "total_ms": 1170,
+      "first_last_equal": true
+    },
+    {
+      "file": "preview_slow.gif",
+      "encoded_frames": 7,
+      "total_ms": 1990,
+      "first_last_equal": true
+    },
+    {
+      "file": "comparison.gif",
+      "encoded_frames": 7,
+      "total_ms": 1170,
+      "first_last_equal": true
+    }
+  ],
+  "issues": [],
+  "not_verified": [
+    "cross_visual_gate",
+    "all_four_paws_pixel_locked",
+    "continuous_human_experience",
+    "runtime_or_damage_binding"
+  ],
+  "initial_fixture_correction": "原近足ROI的x301同时包含远前肢；将完整近足包络截止到x300后通过，输出像素未变化；原失败记录留history/support_check_initial_overlap.json"
+}

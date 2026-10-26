@@ -1,0 +1,38 @@
+{
+  "target_canvas": [
+    448,
+    448
+  ],
+  "source_scale": 0.66,
+  "source_anchor": [
+    527.5,
+    418
+  ],
+  "target_anchor": [
+    104,
+    399
+  ],
+  "mask_polygon_target": [
+    [
+      270,
+      273
+    ],
+    [
+      369,
+      286
+    ],
+    [
+      369,
+      310
+    ],
+    [
+      270,
+      292
+    ]
+  ],
+  "source_mask_pixels": 4959,
+  "changed_source_pixels": 2247,
+  "outside_mask_source_rgba_exact": true,
+  "donor_used_only_for_arrow_mask": true,
+  "registered_sha256": "1bf1e5110d2e7af0855834571fa1ba45fd3057f0aae44777818a78c8a55d15fc"
+}

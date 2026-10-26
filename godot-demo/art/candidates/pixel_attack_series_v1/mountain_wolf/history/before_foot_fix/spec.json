@@ -1,0 +1,207 @@
+{
+  "character": "mountain_wolf",
+  "display_name": "山狼 · 短扑咬",
+  "canvas": [
+    448,
+    448
+  ],
+  "anchor": [
+    110,
+    380
+  ],
+  "palette_colors": 96,
+  "background": [
+    35,
+    40,
+    48
+  ],
+  "sources": {
+    "poses": {
+      "file": "source/attack_sheet.webp",
+      "sha256": "1123cd38a3d104b9ea1237ad9d4f9e4b3f66d76dc496296e08d23f2374a6c410",
+      "expected_pixel_sha256": "ee2ca6f86914e2b63e91d5251b1f4f86281e29275bbbc88a98f6331f9445e6f9",
+      "scale": 0.65
+    }
+  },
+  "bodies": [
+    {
+      "id": "0",
+      "name": "ready",
+      "source": "poses",
+      "source_box": [
+        8,
+        120,
+        545,
+        495
+      ],
+      "component_seeds": [
+        [
+          300,
+          250
+        ]
+      ],
+      "source_anchor": [
+        113.0,
+        487
+      ]
+    },
+    {
+      "id": "1",
+      "name": "load",
+      "source": "poses",
+      "source_box": [
+        524,
+        194,
+        1013,
+        493
+      ],
+      "component_seeds": [
+        [
+          780,
+          320
+        ]
+      ],
+      "source_anchor": [
+        630.5,
+        485
+      ]
+    },
+    {
+      "id": "2",
+      "name": "open_reach",
+      "source": "poses",
+      "source_box": [
+        1006,
+        150,
+        1534,
+        497
+      ],
+      "component_seeds": [
+        [
+          1300,
+          270
+        ]
+      ],
+      "source_anchor": [
+        1106.5,
+        487
+      ]
+    },
+    {
+      "id": "3",
+      "name": "bite_contact",
+      "source": "poses",
+      "source_box": [
+        6,
+        625,
+        580,
+        952
+      ],
+      "component_seeds": [
+        [
+          300,
+          760
+        ]
+      ],
+      "source_anchor": [
+        90.5,
+        937
+      ]
+    },
+    {
+      "id": "4",
+      "name": "recoil",
+      "source": "poses",
+      "source_box": [
+        538,
+        583,
+        1028,
+        945
+      ],
+      "component_seeds": [
+        [
+          780,
+          750
+        ]
+      ],
+      "source_anchor": [
+        652.0,
+        937
+      ]
+    },
+    {
+      "id": "5",
+      "name": "recover",
+      "source": "poses",
+      "source_box": [
+        1005,
+        578,
+        1535,
+        959
+      ],
+      "component_seeds": [
+        [
+          1300,
+          760
+        ]
+      ],
+      "source_anchor": [
+        1109.5,
+        944
+      ]
+    }
+  ],
+  "track": [
+    {
+      "at_ms": 0,
+      "body": "0"
+    },
+    {
+      "at_ms": 160,
+      "body": "1"
+    },
+    {
+      "at_ms": 240,
+      "body": "2"
+    },
+    {
+      "at_ms": 300,
+      "body": "3"
+    },
+    {
+      "at_ms": 410,
+      "body": "4"
+    },
+    {
+      "at_ms": 560,
+      "body": "5"
+    },
+    {
+      "at_ms": 720,
+      "body": "0"
+    }
+  ],
+  "duration_ms": 820,
+  "idle_ms": 350,
+  "events": [
+    {
+      "name": "bite_contact",
+      "at_ms": 300
+    }
+  ],
+  "review_profile": [
+    "ordinary_quadruped_identity",
+    "four_legs_attributable",
+    "jaw_open_then_close",
+    "hind_support_and_forepaw_articulation",
+    "neck_shoulder_and_pelvis_continuity",
+    "tail_root_attachment",
+    "uniform_source_scale",
+    "actual_448_size_readability"
+  ],
+  "review_annotations": {
+    "anchor_note": "near hind paw sole proxy, individually identified in source; fixed sprite root is not proof of all-paw lock",
+    "contact_note": "300ms is preview metadata only; no gameplay damage binding",
+    "source_layout": "manual overlapping boxes with one selected component per full animal; no equal-cell slicing"
+  }
+}

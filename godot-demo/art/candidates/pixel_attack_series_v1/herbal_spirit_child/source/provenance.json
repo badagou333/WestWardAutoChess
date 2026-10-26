@@ -1,0 +1,42 @@
+{
+  "tool": "built-in image_gen",
+  "adopted": [
+    {
+      "file": "source/body_sheet.webp",
+      "original_tool_file": "exec-f8e30916-5bf2-428b-87e3-a92ab44b5b79.png",
+      "original_png_sha256": "b61c1e1502b431d7148dcb283593703a1c36052d8dd199b675cda9ace5ab4e26",
+      "webp_sha256": "08bac7886627d6f2edb7ac310bd4422cf2ab66c51e3d31357e5f0efb4ebd0a00",
+      "rgba_sha256": "d7680bbcca5beb4fe397c05afa27b8dfa8eeedf9ec4feae9f253044bee028290",
+      "size": [
+        1536,
+        1024
+      ],
+      "all_rgba_equal": true,
+      "original_png_path": "/Users/leqiong/.codex/generated_images/01a17357-4b85-78c3-a221-0f3ae59889f1/exec-f8e30916-5bf2-428b-87e3-a92ab44b5b79.png",
+      "rgba_equality_rechecked_by_packaging_author": true
+    },
+    {
+      "file": "source/healing_fx.webp",
+      "original_tool_file": "exec-5bbd3c77-c695-4230-ae87-ab3488398572.png",
+      "original_png_sha256": "568686fea1ce68022ce729f1a602d242fed52b05163e04032978877b8d5b49bb",
+      "webp_sha256": "bebeee1ac3601369101cc93566a810c0bbd1232b3660056b942025581399a86b",
+      "rgba_sha256": "a0b01d02260bcef80e573188c44d3c7077acac375ff2d73e77eee295b6fce94e",
+      "size": [
+        1536,
+        1024
+      ],
+      "all_rgba_equal": true,
+      "original_png_path": "/Users/leqiong/.codex/generated_images/01a17357-4b85-78c3-a221-0f3ae59889f1/exec-5bbd3c77-c695-4230-ae87-ab3488398572.png",
+      "rgba_equality_rechecked_by_packaging_author": true
+    }
+  ],
+  "identity_reference": {
+    "file": "../../../concepts/herbal_spirit_child/nine_sols_v1/herbal-child-nine-sols-candidate.png",
+    "sha256": "6494edb07f76656d2bae4571b958909ef9b6d1f9324107df18439b6f61ce0fbf"
+  },
+  "scope_confirmation": {
+    "date": "2026-10-26",
+    "user_response_relayed_by_root": "药灵补治疗动作（推荐）",
+    "meaning": "Healing main-action art explicitly confirmed; no damage or new gameplay mechanism."
+  }
+}

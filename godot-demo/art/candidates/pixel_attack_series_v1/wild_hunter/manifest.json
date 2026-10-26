@@ -1,0 +1,1381 @@
+{
+  "schema": "pixel-attack-series-v1",
+  "character": "wild_hunter",
+  "display_name": "山野猎户 / pixel arrow attack",
+  "status": "structural_candidate_requires_visual_review",
+  "canvas": [
+    448,
+    448
+  ],
+  "anchor": [
+    104.0,
+    399.0
+  ],
+  "sources": {
+    "registered": {
+      "file": "source/continuity_body_strip.webp",
+      "format": "WEBP",
+      "size": [
+        2688,
+        448
+      ],
+      "sha256": "0daf9d7795967c878267d32097921a25f88bf62054e07abb1ecba24846897079",
+      "rgba_pixel_sha256": "97599c2bee1074fceb862f8954eb14591fb268afa648772ce3136ad3ec4917c2",
+      "expected_pixel_hash_verified": true,
+      "lossless_storage": true,
+      "scale": 1.0
+    }
+  },
+  "bodies": [
+    {
+      "id": "00_ready",
+      "name": "00_ready",
+      "source": "registered",
+      "source_box": [
+        0,
+        0,
+        448,
+        448
+      ],
+      "source_anchor": [
+        104,
+        399
+      ],
+      "scale": 1.0,
+      "component_seeds": [
+        [
+          225,
+          275
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 175,
+      "selected_components_pixels_after_scale": [
+        38100
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        58,
+        136
+      ],
+      "anchor_rounding_error_px": [
+        0.0,
+        0.0
+      ],
+      "visible_bbox": [
+        58,
+        136,
+        306,
+        401
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/00_ready.png",
+      "sha256": "09468ec1fe01573f8522c67d63535b07eaf2894ad2c9b2b929b4b8a17600a144",
+      "rgba_pixel_sha256": "0fa030fffdc825f5d1f28e125d38ea38c0ad7f9e03501d4d0dff5c12d0c52d24",
+      "opaque_colors": 96,
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "01_nock",
+      "name": "01_nock",
+      "source": "registered",
+      "source_box": [
+        448,
+        0,
+        896,
+        448
+      ],
+      "source_anchor": [
+        552,
+        399
+      ],
+      "scale": 1.0,
+      "component_seeds": [
+        [
+          578,
+          282
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [
+        34278
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        69,
+        132
+      ],
+      "anchor_rounding_error_px": [
+        0.0,
+        0.0
+      ],
+      "visible_bbox": [
+        69,
+        132,
+        355,
+        401
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/01_nock.png",
+      "sha256": "918e002ff2b91237c5c21ce6fed87ea3d684ef7340d1daeb065a6e91fa62b0ab",
+      "rgba_pixel_sha256": "a847bd377b58f27a62627236e3d63c1c7dbf006acee083055447f3e26c050cb7",
+      "opaque_colors": 85,
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "02_full_draw",
+      "name": "02_full_draw",
+      "source": "registered",
+      "source_box": [
+        896,
+        0,
+        1344,
+        448
+      ],
+      "source_anchor": [
+        1000,
+        399
+      ],
+      "scale": 1.0,
+      "component_seeds": [
+        [
+          1063,
+          274
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [
+        37542
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        63,
+        125
+      ],
+      "anchor_rounding_error_px": [
+        0.0,
+        0.0
+      ],
+      "visible_bbox": [
+        63,
+        125,
+        336,
+        401
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/02_full_draw.png",
+      "sha256": "686980489133b6834e438842ca046c6f446b7cc736f3a4dca39b3b31a58d9831",
+      "rgba_pixel_sha256": "68a0945330aad5473684edbb28f9336b0d50c6e09e7f0efd82d6f6552bc32627",
+      "opaque_colors": 85,
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "03_release",
+      "name": "03_release",
+      "source": "registered",
+      "source_box": [
+        1344,
+        0,
+        1792,
+        448
+      ],
+      "source_anchor": [
+        1448,
+        399
+      ],
+      "scale": 1.0,
+      "component_seeds": [
+        [
+          1475,
+          279
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [
+        36359
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        63,
+        128
+      ],
+      "anchor_rounding_error_px": [
+        0.0,
+        0.0
+      ],
+      "visible_bbox": [
+        63,
+        128,
+        303,
+        401
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/03_release.png",
+      "sha256": "57c150f2f24f5c0889547466e83620cdedf5a473bd969124c584f4c5955af998",
+      "rgba_pixel_sha256": "e741ceac9c6245d05f47451263c78b7134d0b40b67f38e3f28676d1c582d3401",
+      "opaque_colors": 85,
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "04_reach_quiver",
+      "name": "04_reach_quiver",
+      "source": "registered",
+      "source_box": [
+        1792,
+        0,
+        2240,
+        448
+      ],
+      "source_anchor": [
+        1896,
+        399
+      ],
+      "scale": 1.0,
+      "component_seeds": [
+        [
+          1982,
+          283
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [
+        36209
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        62,
+        149
+      ],
+      "anchor_rounding_error_px": [
+        0.0,
+        0.0
+      ],
+      "visible_bbox": [
+        62,
+        149,
+        287,
+        401
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/04_reach_quiver.png",
+      "sha256": "ae15b32b91ae4947e110af53e2efce8254d72162075e1fb3fb79e91d112b169b",
+      "rgba_pixel_sha256": "e4f3530655ed7afea42bf638dc92317caa44ba99513db62868c9d69641e0b7a1",
+      "opaque_colors": 85,
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "05_extract_arrow",
+      "name": "05_extract_arrow",
+      "source": "registered",
+      "source_box": [
+        2240,
+        0,
+        2688,
+        448
+      ],
+      "source_anchor": [
+        2344,
+        399
+      ],
+      "scale": 1.0,
+      "component_seeds": [
+        [
+          2532,
+          280
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [
+        39252
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        60,
+        145
+      ],
+      "anchor_rounding_error_px": [
+        0.0,
+        0.0
+      ],
+      "visible_bbox": [
+        60,
+        145,
+        305,
+        401
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/05_extract_arrow.png",
+      "sha256": "3ad7be2193959bdc856e1d695f40bdb41ccbe4eceae726647b21cc675fdae44d",
+      "rgba_pixel_sha256": "9ba1a2d755bd28f8c11e1a98993ce93308e689574d4efacf2fe4167bc6362142",
+      "opaque_colors": 85,
+      "alpha_values": [
+        0,
+        255
+      ]
+    }
+  ],
+  "layers": {
+    "flight_0": {
+      "copied_at_original_size": true,
+      "resampled": false,
+      "input": {
+        "file": "source/arrow_layers/flight_0.png",
+        "format": "PNG",
+        "size": [
+          448,
+          448
+        ],
+        "sha256": "b7e6d7c251e2a40d534aee9477b279b0fc04f38137c8a0b1955af54c5d5b098b",
+        "rgba_pixel_sha256": "60ccbe5981088dca8cc6e48aa6faed99692f55eb5db619559c3cd65c67e18437",
+        "expected_pixel_hash_verified": true,
+        "lossless_storage": true
+      },
+      "file": "layers/flight_0.png",
+      "sha256": "b7e6d7c251e2a40d534aee9477b279b0fc04f38137c8a0b1955af54c5d5b098b",
+      "rgba_pixel_sha256": "60ccbe5981088dca8cc6e48aa6faed99692f55eb5db619559c3cd65c67e18437",
+      "partial_alpha_allowed": true
+    },
+    "flight_1": {
+      "copied_at_original_size": true,
+      "resampled": false,
+      "input": {
+        "file": "source/arrow_layers/flight_1.png",
+        "format": "PNG",
+        "size": [
+          448,
+          448
+        ],
+        "sha256": "708e373aaaf2e0239dc078875bdb9ebc4eb6b7da2c754fb071bd7dbc0c8759e1",
+        "rgba_pixel_sha256": "c59539a5b58d2da00ae1eef71876ed2d737bfc49f7146b0d15064302cf0480d4",
+        "expected_pixel_hash_verified": true,
+        "lossless_storage": true
+      },
+      "file": "layers/flight_1.png",
+      "sha256": "708e373aaaf2e0239dc078875bdb9ebc4eb6b7da2c754fb071bd7dbc0c8759e1",
+      "rgba_pixel_sha256": "c59539a5b58d2da00ae1eef71876ed2d737bfc49f7146b0d15064302cf0480d4",
+      "partial_alpha_allowed": true
+    },
+    "flight_2": {
+      "copied_at_original_size": true,
+      "resampled": false,
+      "input": {
+        "file": "source/arrow_layers/flight_2.png",
+        "format": "PNG",
+        "size": [
+          448,
+          448
+        ],
+        "sha256": "b75d402f11c45793a7833aea0d39b9fb281a9f063446925bf7ae3039eb2425bc",
+        "rgba_pixel_sha256": "ab4887056625ee914496caa352ed6fc86ab20a6a6e3c358d2b0dc3434f681d46",
+        "expected_pixel_hash_verified": true,
+        "lossless_storage": true
+      },
+      "file": "layers/flight_2.png",
+      "sha256": "b75d402f11c45793a7833aea0d39b9fb281a9f063446925bf7ae3039eb2425bc",
+      "rgba_pixel_sha256": "ab4887056625ee914496caa352ed6fc86ab20a6a6e3c358d2b0dc3434f681d46",
+      "partial_alpha_allowed": true
+    },
+    "flight_3": {
+      "copied_at_original_size": true,
+      "resampled": false,
+      "input": {
+        "file": "source/arrow_layers/flight_3.png",
+        "format": "PNG",
+        "size": [
+          448,
+          448
+        ],
+        "sha256": "ffa992eb28ae2d8df5667d03b7113e724f0cc782966ac86dc2e4c81ea16641c9",
+        "rgba_pixel_sha256": "5c645daee992b62bcbaea71ead7c34cb69e2fdcba3e1f325bcde99c38cb41b94",
+        "expected_pixel_hash_verified": true,
+        "lossless_storage": true
+      },
+      "file": "layers/flight_3.png",
+      "sha256": "ffa992eb28ae2d8df5667d03b7113e724f0cc782966ac86dc2e4c81ea16641c9",
+      "rgba_pixel_sha256": "5c645daee992b62bcbaea71ead7c34cb69e2fdcba3e1f325bcde99c38cb41b94",
+      "partial_alpha_allowed": true
+    }
+  },
+  "layer_order": "declared list behind opaque body",
+  "body_palette_rgb": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      1
+    ],
+    [
+      3,
+      2,
+      2
+    ],
+    [
+      4,
+      5,
+      3
+    ],
+    [
+      8,
+      2,
+      1
+    ],
+    [
+      8,
+      5,
+      3
+    ],
+    [
+      9,
+      8,
+      6
+    ],
+    [
+      13,
+      8,
+      5
+    ],
+    [
+      17,
+      9,
+      5
+    ],
+    [
+      18,
+      15,
+      11
+    ],
+    [
+      21,
+      22,
+      16
+    ],
+    [
+      22,
+      5,
+      1
+    ],
+    [
+      26,
+      10,
+      5
+    ],
+    [
+      28,
+      30,
+      24
+    ],
+    [
+      33,
+      17,
+      9
+    ],
+    [
+      34,
+      24,
+      16
+    ],
+    [
+      35,
+      34,
+      28
+    ],
+    [
+      36,
+      31,
+      20
+    ],
+    [
+      37,
+      38,
+      30
+    ],
+    [
+      39,
+      41,
+      33
+    ],
+    [
+      41,
+      44,
+      36
+    ],
+    [
+      45,
+      45,
+      36
+    ],
+    [
+      46,
+      49,
+      39
+    ],
+    [
+      50,
+      22,
+      11
+    ],
+    [
+      50,
+      46,
+      36
+    ],
+    [
+      51,
+      51,
+      35
+    ],
+    [
+      52,
+      32,
+      20
+    ],
+    [
+      52,
+      40,
+      30
+    ],
+    [
+      53,
+      52,
+      43
+    ],
+    [
+      55,
+      56,
+      47
+    ],
+    [
+      57,
+      58,
+      41
+    ],
+    [
+      58,
+      57,
+      42
+    ],
+    [
+      60,
+      60,
+      49
+    ],
+    [
+      63,
+      62,
+      49
+    ],
+    [
+      64,
+      64,
+      50
+    ],
+    [
+      66,
+      37,
+      20
+    ],
+    [
+      66,
+      67,
+      49
+    ],
+    [
+      68,
+      45,
+      33
+    ],
+    [
+      69,
+      69,
+      51
+    ],
+    [
+      71,
+      32,
+      17
+    ],
+    [
+      72,
+      55,
+      45
+    ],
+    [
+      74,
+      27,
+      8
+    ],
+    [
+      74,
+      62,
+      51
+    ],
+    [
+      75,
+      72,
+      51
+    ],
+    [
+      78,
+      79,
+      54
+    ],
+    [
+      81,
+      42,
+      23
+    ],
+    [
+      86,
+      65,
+      51
+    ],
+    [
+      86,
+      84,
+      57
+    ],
+    [
+      89,
+      68,
+      57
+    ],
+    [
+      92,
+      91,
+      60
+    ],
+    [
+      95,
+      43,
+      21
+    ],
+    [
+      97,
+      52,
+      32
+    ],
+    [
+      97,
+      96,
+      62
+    ],
+    [
+      102,
+      101,
+      65
+    ],
+    [
+      108,
+      105,
+      67
+    ],
+    [
+      110,
+      68,
+      42
+    ],
+    [
+      111,
+      108,
+      70
+    ],
+    [
+      112,
+      101,
+      65
+    ],
+    [
+      113,
+      54,
+      29
+    ],
+    [
+      113,
+      111,
+      71
+    ],
+    [
+      114,
+      61,
+      35
+    ],
+    [
+      117,
+      113,
+      73
+    ],
+    [
+      118,
+      58,
+      32
+    ],
+    [
+      119,
+      69,
+      43
+    ],
+    [
+      123,
+      118,
+      76
+    ],
+    [
+      128,
+      85,
+      56
+    ],
+    [
+      132,
+      59,
+      29
+    ],
+    [
+      137,
+      127,
+      83
+    ],
+    [
+      139,
+      67,
+      34
+    ],
+    [
+      141,
+      74,
+      40
+    ],
+    [
+      148,
+      144,
+      140
+    ],
+    [
+      149,
+      110,
+      75
+    ],
+    [
+      152,
+      141,
+      93
+    ],
+    [
+      154,
+      74,
+      38
+    ],
+    [
+      161,
+      90,
+      49
+    ],
+    [
+      166,
+      74,
+      39
+    ],
+    [
+      168,
+      148,
+      103
+    ],
+    [
+      171,
+      123,
+      81
+    ],
+    [
+      172,
+      80,
+      40
+    ],
+    [
+      175,
+      92,
+      47
+    ],
+    [
+      186,
+      94,
+      45
+    ],
+    [
+      205,
+      116,
+      50
+    ],
+    [
+      208,
+      150,
+      109
+    ],
+    [
+      213,
+      130,
+      59
+    ],
+    [
+      216,
+      167,
+      133
+    ],
+    [
+      234,
+      145,
+      55
+    ],
+    [
+      234,
+      190,
+      158
+    ],
+    [
+      240,
+      158,
+      66
+    ],
+    [
+      246,
+      170,
+      77
+    ],
+    [
+      248,
+      218,
+      200
+    ],
+    [
+      250,
+      211,
+      186
+    ],
+    [
+      250,
+      233,
+      219
+    ],
+    [
+      252,
+      216,
+      143
+    ],
+    [
+      252,
+      248,
+      243
+    ]
+  ],
+  "palette_limit": 96,
+  "body_palette_assignment": "group_median_cut_then_exact_nearest_rgb_without_dither",
+  "track": [
+    {
+      "at_ms": 0,
+      "body": "00_ready",
+      "layers": []
+    },
+    {
+      "at_ms": 180,
+      "body": "01_nock",
+      "layers": []
+    },
+    {
+      "at_ms": 380,
+      "body": "02_full_draw",
+      "layers": []
+    },
+    {
+      "at_ms": 580,
+      "body": "03_release",
+      "layers": [
+        {
+          "id": "flight_0",
+          "opacity": 1.0,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 600,
+      "body": "03_release",
+      "layers": [
+        {
+          "id": "flight_1",
+          "opacity": 1.0,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 620,
+      "body": "03_release",
+      "layers": [
+        {
+          "id": "flight_2",
+          "opacity": 1.0,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 640,
+      "body": "03_release",
+      "layers": [
+        {
+          "id": "flight_3",
+          "opacity": 1.0,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 660,
+      "body": "03_release",
+      "layers": []
+    },
+    {
+      "at_ms": 740,
+      "body": "04_reach_quiver",
+      "layers": []
+    },
+    {
+      "at_ms": 920,
+      "body": "05_extract_arrow",
+      "layers": []
+    },
+    {
+      "at_ms": 1100,
+      "body": "00_ready",
+      "layers": []
+    },
+    {
+      "at_ms": 1280,
+      "body": "00_ready",
+      "layers": []
+    }
+  ],
+  "renders": [
+    {
+      "at_ms": 0,
+      "body": "00_ready",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 38100,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/000.png",
+      "sha256": "09468ec1fe01573f8522c67d63535b07eaf2894ad2c9b2b929b4b8a17600a144"
+    },
+    {
+      "at_ms": 180,
+      "body": "01_nock",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 34278,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/001.png",
+      "sha256": "918e002ff2b91237c5c21ce6fed87ea3d684ef7340d1daeb065a6e91fa62b0ab"
+    },
+    {
+      "at_ms": 380,
+      "body": "02_full_draw",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 37542,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/002.png",
+      "sha256": "686980489133b6834e438842ca046c6f446b7cc736f3a4dca39b3b31a58d9831"
+    },
+    {
+      "at_ms": 580,
+      "body": "03_release",
+      "layers": [
+        {
+          "id": "flight_0",
+          "opacity": 1.0,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 36359,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/003.png",
+      "sha256": "e03c4b13e2cdddac47f56c8798664890836de98a6b780abb3bd78f694583c1c1"
+    },
+    {
+      "at_ms": 600,
+      "body": "03_release",
+      "layers": [
+        {
+          "id": "flight_1",
+          "opacity": 1.0,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 36359,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/004.png",
+      "sha256": "e956cd1ef0f1e4923fc06ebf972df7f4da1e1920466437dbbe2bf9d17ed18089"
+    },
+    {
+      "at_ms": 620,
+      "body": "03_release",
+      "layers": [
+        {
+          "id": "flight_2",
+          "opacity": 1.0,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 36359,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/005.png",
+      "sha256": "a9b3e96fe6d9b6cd093a1a2c6688bb0b4a70ec915c15a5bd299cea7b49763066"
+    },
+    {
+      "at_ms": 640,
+      "body": "03_release",
+      "layers": [
+        {
+          "id": "flight_3",
+          "opacity": 1.0,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 36359,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/006.png",
+      "sha256": "6d4b9ef000e5208d2c390f889a9710e51c7dfb0a00021e3312e87d2cb61d3dda"
+    },
+    {
+      "at_ms": 660,
+      "body": "03_release",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 36359,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/007.png",
+      "sha256": "57c150f2f24f5c0889547466e83620cdedf5a473bd969124c584f4c5955af998"
+    },
+    {
+      "at_ms": 740,
+      "body": "04_reach_quiver",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 36209,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/008.png",
+      "sha256": "ae15b32b91ae4947e110af53e2efce8254d72162075e1fb3fb79e91d112b169b"
+    },
+    {
+      "at_ms": 920,
+      "body": "05_extract_arrow",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 39252,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/009.png",
+      "sha256": "3ad7be2193959bdc856e1d695f40bdb41ccbe4eceae726647b21cc675fdae44d"
+    },
+    {
+      "at_ms": 1100,
+      "body": "00_ready",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 38100,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/010.png",
+      "sha256": "09468ec1fe01573f8522c67d63535b07eaf2894ad2c9b2b929b4b8a17600a144"
+    },
+    {
+      "at_ms": 1280,
+      "body": "00_ready",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 38100,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/011.png",
+      "sha256": "09468ec1fe01573f8522c67d63535b07eaf2894ad2c9b2b929b4b8a17600a144"
+    }
+  ],
+  "events": [
+    {
+      "name": "arrow_release_preview_only",
+      "at_ms": 580,
+      "gameplay_binding": false
+    }
+  ],
+  "duration_ms": 1460,
+  "idle_ms": 300,
+  "previews": {
+    "preview.gif": {
+      "durations_ms": [
+        180,
+        200,
+        200,
+        20,
+        20,
+        20,
+        20,
+        80,
+        180,
+        180,
+        180,
+        480
+      ],
+      "total_ms": 1760,
+      "slow_factor": 1,
+      "stage_starts_ideal_ms": [
+        0,
+        180,
+        380,
+        580,
+        600,
+        620,
+        640,
+        660,
+        740,
+        920,
+        1100,
+        1280
+      ],
+      "stage_starts_gif_ms": [
+        0,
+        180,
+        380,
+        580,
+        600,
+        620,
+        640,
+        660,
+        740,
+        920,
+        1100,
+        1280
+      ],
+      "boundary_rounding_error_ms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "events": [
+        {
+          "name": "arrow_release_preview_only",
+          "at_ms": 580,
+          "gameplay_binding": false,
+          "ideal_preview_ms": 580,
+          "nearest_gif_tick_ms": 580
+        }
+      ],
+      "idle_ms": 300,
+      "encoded_frames": 11,
+      "requested_samples": 12,
+      "sha256": "87e40786ce63e5dddaabda7158a42c416a6ae1aabc3e915a37b5f6e070e8b09f",
+      "reserved_rgb_pixels_checked": 2406086,
+      "reserved_rgb_exact": true,
+      "maximum_unreserved_fx_channel_error": 36
+    },
+    "preview_slow.gif": {
+      "durations_ms": [
+        360,
+        400,
+        400,
+        40,
+        40,
+        40,
+        40,
+        160,
+        360,
+        360,
+        360,
+        660
+      ],
+      "total_ms": 3220,
+      "slow_factor": 2,
+      "stage_starts_ideal_ms": [
+        0,
+        360,
+        760,
+        1160,
+        1200,
+        1240,
+        1280,
+        1320,
+        1480,
+        1840,
+        2200,
+        2560
+      ],
+      "stage_starts_gif_ms": [
+        0,
+        360,
+        760,
+        1160,
+        1200,
+        1240,
+        1280,
+        1320,
+        1480,
+        1840,
+        2200,
+        2560
+      ],
+      "boundary_rounding_error_ms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "events": [
+        {
+          "name": "arrow_release_preview_only",
+          "at_ms": 580,
+          "gameplay_binding": false,
+          "ideal_preview_ms": 1160,
+          "nearest_gif_tick_ms": 1160
+        }
+      ],
+      "idle_ms": 300,
+      "encoded_frames": 11,
+      "requested_samples": 12,
+      "sha256": "0d82fbf93a713e2557126ae9d8bf010c36c47de1f1db73d070f2334ceb5fa339",
+      "reserved_rgb_pixels_checked": 2406086,
+      "reserved_rgb_exact": true,
+      "maximum_unreserved_fx_channel_error": 36
+    }
+  },
+  "first_last_full_rgba_identical": true,
+  "review_profile": [
+    "left/front paw holds one continuous bow",
+    "one string V meets arrow nock in draw",
+    "right/rear paw handles arrow and string",
+    "single-arrow visible quiver replenishment",
+    "bow limb tips/string attachments intact",
+    "no hunting knife",
+    "rear sole anchor not a proof of both feet locked",
+    "projectile uses generated separate arrow and leaves viewport"
+  ],
+  "review_annotations": {
+    "excluded_sheet_pose": "top-right half-draw omitted because projected arrow length was unstable; not part of the final track",
+    "projectile": {
+      "source": "source/arrow_repair.webp",
+      "source_bbox": [
+        262,
+        398,
+        1510,
+        490
+      ],
+      "normalized_size": [
+        200,
+        15
+      ],
+      "axis_y": 231,
+      "x_offsets": [
+        0,
+        80,
+        160,
+        240
+      ],
+      "viewport_exit_clipping_intentional_for_projectile_only": true
+    },
+    "actual_pose_count": 6,
+    "first_last_body": "00_ready",
+    "runtime_integrated": false,
+    "nock_arrow_repair": "source/nock_patch_report.json",
+    "removed_pose": "06_lower_arrow: opposite-side tail and reversed short arrow; replaced by the single corrected ready",
+    "normalized_source_scale": "1.0 exact 448px packaging; all upstream body geometry came from common .66 source extraction, no body height fitting",
+    "carried_arrow": "one generated 180px template, ready points screen-right/down 12 degrees; overhead extraction points screen-right",
+    "continuity_report": "source/continuity_report.json"
+  },
+  "events_are_preview_metadata_only": true
+}

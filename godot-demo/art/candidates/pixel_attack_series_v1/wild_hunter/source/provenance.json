@@ -1,0 +1,145 @@
+{
+  "date": "2026-10-26",
+  "identity_reference": {
+    "file": "godot-demo/art/concepts/wild_hunter/nine_sols_archer_v1/wild-hunter-archer-candidate.png",
+    "sha256": "860753c18ac57aebe950a9cdd7f828e45d8b3787fbdd52586b4b44b0f5811f7a"
+  },
+  "style_only_reference": {
+    "file": "godot-demo/art/candidates/guard_monk_pixel_v1/completed_v4/history/detail_pass_generated.png",
+    "sha256": "ff01affe0b9edd5f57f984528e98370be8f20c25af130f3586e77debe4f4df0a"
+  },
+  "passes": [
+    {
+      "id": "initial",
+      "size": [
+        1263,
+        1246
+      ],
+      "tool": "built-in imagegen",
+      "original_png_basename": "exec-4d03fb8f-fb0f-4a46-a044-81ab2cf9d96c.png",
+      "original_png_sha256": "b03dbef58846a59243b9ca5f830b903502550e6fc2c9c2dfd239bb68453f2e33",
+      "sha256": "3020c00adc9d7fe0e7f5394a6f1825217f397983a3aedb02c7a9d11914060fb3",
+      "rgba_pixel_sha256": "50c084c492b3d443c5e3fe24632843fd810f40bb613345b09b7e3907b2ee68ec",
+      "lossless_webp_exact_rgba_verified": true,
+      "stored": false,
+      "adopted": false,
+      "not_adopted_reason": "搭箭帧箭轴/弦点关系不清、取箭仅见羽尾；不采用"
+    },
+    {
+      "id": "repair_nock_extract",
+      "size": [
+        1263,
+        1246
+      ],
+      "tool": "built-in imagegen",
+      "original_png_basename": "exec-750ab016-cdb0-4d51-b5d7-5139deb513b1.png",
+      "original_png_sha256": "f44c4f9640e70440d0b40975f37a352fd10a943550b81e372e5591cc0b37862a",
+      "sha256": "566618e11a13ca75ab9228ddbb48369d07b89adaa72f3679d46cf1ea059838c5",
+      "rgba_pixel_sha256": "140c63ab5988c709c61a5ffc8def2785b47bd02a0a10d71452b369baaa8d0e02",
+      "lossless_webp_exact_rgba_verified": true,
+      "stored": false,
+      "adopted": false,
+      "not_adopted_reason": "取箭修正采用方向，但搭箭箭尾未明确扣弦；由后续定向修替代"
+    },
+    {
+      "id": "nock_string_repair",
+      "adopted": true,
+      "file": "source/archer_attack_sheet.webp",
+      "size": [
+        1263,
+        1246
+      ],
+      "tool": "built-in imagegen",
+      "original_png_basename": "exec-c263f880-99b1-48bd-9b2e-435cd09bf71f.png",
+      "original_png_sha256": "3c6f2c8f103daaad0e00fbfeba2dd2864e3481a56e0ca44d38ec0038b6b55192",
+      "sha256": "0ec495f20245cb95d97d53d9dd86a03126ba4d36c46ff29a8dfb583214bb7be0",
+      "rgba_pixel_sha256": "db69ea1a5e4c60692e880f51df6401ce5d52a0585fac4248456174c64eca4d97",
+      "lossless_webp_exact_rgba_verified": true,
+      "stored": true
+    },
+    {
+      "id": "arrow_repair",
+      "role": "isolated_arrow_fletching_proportion_repair",
+      "adopted": true,
+      "file": "source/arrow_repair.webp",
+      "size": [
+        1774,
+        887
+      ],
+      "tool": "built-in imagegen",
+      "original_png_basename": "exec-e079b72f-161d-4bb2-8a2b-e5e2fb83440e.png",
+      "original_png_sha256": "7b3aed665088f3bd2f48ed8406c6ff087c134237df625b6030688f49717c23c1",
+      "sha256": "5ccdabc1612f86c5b693fc3eea009068ee19eec8b22b869eee5ebcf61c0abfd0",
+      "rgba_pixel_sha256": "cca87b132250909aeadfb3c371cf244a805ff510ddbdbcb66bc8437400bca2aa",
+      "lossless_webp_exact_rgba_verified": true,
+      "stored": true
+    },
+    {
+      "id": "nock_length_repair",
+      "role": "arrow_only_mask_donor_not_whole_body_replacement",
+      "adopted": true,
+      "file": "source/nock_length_repair.webp",
+      "size": [
+        1254,
+        1254
+      ],
+      "tool": "built-in imagegen",
+      "original_png_basename": "exec-d9553d48-2ee1-4000-add2-824f501e814f.png",
+      "original_png_sha256": "7f58c313a83280eaa4e21fe231acf7a335d0dcee4ae69e9aa63da847703f4373",
+      "sha256": "7d4f8463002659b848717e7b7c4a7efffd9f109869026fa9ee63b9f2592e8c45",
+      "rgba_pixel_sha256": "2f6d01b88368e7da5febdb6c7da6531b434c63a014df4982632e62899bfb6e76",
+      "lossless_webp_exact_rgba_verified": true,
+      "stored": true
+    },
+    {
+      "id": "continuity_tail_arrow",
+      "adopted": false,
+      "tool": "built-in imagegen",
+      "original_png_basename": "exec-8688a47f-f19f-4d11-ae23-c48150d5fe47.png",
+      "size": [
+        1774,
+        887
+      ],
+      "original_png_sha256": "e0fea18a1e8442c9438fcb0f1eed52babb78c6ee9602b9953150be7f5e1d3e86",
+      "rgba_pixel_sha256": "8655d0aaeb00c0e83f29e27b1c2453414555966aa0f4201d94783801e02bdda6",
+      "stored": false,
+      "not_adopted_reason": "箭仍偏长，改取无箭手/衣服底稿后复用统一完整箭；不使用该轮箭像素"
+    },
+    {
+      "id": "empty_grip_patch",
+      "adopted": true,
+      "tool": "built-in imagegen",
+      "original_png_basename": "exec-2ec94447-e0ba-43d2-b580-49fc5d11345b.png",
+      "size": [
+        1774,
+        887
+      ],
+      "original_png_sha256": "2fd76f5bc771f35fb38a3ecdb2601a0fc522b8efefcf16fdcb80c05affc75846",
+      "rgba_pixel_sha256": "a501508c524abea817270677e25f94fe2274b19bd5574f0bebbfd4f6e1e128da",
+      "file": "source/empty_grip_patch.webp",
+      "sha256": "1fa3a5f2385cf533e94afee5d48869cf6017e4c7db7b33b86b99e5d8a18b6302",
+      "lossless_webp_exact_rgba_verified": true,
+      "stored": true,
+      "adopted_region": "left panel only; right panel lost tail and is not used"
+    }
+  ],
+  "runtime_integrated": false,
+  "assembly_after_independent_findings": {
+    "baseline_file": "source/baseline_pose_strip.webp",
+    "baseline_sha256": "6ca2af828a8637a73f0d0912a6fd6c43742dcc3e6c698e8f94d605aa0e212f5f",
+    "baseline_rgba_pixel_sha256": "ecf86a76d34750430b1fc256d9c01d2eb4e1451a3731a93f047fdcbd7bd846e5",
+    "baseline_basis": "original .66 common-engine extraction/96-color group before independent repair, not newly generated artwork",
+    "upstream_spec": "source/spec_before_continuity.json",
+    "upstream_spec_sha256": "d2f6caa7087c24f9106dd13a2c671c75d3d46b3553d09b6b35a1bc517d58a6ba",
+    "script": "prepare_continuity.py",
+    "script_sha256": "89e54959d61ee870f99b960f167d8fe3b235ef104c41a79cf27784f765dfb870",
+    "final_source": "source/continuity_body_strip.webp",
+    "final_source_sha256": "0daf9d7795967c878267d32097921a25f88bf62054e07abb1ecba24846897079",
+    "all_upstream_body_scale": 0.66,
+    "final_fixed_canvas_packaging_scale": 1.0,
+    "body_height_fitting": false,
+    "adopted_body_count": 6,
+    "tail_side": "screen_left",
+    "removed_body": "06_lower_arrow"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "kind": "author_decoded_normal_slow_timeline_review_after_independent_repairs",
+  "not_realtime_human_observation": true,
+  "previews": {
+    "preview.gif": {
+      "decoded_frames": 11,
+      "total_ms": 1760,
+      "timeline": [
+        {
+          "frame": 0,
+          "at_ms": 0,
+          "duration_ms": 180
+        },
+        {
+          "frame": 1,
+          "at_ms": 180,
+          "duration_ms": 200
+        },
+        {
+          "frame": 2,
+          "at_ms": 380,
+          "duration_ms": 200
+        },
+        {
+          "frame": 3,
+          "at_ms": 580,
+          "duration_ms": 20
+        },
+        {
+          "frame": 4,
+          "at_ms": 600,
+          "duration_ms": 20
+        },
+        {
+          "frame": 5,
+          "at_ms": 620,
+          "duration_ms": 20
+        },
+        {
+          "frame": 6,
+          "at_ms": 640,
+          "duration_ms": 20
+        },
+        {
+          "frame": 7,
+          "at_ms": 660,
+          "duration_ms": 80
+        },
+        {
+          "frame": 8,
+          "at_ms": 740,
+          "duration_ms": 180
+        },
+        {
+          "frame": 9,
+          "at_ms": 920,
+          "duration_ms": 180
+        },
+        {
+          "frame": 10,
+          "at_ms": 1100,
+          "duration_ms": 660
+        }
+      ],
+      "sha256": "87e40786ce63e5dddaabda7158a42c416a6ae1aabc3e915a37b5f6e070e8b09f"
+    },
+    "preview_slow.gif": {
+      "decoded_frames": 11,
+      "total_ms": 3220,
+      "timeline": [
+        {
+          "frame": 0,
+          "at_ms": 0,
+          "duration_ms": 360
+        },
+        {
+          "frame": 1,
+          "at_ms": 360,
+          "duration_ms": 400
+        },
+        {
+          "frame": 2,
+          "at_ms": 760,
+          "duration_ms": 400
+        },
+        {
+          "frame": 3,
+          "at_ms": 1160,
+          "duration_ms": 40
+        },
+        {
+          "frame": 4,
+          "at_ms": 1200,
+          "duration_ms": 40
+        },
+        {
+          "frame": 5,
+          "at_ms": 1240,
+          "duration_ms": 40
+        },
+        {
+          "frame": 6,
+          "at_ms": 1280,
+          "duration_ms": 40
+        },
+        {
+          "frame": 7,
+          "at_ms": 1320,
+          "duration_ms": 160
+        },
+        {
+          "frame": 8,
+          "at_ms": 1480,
+          "duration_ms": 360
+        },
+        {
+          "frame": 9,
+          "at_ms": 1840,
+          "duration_ms": 360
+        },
+        {
+          "frame": 10,
+          "at_ms": 2200,
+          "duration_ms": 1020
+        }
+      ],
+      "sha256": "0d82fbf93a713e2557126ae9d8bf010c36c47de1f1db73d070f2334ceb5fa339"
+    }
+  }
+}

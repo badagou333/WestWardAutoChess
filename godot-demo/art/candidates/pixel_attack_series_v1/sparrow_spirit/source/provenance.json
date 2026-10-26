@@ -1,0 +1,58 @@
+{
+  "tool": "built-in image_gen",
+  "references": [
+    {
+      "file": "../../../concepts/sparrow_spirit/nine_sols_v1/sparrow-nine-sols-candidate.png",
+      "sha256": "fec36ac750ec6219dcc01ab037b54253379a6d03fce6055ae660910512665f0e"
+    },
+    {
+      "file": "../../../concepts/sparrow_spirit/nine_sols_actions_v1/four-action-keyposes.png",
+      "sha256": "7bbac96145982067498789d0255d022aadcef3e7cbe9a568f1936ff1bd77d50a"
+    }
+  ],
+  "adopted_sources": [
+    {
+      "id": "body_sheet",
+      "tool_png_path": "/Users/leqiong/.codex/generated_images/01a1735c-6b26-75b3-926c-7953e37a8ff7/exec-2a7b134f-1f76-403f-b37a-1ebe70c8f043.png",
+      "tool_png_sha256": "0f4213cfc5f2557fc155921a3e3940fb2a76635016a1738e30bf21cef57e2a99",
+      "file": "source/body_sheet.webp",
+      "webp_sha256": "5b54232085177b817f31724f60e162991bdf20dc6127f029673cbcd33c752db9",
+      "rgba_sha256": "d223e35e0d75ce4bbf678da1864138ac42db5c6cd6c1bbdaea4311cb34405aa1",
+      "canvas": [
+        1536,
+        1024
+      ],
+      "lossless_webp_rgba_exact": true
+    },
+    {
+      "id": "wind_blade",
+      "tool_png_path": "/Users/leqiong/.codex/generated_images/01a1735c-6b26-75b3-926c-7953e37a8ff7/exec-492819bd-f05d-44b1-bd4e-2f391e7669e9.png",
+      "tool_png_sha256": "26896b32aed8385ac8443e139881d39eb75676bb7c48f6ef6ed7d937a4593e88",
+      "file": "source/wind_blade.webp",
+      "webp_sha256": "5ce636b0d5e8a9c5255016872886c0b6e006467e3f20a22b4eebbc6a4ca7299e",
+      "rgba_sha256": "c43410f4da04d560fb2c867a3da88305c8ac72c4fe99b912a56bc2fdbf5404b9",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "lossless_webp_rgba_exact": true
+    }
+  ],
+  "not_adopted": [
+    {
+      "tool_png_path": "/Users/leqiong/.codex/generated_images/01a1735c-6b26-75b3-926c-7953e37a8ff7/exec-e3f81e4c-733a-4da8-b927-3444ea8b3d50.png",
+      "tool_png_sha256": "29ece2a3a118a7acae57e9d75f617cc93ab9ccdf092e0a87949f97f47efd01c1",
+      "rgba_sha256": "ee52f07667a2df5e80e96f5d8067d9ac298b977cc123afc06fbce0e210efab6a",
+      "not_adopted_reason": "Large grounded foot spread changes; ambiguous finger-like tuft under follow-through wing.",
+      "not_duplicated_in_repo": true
+    },
+    {
+      "tool_png_path": "/Users/leqiong/.codex/generated_images/01a1735c-6b26-75b3-926c-7953e37a8ff7/exec-9f1f95c0-4627-4417-b418-178e85c39372.png",
+      "tool_png_sha256": "325f3f49c2d2ca6b78eb76107ca98abd4bd3b5b150a9e632282d8f256c5de390",
+      "rgba_sha256": "28f3904cc0df19ef1f1de04bb27b586f0274b5ed594bfbc8aeb3bbf163fb9adf",
+      "not_adopted_reason": "Ambiguous tuft removed and stance narrowed; release left wing touches image edge, corrected next.",
+      "not_duplicated_in_repo": true
+    }
+  ],
+  "scope": "Standalone wing attack and one wind blade; no hands, bow or new gameplay."
+}

@@ -1,0 +1,165 @@
+{
+  "source": "source/healing_fx.webp",
+  "selected_cells": [
+    "top-left compact charge",
+    "top-right healing projectile"
+  ],
+  "unused_cells_not_counted_as_animation_frames": 4,
+  "charge": {
+    "source_box": [
+      170,
+      160,
+      465,
+      445
+    ],
+    "retained_alpha_min": 8,
+    "tight_box_within_crop": [
+      29,
+      34,
+      267,
+      264
+    ],
+    "size": [
+      44,
+      43
+    ],
+    "resampling": "nearest"
+  },
+  "projectile": {
+    "source_box": [
+      1020,
+      200,
+      1465,
+      445
+    ],
+    "retained_alpha_min": 8,
+    "tight_box_within_crop": [
+      18,
+      56,
+      402,
+      201
+    ],
+    "size": [
+      72,
+      27
+    ],
+    "resampling": "nearest"
+  },
+  "motifs": [
+    "fx/charge_motif.png",
+    "fx/projectile_motif.png"
+  ],
+  "layers": [
+    {
+      "file": "fx/gather.png",
+      "position": [
+        223,
+        197
+      ],
+      "size": [
+        32,
+        31
+      ],
+      "visible_bbox": [
+        223,
+        197,
+        255,
+        228
+      ],
+      "projectile_view_edge_clip": false
+    },
+    {
+      "file": "fx/charge.png",
+      "position": [
+        249,
+        153
+      ],
+      "size": [
+        44,
+        43
+      ],
+      "visible_bbox": [
+        249,
+        153,
+        293,
+        196
+      ],
+      "projectile_view_edge_clip": false
+    },
+    {
+      "file": "fx/heal_0.png",
+      "position": [
+        316,
+        179
+      ],
+      "size": [
+        72,
+        27
+      ],
+      "visible_bbox": [
+        316,
+        179,
+        388,
+        206
+      ],
+      "projectile_view_edge_clip": false
+    },
+    {
+      "file": "fx/heal_1.png",
+      "position": [
+        346,
+        179
+      ],
+      "size": [
+        72,
+        27
+      ],
+      "visible_bbox": [
+        346,
+        179,
+        418,
+        206
+      ],
+      "projectile_view_edge_clip": false
+    },
+    {
+      "file": "fx/heal_2.png",
+      "position": [
+        376,
+        179
+      ],
+      "size": [
+        72,
+        27
+      ],
+      "visible_bbox": [
+        376,
+        179,
+        448,
+        206
+      ],
+      "projectile_view_edge_clip": false
+    },
+    {
+      "file": "fx/heal_3.png",
+      "position": [
+        406,
+        179
+      ],
+      "size": [
+        72,
+        27
+      ],
+      "visible_bbox": [
+        406,
+        182,
+        448,
+        202
+      ],
+      "projectile_view_edge_clip": true
+    }
+  ],
+  "order": "behind opaque body",
+  "no_new_damage_or_ally_target": true,
+  "event_is_preview_only": true
+}

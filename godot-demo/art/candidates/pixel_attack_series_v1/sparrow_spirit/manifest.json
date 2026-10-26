@@ -1,0 +1,1330 @@
+{
+  "schema": "pixel-attack-series-v1",
+  "character": "sparrow_spirit",
+  "display_name": "山雀精｜挥翼单枚风刃",
+  "status": "structural_candidate_requires_visual_review",
+  "canvas": [
+    448,
+    448
+  ],
+  "anchor": [
+    145.0,
+    399.0
+  ],
+  "sources": {
+    "body": {
+      "file": "source/body_registered.webp",
+      "format": "WEBP",
+      "size": [
+        1536,
+        1024
+      ],
+      "sha256": "e7daa2734df37239abb88ba6d67bc9eec07ff9beecc0bd1374c20665f109f4fd",
+      "rgba_pixel_sha256": "8f0a80c952a5d9d4333a48880001fdec2caaaa24ab163ac38039cbd7df791271",
+      "expected_pixel_hash_verified": true,
+      "lossless_storage": true,
+      "scale": 0.65
+    }
+  },
+  "bodies": [
+    {
+      "id": "00_ready",
+      "name": "ready",
+      "source": "body",
+      "source_box": [
+        20,
+        30,
+        460,
+        540
+      ],
+      "source_anchor": [
+        208,
+        524
+      ],
+      "scale": 0.65,
+      "component_seeds": [
+        [
+          300,
+          400
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 118,
+      "selected_components_pixels_after_scale": [
+        37895
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        38,
+        97
+      ],
+      "anchor_rounding_error_px": [
+        -0.39999999999997726,
+        0.25
+      ],
+      "visible_bbox": [
+        38,
+        97,
+        299,
+        400
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/00_ready.png",
+      "sha256": "bfb1328c45433d68e268666de233bdce9eb0cc852837bfe25f00e9709a13f963",
+      "rgba_pixel_sha256": "94ba926916b1c80fc6558cb6047ffe08ea95ade72056196b201b36a348160b16",
+      "opaque_colors": 96,
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "01_wing_load",
+      "name": "wing_load",
+      "source": "body",
+      "source_box": [
+        580,
+        35,
+        995,
+        540
+      ],
+      "source_anchor": [
+        695,
+        524
+      ],
+      "scale": 0.65,
+      "component_seeds": [
+        [
+          780,
+          400
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 15,
+      "selected_components_pixels_after_scale": [
+        41815
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        83,
+        100
+      ],
+      "anchor_rounding_error_px": [
+        0.4000000000000057,
+        0.0
+      ],
+      "visible_bbox": [
+        83,
+        100,
+        331,
+        400
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/01_wing_load.png",
+      "sha256": "7e9494f39aa5a6b9cb67cf8ad5f67d7c5d13c4960ea9d04cd4738c3400f33570",
+      "rgba_pixel_sha256": "4c0610cba727bcb69faa7ee6611809974f53b1cfe234a3651167bb8a58903112",
+      "opaque_colors": 96,
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "02_cross_body_accelerate",
+      "name": "cross_body_accelerate",
+      "source": "body",
+      "source_box": [
+        1025,
+        50,
+        1535,
+        540
+      ],
+      "source_anchor": [
+        1199,
+        523
+      ],
+      "scale": 0.65,
+      "component_seeds": [
+        [
+          1290,
+          400
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 219,
+      "selected_components_pixels_after_scale": [
+        39869
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        44,
+        112
+      ],
+      "anchor_rounding_error_px": [
+        0.4000000000000057,
+        0.30000000000001137
+      ],
+      "visible_bbox": [
+        44,
+        112,
+        358,
+        401
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/02_cross_body_accelerate.png",
+      "sha256": "fbe11c580687a38594196a431807ab371f8a0654f5ba154bd0571b482a226b4f",
+      "rgba_pixel_sha256": "4558f787764997dcf75122dd5daf588bf89018fab920426908a551713aa82b68",
+      "opaque_colors": 96,
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "03_wing_release",
+      "name": "wing_release",
+      "source": "body",
+      "source_box": [
+        1,
+        528,
+        600,
+        1000
+      ],
+      "source_anchor": [
+        205,
+        975
+      ],
+      "scale": 0.65,
+      "component_seeds": [
+        [
+          300,
+          850
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [
+        46181
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        27,
+        113
+      ],
+      "anchor_rounding_error_px": [
+        0.30000000000001137,
+        0.0
+      ],
+      "visible_bbox": [
+        27,
+        113,
+        396,
+        400
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/03_wing_release.png",
+      "sha256": "b3e4e776d0368e8c64ecf446006f024c4d31676ef6266873afab0db23ea952be",
+      "rgba_pixel_sha256": "2d80d59ac7066e48902183155801bfb3608bbcbab21cdcf787d7472e8b6ed62b",
+      "opaque_colors": 96,
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "04_follow_through",
+      "name": "follow_through",
+      "source": "body",
+      "source_box": [
+        595,
+        529,
+        1057,
+        1000
+      ],
+      "source_anchor": [
+        728,
+        975
+      ],
+      "scale": 0.65,
+      "component_seeds": [
+        [
+          820,
+          850
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [
+        37730
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        62,
+        117
+      ],
+      "anchor_rounding_error_px": [
+        -0.44999999999998863,
+        0.10000000000002274
+      ],
+      "visible_bbox": [
+        62,
+        117,
+        349,
+        400
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/04_follow_through.png",
+      "sha256": "2654f75a2cd12bf0cafa23d5dd954c7f41b18ee6d9f9966b553028687d6fc0eb",
+      "rgba_pixel_sha256": "409811846e57c65e6bba695f8145a7bbc14c0fc96749e335df822c39d989ab50",
+      "opaque_colors": 96,
+      "alpha_values": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "05_fold_recover",
+      "name": "fold_recover",
+      "source": "body",
+      "source_box": [
+        1064,
+        525,
+        1513,
+        1000
+      ],
+      "source_anchor": [
+        1257,
+        975
+      ],
+      "scale": 0.65,
+      "component_seeds": [
+        [
+          1330,
+          850
+        ]
+      ],
+      "selection": "seed_union_8",
+      "selected_components": 1,
+      "duplicate_seeds": 0,
+      "removed_unselected_opaque_pixels": 0,
+      "selected_components_pixels_after_scale": [
+        36722
+      ],
+      "source_crop_cuts_component": false,
+      "raster_offset": [
+        36,
+        111
+      ],
+      "anchor_rounding_error_px": [
+        0.19999999999998863,
+        -0.05000000000001137
+      ],
+      "visible_bbox": [
+        36,
+        111,
+        299,
+        400
+      ],
+      "body_alpha_binary": true,
+      "file": "frames/05_fold_recover.png",
+      "sha256": "94fa02fdbf843bf0db7546477bded12202127e5a99f7d2bcffd322f1250ca540",
+      "rgba_pixel_sha256": "776a9a6323fefe7e0f59f86f35499dcc49a6c29d94d8297663bb7e88d239ff5b",
+      "opaque_colors": 96,
+      "alpha_values": [
+        0,
+        255
+      ]
+    }
+  ],
+  "layers": {
+    "wind_0": {
+      "copied_at_original_size": true,
+      "resampled": false,
+      "input": {
+        "file": "fx/wind_0.png",
+        "format": "PNG",
+        "size": [
+          448,
+          448
+        ],
+        "sha256": "aa4d4c3c7f7d7a0a5765408e354a9ebcf6a024d41e8c70a9e77d34b848db5831",
+        "rgba_pixel_sha256": "9b8a40442c10ef8feebb676b84b87fdddff484f7d4652cedb705f91626feb24a",
+        "expected_pixel_hash_verified": true,
+        "lossless_storage": true
+      },
+      "file": "layers/wind_0.png",
+      "sha256": "aa4d4c3c7f7d7a0a5765408e354a9ebcf6a024d41e8c70a9e77d34b848db5831",
+      "rgba_pixel_sha256": "9b8a40442c10ef8feebb676b84b87fdddff484f7d4652cedb705f91626feb24a",
+      "partial_alpha_allowed": true
+    },
+    "wind_1": {
+      "copied_at_original_size": true,
+      "resampled": false,
+      "input": {
+        "file": "fx/wind_1.png",
+        "format": "PNG",
+        "size": [
+          448,
+          448
+        ],
+        "sha256": "de7ac8b3e479ab3d0a5b35dd4479fe4e61e83adaa37e6994620030f213d791a3",
+        "rgba_pixel_sha256": "55bd563dfa5baba8c1d6379651944adfdcb703e8759b5118d808a532b8771d27",
+        "expected_pixel_hash_verified": true,
+        "lossless_storage": true
+      },
+      "file": "layers/wind_1.png",
+      "sha256": "de7ac8b3e479ab3d0a5b35dd4479fe4e61e83adaa37e6994620030f213d791a3",
+      "rgba_pixel_sha256": "55bd563dfa5baba8c1d6379651944adfdcb703e8759b5118d808a532b8771d27",
+      "partial_alpha_allowed": true
+    },
+    "wind_2": {
+      "copied_at_original_size": true,
+      "resampled": false,
+      "input": {
+        "file": "fx/wind_2.png",
+        "format": "PNG",
+        "size": [
+          448,
+          448
+        ],
+        "sha256": "36803c98d5a90eccca79af229c26382c286aa2f9124c1b16d67fbf66cf4b0d59",
+        "rgba_pixel_sha256": "fe28aa7cb94d27329b12682096a77788e4c5e85b0eab3889213d6fd98f22e0d0",
+        "expected_pixel_hash_verified": true,
+        "lossless_storage": true
+      },
+      "file": "layers/wind_2.png",
+      "sha256": "36803c98d5a90eccca79af229c26382c286aa2f9124c1b16d67fbf66cf4b0d59",
+      "rgba_pixel_sha256": "fe28aa7cb94d27329b12682096a77788e4c5e85b0eab3889213d6fd98f22e0d0",
+      "partial_alpha_allowed": true
+    },
+    "wind_3": {
+      "copied_at_original_size": true,
+      "resampled": false,
+      "input": {
+        "file": "fx/wind_3.png",
+        "format": "PNG",
+        "size": [
+          448,
+          448
+        ],
+        "sha256": "b6f164993c11c4d088efa4224b2d5ecb85b3e54f67c2fec911f7407b8bc95e7e",
+        "rgba_pixel_sha256": "f4eba9e377a26591fcd468c4414907eb0e945ba3d6039fad0c4383a11a2d33b3",
+        "expected_pixel_hash_verified": true,
+        "lossless_storage": true
+      },
+      "file": "layers/wind_3.png",
+      "sha256": "b6f164993c11c4d088efa4224b2d5ecb85b3e54f67c2fec911f7407b8bc95e7e",
+      "rgba_pixel_sha256": "f4eba9e377a26591fcd468c4414907eb0e945ba3d6039fad0c4383a11a2d33b3",
+      "partial_alpha_allowed": true
+    }
+  },
+  "layer_order": "declared list behind opaque body",
+  "body_palette_rgb": [
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      2,
+      5
+    ],
+    [
+      1,
+      2,
+      13
+    ],
+    [
+      2,
+      4,
+      6
+    ],
+    [
+      4,
+      6,
+      9
+    ],
+    [
+      4,
+      7,
+      22
+    ],
+    [
+      6,
+      2,
+      1
+    ],
+    [
+      6,
+      3,
+      5
+    ],
+    [
+      6,
+      5,
+      2
+    ],
+    [
+      7,
+      24,
+      73
+    ],
+    [
+      8,
+      6,
+      5
+    ],
+    [
+      9,
+      13,
+      26
+    ],
+    [
+      11,
+      21,
+      40
+    ],
+    [
+      11,
+      38,
+      96
+    ],
+    [
+      12,
+      6,
+      1
+    ],
+    [
+      12,
+      84,
+      187
+    ],
+    [
+      14,
+      49,
+      114
+    ],
+    [
+      14,
+      54,
+      140
+    ],
+    [
+      14,
+      66,
+      154
+    ],
+    [
+      15,
+      96,
+      200
+    ],
+    [
+      19,
+      106,
+      209
+    ],
+    [
+      25,
+      60,
+      141
+    ],
+    [
+      27,
+      13,
+      8
+    ],
+    [
+      27,
+      66,
+      149
+    ],
+    [
+      28,
+      70,
+      155
+    ],
+    [
+      28,
+      73,
+      169
+    ],
+    [
+      28,
+      111,
+      212
+    ],
+    [
+      29,
+      33,
+      64
+    ],
+    [
+      29,
+      50,
+      117
+    ],
+    [
+      30,
+      76,
+      156
+    ],
+    [
+      30,
+      104,
+      188
+    ],
+    [
+      31,
+      78,
+      171
+    ],
+    [
+      31,
+      84,
+      181
+    ],
+    [
+      32,
+      83,
+      171
+    ],
+    [
+      33,
+      44,
+      92
+    ],
+    [
+      33,
+      120,
+      215
+    ],
+    [
+      36,
+      127,
+      217
+    ],
+    [
+      44,
+      55,
+      122
+    ],
+    [
+      44,
+      129,
+      215
+    ],
+    [
+      45,
+      57,
+      124
+    ],
+    [
+      48,
+      77,
+      149
+    ],
+    [
+      51,
+      106,
+      172
+    ],
+    [
+      53,
+      135,
+      218
+    ],
+    [
+      54,
+      25,
+      13
+    ],
+    [
+      55,
+      47,
+      70
+    ],
+    [
+      58,
+      133,
+      199
+    ],
+    [
+      59,
+      53,
+      78
+    ],
+    [
+      59,
+      142,
+      217
+    ],
+    [
+      60,
+      41,
+      26
+    ],
+    [
+      69,
+      145,
+      211
+    ],
+    [
+      70,
+      63,
+      70
+    ],
+    [
+      73,
+      151,
+      216
+    ],
+    [
+      85,
+      156,
+      212
+    ],
+    [
+      99,
+      66,
+      42
+    ],
+    [
+      99,
+      163,
+      210
+    ],
+    [
+      108,
+      39,
+      10
+    ],
+    [
+      113,
+      169,
+      206
+    ],
+    [
+      140,
+      181,
+      203
+    ],
+    [
+      144,
+      115,
+      74
+    ],
+    [
+      152,
+      56,
+      14
+    ],
+    [
+      152,
+      166,
+      161
+    ],
+    [
+      165,
+      85,
+      42
+    ],
+    [
+      182,
+      70,
+      24
+    ],
+    [
+      187,
+      134,
+      68
+    ],
+    [
+      190,
+      190,
+      175
+    ],
+    [
+      194,
+      88,
+      45
+    ],
+    [
+      195,
+      95,
+      42
+    ],
+    [
+      201,
+      89,
+      40
+    ],
+    [
+      216,
+      138,
+      36
+    ],
+    [
+      221,
+      165,
+      105
+    ],
+    [
+      228,
+      105,
+      19
+    ],
+    [
+      229,
+      162,
+      47
+    ],
+    [
+      235,
+      183,
+      86
+    ],
+    [
+      236,
+      163,
+      8
+    ],
+    [
+      237,
+      207,
+      142
+    ],
+    [
+      248,
+      192,
+      26
+    ],
+    [
+      248,
+      195,
+      123
+    ],
+    [
+      249,
+      216,
+      114
+    ],
+    [
+      249,
+      235,
+      209
+    ],
+    [
+      251,
+      136,
+      6
+    ],
+    [
+      253,
+      163,
+      8
+    ],
+    [
+      253,
+      195,
+      104
+    ],
+    [
+      253,
+      204,
+      118
+    ],
+    [
+      253,
+      215,
+      153
+    ],
+    [
+      253,
+      224,
+      170
+    ],
+    [
+      253,
+      231,
+      197
+    ],
+    [
+      253,
+      235,
+      205
+    ],
+    [
+      254,
+      192,
+      27
+    ],
+    [
+      254,
+      213,
+      123
+    ],
+    [
+      254,
+      216,
+      62
+    ],
+    [
+      254,
+      231,
+      168
+    ],
+    [
+      254,
+      232,
+      194
+    ],
+    [
+      254,
+      233,
+      198
+    ],
+    [
+      254,
+      234,
+      201
+    ],
+    [
+      254,
+      237,
+      205
+    ],
+    [
+      254,
+      246,
+      225
+    ]
+  ],
+  "palette_limit": 96,
+  "body_palette_assignment": "group_median_cut_then_exact_nearest_rgb_without_dither",
+  "track": [
+    {
+      "at_ms": 0,
+      "body": "00_ready",
+      "layers": []
+    },
+    {
+      "at_ms": 160,
+      "body": "01_wing_load",
+      "layers": []
+    },
+    {
+      "at_ms": 280,
+      "body": "02_cross_body_accelerate",
+      "layers": []
+    },
+    {
+      "at_ms": 370,
+      "body": "03_wing_release",
+      "layers": [
+        {
+          "id": "wind_0",
+          "opacity": 0.85,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 390,
+      "body": "03_wing_release",
+      "layers": [
+        {
+          "id": "wind_1",
+          "opacity": 1.0,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 410,
+      "body": "03_wing_release",
+      "layers": [
+        {
+          "id": "wind_2",
+          "opacity": 0.9,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 430,
+      "body": "03_wing_release",
+      "layers": [
+        {
+          "id": "wind_3",
+          "opacity": 0.55,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "at_ms": 450,
+      "body": "03_wing_release",
+      "layers": []
+    },
+    {
+      "at_ms": 490,
+      "body": "04_follow_through",
+      "layers": []
+    },
+    {
+      "at_ms": 650,
+      "body": "05_fold_recover",
+      "layers": []
+    },
+    {
+      "at_ms": 850,
+      "body": "00_ready",
+      "layers": []
+    }
+  ],
+  "renders": [
+    {
+      "at_ms": 0,
+      "body": "00_ready",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 37895,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/000.png",
+      "sha256": "bfb1328c45433d68e268666de233bdce9eb0cc852837bfe25f00e9709a13f963"
+    },
+    {
+      "at_ms": 160,
+      "body": "01_wing_load",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 41815,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/001.png",
+      "sha256": "7e9494f39aa5a6b9cb67cf8ad5f67d7c5d13c4960ea9d04cd4738c3400f33570"
+    },
+    {
+      "at_ms": 280,
+      "body": "02_cross_body_accelerate",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 39869,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/002.png",
+      "sha256": "fbe11c580687a38594196a431807ab371f8a0654f5ba154bd0571b482a226b4f"
+    },
+    {
+      "at_ms": 370,
+      "body": "03_wing_release",
+      "layers": [
+        {
+          "id": "wind_0",
+          "opacity": 0.85,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 46181,
+      "composite_has_partial_alpha": true,
+      "file": "render_frames/003.png",
+      "sha256": "bab789c999b986c8df3d6b2f287783220f309e1a792eae065d31fab84af67eff"
+    },
+    {
+      "at_ms": 390,
+      "body": "03_wing_release",
+      "layers": [
+        {
+          "id": "wind_1",
+          "opacity": 1.0,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 46181,
+      "composite_has_partial_alpha": true,
+      "file": "render_frames/004.png",
+      "sha256": "148b09b0d373e80b039c7c26ed2c6ddf56e3dd8f3b38dd66e079ae53136d0ffe"
+    },
+    {
+      "at_ms": 410,
+      "body": "03_wing_release",
+      "layers": [
+        {
+          "id": "wind_2",
+          "opacity": 0.9,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 46181,
+      "composite_has_partial_alpha": true,
+      "file": "render_frames/005.png",
+      "sha256": "dad255cfe59dfc8a2f0163fdcf3847e6036f2201bfc53ee9ff747b6b537703fa"
+    },
+    {
+      "at_ms": 430,
+      "body": "03_wing_release",
+      "layers": [
+        {
+          "id": "wind_3",
+          "opacity": 0.55,
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 46181,
+      "composite_has_partial_alpha": true,
+      "file": "render_frames/006.png",
+      "sha256": "f30924f62de733b49dab068db57965f9bd07588648bc85628d7365aece6cd367"
+    },
+    {
+      "at_ms": 450,
+      "body": "03_wing_release",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 46181,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/007.png",
+      "sha256": "b3e4e776d0368e8c64ecf446006f024c4d31676ef6266873afab0db23ea952be"
+    },
+    {
+      "at_ms": 490,
+      "body": "04_follow_through",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 37730,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/008.png",
+      "sha256": "2654f75a2cd12bf0cafa23d5dd954c7f41b18ee6d9f9966b553028687d6fc0eb"
+    },
+    {
+      "at_ms": 650,
+      "body": "05_fold_recover",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 36722,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/009.png",
+      "sha256": "94fa02fdbf843bf0db7546477bded12202127e5a99f7d2bcffd322f1250ca540"
+    },
+    {
+      "at_ms": 850,
+      "body": "00_ready",
+      "layers": [],
+      "opaque_body_rgba_exact": true,
+      "opaque_body_pixels_checked": 37895,
+      "composite_has_partial_alpha": false,
+      "file": "render_frames/010.png",
+      "sha256": "bfb1328c45433d68e268666de233bdce9eb0cc852837bfe25f00e9709a13f963"
+    }
+  ],
+  "events": [
+    {
+      "name": "preview_one_wind_blade_release",
+      "at_ms": 370,
+      "gameplay_binding": false
+    }
+  ],
+  "duration_ms": 1050,
+  "idle_ms": 300,
+  "previews": {
+    "preview.gif": {
+      "durations_ms": [
+        160,
+        120,
+        90,
+        20,
+        20,
+        20,
+        20,
+        40,
+        160,
+        200,
+        500
+      ],
+      "total_ms": 1350,
+      "slow_factor": 1,
+      "stage_starts_ideal_ms": [
+        0,
+        160,
+        280,
+        370,
+        390,
+        410,
+        430,
+        450,
+        490,
+        650,
+        850
+      ],
+      "stage_starts_gif_ms": [
+        0,
+        160,
+        280,
+        370,
+        390,
+        410,
+        430,
+        450,
+        490,
+        650,
+        850
+      ],
+      "boundary_rounding_error_ms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "events": [
+        {
+          "name": "preview_one_wind_blade_release",
+          "at_ms": 370,
+          "gameplay_binding": false,
+          "ideal_preview_ms": 370,
+          "nearest_gif_tick_ms": 370
+        }
+      ],
+      "idle_ms": 300,
+      "encoded_frames": 11,
+      "requested_samples": 11,
+      "sha256": "b9d6ab8c9842e9f7ada3b4811c489bace59c2b80b6b8c3a9ce2e48403eeff80e",
+      "reserved_rgb_pixels_checked": 2203819,
+      "reserved_rgb_exact": true,
+      "maximum_unreserved_fx_channel_error": 17
+    },
+    "preview_slow.gif": {
+      "durations_ms": [
+        320,
+        240,
+        180,
+        40,
+        40,
+        40,
+        40,
+        80,
+        320,
+        400,
+        700
+      ],
+      "total_ms": 2400,
+      "slow_factor": 2,
+      "stage_starts_ideal_ms": [
+        0,
+        320,
+        560,
+        740,
+        780,
+        820,
+        860,
+        900,
+        980,
+        1300,
+        1700
+      ],
+      "stage_starts_gif_ms": [
+        0,
+        320,
+        560,
+        740,
+        780,
+        820,
+        860,
+        900,
+        980,
+        1300,
+        1700
+      ],
+      "boundary_rounding_error_ms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "events": [
+        {
+          "name": "preview_one_wind_blade_release",
+          "at_ms": 370,
+          "gameplay_binding": false,
+          "ideal_preview_ms": 740,
+          "nearest_gif_tick_ms": 740
+        }
+      ],
+      "idle_ms": 300,
+      "encoded_frames": 11,
+      "requested_samples": 11,
+      "sha256": "a2f31c975ab1545bd8adeff644eea1f07060dee5318895eae6641497b08c66d4",
+      "reserved_rgb_pixels_checked": 2203819,
+      "reserved_rgb_exact": true,
+      "maximum_unreserved_fx_channel_error": 17
+    }
+  },
+  "first_last_full_rgba_identical": true,
+  "review_profile": [
+    "two_wings_as_arms_no_hands",
+    "wing_roots_and_feather_fans",
+    "two_claw_planted_support",
+    "pose_and_adjacent_phase_visual_review",
+    "one_separate_wind_blade",
+    "frame_atlas_gif_roundtrip"
+  ],
+  "review_annotations": {
+    "author_visual_review": "REVIEW.md",
+    "independent_visual_review": "pending root gate",
+    "runtime_integration": false,
+    "projectile_semantics": "Existing Demo single wind-blade placeholder; not a new gameplay confirmation."
+  },
+  "events_are_preview_metadata_only": true
+}

@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-26",
+  "status": "limited_independent_gate_pass_frozen",
+  "character": "wild_hunter",
+  "independent_review": {
+    "result": "pass_no_new_must_fix",
+    "origin": "root relayed original independent reviewer verdict; this author did not execute that independent review",
+    "closed_findings": [
+      "tail changes screen side",
+      "short/reversed replacement arrow",
+      "planted front-foot horizontal slide"
+    ],
+    "viewed_evidence": [
+      "all 6 complete PNG bodies",
+      "continuity_review.png",
+      "all 12 display stages"
+    ],
+    "front_sole_independent_span_px": 0.815,
+    "front_sole_max_y": 400,
+    "arrow": "180px, screen-right or down-right12 degrees",
+    "tail_side": "screen_left",
+    "wrists_ankles_bow": "no new visible seam or missing segment",
+    "real_time_human_observation": false
+  },
+  "actual_body_count": 6,
+  "body_hashes": {
+    "00_ready": "0fa030fffdc825f5d1f28e125d38ea38c0ad7f9e03501d4d0dff5c12d0c52d24",
+    "01_nock": "a847bd377b58f27a62627236e3d63c1c7dbf006acee083055447f3e26c050cb7",
+    "02_full_draw": "68a0945330aad5473684edbb28f9336b0d50c6e09e7f0efd82d6f6552bc32627",
+    "03_release": "e741ceac9c6245d05f47451263c78b7134d0b40b67f38e3f28676d1c582d3401",
+    "04_reach_quiver": "e4f3530655ed7afea42bf638dc92317caa44ba99513db62868c9d69641e0b7a1",
+    "05_extract_arrow": "9ba1a2d755bd28f8c11e1a98993ce93308e689574d4efacf2fe4167bc6362142"
+  },
+  "manifest_sha256": "eb11d715db2757f238cfda9d3c3d7397cded656d700b4253b006fea01defca1a",
+  "structural_report_sha256": "20367fdda42e8016d457102e4eb107dfef2b4f0f61934299001f223097914f14",
+  "continuity_review_sha256": "2adfdcfc1f9369abf56b872c1be79990b78e8351f3901d885e5525a8c2d12366",
+  "previews": {
+    "preview.gif": {
+      "encoded_frames": 11,
+      "total_ms": 1760,
+      "sha256": "87e40786ce63e5dddaabda7158a42c416a6ae1aabc3e915a37b5f6e070e8b09f"
+    },
+    "preview_slow.gif": {
+      "encoded_frames": 11,
+      "total_ms": 3220,
+      "sha256": "0d82fbf93a713e2557126ae9d8bf010c36c47de1f1db73d070f2334ceb5fa339"
+    }
+  },
+  "author_front_sole_span_px": 0.8145372909768298,
+  "not_verified": [
+    "human continuous experience",
+    "runtime integration",
+    "gameplay hits",
+    "other directions",
+    "owner final style approval"
+  ],
+  "no_git_action_by_subagent": true
+}

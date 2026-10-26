@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-26",
+  "tool": "built-in image_gen.imagegen",
+  "scope": "foreleg/support paw repair only",
+  "adopted_sources": [
+    {
+      "id": "contact_support_edit",
+      "file": "source/contact_support_edit.webp",
+      "original_png_basename": "exec-64500620-d5ef-4e86-984c-ca95180f1271.png",
+      "original_png_sha256": "e3a1865906bf69e6db15706697de99d84246f3633810f67955f39d1cac647df6",
+      "sha256": "12cc66a3b839673ae14676d9a748e817f93367d9b5abb977824815639d758d55",
+      "rgba_pixel_sha256": "d0fed528ac09bbf6809f997d2a28774abe25da2a2ffd72313881fae342c0259e",
+      "canvas": [
+        1254,
+        1254
+      ],
+      "lossless_webp_exact_RGBA_verified": true
+    },
+    {
+      "id": "recoil_support_edit",
+      "file": "source/recoil_support_edit.webp",
+      "original_png_basename": "exec-a4577fbc-08f1-443b-a8ff-905060e2ba67.png",
+      "original_png_sha256": "f17bea69c131467756a9e1b35a5bae9b5a34f6135d638d98507aecd24bd0d6df",
+      "sha256": "37b8fd7906b33da5dbf7860bb0ccc9d0cc0cdf95ecb3e16b1b83b4d62fb8f838",
+      "rgba_pixel_sha256": "ac8719f9b8b398a1c296c64ef8302ca956404ca9302cf8f6cbd12864379049ed",
+      "canvas": [
+        1098,
+        1432
+      ],
+      "lossless_webp_exact_RGBA_verified": true
+    }
+  ],
+  "rejected_crop_attempt": {
+    "original_png_basename": "exec-f0d8f3d8-10db-4579-b521-e3fea79304d4.png",
+    "original_png_sha256": "790877ef8b84b57f55f06dc5eb48e5902edc38a8c632b415d9cd9842b8def33b",
+    "reason": "crop redraw retained old extended foreleg positions; not adopted",
+    "prompt_file": "source/PROMPT_CONTACT_CROP_ATTEMPT.txt"
+  },
+  "prompts": [
+    "source/PROMPT_CONTACT_SUPPORT_FULL.txt",
+    "source/PROMPT_RECOIL_SUPPORT.txt"
+  ]
+}

@@ -1,0 +1,376 @@
+{
+  "character": "wild_hunter",
+  "display_name": "山野猎户 / pixel arrow attack",
+  "canvas": [
+    448,
+    448
+  ],
+  "anchor": [
+    104,
+    399
+  ],
+  "palette_colors": 96,
+  "background": [
+    35,
+    40,
+    48
+  ],
+  "sources": {
+    "sheet": {
+      "file": "source/archer_attack_sheet.webp",
+      "sha256": "0ec495f20245cb95d97d53d9dd86a03126ba4d36c46ff29a8dfb583214bb7be0",
+      "expected_pixel_sha256": "db69ea1a5e4c60692e880f51df6401ce5d52a0585fac4248456174c64eca4d97",
+      "scale": 0.66
+    },
+    "nock_patch": {
+      "file": "source/nock_registered.webp",
+      "sha256": "1bf1e5110d2e7af0855834571fa1ba45fd3057f0aae44777818a78c8a55d15fc",
+      "expected_pixel_sha256": "4db52d24c99d0b42a9141d5fb42e4e0a2465941ec1fcbd80eaef395b6db1f705",
+      "scale": 0.66
+    }
+  },
+  "bodies": [
+    {
+      "id": "00_ready",
+      "name": "Ready / existing arrow held",
+      "source": "sheet",
+      "source_box": [
+        25,
+        12,
+        428,
+        425
+      ],
+      "component_seeds": [
+        [
+          200,
+          240
+        ]
+      ],
+      "source_anchor": [
+        111.5,
+        416
+      ],
+      "anchor_basis": "rear left boot sole contact in explicit boot region",
+      "boot_contact_region": [
+        85,
+        380,
+        160,
+        422
+      ]
+    },
+    {
+      "id": "01_nock",
+      "name": "Lowered bow / nock meets string",
+      "source": "nock_patch",
+      "source_box": [
+        468,
+        7,
+        930,
+        425
+      ],
+      "component_seeds": [
+        [
+          640,
+          260
+        ]
+      ],
+      "source_anchor": [
+        527.5,
+        418
+      ],
+      "anchor_basis": "rear left boot sole contact in explicit boot region",
+      "boot_contact_region": [
+        495,
+        380,
+        560,
+        422
+      ]
+    },
+    {
+      "id": "02_full_draw",
+      "name": "Raise and full draw / brief hold",
+      "source": "sheet",
+      "source_box": [
+        31,
+        412,
+        456,
+        841
+      ],
+      "component_seeds": [
+        [
+          240,
+          650
+        ]
+      ],
+      "source_anchor": [
+        99.5,
+        833
+      ],
+      "anchor_basis": "rear left boot sole contact in explicit boot region",
+      "boot_contact_region": [
+        72,
+        795,
+        145,
+        838
+      ]
+    },
+    {
+      "id": "03_release",
+      "name": "Release / open rear fingers",
+      "source": "sheet",
+      "source_box": [
+        457,
+        418,
+        833,
+        841
+      ],
+      "component_seeds": [
+        [
+          650,
+          650
+        ]
+      ],
+      "source_anchor": [
+        525.0,
+        834
+      ],
+      "anchor_basis": "rear left boot sole contact in explicit boot region",
+      "boot_contact_region": [
+        491,
+        795,
+        559,
+        838
+      ]
+    },
+    {
+      "id": "04_reach_quiver",
+      "name": "Reach for replacement",
+      "source": "sheet",
+      "source_box": [
+        871,
+        450,
+        1224,
+        842
+      ],
+      "component_seeds": [
+        [
+          1030,
+          660
+        ]
+      ],
+      "source_anchor": [
+        940.5,
+        835
+      ],
+      "anchor_basis": "rear left boot sole contact in explicit boot region",
+      "boot_contact_region": [
+        905,
+        795,
+        982,
+        839
+      ]
+    },
+    {
+      "id": "05_extract_arrow",
+      "name": "One arrow visibly extracted",
+      "source": "sheet",
+      "source_box": [
+        56,
+        837,
+        439,
+        1236
+      ],
+      "component_seeds": [
+        [
+          220,
+          1060
+        ]
+      ],
+      "source_anchor": [
+        129.0,
+        1228
+      ],
+      "anchor_basis": "rear left boot sole contact in explicit boot region",
+      "boot_contact_region": [
+        82,
+        1190,
+        164,
+        1234
+      ]
+    },
+    {
+      "id": "06_lower_arrow",
+      "name": "Lower same replacement arrow",
+      "source": "sheet",
+      "source_box": [
+        488,
+        843,
+        849,
+        1238
+      ],
+      "component_seeds": [
+        [
+          650,
+          1080
+        ]
+      ],
+      "source_anchor": [
+        535.0,
+        1231
+      ],
+      "anchor_basis": "rear left boot sole contact in explicit boot region",
+      "boot_contact_region": [
+        504,
+        1190,
+        581,
+        1235
+      ]
+    }
+  ],
+  "layers": {
+    "flight_0": {
+      "file": "source/arrow_layers/flight_0.png",
+      "order": "behind",
+      "sha256": "72fd24bd5d392ff26cce4ebbf32b7eea13e013fe27756d6a47740117139f7371",
+      "expected_pixel_sha256": "85955ec7202b5ea27f876d1ba0d371ed65505d2ff5b9bc062495e8a878ef3289"
+    },
+    "flight_1": {
+      "file": "source/arrow_layers/flight_1.png",
+      "order": "behind",
+      "sha256": "fc17b45e02de77d3ab3c5717a989f807f2e9f210856e63edaadd4eebc2168300",
+      "expected_pixel_sha256": "a5514c506a913881485ae8eab027d77c3ca04d8423cc442f222ae23e4854ffdb"
+    },
+    "flight_2": {
+      "file": "source/arrow_layers/flight_2.png",
+      "order": "behind",
+      "sha256": "021cc855e8a8f6210e3fe61359d2ee91129a28d0aca1f90cbfb3551fb3851d6c",
+      "expected_pixel_sha256": "019f438da5b35ca07ada0c7dc0369da7e61fcc1845f9aaea5b221c2aadf02dfa"
+    },
+    "flight_3": {
+      "file": "source/arrow_layers/flight_3.png",
+      "order": "behind",
+      "sha256": "82b2ff411e617d72c359d5c5ef42024032e07d78b5217b194feceb7c0015d527",
+      "expected_pixel_sha256": "8539838e1c31693345dab86979dc3a4b229d9f92fb90baab64d35e615165ffe6"
+    }
+  },
+  "track": [
+    {
+      "at_ms": 0,
+      "body": "00_ready"
+    },
+    {
+      "at_ms": 180,
+      "body": "01_nock"
+    },
+    {
+      "at_ms": 380,
+      "body": "02_full_draw"
+    },
+    {
+      "at_ms": 580,
+      "body": "03_release",
+      "layers": [
+        {
+          "id": "flight_0",
+          "opacity": 1.0
+        }
+      ]
+    },
+    {
+      "at_ms": 600,
+      "body": "03_release",
+      "layers": [
+        {
+          "id": "flight_1",
+          "opacity": 1.0
+        }
+      ]
+    },
+    {
+      "at_ms": 620,
+      "body": "03_release",
+      "layers": [
+        {
+          "id": "flight_2",
+          "opacity": 1.0
+        }
+      ]
+    },
+    {
+      "at_ms": 640,
+      "body": "03_release",
+      "layers": [
+        {
+          "id": "flight_3",
+          "opacity": 1.0
+        }
+      ]
+    },
+    {
+      "at_ms": 660,
+      "body": "03_release"
+    },
+    {
+      "at_ms": 740,
+      "body": "04_reach_quiver"
+    },
+    {
+      "at_ms": 920,
+      "body": "05_extract_arrow"
+    },
+    {
+      "at_ms": 1100,
+      "body": "06_lower_arrow"
+    },
+    {
+      "at_ms": 1280,
+      "body": "00_ready"
+    }
+  ],
+  "duration_ms": 1460,
+  "idle_ms": 300,
+  "events": [
+    {
+      "name": "arrow_release_preview_only",
+      "at_ms": 580
+    }
+  ],
+  "review_profile": [
+    "left/front paw holds one continuous bow",
+    "one string V meets arrow nock in draw",
+    "right/rear paw handles arrow and string",
+    "single-arrow visible quiver replenishment",
+    "bow limb tips/string attachments intact",
+    "no hunting knife",
+    "rear sole anchor not a proof of both feet locked",
+    "projectile uses generated separate arrow and leaves viewport"
+  ],
+  "review_annotations": {
+    "excluded_sheet_pose": "top-right half-draw omitted because projected arrow length was unstable; not part of the final track",
+    "projectile": {
+      "source": "source/arrow_repair.webp",
+      "source_bbox": [
+        262,
+        398,
+        1510,
+        490
+      ],
+      "normalized_size": [
+        200,
+        15
+      ],
+      "axis_y": 231,
+      "x_offsets": [
+        0,
+        80,
+        160,
+        240
+      ],
+      "viewport_exit_clipping_intentional_for_projectile_only": true
+    },
+    "actual_pose_count": 7,
+    "first_last_body": "00_ready",
+    "runtime_integrated": false,
+    "nock_arrow_repair": "source/nock_patch_report.json"
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "result": "structural_pass_not_visual_acceptance",
+  "character": "mountain_wolf",
+  "body_count": 6,
+  "stage_count": 7,
+  "unique_body_rgba_pixel_hashes": 6,
+  "shared_source_scale": 0.65,
+  "body_palette_colors": 96,
+  "body_alpha_binary": true,
+  "visible_pixels_within_canvas": true,
+  "first_last_full_rgba_identical": true,
+  "opaque_body_rgba_preserved_after_layers": true,
+  "layer_partial_alpha_allowed": true,
+  "gif_exact_reserved_colors": 98,
+  "gif_additional_fx_colors": 0,
+  "gif_palette_total": 98,
+  "previews": {
+    "preview.gif": {
+      "durations_ms": [
+        160,
+        80,
+        60,
+        110,
+        150,
+        160,
+        450
+      ],
+      "total_ms": 1170,
+      "slow_factor": 1,
+      "stage_starts_ideal_ms": [
+        0,
+        160,
+        240,
+        300,
+        410,
+        560,
+        720
+      ],
+      "stage_starts_gif_ms": [
+        0,
+        160,
+        240,
+        300,
+        410,
+        560,
+        720
+      ],
+      "boundary_rounding_error_ms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "events": [
+        {
+          "name": "bite_contact",
+          "at_ms": 300,
+          "gameplay_binding": false,
+          "ideal_preview_ms": 300,
+          "nearest_gif_tick_ms": 300
+        }
+      ],
+      "idle_ms": 350,
+      "encoded_frames": 7,
+      "requested_samples": 7,
+      "sha256": "4846459ff1c8286a6b3e912abfc7e5fc2bac1ad989b32c9d0ff7665a294cedc7",
+      "reserved_rgb_pixels_checked": 1404928,
+      "reserved_rgb_exact": true,
+      "maximum_unreserved_fx_channel_error": 0
+    },
+    "preview_slow.gif": {
+      "durations_ms": [
+        320,
+        160,
+        120,
+        220,
+        300,
+        320,
+        550
+      ],
+      "total_ms": 1990,
+      "slow_factor": 2,
+      "stage_starts_ideal_ms": [
+        0,
+        320,
+        480,
+        600,
+        820,
+        1120,
+        1440
+      ],
+      "stage_starts_gif_ms": [
+        0,
+        320,
+        480,
+        600,
+        820,
+        1120,
+        1440
+      ],
+      "boundary_rounding_error_ms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "events": [
+        {
+          "name": "bite_contact",
+          "at_ms": 300,
+          "gameplay_binding": false,
+          "ideal_preview_ms": 600,
+          "nearest_gif_tick_ms": 600
+        }
+      ],
+      "idle_ms": 350,
+      "encoded_frames": 7,
+      "requested_samples": 7,
+      "sha256": "e798bb6dafda9b86480df616763e74f49c29527ac8320d2562e4ba7d12d06034",
+      "reserved_rgb_pixels_checked": 1404928,
+      "reserved_rgb_exact": true,
+      "maximum_unreserved_fx_channel_error": 0
+    }
+  },
+  "unused_body_ids": [],
+  "not_verified": [
+    "anatomy",
+    "grip_and_weapon_continuity",
+    "support_contacts",
+    "visual_transitions",
+    "owner_approval",
+    "runtime_integration",
+    "gameplay_event_binding"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-26",
+  "reviewer": "root independent repair visual gate plus independent technical reviewer reported by root",
+  "recorded_by": "mountain_wolf author; does not self-claim independent execution",
+  "authority": "root message: reviewed new contact sheet and complete3/4/5; independent technical results also received",
+  "result": "limited_independent_repair_gate_pass",
+  "scope": "current support-foot repair, not whole production/gameplay acceptance",
+  "independent_visual": {
+    "inspected": [
+      "new contact_sheet.png",
+      "complete body3",
+      "complete body4",
+      "complete body5"
+    ],
+    "findings": "四肢/腕爪/肩颈无新增明确必修；两处大滑移与返步问题关闭",
+    "required_remaining_fixes": []
+  },
+  "independent_technical": {
+    "body0_1_2_full_RGBA_unchanged": true,
+    "body3_4_5_outside_masks_RGBA_unchanged": true,
+    "near_support2_to3_exact_ROI": [
+      244,
+      350,
+      300,
+      388
+    ],
+    "far_support3_to4_exact_ROI": [
+      301,
+      350,
+      359,
+      387
+    ],
+    "all_six_bodies_rebuild_exact": true,
+    "decoded_GIF_totals_ms": {
+      "preview.gif": 1170,
+      "preview_slow.gif": 1990,
+      "comparison.gif": 1170
+    }
+  },
+  "audited_body_sha256": {
+    "0": "a708f2bcb77b8dcadd14ece6492720ae62f58f4d4381e841eb3442856e528a52",
+    "1": "e7236d62480bf0f068ab5362d7c5115212cf3b8fd61a79900e2780e392fa5ac3",
+    "2": "e850f1a16af35e6a8cb94170840199375cd5596d7d57aa92a72c9b1e001f74b2",
+    "3": "7042377c82e2aacd854f3483ed709cee87c4899fd803c35e2d3c91a97033a089",
+    "4": "6a64da626157fa1fce3924d749ce04f1fbd57cd3d5f4fac387d9d986f4979185",
+    "5": "a597a79989d24b61ac75bedef424f38bf2c697c3d1ad3be0b458bf0530739b33"
+  },
+  "audited_GIF_sha256": {
+    "preview.gif": "ee0d9c52dad580523eab9e0eada108ceec05334a02b0b7c572fa14069c4c7515",
+    "preview_slow.gif": "3bc0c934f6e9cc1d99f5e337c993a440a175654525183da54cba881d45d163c6",
+    "comparison.gif": "9e713fc88fc2fa5a814ce33b2a8f5e088c1ee207bdf06db6ad1cddede407ba11"
+  },
+  "manifest_sha256": "e3a6c70294b72a76d7af6f48b78b565ae369ec2f40e6b9bc2c758efa4862cfad",
+  "frozen_after_gate": true,
+  "not_verified": [
+    "owner_continuous_experience",
+    "all_four_paws_pixel_locked",
+    "full_natural_kinematics",
+    "runtime_import_export",
+    "gameplay_damage_binding"
+  ]
+}

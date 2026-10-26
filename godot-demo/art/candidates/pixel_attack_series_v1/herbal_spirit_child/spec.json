@@ -1,0 +1,321 @@
+{
+  "schema": "pixel-attack-series-v1",
+  "character": "herbal_spirit_child",
+  "display_name": "药灵童子｜聚叶治疗",
+  "status": "limited_visual_and_independent_technical_rebuild_passed",
+  "canvas": [
+    448,
+    448
+  ],
+  "anchor": [
+    100,
+    400
+  ],
+  "palette_colors": 96,
+  "sources": {
+    "body": {
+      "file": "source/body_registered.webp",
+      "sha256": "44cfecf5b7a5d738e6202bf7fdfb4247888bc2611ffafcf0dff9db4340286137",
+      "expected_pixel_sha256": "441f86f10009e1b0b9e1066f36e652c4d51aed77039deeb3d0336e7272f346fa",
+      "scale": 0.65
+    }
+  },
+  "bodies": [
+    {
+      "id": "00_ready",
+      "name": "ready",
+      "source": "body",
+      "source_box": [
+        100,
+        0,
+        511,
+        514
+      ],
+      "source_anchor": [
+        190,
+        506
+      ],
+      "component_seeds": [
+        [
+          325,
+          340
+        ]
+      ]
+    },
+    {
+      "id": "01_gather",
+      "name": "gather",
+      "source": "body",
+      "source_box": [
+        583,
+        0,
+        993,
+        514
+      ],
+      "source_anchor": [
+        669,
+        506
+      ],
+      "component_seeds": [
+        [
+          803,
+          333
+        ]
+      ]
+    },
+    {
+      "id": "02_charge",
+      "name": "charge",
+      "source": "body",
+      "source_box": [
+        1088,
+        0,
+        1528,
+        514
+      ],
+      "source_anchor": [
+        1170,
+        506
+      ],
+      "component_seeds": [
+        [
+          1299,
+          340
+        ]
+      ]
+    },
+    {
+      "id": "03_release_heal",
+      "name": "release_heal",
+      "source": "body",
+      "source_box": [
+        96,
+        513,
+        512,
+        1023
+      ],
+      "source_anchor": [
+        184,
+        1018
+      ],
+      "component_seeds": [
+        [
+          330,
+          850
+        ]
+      ]
+    },
+    {
+      "id": "04_follow_through",
+      "name": "follow_through",
+      "source": "body",
+      "source_box": [
+        580,
+        513,
+        997,
+        1023
+      ],
+      "source_anchor": [
+        659,
+        1018
+      ],
+      "component_seeds": [
+        [
+          804,
+          855
+        ]
+      ]
+    },
+    {
+      "id": "05_return",
+      "name": "return",
+      "source": "body",
+      "source_box": [
+        1087,
+        513,
+        1485,
+        1023
+      ],
+      "source_anchor": [
+        1171,
+        1018
+      ],
+      "component_seeds": [
+        [
+          1300,
+          850
+        ]
+      ]
+    }
+  ],
+  "layers": {
+    "gather": {
+      "file": "fx/gather.png",
+      "sha256": "5c56d0ba4e47e6b5b57e1c6d676cb5d4f597c5f97a44f3ef6d556ffefd6fc006",
+      "expected_pixel_sha256": "16db42eb84d03c331c641eb6422406bd6b5aea307874d6124dfd4564b2508bf9",
+      "order": "behind"
+    },
+    "charge": {
+      "file": "fx/charge.png",
+      "sha256": "d2b6fb1aa0eb1e81047585c5eb84b4e7b64af0f47f7392c50d4e00e231e51708",
+      "expected_pixel_sha256": "c94b11e28dcce143b42ed504a71c921ca2a2e0488fbf7a17521f2e1b10b0b6a7",
+      "order": "behind"
+    },
+    "heal_0": {
+      "file": "fx/heal_0.png",
+      "sha256": "9fedc10c2b3d0bfab5e7ff2c67fa60ed2a3d5aa3b4cac720a01df182e05eb146",
+      "expected_pixel_sha256": "ab8aa540ab97f7d054816c08bd65a668bbf46408c5a9f4e53c70bcec7ebb9583",
+      "order": "behind"
+    },
+    "heal_1": {
+      "file": "fx/heal_1.png",
+      "sha256": "497b65abecaea51b473c299160c65e3e41a000a44e48eec78097f3819b422b06",
+      "expected_pixel_sha256": "18d843833c010aaa884b5e57ced10c9e864aa14d06a4bee5b03f7042037bd51a",
+      "order": "behind"
+    },
+    "heal_2": {
+      "file": "fx/heal_2.png",
+      "sha256": "69d4d51b9e59d514ff3d997e4d357e33de98dba2af942cc72588af9f6220db05",
+      "expected_pixel_sha256": "89046165d2a9ea90b805b10d0d395c004dcacbffd33a2dfe1d2a1ec91dad5f70",
+      "order": "behind"
+    },
+    "heal_3": {
+      "file": "fx/heal_3.png",
+      "sha256": "8085de20be03eca4de7a5978bfc501660c173738eeaf8a3ac3d0f890f6c31641",
+      "expected_pixel_sha256": "eff90c56180c32ac38dca232c013244f6f071378a8c11242b355c2cc96796693",
+      "order": "behind"
+    }
+  },
+  "duration_ms": 1280,
+  "idle_ms": 350,
+  "events": [
+    {
+      "name": "preview_healing_release",
+      "at_ms": 540
+    }
+  ],
+  "track": [
+    {
+      "at_ms": 0,
+      "body": "00_ready"
+    },
+    {
+      "at_ms": 180,
+      "body": "01_gather",
+      "layers": [
+        {
+          "id": "gather",
+          "opacity": 0.45
+        }
+      ]
+    },
+    {
+      "at_ms": 360,
+      "body": "02_charge",
+      "layers": [
+        {
+          "id": "charge",
+          "opacity": 0.85
+        }
+      ]
+    },
+    {
+      "at_ms": 540,
+      "body": "03_release_heal",
+      "layers": [
+        {
+          "id": "heal_0",
+          "opacity": 0.9
+        }
+      ]
+    },
+    {
+      "at_ms": 570,
+      "body": "03_release_heal",
+      "layers": [
+        {
+          "id": "heal_1",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "at_ms": 600,
+      "body": "03_release_heal",
+      "layers": [
+        {
+          "id": "heal_2",
+          "opacity": 0.85
+        }
+      ]
+    },
+    {
+      "at_ms": 630,
+      "body": "03_release_heal",
+      "layers": [
+        {
+          "id": "heal_3",
+          "opacity": 0.55
+        }
+      ]
+    },
+    {
+      "at_ms": 660,
+      "body": "04_follow_through"
+    },
+    {
+      "at_ms": 850,
+      "body": "05_return"
+    },
+    {
+      "at_ms": 1080,
+      "body": "00_ready"
+    }
+  ],
+  "review_profile": [
+    "human_identity_and_hat",
+    "support_hand_staff_and_rigid_ring_head",
+    "free_hand_palm_fingers_and_wrist",
+    "three_ground_contacts",
+    "healing_fx_separate_from_face_and_hand",
+    "pose_transition_and_actual_gif_timing"
+  ],
+  "review_annotations": {
+    "author_visual_review": "REVIEW.md",
+    "independent_visual_review": "Checker C: full six-pose/adjacent/timing visual gate passed, relayed by root.",
+    "runtime_integration": false,
+    "user_confirmed_main_action": "2026-10-26：药灵补治疗动作（推荐）"
+  },
+  "independent_review": {
+    "date": "2026-10-26",
+    "reported_by": "root",
+    "checker": "C",
+    "visual_gate": "limited_six_body_static_adjacent_and_timing_pass_no_required_fix",
+    "technical_gate": "prepare_registered_6fx_6body_10stage_atlas_png_gif_and_byte_rebuild_pass",
+    "normal_ms": 1630,
+    "slow_ms": 2910,
+    "body_rgb_error": 0,
+    "fx_max_channel_error": 37,
+    "contact_y_all": 400,
+    "staff_x_range": [
+      100,
+      100.5
+    ],
+    "rear_sandal_x_range": [
+      137,
+      137.5
+    ],
+    "front_sandal_x_range": [
+      233,
+      234
+    ],
+    "initial_projectile_alpha8_left_x": 316,
+    "palm_right_x": 310,
+    "empty_columns_between_palm_and_projectile": 5,
+    "not_covered": [
+      "owner_realtime_continuous_experience",
+      "runtime_integration",
+      "healing_gameplay_event_binding"
+    ]
+  }
+}

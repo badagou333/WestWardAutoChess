@@ -1,0 +1,32 @@
+{
+  "result": "deterministic_rebuild_pass",
+  "checked_files": 25,
+  "all_file_sha256_equal": true,
+  "files": {
+    "source/body_registered.webp": "e7daa2734df37239abb88ba6d67bc9eec07ff9beecc0bd1374c20665f109f4fd",
+    "source/foot_registration.json": "928e40c041bda61032795e5202fab799de1a50a4f338e83f16af87b8b400deeb",
+    "source/wind_preparation.json": "de7234442008f46a0a88dd95dcfa29a4e89486277cbfe97d5584613b2783c96b",
+    "fx/blade.png": "61e8088aa7f23a79ce1f8b625afef536202529ff484ada6564f11b6c12177dcd",
+    "fx/wind_0.png": "aa4d4c3c7f7d7a0a5765408e354a9ebcf6a024d41e8c70a9e77d34b848db5831",
+    "fx/wind_1.png": "de7ac8b3e479ab3d0a5b35dd4479fe4e61e83adaa37e6994620030f213d791a3",
+    "fx/wind_2.png": "36803c98d5a90eccca79af229c26382c286aa2f9124c1b16d67fbf66cf4b0d59",
+    "fx/wind_3.png": "b6f164993c11c4d088efa4224b2d5ecb85b3e54f67c2fec911f7407b8bc95e7e",
+    "frames/00_ready.png": "bfb1328c45433d68e268666de233bdce9eb0cc852837bfe25f00e9709a13f963",
+    "frames/01_wing_load.png": "7e9494f39aa5a6b9cb67cf8ad5f67d7c5d13c4960ea9d04cd4738c3400f33570",
+    "frames/02_cross_body_accelerate.png": "fbe11c580687a38594196a431807ab371f8a0654f5ba154bd0571b482a226b4f",
+    "frames/03_wing_release.png": "b3e4e776d0368e8c64ecf446006f024c4d31676ef6266873afab0db23ea952be",
+    "frames/04_follow_through.png": "2654f75a2cd12bf0cafa23d5dd954c7f41b18ee6d9f9966b553028687d6fc0eb",
+    "frames/05_fold_recover.png": "94fa02fdbf843bf0db7546477bded12202127e5a99f7d2bcffd322f1250ca540",
+    "layers/wind_0.png": "aa4d4c3c7f7d7a0a5765408e354a9ebcf6a024d41e8c70a9e77d34b848db5831",
+    "layers/wind_1.png": "de7ac8b3e479ab3d0a5b35dd4479fe4e61e83adaa37e6994620030f213d791a3",
+    "layers/wind_2.png": "36803c98d5a90eccca79af229c26382c286aa2f9124c1b16d67fbf66cf4b0d59",
+    "layers/wind_3.png": "b6f164993c11c4d088efa4224b2d5ecb85b3e54f67c2fec911f7407b8bc95e7e",
+    "atlas.png": "1e6bd050724476f49a1a29c8772dcb4b824496f98287fb66bca36d9a7dcfed57",
+    "contact_sheet.png": "b144a5a8417488164d1bac11006f0898b582fca35ceff78f7bb2058a7ae29138",
+    "preview.gif": "b9d6ab8c9842e9f7ada3b4811c489bace59c2b80b6b8c3a9ce2e48403eeff80e",
+    "preview_slow.gif": "a2f31c975ab1545bd8adeff644eea1f07060dee5318895eae6641497b08c66d4",
+    "manifest.json": "0a42934943ce5dff6ce330849bb8693053caf3ab3927eef887678c59bb4c4fb6",
+    "structural_report.json": "f9ed479709634a936fd00443285212ab9e4f6710f8d1df5225ec69da4021200b",
+    "validation.json": "2094b930538efbca15ebbbc1c4fc64b1cb95ccf1d19c1e13b8c9ade71d2c6911"
+  }
+}

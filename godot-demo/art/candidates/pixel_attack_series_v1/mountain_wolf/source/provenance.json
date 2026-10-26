@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-26",
+  "author_role": "05 art / mountain_wolf agent",
+  "tool": "built-in image_gen.imagegen",
+  "authorization_scope": "山狼独立像素扑咬攻击候选；不接游戏",
+  "reference": {
+    "file": "../../../concepts/mountain_wolf/nine_sols_v1/mountain-wolf-nine-sols-candidate.png",
+    "sha256": "9c2a29db71a9a6a477054a2d36c1cbac8e3d316cd3d1cb2622727188a1d89585",
+    "role": "approved ordinary quadruped gray-brown wolf identity; source left-facing, output right-facing"
+  },
+  "passes": [
+    {
+      "name": "first",
+      "adopted": false,
+      "prompt_file": "source/PROMPT_FIRST.txt",
+      "generation_artifact": "exec-112ef978-0dff-4c0b-ac8a-41ccab898786.png",
+      "original_png_sha256": "84ae800c7817aa8c2fe56fe3b335c1d8bbb50aa47725989db884c9284343a116",
+      "reason": "upper-right snout cut at source edge; crowded cells",
+      "retained_evidence": "history/first_layout_rejected.png"
+    },
+    {
+      "name": "layout_repair",
+      "adopted": true,
+      "prompt_file": "source/PROMPT_LAYOUT_REPAIR.txt",
+      "reference_previous_png_sha256": "84ae800c7817aa8c2fe56fe3b335c1d8bbb50aa47725989db884c9284343a116",
+      "generation_artifact": "exec-51c60b29-d7e5-40da-a0d5-9f056de846e1.png",
+      "original_png_sha256": "58dfb1149f89b1a71d081a8ab506739ecb76960b4cbfa1738700f0547d93977b",
+      "file": "source/attack_sheet.webp",
+      "stored_webp_sha256": "1123cd38a3d104b9ea1237ad9d4f9e4b3f66d76dc496296e08d23f2374a6c410",
+      "decoded_rgba_sha256": "ee2ca6f86914e2b63e91d5251b1f4f86281e29275bbbc88a98f6331f9445e6f9",
+      "decoded_RGBA_matches_original_PNG": true,
+      "webp_lossless": true,
+      "webp_exact": true,
+      "original_canvas": [
+        1536,
+        1024
+      ]
+    }
+  ],
+  "normalization": "common tools/build_attack.py: explicit boxes and seeded 8-connected component selection, one shared0.65 source scale, explicit hind-paw anchors, shared96 color palette; no body rotation or interpolation",
+  "runtime_integrated": false,
+  "adopted_source_alpha_range": [
+    0,
+    254
+  ],
+  "body_alpha_threshold": 128,
+  "source_alpha_note": "生成原件保留低alpha晕影；共同导出器按alpha>=128和显式种子组件选择，最终身体二值透明，不把原件当成直接运行贴图",
+  "initial_visual_gate": "failed: grounded forepaw sliding2->3 and3->4",
+  "current_support_fix": {
+    "provenance_file": "source/support_fix_provenance.json",
+    "registration_report": "source/support_fix_report.json",
+    "recipe": "prepare_support_fix.py",
+    "baseline": "history/before_foot_fix",
+    "current_scale": 1.0,
+    "original_extraction_scale": 0.65,
+    "unchanged_body_ids": [
+      "0",
+      "1",
+      "2"
+    ],
+    "edited_foreleg_body_ids": [
+      "3",
+      "4",
+      "5"
+    ],
+    "status": "author_repair_complete_pending_cross_gate"
+  }
+}

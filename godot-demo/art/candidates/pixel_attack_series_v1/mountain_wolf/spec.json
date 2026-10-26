@@ -1,0 +1,212 @@
+{
+  "character": "mountain_wolf",
+  "display_name": "山狼 · 短扑咬",
+  "canvas": [
+    448,
+    448
+  ],
+  "anchor": [
+    110,
+    380
+  ],
+  "palette_colors": 96,
+  "background": [
+    35,
+    40,
+    48
+  ],
+  "sources": {
+    "support_prepared": {
+      "file": "source/support_fixed_448_sheet.webp",
+      "sha256": "59e536ab323c926ea1c823bf1be55461871e0dc850105998ed439fd1604fb6d4",
+      "expected_pixel_sha256": "659c9c0a21ab0a3ab2f09b8ba7ec41f71224814a0004003e0eecbae04c0e73df",
+      "scale": 1.0
+    }
+  },
+  "bodies": [
+    {
+      "id": "0",
+      "name": "ready",
+      "source": "support_prepared",
+      "source_box": [
+        0,
+        0,
+        448,
+        448
+      ],
+      "component_seeds": [
+        [
+          170,
+          270
+        ]
+      ],
+      "source_anchor": [
+        110,
+        380
+      ]
+    },
+    {
+      "id": "1",
+      "name": "load",
+      "source": "support_prepared",
+      "source_box": [
+        448,
+        0,
+        896,
+        448
+      ],
+      "component_seeds": [
+        [
+          618,
+          270
+        ]
+      ],
+      "source_anchor": [
+        558,
+        380
+      ]
+    },
+    {
+      "id": "2",
+      "name": "open_reach",
+      "source": "support_prepared",
+      "source_box": [
+        896,
+        0,
+        1344,
+        448
+      ],
+      "component_seeds": [
+        [
+          1066,
+          270
+        ]
+      ],
+      "source_anchor": [
+        1006,
+        380
+      ]
+    },
+    {
+      "id": "3",
+      "name": "bite_contact",
+      "source": "support_prepared",
+      "source_box": [
+        0,
+        448,
+        448,
+        896
+      ],
+      "component_seeds": [
+        [
+          170,
+          718
+        ]
+      ],
+      "source_anchor": [
+        110,
+        828
+      ]
+    },
+    {
+      "id": "4",
+      "name": "recoil",
+      "source": "support_prepared",
+      "source_box": [
+        448,
+        448,
+        896,
+        896
+      ],
+      "component_seeds": [
+        [
+          618,
+          718
+        ]
+      ],
+      "source_anchor": [
+        558,
+        828
+      ]
+    },
+    {
+      "id": "5",
+      "name": "recover",
+      "source": "support_prepared",
+      "source_box": [
+        896,
+        448,
+        1344,
+        896
+      ],
+      "component_seeds": [
+        [
+          1066,
+          718
+        ]
+      ],
+      "source_anchor": [
+        1006,
+        828
+      ]
+    }
+  ],
+  "track": [
+    {
+      "at_ms": 0,
+      "body": "0"
+    },
+    {
+      "at_ms": 160,
+      "body": "1"
+    },
+    {
+      "at_ms": 240,
+      "body": "2"
+    },
+    {
+      "at_ms": 300,
+      "body": "3"
+    },
+    {
+      "at_ms": 410,
+      "body": "4"
+    },
+    {
+      "at_ms": 560,
+      "body": "5"
+    },
+    {
+      "at_ms": 720,
+      "body": "0"
+    }
+  ],
+  "duration_ms": 820,
+  "idle_ms": 350,
+  "events": [
+    {
+      "name": "bite_contact",
+      "at_ms": 300
+    }
+  ],
+  "review_profile": [
+    "ordinary_quadruped_identity",
+    "four_legs_attributable",
+    "jaw_open_then_close",
+    "hind_support_and_forepaw_articulation",
+    "neck_shoulder_and_pelvis_continuity",
+    "tail_root_attachment",
+    "uniform_source_scale",
+    "actual_448_size_readability"
+  ],
+  "review_annotations": {
+    "anchor_note": "near hind paw sole proxy, individually identified in source; fixed sprite root is not proof of all-paw lock",
+    "contact_note": "300ms is preview metadata only; no gameplay damage binding",
+    "source_layout": "manual overlapping boxes with one selected component per full animal; no equal-cell slicing",
+    "support_fix": "source/support_fix_report.json; fixes exact planted-paw pairs2->3 and3->4, introduces lifted far forepaw in5; not a claim of all paws locked",
+    "source_registration": "448-native prepared plane at1x; original0.65 extraction preserved inhistory; no original body resampling"
+  },
+  "compare": {
+    "before_manifest": "history/before_foot_fix/manifest.json"
+  }
+}

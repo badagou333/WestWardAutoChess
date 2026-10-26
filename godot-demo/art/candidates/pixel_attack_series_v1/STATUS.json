@@ -16,42 +16,43 @@
       "id": "wild_hunter",
       "name": "山野猎户",
       "action": "bow_shot",
-      "status": "visual_must_fix",
+      "status": "candidate_pass",
       "path": "wild_hunter/README.md"
     },
     {
       "id": "foxfire_imp",
       "name": "狐火小妖",
       "action": "alternating_fire",
-      "status": "in_progress",
-      "path": "foxfire_imp/"
+      "status": "candidate_pass",
+      "path": "foxfire_imp/README.md"
     },
     {
       "id": "sparrow_spirit",
       "name": "山雀精",
       "action": "wing_wind",
-      "status": "in_progress",
-      "path": "sparrow_spirit/"
+      "status": "candidate_pass",
+      "path": "sparrow_spirit/README.md"
     },
     {
       "id": "mountain_wolf",
       "name": "山狼",
       "action": "bite",
-      "status": "visual_must_fix",
+      "status": "candidate_pass",
       "path": "mountain_wolf/README.md"
     },
     {
       "id": "boar",
       "name": "山猪",
       "action": "mace_strike",
-      "status": "queued"
+      "status": "independent_review",
+      "path": "boar/README.md"
     },
     {
       "id": "gray_rat",
       "name": "灰鼠",
       "action": "sling",
-      "status": "queued_after_hunter_repair",
-      "path": "gray_rat/"
+      "status": "independent_review",
+      "path": "gray_rat/README.md"
     },
     {
       "id": "bear_lord",
@@ -64,8 +65,10 @@
       "id": "herbal_spirit_child",
       "name": "药灵童子",
       "action": "healing",
-      "status": "queued_default_pending_optional_reply"
+      "status": "candidate_pass",
+      "path": "herbal_spirit_child/README.md"
     }
   ],
-  "complete": false
+  "complete": false,
+  "healing_scope": "owner_confirmed"
 }

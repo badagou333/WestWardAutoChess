@@ -1,0 +1,66 @@
+{
+  "tool": "built-in image_gen",
+  "identity_reference": "../../../production/foxfire_imp/nine_sols_v1/source-clean.png",
+  "adopted": [
+    {
+      "file": "source/attack_sheet.webp",
+      "original_tool_file": "exec-2e0e3b8f-8abb-480a-bbdb-7bbebdd83265.png",
+      "original_png_sha256": "d0fcdb04c2fc2e5022fbdea19e266da4eb6c96841060839c071b3ae18c362f48",
+      "webp_sha256": "0b9f759ae332a7d653d537ea242c36e3a94ca0da43759cd344eabd90304fd2c7",
+      "rgba_sha256": "e32994d2c41c1d67312c4e284ce2f4528845393f7e56551ec15ef2103deb58af",
+      "size": [
+        1254,
+        1254
+      ],
+      "all_rgba_equal": true
+    },
+    {
+      "file": "source/far_hand_flick.webp",
+      "original_tool_file": "exec-0f850671-99c4-4123-b7ed-76fca59c90f8.png",
+      "original_png_sha256": "0fcad028232301d703973db8b71a3958f1d556d26731b73a48d8bf9e31387348",
+      "webp_sha256": "22d77294dac0c3346fd1859fbcb5ee3484dbf47b8f4854ff2ba930a4fe018413",
+      "rgba_sha256": "6036c0f4b81d3a56165e52e5548960f1b2cb9ba99285642d3f56e76c14cb403e",
+      "size": [
+        1078,
+        1460
+      ],
+      "all_rgba_equal": true
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "top ears touched edge",
+      "discarded_candidate_name": "exec-cc7ca7d9-7608-4da5-81a6-215476c9623e.png"
+    },
+    {
+      "reason": "layout fixed but ready/recovery look opposite attack; head direction revision adopted",
+      "discarded_candidate_name": "exec-ad118c8b-0082-4119-b1a1-926b68739c7e.png"
+    },
+    {
+      "original_tool_file": "exec-aa28aec7-78a9-4732-b02e-72e36f66ee38.png",
+      "original_png_sha256": "35b5993de9af391667bf7c0f72cee55f0dbe3f43ad3e0bb17efbcf1064926b3b",
+      "webp_sha256": "2a030ba2c938e58909419ccf382fb339cd047ae76c438a1e632db1ab0480d077",
+      "rgba_sha256": "d7a39c00d22279068765f4bd5122b6b726d261a1368cb8d5c500c9c64fd4079e",
+      "size": [
+        1277,
+        1232
+      ],
+      "all_rgba_equal": true,
+      "reason": "未采用：最终改为原另一手抬掌甩腕，保留正确手臂归属和固定支撑",
+      "discarded_candidate_name": "source/lifted_foreleg.webp"
+    },
+    {
+      "original_tool_file": "exec-f3009d78-d3b9-44cf-8a4c-361d4e215549.png",
+      "original_png_sha256": "e59b535d1873baf30a9bce25f11b6f80b2e4f4d3cc70a7ab995f342259de33b2",
+      "webp_sha256": "d55a4e0780696a928297d65fa334ac80237f9a6d9295db669e88c63a9f4b2655",
+      "rgba_sha256": "cf90aab5b58abc354c3f9cabcf19f90df0c2de9bc69d11e48f77b2debfd31456",
+      "size": [
+        1254,
+        1254
+      ],
+      "all_rgba_equal": true,
+      "reason": "未采用：最终改为原另一手抬掌甩腕，保留正确手臂归属和固定支撑",
+      "discarded_candidate_name": "source/far_arm_release.webp"
+    }
+  ]
+}

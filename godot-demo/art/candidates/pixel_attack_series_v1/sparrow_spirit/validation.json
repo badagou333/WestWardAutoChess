@@ -1,0 +1,180 @@
+{
+  "result": "technical_pass_visual_review_separate",
+  "body_count": 6,
+  "stage_count": 11,
+  "bodies": [
+    {
+      "id": "00_ready",
+      "visible_bbox": [
+        38,
+        97,
+        299,
+        400
+      ],
+      "atlas_rgba_exact": true,
+      "transparent_edges": true,
+      "rear_claw_low_point": [
+        145,
+        399
+      ],
+      "front_claw_low_point": [
+        227,
+        399
+      ],
+      "sha256": "bfb1328c45433d68e268666de233bdce9eb0cc852837bfe25f00e9709a13f963"
+    },
+    {
+      "id": "01_wing_load",
+      "visible_bbox": [
+        83,
+        100,
+        331,
+        400
+      ],
+      "atlas_rgba_exact": true,
+      "transparent_edges": true,
+      "rear_claw_low_point": [
+        145,
+        399
+      ],
+      "front_claw_low_point": [
+        228,
+        398
+      ],
+      "sha256": "7e9494f39aa5a6b9cb67cf8ad5f67d7c5d13c4960ea9d04cd4738c3400f33570"
+    },
+    {
+      "id": "02_cross_body_accelerate",
+      "visible_bbox": [
+        44,
+        112,
+        358,
+        401
+      ],
+      "atlas_rgba_exact": true,
+      "transparent_edges": true,
+      "rear_claw_low_point": [
+        145,
+        399
+      ],
+      "front_claw_low_point": [
+        228,
+        400
+      ],
+      "sha256": "fbe11c580687a38594196a431807ab371f8a0654f5ba154bd0571b482a226b4f"
+    },
+    {
+      "id": "03_wing_release",
+      "visible_bbox": [
+        27,
+        113,
+        396,
+        400
+      ],
+      "atlas_rgba_exact": true,
+      "transparent_edges": true,
+      "rear_claw_low_point": [
+        145,
+        399
+      ],
+      "front_claw_low_point": [
+        228,
+        399
+      ],
+      "sha256": "b3e4e776d0368e8c64ecf446006f024c4d31676ef6266873afab0db23ea952be"
+    },
+    {
+      "id": "04_follow_through",
+      "visible_bbox": [
+        62,
+        117,
+        349,
+        400
+      ],
+      "atlas_rgba_exact": true,
+      "transparent_edges": true,
+      "rear_claw_low_point": [
+        144,
+        399
+      ],
+      "front_claw_low_point": [
+        228,
+        399
+      ],
+      "sha256": "2654f75a2cd12bf0cafa23d5dd954c7f41b18ee6d9f9966b553028687d6fc0eb"
+    },
+    {
+      "id": "05_fold_recover",
+      "visible_bbox": [
+        36,
+        111,
+        299,
+        400
+      ],
+      "atlas_rgba_exact": true,
+      "transparent_edges": true,
+      "rear_claw_low_point": [
+        145,
+        399
+      ],
+      "front_claw_low_point": [
+        228,
+        399
+      ],
+      "sha256": "94fa02fdbf843bf0db7546477bded12202127e5a99f7d2bcffd322f1250ca540"
+    }
+  ],
+  "first_last_body_rgba_identical": true,
+  "single_wind_layer_per_stage": true,
+  "source_rgba_hashes_verified": true,
+  "gif_roundtrip": {
+    "preview.gif": {
+      "decoded_stages": 11,
+      "duration_ms": [
+        160,
+        120,
+        90,
+        20,
+        20,
+        20,
+        20,
+        40,
+        160,
+        200,
+        500
+      ],
+      "total_ms": 1350,
+      "opaque_body_and_background_rgb_exact": true,
+      "opaque_body_pixels_checked": 462831,
+      "fx_only_max_rgb_quantization_error": 17,
+      "sha256": "b9d6ab8c9842e9f7ada3b4811c489bace59c2b80b6b8c3a9ce2e48403eeff80e"
+    },
+    "preview_slow.gif": {
+      "decoded_stages": 11,
+      "duration_ms": [
+        320,
+        240,
+        180,
+        40,
+        40,
+        40,
+        40,
+        80,
+        320,
+        400,
+        700
+      ],
+      "total_ms": 2400,
+      "opaque_body_and_background_rgb_exact": true,
+      "opaque_body_pixels_checked": 462831,
+      "fx_only_max_rgb_quantization_error": 17,
+      "sha256": "a2f31c975ab1545bd8adeff644eea1f07060dee5318895eae6641497b08c66d4"
+    }
+  },
+  "visual_review": "REVIEW.md",
+  "not_covered": [
+    "owner_realtime_continuous_playback",
+    "runtime_integration",
+    "gameplay_event_binding"
+  ]
+}

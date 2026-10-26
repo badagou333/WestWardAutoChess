@@ -1,0 +1,269 @@
+{
+  "schema": "pixel-attack-series-v1",
+  "character": "sparrow_spirit",
+  "display_name": "山雀精｜挥翼单枚风刃",
+  "status": "author_review_complete_pending_independent",
+  "canvas": [
+    448,
+    448
+  ],
+  "anchor": [
+    145,
+    399
+  ],
+  "palette_colors": 96,
+  "sources": {
+    "body": {
+      "file": "source/body_registered.webp",
+      "sha256": "e7daa2734df37239abb88ba6d67bc9eec07ff9beecc0bd1374c20665f109f4fd",
+      "expected_pixel_sha256": "8f0a80c952a5d9d4333a48880001fdec2caaaa24ab163ac38039cbd7df791271",
+      "scale": 0.65
+    }
+  },
+  "bodies": [
+    {
+      "id": "00_ready",
+      "name": "ready",
+      "source": "body",
+      "source_box": [
+        20,
+        30,
+        460,
+        540
+      ],
+      "source_anchor": [
+        208,
+        524
+      ],
+      "component_seeds": [
+        [
+          300,
+          400
+        ]
+      ]
+    },
+    {
+      "id": "01_wing_load",
+      "name": "wing_load",
+      "source": "body",
+      "source_box": [
+        580,
+        35,
+        995,
+        540
+      ],
+      "source_anchor": [
+        695,
+        524
+      ],
+      "component_seeds": [
+        [
+          780,
+          400
+        ]
+      ]
+    },
+    {
+      "id": "02_cross_body_accelerate",
+      "name": "cross_body_accelerate",
+      "source": "body",
+      "source_box": [
+        1025,
+        50,
+        1535,
+        540
+      ],
+      "source_anchor": [
+        1199,
+        523
+      ],
+      "component_seeds": [
+        [
+          1290,
+          400
+        ]
+      ]
+    },
+    {
+      "id": "03_wing_release",
+      "name": "wing_release",
+      "source": "body",
+      "source_box": [
+        1,
+        528,
+        600,
+        1000
+      ],
+      "source_anchor": [
+        205,
+        975
+      ],
+      "component_seeds": [
+        [
+          300,
+          850
+        ]
+      ]
+    },
+    {
+      "id": "04_follow_through",
+      "name": "follow_through",
+      "source": "body",
+      "source_box": [
+        595,
+        529,
+        1057,
+        1000
+      ],
+      "source_anchor": [
+        728,
+        975
+      ],
+      "component_seeds": [
+        [
+          820,
+          850
+        ]
+      ]
+    },
+    {
+      "id": "05_fold_recover",
+      "name": "fold_recover",
+      "source": "body",
+      "source_box": [
+        1064,
+        525,
+        1513,
+        1000
+      ],
+      "source_anchor": [
+        1257,
+        975
+      ],
+      "component_seeds": [
+        [
+          1330,
+          850
+        ]
+      ]
+    }
+  ],
+  "layers": {
+    "wind_0": {
+      "file": "fx/wind_0.png",
+      "sha256": "aa4d4c3c7f7d7a0a5765408e354a9ebcf6a024d41e8c70a9e77d34b848db5831",
+      "expected_pixel_sha256": "9b8a40442c10ef8feebb676b84b87fdddff484f7d4652cedb705f91626feb24a",
+      "order": "behind"
+    },
+    "wind_1": {
+      "file": "fx/wind_1.png",
+      "sha256": "de7ac8b3e479ab3d0a5b35dd4479fe4e61e83adaa37e6994620030f213d791a3",
+      "expected_pixel_sha256": "55bd563dfa5baba8c1d6379651944adfdcb703e8759b5118d808a532b8771d27",
+      "order": "behind"
+    },
+    "wind_2": {
+      "file": "fx/wind_2.png",
+      "sha256": "36803c98d5a90eccca79af229c26382c286aa2f9124c1b16d67fbf66cf4b0d59",
+      "expected_pixel_sha256": "fe28aa7cb94d27329b12682096a77788e4c5e85b0eab3889213d6fd98f22e0d0",
+      "order": "behind"
+    },
+    "wind_3": {
+      "file": "fx/wind_3.png",
+      "sha256": "b6f164993c11c4d088efa4224b2d5ecb85b3e54f67c2fec911f7407b8bc95e7e",
+      "expected_pixel_sha256": "f4eba9e377a26591fcd468c4414907eb0e945ba3d6039fad0c4383a11a2d33b3",
+      "order": "behind"
+    }
+  },
+  "duration_ms": 1050,
+  "idle_ms": 300,
+  "events": [
+    {
+      "name": "preview_one_wind_blade_release",
+      "at_ms": 370
+    }
+  ],
+  "track": [
+    {
+      "at_ms": 0,
+      "body": "00_ready"
+    },
+    {
+      "at_ms": 160,
+      "body": "01_wing_load"
+    },
+    {
+      "at_ms": 280,
+      "body": "02_cross_body_accelerate"
+    },
+    {
+      "at_ms": 370,
+      "body": "03_wing_release",
+      "layers": [
+        {
+          "id": "wind_0",
+          "opacity": 0.85
+        }
+      ]
+    },
+    {
+      "at_ms": 390,
+      "body": "03_wing_release",
+      "layers": [
+        {
+          "id": "wind_1",
+          "opacity": 1
+        }
+      ]
+    },
+    {
+      "at_ms": 410,
+      "body": "03_wing_release",
+      "layers": [
+        {
+          "id": "wind_2",
+          "opacity": 0.9
+        }
+      ]
+    },
+    {
+      "at_ms": 430,
+      "body": "03_wing_release",
+      "layers": [
+        {
+          "id": "wind_3",
+          "opacity": 0.55
+        }
+      ]
+    },
+    {
+      "at_ms": 450,
+      "body": "03_wing_release"
+    },
+    {
+      "at_ms": 490,
+      "body": "04_follow_through"
+    },
+    {
+      "at_ms": 650,
+      "body": "05_fold_recover"
+    },
+    {
+      "at_ms": 850,
+      "body": "00_ready"
+    }
+  ],
+  "review_profile": [
+    "two_wings_as_arms_no_hands",
+    "wing_roots_and_feather_fans",
+    "two_claw_planted_support",
+    "pose_and_adjacent_phase_visual_review",
+    "one_separate_wind_blade",
+    "frame_atlas_gif_roundtrip"
+  ],
+  "review_annotations": {
+    "author_visual_review": "REVIEW.md",
+    "independent_visual_review": "pending root gate",
+    "runtime_integration": false,
+    "projectile_semantics": "Existing Demo single wind-blade placeholder; not a new gameplay confirmation."
+  }
+}
