@@ -3,73 +3,91 @@
   "scope": "attack_or_primary_action_only",
   "excluded": "tangseng_has_no_attack",
   "runtime_integrated": false,
-  "quality_gate": "all_keyframes_and_transitions_reviewed_no_known_must_fix",
+  "quality_gate": "reopened_viewpoint_baseline_mismatch",
   "roles": [
     {
       "id": "guard_monk",
       "name": "护寺棍僧",
       "action": "staff_finish",
-      "status": "candidate_pass",
-      "path": "../guard_monk_pixel_attack_v5/README.md"
+      "status": "needs_viewpoint_review",
+      "path": "../guard_monk_pixel_attack_v5/README.md",
+      "prior_local_gate": "candidate_pass",
+      "blocker": "按负责人上传图制作，须核对当前斜俯视方向；原图选用不等于棋盘适配通过。"
     },
     {
       "id": "wild_hunter",
       "name": "山野猎户",
       "action": "bow_shot",
-      "status": "candidate_pass",
-      "path": "wild_hunter/README.md"
+      "status": "needs_viewpoint_rework",
+      "path": "wild_hunter/README.md",
+      "prior_local_gate": "candidate_pass",
+      "blocker": "误用旧造型/动作视角，当前斜向棋盘用途待返工。"
     },
     {
       "id": "foxfire_imp",
       "name": "狐火小妖",
       "action": "alternating_fire",
-      "status": "candidate_pass",
-      "path": "foxfire_imp/README.md"
+      "status": "needs_viewpoint_rework",
+      "path": "foxfire_imp/README.md",
+      "prior_local_gate": "candidate_pass",
+      "blocker": "误用旧造型/动作视角，当前斜向棋盘用途待返工。"
     },
     {
       "id": "sparrow_spirit",
       "name": "山雀精",
       "action": "wing_wind",
-      "status": "candidate_pass",
-      "path": "sparrow_spirit/README.md"
+      "status": "needs_viewpoint_rework",
+      "path": "sparrow_spirit/README.md",
+      "prior_local_gate": "candidate_pass",
+      "blocker": "误用旧造型/动作视角，当前斜向棋盘用途待返工。"
     },
     {
       "id": "mountain_wolf",
       "name": "山狼",
       "action": "bite",
-      "status": "candidate_pass",
-      "path": "mountain_wolf/README.md"
+      "status": "needs_viewpoint_rework",
+      "path": "mountain_wolf/README.md",
+      "prior_local_gate": "candidate_pass",
+      "blocker": "误用旧造型/动作视角，当前斜向棋盘用途待返工。"
     },
     {
       "id": "boar",
       "name": "山猪",
       "action": "mace_strike",
-      "status": "candidate_pass",
-      "path": "boar/README.md"
+      "status": "needs_viewpoint_rework",
+      "path": "boar/README.md",
+      "prior_local_gate": "candidate_pass",
+      "blocker": "误用旧造型/动作视角，当前斜向棋盘用途待返工。"
     },
     {
       "id": "gray_rat",
       "name": "灰鼠",
       "action": "sling",
-      "status": "candidate_pass",
-      "path": "gray_rat/README.md"
+      "status": "needs_viewpoint_rework",
+      "path": "gray_rat/README.md",
+      "prior_local_gate": "candidate_pass",
+      "blocker": "误用旧造型/动作视角，当前斜向棋盘用途待返工。"
     },
     {
       "id": "bear_lord",
       "name": "熊山君",
       "action": "heavy_club",
-      "status": "candidate_pass",
-      "path": "bear_lord/README.md"
+      "status": "needs_viewpoint_rework",
+      "path": "bear_lord/README.md",
+      "prior_local_gate": "candidate_pass",
+      "blocker": "误用旧造型/动作视角，当前斜向棋盘用途待返工。"
     },
     {
       "id": "herbal_spirit_child",
       "name": "药灵童子",
       "action": "healing",
-      "status": "candidate_pass",
-      "path": "herbal_spirit_child/README.md"
+      "status": "needs_viewpoint_rework",
+      "path": "herbal_spirit_child/README.md",
+      "prior_local_gate": "candidate_pass",
+      "blocker": "误用旧造型/动作视角，当前斜向棋盘用途待返工。"
     }
   ],
-  "complete": true,
+  "complete": false,
   "healing_scope": "owner_confirmed",
   "body_pose_count": 56,
   "display_stage_count": 90,
@@ -79,8 +97,43 @@
   "last_successfully_pushed_commit": "7097d075b91e1404c773c38928c26bb6aa4beebe",
   "sync_blocker": {
     "limit_mb": 1024,
-    "reported_rejected_size_mb": 1050.203,
+    "reported_rejected_size_mb": 1060.773,
     "reason": "Gitee pre-receive hook: repository size exceeds limit",
     "history_rewritten": false
+  },
+  "current_board_use_approved": false,
+  "review_correction": {
+    "date": "2026-10-26",
+    "reason": "负责人指出最新版人物已调整为斜向；作者核对文档确认，本批八个其他角色误用旧造型/动作稿作为空间参考，遗漏当前斜俯视和斜前/斜后方向门槛。撤回全批通过结论。",
+    "scope": "本次只核对文本来源并纠正状态，未重新逐图判定可复用帧、未生成返工图片。",
+    "required_baselines": [
+      {
+        "roles": [
+          "guard_monk",
+          "mountain_wolf"
+        ],
+        "path": "../rect_iso_duel_v1/README.md",
+        "requirement": "最新双角色斜前SE/斜后NE及镜像；192×96菱格、脚点和支撑范围。约30度仅制作意图，非已标定相机。"
+      },
+      {
+        "roles": [
+          "wild_hunter",
+          "foxfire_imp",
+          "sparrow_spirit",
+          "boar",
+          "gray_rat",
+          "bear_lord",
+          "herbal_spirit_child"
+        ],
+        "path": "../../production/directional_v1/README.md",
+        "requirement": "全员已有正背面斜俯方向参考；在目标棋盘核对角度和站位，不将旧45度说明直接当双角色菱格参数。"
+      }
+    ],
+    "missing_acceptance": [
+      "当前棋盘视角一致性",
+      "既有斜前/斜后方向覆盖",
+      "实际棋子尺度下脚底支撑与动作轴线"
+    ],
+    "historical_checks": "旧手脚、器械、相邻帧和导出检查保留追溯，不能证明当前视角可用。"
   }
 }

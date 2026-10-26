@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a local art review gallery from the saved, verified delivery manifests."""
+"""Build a local art review gallery; current acceptance comes from STATUS.json."""
 from pathlib import Path
 from html import escape
 from html.parser import HTMLParser
@@ -15,6 +15,7 @@ def gifinfo(p):
     return {"frames":im.n_frames,"total_ms":duration,"sha256":filehash(p)}
 def main():
     parser=argparse.ArgumentParser();parser.add_argument("--font",help="Installed Chinese-capable font path for the overview PNG")
+    parser.add_argument("--skip-overview",action="store_true",help="Keep the saved overview image unchanged when correcting review status")
     args=parser.parse_args()
     candidates=[args.font] if args.font else ["/System/Library/Fonts/STHeiti Medium.ttc","C:/Windows/Fonts/msyh.ttc","/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc","/usr/share/fonts/truetype/wqy/wqy-microhei.ttc"]
     font_path=next((Path(x) for x in candidates if x and Path(x).is_file()),None)
@@ -42,16 +43,17 @@ def main():
         action_ms=round(m["action_duration_seconds"]*1000) if role=="guard_monk" else m["duration_ms"]
         idle=round(m["preview_cycle_seconds"]*1000)-action_ms if role=="guard_monk" else m["idle_ms"]
         assert normal["total_ms"]==action_ms+idle and slow["total_ms"]==2*action_ms+idle
-        gate="候选复核通过" if byid[role]["status"]=="candidate_pass" else "最终复核中"
+        gate={"candidate_pass":"候选复核通过","needs_viewpoint_rework":"视角不符 · 待返工","needs_viewpoint_review":"斜向棋盘适配 · 待复核"}.get(byid[role]["status"],"最终复核中")
         cards.append(f'<section class="role" id="{role}"><h2>{title} · {action}</h2><div class="meta">{gate} · {nbody}个身体姿势 · {len(frames)}个显示阶段</div><div class="preview"><figure><img loading="lazy" src="{prefix}/preview.gif" alt="{title}正常动画"><figcaption>正常 · {normal["total_ms"]/1000:g}秒</figcaption></figure><figure><img loading="lazy" src="{prefix}/preview_slow.gif" alt="{title}半速动画"><figcaption>半速 · {slow["total_ms"]/1000:g}秒</figcaption></figure></div><p><a href="{prefix}/contact_sheet.png" target="_blank">整套逐帧图</a>　<a href="{prefix}/REVIEW.md">逐帧检查记录</a>　<a href="{prefix}/README.md">素材说明</a></p><details><summary>展开全部{len(frames)}个显示帧</summary><p class="note">按播放顺序排列；点击图片查看原图。相同身体可因残影或弹体位置不同而显示多次。</p><div class="frames">{"".join(framecards)}</div></details></section>')
         nav.append(f'<a href="#{role}">{title}</a>')
         record=frames[min(pick[role],len(frames)-1)];im=Image.open(folder/record["file"]).convert("RGBA")
         x=(index%3)*448;y=(index//3)*496;sheet.paste(Image.alpha_composite(Image.new("RGBA",(448,448),(35,40,48,255)),im).convert("RGB"),(x,y+48))
         dr=ImageDraw.Draw(sheet);dr.text((x+20,y+5),title+" · "+action,fill=(238,219,172),font=font);dr.text((x+20,y+33),f"{nbody} 姿势 / {len(frames)} 阶段",fill=(169,180,185),font=small)
         report.append({"id":role,"title":title,"action":action,"status":byid[role]["status"],"body_count":nbody,"stage_count":len(frames),"folder":prefix,"normal":normal,"slow":slow,"all_stage_files_exist_and_decode":True})
-    html='<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>像素主动作 · 逐帧审阅</title><style>'+CSS+'</style><header><h1>像素主动作 · 逐帧审阅</h1><p>八套攻击 ＋ 药灵治疗。每套提供正常、半速和全部显示帧，逐帧记录可追溯。<br>当前为美术候选，负责人体验和游戏接入分别验收。</p><button onclick="document.body.classList.toggle(\'light\')">切换单帧底色</button><nav>'+''.join(nav)+'</nav></header><main>'+''.join(cards)+'</main><footer>2026-10-26 · 05｜美术 / 角色 / UI</footer></html>'
+    correction='<p role="alert" style="padding:16px;border:2px solid #dd995a;background:#35281f;color:#ffe3bf"><strong>当前斜向棋盘用途未通过 · 旧通过结论已撤回</strong><br>本批其他八角色沿用了旧造型／动作视角，遗漏最新斜俯视方向要求，待返工；棍僧须核对当前棋盘适配。以下为旧稿和历史局部检查，图片尚未返工。<br><a href="README.md">查看方向依据与返工门槛</a></p>' if status["quality_gate"]=="reopened_viewpoint_baseline_mismatch" else ''
+    html='<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>像素主动作 · 逐帧审阅</title><style>'+CSS+'</style><header><h1>像素主动作 · 逐帧审阅</h1>'+correction+'<p>八套攻击 ＋ 药灵治疗。每套提供正常、半速和全部显示帧，逐帧记录可追溯。<br>当前状态见各角色标记；文件可播放不代表视觉或游戏用途通过。</p><button onclick="document.body.classList.toggle(\'light\')">切换单帧底色</button><nav>'+''.join(nav)+'</nav></header><main>'+''.join(cards)+'</main><footer>2026-10-26 · 05｜美术 / 角色 / UI</footer></html>'
     (ROOT/"review.html").write_text(html)
-    sheet.save(ROOT/"overview.png",optimize=True)
+    if not args.skip_overview:sheet.save(ROOT/"overview.png",optimize=True)
     class References(HTMLParser):
         def __init__(self):super().__init__();self.files=[]
         def handle_starttag(self,tag,attrs):
@@ -61,6 +63,9 @@ def main():
     for relative in refs.files:
         target=(ROOT/relative).resolve();assert target.is_relative_to(ROOT.parent) and target.is_file(),relative
     total={"updated":"2026-10-26","role_count":len(report),"body_count":sum(x["body_count"] for x in report),"stage_count":sum(x["stage_count"] for x in report),"all_declared_media_decode":True,"normal_and_slow_timing_matches_manifests":True,"local_html_file_reference_count":len(refs.files),"all_local_html_file_references_exist":True,"html_verification":"static references and media decode; browser interaction not verified (local file URL policy)","runtime_integrated":False,"roles":report}
+    total["quality_gate"]=status["quality_gate"]
+    total["current_board_use_approved"]=status.get("current_board_use_approved",False)
+    total["media_integrity_is_not_visual_acceptance"]=True
     (ROOT/"delivery_audit.json").write_text(json.dumps(total,ensure_ascii=False,indent=2)+"\n")
     print(json.dumps({k:v for k,v in total.items() if k!="roles"},ensure_ascii=False))
 if __name__=="__main__":main()
