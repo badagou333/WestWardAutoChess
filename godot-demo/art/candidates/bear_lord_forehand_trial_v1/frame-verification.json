@@ -1,0 +1,260 @@
+{
+  "frames": [
+    {
+      "file": "attack_00.png",
+      "sha256": "ab8ecfed9e7a2c17dbf3d8e5c4cbb95a28bf1fcdd2999a13705976f643108c8a",
+      "alpha_bbox": [
+        104,
+        73,
+        238,
+        231
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_01.png",
+      "sha256": "b7c0fbb3037331746288e559d9492aef87ac0c7b1ea6ab689d614f67b5fb5f39",
+      "alpha_bbox": [
+        95,
+        75,
+        246,
+        232
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_02.png",
+      "sha256": "f74709cc4d084cb1325f1179eaec93e84c1335c3bf59db77d05bdd4d2a990927",
+      "alpha_bbox": [
+        95,
+        75,
+        252,
+        226
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_03.png",
+      "sha256": "cd3614a882c2130a8072191f7e6f8ba65a98bf9974a3ccd18b796b153bbd27f4",
+      "alpha_bbox": [
+        96,
+        75,
+        253,
+        226
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_04.png",
+      "sha256": "f6726ad16ea548b36a4e5487016b7b921a13ebb45de64b2b834a88b035d916f9",
+      "alpha_bbox": [
+        95,
+        74,
+        254,
+        226
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_05.png",
+      "sha256": "51a023110c4c20211d4cff65f8399dc1def7be9b564636f80454342fca188693",
+      "alpha_bbox": [
+        91,
+        72,
+        254,
+        226
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_06.png",
+      "sha256": "dd91a9bbe896bcbf232808db28b40435323b82f1ba3ff4044907b3fc688e2ecd",
+      "alpha_bbox": [
+        65,
+        67,
+        253,
+        226
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_07.png",
+      "sha256": "28e78de79d15c0d32ba91494acd281829e94606f64ea9bc88616342e01cc2024",
+      "alpha_bbox": [
+        37,
+        65,
+        254,
+        226
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_08.png",
+      "sha256": "42d18cf376a31f3b294c426c036d47c2567e1b16f1099ab2ca36943944d0e2b9",
+      "alpha_bbox": [
+        81,
+        20,
+        272,
+        226
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_09.png",
+      "sha256": "c6bee50e538a50df02b2c6b0eb7f90c324b948f4a29ff62770ae46167ff15cba",
+      "alpha_bbox": [
+        82,
+        19,
+        255,
+        227
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_10.png",
+      "sha256": "8d6f25413e3afaaa6beb93118d8d391d9076b2a0e2b4dd63605e2a5aa8f767ae",
+      "alpha_bbox": [
+        116,
+        74,
+        251,
+        235
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_11.png",
+      "sha256": "899cfbd653d9c6c9be86c4d38a50ea603420189d36e42dd5040272fbe72962df",
+      "alpha_bbox": [
+        118,
+        73,
+        331,
+        230
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_12.png",
+      "sha256": "cba24b64726fce546953181f7765ed31fc2c72a1bc0ceb5254419a4883fed103",
+      "alpha_bbox": [
+        118,
+        73,
+        318,
+        230
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_13.png",
+      "sha256": "0043d95bb31b36a7961043fdcc4109a7f5485ca9f5dad9d687a5fe310310afcf",
+      "alpha_bbox": [
+        118,
+        73,
+        314,
+        227
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_14.png",
+      "sha256": "dfd0404abc6dbc9aaa0381a86ffde0e5a6215b0989a0c15dd1f4ac46a80a4b61",
+      "alpha_bbox": [
+        128,
+        75,
+        316,
+        227
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_15.png",
+      "sha256": "7bb48ad4460e5fe4f0f70e144d34fe2b49de10bda957d78a8eccfaf1a65cd262",
+      "alpha_bbox": [
+        128,
+        75,
+        309,
+        227
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_16.png",
+      "sha256": "31600f571b6181dab84e9fcd5ef0904ee2a5d97d2e8f5923ef8d79deb8153de3",
+      "alpha_bbox": [
+        127,
+        74,
+        284,
+        227
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_17.png",
+      "sha256": "9523660e872b3005b041390c3906fef22472af8f98b6db5e6c759de869e30366",
+      "alpha_bbox": [
+        111,
+        73,
+        240,
+        226
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_18.png",
+      "sha256": "3a54fa8250e4c7afb6782835a100f7e6b64c6481687f527bbee28f1cbe90dce0",
+      "alpha_bbox": [
+        104,
+        73,
+        239,
+        231
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_19.png",
+      "sha256": "decab2d874d26a9a554c6690e3f4dd121b38684a3ea1ca8cb01e89fabca7c535",
+      "alpha_bbox": [
+        104,
+        73,
+        238,
+        231
+      ],
+      "outer_4px_alpha_max": 0
+    }
+  ],
+  "source_skipped_clipped_frames": [
+    {
+      "frame": 52,
+      "time_seconds": 1.633333
+    },
+    {
+      "frame": 53,
+      "time_seconds": 1.666667
+    }
+  ],
+  "source_selected_frames": [
+    1,
+    16,
+    23,
+    25,
+    35,
+    40,
+    43,
+    45,
+    48,
+    50,
+    51,
+    54,
+    55,
+    58,
+    74,
+    78,
+    81,
+    85,
+    89,
+    96
+  ],
+  "notes": [
+    "Frame boundaries only: not visual or extraction quality acceptance.",
+    "Preview GIF timestamps are rounded to GIF centiseconds; use manifest at values for runtime."
+  ]
+}
