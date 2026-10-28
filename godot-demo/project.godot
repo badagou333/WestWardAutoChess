@@ -13,6 +13,7 @@ config_version=5
 config/name="西游护送"
 run/main_scene="res://scenes/escort_route.tscn"
 run/main_scene.diamond_duel="res://scenes/diamond_duel.tscn"
+run/main_scene.bear_forehand_trial="res://scenes/board_bear_forehand_trial.tscn"
 config/features=PackedStringArray("4.7")
 
 [display]
