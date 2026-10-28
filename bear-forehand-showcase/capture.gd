@@ -29,7 +29,7 @@ func run() -> void:
 		quit(1)
 		return
 	for i in scene.frame_times.size():
-		if not await capture(i,scene.HOLD+scene.frame_times[i]+0.0001):
+		if not await capture(i,scene.frame_times[i]+0.0001):
 			push_error("Could not save frame %d" % i)
 			quit(1)
 			return

@@ -1,7 +1,9 @@
 extends Node2D
 ## A single sprite showcase, without the game scene, combat or other actors.
 const MANIFEST := "res://art/attack/manifest.json"
-const HOLD := 0.70
+## The approved source clip's video track is 3.500 s; this is not its 0.820 s battle cut.
+const VIDEO_DURATION := 3.5
+const LOOP_INTERVAL := 0.35
 const FOOT := Vector2(960,650)
 const DISPLAY_SCALE := 2.0
 const RATIO := 1152.0/1400.0
@@ -35,7 +37,7 @@ func load_frames() -> bool:
 	if manifest.get("source_sign",0) != 1 or manifest.get("source_back",true) != false: return false
 	if not manifest.get("frames") is Array or manifest.frames.size()!=20: return false
 	if not manifest.get("foot") is Array or manifest.foot.size()!=2: return false
-	var target_duration := float(manifest.get("duration_ms",0))/1000.0
+	var target_duration := VIDEO_DURATION
 	var index := int(manifest.get("impact_index",-1))
 	if target_duration<=0.0 or index<0 or index>=manifest.frames.size(): return false
 	var loaded: Array[Texture2D] = []
@@ -44,8 +46,10 @@ func load_frames() -> bool:
 	for item in manifest.frames:
 		if not item is Dictionary: return false
 		var filename := str(item.get("file",""))
-		var at := float(item.get("at",-1))
-		if filename!=filename.get_file() or not filename.ends_with(".png") or at<=previous or at>=target_duration: return false
+		var raw_time = item.get("source_time_seconds")
+		if not (raw_time is float or raw_time is int): return false
+		var at := float(raw_time)
+		if filename!=filename.get_file() or not filename.ends_with(".png") or not is_finite(at) or at<=previous or at>=target_duration: return false
 		var path := "res://art/attack/"+filename
 		var picture := Image.new()
 		if picture.load(path)!=OK or picture.get_size()!=Vector2i(384,320): return false
@@ -63,9 +67,8 @@ func load_frames() -> bool:
 
 func frame_at(time: float) -> int:
 	if not ready_to_play: return -1
-	var phase := fposmod(time,HOLD+duration)
-	if phase<HOLD: return 0
-	var attack_time := phase-HOLD
+	var phase := fposmod(time,duration+LOOP_INTERVAL)
+	var attack_time := minf(phase,duration)
 	var current := 0
 	for index in frame_times.size():
 		if attack_time+0.00000001<frame_times[index]: break
@@ -74,10 +77,10 @@ func frame_at(time: float) -> int:
 
 func _process(delta: float) -> void:
 	if not ready_to_play: return
-	var period := HOLD+duration
-	var before := floori((elapsed-HOLD-impact)/period)
+	var period := duration+LOOP_INTERVAL
+	var before := floori((elapsed-impact)/period)
 	elapsed += delta
-	var after := floori((elapsed-HOLD-impact)/period)
+	var after := floori((elapsed-impact)/period)
 	if after>before and sound_player.stream!=null: sound_player.play()
 	queue_redraw()
 
