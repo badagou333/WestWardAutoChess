@@ -1,0 +1,428 @@
+{
+  "status": "needs_visual_review",
+  "art_source": "user_supplied_video_existing_selected_pngs",
+  "method": "local pale-background optical unmix + explicit soft lower-limb veil correction; no drawing or generation",
+  "background_rgb": [
+    237.0,
+    237.0,
+    237.0
+  ],
+  "foot_veil_ellipses": {
+    "10": [
+      [
+        145,
+        210,
+        19,
+        17,
+        0.09
+      ]
+    ],
+    "11": [
+      [
+        145,
+        209,
+        20,
+        19,
+        0.16
+      ],
+      [
+        188,
+        190,
+        23,
+        11,
+        0.1
+      ]
+    ],
+    "12": [
+      [
+        145,
+        210,
+        20,
+        18,
+        0.13
+      ],
+      [
+        188,
+        189,
+        22,
+        12,
+        0.07
+      ]
+    ]
+  },
+  "unchanged": [
+    "20 frame identities",
+    "384x320 canvas",
+    "manifest",
+    "foot anchor",
+    "source frame times"
+  ],
+  "limitations": [
+    "approximate foreground colour estimated at contaminated edges",
+    "some source arc haze and motion blur remain",
+    "no extra frames or reconstruction of clipped weapon",
+    "offline composite is not runtime verification"
+  ],
+  "frames": [
+    {
+      "file": "attack_00.png",
+      "source_sha256": "ab8ecfed9e7a2c17dbf3d8e5c4cbb95a28bf1fcdd2999a13705976f643108c8a",
+      "output_sha256": "e9d2bfd63ad368cffe3543159f81650498119a2f7d69338df68c7d96694cc8f6",
+      "edge_corrected_pixels": 2537,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 2588,
+      "alpha_coverage_before": 13356.302,
+      "alpha_coverage_after": 12928.02,
+      "white_edge_proxy_before": 48,
+      "white_edge_proxy_after": 3,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_01.png",
+      "source_sha256": "b7c0fbb3037331746288e559d9492aef87ac0c7b1ea6ab689d614f67b5fb5f39",
+      "output_sha256": "455fcb8e06aeaf2cf905ddda19eb23e68d79014e017c6993ab8ac59957fdbaaf",
+      "edge_corrected_pixels": 2104,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 5327,
+      "alpha_coverage_before": 14311.789,
+      "alpha_coverage_after": 14078.514,
+      "white_edge_proxy_before": 76,
+      "white_edge_proxy_after": 1,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_02.png",
+      "source_sha256": "f74709cc4d084cb1325f1179eaec93e84c1335c3bf59db77d05bdd4d2a990927",
+      "output_sha256": "836f61123bc2dcc2d2e765aa7a87bed8b2fa90897e4459b13c71443be92bd934",
+      "edge_corrected_pixels": 2102,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 5364,
+      "alpha_coverage_before": 14934.326,
+      "alpha_coverage_after": 14711.753,
+      "white_edge_proxy_before": 55,
+      "white_edge_proxy_after": 1,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_03.png",
+      "source_sha256": "cd3614a882c2130a8072191f7e6f8ba65a98bf9974a3ccd18b796b153bbd27f4",
+      "output_sha256": "641679189f2ba32cae5492f3ffeb7ae25b2487de561b371351649dcd208b771f",
+      "edge_corrected_pixels": 2163,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 5519,
+      "alpha_coverage_before": 15113.364,
+      "alpha_coverage_after": 14875.859,
+      "white_edge_proxy_before": 73,
+      "white_edge_proxy_after": 3,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_04.png",
+      "source_sha256": "f6726ad16ea548b36a4e5487016b7b921a13ebb45de64b2b834a88b035d916f9",
+      "output_sha256": "45da881cbf6954ef71c0d55deb8c199380ef49dbfdc3496617752b4faed2a3ae",
+      "edge_corrected_pixels": 2420,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 5174,
+      "alpha_coverage_before": 15286.357,
+      "alpha_coverage_after": 15011.78,
+      "white_edge_proxy_before": 89,
+      "white_edge_proxy_after": 1,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_05.png",
+      "source_sha256": "51a023110c4c20211d4cff65f8399dc1def7be9b564636f80454342fca188693",
+      "output_sha256": "2b305e0515f81a137da2f61308177b09cc6d032f17da7765da20a5dcb544e3c9",
+      "edge_corrected_pixels": 2377,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 5404,
+      "alpha_coverage_before": 15249.103,
+      "alpha_coverage_after": 14990.882,
+      "white_edge_proxy_before": 75,
+      "white_edge_proxy_after": 0,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_06.png",
+      "source_sha256": "dd91a9bbe896bcbf232808db28b40435323b82f1ba3ff4044907b3fc688e2ecd",
+      "output_sha256": "8ef1f1121fec6b3e44ff29c43f451f9363f676a3669aebfbda88daced3cb7b01",
+      "edge_corrected_pixels": 2274,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 5711,
+      "alpha_coverage_before": 15037.969,
+      "alpha_coverage_after": 14791.804,
+      "white_edge_proxy_before": 109,
+      "white_edge_proxy_after": 2,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_07.png",
+      "source_sha256": "28e78de79d15c0d32ba91494acd281829e94606f64ea9bc88616342e01cc2024",
+      "output_sha256": "cfb729183d93272d1f6617da0d7b90d200ac476efb027ae83494aa84c1e77e4f",
+      "edge_corrected_pixels": 2443,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 5218,
+      "alpha_coverage_before": 15005.726,
+      "alpha_coverage_after": 14718.176,
+      "white_edge_proxy_before": 101,
+      "white_edge_proxy_after": 3,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_08.png",
+      "source_sha256": "42d18cf376a31f3b294c426c036d47c2567e1b16f1099ab2ca36943944d0e2b9",
+      "output_sha256": "5ead6034e06fc9dcd6ee15adbfd47f4eee09745959151235d4f3d67efd9b5689",
+      "edge_corrected_pixels": 2270,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 7489,
+      "alpha_coverage_before": 15993.494,
+      "alpha_coverage_after": 15778.067,
+      "white_edge_proxy_before": 167,
+      "white_edge_proxy_after": 1,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_09.png",
+      "source_sha256": "c6bee50e538a50df02b2c6b0eb7f90c324b948f4a29ff62770ae46167ff15cba",
+      "output_sha256": "8f97842c21bf85f0a39f9a47b99643bdefc841c3ed00e8bd6a2a42320080e151",
+      "edge_corrected_pixels": 2332,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 6774,
+      "alpha_coverage_before": 15318.926,
+      "alpha_coverage_after": 15042.796,
+      "white_edge_proxy_before": 268,
+      "white_edge_proxy_after": 2,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_10.png",
+      "source_sha256": "8d6f25413e3afaaa6beb93118d8d391d9076b2a0e2b4dd63605e2a5aa8f767ae",
+      "output_sha256": "06cc05af5efc223af5190bd18ec1d3cb3f9f28c5c0e6d57cf61d58e30ae19790",
+      "edge_corrected_pixels": 2500,
+      "foot_veil_pixels": 872,
+      "unchanged_deep_core_pixels": 5468,
+      "alpha_coverage_before": 11728.733,
+      "alpha_coverage_after": 11228.416,
+      "white_edge_proxy_before": 740,
+      "white_edge_proxy_after": 13,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_11.png",
+      "source_sha256": "899cfbd653d9c6c9be86c4d38a50ea603420189d36e42dd5040272fbe72962df",
+      "output_sha256": "be11a3073c58fe5b39a152b4cc5a1a98a49a7cc63b950bdf5303f05ce2b3d13b",
+      "edge_corrected_pixels": 2513,
+      "foot_veil_pixels": 1637,
+      "unchanged_deep_core_pixels": 4204,
+      "alpha_coverage_before": 12675.459,
+      "alpha_coverage_after": 12380.059,
+      "white_edge_proxy_before": 411,
+      "white_edge_proxy_after": 2,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_12.png",
+      "source_sha256": "cba24b64726fce546953181f7765ed31fc2c72a1bc0ceb5254419a4883fed103",
+      "output_sha256": "6e5b5f5d94d531f10d852a8f1aa4d6ceff6ba27e56311566a1382dc17dfb5dd2",
+      "edge_corrected_pixels": 2425,
+      "foot_veil_pixels": 1552,
+      "unchanged_deep_core_pixels": 3911,
+      "alpha_coverage_before": 12571.494,
+      "alpha_coverage_after": 12342.584,
+      "white_edge_proxy_before": 209,
+      "white_edge_proxy_after": 1,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_13.png",
+      "source_sha256": "0043d95bb31b36a7961043fdcc4109a7f5485ca9f5dad9d687a5fe310310afcf",
+      "output_sha256": "6d4bed7b91de2d9b14a446640076d0f1ed0a0f102ffcbcd5f94daecf2fd84479",
+      "edge_corrected_pixels": 2150,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 3910,
+      "alpha_coverage_before": 12398.632,
+      "alpha_coverage_after": 12198.188,
+      "white_edge_proxy_before": 79,
+      "white_edge_proxy_after": 0,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_14.png",
+      "source_sha256": "dfd0404abc6dbc9aaa0381a86ffde0e5a6215b0989a0c15dd1f4ac46a80a4b61",
+      "output_sha256": "53bb086311a38ae09a4da7369eb0700d48a478cf2eab167564108c7d07e2fafd",
+      "edge_corrected_pixels": 1768,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 4120,
+      "alpha_coverage_before": 11151.282,
+      "alpha_coverage_after": 10982.588,
+      "white_edge_proxy_before": 54,
+      "white_edge_proxy_after": 0,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_15.png",
+      "source_sha256": "7bb48ad4460e5fe4f0f70e144d34fe2b49de10bda957d78a8eccfaf1a65cd262",
+      "output_sha256": "c6e4902eac7c898618558bb7e035564a207713ace760835a934525a20da9da55",
+      "edge_corrected_pixels": 1706,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 4264,
+      "alpha_coverage_before": 11532.969,
+      "alpha_coverage_after": 11363.478,
+      "white_edge_proxy_before": 92,
+      "white_edge_proxy_after": 0,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_16.png",
+      "source_sha256": "31600f571b6181dab84e9fcd5ef0904ee2a5d97d2e8f5923ef8d79deb8153de3",
+      "output_sha256": "13f1f99cfc223adf2152dd9f00617b5332c1e847fe1202cf10ebeee8e68905ef",
+      "edge_corrected_pixels": 1952,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 4173,
+      "alpha_coverage_before": 12144.357,
+      "alpha_coverage_after": 11903.333,
+      "white_edge_proxy_before": 65,
+      "white_edge_proxy_after": 0,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_17.png",
+      "source_sha256": "9523660e872b3005b041390c3906fef22472af8f98b6db5e6c759de869e30366",
+      "output_sha256": "33c9eaa013fce0649f6c2019d0c5b485630e74d1354a683cbeebf5aa93186bdb",
+      "edge_corrected_pixels": 2165,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 3939,
+      "alpha_coverage_before": 12775.682,
+      "alpha_coverage_after": 12505.604,
+      "white_edge_proxy_before": 59,
+      "white_edge_proxy_after": 0,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_18.png",
+      "source_sha256": "3a54fa8250e4c7afb6782835a100f7e6b64c6481687f527bbee28f1cbe90dce0",
+      "output_sha256": "a080e6b042e51deab6f51d372a11709eccc46bf421d5b5614a0768fe7ab8e698",
+      "edge_corrected_pixels": 2120,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 3933,
+      "alpha_coverage_before": 13498.247,
+      "alpha_coverage_after": 13210.573,
+      "white_edge_proxy_before": 55,
+      "white_edge_proxy_after": 2,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    },
+    {
+      "file": "attack_19.png",
+      "source_sha256": "decab2d874d26a9a554c6690e3f4dd121b38684a3ea1ca8cb01e89fabca7c535",
+      "output_sha256": "caad6d2d027c01eafa0b2ecb34b2b8d45c38001b58fc015e3c03e58fc7828c4b",
+      "edge_corrected_pixels": 2569,
+      "foot_veil_pixels": 0,
+      "unchanged_deep_core_pixels": 2470,
+      "alpha_coverage_before": 13393.369,
+      "alpha_coverage_after": 12959.369,
+      "white_edge_proxy_before": 47,
+      "white_edge_proxy_after": 1,
+      "new_nontransparent_pixels": 0,
+      "dimensions": [
+        384,
+        320
+      ],
+      "outer_4px_alpha_max": 0
+    }
+  ]
+}
