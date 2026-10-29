@@ -1,0 +1,21 @@
+{
+  "schema": "bear-attack-showcase-v1",
+  "clips": {
+    "front": {
+      "manifest": "art/attack/manifest.json",
+      "audio": "audio/source-track.wav",
+      "video_duration_seconds": 3.5,
+      "loop_interval_seconds": 0.35,
+      "display_scale": 0.75,
+      "source_sign": 1
+    },
+    "back": {
+      "manifest": "art/back/manifest.json",
+      "audio": "audio/back-source-track.wav",
+      "video_duration_seconds": 3.5416666666666665,
+      "loop_interval_seconds": 0.35,
+      "display_scale": 0.75,
+      "source_sign": 1
+    }
+  }
+}

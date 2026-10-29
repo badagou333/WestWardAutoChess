@@ -1,0 +1,38 @@
+{
+  "mvhd": [
+    {
+      "path": "/moov/mvhd",
+      "timescale": 1000,
+      "duration_ticks": 3624,
+      "duration_seconds": 3.624
+    }
+  ],
+  "edit_lists": [
+    [
+      {
+        "segment_duration_movie_ticks": 3542,
+        "media_time_track_ticks": 256
+      }
+    ],
+    [
+      {
+        "segment_duration_movie_ticks": 3624,
+        "media_time_track_ticks": 1024
+      }
+    ]
+  ],
+  "mdhd": [
+    {
+      "path": "/moov/trak/mdia/mdhd",
+      "timescale": 12288,
+      "duration_ticks": 43520,
+      "duration_seconds": 3.5416666666666665
+    },
+    {
+      "path": "/moov/trak/mdia/mdhd",
+      "timescale": 32000,
+      "duration_ticks": 116992,
+      "duration_seconds": 3.656
+    }
+  ]
+}
