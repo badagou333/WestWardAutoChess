@@ -4,9 +4,11 @@ const MANIFEST := "res://art/attack/manifest.json"
 ## The approved source clip's video track is 3.500 s; this is not its 0.820 s battle cut.
 const VIDEO_DURATION := 3.5
 const LOOP_INTERVAL := 0.35
-const FOOT := Vector2(960,650)
-const DISPLAY_SCALE := 2.0
-const RATIO := 1152.0/1400.0
+## Same canvas, grid origin, and 2:1 cell as the selected forest board.
+const FOOT := Vector2(720,441)
+const DISPLAY_SCALE := 0.75
+const GRID_HALF := Vector2(72,36)
+const GRID_BOUNDS := Rect2(216,225,1008,432)
 var frames: Array[Texture2D] = []
 var board: Texture2D
 var frame_times: Array[float] = []
@@ -23,11 +25,12 @@ func _ready() -> void:
 	font.font_names = PackedStringArray(["Heiti SC","Microsoft YaHei","Noto Sans CJK SC","Arial Unicode MS"])
 	sound_player = AudioStreamPlayer.new()
 	add_child(sound_player)
-	var sound_path := "res://audio/attack.wav"
+	var sound_path := "res://audio/source-track.wav"
 	if FileAccess.file_exists(sound_path): sound_player.stream = AudioStreamWAV.load_from_file(sound_path)
 	var board_image := Image.new()
-	if board_image.load("res://art/board.png")==OK: board = ImageTexture.create_from_image(board_image)
+	if board_image.load("res://art/forest-board.png")==OK: board = ImageTexture.create_from_image(board_image)
 	ready_to_play = board!=null and load_frames()
+	if ready_to_play and sound_player.stream!=null: sound_player.play()
 	queue_redraw()
 
 func load_frames() -> bool:
@@ -78,29 +81,41 @@ func frame_at(time: float) -> int:
 func _process(delta: float) -> void:
 	if not ready_to_play: return
 	var period := duration+LOOP_INTERVAL
-	var before := floori((elapsed-impact)/period)
+	var before := floori(elapsed/period)
 	elapsed += delta
-	var after := floori((elapsed-impact)/period)
-	if after>before and sound_player.stream!=null: sound_player.play()
+	var after := floori(elapsed/period)
+	if after>before and sound_player.stream!=null:
+		var phase:=fposmod(elapsed,period)
+		if phase<sound_player.stream.get_length(): sound_player.play(phase)
+		else: sound_player.stop()
 	queue_redraw()
 
-func board_point(grid: Vector2) -> Vector2:
-	var denominator := 1.0+(RATIO-1.0)*grid.y/7.0
-	return Vector2(120.0+0.92*(824.0+1152.0*(grid.x/12.0-0.5)/denominator),
-		110.0+0.92*(228.0+450.0*RATIO*(grid.y/7.0)/denominator))
+func diamond(center: Vector2, inset: float=1.0) -> PackedVector2Array:
+	return PackedVector2Array([center+Vector2(0,-GRID_HALF.y)*inset,center+Vector2(GRID_HALF.x,0)*inset,
+		center+Vector2(0,GRID_HALF.y)*inset,center+Vector2(-GRID_HALF.x,0)*inset])
 
 func _draw() -> void:
-	draw_rect(Rect2(0,0,1920,1080),Color("102323"))
-	if board!=null: draw_texture_rect(board,Rect2(Vector2(120,110),Vector2(1672,941)*0.92),false)
-	for x in range(13): draw_line(board_point(Vector2(x,0)),board_point(Vector2(x,7)),Color(.16,.22,.20,.42),1.2,true)
-	for y in range(8): draw_line(board_point(Vector2(0,y)),board_point(Vector2(12,y)),Color(.16,.22,.20,.42),1.2,true)
+	draw_rect(Rect2(0,0,1440,810),Color("102323"))
+	if board!=null: draw_texture_rect(board,Rect2(0,0,1440,810),false)
+	for u in range(-12,13):
+		for v in range(-12,13):
+			var center:=FOOT+Vector2((u-v)*GRID_HALF.x,(u+v)*GRID_HALF.y)
+			if center.x-GRID_HALF.x<GRID_BOUNDS.position.x or center.x+GRID_HALF.x>GRID_BOUNDS.end.x or center.y-GRID_HALF.y<GRID_BOUNDS.position.y or center.y+GRID_HALF.y>GRID_BOUNDS.end.y: continue
+			var line:=diamond(center)
+			line.append(line[0])
+			draw_polyline(line,Color(0.05,0.13,0.11,0.055),1,true)
+	# The selected central cell is visible like the reference deployment view.
+	var selected:=diamond(FOOT,0.96)
+	draw_colored_polygon(selected,Color(0.44,0.73,0.58,0.14))
+	selected.append(selected[0])
+	draw_polyline(selected,Color("a9dbb1"),2,true)
 	if ready_to_play:
-		draw_set_transform(FOOT,0,Vector2(52,9))
+		draw_set_transform(FOOT,0,Vector2(25,7))
 		draw_circle(Vector2.ZERO,1,Color(.02,.04,.03,.30))
 		draw_set_transform(Vector2.ZERO)
 		var dest := Rect2(FOOT-frame_foot*DISPLAY_SCALE,Vector2(384,320)*DISPLAY_SCALE)
 		draw_texture_rect(frames[frame_at(elapsed)],dest,false)
 	elif font!=null:
-		draw_string(font,Vector2(610,555),"素材未就绪，请检查攻击帧",HORIZONTAL_ALIGNMENT_LEFT,-1,34,Color.WHITE)
+		draw_string(font,Vector2(420,500),"素材未就绪，请检查攻击帧",HORIZONTAL_ALIGNMENT_LEFT,-1,24,Color.WHITE)
 	if font!=null:
-		draw_string(font,Vector2(145,95),"熊山君 · 普通攻击展示",HORIZONTAL_ALIGNMENT_LEFT,-1,30,Color("e3e6db"))
+		draw_string(font,Vector2(35,55),"熊山君 · 普通攻击展示",HORIZONTAL_ALIGNMENT_LEFT,-1,24,Color("e3e6db"))
