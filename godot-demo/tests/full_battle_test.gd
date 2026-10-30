@@ -4,7 +4,7 @@ func _init() -> void:
 	call_deferred("_run")
 
 func _run() -> void:
-	var game = load("res://scenes/main.tscn").instantiate()
+	var game = load("res://scripts/game.gd").new()
 	root.add_child(game)
 	await process_frame
 	for i in [0,1,2]:

@@ -22,8 +22,7 @@ func check(ok: bool, label: String) -> void:
 		push_error(label)
 
 func fresh(depth := true, profile := "bear"):
-	var scene := "res://scenes/board_trial.tscn" if depth else "res://scenes/board_trial_legacy.tscn"
-	var game=load(scene).instantiate()
+	var game=load("res://scenes/board_trial.tscn").instantiate() if depth else load("res://scripts/board_trial.gd").new()
 	game.enemy_profile=profile
 	root.add_child(game)
 	game.set_process(false)

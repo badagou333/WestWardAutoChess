@@ -24,7 +24,7 @@ func run() -> void:
 	if packaged:
 		check(not FileAccess.file_exists(STAGE_PATH),"isolated main-pack mount cannot read original PNG bytes from host source fallback")
 		check(not FileAccess.file_exists("res://tests/board_trial_pack_boot.gd"),"isolated main-pack mount excludes host test source; run absolute host script only")
-	for name in ["board_trial","board_trial_legacy","audio_trial","escort_route","free_escort","main","monk_animation_trial"]:
+	for name in ["board_trial","audio_trial"]:
 		var scene_path: String="res://scenes/"+name+".tscn"
 		check(ResourceLoader.exists(scene_path),"actual entry exists without fallback "+name)
 		var scene=load(scene_path)
@@ -91,10 +91,6 @@ func run() -> void:
 			check((game._alive(game._record("tangseng")) and game.actors.filter(func(actor): return not actor.friendly).all(func(actor): return not game._alive(actor))) if game.victory else not game._alive(game._record("tangseng")),"default pack result obeys actual victory/failure conditions")
 			print("BOARD_PACK_A profile=",game.enemy_profile," victory=",game.victory," seconds=",game.elapsed," TangHP=",settled.tangseng_hp)
 			cases.append({"entry":name,"complete":true,"report":settled})
-		elif name=="board_trial_legacy":
-			check(game.get_script().resource_path=="res://scripts/board_trial.gd" and game.actors.size()==13 and game.enemy_profile=="bear","legacy rectangular board keeps original controller and default roster")
-			check(game.actors.all(func(actor): return actor.node.position==game.Config.center(actor.cell) and actor.node.scale.is_equal_approx(Vector2.ONE*0.72) and not actor.node.presentation.has_method("draw_sample")),"legacy actors retain exact rectangular feet, original 0.72 scale and viewers")
-			cases.append({"entry":name,"complete":true,"config":game.report().config})
 		elif name=="audio_trial":
 			check(game.get_script().resource_path=="res://scripts/audio_trial.gd" and game.actors.size()==2 and game.setup_specs.size()==2,"independent audio trial keeps its own two-unit controller and configuration")
 			check(game.setup_specs[0].friendly and game.setup_specs[0].key=="guard_monk" and not game.setup_specs[1].friendly and game.setup_specs[1].key=="wolf","audio trial still defaults to real guard versus wolf without mandatory Tang")
@@ -103,11 +99,6 @@ func run() -> void:
 			while game.phase==game.Phase.BATTLE and game.elapsed<60: game.step(1.0/60)
 			check(game.phase==game.Phase.RESULT and game.result_count==1,"independent audio trial reaches one actual elimination result")
 			cases.append({"entry":name,"complete":true,"report":game.report()})
-		else:
-			game._on_shop_pressed(0)
-			check(game.heroes.size()==1 and game.coins==2,"legacy economy boots unchanged "+name)
-			check(game.heroes[0].presentation.motion_sample_enabled==(name=="monk_animation_trial"),"only existing explicit monk entry adopts candidate "+name)
-			cases.append({"entry":name,"complete":true,"heroes":game.heroes.size(),"coins":game.coins})
 		print("BOARD_PACK_BOOT ",name)
 		game.free()
 	if packaged:
@@ -123,6 +114,6 @@ func run() -> void:
 		if argument.begins_with("--output="): output_path=argument.trim_prefix("--output=")
 	var file:=FileAccess.open(output_path,FileAccess.WRITE)
 	check(file!=null,"pack boot evidence opens at requested new path")
-	if file: file.store_string(JSON.stringify({"scope":"seven actual main-project entries; 3D identity/isolation only, not 3D runtime acceptance","packaged":packaged,"pack_mode_is_explicit_user_argument":packaged,"resource_root":ProjectSettings.globalize_path("res://"),"host_source_fallback_gate_checked":packaged,"checks":checks,"failures":failures,"cases":cases,"stage":stage_evidence},"\t"))
+	if file: file.store_string(JSON.stringify({"scope":"two retained main-project entries; 3D identity/isolation only, not 3D runtime acceptance","packaged":packaged,"pack_mode_is_explicit_user_argument":packaged,"resource_root":ProjectSettings.globalize_path("res://"),"host_source_fallback_gate_checked":packaged,"checks":checks,"failures":failures,"cases":cases,"stage":stage_evidence},"\t"))
 	print("BOARD_PACK_BOOT failures=",failures)
 	quit(1 if failures else 0)

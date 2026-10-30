@@ -10,7 +10,7 @@ func check(ok: bool, label: String) -> void:
 		push_error(label)
 func _initialize() -> void: call_deferred("run")
 func fresh():
-	var game = load("res://scenes/board_trial_legacy.tscn").instantiate()
+	var game = load("res://scripts/board_trial.gd").new()
 	check(game.get_script().resource_path=="res://scripts/board_trial.gd","historical rectangular fixtures explicitly use the legacy controller")
 	game.enemy_profile = "legacy"
 	root.add_child(game)

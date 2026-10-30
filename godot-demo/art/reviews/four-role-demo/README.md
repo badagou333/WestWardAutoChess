@@ -4,7 +4,7 @@
 
 ## 六角色统一预览
 
-六角色现在也可在真实 Godot 棋盘试战斗：见 [启动与操作](../six-role-battle/README.md)，Windows 双击 `../six-role-battle/launch.cmd`。
+六角色独立试战曾在真实Godot棋盘运行；该试玩已于2026-10-29按负责人确认清理，详见[历史记录](../six-role-battle/README.md)。
 
 直接打开本目录 `index.html`，角色菜单现包含护寺棍僧、狐火小妖、山野猎户、药灵童子、山雀精、熊山君。保留原 `four-role-demo` 路径，已有链接和浏览器书签继续有效。
 

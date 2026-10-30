@@ -12,7 +12,7 @@ func play_wave(game):
 		if game.state != game.GameState.BATTLE_RUNNING: return
 	check(false,"Wave must terminate within 120 seconds")
 func run():
-	var game = load("res://scenes/main.tscn").instantiate()
+	var game = load("res://scripts/game.gd").new()
 	root.add_child(game)
 	game.set_process(false)
 	check(game.coins==3,"Three-coin start")

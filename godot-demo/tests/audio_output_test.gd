@@ -10,7 +10,7 @@ func run():
 		print("AUDIO_OUTPUT_SKIPPED: requires a window and real audio driver")
 		quit(2)
 		return
-	var game = load("res://scenes/main.tscn").instantiate()
+	var game = load("res://scripts/game.gd").new()
 	root.add_child(game)
 	game.set_process(false)
 	var sound = game.audio_feedback

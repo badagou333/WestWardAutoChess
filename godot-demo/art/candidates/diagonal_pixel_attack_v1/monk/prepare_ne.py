@@ -10,7 +10,7 @@ import sys,json,hashlib,math
 import numpy as np
 from PIL import Image,ImageDraw
 ROOT=Path(__file__).resolve().parent
-sys.path.insert(0,str(ROOT.parent.parent/'pixel_attack_series_v1/tools'))
+sys.path.insert(0,str(ROOT.parent/'tools'))
 from build_attack import build_assets,extract
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 raw=json.loads((ROOT/'source/ne_extraction.json').read_text())

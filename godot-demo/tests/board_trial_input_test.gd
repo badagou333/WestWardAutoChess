@@ -130,7 +130,7 @@ func await_result() -> void:
 	check(game.phase==game.Phase.RESULT,"normal production frames reach result")
 func run() -> void:
 	root.size = Vector2i(1280,720)
-	game = load("res://scenes/board_trial_legacy.tscn").instantiate()
+	game = load("res://scripts/board_trial.gd").new()
 	root.add_child(game)
 	current_scene = game
 	game.audio_feedback.enabled = false

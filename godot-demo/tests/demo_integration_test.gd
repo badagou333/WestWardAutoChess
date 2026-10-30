@@ -7,7 +7,7 @@ func check(value: bool, label: String) -> void:
 		push_error(label)
 
 func make_game():
-	var game = load("res://scenes/main.tscn").instantiate()
+	var game = load("res://scripts/game.gd").new()
 	root.add_child(game)
 	game.set_process(false)
 	return game

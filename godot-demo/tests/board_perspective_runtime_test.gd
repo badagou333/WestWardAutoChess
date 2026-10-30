@@ -71,7 +71,7 @@ func initialized(sound, label: String) -> void:
 	check(sound.loaded_keys.all(func(key): return key in ALLOWED) and sound.rejected_keys.is_empty(),label+" contains no extra UI/material/death/result sound or rejected initialization request")
 
 func fresh(depth: bool):
-	var game=load("res://scenes/board_trial.tscn" if depth else "res://scenes/board_trial_legacy.tscn").instantiate()
+	var game=load("res://scenes/board_trial.tscn").instantiate() if depth else load("res://scripts/board_trial.gd").new()
 	game.enemy_profile="bear"
 	root.add_child(game)
 	game.set_process(false)

@@ -22,7 +22,7 @@ func check(condition: bool,label: String) -> void:
 		push_error(label)
 
 func fresh(legacy:=false):
-	var game=load("res://scenes/board_trial_legacy.tscn").instantiate() if legacy else MotionFixture.new()
+	var game=load("res://scripts/board_trial.gd").new() if legacy else MotionFixture.new()
 	root.add_child(game)
 	game.set_process(false)
 	game.audio_feedback.enabled=false

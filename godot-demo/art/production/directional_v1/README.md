@@ -41,7 +41,7 @@ godot --path godot-demo --script res://tests/board_depth_input_test.gd
 godot --path godot-demo --script res://tests/board_depth_capture.gd -- --video --output=/tmp/board-frontal-video
 ```
 
-完整导出和包测试沿用[松风台说明](../../boards/depth_trial_v1/README.md#复现与交接)，还须在 `--main-pack` 上运行绝对路径的 `board_directional_test.gd`，要求10角色全部成功加载，不能用缺包回退通过测试。现有音效仍限非商业试玩。
+旧松风台媒体和复现脚本已按负责人确认清理（[历史记录](../../boards/depth_trial_v1/README.md)）；现行包启动检查见[Demo说明](../../../README.md)，还须在 `--main-pack` 上运行绝对路径的 `board_directional_test.gd`，要求10角色全部成功加载，不能用缺包回退通过测试。现有音效仍限非商业试玩。
 
 ## 生成记录
 

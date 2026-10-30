@@ -22,7 +22,7 @@ from PIL import Image,ImageDraw,ImageFilter
 
 ROOT = Path(__file__).resolve().parent.parent
 WOLF = ROOT/"wolf"
-BUILDER = ROOT.parent/"pixel_attack_series_v1/tools/build_attack.py"
+BUILDER = ROOT/"tools/build_attack.py"
 REPO = ROOT.parents[3]
 sys.dont_write_bytecode = True
 
@@ -85,7 +85,7 @@ def main():
     copied = workspace/"candidates/diagonal_pixel_attack_v1/wolf"
     for name in sorted(inputs):
         target = copied/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(WOLF/name,target)
-    copied_builder = workspace/"candidates/pixel_attack_series_v1/tools/build_attack.py"
+    copied_builder = workspace/"candidates/diagonal_pixel_attack_v1/tools/build_attack.py"
     copied_builder.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(BUILDER,copied_builder)
     for direction in ("se","ne"):
         assert not (copied/direction/"manifest.json").exists()

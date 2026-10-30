@@ -4,11 +4,11 @@ func _init() -> void:
 	call_deferred("_run_test")
 
 func _run_test() -> void:
-	var game_scene = load("res://scenes/main.tscn")
+	var game_scene = load("res://scripts/game.gd")
 	if game_scene == null:
 		_fail("无法加载主场景")
 		return
-	var game = game_scene.instantiate()
+	var game = game_scene.new()
 	root.add_child(game)
 	await process_frame
 

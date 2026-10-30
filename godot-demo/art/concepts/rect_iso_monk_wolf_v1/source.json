@@ -3,7 +3,7 @@
   "date": "2026-10-18",
   "authorization": "D-20261018-001",
   "status": "not_adopted_for_placement_owner_rejected",
-  "owner_feedback": "2026-10-18: characters are not inside the cells; previous static review is not placement acceptance. Retain image as history only.",
+  "owner_feedback": "2026-10-18: characters are not inside cells; 2026-10-29 owner confirmed removal of the rejected historical image.",
   "tool": "built-in imagegen",
   "generation_calls": 1,
   "targeted_revisions": 0,
@@ -26,7 +26,9 @@
     "height": 941,
     "bytes": 2457411,
     "sha256": "2d8e79cf4c06fc3f25a84d8cf05e66ce66f89efdb5ee25a0c69b7d171335bf19",
-    "unmodified_copy": true
+    "unmodified_copy": true,
+    "retained_in_repository": false,
+    "removed_on": "2026-10-29"
   },
   "review": {
     "author_static": "retained; rectangular field with diagonal diamond lattice, redrawn elevated poses and grounding",

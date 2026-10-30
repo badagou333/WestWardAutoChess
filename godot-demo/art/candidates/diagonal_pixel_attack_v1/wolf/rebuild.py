@@ -19,4 +19,4 @@ for d in ['se','ne']:
   spec['status']='reviewed_candidate'
   spec['review_annotations']['visual_gate']='limited_offline_pass; see ../REVIEW_STATUS.json and REVIEW.md; human acceptance pending'
  (folder/'spec.json').write_text(json.dumps(spec,ensure_ascii=False,indent=2)+'\n')
- subprocess.run([sys.executable,str(ROOT.parent.parent/'pixel_attack_series_v1/tools/build_attack.py'),'--spec',str(folder/'spec.json')],check=True)
+ subprocess.run([sys.executable,str(ROOT.parent/'tools/build_attack.py'),'--spec',str(folder/'spec.json')],check=True)

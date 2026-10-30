@@ -7,7 +7,7 @@ func check(ok: bool, label: String):
 		push_error(label)
 func _initialize(): call_deferred("run")
 func run():
-	var game = load("res://scenes/escort_route.tscn").instantiate()
+	var game = load("res://scripts/game.gd").new()
 	root.add_child(game); game.set_process(false)
 	for role in ["guard_monk","wild_hunter","herbal_spirit_child","sparrow_spirit","foxfire_imp","bear_lord","mountain_wolf","gray_rat","boar","tangseng"]:
 		var view = Presentation.new()
@@ -34,7 +34,7 @@ func run():
 	hunter.active_in_battle=true
 	hunter.position=Vector2(600,500)
 	hunter.battle_cell=Vector2i(4,5)
-	game._spawn_enemy("rat",Vector2i(4,8))
+	game._spawn_enemy("rat",Vector2i(4,6))
 	var rat=game.enemies[0]
 	check(hunter.attack_range_cells==3 and rat.attack_range_cells==3,"Trial archer/slinger ranges")
 	var cues: Array[String] = []

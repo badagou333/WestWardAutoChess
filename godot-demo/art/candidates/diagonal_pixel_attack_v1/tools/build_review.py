@@ -24,7 +24,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parent.parent
-OLD_BUILDER = ROOT.parent / "pixel_attack_series_v1/tools/build_attack.py"
+OLD_BUILDER = ROOT / "tools/build_attack.py"
 spec = importlib.util.spec_from_file_location("diagonal_shared_encoding", OLD_BUILDER)
 shared = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(shared)

@@ -22,6 +22,6 @@ SE接触采用imagegen新绘上身，显式蒙版保护原准备姿势的支撑�
 python3 godot-demo/art/candidates/diagonal_pixel_attack_v1/monk/rebuild.py
 ```
 
-需要Python、Pillow、NumPy，公共编码工具复用同仓库pixel_attack_series_v1/tools/build_attack.py。原工具缓存不是重建依赖。完整公共四向菱格对照见[审阅页](../review.html)。
+需要Python、Pillow、NumPy，公共编码工具复用本包tools/build_attack.py。原工具缓存不是重建依赖。完整公共四向菱格对照见[审阅页](../review.html)。
 
 本包仅攻击候选。离线逐帧、相邻姿势、方向和文件检查不代表负责人已认可连续观感，也不代替Godot内攻击距离、命中同步、遮挡、状态切换验收；没有接入运行程序或新增受击动作。SE/NE表现同一方向意图，但不是通过三维投影计算得出的精确30°几何。

@@ -26,6 +26,6 @@
 python3 godot-demo/art/candidates/diagonal_pixel_attack_v1/wolf/rebuild.py
 ```
 
-仓库内原件、准备脚本、显式区域和包装模板足够重建，工具缓存非依赖。公共编码使用同仓库pixel_attack_series_v1/tools/build_attack.py，未借用其旧方向图片。透明身体PNG与图集是角色文件，GIF为深底检查预览；公共四向菱格/正常/半速见[审阅页](../review.html)。
+仓库内原件、准备脚本、显式区域和包装模板足够重建，工具缓存非依赖。公共编码使用本包tools/build_attack.py，未借用其旧方向图片。透明身体PNG与图集是角色文件，GIF为深底检查预览；公共四向菱格/正常/半速见[审阅页](../review.html)。
 
 仅攻击候选，没有受击或运行接入。离线逐帧与技术检查不代替负责人真人连续观感、Godot攻击距离/伤害同步/遮挡/状态切换；约30°俯角是基准意图，不作精密三维标定声明。

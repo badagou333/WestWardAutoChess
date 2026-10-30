@@ -21,7 +21,7 @@ from PIL import Image, ImageDraw
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parent.parent
 MONK = ROOT/"monk"
-entry = importlib.util.spec_from_file_location("monk_preparation_memory_builder",ROOT.parent/"pixel_attack_series_v1/tools/build_attack.py")
+entry = importlib.util.spec_from_file_location("monk_preparation_memory_builder",ROOT/"tools/build_attack.py")
 builder = importlib.util.module_from_spec(entry);entry.loader.exec_module(builder)
 
 

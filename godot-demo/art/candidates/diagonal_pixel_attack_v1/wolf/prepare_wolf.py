@@ -13,7 +13,7 @@ import numpy as np
 from PIL import Image,ImageDraw,ImageFilter
 
 ROOT=Path(__file__).resolve().parent
-PUBLIC=ROOT.parents[1]/"pixel_attack_series_v1/tools/build_attack.py"
+PUBLIC=ROOT.parent/"tools/build_attack.py"
 NAMES=["ready","coil","open_reach","clamp_contact","retract","settle"]
 
 def sha(data):return hashlib.sha256(data).hexdigest()

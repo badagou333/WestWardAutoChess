@@ -21,6 +21,6 @@
 
 ## 重建
 
-使用已安装Pillow、NumPy的Python运行两个角色的rebuild.py，再运行tools/build_review.py。工具只读当前角色清单生成公共预览；同仓库pixel_attack_series_v1/tools/build_attack.py仅提供确定性编码和打包，不提供旧方向图片。公共中文标签使用本机字体，可用--font指定可用字体，不下载字体。
+使用已安装Pillow、NumPy的Python运行两个角色的rebuild.py，再运行tools/build_review.py。工具只读当前角色清单生成公共预览；本包tools/build_attack.py仅提供确定性编码和打包，不提供旧方向图片。公共中文标签使用本机字体，可用--font指定可用字体，不下载字体。
 
 验证记录位于[公共审计](tools/review_integrity.json)及tools中的准备/重建审计文件。视觉结论只记已实际检查的范围，正式采用仍待负责人。

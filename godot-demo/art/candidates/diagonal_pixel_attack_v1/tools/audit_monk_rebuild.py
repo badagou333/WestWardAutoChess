@@ -21,7 +21,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
 MONK = ROOT/"monk"
-BUILDER = ROOT.parent/"pixel_attack_series_v1/tools/build_attack.py"
+BUILDER = ROOT/"tools/build_attack.py"
 
 
 def filehash(path):return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -48,7 +48,7 @@ def main():
         target = copy_root/name
         target.parent.mkdir(parents=True,exist_ok=True)
         shutil.copy2(MONK/name,target)
-    copy_builder = workspace/"candidates/pixel_attack_series_v1/tools/build_attack.py"
+    copy_builder = workspace/"candidates/diagonal_pixel_attack_v1/tools/build_attack.py"
     copy_builder.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(BUILDER,copy_builder)
     for direction in ("se","ne"):
         (copy_root/direction).mkdir()

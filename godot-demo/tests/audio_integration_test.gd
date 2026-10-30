@@ -15,7 +15,7 @@ func run():
 	for argument in OS.get_cmdline_user_args():
 		if argument.begins_with("--source-audio="): source_audio_path=argument.trim_prefix("--source-audio=")
 		elif argument.begins_with("--output="): output_path=argument.trim_prefix("--output=")
-	var game = load("res://scenes/main.tscn").instantiate()
+	var game = load("res://scripts/game.gd").new()
 	root.add_child(game)
 	game.set_process(false)
 	var sound = game.audio_feedback

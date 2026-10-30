@@ -1,7 +1,7 @@
 extends SceneTree
 func _initialize(): call_deferred("run")
 func run():
-	var game = load("res://scenes/main.tscn").instantiate()
+	var game = load("res://scripts/game.gd").new()
 	root.add_child(game)
 	game.set_process(false)
 	game.audio_feedback.enabled = false

@@ -1,3 +1,5 @@
+> 2026-10-29：本旧系列素材已按负责人确认清理；以下仅为删除前历史记录，图像和重建入口不再保证存在。
+
 # 熊山君｜像素双手重棍攻击候选
 
 > **2026-10-26 复审纠正。** 当前状态：视角基线不符，待返工；本包误用旧造型／动作参考，旧局部通过结论不适用于现斜向棋盘。 方向依据与返工门槛见[系列说明](../README.md)。下文保留原制作与检查历史，图片尚未返工。
@@ -8,10 +10,10 @@
 
 ## 查看
 
-- [正常预览](preview.gif)：1.25秒动作＋0.40秒肩侧停顿，合计1.65秒。
-- [半速预览](preview_slow.gif)：动作放慢至2.50秒，停顿仍0.40秒，合计2.90秒。
-- [完整阶段接触表](contact_sheet.png)；[六姿势图集](atlas.png)。
-- 作者逐帧、相邻姿势和修正记录见 [REVIEW.md](REVIEW.md)。技术检查见 [validation.json](validation.json) 与公共工具 [structural_report.json](structural_report.json)，两者不代替视觉验收。
+- 正常预览（历史文件已清理）：1.25秒动作＋0.40秒肩侧停顿，合计1.65秒。
+- 半速预览（历史文件已清理）：动作放慢至2.50秒，停顿仍0.40秒，合计2.90秒。
+- 完整阶段接触表（历史文件已清理）；六姿势图集（历史文件已清理）。
+- 作者逐帧、相邻姿势和修正记录见 REVIEW.md（历史文件已清理）。技术检查见 validation.json（历史文件已清理） 与公共工具 structural_report.json（历史文件已清理），两者不代替视觉验收。
 
 ## 动作与帧
 
@@ -37,8 +39,8 @@
 
 - 完整实发提示词：`source/PROMPT_*.txt`。
 - 工具PNG原路径、原PNG SHA-256、所存无损WebP哈希、解码RGBA哈希与逐像素一致验证：[`source/provenance.json`](source/provenance.json)。采用的生成原件按`lossless=True, exact=True`保存，未做有损压缩。
-- 蒙版、输入裁图、固定最近邻归一与手脚注册：[`prepare_sources.py`](prepare_sources.py)、[`source/preparation_report.json`](source/preparation_report.json)。蒙版外RGBA逐像素保留；没有整体平移／旋转角色代替动作。
-- 每姿势显式取样框、主体连通种子、同一缩放和锚点：[`spec.json`](spec.json)。没有平均切格，也没有把来源图的未用姿势列入动画。
+- 蒙版、输入裁图、固定最近邻归一与手脚注册：`prepare_sources.py`（历史文件已清理）、`source/preparation_report.json`（历史文件已清理）。蒙版外RGBA逐像素保留；没有整体平移／旋转角色代替动作。
+- 每姿势显式取样框、主体连通种子、同一缩放和锚点：`spec.json`（历史文件已清理）。没有平均切格，也没有把来源图的未用姿势列入动画。
 - 只保留必要采用源与编辑输入。未采用的返肩握手实验只留提示词与哈希记录，不进入播放；最终直接重用准备帧闭环。
 
 ## 重建与边界
