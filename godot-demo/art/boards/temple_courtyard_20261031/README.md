@@ -1,4 +1,6 @@
-# 山寺石院棋盘：Demo 接入候选
+# 山寺石院棋盘：旧版，不推荐接入
+
+负责人指出整体场地歪斜，此版撤回接入推荐；横向长方形修订见 [新版本](../temple_courtyard_rect_20261031/README.md)。
 
 2026-10-31。负责人从三款中选择最上方山寺石院，要求制作可供 Demo 使用的完整棋盘。候选由内置 image_gen 基于 `../../concepts/board_character_style_20261031/three-board-concepts.png` 上方方案，以及角色库 O01、O06 的手绘风格生成；未经运行接入或实机验收。
 
