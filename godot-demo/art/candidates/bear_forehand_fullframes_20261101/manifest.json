@@ -1,0 +1,700 @@
+{
+  "status": "draft_not_for_runtime",
+  "source_sha256": "7a58a4a266f0a03344dd88c08ec1ab789d8f9dc481a5123829c6b65b5e18c952",
+  "canvas": [
+    384,
+    320
+  ],
+  "foot": [
+    177,
+    213
+  ],
+  "scale": 0.337662,
+  "translation": [
+    7,
+    -15
+  ],
+  "duration_seconds": 3.5,
+  "frames": [
+    {
+      "file": "attack_001.png",
+      "source_frame_one_based": 1,
+      "source_pts": 0,
+      "source_time_seconds": 0.0,
+      "sha256": "7d31bf27a584ade857fd9263cacbebe07c06373bf64604e9a90e4509ae415c8c"
+    },
+    {
+      "file": "attack_002.png",
+      "source_frame_one_based": 2,
+      "source_pts": 768,
+      "source_time_seconds": 0.05,
+      "sha256": "35a7f2a248a536ebdfc60f6650d87ffb5f70915c4e168965637640bd74ffb1ea"
+    },
+    {
+      "file": "attack_003.png",
+      "source_frame_one_based": 3,
+      "source_pts": 1280,
+      "source_time_seconds": 0.0833333,
+      "sha256": "4bf4f4655dbc34f252ae7b9c6b325925d4988625a00b3444de80de9450cb0a3d"
+    },
+    {
+      "file": "attack_004.png",
+      "source_frame_one_based": 4,
+      "source_pts": 2048,
+      "source_time_seconds": 0.133333,
+      "sha256": "594402cc869ee7bb3c591d56eb110bca9d013bd3463298666407e1010c3f10c2"
+    },
+    {
+      "file": "attack_005.png",
+      "source_frame_one_based": 5,
+      "source_pts": 2560,
+      "source_time_seconds": 0.166667,
+      "sha256": "97c787f1e6a955b14692f0bebacf9b0f51de5e6974d4e4419d8298adb28eeed0"
+    },
+    {
+      "file": "attack_006.png",
+      "source_frame_one_based": 6,
+      "source_pts": 3328,
+      "source_time_seconds": 0.216667,
+      "sha256": "62495b7cef2494e9fb6b20409465a43384bf52a563d690e9ace623060e6e0869"
+    },
+    {
+      "file": "attack_007.png",
+      "source_frame_one_based": 7,
+      "source_pts": 3840,
+      "source_time_seconds": 0.25,
+      "sha256": "9f44598521cd059594af3bb6a989c254c91a7e206a0299cf4a2adc584d06dae7"
+    },
+    {
+      "file": "attack_008.png",
+      "source_frame_one_based": 8,
+      "source_pts": 4608,
+      "source_time_seconds": 0.3,
+      "sha256": "a5df971b39563f302bdd02d6b9f17020b05188671e533859a5dd8e873b4f7523"
+    },
+    {
+      "file": "attack_009.png",
+      "source_frame_one_based": 9,
+      "source_pts": 5120,
+      "source_time_seconds": 0.333333,
+      "sha256": "4c5eb4c760bbf00cbab6b676d6b5ebacd33ef0c122917cd73e16595ecf3c9e4f"
+    },
+    {
+      "file": "attack_010.png",
+      "source_frame_one_based": 10,
+      "source_pts": 5888,
+      "source_time_seconds": 0.383333,
+      "sha256": "a2d70e6467f315252debb9869d0a56bf840bb2f62775eac41fd42f0d3942e9a7"
+    },
+    {
+      "file": "attack_011.png",
+      "source_frame_one_based": 11,
+      "source_pts": 6400,
+      "source_time_seconds": 0.416667,
+      "sha256": "c3fdc5f9d0f9e513d87acfa55cae61a94b1aabab0e489cf7cb6b0846acb7dba3"
+    },
+    {
+      "file": "attack_012.png",
+      "source_frame_one_based": 12,
+      "source_pts": 7168,
+      "source_time_seconds": 0.466667,
+      "sha256": "92687a1cb3768548f3bb9bd395be358408ba4a9fbb0ace2368a204489a3c1a1e"
+    },
+    {
+      "file": "attack_013.png",
+      "source_frame_one_based": 13,
+      "source_pts": 7680,
+      "source_time_seconds": 0.5,
+      "sha256": "e1b593e514d56aa848b5b47ed424f909d81b110cf995e3a3d79abbf740a96a57"
+    },
+    {
+      "file": "attack_014.png",
+      "source_frame_one_based": 14,
+      "source_pts": 8448,
+      "source_time_seconds": 0.55,
+      "sha256": "0c9dc1a8f764f11fa1a77f3ff0cefee1c73b37a7f7e72ddfdaa981c912ef3065"
+    },
+    {
+      "file": "attack_015.png",
+      "source_frame_one_based": 15,
+      "source_pts": 8960,
+      "source_time_seconds": 0.583333,
+      "sha256": "55aeece932b41a3b4cb5c4f9f972746af4ec6742ce554d5a023795d0869d4c68"
+    },
+    {
+      "file": "attack_016.png",
+      "source_frame_one_based": 16,
+      "source_pts": 9728,
+      "source_time_seconds": 0.633333,
+      "sha256": "a06e69b0cec1b4a40bc661b8bef7330329ed3d13bd9f2a54fe77513b078add10"
+    },
+    {
+      "file": "attack_017.png",
+      "source_frame_one_based": 17,
+      "source_pts": 10240,
+      "source_time_seconds": 0.666667,
+      "sha256": "6ee88d42367c37ff41c2fb5d4bf102ff63e64669f7ff6c761c651f6b65bca891"
+    },
+    {
+      "file": "attack_018.png",
+      "source_frame_one_based": 18,
+      "source_pts": 11008,
+      "source_time_seconds": 0.716667,
+      "sha256": "0e1c033074a242f4b648b5a3be68cdea8fbd782b6f5ca6e537727564c4324ecc"
+    },
+    {
+      "file": "attack_019.png",
+      "source_frame_one_based": 19,
+      "source_pts": 11520,
+      "source_time_seconds": 0.75,
+      "sha256": "499f8da9aec55535981df52434ebc2adb2a68f35582e74da1dd5d4eac3fb5423"
+    },
+    {
+      "file": "attack_020.png",
+      "source_frame_one_based": 20,
+      "source_pts": 12288,
+      "source_time_seconds": 0.8,
+      "sha256": "d11e860773be31dbe506b1e73194bff7ac87d57fd31f107bf3d368f811134f69"
+    },
+    {
+      "file": "attack_021.png",
+      "source_frame_one_based": 21,
+      "source_pts": 12800,
+      "source_time_seconds": 0.833333,
+      "sha256": "1b99d9e770393ee42411a119d2a6223eb98f91024b9c18d3e62da0ee0d68b550"
+    },
+    {
+      "file": "attack_022.png",
+      "source_frame_one_based": 22,
+      "source_pts": 13568,
+      "source_time_seconds": 0.883333,
+      "sha256": "5bab4599cf6a4fc7050fd478b01b11b9d852be4b04bcae408d903d0cdbe585cc"
+    },
+    {
+      "file": "attack_023.png",
+      "source_frame_one_based": 23,
+      "source_pts": 14080,
+      "source_time_seconds": 0.916667,
+      "sha256": "fc2cea10bcdef46696d464ac0571e953cb8e31d7886b3ff22640dcbaebed42a7"
+    },
+    {
+      "file": "attack_024.png",
+      "source_frame_one_based": 24,
+      "source_pts": 14848,
+      "source_time_seconds": 0.966667,
+      "sha256": "8bf37939e8b296da50f2faab860479171a3840291a81f46e0fdeb7f4f8691db0"
+    },
+    {
+      "file": "attack_025.png",
+      "source_frame_one_based": 25,
+      "source_pts": 15360,
+      "source_time_seconds": 1.0,
+      "sha256": "7265a7d2564b9ce21c3bd7f1b1f9fb159bbd284c6b269aa4af0c084b20cff63e"
+    },
+    {
+      "file": "attack_026.png",
+      "source_frame_one_based": 26,
+      "source_pts": 15552,
+      "source_time_seconds": 1.0125,
+      "sha256": "2cea2327386286af4021489d8ced328b48f49d41a9fb2bec2e701d9c4ab7afc6"
+    },
+    {
+      "file": "attack_027.png",
+      "source_frame_one_based": 27,
+      "source_pts": 15680,
+      "source_time_seconds": 1.020833,
+      "sha256": "6e660f8b9e45ab84032886d960667be687457630ab829bef4ee36d68bc8a326a"
+    },
+    {
+      "file": "attack_028.png",
+      "source_frame_one_based": 28,
+      "source_pts": 15872,
+      "source_time_seconds": 1.033333,
+      "sha256": "1f43553964ef9a533cb6be5a351e4ef54b2b5bb2ea69d117fbe038a74505bdbd"
+    },
+    {
+      "file": "attack_029.png",
+      "source_frame_one_based": 29,
+      "source_pts": 16000,
+      "source_time_seconds": 1.041667,
+      "sha256": "d18d2c6c8ccffe143f8208f04f58c62afe25d251ea63e0097596e349d5a73ab1"
+    },
+    {
+      "file": "attack_030.png",
+      "source_frame_one_based": 30,
+      "source_pts": 16192,
+      "source_time_seconds": 1.054167,
+      "sha256": "549cea6e72d0f2f803b277727b1422d677de66efa5df959087063ee807b1b6bd"
+    },
+    {
+      "file": "attack_031.png",
+      "source_frame_one_based": 31,
+      "source_pts": 16320,
+      "source_time_seconds": 1.0625,
+      "sha256": "073f7d60334916d67f9e289aaa2df14f8d8a769a301ccee38d023868b1737f2c"
+    },
+    {
+      "file": "attack_032.png",
+      "source_frame_one_based": 32,
+      "source_pts": 16512,
+      "source_time_seconds": 1.075,
+      "sha256": "c558800be7910d7c56859264104d3e2dfa9b6356cb595e5baa59f152381c0339"
+    },
+    {
+      "file": "attack_033.png",
+      "source_frame_one_based": 33,
+      "source_pts": 16640,
+      "source_time_seconds": 1.083333,
+      "sha256": "d612d074f66fbf2fec8c06e62c628b595a8d248ee1102ceea2c17256772edced"
+    },
+    {
+      "file": "attack_034.png",
+      "source_frame_one_based": 34,
+      "source_pts": 16832,
+      "source_time_seconds": 1.095833,
+      "sha256": "917ffb84fa89cda0a00ba5aadc3852a30d5d62dac6f10d2ea0fb36194b9a76cb"
+    },
+    {
+      "file": "attack_035.png",
+      "source_frame_one_based": 35,
+      "source_pts": 16960,
+      "source_time_seconds": 1.104167,
+      "sha256": "7834dea619ea4759ffa001414614485da0431349629c6ff00c418567d904599a"
+    },
+    {
+      "file": "attack_036.png",
+      "source_frame_one_based": 36,
+      "source_pts": 17152,
+      "source_time_seconds": 1.116667,
+      "sha256": "bfd21b1c2fbc77125b0eb5e8d266c35da4c4b3ac3c0d38e3081f20053a9675bc"
+    },
+    {
+      "file": "attack_037.png",
+      "source_frame_one_based": 37,
+      "source_pts": 17280,
+      "source_time_seconds": 1.125,
+      "sha256": "3c75f7b1fb2fd24988bd7042673836a82d8e393b4343f2cc4038791bf5a49fb8"
+    },
+    {
+      "file": "attack_038.png",
+      "source_frame_one_based": 38,
+      "source_pts": 17472,
+      "source_time_seconds": 1.1375,
+      "sha256": "4f5eced05dabae19ad1e218c63ea2d8a069c810a93851ce3870fd85a885d6051"
+    },
+    {
+      "file": "attack_039.png",
+      "source_frame_one_based": 39,
+      "source_pts": 17600,
+      "source_time_seconds": 1.145833,
+      "sha256": "d745d303c747e2939f00c5f7dd49542a3eca45a3adf0105ac91ddd50edfbe681"
+    },
+    {
+      "file": "attack_040.png",
+      "source_frame_one_based": 40,
+      "source_pts": 17792,
+      "source_time_seconds": 1.158333,
+      "sha256": "9b5f84652203767356fe5085cd169cac1505f56aeb81e3ed4096bb9e43c56e66"
+    },
+    {
+      "file": "attack_041.png",
+      "source_frame_one_based": 41,
+      "source_pts": 17920,
+      "source_time_seconds": 1.166667,
+      "sha256": "985950ce050d4575fed7d7820874cddf110d2ab095a91e1911f2d42980e98b05"
+    },
+    {
+      "file": "attack_042.png",
+      "source_frame_one_based": 42,
+      "source_pts": 18688,
+      "source_time_seconds": 1.216667,
+      "sha256": "69f218c13f2e8703fe4999045d77898c43fbf69e8c301640f0e3e45170fb7fb0"
+    },
+    {
+      "file": "attack_043.png",
+      "source_frame_one_based": 43,
+      "source_pts": 19200,
+      "source_time_seconds": 1.25,
+      "sha256": "3f7798135733ce9cbd457cdd2a900438bf4efd7a214e2a93e0cf97aba1e2738d"
+    },
+    {
+      "file": "attack_044.png",
+      "source_frame_one_based": 44,
+      "source_pts": 19968,
+      "source_time_seconds": 1.3,
+      "sha256": "1397683ea571c41674a1358f0b14aa277b493be9e320b7f4e4ad17b4ee4e8ff3"
+    },
+    {
+      "file": "attack_045.png",
+      "source_frame_one_based": 45,
+      "source_pts": 20480,
+      "source_time_seconds": 1.333333,
+      "sha256": "c8a9b2e4c6da429fea262f50dfaa01d8dc5903454ba7395e9bb110c4663738bd"
+    },
+    {
+      "file": "attack_046.png",
+      "source_frame_one_based": 46,
+      "source_pts": 21248,
+      "source_time_seconds": 1.383333,
+      "sha256": "ce431e8edf1ccf585d5e95f40085dfb43ca247f326c15b458abfedebd9eb6139"
+    },
+    {
+      "file": "attack_047.png",
+      "source_frame_one_based": 47,
+      "source_pts": 21760,
+      "source_time_seconds": 1.416667,
+      "sha256": "370dd58dc92fbcb5acedbd078f96bb1f5e875de372eedfd7c1a4e2eb79f99efe"
+    },
+    {
+      "file": "attack_048.png",
+      "source_frame_one_based": 48,
+      "source_pts": 22528,
+      "source_time_seconds": 1.466667,
+      "sha256": "1541550fe0b8475d1bbb7a5959555eb4d3d3dee1ad0423e4017d726578b63310"
+    },
+    {
+      "file": "attack_049.png",
+      "source_frame_one_based": 49,
+      "source_pts": 23040,
+      "source_time_seconds": 1.5,
+      "sha256": "17129a649d7d08c27ec62724f1196486613f56d943a0d5643be77ecadfaf0094"
+    },
+    {
+      "file": "attack_050.png",
+      "source_frame_one_based": 50,
+      "source_pts": 23808,
+      "source_time_seconds": 1.55,
+      "sha256": "21b1544cbe963a584ac717cac69ccfbc8ca7ebe85e8a871bf5ac8ef60b043832"
+    },
+    {
+      "file": "attack_051.png",
+      "source_frame_one_based": 51,
+      "source_pts": 24320,
+      "source_time_seconds": 1.583333,
+      "sha256": "9c145aaaceb22cdc319d6087a144764b8b89cabd3ac8bef454b3302e92960fd2"
+    },
+    {
+      "file": "attack_052.png",
+      "source_frame_one_based": 52,
+      "source_pts": 25088,
+      "source_time_seconds": 1.633333,
+      "sha256": "7333a6c8d7fc5d7ae8f4c418960e2c06825ad4d95a79101279f8a25ff3a465eb"
+    },
+    {
+      "file": "attack_053.png",
+      "source_frame_one_based": 53,
+      "source_pts": 25600,
+      "source_time_seconds": 1.666667,
+      "sha256": "41edad55820260c52a3458c19a189e292cd08daf25267e70205560e42398b47e"
+    },
+    {
+      "file": "attack_054.png",
+      "source_frame_one_based": 54,
+      "source_pts": 26368,
+      "source_time_seconds": 1.716667,
+      "sha256": "5a8f48c1820251b0ea71673faed25e9218c37d4892e0fdfcea57a9c871336aa4"
+    },
+    {
+      "file": "attack_055.png",
+      "source_frame_one_based": 55,
+      "source_pts": 26880,
+      "source_time_seconds": 1.75,
+      "sha256": "3a60ec45852b5a793377b346ab849198517816dbfd16ebbd7cf2ac240493d404"
+    },
+    {
+      "file": "attack_056.png",
+      "source_frame_one_based": 56,
+      "source_pts": 27648,
+      "source_time_seconds": 1.8,
+      "sha256": "04860646876d587472c23774da73b5723e3f0d14979dc02218f35dd93e093d3d"
+    },
+    {
+      "file": "attack_057.png",
+      "source_frame_one_based": 57,
+      "source_pts": 28160,
+      "source_time_seconds": 1.833333,
+      "sha256": "acac54bcd4aff471ad4de5552510411614bd6d04ee6e2df79ae13d4f89e04f62"
+    },
+    {
+      "file": "attack_058.png",
+      "source_frame_one_based": 58,
+      "source_pts": 28928,
+      "source_time_seconds": 1.883333,
+      "sha256": "5988ae291f7d70895ce44a28f90b7f05b3aad4ec9d78092e7b80751fa6ac1316"
+    },
+    {
+      "file": "attack_059.png",
+      "source_frame_one_based": 59,
+      "source_pts": 29440,
+      "source_time_seconds": 1.916667,
+      "sha256": "6bfc98f5d9d1364aba5c62561ddb83228c3b229ba7726e70dc5731c428007768"
+    },
+    {
+      "file": "attack_060.png",
+      "source_frame_one_based": 60,
+      "source_pts": 30208,
+      "source_time_seconds": 1.966667,
+      "sha256": "68788c43dd4977c4340ef458cee84f197fad4880d84aa697c791c3f8255e1878"
+    },
+    {
+      "file": "attack_061.png",
+      "source_frame_one_based": 61,
+      "source_pts": 30720,
+      "source_time_seconds": 2.0,
+      "sha256": "1cd743da19dda1d8f6cbe1c81c95f6fd8c054ef63f5dab597b84b68940a05bd5"
+    },
+    {
+      "file": "attack_062.png",
+      "source_frame_one_based": 62,
+      "source_pts": 31488,
+      "source_time_seconds": 2.05,
+      "sha256": "82f4677cdcacd2b9f321f9141da89e67be777749ad97661eb85a0190e827716b"
+    },
+    {
+      "file": "attack_063.png",
+      "source_frame_one_based": 63,
+      "source_pts": 32000,
+      "source_time_seconds": 2.083333,
+      "sha256": "c27bf2c7ba51dcafc8e58d68eb082a6476aefcaa5607452cdb3136410ebeb8e4"
+    },
+    {
+      "file": "attack_064.png",
+      "source_frame_one_based": 64,
+      "source_pts": 32768,
+      "source_time_seconds": 2.133333,
+      "sha256": "71491c83699b24363037512e416fd1794caee46546c7da1bb1f3c00f7d8c5509"
+    },
+    {
+      "file": "attack_065.png",
+      "source_frame_one_based": 65,
+      "source_pts": 33280,
+      "source_time_seconds": 2.166667,
+      "sha256": "3721b707665ed76c56b56f3604bb1362a4a0c2df6e4fe61685e230e81fc89caa"
+    },
+    {
+      "file": "attack_066.png",
+      "source_frame_one_based": 66,
+      "source_pts": 34048,
+      "source_time_seconds": 2.216667,
+      "sha256": "8030eb913bdf13797c79d3150f69b0d1367bb88665dc014072b916a8b1f01807"
+    },
+    {
+      "file": "attack_067.png",
+      "source_frame_one_based": 67,
+      "source_pts": 34560,
+      "source_time_seconds": 2.25,
+      "sha256": "ea9bbfb06071b9be5965849402850fb46f0e7cd3248f0980fde6baabd4136a00"
+    },
+    {
+      "file": "attack_068.png",
+      "source_frame_one_based": 68,
+      "source_pts": 35328,
+      "source_time_seconds": 2.3,
+      "sha256": "a2f9e34590fcfb96a9da8c364a4c932e6ea1a40c89979ca81f1691b4773d79a8"
+    },
+    {
+      "file": "attack_069.png",
+      "source_frame_one_based": 69,
+      "source_pts": 35840,
+      "source_time_seconds": 2.333333,
+      "sha256": "df089c1eeb34cb883a07b1e4599809700f2c5450cf89d27460de04f5d87c0ca3"
+    },
+    {
+      "file": "attack_070.png",
+      "source_frame_one_based": 70,
+      "source_pts": 36608,
+      "source_time_seconds": 2.383333,
+      "sha256": "72e895e21c695ef9b6630d0480f384cb5308f6f911eded7a7fba53102b074f68"
+    },
+    {
+      "file": "attack_071.png",
+      "source_frame_one_based": 71,
+      "source_pts": 37120,
+      "source_time_seconds": 2.416667,
+      "sha256": "2288fe7208de497829c3372bb04566257a8ffef800b42fcfc22cb5c3d09f8fce"
+    },
+    {
+      "file": "attack_072.png",
+      "source_frame_one_based": 72,
+      "source_pts": 37888,
+      "source_time_seconds": 2.466667,
+      "sha256": "22ce25fb6b8da63439cadd0b646b9bc7b9fed93ddad6a365ed684f79d3ce630b"
+    },
+    {
+      "file": "attack_073.png",
+      "source_frame_one_based": 73,
+      "source_pts": 38400,
+      "source_time_seconds": 2.5,
+      "sha256": "3db0104bd5089969feb4571003c68e21e940925c4050a32b287a98e12e24fd79"
+    },
+    {
+      "file": "attack_074.png",
+      "source_frame_one_based": 74,
+      "source_pts": 39168,
+      "source_time_seconds": 2.55,
+      "sha256": "994bc1eddb4327abb561f28cfaffadb55af7fc6522d151ee040619440b6b0fe1"
+    },
+    {
+      "file": "attack_075.png",
+      "source_frame_one_based": 75,
+      "source_pts": 39680,
+      "source_time_seconds": 2.583333,
+      "sha256": "c2824715236c81f5e093bdd1071b4b9b2e743daa58aacf0f4e306f4ef703d55c"
+    },
+    {
+      "file": "attack_076.png",
+      "source_frame_one_based": 76,
+      "source_pts": 40448,
+      "source_time_seconds": 2.633333,
+      "sha256": "8305b7e6097c0e966b47fab87e9ab94570e07ddf2d14eccb5d20f1f336927c44"
+    },
+    {
+      "file": "attack_077.png",
+      "source_frame_one_based": 77,
+      "source_pts": 40960,
+      "source_time_seconds": 2.666667,
+      "sha256": "b820f1dc219895adee7c688cc8209e9e02a338683e95b0a66fa0aa92e37f33bc"
+    },
+    {
+      "file": "attack_078.png",
+      "source_frame_one_based": 78,
+      "source_pts": 41728,
+      "source_time_seconds": 2.716667,
+      "sha256": "f58138cbd3b6c6b80aa8ede74e703b21467f8367120b43b4d09b866e83c08327"
+    },
+    {
+      "file": "attack_079.png",
+      "source_frame_one_based": 79,
+      "source_pts": 42240,
+      "source_time_seconds": 2.75,
+      "sha256": "ee0acf5c857886ee8f69e665a934309d2a4d43216695d63492840a78edb08124"
+    },
+    {
+      "file": "attack_080.png",
+      "source_frame_one_based": 80,
+      "source_pts": 43008,
+      "source_time_seconds": 2.8,
+      "sha256": "4cecff369afae4cf08b6b8b26e3b3467a8bfc6f8b78794a193260fbf403c5eee"
+    },
+    {
+      "file": "attack_081.png",
+      "source_frame_one_based": 81,
+      "source_pts": 43520,
+      "source_time_seconds": 2.833333,
+      "sha256": "33746e45708485b1eed886491ad9d847bdb8550111ef665a524947b5c6256d13"
+    },
+    {
+      "file": "attack_082.png",
+      "source_frame_one_based": 82,
+      "source_pts": 44288,
+      "source_time_seconds": 2.883333,
+      "sha256": "c4836881fd98531096d2a6caee8979d2ce62ef9c53bc2ae67cdafd04568313d9"
+    },
+    {
+      "file": "attack_083.png",
+      "source_frame_one_based": 83,
+      "source_pts": 44800,
+      "source_time_seconds": 2.916667,
+      "sha256": "70e7092e4a65c0859346ec3e79f36f92305140963e3a9e313d52f873a9ca0b1d"
+    },
+    {
+      "file": "attack_084.png",
+      "source_frame_one_based": 84,
+      "source_pts": 45568,
+      "source_time_seconds": 2.966667,
+      "sha256": "0562390851c1a0723557cf77dbd6020e6c96858170b2c0e1b8a24a82f0e8db36"
+    },
+    {
+      "file": "attack_085.png",
+      "source_frame_one_based": 85,
+      "source_pts": 46080,
+      "source_time_seconds": 3.0,
+      "sha256": "c17b344fb176b6ab0f43d9d8c3a16d626485f73f216147d9c8c805da947a2fb1"
+    },
+    {
+      "file": "attack_086.png",
+      "source_frame_one_based": 86,
+      "source_pts": 46848,
+      "source_time_seconds": 3.05,
+      "sha256": "21ba7927b50e19b44de6b28cdd29c3cdd39d13c084bbcb8a641cc7ea036e13a3"
+    },
+    {
+      "file": "attack_087.png",
+      "source_frame_one_based": 87,
+      "source_pts": 47360,
+      "source_time_seconds": 3.083333,
+      "sha256": "2cc8d29da575572de21627f248aad6e916ff4e9ba3fb0a7d589411d738a6ebc6"
+    },
+    {
+      "file": "attack_088.png",
+      "source_frame_one_based": 88,
+      "source_pts": 48128,
+      "source_time_seconds": 3.133333,
+      "sha256": "161af898beb20a6bf41e392fe9c973ae58d3ef9e2fdb1dff35c45cf134d80b0d"
+    },
+    {
+      "file": "attack_089.png",
+      "source_frame_one_based": 89,
+      "source_pts": 48640,
+      "source_time_seconds": 3.166667,
+      "sha256": "f7b225946b090a2055acc7347ea9595be210265c253cc46fab202221227ce0b4"
+    },
+    {
+      "file": "attack_090.png",
+      "source_frame_one_based": 90,
+      "source_pts": 49408,
+      "source_time_seconds": 3.216667,
+      "sha256": "88a3c9f2e57440a003276137a6628dda93b3e56d8d9fa6ac59b8f639c7ebd633"
+    },
+    {
+      "file": "attack_091.png",
+      "source_frame_one_based": 91,
+      "source_pts": 49920,
+      "source_time_seconds": 3.25,
+      "sha256": "6e620a5f5a16f692c0856dd221a29259ded8aea3437caf90b9226a7ee4ff04e6"
+    },
+    {
+      "file": "attack_092.png",
+      "source_frame_one_based": 92,
+      "source_pts": 50688,
+      "source_time_seconds": 3.3,
+      "sha256": "6bae426d9038c18fd5f82ed4b9af7bab66663c51fd95d1fac137c7bc11df543a"
+    },
+    {
+      "file": "attack_093.png",
+      "source_frame_one_based": 93,
+      "source_pts": 51200,
+      "source_time_seconds": 3.333333,
+      "sha256": "db09e73d6a6f1c6f1d883a8ce241f2932fdab60656cc1b09d5e4817ba95ed231"
+    },
+    {
+      "file": "attack_094.png",
+      "source_frame_one_based": 94,
+      "source_pts": 51968,
+      "source_time_seconds": 3.383333,
+      "sha256": "c2230d5202622d624fcfb84371242b79586d3d81d5fd0a4a03febc681893ae77"
+    },
+    {
+      "file": "attack_095.png",
+      "source_frame_one_based": 95,
+      "source_pts": 52480,
+      "source_time_seconds": 3.416667,
+      "sha256": "3e1bc9ecf4cf00bdfb1b30a8176c7d6e1b9c85bd2e9aa2186d611269b3d18aac"
+    },
+    {
+      "file": "attack_096.png",
+      "source_frame_one_based": 96,
+      "source_pts": 53248,
+      "source_time_seconds": 3.466667,
+      "sha256": "2002ed2f5f9c37ded1b9509c52eb60ce97b87146c26249f2607aa1736ace4025"
+    }
+  ],
+  "limitations": [
+    "shoulder_color_unresolved",
+    "source_frames_52_53_weapon_cropped",
+    "source_specific_matte_not_accepted",
+    "not_integrated"
+  ],
+  "source_sign": 1,
+  "source_back": false
+}
