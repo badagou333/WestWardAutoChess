@@ -1,0 +1,15 @@
+{
+  "source_frames_1based": [
+    10,
+    93
+  ],
+  "start_seconds": 0.38333333333333336,
+  "end_exclusive_seconds": 3.3833333333333333,
+  "master_frames": 84,
+  "preview_frames": 84,
+  "master_pts_and_yuv_identical_to_source_slice": true,
+  "preview_pts_identical": true,
+  "master_audio_matches_source_with_same_atrim": true,
+  "master_audio_sample_frames": 132280,
+  "master_audio_seconds": 2.999546485260771
+}
