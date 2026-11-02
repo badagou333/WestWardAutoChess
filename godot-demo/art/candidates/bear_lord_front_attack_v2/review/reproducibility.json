@@ -1,0 +1,438 @@
+{
+  "status": "author_cold_rebuild_pass",
+  "count": 86,
+  "method": "second build without decoded cache; re-decode locked MOV; compare every PNG, manifest and WAV byte-for-byte",
+  "independent_qa": false,
+  "checks": [
+    {
+      "file": "manifest.json",
+      "sha256": "93251e01e00168d6fb3a4bff13a7ac2a3f58d15694a59f78d031c054b56cce98",
+      "matches": true
+    },
+    {
+      "file": "audio/source-track.wav",
+      "sha256": "aaaf61ca9f75ebb4f8c9657108ac0a47245f0ef00efa38bd6a95066803b9caf9",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0001.png",
+      "sha256": "1b8b616498089e2c4506b77dd5a4c06ff0d29d37b93d61c0ad69fc3bb3550a38",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0002.png",
+      "sha256": "9d9b3f7b0b05109fcb82f08899b4c7ece3a93fa8a4bbf3854de5f511a1a79ada",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0003.png",
+      "sha256": "e9d75a9c3c7b2c67575075e7d52de0b60b432cb7e46afb1b5cdee71ecfe5d404",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0004.png",
+      "sha256": "7763bbe06d363243380a695c80b215b0ff31bd6fe7258b95e2730698d1bcf298",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0005.png",
+      "sha256": "c5d392030106d7bfcebb285c8fb52da05fbfdd550035b6dc24dffa6e2efb1576",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0006.png",
+      "sha256": "8dd389ba9988bfb571a16916eb5eb59608bb18b41f518bead16f9f0414cb3de1",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0007.png",
+      "sha256": "3a6793b0c00a1fa7b87be0db0b8c54e11eef0b0c3ccac36c231cf6cfc155f05a",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0008.png",
+      "sha256": "149c702eb2d1d60c6814435130a7808337fee1d1da1fb90bb5e4745ff0ae243f",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0009.png",
+      "sha256": "a61259fcf5c6cbd1c4b76eac69a3ede3701570318988d288f007bce4552dd345",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0010.png",
+      "sha256": "6e7c9a9bdadc5b2026be8343e614f578644c6cfe4a1e4fd7e94929df5ded0995",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0011.png",
+      "sha256": "d9380a23f92de924ba2432c2c13bb22e86ccdd3b70ef22d8c078e37fe4aed098",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0012.png",
+      "sha256": "9d249a8a5d65927b7e044c73ad41dba7d4a2dc5e600ef08018a1458fd15c1354",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0013.png",
+      "sha256": "a1e8feea73b9e7927eea931e1d739f18edc75ffc97781f323dde78b6cf216926",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0014.png",
+      "sha256": "1050aa5ce6e2a1f968a2be406b2ecdb3efee5d86a5df96d4932178da0edb6961",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0015.png",
+      "sha256": "772de2598c7efb6be61b317503af254c6018e8d3613a5fec209108ea387b425a",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0016.png",
+      "sha256": "8520b35ffbafe847eff9f2ff072fdc752531685a61081a1ff309f3c6c90bb9e7",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0017.png",
+      "sha256": "3caf2dca23c1723d3e3ec92f999cb9fdeb68741fb34febec6fa42b660c4fbb6d",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0018.png",
+      "sha256": "899565ed17295278483e352794abf4a729abd97e9ea2142201de2a135eed9e72",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0019.png",
+      "sha256": "5f505fd9c587ebc669f95cdc9df38e560f373b44f78b1707820a559baf95bd3b",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0020.png",
+      "sha256": "edc9f2ca16ba210b087aa51d1884f3bb2366b4ccdb923bff9f736c3ddeb50981",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0021.png",
+      "sha256": "4a80bf66acaa690b0433f937313f9533460ee31cab1a6a65eeea4c1c2543d318",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0022.png",
+      "sha256": "03fcafccd8213cf4eb70df3121269c1b17dd5a3024315deadd009904efefac67",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0023.png",
+      "sha256": "41b6b6e0cf7e327b6a740e28756d542e138835a7efc6799613fae7200c44b773",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0024.png",
+      "sha256": "a22384ab40fb3f48a4c7424f9586ee2afac48c178c3ff91cbd905977cb528258",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0025.png",
+      "sha256": "b4377d78e315c4528fb64fa9a7180f786b81cd1f827abb8cc8f19858556832c0",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0026.png",
+      "sha256": "2d4e23462673d62ae0a4e63e9792c0a27716aa3581dc7ea86fdcf7a504e2d009",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0027.png",
+      "sha256": "ea964b6bfccf06bb1654ed20f3f224d6056767df26554ac7c48e24e6719fb60c",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0028.png",
+      "sha256": "3e2f4c8d97fe8a3096e087d75253298d1f0a6e42040f2131874825fafc4a7744",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0029.png",
+      "sha256": "60c0773bac1acf4103240ce27e76d0a0a6fb41092e4364336f799d0eb68b87cb",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0030.png",
+      "sha256": "69148e5478a6c683225179f72ebdd2b1e957440493bfcbb6ae638e7879f1593f",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0031.png",
+      "sha256": "3ee22cf675e92923d079455adfc47b58c34d885147074529a09992c90394ea4b",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0032.png",
+      "sha256": "e6a3577164a6adaf4b79c0b8d6c1539e6651879372c0f9aa0c93e7b665893364",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0033.png",
+      "sha256": "76b4a9b46711fabf53e25ac9e8aa72f0fe6426df747e42a6cf95be2af684fd60",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0034.png",
+      "sha256": "cf71771d6dacbd90799a020ac5547e4295afb9582980d4cbcf75a42738a9aff4",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0035.png",
+      "sha256": "99d71fffd87c85ad3eb073fca638cceb02030b6451cae2e38fe349cae49a70a9",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0036.png",
+      "sha256": "4fc26b69f1767ed2c032feafc7f6bd2ca3442cd139b61357b6e2c5d040398d3d",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0037.png",
+      "sha256": "7d1b0ed015c5082eb11ba2eab2f324e8035f6e17ced3f3b1d141a7d804ba6d99",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0038.png",
+      "sha256": "e14d2a9372239c939c18653f3097c922b45fac1db3fba437f97b84394e62de9e",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0039.png",
+      "sha256": "59df77714784c5861fb24c8d58329d6870e26032ff39a7f4a37d94178eb6197e",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0040.png",
+      "sha256": "ba3e94e73d4b81dd5f9b47925fc79f6308074b2673374d5ec11f0c50e4769756",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0041.png",
+      "sha256": "d9b71f44fc5a44547d7fd003fd5363988caa198b5433cefd50f82fa24f5667b6",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0042.png",
+      "sha256": "3e2a406776ce7f467676c7b8dc68337bda6913815fd4c88d45ac2a1f47a0c6b0",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0043.png",
+      "sha256": "a8dfb4c35842a1217dd411c6847bae66b8daa0410512d92336598947aa208d4e",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0044.png",
+      "sha256": "e7badcba283c3c25168e7735a6520d5809365df476efa232b8b9b1d3d9daee81",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0045.png",
+      "sha256": "5ba0fcdef1a2534156854e18b43eef878ce075c605b5714fe00c2912d23de939",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0046.png",
+      "sha256": "cdef161173bdc9050f57e856b011ff98052768bb79a14ddd6559d0104022d717",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0047.png",
+      "sha256": "483bac24072b96a1236f22b0a2598e5e3549db83936199b025bcb1bf0f6381ce",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0048.png",
+      "sha256": "6e991916b9eac2d15fdc6d304fe847d79a441121ceba4536a2cc2b500edb678e",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0049.png",
+      "sha256": "3068d37ce25a27925fa9e9ca9f0d5b01ff32e8bb5312e67c681c733422da0614",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0050.png",
+      "sha256": "34f7656e771713a192139d170ff232806b80958fcc07cacb4dd26a9f31ba5e8a",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0051.png",
+      "sha256": "b702fd729e0665efe284076b723effe5a1da0a78dd1bb5b4e5a0f7624298a6d7",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0052.png",
+      "sha256": "6561bbf91dbdbe57f789335c95472e926921c73c876e8904047f466735049bcf",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0053.png",
+      "sha256": "e803f553943e254abe3215fb4780f2b4f7e8ad75adb42696bfe44d325ba0e31b",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0054.png",
+      "sha256": "133168c0541f51ed855f75f23b0e8f03943bebbbf6608211e3322c92d32ca8b2",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0055.png",
+      "sha256": "83b0f93f276bf2b57e9b147bd1ec83c1ed201f5aa919028f55060d5af643bff9",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0056.png",
+      "sha256": "70e8159bf97b062a615f6f449b381057a7392db4f6baf18ee0674fffb9fb93a0",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0057.png",
+      "sha256": "6f6577df9edd99ba0e16ad631e1c25531e8ee545ba8ba77369d391b48964cd7a",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0058.png",
+      "sha256": "373b3e018930b0be22ceec709ff756775352265ed384adcc8aec7dce8e7311b3",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0059.png",
+      "sha256": "b18b231775aa7125827d48f6bc51ea6a7a23fb0c5b4e01382c22513c6a4e55ea",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0060.png",
+      "sha256": "9ff4bb0415c9c4c4959b8db5c190141163cf7942077bad3cce346b6e9b7d8961",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0061.png",
+      "sha256": "0212d37e07f6c359a12f8083427c34be67f954b2dbc3f8705e7035d8b95adfb1",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0062.png",
+      "sha256": "1bad6650c3181359ec91484b319c47a87900091facdb824c7119873e899cd1b6",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0063.png",
+      "sha256": "091b2c9774636fbedc2794a06167e537507553922f39b77aaaf9cbdd86cdd5d0",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0064.png",
+      "sha256": "69f5f7949d2c5e4058764d0fd8f0f2ffc5d40c58bfa391b4b3ea39882e93f6f8",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0065.png",
+      "sha256": "7276b32a5cd7bc53ecf4582a637fce8653067813e589ec57e06e0d58752b1180",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0066.png",
+      "sha256": "b6d640701c95e59766d52d90a59de842d05ae139585cae48213c95e58b8e2e99",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0067.png",
+      "sha256": "1503b244a0c400941d5ba3f28318c5ada41d34c65cd657bcefb85929900487cf",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0068.png",
+      "sha256": "652181e93652446db1f65a3376b5950bae48be6e3d56aefed0232895b34dcb72",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0069.png",
+      "sha256": "22aa9045e8b30ba3eab1cae4f5da55a3c4a9b4bef022aa55e3062d512578789e",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0070.png",
+      "sha256": "4129697decdfe10d28e2a652894007cc29b4c350c6316d86db7043bf63656e71",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0071.png",
+      "sha256": "8bcf7499d730d59fce8a7f020a818d064214ad377c7d3971518b495ab41b3332",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0072.png",
+      "sha256": "37377290911a30212f6200af2ce09cf940db518d62df3d815531f019014680b2",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0073.png",
+      "sha256": "5fb69a8091b19bdaa5806266fd844f2b9ed83ebc68b3fdf0bcb006d6e5822e2c",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0074.png",
+      "sha256": "38900b75710cab7f7790c58a7a0e8685031f450a2d8b0938ca63a198d346c515",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0075.png",
+      "sha256": "13eff5b7042e6ba99c99ea3442982bb4b76a8d6c412ce4c685ea3983df38b0a5",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0076.png",
+      "sha256": "8e40dbf4bbc23c316de8c68c30b5abfa2592698a857c86eae15ee16c62a81cf8",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0077.png",
+      "sha256": "5ac8fccf0382d77b4f6454ef9edd06c16ca1e7745859d72ecf84fa77612d148c",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0078.png",
+      "sha256": "5a4a3d7e1cba9c74af5b289792acc3f1ff7e6d259d08ca179ae8137c3a3f8b08",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0079.png",
+      "sha256": "d63af127324cc1ef7597f0728bfd37c655c01e839f61d2b531516f1fbed36e23",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0080.png",
+      "sha256": "5f7deecbc832dd5d848b58e66cbe6202c38f6a853ce6d2a35a6f99c95720ebfc",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0081.png",
+      "sha256": "7cb06f62231436b06c3543962368f00c6efb4ba0aca4f355f97c49e8804b8c08",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0082.png",
+      "sha256": "b27471a9351e141a37a04e7d4cc43219a1745e70781976320c739c60bc31e73a",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0083.png",
+      "sha256": "fc14e219b7f20c3706bc921019d96433546f645502591273673cfb0b937bb1e0",
+      "matches": true
+    },
+    {
+      "file": "frames/attack_0084.png",
+      "sha256": "1cfe8ef0067ce7791a747402ec1a57648d73b235111a2fb849cdef4601d191ad",
+      "matches": true
+    }
+  ]
+}

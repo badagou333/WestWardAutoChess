@@ -1,0 +1,164 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/Users/leqiong/workSpace/tower-defense/godot-demo/art/candidates/bear_lord_tail_trim_20261101/forehand-head-tail-lossless.mov':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf61.7.100
+    comment         : vid:v02870g10004dbgp5ja7dldf2f1e4vb0
+  Duration: 00:00:03.00, start: 0.000000, bitrate: 19625 kb/s
+  Stream #0:0[0x1]: Video: h264 (High 4:4:4 Predictive) (avc1 / 0x31637661), yuv420p(progressive), 960x960 [SAR 1:1 DAR 1:1], 18205 kb/s, 28 fps, 240 tbr, 15360 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : FFMP
+        encoder         : Lavc61.19.100 libx264
+  Stream #0:1[0x2]: Audio: pcm_s16le (sowt / 0x74776F73), 44100 Hz, stereo, s16, 1411 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+Stream mapping:
+  Stream #0:1 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+[Parsed_ashowinfo_0 @ 0x155604610] n:0 pts:0 pts_time:0 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:8539B9F0 plane_checksums: [ 8539B9F0 ]
+Output #0, wav, to '/Users/leqiong/workSpace/tower-defense/godot-demo/art/candidates/bear_lord_front_attack_v2/audio/source-track.wav':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    ICMT            : vid:v02870g10004dbgp5ja7dldf2f1e4vb0
+    ISFT            : Lavf61.7.100
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, stereo, s16, 1411 kb/s (default)
+      Metadata:
+        handler_name    : SoundHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.100 pcm_s16le
+[Parsed_ashowinfo_0 @ 0x155604610] n:1 pts:1024 pts_time:0.02322 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:473 checksum:49A766CB plane_checksums: [ 49A766CB ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:2 pts:1497 pts_time:0.0339456 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:FA4F3715 plane_checksums: [ FA4F3715 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:3 pts:2521 pts_time:0.0571655 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:67B55A2F plane_checksums: [ 67B55A2F ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:4 pts:3545 pts_time:0.0803855 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:485BB312 plane_checksums: [ 485BB312 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:5 pts:4569 pts_time:0.103605 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:325B032A plane_checksums: [ 325B032A ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:6 pts:5593 pts_time:0.126825 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:3FB7E45C plane_checksums: [ 3FB7E45C ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:7 pts:6617 pts_time:0.150045 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:D68740AC plane_checksums: [ D68740AC ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:8 pts:7641 pts_time:0.173265 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:659CEE6E plane_checksums: [ 659CEE6E ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:9 pts:8665 pts_time:0.196485 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:5B8214E6 plane_checksums: [ 5B8214E6 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:10 pts:9689 pts_time:0.219705 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:967F4BC7 plane_checksums: [ 967F4BC7 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:11 pts:10713 pts_time:0.242925 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:C1B2E6FF plane_checksums: [ C1B2E6FF ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:12 pts:11737 pts_time:0.266145 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:C08801DA plane_checksums: [ C08801DA ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:13 pts:12761 pts_time:0.289365 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:BE1A1136 plane_checksums: [ BE1A1136 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:14 pts:13785 pts_time:0.312585 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:A71BE939 plane_checksums: [ A71BE939 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:15 pts:14809 pts_time:0.335805 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:F488D504 plane_checksums: [ F488D504 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:16 pts:15833 pts_time:0.359025 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:165E96B9 plane_checksums: [ 165E96B9 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:17 pts:16857 pts_time:0.382245 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:397F4EC7 plane_checksums: [ 397F4EC7 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:18 pts:17881 pts_time:0.405465 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:2175B0C1 plane_checksums: [ 2175B0C1 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:19 pts:18905 pts_time:0.428685 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:FC1DA775 plane_checksums: [ FC1DA775 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:20 pts:19929 pts_time:0.451905 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:3DDB04D8 plane_checksums: [ 3DDB04D8 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:21 pts:20953 pts_time:0.475125 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:8BAAFD30 plane_checksums: [ 8BAAFD30 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:22 pts:21977 pts_time:0.498345 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:407CEFF5 plane_checksums: [ 407CEFF5 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:23 pts:23001 pts_time:0.521565 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:9741830E plane_checksums: [ 9741830E ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:24 pts:24025 pts_time:0.544785 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:569BCE77 plane_checksums: [ 569BCE77 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:25 pts:25049 pts_time:0.568005 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:365DF0C6 plane_checksums: [ 365DF0C6 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:26 pts:26073 pts_time:0.591224 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:311A5C9F plane_checksums: [ 311A5C9F ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:27 pts:27097 pts_time:0.614444 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:19113DB2 plane_checksums: [ 19113DB2 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:28 pts:28121 pts_time:0.637664 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:8AE3C19A plane_checksums: [ 8AE3C19A ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:29 pts:29145 pts_time:0.660884 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:6B23B44A plane_checksums: [ 6B23B44A ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:30 pts:30169 pts_time:0.684104 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:A24172E6 plane_checksums: [ A24172E6 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:31 pts:31193 pts_time:0.707324 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:2AE90055 plane_checksums: [ 2AE90055 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:32 pts:32217 pts_time:0.730544 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:D35B80B1 plane_checksums: [ D35B80B1 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:33 pts:33241 pts_time:0.753764 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:F4320770 plane_checksums: [ F4320770 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:34 pts:34265 pts_time:0.776984 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:932E3939 plane_checksums: [ 932E3939 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:35 pts:35289 pts_time:0.800204 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:C0154FA8 plane_checksums: [ C0154FA8 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:36 pts:36313 pts_time:0.823424 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:7088FEB2 plane_checksums: [ 7088FEB2 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:37 pts:37337 pts_time:0.846644 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:9D897B79 plane_checksums: [ 9D897B79 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:38 pts:38361 pts_time:0.869864 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:E8D4CA3A plane_checksums: [ E8D4CA3A ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:39 pts:39385 pts_time:0.893084 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:CB1F0B36 plane_checksums: [ CB1F0B36 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:40 pts:40409 pts_time:0.916304 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:9A536A4E plane_checksums: [ 9A536A4E ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:41 pts:41433 pts_time:0.939524 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:AB79117E plane_checksums: [ AB79117E ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:42 pts:42457 pts_time:0.962744 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:B63B85AA plane_checksums: [ B63B85AA ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:43 pts:43481 pts_time:0.985964 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:02DC4CA7 plane_checksums: [ 02DC4CA7 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:44 pts:44505 pts_time:1.009184 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:4998ADA4 plane_checksums: [ 4998ADA4 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:45 pts:45529 pts_time:1.032404 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:F46881ED plane_checksums: [ F46881ED ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:46 pts:46553 pts_time:1.055624 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:E84EC1FE plane_checksums: [ E84EC1FE ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:47 pts:47577 pts_time:1.078844 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:4BCBDC6F plane_checksums: [ 4BCBDC6F ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:48 pts:48601 pts_time:1.102063 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:E8D302A6 plane_checksums: [ E8D302A6 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:49 pts:49625 pts_time:1.125283 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:E13906C7 plane_checksums: [ E13906C7 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:50 pts:50649 pts_time:1.148503 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:4EB3DB34 plane_checksums: [ 4EB3DB34 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:51 pts:51673 pts_time:1.171723 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:7A288CEA plane_checksums: [ 7A288CEA ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:52 pts:52697 pts_time:1.194943 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:88091F12 plane_checksums: [ 88091F12 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:53 pts:53721 pts_time:1.218163 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:B204B90A plane_checksums: [ B204B90A ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:54 pts:54745 pts_time:1.241383 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:F6FF0E4B plane_checksums: [ F6FF0E4B ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:55 pts:55769 pts_time:1.264603 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:4426A28A plane_checksums: [ 4426A28A ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:56 pts:56793 pts_time:1.287823 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:2F16700E plane_checksums: [ 2F16700E ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:57 pts:57817 pts_time:1.311043 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:B37E7B3B plane_checksums: [ B37E7B3B ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:58 pts:58841 pts_time:1.334263 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:9AAE805C plane_checksums: [ 9AAE805C ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:59 pts:59865 pts_time:1.357483 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:8B4334A9 plane_checksums: [ 8B4334A9 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:60 pts:60889 pts_time:1.380703 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:E0D0EE37 plane_checksums: [ E0D0EE37 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:61 pts:61913 pts_time:1.403923 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:87A8F3C3 plane_checksums: [ 87A8F3C3 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:62 pts:62937 pts_time:1.427143 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:DC421327 plane_checksums: [ DC421327 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:63 pts:63961 pts_time:1.450363 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:11464C72 plane_checksums: [ 11464C72 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:64 pts:64985 pts_time:1.473583 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:94D361AB plane_checksums: [ 94D361AB ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:65 pts:66009 pts_time:1.496803 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:CC67D98D plane_checksums: [ CC67D98D ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:66 pts:67033 pts_time:1.520023 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:9E91AA62 plane_checksums: [ 9E91AA62 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:67 pts:68057 pts_time:1.543243 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:87AC19F2 plane_checksums: [ 87AC19F2 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:68 pts:69081 pts_time:1.566463 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:738F024B plane_checksums: [ 738F024B ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:69 pts:70105 pts_time:1.589683 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:1B99FE72 plane_checksums: [ 1B99FE72 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:70 pts:71129 pts_time:1.612902 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:D03280EC plane_checksums: [ D03280EC ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:71 pts:72153 pts_time:1.636122 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:5B858F78 plane_checksums: [ 5B858F78 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:72 pts:73177 pts_time:1.659342 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:0DF278DE plane_checksums: [ 0DF278DE ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:73 pts:74201 pts_time:1.682562 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:325272EE plane_checksums: [ 325272EE ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:74 pts:75225 pts_time:1.705782 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:16B6320B plane_checksums: [ 16B6320B ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:75 pts:76249 pts_time:1.729002 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:ED1D343F plane_checksums: [ ED1D343F ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:76 pts:77273 pts_time:1.752222 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:699EC249 plane_checksums: [ 699EC249 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:77 pts:78297 pts_time:1.775442 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:3C4AB01C plane_checksums: [ 3C4AB01C ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:78 pts:79321 pts_time:1.798662 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:0136B549 plane_checksums: [ 0136B549 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:79 pts:80345 pts_time:1.821882 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:66B399B0 plane_checksums: [ 66B399B0 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:80 pts:81369 pts_time:1.845102 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:60FB997D plane_checksums: [ 60FB997D ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:81 pts:82393 pts_time:1.868322 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:775EA0CE plane_checksums: [ 775EA0CE ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:82 pts:83417 pts_time:1.891542 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:0E5B4AD8 plane_checksums: [ 0E5B4AD8 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:83 pts:84441 pts_time:1.914762 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:2DB71D4A plane_checksums: [ 2DB71D4A ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:84 pts:85465 pts_time:1.937982 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:CE7F04B5 plane_checksums: [ CE7F04B5 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:85 pts:86489 pts_time:1.961202 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:0ABFB2C9 plane_checksums: [ 0ABFB2C9 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:86 pts:87513 pts_time:1.984422 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:4B3795A7 plane_checksums: [ 4B3795A7 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:87 pts:88537 pts_time:2.007642 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:A6F8F8E9 plane_checksums: [ A6F8F8E9 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:88 pts:89561 pts_time:2.030862 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:09577CB8 plane_checksums: [ 09577CB8 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:89 pts:90585 pts_time:2.054082 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:73CFCFEE plane_checksums: [ 73CFCFEE ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:90 pts:91609 pts_time:2.077302 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:18C50884 plane_checksums: [ 18C50884 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:91 pts:92633 pts_time:2.100522 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:C1A81E2A plane_checksums: [ C1A81E2A ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:92 pts:93657 pts_time:2.123741 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:E34D1467 plane_checksums: [ E34D1467 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:93 pts:94681 pts_time:2.146961 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:C6F39480 plane_checksums: [ C6F39480 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:94 pts:95705 pts_time:2.170181 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:3285CDEB plane_checksums: [ 3285CDEB ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:95 pts:96729 pts_time:2.193401 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:26E4C9CF plane_checksums: [ 26E4C9CF ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:96 pts:97753 pts_time:2.216621 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:599B37E3 plane_checksums: [ 599B37E3 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:97 pts:98777 pts_time:2.239841 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:3DD4A6C4 plane_checksums: [ 3DD4A6C4 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:98 pts:99801 pts_time:2.263061 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:867C7032 plane_checksums: [ 867C7032 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:99 pts:100825 pts_time:2.286281 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:DB933486 plane_checksums: [ DB933486 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:100 pts:101849 pts_time:2.309501 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:C5D1C6C4 plane_checksums: [ C5D1C6C4 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:101 pts:102873 pts_time:2.332721 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:C9DE6EC4 plane_checksums: [ C9DE6EC4 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:102 pts:103897 pts_time:2.355941 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:A53DF83C plane_checksums: [ A53DF83C ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:103 pts:104921 pts_time:2.379161 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:EBA4730F plane_checksums: [ EBA4730F ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:104 pts:105945 pts_time:2.402381 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:FAC5D40C plane_checksums: [ FAC5D40C ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:105 pts:106969 pts_time:2.425601 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:EBC4DE4B plane_checksums: [ EBC4DE4B ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:106 pts:107993 pts_time:2.448821 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:EA239FF9 plane_checksums: [ EA239FF9 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:107 pts:109017 pts_time:2.472041 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:0E8436F9 plane_checksums: [ 0E8436F9 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:108 pts:110041 pts_time:2.495261 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:46AAAF64 plane_checksums: [ 46AAAF64 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:109 pts:111065 pts_time:2.518481 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:843B0733 plane_checksums: [ 843B0733 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:110 pts:112089 pts_time:2.541701 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:303E52A8 plane_checksums: [ 303E52A8 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:111 pts:113113 pts_time:2.564921 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:51864B90 plane_checksums: [ 51864B90 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:112 pts:114137 pts_time:2.588141 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:6161336B plane_checksums: [ 6161336B ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:113 pts:115161 pts_time:2.611361 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:7D637485 plane_checksums: [ 7D637485 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:114 pts:116185 pts_time:2.63458 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:362A87B5 plane_checksums: [ 362A87B5 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:115 pts:117209 pts_time:2.6578 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:FE03FF15 plane_checksums: [ FE03FF15 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:116 pts:118233 pts_time:2.68102 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:180754A8 plane_checksums: [ 180754A8 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:117 pts:119257 pts_time:2.70424 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:5CC8E562 plane_checksums: [ 5CC8E562 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:118 pts:120281 pts_time:2.72746 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:DDC6B013 plane_checksums: [ DDC6B013 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:119 pts:121305 pts_time:2.75068 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:92758F62 plane_checksums: [ 92758F62 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:120 pts:122329 pts_time:2.7739 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:E46F664A plane_checksums: [ E46F664A ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:121 pts:123353 pts_time:2.79712 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:49FF073F plane_checksums: [ 49FF073F ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:122 pts:124377 pts_time:2.82034 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:4D13BB3C plane_checksums: [ 4D13BB3C ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:123 pts:125401 pts_time:2.84356 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:E30BC10D plane_checksums: [ E30BC10D ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:124 pts:126425 pts_time:2.86678 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:7CE6727F plane_checksums: [ 7CE6727F ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:125 pts:127449 pts_time:2.89 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:66958556 plane_checksums: [ 66958556 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:126 pts:128473 pts_time:2.91322 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:41B374C0 plane_checksums: [ 41B374C0 ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:127 pts:129497 pts_time:2.93644 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:A472AEFD plane_checksums: [ A472AEFD ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:128 pts:130521 pts_time:2.95966 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:1024 checksum:949BCADE plane_checksums: [ 949BCADE ]
+[Parsed_ashowinfo_0 @ 0x155604610] n:129 pts:131545 pts_time:2.98288 fmt:s16 channels:2 chlayout:stereo rate:44100 nb_samples:735 checksum:66C6018C plane_checksums: [ 66C6018C ]
+[out#0/wav @ 0x156810fb0] video:0KiB audio:517KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.023435%
+size=     517KiB time=00:00:02.99 bitrate=1411.5kbits/s speed= 737x

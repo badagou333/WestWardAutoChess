@@ -1,0 +1,10 @@
+{
+  "method": "same original frame 16, eroded opaque upper-body RGB translation search; no framewise correction",
+  "best_residual_translation_pixels": [
+    0.0,
+    0.125
+  ],
+  "mean_squared_rgb_error": 84.157958984375,
+  "search_step_pixels": 0.125,
+  "scope": "author alignment diagnostic, not pixel identity or animation acceptance"
+}
