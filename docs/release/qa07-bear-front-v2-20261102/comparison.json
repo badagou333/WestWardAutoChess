@@ -1,0 +1,42 @@
+[
+  {
+    "direction": "front_right",
+    "elapsed": 2.9999,
+    "new_frame": 84,
+    "original_frame": 93,
+    "author_same_number_file": "front_right-010-frame-0084-character.png",
+    "crop_same": true,
+    "max_pixel_delta": 0,
+    "source_sha_same": true
+  },
+  {
+    "direction": "front_right",
+    "elapsed": 3.0,
+    "new_frame": 1,
+    "original_frame": 10,
+    "author_same_number_file": "front_right-000-frame-0001-character.png",
+    "crop_same": true,
+    "max_pixel_delta": 0,
+    "source_sha_same": true
+  },
+  {
+    "direction": "front_left",
+    "elapsed": 2.9999,
+    "new_frame": 84,
+    "original_frame": 93,
+    "author_same_number_file": "front_left-010-frame-0084-character.png",
+    "crop_same": true,
+    "max_pixel_delta": 0,
+    "source_sha_same": true
+  },
+  {
+    "direction": "front_left",
+    "elapsed": 3.0,
+    "new_frame": 1,
+    "original_frame": 10,
+    "author_same_number_file": "front_left-000-frame-0001-character.png",
+    "crop_same": true,
+    "max_pixel_delta": 0,
+    "source_sha_same": true
+  }
+]

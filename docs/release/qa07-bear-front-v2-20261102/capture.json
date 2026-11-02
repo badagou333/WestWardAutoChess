@@ -1,0 +1,98 @@
+{
+	"audio": "Dummy and Master muted",
+	"boundary": "actual engine draw at elapsed 2.9999 / 3.0; no interpolated/offline compositing",
+	"device_listening_or_OS_mouse": false,
+	"display_server": "macOS",
+	"failures": [],
+	"renderer": "Apple M1",
+	"samples": [
+		{
+			"crop_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"direction": 0,
+			"elapsed": 2.9999,
+			"file": "front-0-2.9999-frame-84.png",
+			"foot": [
+				720,
+				441
+			],
+			"frame": 83,
+			"mirrored": false,
+			"original_source_frame": 93,
+			"sha256": "5b87a8c2c6053043fc2bbfff886d794cbe1392c2ce726aaaeedb92aa972ec3a2",
+			"source_file_sha256": "1cfe8ef0067ce7791a747402ec1a57648d73b235111a2fb849cdef4601d191ad",
+			"source_frame": 84
+		},
+		{
+			"crop_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"direction": 0,
+			"elapsed": 3.0,
+			"file": "front-0-3.0-frame-1.png",
+			"foot": [
+				720,
+				441
+			],
+			"frame": 0,
+			"mirrored": false,
+			"original_source_frame": 10,
+			"sha256": "690fabf72dbb7516dc60ffdf5d8a00621bdc5a9b53ab1fa1b3058d7eefde49be",
+			"source_file_sha256": "1b8b616498089e2c4506b77dd5a4c06ff0d29d37b93d61c0ad69fc3bb3550a38",
+			"source_frame": 1
+		},
+		{
+			"crop_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"direction": 1,
+			"elapsed": 2.9999,
+			"file": "front-1-2.9999-frame-84.png",
+			"foot": [
+				720,
+				441
+			],
+			"frame": 83,
+			"mirrored": true,
+			"original_source_frame": 93,
+			"sha256": "e0b2ac0a4d51f8ca800a56dd1f18bb638c467726c6c96381fce049355e2fa8fa",
+			"source_file_sha256": "1cfe8ef0067ce7791a747402ec1a57648d73b235111a2fb849cdef4601d191ad",
+			"source_frame": 84
+		},
+		{
+			"crop_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"direction": 1,
+			"elapsed": 3.0,
+			"file": "front-1-3.0-frame-1.png",
+			"foot": [
+				720,
+				441
+			],
+			"frame": 0,
+			"mirrored": true,
+			"original_source_frame": 10,
+			"sha256": "0a4461b9a66cc810c0a7ad67cd1e1adad883ae7ae8e9f4543c588180a7982e59",
+			"source_file_sha256": "1b8b616498089e2c4506b77dd5a4c06ff0d29d37b93d61c0ad69fc3bb3550a38",
+			"source_frame": 1
+		}
+	],
+	"viewport": [
+		1440,
+		810
+	]
+}
