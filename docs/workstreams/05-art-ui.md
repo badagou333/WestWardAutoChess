@@ -406,7 +406,7 @@
 
 ## 待总控同步
 
-- 2026-11-02 D-20261101-002 待总控同步：翠鸟[单向运行限定视觉复核](../../godot-demo/art/candidates/c03_kingfisher_attack_v1/RUNTIME_VISUAL_REVIEW.md)对指定源帧、冻结帧和 Godot 静态采样未发现新必修，限定通过；可按负责人已给授权进入水平镜像。灰残留、31→32 连续观感、足点、设备听感及镜像均保留待验，不能扩大为整段真人或音频验收。
+- 2026-11-02 D-20261101-002（00已同步4534b60至PROJECT_STATE及D002，核仅两文件/链接/干净tracked，收取释放报告；接续06已授权镜像，Gitee未同步）：翠鸟[单向运行限定视觉复核](../../godot-demo/art/candidates/c03_kingfisher_attack_v1/RUNTIME_VISUAL_REVIEW.md)对指定源帧、冻结帧和 Godot 静态采样未发现新必修，限定通过；可按负责人已给授权进入水平镜像。灰残留、31→32 连续观感、足点、设备听感及镜像均保留待验，不能扩大为整段真人或音频验收。
 
 
 - 2026-11-02 D-20261102-002（00已同步）：be91a33及[限定实际运行视觉复核](../../godot-demo/art/candidates/bear_lord_front_attack_v3/RUNTIME_VISUAL_REVIEW.md)已核收至PROJECT_STATE和D002；所审范围无新增视觉必修、07已关闭BFV2-01，本轮本机修复/接入与必要限定验收收束，05已idle释放窗口给C3接续。真人连续/设备听感和其他平台仍未验，源画外缺失/残影脚部补棍近似与肩甲不能整体归因的边界保留；Gitee未同步，不把本机收束称跨机器已完成。
