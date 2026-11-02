@@ -34,5 +34,5 @@
   "independent_Mov_rebuild_done":false,
   "overall_visual_or_independent_acceptance":false,
   "remaining_limits":["new42-46 gray-soft feet","neighbor-donor weapon-head approximation","small source end/start pose differences","05 source-candidate-runtime shoulder comparison","human continuous visual review and device listening"],
-  "git_delivery": "Only own files will be committed and one normal push attempted; actual result recorded in 06 handoff. No assertion that local commits reached Gitee."
+  "git_delivery": {"implementation_commit":"4421292","normal_push_attempts":1,"push_exit_code":1,"live_master_sha":"7097d075b91e1404c773c38928c26bb6aa4beebe","synchronized":false,"evidence":"git-delivery.json","documentation_followup_kept_locally_without_second_push":true}
 }

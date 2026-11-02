@@ -10,6 +10,7 @@
 - 首失／未验：初次类型推断解析失败虽退出0，未算通过；随后source/cold各3701项13失败来自背面filename缓存340与图像内容326混淆、原生重采样预填游标被误当精确起点。仅修测试模型、保持严格原相位断言后完整重跑；首JSON/log留存。实时探针初版误读背面静音尾已停player（自身failures0但日志有错误），只补观测guard后整轮重跑，无该错误。证书及headless退出ObjectDB警告仍保存，不声称日志全无警告。未冷复建MOV全部透明帧、未产PCK/EXE，不做新媒体、素材修图或Skill引入/修改；05既有video2dsprite登记不变。
 - 修改文件／证据：仅本项目clips.json、正面art/attack与audio/source-track.wav、test.gd/capture.gd、新增verify_front_v2.py/realtime_probe.gd及README、本工作流；全部作者报告/首次失败/30组真采样位于`bear-forehand-showcase/validation/20261102-front-v2/`，由.gdignore排除运行导入。主项目/背面/05候选及05工作流／00全局未写。
 - 新确认／待总控同步／下一步：无新玩法或素材采用决定。作者范围完成不代07独立、05肩甲母版→候选→运行、脚灰/修补轨迹/首尾连续观感、设备听感与负责人体验。先仅提交自有变更，正常推送一次；既有远端中断不要求重做本机，若同样失败保留本地提交，准确报告未同步并释放运行/Git/GUI，不重推/强推/删素材或扩大费用。按D-20261102-001主动给00本任务/证据/入口/实测边界及实际Git结果，由00串行安排07和05；automation-3不启用。
+- 最终Git／窗口交接：实现与作者验证已本地提交4421292（193个本职责文件，其他候选未代提交）。唯一`git push origin master`退出1，sideband连接中断；不能将末尾“Everything up-to-date”当成功。随后只读ls-remote成功，实测远端master仍7097d075b91e1404c773c38928c26bb6aa4beebe，未收到本批。完整证据见validation/20261102-front-v2/git-delivery.json；仅将这次实际结果另作本地文档收尾提交，不第二次推送。全部本轮CLI/专用GUI退出，提交后tracked/索引释放，原既有未跟踪试稿/缓存保留，不宣称整个Local零未跟踪。主动报告00后，由其串行07/05；跨机器同步仍为外部问题，不要求重做本机接入。
 
 ## 2026-10-29 熊山君四方向攻击展示（作者完成，交07独立验收）
 

@@ -27,6 +27,8 @@
 
 本批实际结果：源码与无缓存副本各3716项/0失败，素材source1466/cold1377项通过，30组真实图形采样与正常自动循环已完成。完整结果、首轮测试错误及未验边界见[作者验证说明](validation/20261102-front-v2/README.md)；07独立、05肩甲/脚边/连续视觉及负责人体验仍待完成。全部source_time_seconds保留，但实际屏幕刷新可呈现的帧率不等于源时刻采样率。
 
+本地实现提交为`4421292`；本批唯一正常推送连接中断，只读确认Gitee master仍为`7097d07`，尚未远端同步。结果记录另作本地收尾提交，不自动重推；本机素材与入口可用，详情见验证目录的git-delivery.json。
+
 ```sh
 python3 bear-forehand-showcase/verify_front_v2.py --output=/tmp/bear-front-assets.json
 bear-forehand-showcase/launch.command --headless --audio-driver Dummy --script res://test.gd -- --output=/tmp/bear-front-engine.json
