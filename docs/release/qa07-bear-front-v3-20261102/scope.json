@@ -1,0 +1,3128 @@
+{
+  "base": "60e82b5a2a5186e6fb0b4780dd44cab0a87ee5d2",
+  "checks": 775,
+  "failures": [],
+  "changed_frames": [
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "unchanged_frames": 70,
+  "protected_files": 348,
+  "cold_files": 441,
+  "opaque_changed_pixels": 0,
+  "cold_copy_contains_candidates": false,
+  "details": [
+    {
+      "check": "frozen manifest",
+      "pass": true
+    },
+    {
+      "check": "actual runtime manifest",
+      "pass": true
+    },
+    {
+      "check": "geometry and count",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 1",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 1",
+      "pass": true
+    },
+    {
+      "check": "source mapping 1",
+      "pass": true
+    },
+    {
+      "check": "canvas 1",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 1",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 2",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 2",
+      "pass": true
+    },
+    {
+      "check": "source mapping 2",
+      "pass": true
+    },
+    {
+      "check": "canvas 2",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 2",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 3",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 3",
+      "pass": true
+    },
+    {
+      "check": "source mapping 3",
+      "pass": true
+    },
+    {
+      "check": "canvas 3",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 3",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 4",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 4",
+      "pass": true
+    },
+    {
+      "check": "source mapping 4",
+      "pass": true
+    },
+    {
+      "check": "canvas 4",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 4",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 5",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 5",
+      "pass": true
+    },
+    {
+      "check": "source mapping 5",
+      "pass": true
+    },
+    {
+      "check": "canvas 5",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 5",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 6",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 6",
+      "pass": true
+    },
+    {
+      "check": "source mapping 6",
+      "pass": true
+    },
+    {
+      "check": "canvas 6",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 6",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 7",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 7",
+      "pass": true
+    },
+    {
+      "check": "source mapping 7",
+      "pass": true
+    },
+    {
+      "check": "canvas 7",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 7",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 8",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 8",
+      "pass": true
+    },
+    {
+      "check": "source mapping 8",
+      "pass": true
+    },
+    {
+      "check": "canvas 8",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 8",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 9",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 9",
+      "pass": true
+    },
+    {
+      "check": "source mapping 9",
+      "pass": true
+    },
+    {
+      "check": "canvas 9",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 9",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 10",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 10",
+      "pass": true
+    },
+    {
+      "check": "source mapping 10",
+      "pass": true
+    },
+    {
+      "check": "canvas 10",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 10",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 11",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 11",
+      "pass": true
+    },
+    {
+      "check": "source mapping 11",
+      "pass": true
+    },
+    {
+      "check": "canvas 11",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 11",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 12",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 12",
+      "pass": true
+    },
+    {
+      "check": "source mapping 12",
+      "pass": true
+    },
+    {
+      "check": "canvas 12",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 12",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 13",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 13",
+      "pass": true
+    },
+    {
+      "check": "source mapping 13",
+      "pass": true
+    },
+    {
+      "check": "canvas 13",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 13",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 14",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 14",
+      "pass": true
+    },
+    {
+      "check": "source mapping 14",
+      "pass": true
+    },
+    {
+      "check": "canvas 14",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 14",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 15",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 15",
+      "pass": true
+    },
+    {
+      "check": "source mapping 15",
+      "pass": true
+    },
+    {
+      "check": "canvas 15",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 15",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 16",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 16",
+      "pass": true
+    },
+    {
+      "check": "source mapping 16",
+      "pass": true
+    },
+    {
+      "check": "canvas 16",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 16",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 17",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 17",
+      "pass": true
+    },
+    {
+      "check": "source mapping 17",
+      "pass": true
+    },
+    {
+      "check": "canvas 17",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 17",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 18",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 18",
+      "pass": true
+    },
+    {
+      "check": "source mapping 18",
+      "pass": true
+    },
+    {
+      "check": "canvas 18",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 18",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 19",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 19",
+      "pass": true
+    },
+    {
+      "check": "source mapping 19",
+      "pass": true
+    },
+    {
+      "check": "canvas 19",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 19",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 20",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 20",
+      "pass": true
+    },
+    {
+      "check": "source mapping 20",
+      "pass": true
+    },
+    {
+      "check": "canvas 20",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 20",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 21",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 21",
+      "pass": true
+    },
+    {
+      "check": "source mapping 21",
+      "pass": true
+    },
+    {
+      "check": "canvas 21",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 21",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 22",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 22",
+      "pass": true
+    },
+    {
+      "check": "source mapping 22",
+      "pass": true
+    },
+    {
+      "check": "canvas 22",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 22",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 23",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 23",
+      "pass": true
+    },
+    {
+      "check": "source mapping 23",
+      "pass": true
+    },
+    {
+      "check": "canvas 23",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 23",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 24",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 24",
+      "pass": true
+    },
+    {
+      "check": "source mapping 24",
+      "pass": true
+    },
+    {
+      "check": "canvas 24",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 24",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 25",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 25",
+      "pass": true
+    },
+    {
+      "check": "source mapping 25",
+      "pass": true
+    },
+    {
+      "check": "canvas 25",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 25",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 26",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 26",
+      "pass": true
+    },
+    {
+      "check": "source mapping 26",
+      "pass": true
+    },
+    {
+      "check": "canvas 26",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 26",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 27",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 27",
+      "pass": true
+    },
+    {
+      "check": "source mapping 27",
+      "pass": true
+    },
+    {
+      "check": "canvas 27",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 27",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 28",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 28",
+      "pass": true
+    },
+    {
+      "check": "source mapping 28",
+      "pass": true
+    },
+    {
+      "check": "canvas 28",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 28",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 29",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 29",
+      "pass": true
+    },
+    {
+      "check": "source mapping 29",
+      "pass": true
+    },
+    {
+      "check": "canvas 29",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 29",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 30",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 30",
+      "pass": true
+    },
+    {
+      "check": "source mapping 30",
+      "pass": true
+    },
+    {
+      "check": "canvas 30",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 30",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 31",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 31",
+      "pass": true
+    },
+    {
+      "check": "source mapping 31",
+      "pass": true
+    },
+    {
+      "check": "canvas 31",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 31",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 32",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 32",
+      "pass": true
+    },
+    {
+      "check": "source mapping 32",
+      "pass": true
+    },
+    {
+      "check": "canvas 32",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 32",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 33",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 33",
+      "pass": true
+    },
+    {
+      "check": "source mapping 33",
+      "pass": true
+    },
+    {
+      "check": "canvas 33",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 33",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 34",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 34",
+      "pass": true
+    },
+    {
+      "check": "source mapping 34",
+      "pass": true
+    },
+    {
+      "check": "canvas 34",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 34",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 35",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 35",
+      "pass": true
+    },
+    {
+      "check": "source mapping 35",
+      "pass": true
+    },
+    {
+      "check": "canvas 35",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 35",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 36",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 36",
+      "pass": true
+    },
+    {
+      "check": "source mapping 36",
+      "pass": true
+    },
+    {
+      "check": "canvas 36",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 36",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 37",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 37",
+      "pass": true
+    },
+    {
+      "check": "source mapping 37",
+      "pass": true
+    },
+    {
+      "check": "canvas 37",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 37",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 38",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 38",
+      "pass": true
+    },
+    {
+      "check": "source mapping 38",
+      "pass": true
+    },
+    {
+      "check": "canvas 38",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 38",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 39",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 39",
+      "pass": true
+    },
+    {
+      "check": "source mapping 39",
+      "pass": true
+    },
+    {
+      "check": "canvas 39",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 39",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 40",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 40",
+      "pass": true
+    },
+    {
+      "check": "source mapping 40",
+      "pass": true
+    },
+    {
+      "check": "canvas 40",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 40",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 41",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 41",
+      "pass": true
+    },
+    {
+      "check": "source mapping 41",
+      "pass": true
+    },
+    {
+      "check": "canvas 41",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 41",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 42",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 42",
+      "pass": true
+    },
+    {
+      "check": "source mapping 42",
+      "pass": true
+    },
+    {
+      "check": "canvas 42",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 42",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 43",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 43",
+      "pass": true
+    },
+    {
+      "check": "source mapping 43",
+      "pass": true
+    },
+    {
+      "check": "canvas 43",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 43",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 44",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 44",
+      "pass": true
+    },
+    {
+      "check": "source mapping 44",
+      "pass": true
+    },
+    {
+      "check": "canvas 44",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 44",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 45",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 45",
+      "pass": true
+    },
+    {
+      "check": "source mapping 45",
+      "pass": true
+    },
+    {
+      "check": "canvas 45",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 45",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 46",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 46",
+      "pass": true
+    },
+    {
+      "check": "source mapping 46",
+      "pass": true
+    },
+    {
+      "check": "canvas 46",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 46",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 47",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 47",
+      "pass": true
+    },
+    {
+      "check": "source mapping 47",
+      "pass": true
+    },
+    {
+      "check": "canvas 47",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 47",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 48",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 48",
+      "pass": true
+    },
+    {
+      "check": "source mapping 48",
+      "pass": true
+    },
+    {
+      "check": "canvas 48",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 48",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 49",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 49",
+      "pass": true
+    },
+    {
+      "check": "source mapping 49",
+      "pass": true
+    },
+    {
+      "check": "canvas 49",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 49",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 50",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 50",
+      "pass": true
+    },
+    {
+      "check": "source mapping 50",
+      "pass": true
+    },
+    {
+      "check": "canvas 50",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 50",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 51",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 51",
+      "pass": true
+    },
+    {
+      "check": "source mapping 51",
+      "pass": true
+    },
+    {
+      "check": "canvas 51",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 51",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 52",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 52",
+      "pass": true
+    },
+    {
+      "check": "source mapping 52",
+      "pass": true
+    },
+    {
+      "check": "canvas 52",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 52",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 53",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 53",
+      "pass": true
+    },
+    {
+      "check": "source mapping 53",
+      "pass": true
+    },
+    {
+      "check": "canvas 53",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 53",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 54",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 54",
+      "pass": true
+    },
+    {
+      "check": "source mapping 54",
+      "pass": true
+    },
+    {
+      "check": "canvas 54",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 54",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 55",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 55",
+      "pass": true
+    },
+    {
+      "check": "source mapping 55",
+      "pass": true
+    },
+    {
+      "check": "canvas 55",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 55",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 56",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 56",
+      "pass": true
+    },
+    {
+      "check": "source mapping 56",
+      "pass": true
+    },
+    {
+      "check": "canvas 56",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 56",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 57",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 57",
+      "pass": true
+    },
+    {
+      "check": "source mapping 57",
+      "pass": true
+    },
+    {
+      "check": "canvas 57",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 57",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 58",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 58",
+      "pass": true
+    },
+    {
+      "check": "source mapping 58",
+      "pass": true
+    },
+    {
+      "check": "canvas 58",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 58",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 59",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 59",
+      "pass": true
+    },
+    {
+      "check": "source mapping 59",
+      "pass": true
+    },
+    {
+      "check": "canvas 59",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 59",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 60",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 60",
+      "pass": true
+    },
+    {
+      "check": "source mapping 60",
+      "pass": true
+    },
+    {
+      "check": "canvas 60",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 60",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 61",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 61",
+      "pass": true
+    },
+    {
+      "check": "source mapping 61",
+      "pass": true
+    },
+    {
+      "check": "canvas 61",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 61",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 62",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 62",
+      "pass": true
+    },
+    {
+      "check": "source mapping 62",
+      "pass": true
+    },
+    {
+      "check": "canvas 62",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 62",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 63",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 63",
+      "pass": true
+    },
+    {
+      "check": "source mapping 63",
+      "pass": true
+    },
+    {
+      "check": "canvas 63",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 63",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 64",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 64",
+      "pass": true
+    },
+    {
+      "check": "source mapping 64",
+      "pass": true
+    },
+    {
+      "check": "canvas 64",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 64",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 65",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 65",
+      "pass": true
+    },
+    {
+      "check": "source mapping 65",
+      "pass": true
+    },
+    {
+      "check": "canvas 65",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 65",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 66",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 66",
+      "pass": true
+    },
+    {
+      "check": "source mapping 66",
+      "pass": true
+    },
+    {
+      "check": "canvas 66",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 66",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 67",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 67",
+      "pass": true
+    },
+    {
+      "check": "source mapping 67",
+      "pass": true
+    },
+    {
+      "check": "canvas 67",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 67",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 68",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 68",
+      "pass": true
+    },
+    {
+      "check": "source mapping 68",
+      "pass": true
+    },
+    {
+      "check": "canvas 68",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 68",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 69",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 69",
+      "pass": true
+    },
+    {
+      "check": "source mapping 69",
+      "pass": true
+    },
+    {
+      "check": "canvas 69",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 69",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 70",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 70",
+      "pass": true
+    },
+    {
+      "check": "source mapping 70",
+      "pass": true
+    },
+    {
+      "check": "canvas 70",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 70",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 71",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 71",
+      "pass": true
+    },
+    {
+      "check": "source mapping 71",
+      "pass": true
+    },
+    {
+      "check": "canvas 71",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 71",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 72",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 72",
+      "pass": true
+    },
+    {
+      "check": "source mapping 72",
+      "pass": true
+    },
+    {
+      "check": "canvas 72",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 72",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 73",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 73",
+      "pass": true
+    },
+    {
+      "check": "source mapping 73",
+      "pass": true
+    },
+    {
+      "check": "canvas 73",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 73",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 74",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 74",
+      "pass": true
+    },
+    {
+      "check": "source mapping 74",
+      "pass": true
+    },
+    {
+      "check": "canvas 74",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 74",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 75",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 75",
+      "pass": true
+    },
+    {
+      "check": "source mapping 75",
+      "pass": true
+    },
+    {
+      "check": "canvas 75",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 75",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 76",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 76",
+      "pass": true
+    },
+    {
+      "check": "source mapping 76",
+      "pass": true
+    },
+    {
+      "check": "canvas 76",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 76",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 77",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 77",
+      "pass": true
+    },
+    {
+      "check": "source mapping 77",
+      "pass": true
+    },
+    {
+      "check": "canvas 77",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 77",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 78",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 78",
+      "pass": true
+    },
+    {
+      "check": "source mapping 78",
+      "pass": true
+    },
+    {
+      "check": "canvas 78",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 78",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 79",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 79",
+      "pass": true
+    },
+    {
+      "check": "source mapping 79",
+      "pass": true
+    },
+    {
+      "check": "canvas 79",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 79",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 80",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 80",
+      "pass": true
+    },
+    {
+      "check": "source mapping 80",
+      "pass": true
+    },
+    {
+      "check": "canvas 80",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 80",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 81",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 81",
+      "pass": true
+    },
+    {
+      "check": "source mapping 81",
+      "pass": true
+    },
+    {
+      "check": "canvas 81",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 81",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 82",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 82",
+      "pass": true
+    },
+    {
+      "check": "source mapping 82",
+      "pass": true
+    },
+    {
+      "check": "canvas 82",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 82",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 83",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 83",
+      "pass": true
+    },
+    {
+      "check": "source mapping 83",
+      "pass": true
+    },
+    {
+      "check": "canvas 83",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 83",
+      "pass": true
+    },
+    {
+      "check": "candidate/runtime/hash 84",
+      "pass": true
+    },
+    {
+      "check": "unchanged source time 84",
+      "pass": true
+    },
+    {
+      "check": "source mapping 84",
+      "pass": true
+    },
+    {
+      "check": "canvas 84",
+      "pass": true
+    },
+    {
+      "check": "opaque subject unchanged 84",
+      "pass": true
+    },
+    {
+      "check": "exact 14 changed frames",
+      "pass": true
+    },
+    {
+      "check": "3sec / final50ms",
+      "pass": true
+    },
+    {
+      "check": "unchanged WAV",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0001.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0002.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0003.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0004.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0005.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0006.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0007.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0008.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0009.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0010.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0011.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0012.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0013.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0014.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0015.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0016.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0017.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0018.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0019.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0020.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0021.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0022.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0023.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0024.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0025.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0026.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0027.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0028.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0029.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0030.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0031.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0032.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0033.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0034.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0035.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0036.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0037.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0038.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0039.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0040.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0041.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0042.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0043.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0044.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0045.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0046.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0047.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0048.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0049.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0050.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0051.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0052.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0053.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0054.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0055.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0056.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0057.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0058.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0059.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0060.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0061.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0062.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0063.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0064.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0065.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0066.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0067.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0068.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0069.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0070.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0071.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0072.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0073.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0074.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0075.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0076.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0077.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0078.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0079.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0080.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0081.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0082.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0083.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0084.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0085.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0086.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0087.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0088.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0089.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0090.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0091.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0092.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0093.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0094.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0095.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0096.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0097.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0098.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0099.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0100.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0101.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0102.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0103.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0104.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0105.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0106.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0107.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0108.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0109.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0110.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0111.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0112.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0113.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0114.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0115.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0116.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0117.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0118.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0119.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0120.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0121.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0122.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0123.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0124.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0125.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0126.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0127.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0128.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0129.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0130.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0131.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0132.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0133.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0134.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0135.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0136.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0137.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0138.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0139.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0140.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0141.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0142.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0143.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0144.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0145.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0146.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0147.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0148.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0149.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0150.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0151.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0152.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0153.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0154.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0155.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0156.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0157.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0158.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0159.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0160.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0161.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0162.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0163.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0164.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0165.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0166.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0167.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0168.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0169.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0170.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0171.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0172.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0173.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0174.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0175.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0176.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0177.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0178.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0179.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0180.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0181.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0182.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0183.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0184.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0185.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0186.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0187.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0188.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0189.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0190.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0191.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0192.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0193.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0194.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0195.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0196.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0197.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0198.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0199.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0200.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0201.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0202.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0203.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0204.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0205.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0206.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0207.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0208.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0209.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0210.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0211.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0212.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0213.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0214.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0215.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0216.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0217.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0218.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0219.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0220.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0221.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0222.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0223.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0224.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0225.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0226.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0227.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0228.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0229.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0230.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0231.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0232.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0233.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0234.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0235.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0236.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0237.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0238.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0239.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0240.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0241.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0242.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0243.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0244.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0245.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0246.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0247.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0248.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0249.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0250.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0251.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0252.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0253.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0254.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0255.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0256.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0257.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0258.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0259.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0260.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0261.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0262.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0263.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0264.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0265.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0266.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0267.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0268.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0269.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0270.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0271.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0272.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0273.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0274.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0275.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0276.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0277.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0278.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0279.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0280.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0281.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0282.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0283.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0284.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0285.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0286.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0287.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0288.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0289.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0290.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0291.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0292.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0293.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0294.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0295.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0296.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0297.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0298.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0299.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0300.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0301.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0302.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0303.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0304.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0305.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0306.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0307.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0308.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0309.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0310.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0311.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0312.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0313.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0314.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0315.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0316.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0317.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0318.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0319.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0320.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0321.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0322.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0323.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0324.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0325.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0326.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0327.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0328.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0329.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0330.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0331.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0332.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0333.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0334.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0335.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0336.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0337.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0338.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0339.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/attack_0340.png",
+      "pass": true
+    },
+    {
+      "check": "protected art/back/manifest.json",
+      "pass": true
+    },
+    {
+      "check": "protected art/forest-board.png",
+      "pass": true
+    },
+    {
+      "check": "protected audio/back-source-track.wav",
+      "pass": true
+    },
+    {
+      "check": "protected audio/source-track.wav",
+      "pass": true
+    },
+    {
+      "check": "protected clips.json",
+      "pass": true
+    },
+    {
+      "check": "protected project.godot",
+      "pass": true
+    },
+    {
+      "check": "protected showcase.gd",
+      "pass": true
+    },
+    {
+      "check": "protected showcase.tscn",
+      "pass": true
+    },
+    {
+      "check": "no cache before launch",
+      "pass": true
+    }
+  ]
+}

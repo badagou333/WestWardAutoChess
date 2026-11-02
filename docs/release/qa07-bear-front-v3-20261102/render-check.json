@@ -1,0 +1,530 @@
+{
+  "checks": 101,
+  "failures": [],
+  "author_comparisons": [
+    {
+      "file": "front-0-frame-0042.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_right-003-frame-0042-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-0-frame-0043.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_right-004-frame-0043-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-0-frame-0044.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_right-005-frame-0044-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-0-frame-0045.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_right-006-frame-0045-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-0-frame-0048.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_right-009-frame-0048-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-0-frame-0049.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_right-010-frame-0049-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-0-frame-0050.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_right-011-frame-0050-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-0-frame-0051.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_right-012-frame-0051-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-0-frame-0084.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_right-014-frame-0084-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-0-frame-0001.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_right-000-frame-0001-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-1-frame-0001.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_left-000-frame-0001-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-1-frame-0042.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_left-003-frame-0042-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-1-frame-0043.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_left-004-frame-0043-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-1-frame-0044.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_left-005-frame-0044-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-1-frame-0045.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_left-006-frame-0045-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-1-frame-0048.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_left-009-frame-0048-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-1-frame-0049.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_left-010-frame-0049-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-1-frame-0050.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_left-011-frame-0050-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-1-frame-0051.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_left-012-frame-0051-character.png",
+      "pixel_equal": true
+    },
+    {
+      "file": "front-1-frame-0084.png",
+      "author": "bear-forehand-showcase/validation/20261102-front-v3/render/front_left-014-frame-0084-character.png",
+      "pixel_equal": true
+    }
+  ],
+  "frozen_runtime_files": 441,
+  "changed_runtime_files": [],
+  "normal_trace_summary": [
+    {
+      "direction": 0,
+      "elapsed": 6.10000000000001,
+      "observed_unique_frames": 82,
+      "max_render_delta": 0.147671,
+      "frame_changes": 160
+    },
+    {
+      "direction": 1,
+      "elapsed": 6.10000000000009,
+      "observed_unique_frames": 83,
+      "max_render_delta": 0.012049,
+      "frame_changes": 168
+    }
+  ],
+  "details": [
+    {
+      "check": "capture hash front-0-frame-0037.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-0-frame-0037.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-0-frame-0037.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-0-frame-0038.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-0-frame-0038.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-0-frame-0038.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-0-frame-0042.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-0-frame-0042.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-0-frame-0042.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-0-frame-0042.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-0-frame-0043.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-0-frame-0043.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-0-frame-0043.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-0-frame-0043.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-0-frame-0044.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-0-frame-0044.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-0-frame-0044.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-0-frame-0044.png",
+      "pass": true
+    },
+    {
+      "check": "actual viewport/crop identical",
+      "pass": true
+    },
+    {
+      "check": "capture hash viewport-front-right-44.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-0-frame-0045.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-0-frame-0045.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-0-frame-0045.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-0-frame-0045.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-0-frame-0048.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-0-frame-0048.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-0-frame-0048.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-0-frame-0048.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-0-frame-0049.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-0-frame-0049.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-0-frame-0049.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-0-frame-0049.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-0-frame-0050.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-0-frame-0050.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-0-frame-0050.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-0-frame-0050.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-0-frame-0051.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-0-frame-0051.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-0-frame-0051.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-0-frame-0051.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-0-frame-0052.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-0-frame-0052.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-0-frame-0052.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-0-frame-0084.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-0-frame-0084.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-0-frame-0084.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-0-frame-0084.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-0-frame-0001.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-0-frame-0001.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-0-frame-0001.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-0-frame-0001.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-1-frame-0001.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-1-frame-0001.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-1-frame-0001.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-1-frame-0001.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-1-frame-0037.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-1-frame-0037.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-1-frame-0037.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-1-frame-0038.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-1-frame-0038.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-1-frame-0038.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-1-frame-0042.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-1-frame-0042.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-1-frame-0042.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-1-frame-0042.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-1-frame-0043.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-1-frame-0043.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-1-frame-0043.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-1-frame-0043.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-1-frame-0044.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-1-frame-0044.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-1-frame-0044.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-1-frame-0044.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-1-frame-0045.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-1-frame-0045.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-1-frame-0045.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-1-frame-0045.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-1-frame-0048.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-1-frame-0048.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-1-frame-0048.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-1-frame-0048.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-1-frame-0049.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-1-frame-0049.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-1-frame-0049.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-1-frame-0049.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-1-frame-0050.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-1-frame-0050.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-1-frame-0050.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-1-frame-0050.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-1-frame-0051.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-1-frame-0051.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-1-frame-0051.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-1-frame-0051.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-1-frame-0052.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-1-frame-0052.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-1-frame-0052.png",
+      "pass": true
+    },
+    {
+      "check": "capture hash front-1-frame-0084.png",
+      "pass": true
+    },
+    {
+      "check": "captured asset front-1-frame-0084.png",
+      "pass": true
+    },
+    {
+      "check": "actual normal PTS front-1-frame-0084.png",
+      "pass": true
+    },
+    {
+      "check": "independent normal matches author paused front-1-frame-0084.png",
+      "pass": true
+    },
+    {
+      "check": "production frozen after QA",
+      "pass": true
+    }
+  ]
+}

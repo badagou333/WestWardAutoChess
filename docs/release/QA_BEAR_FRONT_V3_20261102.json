@@ -1,0 +1,51 @@
+{
+  "task": "D-20261102-002",
+  "role": "07 independent targeted QA",
+  "base_commit": "60e82b5a2a5186e6fb0b4780dd44cab0a87ee5d2",
+  "art_commit": "e7d7b4d",
+  "runtime_commit": "52456d5",
+  "handoff_commit": "83da3ac",
+  "result": "targeted pass",
+  "BFV2-01": "closed: missing main arc restored in real runtime; not blanket visual acceptance",
+  "checks": {
+    "scope": 775,
+    "real_runtime": 171,
+    "render_evidence": 101,
+    "total": 1047,
+    "failures": 0
+  },
+  "normal_trace_summary": [
+    {
+      "direction": 0,
+      "elapsed": 6.10000000000001,
+      "observed_unique_frames": 82,
+      "max_render_delta": 0.147671,
+      "frame_changes": 160
+    },
+    {
+      "direction": 1,
+      "elapsed": 6.10000000000009,
+      "observed_unique_frames": 83,
+      "max_render_delta": 0.012049,
+      "frame_changes": 168
+    }
+  ],
+  "capture_count": 27,
+  "author_paused_pixel_matches": 20,
+  "first_run_failures": [],
+  "gui_exit_code": 0,
+  "warnings": [],
+  "unverified": [
+    "05 formal source/candidate/runtime visual review",
+    "human continuous motion",
+    "physical audio devices",
+    "OS mouse/key operation",
+    "Windows/mobile/PCK"
+  ],
+  "accepted_limitation": "user-selected 24-source-pixel fade; source offscreen missing, gray145/occlusion approximate",
+  "runtime_frozen_unchanged_files": 441,
+  "delivery": {
+    "status": "pending single normal push and remote verification"
+  },
+  "automation_changed": false
+}
