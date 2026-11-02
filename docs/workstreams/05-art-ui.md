@@ -402,7 +402,7 @@
 
 ## 待总控同步
 
-- 2026-11-02 D-20261102-002：负责人已选24源像素局部渐隐，v3候选已完成[整理与冷重建](../../godot-demo/art/candidates/bear_lord_front_attack_v3/README.md)；请核作者提交/推送后安排06、07及05按[移交](../../godot-demo/art/candidates/bear_lord_front_attack_v3/HANDOFF.md)串行续接，BFV2-01和运行/连续观感/设备听感未自动关闭。保留v2构建依赖及源画外FX不可恢复等限制。
+- 2026-11-02 D-20261102-002（00已同步）：已核收e7d7b4d至PROJECT_STATE及D002，84帧/原声/选版视频保持与manifest路径映射通过，05已idle释放窗口，Gitee未同步；00安排06接入，再07及05按[移交](../../godot-demo/art/candidates/bear_lord_front_attack_v3/HANDOFF.md)串行复核。BFV2-01和运行/连续观感/设备听感未自动关闭，v2构建依赖及源画外FX不可恢复等限制保留。本标记只接收本批。
 
 总控同步标记（2026-11-02 C3入库）：a36cd56及98帧冻结映射/原声/失败证据/尾样本边界已核收至PROJECT_STATE和D-20261101-002；C3已idle并交回窗口，Gitee未同步。06仅只读方案，运行与镜像尚未实现；共享入库窗口接续交熊山君已获负责人选定的残影版。本标记仅接收该批，不清除其他历史记录。
 
