@@ -1,0 +1,1740 @@
+{
+  "base": "14c1bd6ba3a0fb808b779a4ad07d67524789bd2e",
+  "checks": 403,
+  "failures": [],
+  "copied_files": [
+    ".gitignore",
+    "HANDOFF.md",
+    "README.md",
+    "art/c03/audio/feather-selected.wav",
+    "art/c03/frames/frame_000000.png",
+    "art/c03/frames/frame_000001.png",
+    "art/c03/frames/frame_000002.png",
+    "art/c03/frames/frame_000003.png",
+    "art/c03/frames/frame_000004.png",
+    "art/c03/frames/frame_000005.png",
+    "art/c03/frames/frame_000006.png",
+    "art/c03/frames/frame_000007.png",
+    "art/c03/frames/frame_000008.png",
+    "art/c03/frames/frame_000009.png",
+    "art/c03/frames/frame_000010.png",
+    "art/c03/frames/frame_000011.png",
+    "art/c03/frames/frame_000012.png",
+    "art/c03/frames/frame_000013.png",
+    "art/c03/frames/frame_000014.png",
+    "art/c03/frames/frame_000015.png",
+    "art/c03/frames/frame_000016.png",
+    "art/c03/frames/frame_000017.png",
+    "art/c03/frames/frame_000018.png",
+    "art/c03/frames/frame_000019.png",
+    "art/c03/frames/frame_000020.png",
+    "art/c03/frames/frame_000021.png",
+    "art/c03/frames/frame_000022.png",
+    "art/c03/frames/frame_000023.png",
+    "art/c03/frames/frame_000024.png",
+    "art/c03/frames/frame_000025.png",
+    "art/c03/frames/frame_000026.png",
+    "art/c03/frames/frame_000027.png",
+    "art/c03/frames/frame_000028.png",
+    "art/c03/frames/frame_000029.png",
+    "art/c03/frames/frame_000030.png",
+    "art/c03/frames/frame_000031.png",
+    "art/c03/frames/frame_000032.png",
+    "art/c03/frames/frame_000033.png",
+    "art/c03/frames/frame_000034.png",
+    "art/c03/frames/frame_000035.png",
+    "art/c03/frames/frame_000036.png",
+    "art/c03/frames/frame_000037.png",
+    "art/c03/frames/frame_000038.png",
+    "art/c03/frames/frame_000039.png",
+    "art/c03/frames/frame_000040.png",
+    "art/c03/frames/frame_000041.png",
+    "art/c03/frames/frame_000042.png",
+    "art/c03/frames/frame_000043.png",
+    "art/c03/frames/frame_000044.png",
+    "art/c03/frames/frame_000045.png",
+    "art/c03/frames/frame_000046.png",
+    "art/c03/frames/frame_000047.png",
+    "art/c03/frames/frame_000048.png",
+    "art/c03/frames/frame_000049.png",
+    "art/c03/frames/frame_000050.png",
+    "art/c03/frames/frame_000051.png",
+    "art/c03/frames/frame_000052.png",
+    "art/c03/frames/frame_000053.png",
+    "art/c03/frames/frame_000054.png",
+    "art/c03/frames/frame_000055.png",
+    "art/c03/frames/frame_000056.png",
+    "art/c03/frames/frame_000057.png",
+    "art/c03/frames/frame_000058.png",
+    "art/c03/frames/frame_000059.png",
+    "art/c03/frames/frame_000060.png",
+    "art/c03/frames/frame_000061.png",
+    "art/c03/frames/frame_000062.png",
+    "art/c03/frames/frame_000063.png",
+    "art/c03/frames/frame_000064.png",
+    "art/c03/frames/frame_000065.png",
+    "art/c03/frames/frame_000066.png",
+    "art/c03/frames/frame_000067.png",
+    "art/c03/frames/frame_000068.png",
+    "art/c03/frames/frame_000069.png",
+    "art/c03/frames/frame_000070.png",
+    "art/c03/frames/frame_000071.png",
+    "art/c03/frames/frame_000072.png",
+    "art/c03/frames/frame_000073.png",
+    "art/c03/frames/frame_000074.png",
+    "art/c03/frames/frame_000075.png",
+    "art/c03/frames/frame_000076.png",
+    "art/c03/frames/frame_000077.png",
+    "art/c03/frames/frame_000078.png",
+    "art/c03/frames/frame_000079.png",
+    "art/c03/frames/frame_000080.png",
+    "art/c03/frames/frame_000081.png",
+    "art/c03/frames/frame_000082.png",
+    "art/c03/frames/frame_000083.png",
+    "art/c03/frames/frame_000084.png",
+    "art/c03/frames/frame_000085.png",
+    "art/c03/frames/frame_000086.png",
+    "art/c03/frames/frame_000087.png",
+    "art/c03/frames/frame_000088.png",
+    "art/c03/frames/frame_000089.png",
+    "art/c03/frames/frame_000090.png",
+    "art/c03/frames/frame_000091.png",
+    "art/c03/frames/frame_000092.png",
+    "art/c03/frames/frame_000093.png",
+    "art/c03/frames/frame_000094.png",
+    "art/c03/frames/frame_000095.png",
+    "art/c03/frames/frame_000096.png",
+    "art/c03/frames/frame_000097.png",
+    "art/c03/manifest.json",
+    "art/forest-board.png",
+    "capture.gd",
+    "launch.command",
+    "main.tscn",
+    "project.godot",
+    "realtime_probe.gd",
+    "showcase.gd",
+    "showcase.json",
+    "tests/TEST_PLAN.md",
+    "tests/test.gd",
+    "verify_assets.py"
+  ],
+  "frozen_files": 161,
+  "details": [
+    {
+      "pass": true,
+      "check": "manifest pin"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/manifest.json"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000000.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000001.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000002.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000003.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000004.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000005.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000006.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000007.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000008.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000009.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000010.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000011.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000012.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000013.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000014.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000015.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000016.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000017.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000018.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000019.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000020.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000021.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000022.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000023.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000024.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000025.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000026.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000027.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000028.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000029.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000030.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000031.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000032.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000033.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000034.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000035.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000036.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000037.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000038.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000039.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000040.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000041.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000042.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000043.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000044.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000045.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000046.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000047.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000048.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000049.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000050.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000051.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000052.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000053.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000054.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000055.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000056.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000057.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000058.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000059.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000060.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000061.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000062.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000063.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000064.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000065.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000066.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000067.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000068.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000069.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000070.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000071.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000072.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000073.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000074.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000075.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000076.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000077.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000078.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000079.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000080.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000081.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000082.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000083.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000084.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000085.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000086.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000087.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000088.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000089.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000090.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000091.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000092.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000093.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000094.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000095.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000096.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/frames/frame_000097.png"
+    },
+    {
+      "pass": true,
+      "check": "resource art/c03/audio/feather-selected.wav"
+    },
+    {
+      "pass": true,
+      "check": "resource art/forest-board.png"
+    },
+    {
+      "pass": true,
+      "check": "98 records"
+    },
+    {
+      "pass": true,
+      "check": "only frozen repaired indices"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 0"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 0"
+    },
+    {
+      "pass": true,
+      "check": "duration 0"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 1"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 1"
+    },
+    {
+      "pass": true,
+      "check": "duration 1"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 2"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 2"
+    },
+    {
+      "pass": true,
+      "check": "duration 2"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 3"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 3"
+    },
+    {
+      "pass": true,
+      "check": "duration 3"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 4"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 4"
+    },
+    {
+      "pass": true,
+      "check": "duration 4"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 5"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 5"
+    },
+    {
+      "pass": true,
+      "check": "duration 5"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 6"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 6"
+    },
+    {
+      "pass": true,
+      "check": "duration 6"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 7"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 7"
+    },
+    {
+      "pass": true,
+      "check": "duration 7"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 8"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 8"
+    },
+    {
+      "pass": true,
+      "check": "duration 8"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 9"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 9"
+    },
+    {
+      "pass": true,
+      "check": "duration 9"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 10"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 10"
+    },
+    {
+      "pass": true,
+      "check": "duration 10"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 11"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 11"
+    },
+    {
+      "pass": true,
+      "check": "duration 11"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 12"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 12"
+    },
+    {
+      "pass": true,
+      "check": "duration 12"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 13"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 13"
+    },
+    {
+      "pass": true,
+      "check": "duration 13"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 14"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 14"
+    },
+    {
+      "pass": true,
+      "check": "duration 14"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 15"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 15"
+    },
+    {
+      "pass": true,
+      "check": "duration 15"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 16"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 16"
+    },
+    {
+      "pass": true,
+      "check": "duration 16"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 17"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 17"
+    },
+    {
+      "pass": true,
+      "check": "duration 17"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 18"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 18"
+    },
+    {
+      "pass": true,
+      "check": "duration 18"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 19"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 19"
+    },
+    {
+      "pass": true,
+      "check": "duration 19"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 20"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 20"
+    },
+    {
+      "pass": true,
+      "check": "duration 20"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 21"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 21"
+    },
+    {
+      "pass": true,
+      "check": "duration 21"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 22"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 22"
+    },
+    {
+      "pass": true,
+      "check": "duration 22"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 23"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 23"
+    },
+    {
+      "pass": true,
+      "check": "duration 23"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 24"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 24"
+    },
+    {
+      "pass": true,
+      "check": "duration 24"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 25"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 25"
+    },
+    {
+      "pass": true,
+      "check": "duration 25"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 26"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 26"
+    },
+    {
+      "pass": true,
+      "check": "duration 26"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 27"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 27"
+    },
+    {
+      "pass": true,
+      "check": "duration 27"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 28"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 28"
+    },
+    {
+      "pass": true,
+      "check": "duration 28"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 29"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 29"
+    },
+    {
+      "pass": true,
+      "check": "duration 29"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 30"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 30"
+    },
+    {
+      "pass": true,
+      "check": "duration 30"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 31"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 31"
+    },
+    {
+      "pass": true,
+      "check": "duration 31"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 32"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 32"
+    },
+    {
+      "pass": true,
+      "check": "duration 32"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 33"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 33"
+    },
+    {
+      "pass": true,
+      "check": "duration 33"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 34"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 34"
+    },
+    {
+      "pass": true,
+      "check": "duration 34"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 35"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 35"
+    },
+    {
+      "pass": true,
+      "check": "duration 35"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 36"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 36"
+    },
+    {
+      "pass": true,
+      "check": "duration 36"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 37"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 37"
+    },
+    {
+      "pass": true,
+      "check": "duration 37"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 38"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 38"
+    },
+    {
+      "pass": true,
+      "check": "duration 38"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 39"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 39"
+    },
+    {
+      "pass": true,
+      "check": "duration 39"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 40"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 40"
+    },
+    {
+      "pass": true,
+      "check": "duration 40"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 41"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 41"
+    },
+    {
+      "pass": true,
+      "check": "duration 41"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 42"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 42"
+    },
+    {
+      "pass": true,
+      "check": "duration 42"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 43"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 43"
+    },
+    {
+      "pass": true,
+      "check": "duration 43"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 44"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 44"
+    },
+    {
+      "pass": true,
+      "check": "duration 44"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 45"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 45"
+    },
+    {
+      "pass": true,
+      "check": "duration 45"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 46"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 46"
+    },
+    {
+      "pass": true,
+      "check": "duration 46"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 47"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 47"
+    },
+    {
+      "pass": true,
+      "check": "duration 47"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 48"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 48"
+    },
+    {
+      "pass": true,
+      "check": "duration 48"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 49"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 49"
+    },
+    {
+      "pass": true,
+      "check": "duration 49"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 50"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 50"
+    },
+    {
+      "pass": true,
+      "check": "duration 50"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 51"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 51"
+    },
+    {
+      "pass": true,
+      "check": "duration 51"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 52"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 52"
+    },
+    {
+      "pass": true,
+      "check": "duration 52"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 53"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 53"
+    },
+    {
+      "pass": true,
+      "check": "duration 53"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 54"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 54"
+    },
+    {
+      "pass": true,
+      "check": "duration 54"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 55"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 55"
+    },
+    {
+      "pass": true,
+      "check": "duration 55"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 56"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 56"
+    },
+    {
+      "pass": true,
+      "check": "duration 56"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 57"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 57"
+    },
+    {
+      "pass": true,
+      "check": "duration 57"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 58"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 58"
+    },
+    {
+      "pass": true,
+      "check": "duration 58"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 59"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 59"
+    },
+    {
+      "pass": true,
+      "check": "duration 59"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 60"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 60"
+    },
+    {
+      "pass": true,
+      "check": "duration 60"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 61"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 61"
+    },
+    {
+      "pass": true,
+      "check": "duration 61"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 62"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 62"
+    },
+    {
+      "pass": true,
+      "check": "duration 62"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 63"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 63"
+    },
+    {
+      "pass": true,
+      "check": "duration 63"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 64"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 64"
+    },
+    {
+      "pass": true,
+      "check": "duration 64"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 65"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 65"
+    },
+    {
+      "pass": true,
+      "check": "duration 65"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 66"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 66"
+    },
+    {
+      "pass": true,
+      "check": "duration 66"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 67"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 67"
+    },
+    {
+      "pass": true,
+      "check": "duration 67"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 68"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 68"
+    },
+    {
+      "pass": true,
+      "check": "duration 68"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 69"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 69"
+    },
+    {
+      "pass": true,
+      "check": "duration 69"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 70"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 70"
+    },
+    {
+      "pass": true,
+      "check": "duration 70"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 71"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 71"
+    },
+    {
+      "pass": true,
+      "check": "duration 71"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 72"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 72"
+    },
+    {
+      "pass": true,
+      "check": "duration 72"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 73"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 73"
+    },
+    {
+      "pass": true,
+      "check": "duration 73"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 74"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 74"
+    },
+    {
+      "pass": true,
+      "check": "duration 74"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 75"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 75"
+    },
+    {
+      "pass": true,
+      "check": "duration 75"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 76"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 76"
+    },
+    {
+      "pass": true,
+      "check": "duration 76"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 77"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 77"
+    },
+    {
+      "pass": true,
+      "check": "duration 77"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 78"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 78"
+    },
+    {
+      "pass": true,
+      "check": "duration 78"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 79"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 79"
+    },
+    {
+      "pass": true,
+      "check": "duration 79"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 80"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 80"
+    },
+    {
+      "pass": true,
+      "check": "duration 80"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 81"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 81"
+    },
+    {
+      "pass": true,
+      "check": "duration 81"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 82"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 82"
+    },
+    {
+      "pass": true,
+      "check": "duration 82"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 83"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 83"
+    },
+    {
+      "pass": true,
+      "check": "duration 83"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 84"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 84"
+    },
+    {
+      "pass": true,
+      "check": "duration 84"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 85"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 85"
+    },
+    {
+      "pass": true,
+      "check": "duration 85"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 86"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 86"
+    },
+    {
+      "pass": true,
+      "check": "duration 86"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 87"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 87"
+    },
+    {
+      "pass": true,
+      "check": "duration 87"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 88"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 88"
+    },
+    {
+      "pass": true,
+      "check": "duration 88"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 89"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 89"
+    },
+    {
+      "pass": true,
+      "check": "duration 89"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 90"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 90"
+    },
+    {
+      "pass": true,
+      "check": "duration 90"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 91"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 91"
+    },
+    {
+      "pass": true,
+      "check": "duration 91"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 92"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 92"
+    },
+    {
+      "pass": true,
+      "check": "duration 92"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 93"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 93"
+    },
+    {
+      "pass": true,
+      "check": "duration 93"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 94"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 94"
+    },
+    {
+      "pass": true,
+      "check": "duration 94"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 95"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 95"
+    },
+    {
+      "pass": true,
+      "check": "duration 95"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 96"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 96"
+    },
+    {
+      "pass": true,
+      "check": "duration 96"
+    },
+    {
+      "pass": true,
+      "check": "PTS continuous 97"
+    },
+    {
+      "pass": true,
+      "check": "mapped png 97"
+    },
+    {
+      "pass": true,
+      "check": "duration 97"
+    },
+    {
+      "pass": true,
+      "check": "exact media end"
+    },
+    {
+      "pass": true,
+      "check": "canvas reference"
+    },
+    {
+      "pass": true,
+      "check": "original one second PCM"
+    },
+    {
+      "pass": true,
+      "check": "no cache before launch"
+    },
+    {
+      "pass": true,
+      "check": "no source video needed"
+    }
+  ],
+  "protected_git_trees": {
+    "godot-demo": "ad801b6f89939b1195157d39a877302715f6fbcb",
+    "bear-forehand-showcase": "aca6cd023ba14f5fad284e592b02188450dcbe7e"
+  }
+}

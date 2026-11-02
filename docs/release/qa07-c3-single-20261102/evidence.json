@@ -1,0 +1,608 @@
+{
+  "checks": 138,
+  "failures": [],
+  "author_pixel_matches": [
+    {
+      "qa": "ready-0.png",
+      "author": "ready-index-000-character.png",
+      "pixel_equal": true
+    },
+    {
+      "qa": "normal-29.png",
+      "author": "inspection-index-029-character.png",
+      "pixel_equal": true
+    },
+    {
+      "qa": "normal-30.png",
+      "author": "inspection-index-030-character.png",
+      "pixel_equal": true
+    },
+    {
+      "qa": "normal-31.png",
+      "author": "inspection-index-031-character.png",
+      "pixel_equal": true
+    },
+    {
+      "qa": "normal-32.png",
+      "author": "inspection-index-032-character.png",
+      "pixel_equal": true
+    },
+    {
+      "qa": "normal-33.png",
+      "author": "inspection-index-033-character.png",
+      "pixel_equal": true
+    },
+    {
+      "qa": "normal-34.png",
+      "author": "inspection-index-034-character.png",
+      "pixel_equal": true
+    },
+    {
+      "qa": "normal-96.png",
+      "author": "inspection-index-096-character.png",
+      "pixel_equal": true
+    },
+    {
+      "qa": "normal-97.png",
+      "author": "ended-index-097-character.png",
+      "pixel_equal": true
+    }
+  ],
+  "frozen_changed": [],
+  "protected_diff": "",
+  "cache_paths": [],
+  "details": [
+    {
+      "pass": true,
+      "check": "original frozen record count"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 0"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 1"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 2"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 3"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 4"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 5"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 6"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 7"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 8"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 9"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 10"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 11"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 12"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 13"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 14"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 15"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 16"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 17"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 18"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 19"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 20"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 21"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 22"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 23"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 24"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 25"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 26"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 27"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 28"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 29"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 30"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 31"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 32"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 33"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 34"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 35"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 36"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 37"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 38"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 39"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 40"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 41"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 42"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 43"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 44"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 45"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 46"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 47"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 48"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 49"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 50"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 51"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 52"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 53"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 54"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 55"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 56"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 57"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 58"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 59"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 60"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 61"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 62"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 63"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 64"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 65"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 66"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 67"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 68"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 69"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 70"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 71"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 72"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 73"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 74"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 75"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 76"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 77"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 78"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 79"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 80"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 81"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 82"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 83"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 84"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 85"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 86"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 87"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 88"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 89"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 90"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 91"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 92"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 93"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 94"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 95"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 96"
+    },
+    {
+      "pass": true,
+      "check": "original frozen map 97"
+    },
+    {
+      "pass": true,
+      "check": "capture hash ready-0.png"
+    },
+    {
+      "pass": true,
+      "check": "capture mapped asset ready-0.png"
+    },
+    {
+      "pass": true,
+      "check": "normal vs author same index ready-0.png"
+    },
+    {
+      "pass": true,
+      "check": "capture hash normal-29.png"
+    },
+    {
+      "pass": true,
+      "check": "capture mapped asset normal-29.png"
+    },
+    {
+      "pass": true,
+      "check": "normal PTS normal-29.png"
+    },
+    {
+      "pass": true,
+      "check": "normal vs author same index normal-29.png"
+    },
+    {
+      "pass": true,
+      "check": "capture hash normal-30.png"
+    },
+    {
+      "pass": true,
+      "check": "capture mapped asset normal-30.png"
+    },
+    {
+      "pass": true,
+      "check": "normal PTS normal-30.png"
+    },
+    {
+      "pass": true,
+      "check": "normal vs author same index normal-30.png"
+    },
+    {
+      "pass": true,
+      "check": "capture hash normal-31.png"
+    },
+    {
+      "pass": true,
+      "check": "capture mapped asset normal-31.png"
+    },
+    {
+      "pass": true,
+      "check": "normal PTS normal-31.png"
+    },
+    {
+      "pass": true,
+      "check": "normal vs author same index normal-31.png"
+    },
+    {
+      "pass": true,
+      "check": "capture hash normal-32.png"
+    },
+    {
+      "pass": true,
+      "check": "capture mapped asset normal-32.png"
+    },
+    {
+      "pass": true,
+      "check": "normal PTS normal-32.png"
+    },
+    {
+      "pass": true,
+      "check": "normal vs author same index normal-32.png"
+    },
+    {
+      "pass": true,
+      "check": "capture hash viewport-normal-32.png"
+    },
+    {
+      "pass": true,
+      "check": "capture hash normal-33.png"
+    },
+    {
+      "pass": true,
+      "check": "capture mapped asset normal-33.png"
+    },
+    {
+      "pass": true,
+      "check": "normal PTS normal-33.png"
+    },
+    {
+      "pass": true,
+      "check": "normal vs author same index normal-33.png"
+    },
+    {
+      "pass": true,
+      "check": "capture hash normal-34.png"
+    },
+    {
+      "pass": true,
+      "check": "capture mapped asset normal-34.png"
+    },
+    {
+      "pass": true,
+      "check": "normal PTS normal-34.png"
+    },
+    {
+      "pass": true,
+      "check": "normal vs author same index normal-34.png"
+    },
+    {
+      "pass": true,
+      "check": "capture hash normal-96.png"
+    },
+    {
+      "pass": true,
+      "check": "capture mapped asset normal-96.png"
+    },
+    {
+      "pass": true,
+      "check": "normal PTS normal-96.png"
+    },
+    {
+      "pass": true,
+      "check": "normal vs author same index normal-96.png"
+    },
+    {
+      "pass": true,
+      "check": "capture hash normal-97.png"
+    },
+    {
+      "pass": true,
+      "check": "capture mapped asset normal-97.png"
+    },
+    {
+      "pass": true,
+      "check": "normal vs author same index normal-97.png"
+    },
+    {
+      "pass": true,
+      "check": "viewport crop pixel exact"
+    },
+    {
+      "pass": true,
+      "check": "all 161 project files including first failures unchanged"
+    },
+    {
+      "pass": true,
+      "check": "protected game candidates bear unchanged"
+    },
+    {
+      "pass": true,
+      "check": "no generated cache/import/uid after probes"
+    }
+  ]
+}

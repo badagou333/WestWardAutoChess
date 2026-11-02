@@ -1,0 +1,15 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 91.7 - Compatibility - Using Device: Apple - Apple M1
+
+ERROR: Cannot open file 'res://showcase.tscn'.
+   at: load (scene/resources/resource_format_text.cpp:1442)
+   GDScript backtrace (most recent call first):
+       [0] run (/tmp/qa07-c3-single-20261102/probe.gd:75)
+ERROR: Failed loading resource: res://showcase.tscn.
+   at: _load (core/io/resource_loader.cpp:317)
+   GDScript backtrace (most recent call first):
+       [0] run (/tmp/qa07-c3-single-20261102/probe.gd:75)
+SCRIPT ERROR: Attempt to call function 'instantiate' in base 'null instance' on a null instance.
+          at: run (/tmp/qa07-c3-single-20261102/probe.gd:75)
+          GDScript backtrace (most recent call first):
+              [0] run (/tmp/qa07-c3-single-20261102/probe.gd:75)

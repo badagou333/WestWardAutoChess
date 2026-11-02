@@ -1,0 +1,80 @@
+{
+  "task": "D-20261101-002",
+  "role": "07 independent QA",
+  "baseline": "14c1bd6ba3a0fb808b779a4ad07d67524789bd2e",
+  "implementation": "6349598",
+  "author_handoff": "6f8ff00",
+  "result": "single-direction necessary technical acceptance passed; art review pending",
+  "production_must_fix": [],
+  "checks": {
+    "assets": 403,
+    "actual_engine": 358,
+    "evidence": 138,
+    "total": 899,
+    "final_failures": 0
+  },
+  "first_failure": {
+    "owner": "07 test fixture",
+    "reason": "wrong hardcoded scene path res://showcase.tscn; actual main is res://main.tscn",
+    "resolution": "read application/run/main_scene; added watchdog; production unchanged",
+    "preserved": [
+      "probe-first.gd",
+      "gui-first.log"
+    ]
+  },
+  "gui_final_exit": 0,
+  "normal_launcher_exit": 0,
+  "normal_observed_unique_indices": 90,
+  "normal_key_indices": [
+    29,
+    30,
+    31,
+    32,
+    33,
+    34
+  ],
+  "captures": 10,
+  "author_pixel_equal": 9,
+  "phase_max_error_samples": 1,
+  "old_audio_stop_cases": [
+    {
+      "case": "replay",
+      "old_cursor_before": 0.110725623582766,
+      "old_cursor_after": 0.110725623582766,
+      "observation_wall_seconds": 0.499313,
+      "remaining_natural_seconds": 0.900884353741497,
+      "pre_cursor_advanced": true,
+      "real_mix_turns": 5,
+      "old_native_stop_mix_seek_called": false,
+      "retained_active_diagnostic": true
+    },
+    {
+      "case": "tree-exit",
+      "old_cursor_before": 0.110725623582766,
+      "old_cursor_after": 0.110725623582766,
+      "observation_wall_seconds": 0.516443,
+      "remaining_natural_seconds": 0.900884353741497,
+      "pre_cursor_advanced": true,
+      "real_mix_turns": 5,
+      "old_native_stop_mix_seek_called": false,
+      "retained_active_diagnostic": true
+    }
+  ],
+  "frozen_runtime_files": 161,
+  "unverified": [
+    "C3 art visual acceptance: gray/foot/feather transition",
+    "human continuous motion",
+    "physical device listening and AV timing",
+    "OS mouse interaction",
+    "Windows/mobile/export"
+  ],
+  "trial_parameters": {
+    "display_scale": 0.21,
+    "audio_start_seconds": 0.405,
+    "not_human_accepted": true
+  },
+  "mirror_implemented": false,
+  "delivery": {
+    "status": "pending single normal push and readback"
+  }
+}
