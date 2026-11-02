@@ -404,7 +404,7 @@
 
 ## 待总控同步
 
-- 2026-11-02 D-20261102-002：05完成[限定实际运行视觉复核](../../godot-demo/art/candidates/bear_lord_front_attack_v3/RUNTIME_VISUAL_REVIEW.md)，所审母版→v3→左右前向真实采样无新增视觉必修；07已定向关闭BFV2-01。请核作者提交与推送后收束本批，真人连续/设备听感和其他平台仍未验；保留源画外缺失、残影/脚部/补棍近似与此前肩甲成因不能整体归因的边界。
+- 2026-11-02 D-20261102-002（00已同步）：be91a33及[限定实际运行视觉复核](../../godot-demo/art/candidates/bear_lord_front_attack_v3/RUNTIME_VISUAL_REVIEW.md)已核收至PROJECT_STATE和D002；所审范围无新增视觉必修、07已关闭BFV2-01，本轮本机修复/接入与必要限定验收收束，05已idle释放窗口给C3接续。真人连续/设备听感和其他平台仍未验，源画外缺失/残影脚部补棍近似与肩甲不能整体归因的边界保留；Gitee未同步，不把本机收束称跨机器已完成。
 
 - 2026-11-02 D-20261102-002（00已同步）：已核收e7d7b4d至PROJECT_STATE及D002，84帧/原声/选版视频保持与manifest路径映射通过，05已idle释放窗口，Gitee未同步；00安排06接入，再07及05按[移交](../../godot-demo/art/candidates/bear_lord_front_attack_v3/HANDOFF.md)串行复核。BFV2-01和运行/连续观感/设备听感未自动关闭，v2构建依赖及源画外FX不可恢复等限制保留。本标记只接收本批。
 
