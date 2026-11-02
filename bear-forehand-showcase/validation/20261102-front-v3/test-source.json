@@ -1,0 +1,215 @@
+{
+	"audio_restart_observations": [
+		{
+			"case": "direction 1 switch",
+			"direction": 1,
+			"expected_submitted_phase": 0.0,
+			"mix_before_lock": {
+				"mix_interval": 0.0928778185941043,
+				"mix_rate": 44100.0,
+				"since_last_mix": 0.038393,
+				"until_next_mix": 0.0544848185941043
+			},
+			"native_minus_reference": 0.0,
+			"native_position": 0.00290249433106576,
+			"native_reference_position": 0.00290249433106576,
+			"player_position": 0.00290249427780509,
+			"sample_quantization_tolerance": 0.0000453514739229025,
+			"source_rate": 44100
+		},
+		{
+			"case": "exact loop boundary",
+			"direction": 1,
+			"expected_submitted_phase": 0.0,
+			"mix_before_lock": {
+				"mix_interval": 0.0928798185941043,
+				"mix_rate": 44100.0,
+				"since_last_mix": 0.039126,
+				"until_next_mix": 0.0537538185941043
+			},
+			"native_minus_reference": 0.0,
+			"native_position": 0.00290249433106576,
+			"native_reference_position": 0.00290249433106576,
+			"player_position": 0.00290249427780509,
+			"sample_quantization_tolerance": 0.0000453514739229025,
+			"source_rate": 44100
+		},
+		{
+			"case": "multi-loop nonzero-phase jump",
+			"direction": 1,
+			"expected_submitted_phase": 0.0075,
+			"mix_before_lock": {
+				"mix_interval": 0.0928798185941043,
+				"mix_rate": 44100.0,
+				"since_last_mix": 0.039144,
+				"until_next_mix": 0.0537358185941043
+			},
+			"native_minus_reference": 0.0,
+			"native_position": 0.0103854875283447,
+			"native_reference_position": 0.0103854875283447,
+			"player_position": 0.010385487228632,
+			"sample_quantization_tolerance": 0.0000453514739229025,
+			"source_rate": 44100
+		},
+		{
+			"case": "direction 2 switch",
+			"direction": 2,
+			"expected_submitted_phase": 0.0,
+			"mix_before_lock": {
+				"mix_interval": 0.0928798185941043,
+				"mix_rate": 44100.0,
+				"since_last_mix": 0.039179,
+				"until_next_mix": 0.0537008185941043
+			},
+			"native_minus_reference": 0.0,
+			"native_position": 0.004,
+			"native_reference_position": 0.004,
+			"player_position": 0.00400000018998981,
+			"sample_quantization_tolerance": 0.0000625,
+			"source_rate": 32000
+		},
+		{
+			"case": "exact loop boundary",
+			"direction": 2,
+			"expected_submitted_phase": 0.0,
+			"mix_before_lock": {
+				"mix_interval": 0.0928798185941043,
+				"mix_rate": 44100.0,
+				"since_last_mix": 0.039205,
+				"until_next_mix": 0.0536748185941043
+			},
+			"native_minus_reference": 0.0,
+			"native_position": 0.004,
+			"native_reference_position": 0.004,
+			"player_position": 0.00400000018998981,
+			"sample_quantization_tolerance": 0.0000625,
+			"source_rate": 32000
+		},
+		{
+			"case": "multi-loop nonzero-phase jump",
+			"direction": 2,
+			"expected_submitted_phase": 0.0075,
+			"mix_before_lock": {
+				"mix_interval": 0.0928798185941043,
+				"mix_rate": 44100.0,
+				"since_last_mix": 0.039216,
+				"until_next_mix": 0.0536638185941043
+			},
+			"native_minus_reference": -0.00003125,
+			"native_position": 0.01146875,
+			"native_reference_position": 0.0115,
+			"player_position": 0.0114687504246831,
+			"sample_quantization_tolerance": 0.0000625,
+			"source_rate": 32000
+		},
+		{
+			"case": "direction 3 switch",
+			"direction": 3,
+			"expected_submitted_phase": 0.0,
+			"mix_before_lock": {
+				"mix_interval": 0.0928798185941043,
+				"mix_rate": 44100.0,
+				"since_last_mix": 0.039244,
+				"until_next_mix": 0.0536358185941043
+			},
+			"native_minus_reference": 0.0,
+			"native_position": 0.004,
+			"native_reference_position": 0.004,
+			"player_position": 0.00400000018998981,
+			"sample_quantization_tolerance": 0.0000625,
+			"source_rate": 32000
+		},
+		{
+			"case": "exact loop boundary",
+			"direction": 3,
+			"expected_submitted_phase": 0.0,
+			"mix_before_lock": {
+				"mix_interval": 0.0928798185941043,
+				"mix_rate": 44100.0,
+				"since_last_mix": 0.039398,
+				"until_next_mix": 0.0534818185941043
+			},
+			"native_minus_reference": 0.0,
+			"native_position": 0.004,
+			"native_reference_position": 0.004,
+			"player_position": 0.00400000018998981,
+			"sample_quantization_tolerance": 0.0000625,
+			"source_rate": 32000
+		},
+		{
+			"case": "multi-loop nonzero-phase jump",
+			"direction": 3,
+			"expected_submitted_phase": 0.0075,
+			"mix_before_lock": {
+				"mix_interval": 0.0928788185941043,
+				"mix_rate": 44100.0,
+				"since_last_mix": 0.039405,
+				"until_next_mix": 0.0534738185941043
+			},
+			"native_minus_reference": -0.00003125,
+			"native_position": 0.01146875,
+			"native_reference_position": 0.0115,
+			"player_position": 0.0114687504246831,
+			"sample_quantization_tolerance": 0.0000625,
+			"source_rate": 32000
+		},
+		{
+			"case": "direction 0 switch",
+			"direction": 0,
+			"expected_submitted_phase": 0.0,
+			"mix_before_lock": {
+				"mix_interval": 0.0928798185941043,
+				"mix_rate": 44100.0,
+				"since_last_mix": 0.03943,
+				"until_next_mix": 0.0534498185941043
+			},
+			"native_minus_reference": 0.0,
+			"native_position": 0.00290249433106576,
+			"native_reference_position": 0.00290249433106576,
+			"player_position": 0.00290249427780509,
+			"sample_quantization_tolerance": 0.0000453514739229025,
+			"source_rate": 44100
+		},
+		{
+			"case": "exact loop boundary",
+			"direction": 0,
+			"expected_submitted_phase": 0.0,
+			"mix_before_lock": {
+				"mix_interval": 0.0928798185941043,
+				"mix_rate": 44100.0,
+				"since_last_mix": 0.039478,
+				"until_next_mix": 0.0534018185941043
+			},
+			"native_minus_reference": 0.0,
+			"native_position": 0.00290249433106576,
+			"native_reference_position": 0.00290249433106576,
+			"player_position": 0.00290249427780509,
+			"sample_quantization_tolerance": 0.0000453514739229025,
+			"source_rate": 44100
+		},
+		{
+			"case": "multi-loop nonzero-phase jump",
+			"direction": 0,
+			"expected_submitted_phase": 0.0075,
+			"mix_before_lock": {
+				"mix_interval": 0.0928798185941043,
+				"mix_rate": 44100.0,
+				"since_last_mix": 0.039486,
+				"until_next_mix": 0.0533938185941043
+			},
+			"native_minus_reference": 0.0,
+			"native_position": 0.0103854875283447,
+			"native_reference_position": 0.0103854875283447,
+			"player_position": 0.010385487228632,
+			"sample_quantization_tolerance": 0.0000453514739229025,
+			"source_rate": 44100
+		}
+	],
+	"back_source_times": 340,
+	"checks": 3717,
+	"failure_messages": [],
+	"failures": 0,
+	"front_frames": 84,
+	"schema": "bear-front-v3-author-engine-checks",
+	"scope": "author engine checks; no OS input, device listening or independent visual acceptance"
+}

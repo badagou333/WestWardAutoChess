@@ -1,0 +1,48 @@
+{
+  "task": "D-20261102-002",
+  "candidate": "bear_lord_front_attack_v3",
+  "base_commit": "77ee508127246c81efe8bf2401add4123d4f90f3",
+  "author_only": true,
+  "manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+  "engine_version": "4.7.2.stable.official.ed1daf0bf",
+  "asset_checks": {
+    "source": {
+      "checks": 1469,
+      "failures": 0
+    },
+    "cold": {
+      "checks": 1380,
+      "failures": 0
+    }
+  },
+  "engine_checks": {
+    "source": {
+      "checks": 3717,
+      "failures": 0
+    },
+    "cold": {
+      "checks": 3717,
+      "failures": 0
+    }
+  },
+  "graphical": {
+    "capture_success": true,
+    "sample_count": 38,
+    "png_count": 76,
+    "viewport": [
+      1440,
+      810
+    ],
+    "backend": "macOS",
+    "realtime_failures": [],
+    "all_processes_exited": true,
+    "muted_dummy": true
+  },
+  "unverified": [
+    "07 targeted BFV2-01 decision",
+    "05 source/candidate/runtime visual review",
+    "human continuous motion and device listening"
+  ],
+  "gui_local_released": true,
+  "git_push_result": "Report separately after the single authorized normal push; no synchronization inferred."
+}

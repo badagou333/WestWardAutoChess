@@ -1,10 +1,11 @@
 extends SceneTree
 ## Actual graphical Viewport samples, never an offline board/character composite.
 const VIEWPORT_SIZE := Vector2i(1440,810)
-const FRONT_FRAME_NUMBERS := [1,7,41,42,43,44,45,46,48,83,84]
+const FRONT_FRAME_NUMBERS := [1,7,41,42,43,44,45,46,47,48,49,50,51,83,84]
+const FRONT_MANIFEST_SHA256 := "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237"
 const CROP_MARGIN := 12
 const SAMPLE_EPSILON := 0.000001
-var output := "/tmp/bear-front-v2-four-direction-render"
+var output := "/tmp/bear-front-v3-four-direction-render"
 var all_frames := false
 var scene
 var errors: Array[String] = []
@@ -55,6 +56,9 @@ func read_manifest(clip_id: String) -> Dictionary:
 		"Unexpected duration or loop interval for "+clip_id): return {}
 	var digest := FileAccess.get_sha256(path)
 	if not require(valid_sha256(digest),"Could not hash runtime manifest: "+path): return {}
+	if clip_id=="front":
+		if not require(parsed.get("schema","")=="board-bear-front-trail-trial-v1" and digest==FRONT_MANIFEST_SHA256,
+			"Front capture must use the selected, repository-mapped v3 manifest"): return {}
 	return {"manifest":parsed,"path":path,"sha256":digest}
 
 func capture_sample(direction: int, at: float, expected_index: int, metadata: Dictionary, sample_number: int) -> Dictionary:
@@ -166,7 +170,7 @@ func run() -> void:
 		quit(1)
 		return
 	AudioServer.set_bus_mute(0,true)
-	root.title = "D-20261102-002 Bear Front v2 Capture (Muted)"
+	root.title = "D-20261102-002 Bear Front v3 Capture (Muted)"
 	root.size = VIEWPORT_SIZE
 	var packed = load("res://showcase.tscn")
 	if not require(packed is PackedScene,"Could not load showcase scene"):
@@ -180,6 +184,7 @@ func run() -> void:
 	var report := {
 		"kind":"Godot graphical viewport samples; source animation paused at recorded times",
 		"task":"D-20261102-002","all_frames":all_frames,"expected_sample_count":expected_count,
+		"front_candidate":"bear_lord_front_attack_v3","front_expected_manifest_sha256":FRONT_MANIFEST_SHA256,
 		"expected_png_count":expected_count*2,"front_required_frame_numbers":FRONT_FRAME_NUMBERS,
 		"front_frame_number_base":1,"front_original_frame_range":[10,93],
 		"display_server":DisplayServer.get_name(),"window_title":root.title,"viewport_size":[1440,810],
@@ -202,6 +207,7 @@ func run() -> void:
 		var clip: Dictionary = scene.clips[clip_id]
 		report.clips[clip_id] = {
 			"runtime_manifest_path":metadata.path,"runtime_manifest_sha256":metadata.sha256,
+			"manifest_schema":metadata.manifest.get("schema",null),
 			"manifest_frame_count":metadata.manifest.frames.size(),
 			"source_video":metadata.manifest.get("source_video",null),
 			"source_sha256":metadata.manifest.get("source_sha256",null),

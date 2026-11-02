@@ -1,0 +1,12 @@
+{
+  "schema": "bear-front-v3-author-asset-checks",
+  "showcase": "/Users/leqiong/workSpace/tower-defense/bear-forehand-showcase",
+  "front_frames": 84,
+  "back_source_times": 340,
+  "candidate_comparison": "passed",
+  "source_audio_decode": "not requested; this is not a cold MOV reconstruction",
+  "scope": "author deterministic checks; no image quality, device listening, OS input or independent acceptance",
+  "checks": 1469,
+  "failures": 0,
+  "failure_messages": []
+}

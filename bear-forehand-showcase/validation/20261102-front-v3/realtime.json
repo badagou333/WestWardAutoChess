@@ -1,0 +1,104 @@
+{
+	"audio_driver": "Dummy",
+	"cases": [
+		{
+			"boundaries": [
+				{
+					"audio_position": 0.00800453498959541,
+					"cycle": 1,
+					"frame": 0,
+					"new_audio_playback": true,
+					"phase": 0.00510981818180944
+				},
+				{
+					"audio_position": 0.00800453498959541,
+					"cycle": 2,
+					"frame": 0,
+					"new_audio_playback": true,
+					"phase": 0.00510981818190537
+				},
+				{
+					"audio_position": 0.00800453498959541,
+					"cycle": 3,
+					"frame": 0,
+					"new_audio_playback": true,
+					"phase": 0.005109818181948
+				}
+			],
+			"cycles": 3,
+			"direction": "front_right",
+			"distinct_frames_observed": 84,
+			"elapsed": 9.15510981818194,
+			"maximum_raw_audio_phase_difference": 0.27535915315292,
+			"period": 3.0,
+			"sample_count": 1072,
+			"wall_seconds": 9.016446
+		},
+		{
+			"boundaries": [
+				{
+					"audio_position": 0.0576643981039524,
+					"cycle": 1,
+					"frame": 0,
+					"new_audio_playback": true,
+					"phase": 0.00833333333332531
+				}
+			],
+			"cycles": 1,
+			"direction": "front_left",
+			"distinct_frames_observed": 84,
+			"elapsed": 3.15833333333332,
+			"maximum_raw_audio_phase_difference": 0.203582668304436,
+			"period": 3.0,
+			"sample_count": 379,
+			"wall_seconds": 3.160109
+		},
+		{
+			"boundaries": [
+				{
+					"audio_position": 0.0123124998062849,
+					"cycle": 1,
+					"frame": 0,
+					"new_audio_playback": true,
+					"phase": 0.0083333333333222
+				}
+			],
+			"cycles": 1,
+			"direction": "back_right",
+			"distinct_frames_observed": 340,
+			"elapsed": 4.04999999999999,
+			"maximum_raw_audio_phase_difference": 0.147666565577179,
+			"period": 3.89166666666667,
+			"sample_count": 486,
+			"wall_seconds": 4.049603
+		},
+		{
+			"boundaries": [
+				{
+					"audio_position": 0.104312501847744,
+					"cycle": 1,
+					"frame": 0,
+					"new_audio_playback": true,
+					"phase": 0.0083333333333222
+				}
+			],
+			"cycles": 1,
+			"direction": "back_left",
+			"distinct_frames_observed": 340,
+			"elapsed": 4.04999999999999,
+			"maximum_raw_audio_phase_difference": 0.164333232243846,
+			"period": 3.89166666666667,
+			"sample_count": 486,
+			"wall_seconds": 4.050077
+		}
+	],
+	"device_listening": false,
+	"display_backend": "macOS",
+	"failures": [],
+	"human_continuous_visual_acceptance": false,
+	"scope": "normal graphical automatic playback; no OS pointer or speaker output",
+	"window_size": [
+		1440,
+		810
+	]
+}

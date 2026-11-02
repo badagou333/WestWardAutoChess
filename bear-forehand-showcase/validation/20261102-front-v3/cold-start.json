@@ -1,0 +1,8 @@
+{
+  "project": "/tmp/bear-front-v3-author.Ewrlwf/bear-forehand-showcase",
+  "before_first_graphical_start_cache_entries": [],
+  "audio_driver": "Dummy",
+  "os_mouse_used": false,
+  "human_listening": false,
+  "sample_command": "launch.command --rendering-method gl_compatibility --audio-driver Dummy --script res://capture.gd -- --output=<evidence>/render"
+}

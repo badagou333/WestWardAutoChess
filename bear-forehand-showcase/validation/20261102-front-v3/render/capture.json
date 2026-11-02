@@ -1,0 +1,4134 @@
+{
+	"all_frames": false,
+	"audio": "Master bus muted; no device listening or audio recording",
+	"clips": {
+		"back": {
+			"canvas": [
+				384.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"display_scale": 0.75,
+			"loop_interval_seconds": 0.35,
+			"manifest_frame_count": 340,
+			"manifest_schema": "board-bear-back-attack-v1",
+			"runtime_manifest_path": "res://art/back/manifest.json",
+			"runtime_manifest_sha256": "57fcd1ef9657f283cbd2d4d9779fa7d7d8b62c110414691c8928f83a721d1399",
+			"source_sha256": "30ef7c2cf59580e9b257300cd884fda4fa10359490389f98553889cbe97c1682",
+			"source_time_base": [
+				1.0,
+				12288.0
+			],
+			"source_video": "source/bear-back-short-repaired-v1.mp4",
+			"video_duration_seconds": 3.54166666666667
+		},
+		"front": {
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"display_scale": 0.75,
+			"loop_interval_seconds": 0.0,
+			"manifest_frame_count": 84,
+			"manifest_schema": "board-bear-front-trail-trial-v1",
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"source_sha256": "d37dffe785d83306c0f41f54b12348d0043f189bcf91251659816e291be548c0",
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_video": "../bear_lord_tail_trim_20261101/forehand-head-tail-lossless.mov",
+			"video_duration_seconds": 3.0
+		}
+	},
+	"crop_method": "Image.get_region of the same real viewport screenshot; no offline compositing",
+	"direction_sample_counts": {
+		"back_left": 4,
+		"back_right": 4,
+		"front_left": 15,
+		"front_right": 15
+	},
+	"display_server": "macOS",
+	"engine_version": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"errors": [],
+	"expected_png_count": 76,
+	"expected_sample_count": 38,
+	"front_candidate": "bear_lord_front_attack_v3",
+	"front_expected_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+	"front_frame_number_base": 1,
+	"front_original_frame_range": [
+		10,
+		93
+	],
+	"front_required_frame_numbers": [
+		1,
+		7,
+		41,
+		42,
+		43,
+		44,
+		45,
+		46,
+		47,
+		48,
+		49,
+		50,
+		51,
+		83,
+		84
+	],
+	"input": "Synthetic Godot Control events only; no operating-system mouse input",
+	"kind": "Godot graphical viewport samples; source animation paused at recorded times",
+	"limits": "Paused-time engine samples do not establish continuous human visual review or device listening",
+	"sample_count": 38,
+	"samples": [
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					887.25,
+					521.25
+				]
+			],
+			"character_file": "front_right-000-frame-0001-character.png",
+			"character_sha256": "690fabf72dbb7516dc60ffdf5d8a00621bdc5a9b53ab1fa1b3058d7eefde49be",
+			"character_viewport_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "1b8b616498089e2c4506b77dd5a4c06ff0d29d37b93d61c0ad69fc3bb3550a38",
+			"direction": "front_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_right-000-frame-0001.png",
+			"frame": 0,
+			"frame_index_base": 0,
+			"manifest_array_index": 0,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					103.0,
+					73.0,
+					240.0,
+					232.0
+				],
+				"decoded_source_sha256": "694421c819b29d78e8efd7163c0de7ad450eb23069746c1b7d707165441abae8",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0001.png",
+				"original_source_frame": 10.0,
+				"original_source_pts": 5888.0,
+				"output_time_seconds": 0.0,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "1b8b616498089e2c4506b77dd5a4c06ff0d29d37b93d61c0ad69fc3bb3550a38",
+				"source_frame": 1.0,
+				"source_matte_bbox": [
+					282.0,
+					262.0,
+					685.0,
+					730.0
+				],
+				"source_pts": 0.0,
+				"source_time_seconds": 0.0,
+				"trail_alpha_pixels_over_5": 0.0,
+				"upper_body_unchanged_pixels": 75143.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": false,
+			"original_source_frame": 10.0,
+			"original_source_pts": 5888.0,
+			"output_time_seconds": 0.0,
+			"render_time_seconds": 0.000001,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0001.png",
+			"runtime_source_sha256": "1b8b616498089e2c4506b77dd5a4c06ff0d29d37b93d61c0ad69fc3bb3550a38",
+			"sha256": "6f17f706357e31c3b34481052a25c9536678eb1a70c427a61ca29a84070b7524",
+			"source_file": "attack_0001.png",
+			"source_frame": 1.0,
+			"source_index": null,
+			"source_pts": 0.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 0.0,
+			"time": 0.0,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					887.25,
+					521.25
+				]
+			],
+			"character_file": "front_right-001-frame-0007-character.png",
+			"character_sha256": "a3b158ba37fd933b93f024aa449cc1b097db2f6a4424494a49c4c23d7bb507b5",
+			"character_viewport_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "3a6793b0c00a1fa7b87be0db0b8c54e11eef0b0c3ccac36c231cf6cfc155f05a",
+			"direction": "front_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_right-001-frame-0007.png",
+			"frame": 6,
+			"frame_index_base": 0,
+			"manifest_array_index": 6,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					95.0,
+					75.0,
+					247.0,
+					232.0
+				],
+				"decoded_source_sha256": "244e2bab996fc7775f7b85ac71f5efea159b7d68eae78d13c00baed6c8fd28c6",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0007.png",
+				"original_source_frame": 16.0,
+				"original_source_pts": 9728.0,
+				"output_time_seconds": 0.25,
+				"removed_isolated_seed_pixels": 1.0,
+				"repair": null,
+				"sha256": "3a6793b0c00a1fa7b87be0db0b8c54e11eef0b0c3ccac36c231cf6cfc155f05a",
+				"source_frame": 7.0,
+				"source_matte_bbox": [
+					258.0,
+					269.0,
+					704.0,
+					730.0
+				],
+				"source_pts": 3840.0,
+				"source_time_seconds": 0.25,
+				"trail_alpha_pixels_over_5": 0.0,
+				"upper_body_unchanged_pixels": 81091.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": false,
+			"original_source_frame": 16.0,
+			"original_source_pts": 9728.0,
+			"output_time_seconds": 0.25,
+			"render_time_seconds": 0.250001,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0007.png",
+			"runtime_source_sha256": "3a6793b0c00a1fa7b87be0db0b8c54e11eef0b0c3ccac36c231cf6cfc155f05a",
+			"sha256": "576a7387456a7dd5a05edf7a7b5b50ab4a11a8faee162973f9420840f7a79485",
+			"source_file": "attack_0007.png",
+			"source_frame": 7.0,
+			"source_index": null,
+			"source_pts": 3840.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 0.25,
+			"time": 0.25,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					887.25,
+					521.25
+				]
+			],
+			"character_file": "front_right-002-frame-0041-character.png",
+			"character_sha256": "82f291eaa302aa4d2dfb0672687d66573d14945702a167642e28bb0146712d33",
+			"character_viewport_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "2f44fe45448fc2100a0cddabaf2d2d3f6e9357e801d3d1519ed48471bf062dd2",
+			"direction": "front_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_right-002-frame-0041.png",
+			"frame": 40,
+			"frame_index_base": 0,
+			"manifest_array_index": 40,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					83.0,
+					20.0,
+					255.0,
+					226.0
+				],
+				"decoded_source_sha256": "047e7857a6c579c9bae1a4adcede588c7084bbf69419d81c47c5d542ec9a7147",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0041.png",
+				"original_source_frame": 50.0,
+				"original_source_pts": 23808.0,
+				"output_time_seconds": 1.16666666666667,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "2f44fe45448fc2100a0cddabaf2d2d3f6e9357e801d3d1519ed48471bf062dd2",
+				"source_frame": 41.0,
+				"source_matte_bbox": [
+					223.0,
+					103.0,
+					729.0,
+					713.0
+				],
+				"source_pts": 17920.0,
+				"source_time_seconds": 1.16666666666667,
+				"trail_alpha_pixels_over_5": 1413.0,
+				"upper_body_unchanged_pixels": 92623.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": false,
+			"original_source_frame": 50.0,
+			"original_source_pts": 23808.0,
+			"output_time_seconds": 1.16666666666667,
+			"render_time_seconds": 1.16666766666667,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0041.png",
+			"runtime_source_sha256": "2f44fe45448fc2100a0cddabaf2d2d3f6e9357e801d3d1519ed48471bf062dd2",
+			"sha256": "d5de40c65ef6469ac670e88edd2f89d80965dcbf6ba0ed6c81764d10da4e8d85",
+			"source_file": "attack_0041.png",
+			"source_frame": 41.0,
+			"source_index": null,
+			"source_pts": 17920.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.16666666666667,
+			"time": 1.16666666666667,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					887.25,
+					521.25
+				]
+			],
+			"character_file": "front_right-003-frame-0042-character.png",
+			"character_sha256": "1a6c0a843d04a2d8d881d826f08b8cb75b233c406bcad7a4991cf8b4e18b0aaa",
+			"character_viewport_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "5891690b966d035223e38bc5a6c083eae5a7679244219f554a109611f8b190f4",
+			"direction": "front_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.05,
+			"duration_ticks": 768.0,
+			"file": "front_right-003-frame-0042.png",
+			"frame": 41,
+			"frame_index_base": 0,
+			"manifest_array_index": 41,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					120.0,
+					74.0,
+					247.0,
+					233.0
+				],
+				"decoded_source_sha256": "98b78bc2ed00b417e27b098d101ec176cd7f049f1ba3350090b614f899c44064",
+				"duration_seconds": 0.05,
+				"duration_ticks": 768.0,
+				"file": "attack_0042.png",
+				"original_source_frame": 51.0,
+				"original_source_pts": 24320.0,
+				"output_time_seconds": 1.2,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "5891690b966d035223e38bc5a6c083eae5a7679244219f554a109611f8b190f4",
+				"source_frame": 42.0,
+				"source_matte_bbox": [
+					332.0,
+					265.0,
+					705.0,
+					734.0
+				],
+				"source_pts": 18432.0,
+				"source_time_seconds": 1.2,
+				"trail_alpha_pixels_over_5": 22293.0,
+				"upper_body_unchanged_pixels": 49514.0,
+				"veil_strength": 0.2
+			},
+			"mirrored": false,
+			"original_source_frame": 51.0,
+			"original_source_pts": 24320.0,
+			"output_time_seconds": 1.2,
+			"render_time_seconds": 1.200001,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0042.png",
+			"runtime_source_sha256": "5891690b966d035223e38bc5a6c083eae5a7679244219f554a109611f8b190f4",
+			"sha256": "629b0fee3b89515acd584a73be76e69160aab189c26b8b5a881e569ad5c0dab4",
+			"source_file": "attack_0042.png",
+			"source_frame": 42.0,
+			"source_index": null,
+			"source_pts": 18432.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.2,
+			"time": 1.2,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					887.25,
+					521.25
+				]
+			],
+			"character_file": "front_right-004-frame-0043-character.png",
+			"character_sha256": "c6010656d8022ff531b6d37be84979bf4240a39d26c3398dc295702ed016da3d",
+			"character_viewport_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "88ab94313af5632db0a389d25f72fe4d3c43da5d92acd4537ae44a7c15a77be0",
+			"direction": "front_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_right-004-frame-0043.png",
+			"frame": 42,
+			"frame_index_base": 0,
+			"manifest_array_index": 42,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					119.0,
+					73.0,
+					351.0,
+					226.0
+				],
+				"decoded_source_sha256": "7d89f914a9737be801e78b4edf5aec6633a3d5b5d18047679b691915409a13fe",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0043.png",
+				"original_source_frame": 52.0,
+				"original_source_pts": 25088.0,
+				"output_time_seconds": 1.25,
+				"removed_isolated_seed_pixels": 8.0,
+				"repair": {
+					"angle": 20.0,
+					"blur": 1.25,
+					"donor": 45.0,
+					"scale": 1.22,
+					"source_pivot": [
+						775.0,
+						432.0
+					],
+					"target_pivot": [
+						775.0,
+						511.0
+					]
+				},
+				"sha256": "88ab94313af5632db0a389d25f72fe4d3c43da5d92acd4537ae44a7c15a77be0",
+				"source_frame": 43.0,
+				"source_matte_bbox": [
+					330.0,
+					263.0,
+					960.0,
+					713.0
+				],
+				"source_pts": 19200.0,
+				"source_time_seconds": 1.25,
+				"trail_alpha_pixels_over_5": 28278.0,
+				"upper_body_unchanged_pixels": 66430.0,
+				"veil_strength": 0.35
+			},
+			"mirrored": false,
+			"original_source_frame": 52.0,
+			"original_source_pts": 25088.0,
+			"output_time_seconds": 1.25,
+			"render_time_seconds": 1.250001,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0043.png",
+			"runtime_source_sha256": "88ab94313af5632db0a389d25f72fe4d3c43da5d92acd4537ae44a7c15a77be0",
+			"sha256": "aa27fd034c5bcbd34727e88ceb8981ca527a2dc04705649b8fb77960f2e37c0a",
+			"source_file": "attack_0043.png",
+			"source_frame": 43.0,
+			"source_index": null,
+			"source_pts": 19200.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.25,
+			"time": 1.25,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					887.25,
+					521.25
+				]
+			],
+			"character_file": "front_right-005-frame-0044-character.png",
+			"character_sha256": "a37f1480617a767894c1f6baadf1083b72bab36a86ea6bae01de1647f94dc12c",
+			"character_viewport_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "0bebb52f9b2db616ffc93ecdfc0f7441b9c4a62a67956365ca9120757644d067",
+			"direction": "front_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.05,
+			"duration_ticks": 768.0,
+			"file": "front_right-005-frame-0044.png",
+			"frame": 43,
+			"frame_index_base": 0,
+			"manifest_array_index": 43,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					118.0,
+					73.0,
+					345.0,
+					226.0
+				],
+				"decoded_source_sha256": "83b7ba2a62a54d2d92f2a1f52e2e6485383f119746cedb8359598309e8d38a9f",
+				"duration_seconds": 0.05,
+				"duration_ticks": 768.0,
+				"file": "attack_0044.png",
+				"original_source_frame": 53.0,
+				"original_source_pts": 25600.0,
+				"output_time_seconds": 1.28333333333333,
+				"removed_isolated_seed_pixels": 8.0,
+				"repair": {
+					"angle": 9.0,
+					"blur": 0.35,
+					"donor": 45.0,
+					"scale": 1.12,
+					"source_pivot": [
+						775.0,
+						432.0
+					],
+					"target_pivot": [
+						787.0,
+						453.0
+					]
+				},
+				"sha256": "0bebb52f9b2db616ffc93ecdfc0f7441b9c4a62a67956365ca9120757644d067",
+				"source_frame": 44.0,
+				"source_matte_bbox": [
+					327.0,
+					262.0,
+					960.0,
+					713.0
+				],
+				"source_pts": 19712.0,
+				"source_time_seconds": 1.28333333333333,
+				"trail_alpha_pixels_over_5": 26907.0,
+				"upper_body_unchanged_pixels": 70758.0,
+				"veil_strength": 0.32
+			},
+			"mirrored": false,
+			"original_source_frame": 53.0,
+			"original_source_pts": 25600.0,
+			"output_time_seconds": 1.28333333333333,
+			"render_time_seconds": 1.28333433333333,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0044.png",
+			"runtime_source_sha256": "0bebb52f9b2db616ffc93ecdfc0f7441b9c4a62a67956365ca9120757644d067",
+			"sha256": "76a83eb41e47939d86e3f4eeac572ff99024d9c2fcc9ef267c8aea83e2276e01",
+			"source_file": "attack_0044.png",
+			"source_frame": 44.0,
+			"source_index": null,
+			"source_pts": 19712.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.28333333333333,
+			"time": 1.28333333333333,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					887.25,
+					521.25
+				]
+			],
+			"character_file": "front_right-006-frame-0045-character.png",
+			"character_sha256": "05e8a0c4ae21b86a9a1b27fa5e063babcb65fef1fe88eda5623ee0a8acb04f64",
+			"character_viewport_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "013f7e2a2fcf7cc78c1d2f319e4d88f9fa13d5695197215f337643276e0934f8",
+			"direction": "front_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_right-006-frame-0045.png",
+			"frame": 44,
+			"frame_index_base": 0,
+			"manifest_array_index": 44,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					118.0,
+					73.0,
+					330.0,
+					226.0
+				],
+				"decoded_source_sha256": "83820b1838dedd3eb24d321594254b06f5d66fc9fbfcc0f7d9d2416a7511a55b",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0045.png",
+				"original_source_frame": 54.0,
+				"original_source_pts": 26368.0,
+				"output_time_seconds": 1.33333333333333,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "013f7e2a2fcf7cc78c1d2f319e4d88f9fa13d5695197215f337643276e0934f8",
+				"source_frame": 45.0,
+				"source_matte_bbox": [
+					327.0,
+					262.0,
+					953.0,
+					713.0
+				],
+				"source_pts": 20480.0,
+				"source_time_seconds": 1.33333333333333,
+				"trail_alpha_pixels_over_5": 23899.0,
+				"upper_body_unchanged_pixels": 72153.0,
+				"veil_strength": 0.27
+			},
+			"mirrored": false,
+			"original_source_frame": 54.0,
+			"original_source_pts": 26368.0,
+			"output_time_seconds": 1.33333333333333,
+			"render_time_seconds": 1.33333433333333,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0045.png",
+			"runtime_source_sha256": "013f7e2a2fcf7cc78c1d2f319e4d88f9fa13d5695197215f337643276e0934f8",
+			"sha256": "60f98aa5ce227325d9c910912e183a862ce7983a86ceda1a169b3c8c947728a8",
+			"source_file": "attack_0045.png",
+			"source_frame": 45.0,
+			"source_index": null,
+			"source_pts": 20480.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.33333333333333,
+			"time": 1.33333333333333,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					887.25,
+					521.25
+				]
+			],
+			"character_file": "front_right-007-frame-0046-character.png",
+			"character_sha256": "7396cf29ce81a7a0c16f314f6a5d63a73c7479d6ea3303a3025747aa4b610267",
+			"character_viewport_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "7738902cf0cf80d168c8a0bfca5306f533852432580f819591c421d42207547f",
+			"direction": "front_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.05,
+			"duration_ticks": 768.0,
+			"file": "front_right-007-frame-0046.png",
+			"frame": 45,
+			"frame_index_base": 0,
+			"manifest_array_index": 45,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					118.0,
+					73.0,
+					318.0,
+					226.0
+				],
+				"decoded_source_sha256": "e751bde595ed3d5884633d4797ffaa1c94a97d27ded7c5f3bb92ca7651bdfea8",
+				"duration_seconds": 0.05,
+				"duration_ticks": 768.0,
+				"file": "attack_0046.png",
+				"original_source_frame": 55.0,
+				"original_source_pts": 26880.0,
+				"output_time_seconds": 1.36666666666667,
+				"removed_isolated_seed_pixels": 1.0,
+				"repair": null,
+				"sha256": "7738902cf0cf80d168c8a0bfca5306f533852432580f819591c421d42207547f",
+				"source_frame": 46.0,
+				"source_matte_bbox": [
+					328.0,
+					261.0,
+					916.0,
+					713.0
+				],
+				"source_pts": 20992.0,
+				"source_time_seconds": 1.36666666666667,
+				"trail_alpha_pixels_over_5": 23621.0,
+				"upper_body_unchanged_pixels": 72452.0,
+				"veil_strength": 0.18
+			},
+			"mirrored": false,
+			"original_source_frame": 55.0,
+			"original_source_pts": 26880.0,
+			"output_time_seconds": 1.36666666666667,
+			"render_time_seconds": 1.36666766666667,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0046.png",
+			"runtime_source_sha256": "7738902cf0cf80d168c8a0bfca5306f533852432580f819591c421d42207547f",
+			"sha256": "436ef2c87b02504ad1ef18157dfff41fa698522cb421d48d103ff3f3025147bf",
+			"source_file": "attack_0046.png",
+			"source_frame": 46.0,
+			"source_index": null,
+			"source_pts": 20992.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.36666666666667,
+			"time": 1.36666666666667,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					887.25,
+					521.25
+				]
+			],
+			"character_file": "front_right-008-frame-0047-character.png",
+			"character_sha256": "ada48581f256f731de417a35df021a358add4fa216a7ec9f7309b5777c1eb890",
+			"character_viewport_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "adef1be4d134ff944e5f6bf60baf3c19a45599f01c7b6718d8a169c4fdb1db62",
+			"direction": "front_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_right-008-frame-0047.png",
+			"frame": 46,
+			"frame_index_base": 0,
+			"manifest_array_index": 46,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					119.0,
+					73.0,
+					315.0,
+					226.0
+				],
+				"decoded_source_sha256": "61c2087c830707fc3c766b3c39d8d76a4c34bb99562ec27785c3b13efe48b876",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0047.png",
+				"original_source_frame": 56.0,
+				"original_source_pts": 27648.0,
+				"output_time_seconds": 1.41666666666667,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "adef1be4d134ff944e5f6bf60baf3c19a45599f01c7b6718d8a169c4fdb1db62",
+				"source_frame": 47.0,
+				"source_matte_bbox": [
+					328.0,
+					261.0,
+					908.0,
+					713.0
+				],
+				"source_pts": 21760.0,
+				"source_time_seconds": 1.41666666666667,
+				"trail_alpha_pixels_over_5": 20199.0,
+				"upper_body_unchanged_pixels": 72727.0,
+				"veil_strength": 0.09
+			},
+			"mirrored": false,
+			"original_source_frame": 56.0,
+			"original_source_pts": 27648.0,
+			"output_time_seconds": 1.41666666666667,
+			"render_time_seconds": 1.41666766666667,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0047.png",
+			"runtime_source_sha256": "adef1be4d134ff944e5f6bf60baf3c19a45599f01c7b6718d8a169c4fdb1db62",
+			"sha256": "553e485b5b1e14cac94cf5d406b824395a81eeea267c1e60763fc60ebc31e753",
+			"source_file": "attack_0047.png",
+			"source_frame": 47.0,
+			"source_index": null,
+			"source_pts": 21760.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.41666666666667,
+			"time": 1.41666666666667,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					887.25,
+					521.25
+				]
+			],
+			"character_file": "front_right-009-frame-0048-character.png",
+			"character_sha256": "7632300e189c699f0c3a84bcdc5c91763ef8af875f5efff6466f58252c42564c",
+			"character_viewport_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "78655a17c6e07422546b7e1a869b86933b01d8b496c7b27cae7ff83d80c002fc",
+			"direction": "front_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.05,
+			"duration_ticks": 768.0,
+			"file": "front_right-009-frame-0048.png",
+			"frame": 47,
+			"frame_index_base": 0,
+			"manifest_array_index": 47,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					238.0
+				],
+				"bbox": [
+					118.0,
+					73.0,
+					315.0,
+					226.0
+				],
+				"decoded_source_sha256": "7dde351981c20a8dc08d388cd7c810f69ef2bd311fef87892f6dce871933a285",
+				"duration_seconds": 0.05,
+				"duration_ticks": 768.0,
+				"file": "attack_0048.png",
+				"original_source_frame": 57.0,
+				"original_source_pts": 28160.0,
+				"output_time_seconds": 1.45,
+				"removed_isolated_seed_pixels": 1.0,
+				"repair": null,
+				"sha256": "78655a17c6e07422546b7e1a869b86933b01d8b496c7b27cae7ff83d80c002fc",
+				"source_frame": 48.0,
+				"source_matte_bbox": [
+					326.0,
+					261.0,
+					906.0,
+					713.0
+				],
+				"source_pts": 22272.0,
+				"source_time_seconds": 1.45,
+				"trail_alpha_pixels_over_5": 13454.0,
+				"upper_body_unchanged_pixels": 72646.0,
+				"veil_strength": 0.04
+			},
+			"mirrored": false,
+			"original_source_frame": 57.0,
+			"original_source_pts": 28160.0,
+			"output_time_seconds": 1.45,
+			"render_time_seconds": 1.450001,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0048.png",
+			"runtime_source_sha256": "78655a17c6e07422546b7e1a869b86933b01d8b496c7b27cae7ff83d80c002fc",
+			"sha256": "ce609c8de9973679bdbaf812a042e134de55a8aad9a2b3ce2087a36f677363a4",
+			"source_file": "attack_0048.png",
+			"source_frame": 48.0,
+			"source_index": null,
+			"source_pts": 22272.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.45,
+			"time": 1.45,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					887.25,
+					521.25
+				]
+			],
+			"character_file": "front_right-010-frame-0049-character.png",
+			"character_sha256": "264562b03d38f6860286597865375ad3fa98376d3b85b3ea3b1e61e7a83ed77d",
+			"character_viewport_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "3ce6a7e5714b6ba185be818d8436be2dde5fa1ba155cc9376794b1b853da3ed2",
+			"direction": "front_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_right-010-frame-0049.png",
+			"frame": 48,
+			"frame_index_base": 0,
+			"manifest_array_index": 48,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					118.0,
+					73.0,
+					314.0,
+					226.0
+				],
+				"decoded_source_sha256": "d08e55e2b9f9a51125d227efe301708815350ee4a3ead0c0df3e95b34b39da7f",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0049.png",
+				"original_source_frame": 58.0,
+				"original_source_pts": 28928.0,
+				"output_time_seconds": 1.5,
+				"removed_isolated_seed_pixels": 4.0,
+				"repair": null,
+				"sha256": "3ce6a7e5714b6ba185be818d8436be2dde5fa1ba155cc9376794b1b853da3ed2",
+				"source_frame": 49.0,
+				"source_matte_bbox": [
+					326.0,
+					260.0,
+					904.0,
+					713.0
+				],
+				"source_pts": 23040.0,
+				"source_time_seconds": 1.5,
+				"trail_alpha_pixels_over_5": 6606.0,
+				"upper_body_unchanged_pixels": 72168.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": false,
+			"original_source_frame": 58.0,
+			"original_source_pts": 28928.0,
+			"output_time_seconds": 1.5,
+			"render_time_seconds": 1.500001,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0049.png",
+			"runtime_source_sha256": "3ce6a7e5714b6ba185be818d8436be2dde5fa1ba155cc9376794b1b853da3ed2",
+			"sha256": "2eb61f01e59496af88a92475990b7b2399cb1808d107978af0451d79e0c9b1ff",
+			"source_file": "attack_0049.png",
+			"source_frame": 49.0,
+			"source_index": null,
+			"source_pts": 23040.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.5,
+			"time": 1.5,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					887.25,
+					521.25
+				]
+			],
+			"character_file": "front_right-011-frame-0050-character.png",
+			"character_sha256": "36809740b7b5b123efe37093b16217e643e54a94d8ffc3c3eb186c6b5dbd08f5",
+			"character_viewport_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "eb8487382b2a10d278ef9d565b16831090162d707c440c32cebcfbfe2416c969",
+			"direction": "front_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.05,
+			"duration_ticks": 768.0,
+			"file": "front_right-011-frame-0050.png",
+			"frame": 49,
+			"frame_index_base": 0,
+			"manifest_array_index": 49,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					118.0,
+					73.0,
+					313.0,
+					226.0
+				],
+				"decoded_source_sha256": "38de8d4af10e0787f00fe917592f12ee2b8ed7325b49489955b89231daa17d10",
+				"duration_seconds": 0.05,
+				"duration_ticks": 768.0,
+				"file": "attack_0050.png",
+				"original_source_frame": 59.0,
+				"original_source_pts": 29440.0,
+				"output_time_seconds": 1.53333333333333,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "eb8487382b2a10d278ef9d565b16831090162d707c440c32cebcfbfe2416c969",
+				"source_frame": 50.0,
+				"source_matte_bbox": [
+					326.0,
+					260.0,
+					902.0,
+					713.0
+				],
+				"source_pts": 23552.0,
+				"source_time_seconds": 1.53333333333333,
+				"trail_alpha_pixels_over_5": 3162.0,
+				"upper_body_unchanged_pixels": 71716.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": false,
+			"original_source_frame": 59.0,
+			"original_source_pts": 29440.0,
+			"output_time_seconds": 1.53333333333333,
+			"render_time_seconds": 1.53333433333333,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0050.png",
+			"runtime_source_sha256": "eb8487382b2a10d278ef9d565b16831090162d707c440c32cebcfbfe2416c969",
+			"sha256": "d4290a35390bbe09555046674a07e2dd054257e0014b7365adc062aee6fa57e2",
+			"source_file": "attack_0050.png",
+			"source_frame": 50.0,
+			"source_index": null,
+			"source_pts": 23552.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.53333333333333,
+			"time": 1.53333333333333,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					887.25,
+					521.25
+				]
+			],
+			"character_file": "front_right-012-frame-0051-character.png",
+			"character_sha256": "7db25a0660902319b7327b9a77ee3cac762fc76b988db9a9b1c49a5a6bdf60ce",
+			"character_viewport_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "1367d96233e606f8c33706940aa40829862262d23338e794a536f4ca444ff4b5",
+			"direction": "front_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_right-012-frame-0051.png",
+			"frame": 50,
+			"frame_index_base": 0,
+			"manifest_array_index": 50,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					118.0,
+					73.0,
+					313.0,
+					226.0
+				],
+				"decoded_source_sha256": "a3860f3bc2195dd167763d0db08ec09b184b3b62b0beda4cffa9d1380d3f579b",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0051.png",
+				"original_source_frame": 60.0,
+				"original_source_pts": 30208.0,
+				"output_time_seconds": 1.58333333333333,
+				"removed_isolated_seed_pixels": 1.0,
+				"repair": null,
+				"sha256": "1367d96233e606f8c33706940aa40829862262d23338e794a536f4ca444ff4b5",
+				"source_frame": 51.0,
+				"source_matte_bbox": [
+					327.0,
+					260.0,
+					902.0,
+					713.0
+				],
+				"source_pts": 24320.0,
+				"source_time_seconds": 1.58333333333333,
+				"trail_alpha_pixels_over_5": 832.0,
+				"upper_body_unchanged_pixels": 71412.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": false,
+			"original_source_frame": 60.0,
+			"original_source_pts": 30208.0,
+			"output_time_seconds": 1.58333333333333,
+			"render_time_seconds": 1.58333433333333,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0051.png",
+			"runtime_source_sha256": "1367d96233e606f8c33706940aa40829862262d23338e794a536f4ca444ff4b5",
+			"sha256": "1cbad4ccb01c43f3dae64eb0e452276819383c8c76381983086810e665b2c114",
+			"source_file": "attack_0051.png",
+			"source_frame": 51.0,
+			"source_index": null,
+			"source_pts": 24320.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.58333333333333,
+			"time": 1.58333333333333,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					887.25,
+					521.25
+				]
+			],
+			"character_file": "front_right-013-frame-0083-character.png",
+			"character_sha256": "acee0600e0c0a0135fae0ce7cbae2543d01aeb7fc053fffa69d2afc32483bbf0",
+			"character_viewport_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "fc14e219b7f20c3706bc921019d96433546f645502591273673cfb0b937bb1e0",
+			"direction": "front_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_right-013-frame-0083.png",
+			"frame": 82,
+			"frame_index_base": 0,
+			"manifest_array_index": 82,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					104.0,
+					72.0,
+					239.0,
+					231.0
+				],
+				"decoded_source_sha256": "456a7a7b0702c354f493a56a34b9150138da0bca50c796c2869211469c438f46",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0083.png",
+				"original_source_frame": 92.0,
+				"original_source_pts": 50688.0,
+				"output_time_seconds": 2.91666666666667,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "fc14e219b7f20c3706bc921019d96433546f645502591273673cfb0b937bb1e0",
+				"source_frame": 83.0,
+				"source_matte_bbox": [
+					285.0,
+					260.0,
+					682.0,
+					727.0
+				],
+				"source_pts": 44800.0,
+				"source_time_seconds": 2.91666666666667,
+				"trail_alpha_pixels_over_5": 0.0,
+				"upper_body_unchanged_pixels": 73876.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": false,
+			"original_source_frame": 92.0,
+			"original_source_pts": 50688.0,
+			"output_time_seconds": 2.91666666666667,
+			"render_time_seconds": 2.91666766666667,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0083.png",
+			"runtime_source_sha256": "fc14e219b7f20c3706bc921019d96433546f645502591273673cfb0b937bb1e0",
+			"sha256": "2ecb7d5b1e07f524bfd2fb8b1c9a41fb1c9a34522da10ad1c38984e06251d3c0",
+			"source_file": "attack_0083.png",
+			"source_frame": 83.0,
+			"source_index": null,
+			"source_pts": 44800.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 2.91666666666667,
+			"time": 2.91666666666667,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					887.25,
+					521.25
+				]
+			],
+			"character_file": "front_right-014-frame-0084-character.png",
+			"character_sha256": "5b87a8c2c6053043fc2bbfff886d794cbe1392c2ce726aaaeedb92aa972ec3a2",
+			"character_viewport_rect": [
+				575,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "1cfe8ef0067ce7791a747402ec1a57648d73b235111a2fb849cdef4601d191ad",
+			"direction": "front_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.05,
+			"duration_ticks": 768.0,
+			"file": "front_right-014-frame-0084.png",
+			"frame": 83,
+			"frame_index_base": 0,
+			"manifest_array_index": 83,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					104.0,
+					73.0,
+					239.0,
+					231.0
+				],
+				"decoded_source_sha256": "d7ba3d05e5452bf9e315b3fba3dd525ca94cf6fef7fc3226668cfec1710a8282",
+				"duration_seconds": 0.05,
+				"duration_ticks": 768.0,
+				"file": "attack_0084.png",
+				"original_source_frame": 93.0,
+				"original_source_pts": 51200.0,
+				"output_time_seconds": 2.95,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "1cfe8ef0067ce7791a747402ec1a57648d73b235111a2fb849cdef4601d191ad",
+				"source_frame": 84.0,
+				"source_matte_bbox": [
+					285.0,
+					260.0,
+					681.0,
+					727.0
+				],
+				"source_pts": 45312.0,
+				"source_time_seconds": 2.95,
+				"trail_alpha_pixels_over_5": 0.0,
+				"upper_body_unchanged_pixels": 73861.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": false,
+			"original_source_frame": 93.0,
+			"original_source_pts": 51200.0,
+			"output_time_seconds": 2.95,
+			"render_time_seconds": 2.950001,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0084.png",
+			"runtime_source_sha256": "1cfe8ef0067ce7791a747402ec1a57648d73b235111a2fb849cdef4601d191ad",
+			"sha256": "2dc4744e2baea701ddaa02209acb659458f4263eb19c051afc4981de12dcc5bc",
+			"source_file": "attack_0084.png",
+			"source_frame": 84.0,
+			"source_index": null,
+			"source_pts": 45312.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 2.95,
+			"time": 2.95,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					552.75,
+					521.25
+				]
+			],
+			"character_file": "front_left-000-frame-0001-character.png",
+			"character_sha256": "0a4461b9a66cc810c0a7ad67cd1e1adad883ae7ae8e9f4543c588180a7982e59",
+			"character_viewport_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "1b8b616498089e2c4506b77dd5a4c06ff0d29d37b93d61c0ad69fc3bb3550a38",
+			"direction": "front_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_left-000-frame-0001.png",
+			"frame": 0,
+			"frame_index_base": 0,
+			"manifest_array_index": 0,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					103.0,
+					73.0,
+					240.0,
+					232.0
+				],
+				"decoded_source_sha256": "694421c819b29d78e8efd7163c0de7ad450eb23069746c1b7d707165441abae8",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0001.png",
+				"original_source_frame": 10.0,
+				"original_source_pts": 5888.0,
+				"output_time_seconds": 0.0,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "1b8b616498089e2c4506b77dd5a4c06ff0d29d37b93d61c0ad69fc3bb3550a38",
+				"source_frame": 1.0,
+				"source_matte_bbox": [
+					282.0,
+					262.0,
+					685.0,
+					730.0
+				],
+				"source_pts": 0.0,
+				"source_time_seconds": 0.0,
+				"trail_alpha_pixels_over_5": 0.0,
+				"upper_body_unchanged_pixels": 75143.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": true,
+			"original_source_frame": 10.0,
+			"original_source_pts": 5888.0,
+			"output_time_seconds": 0.0,
+			"render_time_seconds": 0.000001,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0001.png",
+			"runtime_source_sha256": "1b8b616498089e2c4506b77dd5a4c06ff0d29d37b93d61c0ad69fc3bb3550a38",
+			"sha256": "ac97b5436b76f0afba62fc3ce2c7ec9c6f3bafe2dd6b3b423d1af6b2e194462b",
+			"source_file": "attack_0001.png",
+			"source_frame": 1.0,
+			"source_index": null,
+			"source_pts": 0.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 0.0,
+			"time": 0.0,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				180.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					552.75,
+					521.25
+				]
+			],
+			"character_file": "front_left-001-frame-0007-character.png",
+			"character_sha256": "bc850ca14133861e253143a4495083041b97dd8b50ea0dadf851616a31cc46cb",
+			"character_viewport_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "3a6793b0c00a1fa7b87be0db0b8c54e11eef0b0c3ccac36c231cf6cfc155f05a",
+			"direction": "front_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_left-001-frame-0007.png",
+			"frame": 6,
+			"frame_index_base": 0,
+			"manifest_array_index": 6,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					95.0,
+					75.0,
+					247.0,
+					232.0
+				],
+				"decoded_source_sha256": "244e2bab996fc7775f7b85ac71f5efea159b7d68eae78d13c00baed6c8fd28c6",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0007.png",
+				"original_source_frame": 16.0,
+				"original_source_pts": 9728.0,
+				"output_time_seconds": 0.25,
+				"removed_isolated_seed_pixels": 1.0,
+				"repair": null,
+				"sha256": "3a6793b0c00a1fa7b87be0db0b8c54e11eef0b0c3ccac36c231cf6cfc155f05a",
+				"source_frame": 7.0,
+				"source_matte_bbox": [
+					258.0,
+					269.0,
+					704.0,
+					730.0
+				],
+				"source_pts": 3840.0,
+				"source_time_seconds": 0.25,
+				"trail_alpha_pixels_over_5": 0.0,
+				"upper_body_unchanged_pixels": 81091.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": true,
+			"original_source_frame": 16.0,
+			"original_source_pts": 9728.0,
+			"output_time_seconds": 0.25,
+			"render_time_seconds": 0.250001,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0007.png",
+			"runtime_source_sha256": "3a6793b0c00a1fa7b87be0db0b8c54e11eef0b0c3ccac36c231cf6cfc155f05a",
+			"sha256": "85dabd6f56ff6b5eb5787ad1598092bcb4203d6aa569b7f485609f018e536966",
+			"source_file": "attack_0007.png",
+			"source_frame": 7.0,
+			"source_index": null,
+			"source_pts": 3840.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 0.25,
+			"time": 0.25,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				180.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					552.75,
+					521.25
+				]
+			],
+			"character_file": "front_left-002-frame-0041-character.png",
+			"character_sha256": "2558abb553dfd7409933a2e700ee427c0fbfbe8b8257e7814b0c7917adc174b9",
+			"character_viewport_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "2f44fe45448fc2100a0cddabaf2d2d3f6e9357e801d3d1519ed48471bf062dd2",
+			"direction": "front_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_left-002-frame-0041.png",
+			"frame": 40,
+			"frame_index_base": 0,
+			"manifest_array_index": 40,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					83.0,
+					20.0,
+					255.0,
+					226.0
+				],
+				"decoded_source_sha256": "047e7857a6c579c9bae1a4adcede588c7084bbf69419d81c47c5d542ec9a7147",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0041.png",
+				"original_source_frame": 50.0,
+				"original_source_pts": 23808.0,
+				"output_time_seconds": 1.16666666666667,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "2f44fe45448fc2100a0cddabaf2d2d3f6e9357e801d3d1519ed48471bf062dd2",
+				"source_frame": 41.0,
+				"source_matte_bbox": [
+					223.0,
+					103.0,
+					729.0,
+					713.0
+				],
+				"source_pts": 17920.0,
+				"source_time_seconds": 1.16666666666667,
+				"trail_alpha_pixels_over_5": 1413.0,
+				"upper_body_unchanged_pixels": 92623.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": true,
+			"original_source_frame": 50.0,
+			"original_source_pts": 23808.0,
+			"output_time_seconds": 1.16666666666667,
+			"render_time_seconds": 1.16666766666667,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0041.png",
+			"runtime_source_sha256": "2f44fe45448fc2100a0cddabaf2d2d3f6e9357e801d3d1519ed48471bf062dd2",
+			"sha256": "b952c18eaca3d5252c4a5dfa5a41e7b149f1ef6b1859a4f035b68911a381a5ed",
+			"source_file": "attack_0041.png",
+			"source_frame": 41.0,
+			"source_index": null,
+			"source_pts": 17920.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.16666666666667,
+			"time": 1.16666666666667,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				180.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					552.75,
+					521.25
+				]
+			],
+			"character_file": "front_left-003-frame-0042-character.png",
+			"character_sha256": "4320005bae9d8e73816d37e0aa17f08d13d9ea3d8b5a4daba50b46a9c36dfc79",
+			"character_viewport_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "5891690b966d035223e38bc5a6c083eae5a7679244219f554a109611f8b190f4",
+			"direction": "front_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.05,
+			"duration_ticks": 768.0,
+			"file": "front_left-003-frame-0042.png",
+			"frame": 41,
+			"frame_index_base": 0,
+			"manifest_array_index": 41,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					120.0,
+					74.0,
+					247.0,
+					233.0
+				],
+				"decoded_source_sha256": "98b78bc2ed00b417e27b098d101ec176cd7f049f1ba3350090b614f899c44064",
+				"duration_seconds": 0.05,
+				"duration_ticks": 768.0,
+				"file": "attack_0042.png",
+				"original_source_frame": 51.0,
+				"original_source_pts": 24320.0,
+				"output_time_seconds": 1.2,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "5891690b966d035223e38bc5a6c083eae5a7679244219f554a109611f8b190f4",
+				"source_frame": 42.0,
+				"source_matte_bbox": [
+					332.0,
+					265.0,
+					705.0,
+					734.0
+				],
+				"source_pts": 18432.0,
+				"source_time_seconds": 1.2,
+				"trail_alpha_pixels_over_5": 22293.0,
+				"upper_body_unchanged_pixels": 49514.0,
+				"veil_strength": 0.2
+			},
+			"mirrored": true,
+			"original_source_frame": 51.0,
+			"original_source_pts": 24320.0,
+			"output_time_seconds": 1.2,
+			"render_time_seconds": 1.200001,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0042.png",
+			"runtime_source_sha256": "5891690b966d035223e38bc5a6c083eae5a7679244219f554a109611f8b190f4",
+			"sha256": "fd1a4dc6766714bbc403e447dde08f072b30e9ab326731a8d7c73acf0b8fdc82",
+			"source_file": "attack_0042.png",
+			"source_frame": 42.0,
+			"source_index": null,
+			"source_pts": 18432.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.2,
+			"time": 1.2,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				180.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					552.75,
+					521.25
+				]
+			],
+			"character_file": "front_left-004-frame-0043-character.png",
+			"character_sha256": "247e704b183c45e2535392afbecfd90357583a076544f7af52f78f26d5079ff7",
+			"character_viewport_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "88ab94313af5632db0a389d25f72fe4d3c43da5d92acd4537ae44a7c15a77be0",
+			"direction": "front_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_left-004-frame-0043.png",
+			"frame": 42,
+			"frame_index_base": 0,
+			"manifest_array_index": 42,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					119.0,
+					73.0,
+					351.0,
+					226.0
+				],
+				"decoded_source_sha256": "7d89f914a9737be801e78b4edf5aec6633a3d5b5d18047679b691915409a13fe",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0043.png",
+				"original_source_frame": 52.0,
+				"original_source_pts": 25088.0,
+				"output_time_seconds": 1.25,
+				"removed_isolated_seed_pixels": 8.0,
+				"repair": {
+					"angle": 20.0,
+					"blur": 1.25,
+					"donor": 45.0,
+					"scale": 1.22,
+					"source_pivot": [
+						775.0,
+						432.0
+					],
+					"target_pivot": [
+						775.0,
+						511.0
+					]
+				},
+				"sha256": "88ab94313af5632db0a389d25f72fe4d3c43da5d92acd4537ae44a7c15a77be0",
+				"source_frame": 43.0,
+				"source_matte_bbox": [
+					330.0,
+					263.0,
+					960.0,
+					713.0
+				],
+				"source_pts": 19200.0,
+				"source_time_seconds": 1.25,
+				"trail_alpha_pixels_over_5": 28278.0,
+				"upper_body_unchanged_pixels": 66430.0,
+				"veil_strength": 0.35
+			},
+			"mirrored": true,
+			"original_source_frame": 52.0,
+			"original_source_pts": 25088.0,
+			"output_time_seconds": 1.25,
+			"render_time_seconds": 1.250001,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0043.png",
+			"runtime_source_sha256": "88ab94313af5632db0a389d25f72fe4d3c43da5d92acd4537ae44a7c15a77be0",
+			"sha256": "e5a3ebd7d9f12e56515899e8df7630fcd9b2a578a6896ebe5450b4a3f1a4c4a0",
+			"source_file": "attack_0043.png",
+			"source_frame": 43.0,
+			"source_index": null,
+			"source_pts": 19200.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.25,
+			"time": 1.25,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				180.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					552.75,
+					521.25
+				]
+			],
+			"character_file": "front_left-005-frame-0044-character.png",
+			"character_sha256": "577b7ba4fea95d82a2f97ab33e1dc330a61880b9579474bc21d20ae3bde12b2f",
+			"character_viewport_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "0bebb52f9b2db616ffc93ecdfc0f7441b9c4a62a67956365ca9120757644d067",
+			"direction": "front_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.05,
+			"duration_ticks": 768.0,
+			"file": "front_left-005-frame-0044.png",
+			"frame": 43,
+			"frame_index_base": 0,
+			"manifest_array_index": 43,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					118.0,
+					73.0,
+					345.0,
+					226.0
+				],
+				"decoded_source_sha256": "83b7ba2a62a54d2d92f2a1f52e2e6485383f119746cedb8359598309e8d38a9f",
+				"duration_seconds": 0.05,
+				"duration_ticks": 768.0,
+				"file": "attack_0044.png",
+				"original_source_frame": 53.0,
+				"original_source_pts": 25600.0,
+				"output_time_seconds": 1.28333333333333,
+				"removed_isolated_seed_pixels": 8.0,
+				"repair": {
+					"angle": 9.0,
+					"blur": 0.35,
+					"donor": 45.0,
+					"scale": 1.12,
+					"source_pivot": [
+						775.0,
+						432.0
+					],
+					"target_pivot": [
+						787.0,
+						453.0
+					]
+				},
+				"sha256": "0bebb52f9b2db616ffc93ecdfc0f7441b9c4a62a67956365ca9120757644d067",
+				"source_frame": 44.0,
+				"source_matte_bbox": [
+					327.0,
+					262.0,
+					960.0,
+					713.0
+				],
+				"source_pts": 19712.0,
+				"source_time_seconds": 1.28333333333333,
+				"trail_alpha_pixels_over_5": 26907.0,
+				"upper_body_unchanged_pixels": 70758.0,
+				"veil_strength": 0.32
+			},
+			"mirrored": true,
+			"original_source_frame": 53.0,
+			"original_source_pts": 25600.0,
+			"output_time_seconds": 1.28333333333333,
+			"render_time_seconds": 1.28333433333333,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0044.png",
+			"runtime_source_sha256": "0bebb52f9b2db616ffc93ecdfc0f7441b9c4a62a67956365ca9120757644d067",
+			"sha256": "6170d360bf7c5e827945d97106deba92e83e9a135e29bfe03c85d544c62b9571",
+			"source_file": "attack_0044.png",
+			"source_frame": 44.0,
+			"source_index": null,
+			"source_pts": 19712.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.28333333333333,
+			"time": 1.28333333333333,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				180.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					552.75,
+					521.25
+				]
+			],
+			"character_file": "front_left-006-frame-0045-character.png",
+			"character_sha256": "2f0ba55c3c3ba4325a810a79758ad81896658e176cd065dc5cff33b7d8d3e797",
+			"character_viewport_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "013f7e2a2fcf7cc78c1d2f319e4d88f9fa13d5695197215f337643276e0934f8",
+			"direction": "front_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_left-006-frame-0045.png",
+			"frame": 44,
+			"frame_index_base": 0,
+			"manifest_array_index": 44,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					118.0,
+					73.0,
+					330.0,
+					226.0
+				],
+				"decoded_source_sha256": "83820b1838dedd3eb24d321594254b06f5d66fc9fbfcc0f7d9d2416a7511a55b",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0045.png",
+				"original_source_frame": 54.0,
+				"original_source_pts": 26368.0,
+				"output_time_seconds": 1.33333333333333,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "013f7e2a2fcf7cc78c1d2f319e4d88f9fa13d5695197215f337643276e0934f8",
+				"source_frame": 45.0,
+				"source_matte_bbox": [
+					327.0,
+					262.0,
+					953.0,
+					713.0
+				],
+				"source_pts": 20480.0,
+				"source_time_seconds": 1.33333333333333,
+				"trail_alpha_pixels_over_5": 23899.0,
+				"upper_body_unchanged_pixels": 72153.0,
+				"veil_strength": 0.27
+			},
+			"mirrored": true,
+			"original_source_frame": 54.0,
+			"original_source_pts": 26368.0,
+			"output_time_seconds": 1.33333333333333,
+			"render_time_seconds": 1.33333433333333,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0045.png",
+			"runtime_source_sha256": "013f7e2a2fcf7cc78c1d2f319e4d88f9fa13d5695197215f337643276e0934f8",
+			"sha256": "9fb92a0ab994371162f897131fb640920a7c4ee4c1a36b86b200ae11272ee8f2",
+			"source_file": "attack_0045.png",
+			"source_frame": 45.0,
+			"source_index": null,
+			"source_pts": 20480.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.33333333333333,
+			"time": 1.33333333333333,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				180.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					552.75,
+					521.25
+				]
+			],
+			"character_file": "front_left-007-frame-0046-character.png",
+			"character_sha256": "334859080101ba6619f3ca8412d87141db6a5f4d170f4a8c461d0174e5de3fd4",
+			"character_viewport_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "7738902cf0cf80d168c8a0bfca5306f533852432580f819591c421d42207547f",
+			"direction": "front_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.05,
+			"duration_ticks": 768.0,
+			"file": "front_left-007-frame-0046.png",
+			"frame": 45,
+			"frame_index_base": 0,
+			"manifest_array_index": 45,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					118.0,
+					73.0,
+					318.0,
+					226.0
+				],
+				"decoded_source_sha256": "e751bde595ed3d5884633d4797ffaa1c94a97d27ded7c5f3bb92ca7651bdfea8",
+				"duration_seconds": 0.05,
+				"duration_ticks": 768.0,
+				"file": "attack_0046.png",
+				"original_source_frame": 55.0,
+				"original_source_pts": 26880.0,
+				"output_time_seconds": 1.36666666666667,
+				"removed_isolated_seed_pixels": 1.0,
+				"repair": null,
+				"sha256": "7738902cf0cf80d168c8a0bfca5306f533852432580f819591c421d42207547f",
+				"source_frame": 46.0,
+				"source_matte_bbox": [
+					328.0,
+					261.0,
+					916.0,
+					713.0
+				],
+				"source_pts": 20992.0,
+				"source_time_seconds": 1.36666666666667,
+				"trail_alpha_pixels_over_5": 23621.0,
+				"upper_body_unchanged_pixels": 72452.0,
+				"veil_strength": 0.18
+			},
+			"mirrored": true,
+			"original_source_frame": 55.0,
+			"original_source_pts": 26880.0,
+			"output_time_seconds": 1.36666666666667,
+			"render_time_seconds": 1.36666766666667,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0046.png",
+			"runtime_source_sha256": "7738902cf0cf80d168c8a0bfca5306f533852432580f819591c421d42207547f",
+			"sha256": "41b6d9aa9554196bcc2b458f08b731cf2f1c80d8071afc2e5219fee44fccb146",
+			"source_file": "attack_0046.png",
+			"source_frame": 46.0,
+			"source_index": null,
+			"source_pts": 20992.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.36666666666667,
+			"time": 1.36666666666667,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				180.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					552.75,
+					521.25
+				]
+			],
+			"character_file": "front_left-008-frame-0047-character.png",
+			"character_sha256": "032617fbee0391c12a8f1f923b333cd146dc836691cc3c667f0d607c363ec80e",
+			"character_viewport_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "adef1be4d134ff944e5f6bf60baf3c19a45599f01c7b6718d8a169c4fdb1db62",
+			"direction": "front_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_left-008-frame-0047.png",
+			"frame": 46,
+			"frame_index_base": 0,
+			"manifest_array_index": 46,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					119.0,
+					73.0,
+					315.0,
+					226.0
+				],
+				"decoded_source_sha256": "61c2087c830707fc3c766b3c39d8d76a4c34bb99562ec27785c3b13efe48b876",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0047.png",
+				"original_source_frame": 56.0,
+				"original_source_pts": 27648.0,
+				"output_time_seconds": 1.41666666666667,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "adef1be4d134ff944e5f6bf60baf3c19a45599f01c7b6718d8a169c4fdb1db62",
+				"source_frame": 47.0,
+				"source_matte_bbox": [
+					328.0,
+					261.0,
+					908.0,
+					713.0
+				],
+				"source_pts": 21760.0,
+				"source_time_seconds": 1.41666666666667,
+				"trail_alpha_pixels_over_5": 20199.0,
+				"upper_body_unchanged_pixels": 72727.0,
+				"veil_strength": 0.09
+			},
+			"mirrored": true,
+			"original_source_frame": 56.0,
+			"original_source_pts": 27648.0,
+			"output_time_seconds": 1.41666666666667,
+			"render_time_seconds": 1.41666766666667,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0047.png",
+			"runtime_source_sha256": "adef1be4d134ff944e5f6bf60baf3c19a45599f01c7b6718d8a169c4fdb1db62",
+			"sha256": "924b2eac4260041a37313eb006ebfd3f127050853e9c125e6594a0159ac22ff1",
+			"source_file": "attack_0047.png",
+			"source_frame": 47.0,
+			"source_index": null,
+			"source_pts": 21760.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.41666666666667,
+			"time": 1.41666666666667,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				180.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					552.75,
+					521.25
+				]
+			],
+			"character_file": "front_left-009-frame-0048-character.png",
+			"character_sha256": "aca2e62202119b7daec155676e42992c36070e20ebebe7dc576544429fb9dd53",
+			"character_viewport_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "78655a17c6e07422546b7e1a869b86933b01d8b496c7b27cae7ff83d80c002fc",
+			"direction": "front_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.05,
+			"duration_ticks": 768.0,
+			"file": "front_left-009-frame-0048.png",
+			"frame": 47,
+			"frame_index_base": 0,
+			"manifest_array_index": 47,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					238.0
+				],
+				"bbox": [
+					118.0,
+					73.0,
+					315.0,
+					226.0
+				],
+				"decoded_source_sha256": "7dde351981c20a8dc08d388cd7c810f69ef2bd311fef87892f6dce871933a285",
+				"duration_seconds": 0.05,
+				"duration_ticks": 768.0,
+				"file": "attack_0048.png",
+				"original_source_frame": 57.0,
+				"original_source_pts": 28160.0,
+				"output_time_seconds": 1.45,
+				"removed_isolated_seed_pixels": 1.0,
+				"repair": null,
+				"sha256": "78655a17c6e07422546b7e1a869b86933b01d8b496c7b27cae7ff83d80c002fc",
+				"source_frame": 48.0,
+				"source_matte_bbox": [
+					326.0,
+					261.0,
+					906.0,
+					713.0
+				],
+				"source_pts": 22272.0,
+				"source_time_seconds": 1.45,
+				"trail_alpha_pixels_over_5": 13454.0,
+				"upper_body_unchanged_pixels": 72646.0,
+				"veil_strength": 0.04
+			},
+			"mirrored": true,
+			"original_source_frame": 57.0,
+			"original_source_pts": 28160.0,
+			"output_time_seconds": 1.45,
+			"render_time_seconds": 1.450001,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0048.png",
+			"runtime_source_sha256": "78655a17c6e07422546b7e1a869b86933b01d8b496c7b27cae7ff83d80c002fc",
+			"sha256": "caaab38549ba1142676dbed6fd4503ff894e0c54d15e67aa0cb08723eeda8f22",
+			"source_file": "attack_0048.png",
+			"source_frame": 48.0,
+			"source_index": null,
+			"source_pts": 22272.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.45,
+			"time": 1.45,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				180.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					552.75,
+					521.25
+				]
+			],
+			"character_file": "front_left-010-frame-0049-character.png",
+			"character_sha256": "d2568e3dd1e7fbbc02e1bc25cb85abc8de7df80ae4bf85200a2b56e582710bed",
+			"character_viewport_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "3ce6a7e5714b6ba185be818d8436be2dde5fa1ba155cc9376794b1b853da3ed2",
+			"direction": "front_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_left-010-frame-0049.png",
+			"frame": 48,
+			"frame_index_base": 0,
+			"manifest_array_index": 48,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					118.0,
+					73.0,
+					314.0,
+					226.0
+				],
+				"decoded_source_sha256": "d08e55e2b9f9a51125d227efe301708815350ee4a3ead0c0df3e95b34b39da7f",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0049.png",
+				"original_source_frame": 58.0,
+				"original_source_pts": 28928.0,
+				"output_time_seconds": 1.5,
+				"removed_isolated_seed_pixels": 4.0,
+				"repair": null,
+				"sha256": "3ce6a7e5714b6ba185be818d8436be2dde5fa1ba155cc9376794b1b853da3ed2",
+				"source_frame": 49.0,
+				"source_matte_bbox": [
+					326.0,
+					260.0,
+					904.0,
+					713.0
+				],
+				"source_pts": 23040.0,
+				"source_time_seconds": 1.5,
+				"trail_alpha_pixels_over_5": 6606.0,
+				"upper_body_unchanged_pixels": 72168.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": true,
+			"original_source_frame": 58.0,
+			"original_source_pts": 28928.0,
+			"output_time_seconds": 1.5,
+			"render_time_seconds": 1.500001,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0049.png",
+			"runtime_source_sha256": "3ce6a7e5714b6ba185be818d8436be2dde5fa1ba155cc9376794b1b853da3ed2",
+			"sha256": "a01388a29df0a189a15c0777a49ecbabe05eddf29ebefeb0ef932a691b33fbb4",
+			"source_file": "attack_0049.png",
+			"source_frame": 49.0,
+			"source_index": null,
+			"source_pts": 23040.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.5,
+			"time": 1.5,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				180.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					552.75,
+					521.25
+				]
+			],
+			"character_file": "front_left-011-frame-0050-character.png",
+			"character_sha256": "304fc603e02567a7c5527b7f81c81dddddc9b175a270e92bf2e0b0e24c5b2009",
+			"character_viewport_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "eb8487382b2a10d278ef9d565b16831090162d707c440c32cebcfbfe2416c969",
+			"direction": "front_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.05,
+			"duration_ticks": 768.0,
+			"file": "front_left-011-frame-0050.png",
+			"frame": 49,
+			"frame_index_base": 0,
+			"manifest_array_index": 49,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					118.0,
+					73.0,
+					313.0,
+					226.0
+				],
+				"decoded_source_sha256": "38de8d4af10e0787f00fe917592f12ee2b8ed7325b49489955b89231daa17d10",
+				"duration_seconds": 0.05,
+				"duration_ticks": 768.0,
+				"file": "attack_0050.png",
+				"original_source_frame": 59.0,
+				"original_source_pts": 29440.0,
+				"output_time_seconds": 1.53333333333333,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "eb8487382b2a10d278ef9d565b16831090162d707c440c32cebcfbfe2416c969",
+				"source_frame": 50.0,
+				"source_matte_bbox": [
+					326.0,
+					260.0,
+					902.0,
+					713.0
+				],
+				"source_pts": 23552.0,
+				"source_time_seconds": 1.53333333333333,
+				"trail_alpha_pixels_over_5": 3162.0,
+				"upper_body_unchanged_pixels": 71716.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": true,
+			"original_source_frame": 59.0,
+			"original_source_pts": 29440.0,
+			"output_time_seconds": 1.53333333333333,
+			"render_time_seconds": 1.53333433333333,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0050.png",
+			"runtime_source_sha256": "eb8487382b2a10d278ef9d565b16831090162d707c440c32cebcfbfe2416c969",
+			"sha256": "50739592eca01918cdd0457641f1cbba97bb35bbe5e2cd1e73f1e50ab97bad70",
+			"source_file": "attack_0050.png",
+			"source_frame": 50.0,
+			"source_index": null,
+			"source_pts": 23552.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.53333333333333,
+			"time": 1.53333333333333,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				180.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					552.75,
+					521.25
+				]
+			],
+			"character_file": "front_left-012-frame-0051-character.png",
+			"character_sha256": "d149fb2bcf33360d54ccbca1ed7c5ceca3235f44f79da8fd5e9b253aa0223a65",
+			"character_viewport_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "1367d96233e606f8c33706940aa40829862262d23338e794a536f4ca444ff4b5",
+			"direction": "front_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_left-012-frame-0051.png",
+			"frame": 50,
+			"frame_index_base": 0,
+			"manifest_array_index": 50,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					118.0,
+					73.0,
+					313.0,
+					226.0
+				],
+				"decoded_source_sha256": "a3860f3bc2195dd167763d0db08ec09b184b3b62b0beda4cffa9d1380d3f579b",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0051.png",
+				"original_source_frame": 60.0,
+				"original_source_pts": 30208.0,
+				"output_time_seconds": 1.58333333333333,
+				"removed_isolated_seed_pixels": 1.0,
+				"repair": null,
+				"sha256": "1367d96233e606f8c33706940aa40829862262d23338e794a536f4ca444ff4b5",
+				"source_frame": 51.0,
+				"source_matte_bbox": [
+					327.0,
+					260.0,
+					902.0,
+					713.0
+				],
+				"source_pts": 24320.0,
+				"source_time_seconds": 1.58333333333333,
+				"trail_alpha_pixels_over_5": 832.0,
+				"upper_body_unchanged_pixels": 71412.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": true,
+			"original_source_frame": 60.0,
+			"original_source_pts": 30208.0,
+			"output_time_seconds": 1.58333333333333,
+			"render_time_seconds": 1.58333433333333,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0051.png",
+			"runtime_source_sha256": "1367d96233e606f8c33706940aa40829862262d23338e794a536f4ca444ff4b5",
+			"sha256": "fba146ddb6ddbb68d9bc9a249ab3b9d3567f6e624d04e1c6515dcebd6062f777",
+			"source_file": "attack_0051.png",
+			"source_frame": 51.0,
+			"source_index": null,
+			"source_pts": 24320.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 1.58333333333333,
+			"time": 1.58333333333333,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				180.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					552.75,
+					521.25
+				]
+			],
+			"character_file": "front_left-013-frame-0083-character.png",
+			"character_sha256": "93dc9d8d71ca8d9a7e6f02789190db6fe74cf07f6d8e011cc9d262c916ee394e",
+			"character_viewport_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "fc14e219b7f20c3706bc921019d96433546f645502591273673cfb0b937bb1e0",
+			"direction": "front_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0333333333333333,
+			"duration_ticks": 512.0,
+			"file": "front_left-013-frame-0083.png",
+			"frame": 82,
+			"frame_index_base": 0,
+			"manifest_array_index": 82,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					104.0,
+					72.0,
+					239.0,
+					231.0
+				],
+				"decoded_source_sha256": "456a7a7b0702c354f493a56a34b9150138da0bca50c796c2869211469c438f46",
+				"duration_seconds": 0.0333333333333333,
+				"duration_ticks": 512.0,
+				"file": "attack_0083.png",
+				"original_source_frame": 92.0,
+				"original_source_pts": 50688.0,
+				"output_time_seconds": 2.91666666666667,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "fc14e219b7f20c3706bc921019d96433546f645502591273673cfb0b937bb1e0",
+				"source_frame": 83.0,
+				"source_matte_bbox": [
+					285.0,
+					260.0,
+					682.0,
+					727.0
+				],
+				"source_pts": 44800.0,
+				"source_time_seconds": 2.91666666666667,
+				"trail_alpha_pixels_over_5": 0.0,
+				"upper_body_unchanged_pixels": 73876.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": true,
+			"original_source_frame": 92.0,
+			"original_source_pts": 50688.0,
+			"output_time_seconds": 2.91666666666667,
+			"render_time_seconds": 2.91666766666667,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0083.png",
+			"runtime_source_sha256": "fc14e219b7f20c3706bc921019d96433546f645502591273673cfb0b937bb1e0",
+			"sha256": "16304e891da84deec959019cfcc816e1bb72b5fd450f85d64fa0b63c3d5e72ae",
+			"source_file": "attack_0083.png",
+			"source_frame": 83.0,
+			"source_index": null,
+			"source_pts": 44800.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 2.91666666666667,
+			"time": 2.91666666666667,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				180.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				400.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					552.75,
+					521.25
+				]
+			],
+			"character_file": "front_left-014-frame-0084-character.png",
+			"character_sha256": "e0b2ac0a4d51f8ca800a56dd1f18bb638c467726c6c96381fce049355e2fa8fa",
+			"character_viewport_rect": [
+				540,
+				269,
+				325,
+				265
+			],
+			"clip": "front",
+			"declared_source_sha256": "1cfe8ef0067ce7791a747402ec1a57648d73b235111a2fb849cdef4601d191ad",
+			"direction": "front_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.05,
+			"duration_ticks": 768.0,
+			"file": "front_left-014-frame-0084.png",
+			"frame": 83,
+			"frame_index_base": 0,
+			"manifest_array_index": 83,
+			"manifest_frame": {
+				"background_rgb": [
+					239.0,
+					238.0,
+					237.0
+				],
+				"bbox": [
+					104.0,
+					73.0,
+					239.0,
+					231.0
+				],
+				"decoded_source_sha256": "d7ba3d05e5452bf9e315b3fba3dd525ca94cf6fef7fc3226668cfec1710a8282",
+				"duration_seconds": 0.05,
+				"duration_ticks": 768.0,
+				"file": "attack_0084.png",
+				"original_source_frame": 93.0,
+				"original_source_pts": 51200.0,
+				"output_time_seconds": 2.95,
+				"removed_isolated_seed_pixels": 0.0,
+				"repair": null,
+				"sha256": "1cfe8ef0067ce7791a747402ec1a57648d73b235111a2fb849cdef4601d191ad",
+				"source_frame": 84.0,
+				"source_matte_bbox": [
+					285.0,
+					260.0,
+					681.0,
+					727.0
+				],
+				"source_pts": 45312.0,
+				"source_time_seconds": 2.95,
+				"trail_alpha_pixels_over_5": 0.0,
+				"upper_body_unchanged_pixels": 73861.0,
+				"veil_strength": 0.0
+			},
+			"mirrored": true,
+			"original_source_frame": 93.0,
+			"original_source_pts": 51200.0,
+			"output_time_seconds": 2.95,
+			"render_time_seconds": 2.950001,
+			"runtime_manifest_path": "res://art/attack/manifest.json",
+			"runtime_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+			"runtime_source_path": "res://art/attack/attack_0084.png",
+			"runtime_source_sha256": "1cfe8ef0067ce7791a747402ec1a57648d73b235111a2fb849cdef4601d191ad",
+			"sha256": "64427194342f8da5482fe453ae562c6f98d9cea555ebaf63df816daf6a5945ba",
+			"source_file": "attack_0084.png",
+			"source_frame": 84.0,
+			"source_index": null,
+			"source_pts": 45312.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				15360.0
+			],
+			"source_time_seconds": 2.95,
+			"time": 2.95,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				180.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				384.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					875.25,
+					521.25
+				]
+			],
+			"character_file": "back_right-000-frame-0001-character.png",
+			"character_sha256": "44d2db0b6f9aa2aa7443e11a843431c3ca6251befebfe5a42a44e818e98319be",
+			"character_viewport_rect": [
+				575,
+				269,
+				313,
+				265
+			],
+			"clip": "back",
+			"declared_source_sha256": "0d97a9484ea993021f8d13a5077bf3bb4f547d35175dae069a1b80a7a9d10088",
+			"direction": "back_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0104166666666667,
+			"duration_ticks": null,
+			"file": "back_right-000-frame-0001.png",
+			"frame": 0,
+			"frame_index_base": 0,
+			"manifest_array_index": 0,
+			"manifest_frame": {
+				"bbox": [
+					107.0,
+					55.0,
+					292.0,
+					213.0
+				],
+				"duration_seconds": 0.0104166666666667,
+				"file": "attack_0001.png",
+				"output_time_seconds": 0.0,
+				"sha256": "0d97a9484ea993021f8d13a5077bf3bb4f547d35175dae069a1b80a7a9d10088",
+				"source_decoded_sha256": "e9259cfb7086a814057467cc5a04c8135a26d3817d9b986140ec2f6c1c880b8f",
+				"source_frame": 1.0,
+				"source_matte_bbox": [
+					274.0,
+					261.0,
+					797.0,
+					710.0
+				],
+				"source_pts": 0.0,
+				"source_time_seconds": 0.0,
+				"visible_pixels": 15340.0
+			},
+			"mirrored": false,
+			"original_source_frame": null,
+			"original_source_pts": null,
+			"output_time_seconds": 0.0,
+			"render_time_seconds": 0.000001,
+			"runtime_manifest_path": "res://art/back/manifest.json",
+			"runtime_manifest_sha256": "57fcd1ef9657f283cbd2d4d9779fa7d7d8b62c110414691c8928f83a721d1399",
+			"runtime_source_path": "res://art/back/attack_0001.png",
+			"runtime_source_sha256": "0d97a9484ea993021f8d13a5077bf3bb4f547d35175dae069a1b80a7a9d10088",
+			"sha256": "baca751c33c1b8349c5a437956e8d39699cfa1322f247259d6eaf62bcf1a759f",
+			"source_file": "attack_0001.png",
+			"source_frame": 1.0,
+			"source_index": null,
+			"source_pts": 0.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				12288.0
+			],
+			"source_time_seconds": 0.0,
+			"time": 0.0,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				384.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					875.25,
+					521.25
+				]
+			],
+			"character_file": "back_right-001-frame-0120-character.png",
+			"character_sha256": "37b6d2cc0574222771a68a448b91ceb688f4dd181f812cc2258695192be997a6",
+			"character_viewport_rect": [
+				575,
+				269,
+				313,
+				265
+			],
+			"clip": "back",
+			"declared_source_sha256": "b31fe85d418da52fdb6337d4e9a0084033c5d0b1ba6b552fc406bea149273e34",
+			"direction": "back_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0104166666666667,
+			"duration_ticks": null,
+			"file": "back_right-001-frame-0120.png",
+			"frame": 119,
+			"frame_index_base": 0,
+			"manifest_array_index": 119,
+			"manifest_frame": {
+				"bbox": [
+					124.0,
+					63.0,
+					281.0,
+					213.0
+				],
+				"duration_seconds": 0.0104166666666667,
+				"file": "attack_0120.png",
+				"output_time_seconds": 1.23958333333333,
+				"sha256": "b31fe85d418da52fdb6337d4e9a0084033c5d0b1ba6b552fc406bea149273e34",
+				"source_decoded_sha256": "4b845d8df5d817c3773bcfcca5eb9794301fe4039dec9aa203f957f3eb13e7f4",
+				"source_frame": 120.0,
+				"source_matte_bbox": [
+					321.0,
+					282.0,
+					767.0,
+					710.0
+				],
+				"source_pts": 15232.0,
+				"source_time_seconds": 1.23958333333333,
+				"visible_pixels": 11914.0
+			},
+			"mirrored": false,
+			"original_source_frame": null,
+			"original_source_pts": null,
+			"output_time_seconds": 1.23958333333333,
+			"render_time_seconds": 1.23958433333333,
+			"runtime_manifest_path": "res://art/back/manifest.json",
+			"runtime_manifest_sha256": "57fcd1ef9657f283cbd2d4d9779fa7d7d8b62c110414691c8928f83a721d1399",
+			"runtime_source_path": "res://art/back/attack_0120.png",
+			"runtime_source_sha256": "b31fe85d418da52fdb6337d4e9a0084033c5d0b1ba6b552fc406bea149273e34",
+			"sha256": "8d723d7956485858a04e4d2506b9679f26e39299195c0e5af993b3c11e334664",
+			"source_file": "attack_0120.png",
+			"source_frame": 120.0,
+			"source_index": null,
+			"source_pts": 15232.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				12288.0
+			],
+			"source_time_seconds": 1.23958333333333,
+			"time": 1.23958333333333,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				384.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					875.25,
+					521.25
+				]
+			],
+			"character_file": "back_right-002-frame-0188-character.png",
+			"character_sha256": "b09f47b8106f38eaa11f0ae4898d1d13655a3046f26e5f1824f701e4412f19e2",
+			"character_viewport_rect": [
+				575,
+				269,
+				313,
+				265
+			],
+			"clip": "back",
+			"declared_source_sha256": "4581a107f5e3c7c602f39a9d5e4fe154c549b1322018003b643a4aa31843c210",
+			"direction": "back_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0104166666666667,
+			"duration_ticks": null,
+			"file": "back_right-002-frame-0188.png",
+			"frame": 187,
+			"frame_index_base": 0,
+			"manifest_array_index": 187,
+			"manifest_frame": {
+				"bbox": [
+					81.0,
+					33.0,
+					235.0,
+					207.0
+				],
+				"duration_seconds": 0.0104166666666667,
+				"file": "attack_0188.png",
+				"output_time_seconds": 1.94791666666667,
+				"sha256": "4581a107f5e3c7c602f39a9d5e4fe154c549b1322018003b643a4aa31843c210",
+				"source_decoded_sha256": "895ccee3b791868eb3f574a89f9531722289bb39d1cd32ccc7fa040a5881146a",
+				"source_frame": 188.0,
+				"source_matte_bbox": [
+					198.0,
+					198.0,
+					637.0,
+					692.0
+				],
+				"source_pts": 23936.0,
+				"source_time_seconds": 1.94791666666667,
+				"visible_pixels": 14001.0
+			},
+			"mirrored": false,
+			"original_source_frame": null,
+			"original_source_pts": null,
+			"output_time_seconds": 1.94791666666667,
+			"render_time_seconds": 1.94791766666667,
+			"runtime_manifest_path": "res://art/back/manifest.json",
+			"runtime_manifest_sha256": "57fcd1ef9657f283cbd2d4d9779fa7d7d8b62c110414691c8928f83a721d1399",
+			"runtime_source_path": "res://art/back/attack_0188.png",
+			"runtime_source_sha256": "4581a107f5e3c7c602f39a9d5e4fe154c549b1322018003b643a4aa31843c210",
+			"sha256": "7875797dcc33a0678fdfa733fc324115c5e37bf788392d182e2dee17a37cde75",
+			"source_file": "attack_0188.png",
+			"source_frame": 188.0,
+			"source_index": null,
+			"source_pts": 23936.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				12288.0
+			],
+			"source_time_seconds": 1.94791666666667,
+			"time": 1.94791666666667,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				384.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					587.25,
+					281.25
+				],
+				[
+					875.25,
+					521.25
+				]
+			],
+			"character_file": "back_right-003-frame-0340-character.png",
+			"character_sha256": "41a8e45ccdc33c8a94424e6ef18e830525afbe56ed2076270433a2f97d2a514d",
+			"character_viewport_rect": [
+				575,
+				269,
+				313,
+				265
+			],
+			"clip": "back",
+			"declared_source_sha256": "2e68eae3e9f84b3fee160a8b282151a28a03dfc4fbf3d26e9d4664b995fe6f9e",
+			"direction": "back_right",
+			"direction_sign": 1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0104166666666667,
+			"duration_ticks": null,
+			"file": "back_right-003-frame-0340.png",
+			"frame": 339,
+			"frame_index_base": 0,
+			"manifest_array_index": 339,
+			"manifest_frame": {
+				"bbox": [
+					108.0,
+					55.0,
+					292.0,
+					214.0
+				],
+				"duration_seconds": 0.0104166666666667,
+				"file": "attack_0340.png",
+				"output_time_seconds": 3.53125,
+				"sha256": "2e68eae3e9f84b3fee160a8b282151a28a03dfc4fbf3d26e9d4664b995fe6f9e",
+				"source_decoded_sha256": "92e15c9f76bc36795c1857241ad2f18cccf9d1b95336bfd52e51d1eb4a51796f",
+				"source_frame": 340.0,
+				"source_matte_bbox": [
+					274.0,
+					262.0,
+					797.0,
+					711.0
+				],
+				"source_pts": 43392.0,
+				"source_time_seconds": 3.53125,
+				"visible_pixels": 15362.0
+			},
+			"mirrored": false,
+			"original_source_frame": null,
+			"original_source_pts": null,
+			"output_time_seconds": 3.53125,
+			"render_time_seconds": 3.54066766666667,
+			"runtime_manifest_path": "res://art/back/manifest.json",
+			"runtime_manifest_sha256": "57fcd1ef9657f283cbd2d4d9779fa7d7d8b62c110414691c8928f83a721d1399",
+			"runtime_source_path": "res://art/back/attack_0340.png",
+			"runtime_source_sha256": "2e68eae3e9f84b3fee160a8b282151a28a03dfc4fbf3d26e9d4664b995fe6f9e",
+			"sha256": "153eb62bcec8949f8a1e896d62fd5b938f859cb310eb72a9d46e88a36c333b5f",
+			"source_file": "attack_0340.png",
+			"source_frame": 340.0,
+			"source_index": null,
+			"source_pts": 43392.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				12288.0
+			],
+			"source_time_seconds": 3.53125,
+			"time": 3.54066666666667,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				145.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				384.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					564.75,
+					521.25
+				]
+			],
+			"character_file": "back_left-000-frame-0001-character.png",
+			"character_sha256": "e991c5245340e6c88be22da040723fc1c0ebb6b205b9f0cfb2b247ce1bc3c625",
+			"character_viewport_rect": [
+				552,
+				269,
+				313,
+				265
+			],
+			"clip": "back",
+			"declared_source_sha256": "0d97a9484ea993021f8d13a5077bf3bb4f547d35175dae069a1b80a7a9d10088",
+			"direction": "back_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0104166666666667,
+			"duration_ticks": null,
+			"file": "back_left-000-frame-0001.png",
+			"frame": 0,
+			"frame_index_base": 0,
+			"manifest_array_index": 0,
+			"manifest_frame": {
+				"bbox": [
+					107.0,
+					55.0,
+					292.0,
+					213.0
+				],
+				"duration_seconds": 0.0104166666666667,
+				"file": "attack_0001.png",
+				"output_time_seconds": 0.0,
+				"sha256": "0d97a9484ea993021f8d13a5077bf3bb4f547d35175dae069a1b80a7a9d10088",
+				"source_decoded_sha256": "e9259cfb7086a814057467cc5a04c8135a26d3817d9b986140ec2f6c1c880b8f",
+				"source_frame": 1.0,
+				"source_matte_bbox": [
+					274.0,
+					261.0,
+					797.0,
+					710.0
+				],
+				"source_pts": 0.0,
+				"source_time_seconds": 0.0,
+				"visible_pixels": 15340.0
+			},
+			"mirrored": true,
+			"original_source_frame": null,
+			"original_source_pts": null,
+			"output_time_seconds": 0.0,
+			"render_time_seconds": 0.000001,
+			"runtime_manifest_path": "res://art/back/manifest.json",
+			"runtime_manifest_sha256": "57fcd1ef9657f283cbd2d4d9779fa7d7d8b62c110414691c8928f83a721d1399",
+			"runtime_source_path": "res://art/back/attack_0001.png",
+			"runtime_source_sha256": "0d97a9484ea993021f8d13a5077bf3bb4f547d35175dae069a1b80a7a9d10088",
+			"sha256": "fa08f096131efe5a28a752f77a0e58b011fe67e841be4c687e9932d3a93bfa39",
+			"source_file": "attack_0001.png",
+			"source_frame": 1.0,
+			"source_index": null,
+			"source_pts": 0.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				12288.0
+			],
+			"source_time_seconds": 0.0,
+			"time": 0.0,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				168.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				384.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					564.75,
+					521.25
+				]
+			],
+			"character_file": "back_left-001-frame-0120-character.png",
+			"character_sha256": "53e45f29c796f2d5c95aec4f6ff09e912c561480be0a204adcc9fd25bfec7ed5",
+			"character_viewport_rect": [
+				552,
+				269,
+				313,
+				265
+			],
+			"clip": "back",
+			"declared_source_sha256": "b31fe85d418da52fdb6337d4e9a0084033c5d0b1ba6b552fc406bea149273e34",
+			"direction": "back_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0104166666666667,
+			"duration_ticks": null,
+			"file": "back_left-001-frame-0120.png",
+			"frame": 119,
+			"frame_index_base": 0,
+			"manifest_array_index": 119,
+			"manifest_frame": {
+				"bbox": [
+					124.0,
+					63.0,
+					281.0,
+					213.0
+				],
+				"duration_seconds": 0.0104166666666667,
+				"file": "attack_0120.png",
+				"output_time_seconds": 1.23958333333333,
+				"sha256": "b31fe85d418da52fdb6337d4e9a0084033c5d0b1ba6b552fc406bea149273e34",
+				"source_decoded_sha256": "4b845d8df5d817c3773bcfcca5eb9794301fe4039dec9aa203f957f3eb13e7f4",
+				"source_frame": 120.0,
+				"source_matte_bbox": [
+					321.0,
+					282.0,
+					767.0,
+					710.0
+				],
+				"source_pts": 15232.0,
+				"source_time_seconds": 1.23958333333333,
+				"visible_pixels": 11914.0
+			},
+			"mirrored": true,
+			"original_source_frame": null,
+			"original_source_pts": null,
+			"output_time_seconds": 1.23958333333333,
+			"render_time_seconds": 1.23958433333333,
+			"runtime_manifest_path": "res://art/back/manifest.json",
+			"runtime_manifest_sha256": "57fcd1ef9657f283cbd2d4d9779fa7d7d8b62c110414691c8928f83a721d1399",
+			"runtime_source_path": "res://art/back/attack_0120.png",
+			"runtime_source_sha256": "b31fe85d418da52fdb6337d4e9a0084033c5d0b1ba6b552fc406bea149273e34",
+			"sha256": "f0c449b68eabe9b54239c742579d9a8ba5b44d96cf9fdc58ddabe60ba251328c",
+			"source_file": "attack_0120.png",
+			"source_frame": 120.0,
+			"source_index": null,
+			"source_pts": 15232.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				12288.0
+			],
+			"source_time_seconds": 1.23958333333333,
+			"time": 1.23958333333333,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				168.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				384.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					564.75,
+					521.25
+				]
+			],
+			"character_file": "back_left-002-frame-0188-character.png",
+			"character_sha256": "62bc774fdffe915fc32dd0eeb305b198b1fc111c89ca53c812c8aab1aae2a9db",
+			"character_viewport_rect": [
+				552,
+				269,
+				313,
+				265
+			],
+			"clip": "back",
+			"declared_source_sha256": "4581a107f5e3c7c602f39a9d5e4fe154c549b1322018003b643a4aa31843c210",
+			"direction": "back_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0104166666666667,
+			"duration_ticks": null,
+			"file": "back_left-002-frame-0188.png",
+			"frame": 187,
+			"frame_index_base": 0,
+			"manifest_array_index": 187,
+			"manifest_frame": {
+				"bbox": [
+					81.0,
+					33.0,
+					235.0,
+					207.0
+				],
+				"duration_seconds": 0.0104166666666667,
+				"file": "attack_0188.png",
+				"output_time_seconds": 1.94791666666667,
+				"sha256": "4581a107f5e3c7c602f39a9d5e4fe154c549b1322018003b643a4aa31843c210",
+				"source_decoded_sha256": "895ccee3b791868eb3f574a89f9531722289bb39d1cd32ccc7fa040a5881146a",
+				"source_frame": 188.0,
+				"source_matte_bbox": [
+					198.0,
+					198.0,
+					637.0,
+					692.0
+				],
+				"source_pts": 23936.0,
+				"source_time_seconds": 1.94791666666667,
+				"visible_pixels": 14001.0
+			},
+			"mirrored": true,
+			"original_source_frame": null,
+			"original_source_pts": null,
+			"output_time_seconds": 1.94791666666667,
+			"render_time_seconds": 1.94791766666667,
+			"runtime_manifest_path": "res://art/back/manifest.json",
+			"runtime_manifest_sha256": "57fcd1ef9657f283cbd2d4d9779fa7d7d8b62c110414691c8928f83a721d1399",
+			"runtime_source_path": "res://art/back/attack_0188.png",
+			"runtime_source_sha256": "4581a107f5e3c7c602f39a9d5e4fe154c549b1322018003b643a4aa31843c210",
+			"sha256": "8137bdaafd698f45480f5891b3b24d7e6b2b29e2513efb82cfc4f2d0d14e7410",
+			"source_file": "attack_0188.png",
+			"source_frame": 188.0,
+			"source_index": null,
+			"source_pts": 23936.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				12288.0
+			],
+			"source_time_seconds": 1.94791666666667,
+			"time": 1.94791666666667,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				168.0,
+				172.0
+			]
+		},
+		{
+			"canvas": [
+				384.0,
+				320.0
+			],
+			"canvas_foot": [
+				177.0,
+				213.0
+			],
+			"canvas_world_corners": [
+				[
+					852.75,
+					281.25
+				],
+				[
+					564.75,
+					521.25
+				]
+			],
+			"character_file": "back_left-003-frame-0340-character.png",
+			"character_sha256": "f55a0d16216bbe629acd95b40191af80b8fd8428530841abd70d6bdf4f172db5",
+			"character_viewport_rect": [
+				552,
+				269,
+				313,
+				265
+			],
+			"clip": "back",
+			"declared_source_sha256": "2e68eae3e9f84b3fee160a8b282151a28a03dfc4fbf3d26e9d4664b995fe6f9e",
+			"direction": "back_left",
+			"direction_sign": -1,
+			"display_scale": 0.75,
+			"duration_seconds": 0.0104166666666667,
+			"duration_ticks": null,
+			"file": "back_left-003-frame-0340.png",
+			"frame": 339,
+			"frame_index_base": 0,
+			"manifest_array_index": 339,
+			"manifest_frame": {
+				"bbox": [
+					108.0,
+					55.0,
+					292.0,
+					214.0
+				],
+				"duration_seconds": 0.0104166666666667,
+				"file": "attack_0340.png",
+				"output_time_seconds": 3.53125,
+				"sha256": "2e68eae3e9f84b3fee160a8b282151a28a03dfc4fbf3d26e9d4664b995fe6f9e",
+				"source_decoded_sha256": "92e15c9f76bc36795c1857241ad2f18cccf9d1b95336bfd52e51d1eb4a51796f",
+				"source_frame": 340.0,
+				"source_matte_bbox": [
+					274.0,
+					262.0,
+					797.0,
+					711.0
+				],
+				"source_pts": 43392.0,
+				"source_time_seconds": 3.53125,
+				"visible_pixels": 15362.0
+			},
+			"mirrored": true,
+			"original_source_frame": null,
+			"original_source_pts": null,
+			"output_time_seconds": 3.53125,
+			"render_time_seconds": 3.54066766666667,
+			"runtime_manifest_path": "res://art/back/manifest.json",
+			"runtime_manifest_sha256": "57fcd1ef9657f283cbd2d4d9779fa7d7d8b62c110414691c8928f83a721d1399",
+			"runtime_source_path": "res://art/back/attack_0340.png",
+			"runtime_source_sha256": "2e68eae3e9f84b3fee160a8b282151a28a03dfc4fbf3d26e9d4664b995fe6f9e",
+			"sha256": "38f4130ae0bb01ee47dba079d611fea17d827258af9ae9d992e5d34ae5325426",
+			"source_file": "attack_0340.png",
+			"source_frame": 340.0,
+			"source_index": null,
+			"source_pts": 43392.0,
+			"source_sign": 1,
+			"source_time_base": [
+				1.0,
+				12288.0
+			],
+			"source_time_seconds": 3.53125,
+			"time": 3.54066666666667,
+			"viewport_size": [
+				1440,
+				810
+			],
+			"world_foot": [
+				720.0,
+				441.0
+			],
+			"world_foot_in_character_crop": [
+				168.0,
+				172.0
+			]
+		}
+	],
+	"saved_png_count": 76,
+	"success": true,
+	"task": "D-20261102-002",
+	"viewport_size": [
+		1440,
+		810
+	],
+	"window_title": "D-20261102-002 Bear Front v3 Capture (Muted)"
+}

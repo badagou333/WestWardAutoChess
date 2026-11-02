@@ -11,7 +11,9 @@
 
 ## 素材来源和限制
 
-正面 `art/attack/` 是 `godot-demo/art/candidates/bear_lord_front_attack_v2/` 的84张PNG及manifest原样复制件，对应裁剪母版新1～84／原10～93。画布400×320、脚锚(177,213)、显示倍率0.75、世界脚点(720,441)，全动作固定，不裁回旧384宽或逐帧重定位。新43/44＝原52/53的同源棍头修补保留，不跳帧；修补是邻帧纹理合成近似，不是恢复失踪画面的真实纹理。候选的灰软脚边、烘焙运动模糊、首尾小幅姿势差与轨迹近似仍需连续视觉判断，不能因程序接入宣布全部关闭。原20帧运行副本已移到本轮临时备份，原候选及Git历史保留。
+正面 `art/attack/` 现为负责人选定的 `godot-demo/art/candidates/bear_lord_front_attack_v3/` 的84张PNG及manifest原样复制件，对应裁剪母版新1～84／原10～93。v3恢复源挥棍灰弧，并仅在FX源右侧24像素窄带渐隐；没有补回源画外内容，也没有新增光效。角色层沿用v2，新43/44＝原52/53的同源棍头修补保留。画布400×320、脚锚(177,213)、显示倍率0.75、世界脚点(720,441)和全动作时序均保持，不逐帧重定位。源混色/贴身FX过渡及腿脚遮挡有近似，灰软脚边、棍头轨迹、肩甲与首尾连续观感仍待05实际视觉复核。v2候选作为构建依赖保留，旧证据和07失败报告不覆盖；BFV2-01待07针对新运行复验，作者不直接宣布关闭。
+
+入库及运行manifest SHA-256均为 `53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237`，schema为`board-bear-front-trail-trial-v1`。其中`status`是生成时快照；`source_video/source_candidate`相对于候选根，仅供追溯，不由播放器解析。运行只读平铺PNG及clips.json指定的原WAV，无需修改生产加载逻辑。
 
 背面交接目录为 `godot-demo/art/candidates/bear_lord_back_attack_v1/`。运行目录将该包 `frames/` 的PNG平铺到 `art/back/`，保持manifest中的文件名引用；340张PNG、manifest和WAV均与05最终候选逐字节一致。原视频为负责人确认的 `bear-back-short-repaired-v1.mp4`，图像时间轴按视频轨而非音频尾部定义。画布384×320、脚锚(177,213)；脚边残余灰软边属于源画面覆盖限制，本轮未重绘。
 
@@ -23,17 +25,15 @@
 
 使用Godot 4.7可运行 `./launch.command --headless --audio-driver Dummy --script res://test.gd`。测试包含实际两组资源、每帧时间边界、镜像脚锚、源音重启、循环、四个按钮的Control输入和数字键。输入测试在引擎视口中注入事件，不是操作系统原生鼠标验收。
 
-2026-10-29的2969项／16张图属于旧20帧正面＋新背面阶段，不是本批通过。2026-11-02本批应以`validation/20261102-front-v2/`作者证据为准：验证84帧全部起止、完整散列与实际纹理、3秒零间隔／0.05秒末帧、前后原PCM隔离与重启、镜像脚点及四向控件/按键。`verify_front_v2.py`仅用标准库，可从仓库候选逐字节对照；无候选的干净副本仍核固定清单/WAV/PCM/每张PNG及背面/棋盘保护散列。可选`--ffmpeg`才额外冷解MOV音频，不传不声称完成母版冷复建。
+当前以[2026-11-02正面v3作者证据](validation/20261102-front-v3/README.md)为准：源码与无缓存独立副本各3717项／0失败，素材source1469/cold1380项通过；验证84帧完整散列/实际纹理、原非均匀PTS、3秒零间隔／0.05秒末帧、前后原PCM和单播放器重启、镜像脚点与四向引擎输入。`verify_front_v3.py`仅用标准库，无候选的副本仍核固定权威manifest、每张PNG、WAV/PCM及背面/棋盘/播放器保护散列。可选`--ffmpeg`仅额外冷解MOV音频；本轮未使用、不重做素材作者的冷复建。
 
-本批实际结果：源码与无缓存副本各3716项/0失败，素材source1466/cold1377项通过，30组真实图形采样与正常自动循环已完成。完整结果、首轮测试错误及未验边界见[作者验证说明](validation/20261102-front-v2/README.md)；07独立、05肩甲/脚边/连续视觉及负责人体验仍待完成。全部source_time_seconds保留，但实际屏幕刷新可呈现的帧率不等于源时刻采样率。
-
-本地实现提交为`4421292`；本批唯一正常推送连接中断，只读确认Gitee master仍为`7097d07`，尚未远端同步。结果记录另作本地收尾提交，不自动重推；本机素材与入口可用，详情见验证目录的git-delivery.json。
+无缓存副本专用OpenGL窗口实采38组／76PNG，含正面两向各新1/7/41/42～51/83/84及背面两向各4旧时刻。正常图形自动播放右前3轮，其余方向各1轮，通过循环/重启检查；本机观测全部源索引，不将屏幕刷新率等同源时刻采样率。上述属于作者检查，不代07定向、05实际视觉及真人连续/听感。旧v2作者证据位于`validation/20261102-front-v2/`；其计数通过曾漏掉大面积残影缺失，详见`docs/release/QA_BEAR_FRONT_V2_20261102.md`。`verify_front_v2.py`保留用于历史v2基线，不能用来核当前v3运行。
 
 ```sh
-python3 bear-forehand-showcase/verify_front_v2.py --output=/tmp/bear-front-assets.json
+python3 bear-forehand-showcase/verify_front_v3.py --output=/tmp/bear-front-assets.json
 bear-forehand-showcase/launch.command --headless --audio-driver Dummy --script res://test.gd -- --output=/tmp/bear-front-engine.json
 ```
 
-图形采样：`./launch.command --rendering-method gl_compatibility --audio-driver Dummy --script res://capture.gd -- --output=/tmp/bear-front-v2-render`。默认正面两向各采新1/7/41/42/43/44/45/46/48/83/84，背面两向各保4个旧时刻，共30组完整Viewport与同图原像素局部裁片；`capture.json`保源编号/PTS/原文件与截图散列/镜像/脚点。追加`--all-frames`可采全部源时刻。脚本拒绝headless和不完整输出，只操作专用窗口内引擎事件，不占系统鼠标；实际画面不是离线棋盘合成。`realtime_probe.gd`另做静音/Dummy的正常自动循环观测，原始混音位置测量不等于设备输出延迟或真人听感。肩甲须由05对照母版→候选→真实运行，静态或时钟通过不替其通过。
+图形采样：`./launch.command --rendering-method gl_compatibility --audio-driver Dummy --script res://capture.gd -- --output=/tmp/bear-front-v3-render`。默认38组完整Viewport及同图原像素局部裁片，覆盖完整变换画布、残影收边/肩甲/腿脚；`capture.json`保源编号/PTS/manifest及PNG散列/镜像/脚点。追加`--all-frames`可采全部源时刻，本轮未扩全段采集。脚本拒绝headless、不完整输出及错误v3 manifest，只操作专用窗口内引擎事件，不占系统鼠标；实际画面不是离线棋盘合成。`realtime_probe.gd`另做静音/Dummy的正常自动循环观测，原始混音位置测量不等于设备输出延迟或真人听感。肩甲须由05对照母版→候选→真实运行，静态或时钟通过不替其通过。
 
 播放器直接读取PNG/WAV，支持没有本机导入缓存的源码启动。若要导出安装包，仍需单独配置并验证原始资源的收录；本轮没有提供安装包。

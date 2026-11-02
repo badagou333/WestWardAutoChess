@@ -1,6 +1,6 @@
 {
-  "schema": "board-bear-front-attack-v2",
-  "status": "candidate_needs_visual_review",
+  "schema": "board-bear-front-trail-trial-v1",
+  "status": "draft_needs_visual_review",
   "art_source": "user-approved cropped existing video; deterministic local processing",
   "source_video": "../bear_lord_tail_trim_20261101/forehand-head-tail-lossless.mov",
   "source_sha256": "d37dffe785d83306c0f41f54b12348d0043f189bcf91251659816e291be548c0",
@@ -84,7 +84,8 @@
         262,
         685,
         730
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0002.png",
@@ -118,7 +119,8 @@
         262,
         688,
         731
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0003.png",
@@ -152,7 +154,8 @@
         263,
         691,
         732
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0004.png",
@@ -186,7 +189,8 @@
         264,
         693,
         733
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0005.png",
@@ -220,7 +224,8 @@
         266,
         697,
         732
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0006.png",
@@ -254,7 +259,8 @@
         268,
         701,
         730
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0007.png",
@@ -288,7 +294,8 @@
         269,
         704,
         730
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0008.png",
@@ -322,7 +329,8 @@
         270,
         705,
         729
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0009.png",
@@ -356,7 +364,8 @@
         270,
         707,
         723
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0010.png",
@@ -390,7 +399,8 @@
         269,
         712,
         719
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0011.png",
@@ -424,7 +434,8 @@
         268,
         715,
         714
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0012.png",
@@ -458,7 +469,8 @@
         268,
         717,
         711
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0013.png",
@@ -492,7 +504,8 @@
         268,
         718,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0014.png",
@@ -526,7 +539,8 @@
         267,
         721,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0015.png",
@@ -560,7 +574,8 @@
         267,
         722,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0016.png",
@@ -594,7 +609,8 @@
         267,
         723,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0017.png",
@@ -628,7 +644,8 @@
         267,
         723,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0018.png",
@@ -662,7 +679,8 @@
         268,
         724,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0019.png",
@@ -696,7 +714,8 @@
         268,
         724,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0020.png",
@@ -730,7 +749,8 @@
         268,
         724,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0021.png",
@@ -764,7 +784,8 @@
         267,
         724,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0022.png",
@@ -798,7 +819,8 @@
         267,
         725,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0023.png",
@@ -832,7 +854,8 @@
         266,
         725,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0024.png",
@@ -866,7 +889,8 @@
         266,
         725,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0025.png",
@@ -900,7 +924,8 @@
         266,
         725,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0026.png",
@@ -934,7 +959,8 @@
         265,
         725,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0027.png",
@@ -968,7 +994,8 @@
         265,
         725,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0028.png",
@@ -1002,7 +1029,8 @@
         264,
         725,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0029.png",
@@ -1036,7 +1064,8 @@
         263,
         725,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0030.png",
@@ -1070,7 +1099,8 @@
         261,
         725,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0031.png",
@@ -1104,7 +1134,8 @@
         258,
         725,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0032.png",
@@ -1138,7 +1169,8 @@
         254,
         725,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0033.png",
@@ -1172,7 +1204,8 @@
         249,
         724,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0034.png",
@@ -1206,7 +1239,8 @@
         242,
         723,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0035.png",
@@ -1240,7 +1274,8 @@
         239,
         724,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0036.png",
@@ -1274,7 +1309,8 @@
         236,
         725,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0037.png",
@@ -1308,7 +1344,8 @@
         235,
         733,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0038.png",
@@ -1320,7 +1357,7 @@
       "source_time_seconds": 1.0333333333333334,
       "output_time_seconds": 1.0333333333333334,
       "duration_seconds": 0.05,
-      "sha256": "e14d2a9372239c939c18653f3097c922b45fac1db3fba437f97b84394e62de9e",
+      "sha256": "8bd75ee8d14d55778fdc3eb4965d0786521f04d5418f6578b2c92821728b8f5f",
       "decoded_source_sha256": "2dcb72c7c3bf4aff291d2ad0fe07eb1091000408eb063fe498d94f771218138f",
       "bbox": [
         87,
@@ -1342,7 +1379,8 @@
         231,
         766,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 2401
     },
     {
       "file": "attack_0039.png",
@@ -1354,7 +1392,7 @@
       "source_time_seconds": 1.0833333333333333,
       "output_time_seconds": 1.0833333333333333,
       "duration_seconds": 0.03333333333333333,
-      "sha256": "59df77714784c5861fb24c8d58329d6870e26032ff39a7f4a37d94178eb6197e",
+      "sha256": "e175c9f2bfce709517375d64c2d982345eeb76b6c45528fcca712f2744e8d00c",
       "decoded_source_sha256": "67f26691d9fa0972fe26c254b4f0292bc97354fa0cab131d5eda22b3ff907ce9",
       "bbox": [
         81,
@@ -1376,7 +1414,8 @@
         106,
         779,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 2049
     },
     {
       "file": "attack_0040.png",
@@ -1388,7 +1427,7 @@
       "source_time_seconds": 1.1166666666666667,
       "output_time_seconds": 1.1166666666666667,
       "duration_seconds": 0.05,
-      "sha256": "ba3e94e73d4b81dd5f9b47925fc79f6308074b2673374d5ec11f0c50e4769756",
+      "sha256": "a59ae1930fffd811f7e7591a3acec86cb32316b947c1acbe7a458c23c38c6bf0",
       "decoded_source_sha256": "e80ebedce0425d129c4398c0e92c95d747d53805eabbdb9a784100d0a6f035c9",
       "bbox": [
         75,
@@ -1410,7 +1449,8 @@
         92,
         772,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 758
     },
     {
       "file": "attack_0041.png",
@@ -1422,7 +1462,7 @@
       "source_time_seconds": 1.1666666666666667,
       "output_time_seconds": 1.1666666666666667,
       "duration_seconds": 0.03333333333333333,
-      "sha256": "d9b71f44fc5a44547d7fd003fd5363988caa198b5433cefd50f82fa24f5667b6",
+      "sha256": "2f44fe45448fc2100a0cddabaf2d2d3f6e9357e801d3d1519ed48471bf062dd2",
       "decoded_source_sha256": "047e7857a6c579c9bae1a4adcede588c7084bbf69419d81c47c5d542ec9a7147",
       "bbox": [
         83,
@@ -1444,7 +1484,8 @@
         103,
         729,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 1413
     },
     {
       "file": "attack_0042.png",
@@ -1456,7 +1497,7 @@
       "source_time_seconds": 1.2,
       "output_time_seconds": 1.2,
       "duration_seconds": 0.05,
-      "sha256": "3e2a406776ce7f467676c7b8dc68337bda6913815fd4c88d45ac2a1f47a0c6b0",
+      "sha256": "5891690b966d035223e38bc5a6c083eae5a7679244219f554a109611f8b190f4",
       "decoded_source_sha256": "98b78bc2ed00b417e27b098d101ec176cd7f049f1ba3350090b614f899c44064",
       "bbox": [
         120,
@@ -1478,7 +1519,8 @@
         265,
         705,
         734
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 22293
     },
     {
       "file": "attack_0043.png",
@@ -1490,7 +1532,7 @@
       "source_time_seconds": 1.25,
       "output_time_seconds": 1.25,
       "duration_seconds": 0.03333333333333333,
-      "sha256": "a8dfb4c35842a1217dd411c6847bae66b8daa0410512d92336598947aa208d4e",
+      "sha256": "88ab94313af5632db0a389d25f72fe4d3c43da5d92acd4537ae44a7c15a77be0",
       "decoded_source_sha256": "7d89f914a9737be801e78b4edf5aec6633a3d5b5d18047679b691915409a13fe",
       "bbox": [
         119,
@@ -1525,7 +1567,8 @@
         263,
         960,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 28278
     },
     {
       "file": "attack_0044.png",
@@ -1537,7 +1580,7 @@
       "source_time_seconds": 1.2833333333333334,
       "output_time_seconds": 1.2833333333333334,
       "duration_seconds": 0.05,
-      "sha256": "e7badcba283c3c25168e7735a6520d5809365df476efa232b8b9b1d3d9daee81",
+      "sha256": "0bebb52f9b2db616ffc93ecdfc0f7441b9c4a62a67956365ca9120757644d067",
       "decoded_source_sha256": "83b7ba2a62a54d2d92f2a1f52e2e6485383f119746cedb8359598309e8d38a9f",
       "bbox": [
         118,
@@ -1572,7 +1615,8 @@
         262,
         960,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 26907
     },
     {
       "file": "attack_0045.png",
@@ -1584,7 +1628,7 @@
       "source_time_seconds": 1.3333333333333333,
       "output_time_seconds": 1.3333333333333333,
       "duration_seconds": 0.03333333333333333,
-      "sha256": "5ba0fcdef1a2534156854e18b43eef878ce075c605b5714fe00c2912d23de939",
+      "sha256": "013f7e2a2fcf7cc78c1d2f319e4d88f9fa13d5695197215f337643276e0934f8",
       "decoded_source_sha256": "83820b1838dedd3eb24d321594254b06f5d66fc9fbfcc0f7d9d2416a7511a55b",
       "bbox": [
         118,
@@ -1606,7 +1650,8 @@
         262,
         953,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 23899
     },
     {
       "file": "attack_0046.png",
@@ -1618,7 +1663,7 @@
       "source_time_seconds": 1.3666666666666667,
       "output_time_seconds": 1.3666666666666667,
       "duration_seconds": 0.05,
-      "sha256": "cdef161173bdc9050f57e856b011ff98052768bb79a14ddd6559d0104022d717",
+      "sha256": "7738902cf0cf80d168c8a0bfca5306f533852432580f819591c421d42207547f",
       "decoded_source_sha256": "e751bde595ed3d5884633d4797ffaa1c94a97d27ded7c5f3bb92ca7651bdfea8",
       "bbox": [
         118,
@@ -1640,7 +1685,8 @@
         261,
         916,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 23621
     },
     {
       "file": "attack_0047.png",
@@ -1652,7 +1698,7 @@
       "source_time_seconds": 1.4166666666666667,
       "output_time_seconds": 1.4166666666666667,
       "duration_seconds": 0.03333333333333333,
-      "sha256": "483bac24072b96a1236f22b0a2598e5e3549db83936199b025bcb1bf0f6381ce",
+      "sha256": "adef1be4d134ff944e5f6bf60baf3c19a45599f01c7b6718d8a169c4fdb1db62",
       "decoded_source_sha256": "61c2087c830707fc3c766b3c39d8d76a4c34bb99562ec27785c3b13efe48b876",
       "bbox": [
         119,
@@ -1674,7 +1720,8 @@
         261,
         908,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 20199
     },
     {
       "file": "attack_0048.png",
@@ -1686,7 +1733,7 @@
       "source_time_seconds": 1.45,
       "output_time_seconds": 1.45,
       "duration_seconds": 0.05,
-      "sha256": "6e991916b9eac2d15fdc6d304fe847d79a441121ceba4536a2cc2b500edb678e",
+      "sha256": "78655a17c6e07422546b7e1a869b86933b01d8b496c7b27cae7ff83d80c002fc",
       "decoded_source_sha256": "7dde351981c20a8dc08d388cd7c810f69ef2bd311fef87892f6dce871933a285",
       "bbox": [
         118,
@@ -1708,7 +1755,8 @@
         261,
         906,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 13454
     },
     {
       "file": "attack_0049.png",
@@ -1720,7 +1768,7 @@
       "source_time_seconds": 1.5,
       "output_time_seconds": 1.5,
       "duration_seconds": 0.03333333333333333,
-      "sha256": "3068d37ce25a27925fa9e9ca9f0d5b01ff32e8bb5312e67c681c733422da0614",
+      "sha256": "3ce6a7e5714b6ba185be818d8436be2dde5fa1ba155cc9376794b1b853da3ed2",
       "decoded_source_sha256": "d08e55e2b9f9a51125d227efe301708815350ee4a3ead0c0df3e95b34b39da7f",
       "bbox": [
         118,
@@ -1742,7 +1790,8 @@
         260,
         904,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 6606
     },
     {
       "file": "attack_0050.png",
@@ -1754,7 +1803,7 @@
       "source_time_seconds": 1.5333333333333334,
       "output_time_seconds": 1.5333333333333334,
       "duration_seconds": 0.05,
-      "sha256": "34f7656e771713a192139d170ff232806b80958fcc07cacb4dd26a9f31ba5e8a",
+      "sha256": "eb8487382b2a10d278ef9d565b16831090162d707c440c32cebcfbfe2416c969",
       "decoded_source_sha256": "38de8d4af10e0787f00fe917592f12ee2b8ed7325b49489955b89231daa17d10",
       "bbox": [
         118,
@@ -1776,7 +1825,8 @@
         260,
         902,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 3162
     },
     {
       "file": "attack_0051.png",
@@ -1788,7 +1838,7 @@
       "source_time_seconds": 1.5833333333333333,
       "output_time_seconds": 1.5833333333333333,
       "duration_seconds": 0.03333333333333333,
-      "sha256": "b702fd729e0665efe284076b723effe5a1da0a78dd1bb5b4e5a0f7624298a6d7",
+      "sha256": "1367d96233e606f8c33706940aa40829862262d23338e794a536f4ca444ff4b5",
       "decoded_source_sha256": "a3860f3bc2195dd167763d0db08ec09b184b3b62b0beda4cffa9d1380d3f579b",
       "bbox": [
         118,
@@ -1810,7 +1860,8 @@
         260,
         902,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 832
     },
     {
       "file": "attack_0052.png",
@@ -1844,7 +1895,8 @@
         260,
         901,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0053.png",
@@ -1878,7 +1930,8 @@
         261,
         901,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0054.png",
@@ -1912,7 +1965,8 @@
         261,
         901,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0055.png",
@@ -1946,7 +2000,8 @@
         261,
         901,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0056.png",
@@ -1980,7 +2035,8 @@
         261,
         900,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0057.png",
@@ -2014,7 +2070,8 @@
         261,
         900,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0058.png",
@@ -2048,7 +2105,8 @@
         261,
         900,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0059.png",
@@ -2082,7 +2140,8 @@
         261,
         900,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0060.png",
@@ -2116,7 +2175,8 @@
         262,
         901,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0061.png",
@@ -2150,7 +2210,8 @@
         263,
         902,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0062.png",
@@ -2184,7 +2245,8 @@
         263,
         903,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0063.png",
@@ -2218,7 +2280,8 @@
         264,
         905,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0064.png",
@@ -2252,7 +2315,8 @@
         265,
         907,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0065.png",
@@ -2286,7 +2350,8 @@
         267,
         909,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0066.png",
@@ -2320,7 +2385,8 @@
         268,
         908,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0067.png",
@@ -2354,7 +2420,8 @@
         268,
         906,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0068.png",
@@ -2388,7 +2455,8 @@
         268,
         901,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0069.png",
@@ -2422,7 +2490,8 @@
         268,
         889,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0070.png",
@@ -2456,7 +2525,8 @@
         267,
         867,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0071.png",
@@ -2490,7 +2560,8 @@
         266,
         845,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0072.png",
@@ -2524,7 +2595,8 @@
         265,
         817,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0073.png",
@@ -2558,7 +2630,8 @@
         264,
         788,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0074.png",
@@ -2592,7 +2665,8 @@
         263,
         745,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0075.png",
@@ -2626,7 +2700,8 @@
         263,
         716,
         713
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0076.png",
@@ -2660,7 +2735,8 @@
         263,
         685,
         712
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0077.png",
@@ -2694,7 +2770,8 @@
         262,
         684,
         714
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0078.png",
@@ -2728,7 +2805,8 @@
         262,
         684,
         720
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0079.png",
@@ -2762,7 +2840,8 @@
         261,
         684,
         723
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0080.png",
@@ -2796,7 +2875,8 @@
         261,
         684,
         726
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0081.png",
@@ -2830,7 +2910,8 @@
         261,
         683,
         726
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0082.png",
@@ -2864,7 +2945,8 @@
         260,
         682,
         727
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0083.png",
@@ -2898,7 +2980,8 @@
         260,
         682,
         727
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     },
     {
       "file": "attack_0084.png",
@@ -2932,7 +3015,10 @@
         260,
         681,
         727
-      ]
+      ],
+      "trail_alpha_pixels_over_5": 0
     }
-  ]
+  ],
+  "source_candidate": "../bear_lord_front_attack_v2",
+  "trail_method": "source gray veil behind unchanged v2 subject; frames38-51; source right-edge smoothstep width 24 pixels on frames38-51 to preserve transitions; approximate unknown alpha/color"
 }

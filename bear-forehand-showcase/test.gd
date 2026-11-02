@@ -1,7 +1,7 @@
 extends SceneTree
 ## Author checks for D-20261102-002; engine input is not an OS mouse/keyboard test.
 const EPS := 0.000001
-const FRONT_MANIFEST_SHA := "93251e01e00168d6fb3a4bff13a7ac2a3f58d15694a59f78d031c054b56cce98"
+const FRONT_MANIFEST_SHA := "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237"
 const BACK_MANIFEST_SHA := "57fcd1ef9657f283cbd2d4d9779fa7d7d8b62c110414691c8928f83a721d1399"
 const BOARD_SHA := "7b568eb54ad25d18efa7dab24adcce833a4528940fdd615ca053196cd6ad1ed6"
 const AUDIO := {
@@ -48,6 +48,10 @@ func check_clip(scene, clip_id: String) -> void:
 	observed_frame_counts[clip_id] = clip.frames.size()
 	var manifest = JSON.parse_string(FileAccess.get_file_as_string(clip.manifest_path))
 	check(FileAccess.get_sha256(clip.manifest_path)==(FRONT_MANIFEST_SHA if clip_id=="front" else BACK_MANIFEST_SHA),clip_id+" authoritative manifest bytes")
+	if clip_id=="front":
+		check(manifest.schema=="board-bear-front-trail-trial-v1"
+			and manifest.source_time_base.size()==2 and float(manifest.source_time_base[0])==1.0 and float(manifest.source_time_base[1])==15360.0
+			and manifest.original_frame_range.size()==2 and float(manifest.original_frame_range[0])==10.0 and float(manifest.original_frame_range[1])==93.0,"front v3 source schema, timebase and original range")
 	var count := 84 if clip_id=="front" else 340
 	check(clip.frames.size()==count and clip.times.size()==count and manifest.frames.size()==count,clip_id+" complete source timeline")
 	check(clip.canvas==Vector2(400 if clip_id=="front" else 384,320),clip_id+" fixed canvas")
@@ -149,7 +153,7 @@ func send_number_key(direction: int, pressed: bool) -> void:
 	Input.parse_input_event(event)
 
 func finish() -> void:
-	var report := {"schema":"bear-front-v2-author-engine-checks","checks":checks,"failures":failures,"failure_messages":failure_messages,
+	var report := {"schema":"bear-front-v3-author-engine-checks","checks":checks,"failures":failures,"failure_messages":failure_messages,
 		"audio_restart_observations":audio_restart_observations,
 		"front_frames":observed_frame_counts.front,"back_source_times":observed_frame_counts.back,"scope":"author engine checks; no OS input, device listening or independent visual acceptance"}
 	for argument in OS.get_cmdline_user_args():
