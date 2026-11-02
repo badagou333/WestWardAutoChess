@@ -1,0 +1,1 @@
+error: ffprobe not found on PATH; install ffmpeg 5.1 or newer (it ships ffprobe)

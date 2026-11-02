@@ -1,0 +1,6 @@
+  keyed 25/98
+  keyed 50/98
+  keyed 75/98
+  keyed 98/98
+warning: matte QA failed: outer_ring_spill_fraction 0.111578 (limit 0.01); the frames are published for review (--strict refuses them)
+{"output": "/Users/leqiong/.codex/visualizations/2026/10/31/01a19022-28b0-7c52-9432-d21c380f5999/C03-demo-prep-20261101/work/skill-clean", "metadata": "/Users/leqiong/.codex/visualizations/2026/10/31/01a19022-28b0-7c52-9432-d21c380f5999/C03-demo-prep-20261101/work/skill-clean/matte-report.json", "frames": 98, "matte": "none", "key": [255, 0, 255], "status": "fail", "flips_per_frame_pair": 459.4433, "seconds_per_frame": 0.067}

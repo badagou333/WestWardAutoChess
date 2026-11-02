@@ -1,0 +1,124 @@
+{
+  "file": "/Users/leqiong/.codex/visualizations/2026/10/31/01a19022-28b0-7c52-9432-d21c380f5999/C03-demo-prep-20261101/source/attack-8490-fast-accepted.mp4",
+  "movie_header": {
+    "version": 0,
+    "timescale": 1000,
+    "duration": 2985
+  },
+  "tracks": [
+    {
+      "handler": "vide",
+      "media_header": {
+        "version": 0,
+        "timescale": 90000,
+        "duration": 260250
+      },
+      "edit_list": [
+        {
+          "segment_duration_movie_ticks": 2892,
+          "segment_duration_s": 2.892,
+          "media_time_track_ticks": 0,
+          "media_time_s": 0.0,
+          "rate": [
+            1,
+            0
+          ]
+        }
+      ],
+      "stts_entry_count": 97,
+      "stts_count": 98,
+      "stts_duration_sum": 260250,
+      "stts_duration_seconds": 2.8916666666666666,
+      "last_5_sample_durations": [
+        3000,
+        4500,
+        3000,
+        1500,
+        0
+      ],
+      "last_sample_duration_seconds": 0.0,
+      "last_decode_start_ticks": 260250,
+      "last_decode_start_seconds": 2.8916666666666666,
+      "ctts": null,
+      "last_entries": [
+        [
+          1,
+          4500
+        ],
+        [
+          1,
+          3000
+        ],
+        [
+          1,
+          4500
+        ],
+        [
+          1,
+          3000
+        ],
+        [
+          1,
+          4500
+        ],
+        [
+          1,
+          3000
+        ],
+        [
+          1,
+          1500
+        ],
+        [
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "handler": "soun",
+      "media_header": {
+        "version": 0,
+        "timescale": 44100,
+        "duration": 132660
+      },
+      "edit_list": [
+        {
+          "segment_duration_movie_ticks": 2985,
+          "segment_duration_s": 2.985,
+          "media_time_track_ticks": 1024,
+          "media_time_s": 0.023219954648526078,
+          "rate": [
+            1,
+            0
+          ]
+        }
+      ],
+      "stts_entry_count": 2,
+      "stts_count": 130,
+      "stts_duration_sum": 132660,
+      "stts_duration_seconds": 3.0081632653061225,
+      "last_5_sample_durations": [
+        1024,
+        1024,
+        1024,
+        1024,
+        564
+      ],
+      "last_sample_duration_seconds": 0.012789115646258504,
+      "last_decode_start_ticks": 132096,
+      "last_decode_start_seconds": 2.995374149659864,
+      "ctts": null,
+      "last_entries": [
+        [
+          129,
+          1024
+        ],
+        [
+          1,
+          564
+        ]
+      ]
+    }
+  ]
+}
