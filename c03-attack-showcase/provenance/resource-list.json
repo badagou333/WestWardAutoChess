@@ -1,0 +1,822 @@
+{
+  "schema": "c03-isolated-preparation-resource-list-v1",
+  "date": "2026-11-02",
+  "task": "D-20261101-002",
+  "source_asset_commit": "a36cd562ee4f8876635b57c9136c4416357afe22",
+  "manifest_sha256": "fd1ae8323bae9bbc24cef60a68fa715ed5228474bb7e9d11dfd4b13617f98b98",
+  "frozen_original_manifest_sha256": "4d49afdbc42d29eb2bea3a6c071e8dc1a63ac11702c384d86ff102275b9f5d2b",
+  "record_count": 101,
+  "png_frames": 98,
+  "all_copies_byte_equal": true,
+  "scope": "File bytes and metadata only. No engine, test, rendering, decoding, listening or runtime acceptance.",
+  "files": [
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/manifest.json",
+      "runtime_path": "art/c03/manifest.json",
+      "bytes": 37496,
+      "source_sha256": "fd1ae8323bae9bbc24cef60a68fa715ed5228474bb7e9d11dfd4b13617f98b98",
+      "copied_sha256": "fd1ae8323bae9bbc24cef60a68fa715ed5228474bb7e9d11dfd4b13617f98b98",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000000.png",
+      "runtime_path": "art/c03/frames/frame_000000.png",
+      "bytes": 302859,
+      "source_sha256": "0653c3fcfa9ef87f267010b5ab6c24e1d49e63ed05dba598835ffa766b05e082",
+      "copied_sha256": "0653c3fcfa9ef87f267010b5ab6c24e1d49e63ed05dba598835ffa766b05e082",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000001.png",
+      "runtime_path": "art/c03/frames/frame_000001.png",
+      "bytes": 305917,
+      "source_sha256": "0258864181dcbfae79156955e45d7335ec80e8e28886ed120e7f260c1f63817b",
+      "copied_sha256": "0258864181dcbfae79156955e45d7335ec80e8e28886ed120e7f260c1f63817b",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000002.png",
+      "runtime_path": "art/c03/frames/frame_000002.png",
+      "bytes": 307439,
+      "source_sha256": "c09271756c6dd9b60e5e468a26bd3bd0ea2218d1c711c967695262f62e344d3c",
+      "copied_sha256": "c09271756c6dd9b60e5e468a26bd3bd0ea2218d1c711c967695262f62e344d3c",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000003.png",
+      "runtime_path": "art/c03/frames/frame_000003.png",
+      "bytes": 307397,
+      "source_sha256": "048fe0d5a10e99e2f9d6affaed5a90daef63b522ff577ddb898cf093112d958a",
+      "copied_sha256": "048fe0d5a10e99e2f9d6affaed5a90daef63b522ff577ddb898cf093112d958a",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000004.png",
+      "runtime_path": "art/c03/frames/frame_000004.png",
+      "bytes": 308255,
+      "source_sha256": "ead3b7fe238a635a5f640416eb68c46507b1e896cf4589e4ff13989914939c53",
+      "copied_sha256": "ead3b7fe238a635a5f640416eb68c46507b1e896cf4589e4ff13989914939c53",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000005.png",
+      "runtime_path": "art/c03/frames/frame_000005.png",
+      "bytes": 311068,
+      "source_sha256": "04e23464cd725a6404bb123c6e2c6b18ee6ee170687774075e0dfd9fd4a253c7",
+      "copied_sha256": "04e23464cd725a6404bb123c6e2c6b18ee6ee170687774075e0dfd9fd4a253c7",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000006.png",
+      "runtime_path": "art/c03/frames/frame_000006.png",
+      "bytes": 310642,
+      "source_sha256": "a9f4016add878d8230d9850241f10f405a54c66250ca4ad9bae7dea885eb2305",
+      "copied_sha256": "a9f4016add878d8230d9850241f10f405a54c66250ca4ad9bae7dea885eb2305",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000007.png",
+      "runtime_path": "art/c03/frames/frame_000007.png",
+      "bytes": 312708,
+      "source_sha256": "e83c0953c060be3957142d8e3d6d2060225b99611b150af6c24279669916da22",
+      "copied_sha256": "e83c0953c060be3957142d8e3d6d2060225b99611b150af6c24279669916da22",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000008.png",
+      "runtime_path": "art/c03/frames/frame_000008.png",
+      "bytes": 315851,
+      "source_sha256": "e2230c7ce215641055491e145fedeba51ff7cb7e1c60b1fc7d6760141e6e75cd",
+      "copied_sha256": "e2230c7ce215641055491e145fedeba51ff7cb7e1c60b1fc7d6760141e6e75cd",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000009.png",
+      "runtime_path": "art/c03/frames/frame_000009.png",
+      "bytes": 313734,
+      "source_sha256": "5af96efd4020906dfff4a7cb113022507dde62c9c9e4ad899684d75240145160",
+      "copied_sha256": "5af96efd4020906dfff4a7cb113022507dde62c9c9e4ad899684d75240145160",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000010.png",
+      "runtime_path": "art/c03/frames/frame_000010.png",
+      "bytes": 315468,
+      "source_sha256": "13a75f4e4723a95fbf5ae05e604a9214b7d8ce25c0aac39285590050563b4319",
+      "copied_sha256": "13a75f4e4723a95fbf5ae05e604a9214b7d8ce25c0aac39285590050563b4319",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000011.png",
+      "runtime_path": "art/c03/frames/frame_000011.png",
+      "bytes": 319113,
+      "source_sha256": "378cd278f7285ca44ae4338f4008cb9e9bafd9e262a6c1b3debfb8586c721f51",
+      "copied_sha256": "378cd278f7285ca44ae4338f4008cb9e9bafd9e262a6c1b3debfb8586c721f51",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000012.png",
+      "runtime_path": "art/c03/frames/frame_000012.png",
+      "bytes": 324207,
+      "source_sha256": "7e91f3b4ba865db40827b14356b3b62e09fc611fb166c4ac6fee58e64d1aa746",
+      "copied_sha256": "7e91f3b4ba865db40827b14356b3b62e09fc611fb166c4ac6fee58e64d1aa746",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000013.png",
+      "runtime_path": "art/c03/frames/frame_000013.png",
+      "bytes": 319786,
+      "source_sha256": "bf10492c18a1b5b9680aac74a9be23f76097aec7e96aa966d06032718b1da0cf",
+      "copied_sha256": "bf10492c18a1b5b9680aac74a9be23f76097aec7e96aa966d06032718b1da0cf",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000014.png",
+      "runtime_path": "art/c03/frames/frame_000014.png",
+      "bytes": 310332,
+      "source_sha256": "cc202d213279a8d79fd7b2f3708bab28f7e86a383959a0640d2d58ecc524c569",
+      "copied_sha256": "cc202d213279a8d79fd7b2f3708bab28f7e86a383959a0640d2d58ecc524c569",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000015.png",
+      "runtime_path": "art/c03/frames/frame_000015.png",
+      "bytes": 325575,
+      "source_sha256": "680c19bf6bc667eacf5b302d3ca57ff447dab1bf774585802a6981240161009a",
+      "copied_sha256": "680c19bf6bc667eacf5b302d3ca57ff447dab1bf774585802a6981240161009a",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000016.png",
+      "runtime_path": "art/c03/frames/frame_000016.png",
+      "bytes": 341196,
+      "source_sha256": "ed62a0eadb01fd3c0d8cb4826b37383f659e7dc75fdb461a4b2592772b6333b0",
+      "copied_sha256": "ed62a0eadb01fd3c0d8cb4826b37383f659e7dc75fdb461a4b2592772b6333b0",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000017.png",
+      "runtime_path": "art/c03/frames/frame_000017.png",
+      "bytes": 340863,
+      "source_sha256": "a75601aa71095316e821cba5d561b6104bbbf93dd211e51a4777ed3f4360dcff",
+      "copied_sha256": "a75601aa71095316e821cba5d561b6104bbbf93dd211e51a4777ed3f4360dcff",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000018.png",
+      "runtime_path": "art/c03/frames/frame_000018.png",
+      "bytes": 358859,
+      "source_sha256": "aee7b10350b44e5a69f9cf6c77d98f7ac95c36772ed4b6fef329019205b781e6",
+      "copied_sha256": "aee7b10350b44e5a69f9cf6c77d98f7ac95c36772ed4b6fef329019205b781e6",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000019.png",
+      "runtime_path": "art/c03/frames/frame_000019.png",
+      "bytes": 371744,
+      "source_sha256": "ca7744d11aecd792bf17097a6a820a5aa454f0f4914196f555ed70246d74a70f",
+      "copied_sha256": "ca7744d11aecd792bf17097a6a820a5aa454f0f4914196f555ed70246d74a70f",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000020.png",
+      "runtime_path": "art/c03/frames/frame_000020.png",
+      "bytes": 384866,
+      "source_sha256": "4bc11e5faa4c73f0c32324fdecd933481ea307ce973575c5b67aec47d98cbc5d",
+      "copied_sha256": "4bc11e5faa4c73f0c32324fdecd933481ea307ce973575c5b67aec47d98cbc5d",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000021.png",
+      "runtime_path": "art/c03/frames/frame_000021.png",
+      "bytes": 378592,
+      "source_sha256": "4f2665ca4b82abba4939744320033c1893f88846952cc245d51595f32829fa2c",
+      "copied_sha256": "4f2665ca4b82abba4939744320033c1893f88846952cc245d51595f32829fa2c",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000022.png",
+      "runtime_path": "art/c03/frames/frame_000022.png",
+      "bytes": 379617,
+      "source_sha256": "910904617c77cd1cda2473eef1781de0825acc1c5e57a8fdbb66eb02dfcc0988",
+      "copied_sha256": "910904617c77cd1cda2473eef1781de0825acc1c5e57a8fdbb66eb02dfcc0988",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000023.png",
+      "runtime_path": "art/c03/frames/frame_000023.png",
+      "bytes": 390474,
+      "source_sha256": "e5eb2f217dcd5bbed98a8d8191ad5c9299a35d75a3356a6f4c8a745a940f795e",
+      "copied_sha256": "e5eb2f217dcd5bbed98a8d8191ad5c9299a35d75a3356a6f4c8a745a940f795e",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000024.png",
+      "runtime_path": "art/c03/frames/frame_000024.png",
+      "bytes": 396748,
+      "source_sha256": "109ae2ccf5d0205d6f05c51bdcbb3fcfdc580ace26f382f5fb2eba4414f14533",
+      "copied_sha256": "109ae2ccf5d0205d6f05c51bdcbb3fcfdc580ace26f382f5fb2eba4414f14533",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000025.png",
+      "runtime_path": "art/c03/frames/frame_000025.png",
+      "bytes": 385269,
+      "source_sha256": "d5236caccc71ee16f11e670480b45df397a1871f180476ef8ca1da3409a6e2f7",
+      "copied_sha256": "d5236caccc71ee16f11e670480b45df397a1871f180476ef8ca1da3409a6e2f7",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000026.png",
+      "runtime_path": "art/c03/frames/frame_000026.png",
+      "bytes": 380712,
+      "source_sha256": "68cca2d0315b69f3c8da8b5ece7d45fe172836a8ba9f34873c5b7d22cf7fce7d",
+      "copied_sha256": "68cca2d0315b69f3c8da8b5ece7d45fe172836a8ba9f34873c5b7d22cf7fce7d",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000027.png",
+      "runtime_path": "art/c03/frames/frame_000027.png",
+      "bytes": 388259,
+      "source_sha256": "44caf1d17a766d462655f73b26e4742aa9e3d2b055d5824f4b8e946a4055b445",
+      "copied_sha256": "44caf1d17a766d462655f73b26e4742aa9e3d2b055d5824f4b8e946a4055b445",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000028.png",
+      "runtime_path": "art/c03/frames/frame_000028.png",
+      "bytes": 391796,
+      "source_sha256": "8fe729db98fee9182c15ba586558a54eb957fdbcf8f388a05fe5a0451bbeb5ff",
+      "copied_sha256": "8fe729db98fee9182c15ba586558a54eb957fdbcf8f388a05fe5a0451bbeb5ff",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000029.png",
+      "runtime_path": "art/c03/frames/frame_000029.png",
+      "bytes": 349529,
+      "source_sha256": "d07c59cf38c7138fda51a11f3eae8f311a69987daf4a390cb648209c3015da8c",
+      "copied_sha256": "d07c59cf38c7138fda51a11f3eae8f311a69987daf4a390cb648209c3015da8c",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000030.png",
+      "runtime_path": "art/c03/frames/frame_000030.png",
+      "bytes": 328359,
+      "source_sha256": "f2e05bb8a23e6d0997fd5c7f4729ea05f63c28ff2eb09ffb0a702a2d98d78f63",
+      "copied_sha256": "f2e05bb8a23e6d0997fd5c7f4729ea05f63c28ff2eb09ffb0a702a2d98d78f63",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000031.png",
+      "runtime_path": "art/c03/frames/frame_000031.png",
+      "bytes": 320239,
+      "source_sha256": "ec33d970888f5da1e0029db8d61ef307df020a17eeb3171209c19a0e7e065e9a",
+      "copied_sha256": "ec33d970888f5da1e0029db8d61ef307df020a17eeb3171209c19a0e7e065e9a",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000032.png",
+      "runtime_path": "art/c03/frames/frame_000032.png",
+      "bytes": 294119,
+      "source_sha256": "cefda23f7b2b33326686d81261cf0c149e85dba26f2f823ae8d3e97e27cdffa7",
+      "copied_sha256": "cefda23f7b2b33326686d81261cf0c149e85dba26f2f823ae8d3e97e27cdffa7",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000033.png",
+      "runtime_path": "art/c03/frames/frame_000033.png",
+      "bytes": 321950,
+      "source_sha256": "bc746a6502c9860801edbc581c79f9e82e1f8335ccf3df19a3e6a1b4ff3348f1",
+      "copied_sha256": "bc746a6502c9860801edbc581c79f9e82e1f8335ccf3df19a3e6a1b4ff3348f1",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000034.png",
+      "runtime_path": "art/c03/frames/frame_000034.png",
+      "bytes": 368899,
+      "source_sha256": "f5fcd5e2e5d2b03e18f49693e5dc3ce86f732ed84e7d9190d909bf9bcf328228",
+      "copied_sha256": "f5fcd5e2e5d2b03e18f49693e5dc3ce86f732ed84e7d9190d909bf9bcf328228",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000035.png",
+      "runtime_path": "art/c03/frames/frame_000035.png",
+      "bytes": 395966,
+      "source_sha256": "d025be72ea0236b71b0c1873438dedd2c8fda6d00d81ee2f7183b7453f1b427d",
+      "copied_sha256": "d025be72ea0236b71b0c1873438dedd2c8fda6d00d81ee2f7183b7453f1b427d",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000036.png",
+      "runtime_path": "art/c03/frames/frame_000036.png",
+      "bytes": 392471,
+      "source_sha256": "f58cffce66b4c1b72f453005cc11ea365adf3e08b9ad3aeae1a458f29564ca13",
+      "copied_sha256": "f58cffce66b4c1b72f453005cc11ea365adf3e08b9ad3aeae1a458f29564ca13",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000037.png",
+      "runtime_path": "art/c03/frames/frame_000037.png",
+      "bytes": 374960,
+      "source_sha256": "ef59fd2cd6b64e85d5eef20fa669ff944bb57636df92b82cc3478a089717e863",
+      "copied_sha256": "ef59fd2cd6b64e85d5eef20fa669ff944bb57636df92b82cc3478a089717e863",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000038.png",
+      "runtime_path": "art/c03/frames/frame_000038.png",
+      "bytes": 366011,
+      "source_sha256": "54a5851b96d4702bd1d36bfa85fec99ff37ddc2893592316f0d86da05c65892b",
+      "copied_sha256": "54a5851b96d4702bd1d36bfa85fec99ff37ddc2893592316f0d86da05c65892b",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000039.png",
+      "runtime_path": "art/c03/frames/frame_000039.png",
+      "bytes": 371379,
+      "source_sha256": "27436b6c63c76b34f25c365c8be7b6f5e62c97e20437d1a0b5f82c2a8e0f945e",
+      "copied_sha256": "27436b6c63c76b34f25c365c8be7b6f5e62c97e20437d1a0b5f82c2a8e0f945e",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000040.png",
+      "runtime_path": "art/c03/frames/frame_000040.png",
+      "bytes": 372658,
+      "source_sha256": "005aa1eb0337c1a6cf34a75e05563166a5213844e41e534d685d8fee512656c0",
+      "copied_sha256": "005aa1eb0337c1a6cf34a75e05563166a5213844e41e534d685d8fee512656c0",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000041.png",
+      "runtime_path": "art/c03/frames/frame_000041.png",
+      "bytes": 364356,
+      "source_sha256": "36068d3e3524f5da563e1eb7a49f4a7ff4700fb765ddf95cebef8789d5e28b5f",
+      "copied_sha256": "36068d3e3524f5da563e1eb7a49f4a7ff4700fb765ddf95cebef8789d5e28b5f",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000042.png",
+      "runtime_path": "art/c03/frames/frame_000042.png",
+      "bytes": 358236,
+      "source_sha256": "25cb4414aa0ce842eac1255beeaa62e88afe96affdd59d5094f9ea9b8c33562c",
+      "copied_sha256": "25cb4414aa0ce842eac1255beeaa62e88afe96affdd59d5094f9ea9b8c33562c",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000043.png",
+      "runtime_path": "art/c03/frames/frame_000043.png",
+      "bytes": 364122,
+      "source_sha256": "3f56f7b9a4b8cac46c4a5938c8013a149a37c18d29fe83637744adc0b8fc5f78",
+      "copied_sha256": "3f56f7b9a4b8cac46c4a5938c8013a149a37c18d29fe83637744adc0b8fc5f78",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000044.png",
+      "runtime_path": "art/c03/frames/frame_000044.png",
+      "bytes": 365890,
+      "source_sha256": "68fe0585430feb88ec3087e140e9cbbba6f1e3d42b2b1590ecee07fa3c4d7674",
+      "copied_sha256": "68fe0585430feb88ec3087e140e9cbbba6f1e3d42b2b1590ecee07fa3c4d7674",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000045.png",
+      "runtime_path": "art/c03/frames/frame_000045.png",
+      "bytes": 358948,
+      "source_sha256": "dfa40f174215fe9c09cf085ecc3e2a4c453b5669ca4a5c10e58bea783912cae8",
+      "copied_sha256": "dfa40f174215fe9c09cf085ecc3e2a4c453b5669ca4a5c10e58bea783912cae8",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000046.png",
+      "runtime_path": "art/c03/frames/frame_000046.png",
+      "bytes": 357107,
+      "source_sha256": "2d44c4f92765f0db9a4076033c34997ce260e4721f5c33226adb5f569a41d164",
+      "copied_sha256": "2d44c4f92765f0db9a4076033c34997ce260e4721f5c33226adb5f569a41d164",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000047.png",
+      "runtime_path": "art/c03/frames/frame_000047.png",
+      "bytes": 358185,
+      "source_sha256": "638da569c009a3836e62300a4bda52e023243adc663758b20ae49e75ced6c777",
+      "copied_sha256": "638da569c009a3836e62300a4bda52e023243adc663758b20ae49e75ced6c777",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000048.png",
+      "runtime_path": "art/c03/frames/frame_000048.png",
+      "bytes": 351893,
+      "source_sha256": "3815bf7459841eabf8cbc45f0fe07fc5cc753e883a74ea53ad3226afd93c31c3",
+      "copied_sha256": "3815bf7459841eabf8cbc45f0fe07fc5cc753e883a74ea53ad3226afd93c31c3",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000049.png",
+      "runtime_path": "art/c03/frames/frame_000049.png",
+      "bytes": 340910,
+      "source_sha256": "f0213e5a68976fa4f4eedaf241d65b0f43c77123e8b19c6f386ab381049a88cb",
+      "copied_sha256": "f0213e5a68976fa4f4eedaf241d65b0f43c77123e8b19c6f386ab381049a88cb",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000050.png",
+      "runtime_path": "art/c03/frames/frame_000050.png",
+      "bytes": 313582,
+      "source_sha256": "257099a207ad0d4f71205492455f4cff89cc8d7ecc968a1a8a63449300d7fd3c",
+      "copied_sha256": "257099a207ad0d4f71205492455f4cff89cc8d7ecc968a1a8a63449300d7fd3c",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000051.png",
+      "runtime_path": "art/c03/frames/frame_000051.png",
+      "bytes": 306782,
+      "source_sha256": "c734c2c28a3b219d1f4692b1dbb53862115b49337c12157983d0ed95e36a49a3",
+      "copied_sha256": "c734c2c28a3b219d1f4692b1dbb53862115b49337c12157983d0ed95e36a49a3",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000052.png",
+      "runtime_path": "art/c03/frames/frame_000052.png",
+      "bytes": 308574,
+      "source_sha256": "011610816a9cc231b95e7007901cd20f00cce37e8b2125e336d0e212b0dbc325",
+      "copied_sha256": "011610816a9cc231b95e7007901cd20f00cce37e8b2125e336d0e212b0dbc325",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000053.png",
+      "runtime_path": "art/c03/frames/frame_000053.png",
+      "bytes": 281232,
+      "source_sha256": "dfd28f745f80849ed05374fc6d64dbc9cf5ea51f78fa926fdf505db3e6b0d2b9",
+      "copied_sha256": "dfd28f745f80849ed05374fc6d64dbc9cf5ea51f78fa926fdf505db3e6b0d2b9",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000054.png",
+      "runtime_path": "art/c03/frames/frame_000054.png",
+      "bytes": 259883,
+      "source_sha256": "58051c7d44f1616dc5316437364364bceeac95737ca003cbb3919a71e15c5f75",
+      "copied_sha256": "58051c7d44f1616dc5316437364364bceeac95737ca003cbb3919a71e15c5f75",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000055.png",
+      "runtime_path": "art/c03/frames/frame_000055.png",
+      "bytes": 263564,
+      "source_sha256": "72efdcaad935efab5c3427410db52f5a8a4527bee09c6cd72a4c836966c19030",
+      "copied_sha256": "72efdcaad935efab5c3427410db52f5a8a4527bee09c6cd72a4c836966c19030",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000056.png",
+      "runtime_path": "art/c03/frames/frame_000056.png",
+      "bytes": 260842,
+      "source_sha256": "6174395524ed4b375b6a0fdb76c4f079e929b04a96a7d642c7df1814a6bf268c",
+      "copied_sha256": "6174395524ed4b375b6a0fdb76c4f079e929b04a96a7d642c7df1814a6bf268c",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000057.png",
+      "runtime_path": "art/c03/frames/frame_000057.png",
+      "bytes": 254304,
+      "source_sha256": "cadb713269d696068f9063b8bbb17f06a1578f371f1f5f20a6e9220bc4d91280",
+      "copied_sha256": "cadb713269d696068f9063b8bbb17f06a1578f371f1f5f20a6e9220bc4d91280",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000058.png",
+      "runtime_path": "art/c03/frames/frame_000058.png",
+      "bytes": 267404,
+      "source_sha256": "dd7ff5e816eb2f2b296d64cf0475ec0acf987e9907af644b9915c61aa7139de4",
+      "copied_sha256": "dd7ff5e816eb2f2b296d64cf0475ec0acf987e9907af644b9915c61aa7139de4",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000059.png",
+      "runtime_path": "art/c03/frames/frame_000059.png",
+      "bytes": 287188,
+      "source_sha256": "5a6c6e4b5a60d019c920a8a7ceec0f0e5aaddf726d8493beaac12483bfeaa3e6",
+      "copied_sha256": "5a6c6e4b5a60d019c920a8a7ceec0f0e5aaddf726d8493beaac12483bfeaa3e6",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000060.png",
+      "runtime_path": "art/c03/frames/frame_000060.png",
+      "bytes": 301865,
+      "source_sha256": "d80ca87dc322650ad4fb23e2514cc996aa28b7986de00680a3577e317d3de483",
+      "copied_sha256": "d80ca87dc322650ad4fb23e2514cc996aa28b7986de00680a3577e317d3de483",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000061.png",
+      "runtime_path": "art/c03/frames/frame_000061.png",
+      "bytes": 303236,
+      "source_sha256": "0d16a8e832f61b5e653becbbcf53cc0418749fcae5e46f485884b0c9b365f1ac",
+      "copied_sha256": "0d16a8e832f61b5e653becbbcf53cc0418749fcae5e46f485884b0c9b365f1ac",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000062.png",
+      "runtime_path": "art/c03/frames/frame_000062.png",
+      "bytes": 328107,
+      "source_sha256": "9e3d2d0b972ab79e9a37136bec7f4a8851931fbfc6c2bf2d68ad68586389a5f3",
+      "copied_sha256": "9e3d2d0b972ab79e9a37136bec7f4a8851931fbfc6c2bf2d68ad68586389a5f3",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000063.png",
+      "runtime_path": "art/c03/frames/frame_000063.png",
+      "bytes": 344513,
+      "source_sha256": "8b1b98c8ba402eff341fd103c6eea173f866fdd64bda4232b1cd61deaf32dac9",
+      "copied_sha256": "8b1b98c8ba402eff341fd103c6eea173f866fdd64bda4232b1cd61deaf32dac9",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000064.png",
+      "runtime_path": "art/c03/frames/frame_000064.png",
+      "bytes": 354675,
+      "source_sha256": "f76278d4a4b688da41540f854e7d1aa11535b29aad8b168c6b7300a8ee455e04",
+      "copied_sha256": "f76278d4a4b688da41540f854e7d1aa11535b29aad8b168c6b7300a8ee455e04",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000065.png",
+      "runtime_path": "art/c03/frames/frame_000065.png",
+      "bytes": 351844,
+      "source_sha256": "68793493f1001f6ef4ea47057eed625f4aa6cc89bad1a41579ad1a2de80004a4",
+      "copied_sha256": "68793493f1001f6ef4ea47057eed625f4aa6cc89bad1a41579ad1a2de80004a4",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000066.png",
+      "runtime_path": "art/c03/frames/frame_000066.png",
+      "bytes": 356427,
+      "source_sha256": "8ff3d3a49a66c71880afb2ce5516c8c5058b4fb7b1fb53ce17fd230191409aae",
+      "copied_sha256": "8ff3d3a49a66c71880afb2ce5516c8c5058b4fb7b1fb53ce17fd230191409aae",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000067.png",
+      "runtime_path": "art/c03/frames/frame_000067.png",
+      "bytes": 362706,
+      "source_sha256": "ca60598a12b501dcd0b6dc65131abba9ba34876ca73461f14001bcee0adb1692",
+      "copied_sha256": "ca60598a12b501dcd0b6dc65131abba9ba34876ca73461f14001bcee0adb1692",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000068.png",
+      "runtime_path": "art/c03/frames/frame_000068.png",
+      "bytes": 363819,
+      "source_sha256": "074a2379dae9548db2ddbc4bb6c5e59c05bcf7cce60d0eb8a21db001897a3b88",
+      "copied_sha256": "074a2379dae9548db2ddbc4bb6c5e59c05bcf7cce60d0eb8a21db001897a3b88",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000069.png",
+      "runtime_path": "art/c03/frames/frame_000069.png",
+      "bytes": 351726,
+      "source_sha256": "d68a1f473f24cf3f6d54e5b5eb34057a309b751f0f4818836e01fccfa17d1007",
+      "copied_sha256": "d68a1f473f24cf3f6d54e5b5eb34057a309b751f0f4818836e01fccfa17d1007",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000070.png",
+      "runtime_path": "art/c03/frames/frame_000070.png",
+      "bytes": 344769,
+      "source_sha256": "d71a6b14e7a0c45a30a34a320905b8cdfbbdec8550a356791bf0d82db411c30a",
+      "copied_sha256": "d71a6b14e7a0c45a30a34a320905b8cdfbbdec8550a356791bf0d82db411c30a",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000071.png",
+      "runtime_path": "art/c03/frames/frame_000071.png",
+      "bytes": 345159,
+      "source_sha256": "72cb1ab80ba34a452dedf8ca22f47cd989a14b1a174fe6205df73479d73e8d72",
+      "copied_sha256": "72cb1ab80ba34a452dedf8ca22f47cd989a14b1a174fe6205df73479d73e8d72",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000072.png",
+      "runtime_path": "art/c03/frames/frame_000072.png",
+      "bytes": 348865,
+      "source_sha256": "f30a1ecbb8fc8144eaa65cc4986e6c4db415c3a948620494f687f081745a4b88",
+      "copied_sha256": "f30a1ecbb8fc8144eaa65cc4986e6c4db415c3a948620494f687f081745a4b88",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000073.png",
+      "runtime_path": "art/c03/frames/frame_000073.png",
+      "bytes": 339069,
+      "source_sha256": "2f913488ddc88bfb40c664b770edff804df8fdd53fc1b58ce520446cdefbb3c9",
+      "copied_sha256": "2f913488ddc88bfb40c664b770edff804df8fdd53fc1b58ce520446cdefbb3c9",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000074.png",
+      "runtime_path": "art/c03/frames/frame_000074.png",
+      "bytes": 332479,
+      "source_sha256": "21e471e57bfc0ee32f54f9b3f52be3cc2f020166256f6c66906dc2313dbb265f",
+      "copied_sha256": "21e471e57bfc0ee32f54f9b3f52be3cc2f020166256f6c66906dc2313dbb265f",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000075.png",
+      "runtime_path": "art/c03/frames/frame_000075.png",
+      "bytes": 330736,
+      "source_sha256": "22daf77b78a6ffdeae65ed84417836938f4c47372fd8c606a0792a5f3bdcde2a",
+      "copied_sha256": "22daf77b78a6ffdeae65ed84417836938f4c47372fd8c606a0792a5f3bdcde2a",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000076.png",
+      "runtime_path": "art/c03/frames/frame_000076.png",
+      "bytes": 333097,
+      "source_sha256": "bd970c621f5b1c35c5bd316a445d03bf91b9754c531d349e73f747c65d6e0d79",
+      "copied_sha256": "bd970c621f5b1c35c5bd316a445d03bf91b9754c531d349e73f747c65d6e0d79",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000077.png",
+      "runtime_path": "art/c03/frames/frame_000077.png",
+      "bytes": 328637,
+      "source_sha256": "628780ad4077dd46045aeff7faf6669187e356e14afffb762f7cdd2b89952ae4",
+      "copied_sha256": "628780ad4077dd46045aeff7faf6669187e356e14afffb762f7cdd2b89952ae4",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000078.png",
+      "runtime_path": "art/c03/frames/frame_000078.png",
+      "bytes": 327274,
+      "source_sha256": "0d9062f4729b56f9413fd90fb5c5d061ef43929e4b93797106b424acd847935c",
+      "copied_sha256": "0d9062f4729b56f9413fd90fb5c5d061ef43929e4b93797106b424acd847935c",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000079.png",
+      "runtime_path": "art/c03/frames/frame_000079.png",
+      "bytes": 323778,
+      "source_sha256": "d4577534a418a44ca83958c20dc9767daa343bf6f9f2cdf9df6505e618487776",
+      "copied_sha256": "d4577534a418a44ca83958c20dc9767daa343bf6f9f2cdf9df6505e618487776",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000080.png",
+      "runtime_path": "art/c03/frames/frame_000080.png",
+      "bytes": 323700,
+      "source_sha256": "913b8c6970df5b0de98f145eaf4c175955bfa6bf784348c4ec0209b9badf0fed",
+      "copied_sha256": "913b8c6970df5b0de98f145eaf4c175955bfa6bf784348c4ec0209b9badf0fed",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000081.png",
+      "runtime_path": "art/c03/frames/frame_000081.png",
+      "bytes": 320696,
+      "source_sha256": "1d4c8392f5e3237ab5f2a2738a3a32af1a1902a59253bdc22ec293fddca11f5c",
+      "copied_sha256": "1d4c8392f5e3237ab5f2a2738a3a32af1a1902a59253bdc22ec293fddca11f5c",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000082.png",
+      "runtime_path": "art/c03/frames/frame_000082.png",
+      "bytes": 322494,
+      "source_sha256": "f5116918a794412800790ccb3af1905ce6e3c2db075748a48045c49f90291c64",
+      "copied_sha256": "f5116918a794412800790ccb3af1905ce6e3c2db075748a48045c49f90291c64",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000083.png",
+      "runtime_path": "art/c03/frames/frame_000083.png",
+      "bytes": 321057,
+      "source_sha256": "f80aa860dc407b6166e6dfcbe4ac6b109565c1f2e46026ac67ea4d2eb41ffbce",
+      "copied_sha256": "f80aa860dc407b6166e6dfcbe4ac6b109565c1f2e46026ac67ea4d2eb41ffbce",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000084.png",
+      "runtime_path": "art/c03/frames/frame_000084.png",
+      "bytes": 320660,
+      "source_sha256": "b05d461cc874bff2fd6b50c5ba5118060ff7d9319f2312c2abf76cc532bb0c03",
+      "copied_sha256": "b05d461cc874bff2fd6b50c5ba5118060ff7d9319f2312c2abf76cc532bb0c03",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000085.png",
+      "runtime_path": "art/c03/frames/frame_000085.png",
+      "bytes": 319033,
+      "source_sha256": "7b147a89bf6e2ee5816666750a87e90240fb4cca8727c83403eb04da57016435",
+      "copied_sha256": "7b147a89bf6e2ee5816666750a87e90240fb4cca8727c83403eb04da57016435",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000086.png",
+      "runtime_path": "art/c03/frames/frame_000086.png",
+      "bytes": 318527,
+      "source_sha256": "9c4a422808b9863956c00a7ba46903333e39bdedcdf07e44ac4db6d28f9aeb3b",
+      "copied_sha256": "9c4a422808b9863956c00a7ba46903333e39bdedcdf07e44ac4db6d28f9aeb3b",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000087.png",
+      "runtime_path": "art/c03/frames/frame_000087.png",
+      "bytes": 319348,
+      "source_sha256": "5a9363cbf0a2f3f5515cf011877187cb939ed54ce743cdccdbbf918916f85b75",
+      "copied_sha256": "5a9363cbf0a2f3f5515cf011877187cb939ed54ce743cdccdbbf918916f85b75",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000088.png",
+      "runtime_path": "art/c03/frames/frame_000088.png",
+      "bytes": 321311,
+      "source_sha256": "8af15339b339601135de8cdaf02f3621bdc05e99e490576f6c31e79388c8fc69",
+      "copied_sha256": "8af15339b339601135de8cdaf02f3621bdc05e99e490576f6c31e79388c8fc69",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000089.png",
+      "runtime_path": "art/c03/frames/frame_000089.png",
+      "bytes": 318053,
+      "source_sha256": "0c8a1aaaeccf61434864879dde447f3e4883444e8be245b8bd7c4592f1c1d98a",
+      "copied_sha256": "0c8a1aaaeccf61434864879dde447f3e4883444e8be245b8bd7c4592f1c1d98a",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000090.png",
+      "runtime_path": "art/c03/frames/frame_000090.png",
+      "bytes": 319133,
+      "source_sha256": "a17b40944df1139f4589ccbd4ae2c49abf45fddcaa89130a26ddc0be6b2012c6",
+      "copied_sha256": "a17b40944df1139f4589ccbd4ae2c49abf45fddcaa89130a26ddc0be6b2012c6",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000091.png",
+      "runtime_path": "art/c03/frames/frame_000091.png",
+      "bytes": 320368,
+      "source_sha256": "74bf2930119f5325b9877e1396b5dc778561ae42abe7eaee407c4931f71f5ecd",
+      "copied_sha256": "74bf2930119f5325b9877e1396b5dc778561ae42abe7eaee407c4931f71f5ecd",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000092.png",
+      "runtime_path": "art/c03/frames/frame_000092.png",
+      "bytes": 321062,
+      "source_sha256": "485b41b6a1246303574f9b1306da72d8b177edbde178edacb66412b8dd01bfc2",
+      "copied_sha256": "485b41b6a1246303574f9b1306da72d8b177edbde178edacb66412b8dd01bfc2",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000093.png",
+      "runtime_path": "art/c03/frames/frame_000093.png",
+      "bytes": 319259,
+      "source_sha256": "c64fa9a7b7464ce752ce3e5edb54718d6d21953b42c723d346d18ea6c9793c95",
+      "copied_sha256": "c64fa9a7b7464ce752ce3e5edb54718d6d21953b42c723d346d18ea6c9793c95",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000094.png",
+      "runtime_path": "art/c03/frames/frame_000094.png",
+      "bytes": 320307,
+      "source_sha256": "1d3cf277d8c29b47795717ec55bd7ee2d48694b1bbc2e4dbc4f77f32c79cb676",
+      "copied_sha256": "1d3cf277d8c29b47795717ec55bd7ee2d48694b1bbc2e4dbc4f77f32c79cb676",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000095.png",
+      "runtime_path": "art/c03/frames/frame_000095.png",
+      "bytes": 321183,
+      "source_sha256": "9d6c059c87adf2eee6db8d2caf0f98b512b8915b5b6be2adcfb07e66015cea36",
+      "copied_sha256": "9d6c059c87adf2eee6db8d2caf0f98b512b8915b5b6be2adcfb07e66015cea36",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000096.png",
+      "runtime_path": "art/c03/frames/frame_000096.png",
+      "bytes": 318026,
+      "source_sha256": "ba6d293190baaac1401419170a151dd9b36364253e4e9ba5b900035922789573",
+      "copied_sha256": "ba6d293190baaac1401419170a151dd9b36364253e4e9ba5b900035922789573",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/frames/frame_000097.png",
+      "runtime_path": "art/c03/frames/frame_000097.png",
+      "bytes": 318011,
+      "source_sha256": "344b6e965c1b96945f306cb8523e832d73bd4f661be061fc02801b662385a92a",
+      "copied_sha256": "344b6e965c1b96945f306cb8523e832d73bd4f661be061fc02801b662385a92a",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "godot-demo/art/candidates/c03_kingfisher_attack_v1/audio/feather-selected.wav",
+      "runtime_path": "art/c03/audio/feather-selected.wav",
+      "bytes": 176444,
+      "source_sha256": "d1310bdaa9ea6017c2bef9e9b159c73f9fa39e15f3d6e337b37250f65ca77cfb",
+      "copied_sha256": "d1310bdaa9ea6017c2bef9e9b159c73f9fa39e15f3d6e337b37250f65ca77cfb",
+      "byte_equal": true
+    },
+    {
+      "source_repository_path": "bear-forehand-showcase/art/forest-board.png",
+      "runtime_path": "art/forest-board.png",
+      "bytes": 2142935,
+      "source_sha256": "7b568eb54ad25d18efa7dab24adcce833a4528940fdd615ca053196cd6ad1ed6",
+      "copied_sha256": "7b568eb54ad25d18efa7dab24adcce833a4528940fdd615ca053196cd6ad1ed6",
+      "byte_equal": true
+    }
+  ]
+}

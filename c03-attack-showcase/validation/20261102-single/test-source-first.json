@@ -1,0 +1,10 @@
+{
+	"checks": 1,
+	"failure_messages": [
+		"showcase script is available and can instantiate"
+	],
+	"failures": 1,
+	"phase_observations": [],
+	"schema": "c3-single-direction-author-boundaries-v1",
+	"scope": "author source/timing/audio/transform checks; no GUI, OS input, listening or independent visual acceptance"
+}

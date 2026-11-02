@@ -1,0 +1,14 @@
+{
+  "project": "/private/tmp/c03-single-author-20261102.EeuOVP/c03-attack-showcase",
+  "files_before_first_start": 116,
+  "candidate_directory_present": false,
+  "cache_entries_before_first_start": [],
+  "source_controller_sha256": "63ef9a13b344be95deea53c9d7b7a5e9873f9aaa766731e3709313eead79435c",
+  "cold_controller_sha256": "63ef9a13b344be95deea53c9d7b7a5e9873f9aaa766731e3709313eead79435c",
+  "graphical_scripts": {
+    "capture.gd": "1bd092f555b39fac6f4f49f147234b06db3d9b1b77d7a7ca5526a501478af0f2",
+    "realtime_probe.gd": "93f25e0ef1a01531f2ee9327296adb8cbd2f772a0d6d052ffb7df9bcd984a997"
+  },
+  "cache_entries_before_first_graphical_start": [],
+  "final_realtime_probe_sha256": "3bb830f8485a856927e8c492cca11544a5b12d53e2b7b441c5c0542f087144b5"
+}

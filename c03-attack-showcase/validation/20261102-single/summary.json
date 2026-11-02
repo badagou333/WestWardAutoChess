@@ -1,0 +1,52 @@
+{
+  "task": "D-20261101-002",
+  "phase": "author_implemented_and_tested_not_independently_accepted",
+  "baseline": "c81199daad8ea567de50799f355df33216a4d3a2",
+  "asset_source_commit": "a36cd562ee4f8876635b57c9136c4416357afe22",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "engine_checks": {
+    "source": {
+      "checks": 1032,
+      "failures": 0
+    },
+    "cold": {
+      "checks": 1032,
+      "failures": 0
+    }
+  },
+  "resource_checks": {
+    "source": {
+      "checks": 1209,
+      "failures": 0
+    },
+    "cold": {
+      "checks": 1108,
+      "failures": 0
+    }
+  },
+  "graphical": {
+    "samples": 9,
+    "png_count": 18,
+    "capture_success": true,
+    "normal_checks": 33,
+    "normal_errors": [],
+    "two_complete_playbacks": true,
+    "exit_removed_from_mix": true
+  },
+  "source_records": 98,
+  "media_end_ticks": 260250,
+  "source_time_base": [
+    1,
+    90000
+  ],
+  "terminal_source_duration_ticks": 0,
+  "runtime_script_sha256": "63ef9a13b344be95deea53c9d7b7a5e9873f9aaa766731e3709313eead79435c",
+  "final_realtime_probe_sha256": "3bb830f8485a856927e8c492cca11544a5b12d53e2b7b441c5c0542f087144b5",
+  "unverified": [
+    "07 independent acceptance",
+    "C3 art actual visual acceptance",
+    "human continuous motion and device listening",
+    "other platforms"
+  ],
+  "git_delivery": "One normal push and actual remote readback will be recorded separately."
+}
