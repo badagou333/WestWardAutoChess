@@ -45,7 +45,23 @@
   "accepted_limitation": "user-selected 24-source-pixel fade; source offscreen missing, gray145/occlusion approximate",
   "runtime_frozen_unchanged_files": 441,
   "delivery": {
-    "status": "pending single normal push and remote verification"
+    "commit": "41203bf1337b73c940ae5e03fffd691bcabe22dc",
+    "push": {
+      "attempts": 1,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "send-pack: unexpected disconnect while reading sideband packet\nfatal: the remote end hung up unexpectedly\nEverything up-to-date\n"
+    },
+    "remote_verification": {
+      "exit_code": 0,
+      "stdout": "7097d075b91e1404c773c38928c26bb6aa4beebe\trefs/heads/master\n",
+      "stderr": ""
+    },
+    "remote_master": "7097d075b91e1404c773c38928c26bb6aa4beebe",
+    "received_this_commit": false,
+    "attempts": 1,
+    "followup": "Only delivery documentation committed locally after failed push; no second push."
   },
-  "automation_changed": false
+  "automation_changed": false,
+  "local_git_gui_released": true
 }
