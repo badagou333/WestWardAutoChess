@@ -10,6 +10,7 @@
 - 首失及修复：首解析因Variant循环比较无法推断is_terminal，补显式bool后通过，保1项/1失败JSON/log。首图形探针4段/26项有2处把保留native WAV.is_playing当混音状态，官方4.7.2源码证明stop按server淡出移除而native字段可真；只修探针，保即时stop/清状态/树释放，并跨3+3实际mix回绕严格核旧游标冻结及早于自然尾，无原生stop/mix/seek干预、无容差放宽，首失留证。生产stop逻辑/素材未为探针改变；依据及原值见validation README。
 - 新确认／待确认／阻塞：无新玩法/采用决定；.21倍率和.405偏移仍试接参数，原QA fail/灰残留/足参考非逐帧接触结论保留。07独立、C3美术31→32/灰晕/足点/飞羽/首尾及真人连续/设备听感未验；单向必要技术/视觉通过后才按既有授权续镜像。本轮不重抠/修图或换源，未操作用户原Godot/Spine、OS鼠标/设备输出/录音。当前无已知程序必修或运行阻塞。
 - 证据／待总控同步／推荐下一步：权威交接`c03-attack-showcase/HANDOFF.md`及`validation/20261102-single/README.md`，原始首失/最终JSON/log/9组真采样同目录。准备记录与实测严格分阶段；只提交本项目和本工作流，正常push一次并读回远端，真实结果随后记录，不把本机HEAD当同步。所有本轮CLI/专用GUI已退出，提交后释放Local/Git，按AGENTS主动报00串行07+C3美术，再按授权镜像；automation-3未动，未新增/修改制作Skill。
+- 最终Git／释放：实现160个本职责文件已本地提交`6349598`；唯一正常push退出1（sideband断连），ls-remote退出0核远端master仍`7097d075b91e1404c773c38928c26bb6aa4beebe`，未收到本批。git-delivery.json/logs/push.log入同批validation，实际结果另作本地文档收尾提交，不第二次推送。提交后tracked/索引干净，全部本轮CLI/专用GUI和Local-Git窗口释放，原无关未跟踪试稿/缓存不动。主动报00接续07+C3美术；不能称已跨机器同步。
 
 ## 2026-11-02 D002 熊山君选定残影v3接入（作者完成，待07定向／05）
 

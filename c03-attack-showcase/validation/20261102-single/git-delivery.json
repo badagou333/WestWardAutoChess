@@ -1,0 +1,24 @@
+{
+  "commit": "63495983adf4d833cf05017df02930d32181e6ea",
+  "command": [
+    "git",
+    "push",
+    "origin",
+    "master"
+  ],
+  "attempts_this_batch": 1,
+  "exit_code": 1,
+  "log": "/private/tmp/c03-single-author-20261102.EeuOVP/push.log",
+  "remote_readback": {
+    "command": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/master"
+    ],
+    "exit_code": 0,
+    "stdout": "7097d075b91e1404c773c38928c26bb6aa4beebe\trefs/heads/master\n",
+    "stderr": ""
+  },
+  "remote_received_this_commit": false
+}

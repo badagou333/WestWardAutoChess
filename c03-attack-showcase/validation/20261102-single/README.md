@@ -44,4 +44,6 @@
 
 命令见项目README。无缓存作者副本在本机`/private/tmp/c03-single-author-20261102.EeuOVP/c03-attack-showcase`，只是本次证据环境，正式入口不依赖它；复制时排除validation/.godot/.import/.uid/__pycache__，不带仓库候选。该副本使用相同生产脚本及最终采样脚本，所有证据入本目录保存。
 
-完成后只提交本项目与06工作流，正常push一次并核实远端；事实另入git-delivery。全部本轮CLI/专用GUI已退出并释放；待00核收串行07和C3美术，automation-3保持暂停。
+本批160个明确文件已本地提交`6349598`。唯一正常push退出1（sideband连接中断）；随后ls-remote退出0核Gitee master仍`7097d075b91e1404c773c38928c26bb6aa4beebe`，未收到本批。不能把末尾“Everything up-to-date”当成功，见[git-delivery.json](git-delivery.json)及logs/push.log。仅将真实交付结果另作本地文档收尾提交，不第二次推送；尚未跨机器同步。
+
+全部本轮CLI/专用GUI已退出并释放；收尾提交后tracked/索引及Local-Git窗口释放，原无关未跟踪试稿/缓存保留。待00核收串行07和C3美术，automation-3保持暂停。

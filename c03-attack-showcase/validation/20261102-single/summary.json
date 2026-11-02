@@ -48,5 +48,14 @@
     "human continuous motion and device listening",
     "other platforms"
   ],
-  "git_delivery": "One normal push and actual remote readback will be recorded separately."
+  "git_delivery": {
+    "push_attempts": 1,
+    "push_exit_code": 1,
+    "remote_readback_exit_code": 0,
+    "remote_master": "7097d075b91e1404c773c38928c26bb6aa4beebe",
+    "received_this_commit": false,
+    "followup": "Only actual delivery bookkeeping committed locally; no second push.",
+    "evidence": "git-delivery.json"
+  },
+  "implementation_commit": "63495983adf4d833cf05017df02930d32181e6ea"
 }
