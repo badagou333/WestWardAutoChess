@@ -1,0 +1,13 @@
+{
+  "selected_manifest_sha256": "9249bcdf0d0810aac04654977f761be78445a33815f5177d202904e917f6493b",
+  "repository_manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+  "manifest_only_changes": [
+    "source_video",
+    "source_candidate"
+  ],
+  "selected_video_sha256": "a9cbd59bedc8d9b11bf2f6edf3d8d679761037a648f2cc624785e02a3ca5a1be",
+  "selected_frames_wav_and_cold_rebuild_byte_identical": 85,
+  "repository_manifest_cold_rebuild_identical": true,
+  "no_fade_baseline_frames_wav_rebuilt_identical": 85,
+  "preview_video_regenerated": false
+}

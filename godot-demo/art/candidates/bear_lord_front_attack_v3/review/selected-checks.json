@@ -1,0 +1,124 @@
+{
+  "source_edge_band": [
+    936,
+    959
+  ],
+  "frames": [
+    {
+      "frame": 42,
+      "changed_pixels": 1,
+      "bounds": [
+        330,
+        120,
+        330,
+        120
+      ]
+    },
+    {
+      "frame": 43,
+      "changed_pixels": 228,
+      "bounds": [
+        324,
+        115,
+        331,
+        196
+      ]
+    },
+    {
+      "frame": 44,
+      "changed_pixels": 362,
+      "bounds": [
+        324,
+        138,
+        331,
+        194
+      ]
+    },
+    {
+      "frame": 45,
+      "changed_pixels": 532,
+      "bounds": [
+        324,
+        115,
+        331,
+        194
+      ]
+    },
+    {
+      "frame": 46,
+      "changed_pixels": 632,
+      "bounds": [
+        324,
+        101,
+        331,
+        193
+      ]
+    },
+    {
+      "frame": 47,
+      "changed_pixels": 641,
+      "bounds": [
+        324,
+        103,
+        331,
+        196
+      ]
+    },
+    {
+      "frame": 48,
+      "changed_pixels": 592,
+      "bounds": [
+        324,
+        104,
+        331,
+        195
+      ]
+    },
+    {
+      "frame": 49,
+      "changed_pixels": 549,
+      "bounds": [
+        324,
+        107,
+        331,
+        196
+      ]
+    },
+    {
+      "frame": 50,
+      "changed_pixels": 489,
+      "bounds": [
+        324,
+        104,
+        331,
+        193
+      ]
+    },
+    {
+      "frame": 51,
+      "changed_pixels": 383,
+      "bounds": [
+        324,
+        104,
+        331,
+        188
+      ]
+    }
+  ],
+  "opaque_subject_changes": 0,
+  "output_changed_x_limit": [
+    322,
+    334
+  ],
+  "cold_rebuild_byte_matches": 86,
+  "audio_sha256": "aaaf61ca9f75ebb4f8c9657108ac0a47245f0ef00efa38bd6a95066803b9caf9",
+  "duration_ticks": 46080,
+  "canvas": [
+    400,
+    320
+  ],
+  "foot": [
+    177,
+    213
+  ]
+}
