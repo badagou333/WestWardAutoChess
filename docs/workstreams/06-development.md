@@ -2,6 +2,8 @@
 
 ## 2026-11-02 D002 熊山君选定残影v3接入（作者完成，待07定向／05）
 
+> 00同步标记（2026-11-02）：52456d5／83da3ac已核收至PROJECT_STATE及D002，06已idle并释放Local/Git/专用GUI，原字节接入与作者证据已核；Gitee未同步、BFV2-01/05实际视觉和真人听感未自动关闭。00接续07定向，再05真实运行复核；C3另限独立目录代码准备，不占共享写入与引擎窗口。
+
 - 更新时间／授权：2026-11-02。00在素材e7d7b4d及汇总77ee508后正式交本轮Local/06工作流/Git/专用GUI窗口；不恢复其他旧任务、不实施C3。开始tracked/索引干净，master领先origin/master(7097d07)50个已知提交；无关棍僧像素试稿/缓存不动，B4独立候选保持。
 - 已完成／修改文件：84PNG、manifest及原WAV从`bear_lord_front_attack_v3`原字节复制至既有单熊展示正面两向；实际相对v2仅38～51共14PNG及manifest变化，WAV和其余70PNG相同。候选不改，v2依赖/旧validation/07失败报告均保留。更新展示README、capture.gd、test.gd，新增verify_front_v3.py及`validation/20261102-front-v3/`证据；旧verify_front_v2.py保留作历史基准。自有辅助仅分文件适配测试/采样或只读评审，未跑引擎/Git/GUI；实际执行由本聊统一完成。
 - 保护／实现边界：manifest schema为board-bear-front-trail-trial-v1、SHA `53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237`，原生成status不重写，来源相对路径不由运行解析。showcase.gd与clips.json无需改动，保3秒/0间隔、末帧2.95～3秒/0.05秒、400×320/脚锚177,213/倍率0.75/世界脚点720,441、左右镜像及单播放器切向/循环/跨轮当前相位定位。背面340时刻/原WAV、林间棋盘、四向控制、项目/场景/启动器、主游戏保持；不扩公共架构/玩法/媒体。
