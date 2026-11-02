@@ -45,4 +45,6 @@ bear-forehand-showcase/launch.command --rendering-method gl_compatibility --audi
 
 本轮独立副本在`/tmp/bear-front-v3-author.Ewrlwf/bear-forehand-showcase`；从项目复制时排除validation/.git/.godot/.import/.uid/__pycache__，同一脚本原字节执行，报告写至本目录。无需候选即可核固定运行基准，缺候选的少89项在报告中明确区分；运行不依赖本机导入缓存。
 
-提交前更新06工作流，仅提交本职责明确文件。按授权正常push一次后只读核实Gitee；实际结果由06主动交00，不因本机HEAD领先或push文本尾句推定同步。待00串行安排07定向技术/BFV2-01复验，再05真实视觉及负责人连续/听感。全部本轮CLI/GUI资源已释放，automation-3保持暂停。
+本批111个明确文件已本地提交`52456d5`。唯一正常push退出1，日志为sideband连接中断；不能将尾句“Everything up-to-date”当成功。随后ls-remote退出0，实核Gitee master仍`7097d075b91e1404c773c38928c26bb6aa4beebe`，未收到本批，见[git-delivery.json](git-delivery.json)及logs/push.log。仅将真实结果另作本地文档收尾提交，不再次推送；本批尚未跨机器同步。
+
+待00串行安排07定向技术/BFV2-01复验，再05真实视觉及负责人连续/听感。全部本轮CLI/GUI资源已释放，收尾提交后释放tracked/索引与Local窗口；原无关未跟踪试稿/缓存不动，automation-3保持暂停。
