@@ -1,0 +1,23 @@
+{
+	"back_source_times": 340,
+	"checks": 3701,
+	"failure_messages": [
+		"back expected unique texture count",
+		"direction 1 switch audio starts at matching source phase",
+		"exact loop boundary audio starts at matching source phase",
+		"multi-loop nonzero-phase jump audio starts at matching source phase",
+		"direction 2 switch audio starts at matching source phase",
+		"exact loop boundary audio starts at matching source phase",
+		"multi-loop nonzero-phase jump audio starts at matching source phase",
+		"direction 3 switch audio starts at matching source phase",
+		"exact loop boundary audio starts at matching source phase",
+		"multi-loop nonzero-phase jump audio starts at matching source phase",
+		"direction 0 switch audio starts at matching source phase",
+		"exact loop boundary audio starts at matching source phase",
+		"multi-loop nonzero-phase jump audio starts at matching source phase"
+	],
+	"failures": 13,
+	"front_frames": 84,
+	"schema": "bear-front-v2-author-engine-checks",
+	"scope": "author engine checks; no OS input, device listening or independent visual acceptance"
+}

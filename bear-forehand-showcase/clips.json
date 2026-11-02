@@ -4,8 +4,8 @@
     "front": {
       "manifest": "art/attack/manifest.json",
       "audio": "audio/source-track.wav",
-      "video_duration_seconds": 3.5,
-      "loop_interval_seconds": 0.35,
+      "video_duration_seconds": 3.0,
+      "loop_interval_seconds": 0.0,
       "display_scale": 0.75,
       "source_sign": 1
     },

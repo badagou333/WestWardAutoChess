@@ -1,0 +1,44 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 4.1 Metal - 91.7 - Compatibility - Using Device: Apple - Apple M1
+
+ERROR: Player is inactive. Call play() before requesting get_stream_playback().
+   at: get_stream_playback (scene/audio/audio_stream_player_internal.cpp:336)
+   GDScript backtrace (most recent call first):
+       [0] run (res://realtime_probe.gd:57)
+ERROR: Player is inactive. Call play() before requesting get_stream_playback().
+   at: get_stream_playback (scene/audio/audio_stream_player_internal.cpp:336)
+   GDScript backtrace (most recent call first):
+       [0] run (res://realtime_probe.gd:57)
+ERROR: Player is inactive. Call play() before requesting get_stream_playback().
+   at: get_stream_playback (scene/audio/audio_stream_player_internal.cpp:336)
+   GDScript backtrace (most recent call first):
+       [0] run (res://realtime_probe.gd:57)
+ERROR: Player is inactive. Call play() before requesting get_stream_playback().
+   at: get_stream_playback (scene/audio/audio_stream_player_internal.cpp:336)
+   GDScript backtrace (most recent call first):
+       [0] run (res://realtime_probe.gd:57)
+ERROR: Player is inactive. Call play() before requesting get_stream_playback().
+   at: get_stream_playback (scene/audio/audio_stream_player_internal.cpp:336)
+   GDScript backtrace (most recent call first):
+       [0] run (res://realtime_probe.gd:57)
+ERROR: Player is inactive. Call play() before requesting get_stream_playback().
+   at: get_stream_playback (scene/audio/audio_stream_player_internal.cpp:336)
+   GDScript backtrace (most recent call first):
+       [0] run (res://realtime_probe.gd:57)
+ERROR: Player is inactive. Call play() before requesting get_stream_playback().
+   at: get_stream_playback (scene/audio/audio_stream_player_internal.cpp:336)
+   GDScript backtrace (most recent call first):
+       [0] run (res://realtime_probe.gd:57)
+ERROR: Player is inactive. Call play() before requesting get_stream_playback().
+   at: get_stream_playback (scene/audio/audio_stream_player_internal.cpp:336)
+   GDScript backtrace (most recent call first):
+       [0] run (res://realtime_probe.gd:57)
+ERROR: Player is inactive. Call play() before requesting get_stream_playback().
+   at: get_stream_playback (scene/audio/audio_stream_player_internal.cpp:336)
+   GDScript backtrace (most recent call first):
+       [0] run (res://realtime_probe.gd:57)
+ERROR: Player is inactive. Call play() before requesting get_stream_playback().
+   at: get_stream_playback (scene/audio/audio_stream_player_internal.cpp:336)
+   GDScript backtrace (most recent call first):
+       [0] run (res://realtime_probe.gd:57)
+BEAR_FRONT_REALTIME cases=4 failures=0

@@ -1,0 +1,12 @@
+{
+  "schema": "bear-front-v2-author-asset-checks",
+  "showcase": "/private/tmp/bear-front-integration-20261102.jzUFhg/cold",
+  "front_frames": 84,
+  "back_source_times": 340,
+  "candidate_comparison": "absent; pinned runtime checks remained mandatory",
+  "source_audio_decode": "not requested; this is not a cold MOV reconstruction",
+  "scope": "author deterministic checks; no image quality, device listening, OS input or independent acceptance",
+  "checks": 1377,
+  "failures": 0,
+  "failure_messages": []
+}

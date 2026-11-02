@@ -1,174 +1,2938 @@
 {
-  "schema": "board-bear-forehand-trial-v1",
-  "status": "limited_candidate_needs_visual_review",
-  "source_video": "../bear_lord_video_attack_v1/forehand-7499-short-windup-v2.mp4",
-  "source_sign": 1,
-  "source_back": false,
+  "schema": "board-bear-front-attack-v2",
+  "status": "candidate_needs_visual_review",
+  "art_source": "user-approved cropped existing video; deterministic local processing",
+  "source_video": "../bear_lord_tail_trim_20261101/forehand-head-tail-lossless.mov",
+  "source_sha256": "d37dffe785d83306c0f41f54b12348d0043f189bcf91251659816e291be548c0",
+  "source_size": [
+    960,
+    960
+  ],
+  "source_time_base": [
+    1,
+    15360
+  ],
+  "original_frame_range": [
+    10,
+    93
+  ],
+  "original_pts_offset_ticks": 5888,
+  "decoded_frame_count": 84,
   "canvas": [
-    384,
+    400,
     320
   ],
   "foot": [
     177,
     213
   ],
-  "feet": [
-    [
-      147,
-      224
-    ],
-    [
-      207,
-      203
-    ]
+  "source_foot": [
+    500,
+    675
   ],
-  "emission": [
-    250,
-    165
+  "global_scale": 0.337662,
+  "global_translation": [
+    8.168999999999983,
+    -14.921850000000006
   ],
-  "scale": 1.234,
-  "impact_index": 11,
-  "duration_ms": 820,
+  "display_scale": 0.75,
+  "source_sign": 1,
+  "source_back": false,
+  "video_duration_seconds": 3,
+  "loop_interval_seconds": 0,
+  "loop_note": "No added hold: audio ends before 3s; source end/start pose difference requires continuous review.",
+  "audio": {
+    "file": "audio/source-track.wav",
+    "sample_rate": 44100,
+    "channels": 2,
+    "sample_width_bytes": 2,
+    "sample_frames": 132280,
+    "duration_seconds": 2.999546485260771,
+    "offset_seconds": 0,
+    "sha256": "aaaf61ca9f75ebb4f8c9657108ac0a47245f0ef00efa38bd6a95066803b9caf9"
+  },
   "frames": [
     {
-      "file": "attack_00.png",
-      "at": 0.0,
-      "duration_ms": 34,
-      "source_frame_one_based": 1,
-      "source_time_seconds": 0.0
+      "file": "attack_0001.png",
+      "source_frame": 1,
+      "original_source_frame": 10,
+      "source_pts": 0,
+      "original_source_pts": 5888,
+      "duration_ticks": 512,
+      "source_time_seconds": 0.0,
+      "output_time_seconds": 0.0,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "1b8b616498089e2c4506b77dd5a4c06ff0d29d37b93d61c0ad69fc3bb3550a38",
+      "decoded_source_sha256": "694421c819b29d78e8efd7163c0de7ad450eb23069746c1b7d707165441abae8",
+      "bbox": [
+        103,
+        73,
+        240,
+        232
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 75143,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        282,
+        262,
+        685,
+        730
+      ]
     },
     {
-      "file": "attack_01.png",
-      "at": 0.034,
-      "duration_ms": 34,
-      "source_frame_one_based": 16,
-      "source_time_seconds": 0.633333
+      "file": "attack_0002.png",
+      "source_frame": 2,
+      "original_source_frame": 11,
+      "source_pts": 512,
+      "original_source_pts": 6400,
+      "duration_ticks": 768,
+      "source_time_seconds": 0.03333333333333333,
+      "output_time_seconds": 0.03333333333333333,
+      "duration_seconds": 0.05,
+      "sha256": "9d9b3f7b0b05109fcb82f08899b4c7ece3a93fa8a4bbf3854de5f511a1a79ada",
+      "decoded_source_sha256": "51d99d08f6a1217cc0604bd6f095f9a6b2c4c85e557ab657fe167822b87f2d2f",
+      "bbox": [
+        102,
+        73,
+        241,
+        232
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 75955,
+      "removed_isolated_seed_pixels": 1,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        279,
+        262,
+        688,
+        731
+      ]
     },
     {
-      "file": "attack_02.png",
-      "at": 0.068,
-      "duration_ms": 34,
-      "source_frame_one_based": 23,
-      "source_time_seconds": 0.916667
+      "file": "attack_0003.png",
+      "source_frame": 3,
+      "original_source_frame": 12,
+      "source_pts": 1280,
+      "original_source_pts": 7168,
+      "duration_ticks": 512,
+      "source_time_seconds": 0.08333333333333333,
+      "output_time_seconds": 0.08333333333333333,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "e9d75a9c3c7b2c67575075e7d52de0b60b432cb7e46afb1b5cdee71ecfe5d404",
+      "decoded_source_sha256": "cbdbfb4471452e62ee61e40420dbf633ef53d19e05e83ed0253af6e5ee2e023f",
+      "bbox": [
+        101,
+        73,
+        242,
+        233
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 76830,
+      "removed_isolated_seed_pixels": 2,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        276,
+        263,
+        691,
+        732
+      ]
     },
     {
-      "file": "attack_03.png",
-      "at": 0.102,
-      "duration_ms": 34,
-      "source_frame_one_based": 25,
-      "source_time_seconds": 1.0
+      "file": "attack_0004.png",
+      "source_frame": 4,
+      "original_source_frame": 13,
+      "source_pts": 1792,
+      "original_source_pts": 7680,
+      "duration_ticks": 768,
+      "source_time_seconds": 0.11666666666666667,
+      "output_time_seconds": 0.11666666666666667,
+      "duration_seconds": 0.05,
+      "sha256": "7763bbe06d363243380a695c80b215b0ff31bd6fe7258b95e2730698d1bcf298",
+      "decoded_source_sha256": "dc6d9ad0e3e128377e1aaf7df34043cbd7c26b094700221bd991ff3ca677be97",
+      "bbox": [
+        99,
+        74,
+        243,
+        233
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 77624,
+      "removed_isolated_seed_pixels": 6,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        272,
+        264,
+        693,
+        733
+      ]
     },
     {
-      "file": "attack_04.png",
-      "at": 0.136,
-      "duration_ms": 34,
-      "source_frame_one_based": 35,
-      "source_time_seconds": 1.104167
+      "file": "attack_0005.png",
+      "source_frame": 5,
+      "original_source_frame": 14,
+      "source_pts": 2560,
+      "original_source_pts": 8448,
+      "duration_ticks": 512,
+      "source_time_seconds": 0.16666666666666666,
+      "output_time_seconds": 0.16666666666666666,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "c5d392030106d7bfcebb285c8fb52da05fbfdd550035b6dc24dffa6e2efb1576",
+      "decoded_source_sha256": "8f3bd7330b0be276206b1eda54c6bca6a41fca13fabf107226dc61476e8630f5",
+      "bbox": [
+        98,
+        75,
+        244,
+        233
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 78981,
+      "removed_isolated_seed_pixels": 8,
+      "background_rgb": [
+        240.0,
+        238.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        268,
+        266,
+        697,
+        732
+      ]
     },
     {
-      "file": "attack_05.png",
-      "at": 0.17,
-      "duration_ms": 34,
-      "source_frame_one_based": 40,
-      "source_time_seconds": 1.158333
+      "file": "attack_0006.png",
+      "source_frame": 6,
+      "original_source_frame": 15,
+      "source_pts": 3072,
+      "original_source_pts": 8960,
+      "duration_ticks": 768,
+      "source_time_seconds": 0.2,
+      "output_time_seconds": 0.2,
+      "duration_seconds": 0.05,
+      "sha256": "8dd389ba9988bfb571a16916eb5eb59608bb18b41f518bead16f9f0414cb3de1",
+      "decoded_source_sha256": "ad6f0cd972e002dc5e4e15ebd06a4b96307ceca9ea398c9902204ce5e9d30f8e",
+      "bbox": [
+        96,
+        75,
+        246,
+        232
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 80084,
+      "removed_isolated_seed_pixels": 2,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        261,
+        268,
+        701,
+        730
+      ]
     },
     {
-      "file": "attack_06.png",
-      "at": 0.204,
-      "duration_ms": 34,
-      "source_frame_one_based": 43,
-      "source_time_seconds": 1.25
+      "file": "attack_0007.png",
+      "source_frame": 7,
+      "original_source_frame": 16,
+      "source_pts": 3840,
+      "original_source_pts": 9728,
+      "duration_ticks": 512,
+      "source_time_seconds": 0.25,
+      "output_time_seconds": 0.25,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "3a6793b0c00a1fa7b87be0db0b8c54e11eef0b0c3ccac36c231cf6cfc155f05a",
+      "decoded_source_sha256": "244e2bab996fc7775f7b85ac71f5efea159b7d68eae78d13c00baed6c8fd28c6",
+      "bbox": [
+        95,
+        75,
+        247,
+        232
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 81091,
+      "removed_isolated_seed_pixels": 1,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        258,
+        269,
+        704,
+        730
+      ]
     },
     {
-      "file": "attack_07.png",
-      "at": 0.238,
-      "duration_ms": 34,
-      "source_frame_one_based": 45,
-      "source_time_seconds": 1.333333
+      "file": "attack_0008.png",
+      "source_frame": 8,
+      "original_source_frame": 17,
+      "source_pts": 4352,
+      "original_source_pts": 10240,
+      "duration_ticks": 768,
+      "source_time_seconds": 0.2833333333333333,
+      "output_time_seconds": 0.2833333333333333,
+      "duration_seconds": 0.05,
+      "sha256": "149c702eb2d1d60c6814435130a7808337fee1d1da1fb90bb5e4745ff0ae243f",
+      "decoded_source_sha256": "de051c993e579a43a09749e0c9e735b330c67ca206418b8b37480d41b668026d",
+      "bbox": [
+        94,
+        76,
+        247,
+        231
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 81775,
+      "removed_isolated_seed_pixels": 3,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        255,
+        270,
+        705,
+        729
+      ]
     },
     {
-      "file": "attack_08.png",
-      "at": 0.272,
-      "duration_ms": 34,
-      "source_frame_one_based": 48,
-      "source_time_seconds": 1.466667
+      "file": "attack_0009.png",
+      "source_frame": 9,
+      "original_source_frame": 18,
+      "source_pts": 5120,
+      "original_source_pts": 11008,
+      "duration_ticks": 512,
+      "source_time_seconds": 0.3333333333333333,
+      "output_time_seconds": 0.3333333333333333,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "a61259fcf5c6cbd1c4b76eac69a3ede3701570318988d288f007bce4552dd345",
+      "decoded_source_sha256": "e8eb2faffd7380235807a9ef539605451ef0d3ff7c7f4858acb46837a3f90699",
+      "bbox": [
+        94,
+        76,
+        248,
+        230
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 83082,
+      "removed_isolated_seed_pixels": 4,
+      "background_rgb": [
+        240.0,
+        238.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        255,
+        270,
+        707,
+        723
+      ]
     },
     {
-      "file": "attack_09.png",
-      "at": 0.306,
-      "duration_ms": 34,
-      "source_frame_one_based": 50,
-      "source_time_seconds": 1.55
+      "file": "attack_0010.png",
+      "source_frame": 10,
+      "original_source_frame": 19,
+      "source_pts": 5632,
+      "original_source_pts": 11520,
+      "duration_ticks": 768,
+      "source_time_seconds": 0.36666666666666664,
+      "output_time_seconds": 0.36666666666666664,
+      "duration_seconds": 0.05,
+      "sha256": "6e7c9a9bdadc5b2026be8343e614f578644c6cfe4a1e4fd7e94929df5ded0995",
+      "decoded_source_sha256": "d937a71524b1b161fcac38c81a1c0fae15450d7511d3c53cdb1396409fc648ed",
+      "bbox": [
+        94,
+        76,
+        249,
+        228
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 84248,
+      "removed_isolated_seed_pixels": 4,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        256,
+        269,
+        712,
+        719
+      ]
     },
     {
-      "file": "attack_10.png",
-      "at": 0.34,
-      "duration_ms": 49,
-      "source_frame_one_based": 51,
-      "source_time_seconds": 1.583333
+      "file": "attack_0011.png",
+      "source_frame": 11,
+      "original_source_frame": 20,
+      "source_pts": 6400,
+      "original_source_pts": 12288,
+      "duration_ticks": 512,
+      "source_time_seconds": 0.4166666666666667,
+      "output_time_seconds": 0.4166666666666667,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "d9380a23f92de924ba2432c2c13bb22e86ccdd3b70ef22d8c078e37fe4aed098",
+      "decoded_source_sha256": "3e25f208a6ec13be0635ca71e94765bf6dd5f89b93252fc8e5b46128822954aa",
+      "bbox": [
+        94,
+        75,
+        250,
+        227
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 84483,
+      "removed_isolated_seed_pixels": 2,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        256,
+        268,
+        715,
+        714
+      ]
     },
     {
-      "file": "attack_11.png",
-      "at": 0.389,
-      "duration_ms": 80,
-      "source_frame_one_based": 54,
-      "source_time_seconds": 1.716667
+      "file": "attack_0012.png",
+      "source_frame": 12,
+      "original_source_frame": 21,
+      "source_pts": 6912,
+      "original_source_pts": 12800,
+      "duration_ticks": 768,
+      "source_time_seconds": 0.45,
+      "output_time_seconds": 0.45,
+      "duration_seconds": 0.05,
+      "sha256": "9d249a8a5d65927b7e044c73ad41dba7d4a2dc5e600ef08018a1458fd15c1354",
+      "decoded_source_sha256": "305f3d0a50fe0a176249769d7b18d634078ee6ef2f18e3564192b88224a11795",
+      "bbox": [
+        94,
+        75,
+        250,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 84698,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        257,
+        268,
+        717,
+        711
+      ]
     },
     {
-      "file": "attack_12.png",
-      "at": 0.469,
-      "duration_ms": 40,
-      "source_frame_one_based": 55,
-      "source_time_seconds": 1.75
+      "file": "attack_0013.png",
+      "source_frame": 13,
+      "original_source_frame": 22,
+      "source_pts": 7680,
+      "original_source_pts": 13568,
+      "duration_ticks": 512,
+      "source_time_seconds": 0.5,
+      "output_time_seconds": 0.5,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "a1e8feea73b9e7927eea931e1d739f18edc75ffc97781f323dde78b6cf216926",
+      "decoded_source_sha256": "41317aac76f5e618c747683cbe082b94aa2308999bec579080ffb9e676b99f8c",
+      "bbox": [
+        95,
+        75,
+        251,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85344,
+      "removed_isolated_seed_pixels": 7,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        258,
+        268,
+        718,
+        712
+      ]
     },
     {
-      "file": "attack_13.png",
-      "at": 0.509,
-      "duration_ms": 40,
-      "source_frame_one_based": 58,
-      "source_time_seconds": 1.883333
+      "file": "attack_0014.png",
+      "source_frame": 14,
+      "original_source_frame": 23,
+      "source_pts": 8192,
+      "original_source_pts": 14080,
+      "duration_ticks": 768,
+      "source_time_seconds": 0.5333333333333333,
+      "output_time_seconds": 0.5333333333333333,
+      "duration_seconds": 0.05,
+      "sha256": "1050aa5ce6e2a1f968a2be406b2ecdb3efee5d86a5df96d4932178da0edb6961",
+      "decoded_source_sha256": "7f9b578343380589cd178b3e3060c9962dcb8e17aef82847ae81afde366b5c4e",
+      "bbox": [
+        95,
+        75,
+        252,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85520,
+      "removed_isolated_seed_pixels": 1,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        259,
+        267,
+        721,
+        712
+      ]
     },
     {
-      "file": "attack_14.png",
-      "at": 0.549,
-      "duration_ms": 40,
-      "source_frame_one_based": 74,
-      "source_time_seconds": 2.55
+      "file": "attack_0015.png",
+      "source_frame": 15,
+      "original_source_frame": 24,
+      "source_pts": 8960,
+      "original_source_pts": 14848,
+      "duration_ticks": 512,
+      "source_time_seconds": 0.5833333333333334,
+      "output_time_seconds": 0.5833333333333334,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "772de2598c7efb6be61b317503af254c6018e8d3613a5fec209108ea387b425a",
+      "decoded_source_sha256": "ad3de38d6fd3e1962f0765fc587e8a288a056d6c29af74d7b3aa0096f5fe522b",
+      "bbox": [
+        95,
+        75,
+        252,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85739,
+      "removed_isolated_seed_pixels": 4,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        260,
+        267,
+        722,
+        712
+      ]
     },
     {
-      "file": "attack_15.png",
-      "at": 0.589,
-      "duration_ms": 40,
-      "source_frame_one_based": 78,
-      "source_time_seconds": 2.716667
+      "file": "attack_0016.png",
+      "source_frame": 16,
+      "original_source_frame": 25,
+      "source_pts": 9472,
+      "original_source_pts": 15360,
+      "duration_ticks": 192,
+      "source_time_seconds": 0.6166666666666667,
+      "output_time_seconds": 0.6166666666666667,
+      "duration_seconds": 0.0125,
+      "sha256": "8520b35ffbafe847eff9f2ff072fdc752531685a61081a1ff309f3c6c90bb9e7",
+      "decoded_source_sha256": "bc5330818995d7a6d61f6ad04df4660df84762349f27093c3263898f8d452495",
+      "bbox": [
+        96,
+        75,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85747,
+      "removed_isolated_seed_pixels": 1,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        261,
+        267,
+        723,
+        712
+      ]
     },
     {
-      "file": "attack_16.png",
-      "at": 0.629,
-      "duration_ms": 40,
-      "source_frame_one_based": 81,
-      "source_time_seconds": 2.833333
+      "file": "attack_0017.png",
+      "source_frame": 17,
+      "original_source_frame": 26,
+      "source_pts": 9664,
+      "original_source_pts": 15552,
+      "duration_ticks": 128,
+      "source_time_seconds": 0.6291666666666667,
+      "output_time_seconds": 0.6291666666666667,
+      "duration_seconds": 0.008333333333333333,
+      "sha256": "3caf2dca23c1723d3e3ec92f999cb9fdeb68741fb34febec6fa42b660c4fbb6d",
+      "decoded_source_sha256": "66038efe3cb671e4d5a0c3b8b01f463811fb0ff12da9c886705f755ef086749b",
+      "bbox": [
+        96,
+        75,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85770,
+      "removed_isolated_seed_pixels": 2,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        261,
+        267,
+        723,
+        712
+      ]
     },
     {
-      "file": "attack_17.png",
-      "at": 0.669,
-      "duration_ms": 40,
-      "source_frame_one_based": 85,
-      "source_time_seconds": 3.0
+      "file": "attack_0018.png",
+      "source_frame": 18,
+      "original_source_frame": 27,
+      "source_pts": 9792,
+      "original_source_pts": 15680,
+      "duration_ticks": 192,
+      "source_time_seconds": 0.6375,
+      "output_time_seconds": 0.6375,
+      "duration_seconds": 0.0125,
+      "sha256": "899565ed17295278483e352794abf4a729abd97e9ea2142201de2a135eed9e72",
+      "decoded_source_sha256": "11fe84b0f614161398a0e3adbc512f58d0f3717180e3ef6289b2c230f66825c4",
+      "bbox": [
+        95,
+        75,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85793,
+      "removed_isolated_seed_pixels": 2,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        260,
+        268,
+        724,
+        712
+      ]
     },
     {
-      "file": "attack_18.png",
-      "at": 0.709,
-      "duration_ms": 40,
-      "source_frame_one_based": 89,
-      "source_time_seconds": 3.166667
+      "file": "attack_0019.png",
+      "source_frame": 19,
+      "original_source_frame": 28,
+      "source_pts": 9984,
+      "original_source_pts": 15872,
+      "duration_ticks": 128,
+      "source_time_seconds": 0.65,
+      "output_time_seconds": 0.65,
+      "duration_seconds": 0.008333333333333333,
+      "sha256": "5f505fd9c587ebc669f95cdc9df38e560f373b44f78b1707820a559baf95bd3b",
+      "decoded_source_sha256": "06875625afd07e2cc1be9e443b5fcd24e8e2ea9d2332a784a17779df78da70b7",
+      "bbox": [
+        95,
+        75,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85860,
+      "removed_isolated_seed_pixels": 2,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        260,
+        268,
+        724,
+        712
+      ]
     },
     {
-      "file": "attack_19.png",
-      "at": 0.749,
-      "duration_ms": 71,
-      "source_frame_one_based": 96,
-      "source_time_seconds": 3.466667
+      "file": "attack_0020.png",
+      "source_frame": 20,
+      "original_source_frame": 29,
+      "source_pts": 10112,
+      "original_source_pts": 16000,
+      "duration_ticks": 192,
+      "source_time_seconds": 0.6583333333333333,
+      "output_time_seconds": 0.6583333333333333,
+      "duration_seconds": 0.0125,
+      "sha256": "edc9f2ca16ba210b087aa51d1884f3bb2366b4ccdb923bff9f736c3ddeb50981",
+      "decoded_source_sha256": "adddb23c066c6533eeebbb46945b0e1c7697c58643d245e84c2ebd9486146602",
+      "bbox": [
+        95,
+        75,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85819,
+      "removed_isolated_seed_pixels": 2,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        260,
+        268,
+        724,
+        712
+      ]
+    },
+    {
+      "file": "attack_0021.png",
+      "source_frame": 21,
+      "original_source_frame": 30,
+      "source_pts": 10304,
+      "original_source_pts": 16192,
+      "duration_ticks": 128,
+      "source_time_seconds": 0.6708333333333333,
+      "output_time_seconds": 0.6708333333333333,
+      "duration_seconds": 0.008333333333333333,
+      "sha256": "4a80bf66acaa690b0433f937313f9533460ee31cab1a6a65eeea4c1c2543d318",
+      "decoded_source_sha256": "d648256afe08bd0c6858bdfb6c9ca20639d67d6b80592b07e7a10a7745e50691",
+      "bbox": [
+        95,
+        74,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85867,
+      "removed_isolated_seed_pixels": 3,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        260,
+        267,
+        724,
+        712
+      ]
+    },
+    {
+      "file": "attack_0022.png",
+      "source_frame": 22,
+      "original_source_frame": 31,
+      "source_pts": 10432,
+      "original_source_pts": 16320,
+      "duration_ticks": 192,
+      "source_time_seconds": 0.6791666666666667,
+      "output_time_seconds": 0.6791666666666667,
+      "duration_seconds": 0.0125,
+      "sha256": "03fcafccd8213cf4eb70df3121269c1b17dd5a3024315deadd009904efefac67",
+      "decoded_source_sha256": "054d355f7303c4533873b49a4c9f072cef5725f73cb3ebb5387e6971c144dcc9",
+      "bbox": [
+        95,
+        75,
+        254,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85808,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        260,
+        267,
+        725,
+        712
+      ]
+    },
+    {
+      "file": "attack_0023.png",
+      "source_frame": 23,
+      "original_source_frame": 32,
+      "source_pts": 10624,
+      "original_source_pts": 16512,
+      "duration_ticks": 128,
+      "source_time_seconds": 0.6916666666666667,
+      "output_time_seconds": 0.6916666666666667,
+      "duration_seconds": 0.008333333333333333,
+      "sha256": "41b6b6e0cf7e327b6a740e28756d542e138835a7efc6799613fae7200c44b773",
+      "decoded_source_sha256": "5059083e61f577ef0f2ff1798fed5621f3389a33c622c1308905c63282927140",
+      "bbox": [
+        95,
+        75,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85963,
+      "removed_isolated_seed_pixels": 1,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        260,
+        266,
+        725,
+        712
+      ]
+    },
+    {
+      "file": "attack_0024.png",
+      "source_frame": 24,
+      "original_source_frame": 33,
+      "source_pts": 10752,
+      "original_source_pts": 16640,
+      "duration_ticks": 192,
+      "source_time_seconds": 0.7,
+      "output_time_seconds": 0.7,
+      "duration_seconds": 0.0125,
+      "sha256": "a22384ab40fb3f48a4c7424f9586ee2afac48c178c3ff91cbd905977cb528258",
+      "decoded_source_sha256": "5eaf6223c662df162e9770d5d113a5c7072ae352a0290cf0b1f66f9babb19411",
+      "bbox": [
+        95,
+        75,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85903,
+      "removed_isolated_seed_pixels": 1,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        260,
+        266,
+        725,
+        712
+      ]
+    },
+    {
+      "file": "attack_0025.png",
+      "source_frame": 25,
+      "original_source_frame": 34,
+      "source_pts": 10944,
+      "original_source_pts": 16832,
+      "duration_ticks": 128,
+      "source_time_seconds": 0.7125,
+      "output_time_seconds": 0.7125,
+      "duration_seconds": 0.008333333333333333,
+      "sha256": "b4377d78e315c4528fb64fa9a7180f786b81cd1f827abb8cc8f19858556832c0",
+      "decoded_source_sha256": "e729f3f92112484eff2fb376daa62feab191890dbf3e9ca1825a2f7674d47314",
+      "bbox": [
+        95,
+        74,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 86007,
+      "removed_isolated_seed_pixels": 1,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        260,
+        266,
+        725,
+        712
+      ]
+    },
+    {
+      "file": "attack_0026.png",
+      "source_frame": 26,
+      "original_source_frame": 35,
+      "source_pts": 11072,
+      "original_source_pts": 16960,
+      "duration_ticks": 192,
+      "source_time_seconds": 0.7208333333333333,
+      "output_time_seconds": 0.7208333333333333,
+      "duration_seconds": 0.0125,
+      "sha256": "2d4e23462673d62ae0a4e63e9792c0a27716aa3581dc7ea86fdcf7a504e2d009",
+      "decoded_source_sha256": "b1e8161773f0a5aff6602ec4868640251a55483a00af059c928020c936ba9870",
+      "bbox": [
+        95,
+        74,
+        254,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85946,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        260,
+        265,
+        725,
+        712
+      ]
+    },
+    {
+      "file": "attack_0027.png",
+      "source_frame": 27,
+      "original_source_frame": 36,
+      "source_pts": 11264,
+      "original_source_pts": 17152,
+      "duration_ticks": 128,
+      "source_time_seconds": 0.7333333333333333,
+      "output_time_seconds": 0.7333333333333333,
+      "duration_seconds": 0.008333333333333333,
+      "sha256": "ea964b6bfccf06bb1654ed20f3f224d6056767df26554ac7c48e24e6719fb60c",
+      "decoded_source_sha256": "368d60e9f3c14502a29a8ae94e1b0c981700c9f1ca59f9ffc0e6568920711c0b",
+      "bbox": [
+        95,
+        74,
+        254,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 86001,
+      "removed_isolated_seed_pixels": 1,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        260,
+        265,
+        725,
+        712
+      ]
+    },
+    {
+      "file": "attack_0028.png",
+      "source_frame": 28,
+      "original_source_frame": 37,
+      "source_pts": 11392,
+      "original_source_pts": 17280,
+      "duration_ticks": 192,
+      "source_time_seconds": 0.7416666666666667,
+      "output_time_seconds": 0.7416666666666667,
+      "duration_seconds": 0.0125,
+      "sha256": "3e2f4c8d97fe8a3096e087d75253298d1f0a6e42040f2131874825fafc4a7744",
+      "decoded_source_sha256": "3d04e778ca246f859da6dbf9c28c9d082180b3f8bc99903e7c5b3ea15483b12e",
+      "bbox": [
+        95,
+        74,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 86005,
+      "removed_isolated_seed_pixels": 1,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        260,
+        264,
+        725,
+        712
+      ]
+    },
+    {
+      "file": "attack_0029.png",
+      "source_frame": 29,
+      "original_source_frame": 38,
+      "source_pts": 11584,
+      "original_source_pts": 17472,
+      "duration_ticks": 128,
+      "source_time_seconds": 0.7541666666666667,
+      "output_time_seconds": 0.7541666666666667,
+      "duration_seconds": 0.008333333333333333,
+      "sha256": "60c0773bac1acf4103240ce27e76d0a0a6fb41092e4364336f799d0eb68b87cb",
+      "decoded_source_sha256": "e65b78d7322fd53569c5062a73ddf58a693083f184c78bce0171d0d062163947",
+      "bbox": [
+        95,
+        73,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 86141,
+      "removed_isolated_seed_pixels": 1,
+      "background_rgb": [
+        240.0,
+        238.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        260,
+        263,
+        725,
+        712
+      ]
+    },
+    {
+      "file": "attack_0030.png",
+      "source_frame": 30,
+      "original_source_frame": 39,
+      "source_pts": 11712,
+      "original_source_pts": 17600,
+      "duration_ticks": 192,
+      "source_time_seconds": 0.7625,
+      "output_time_seconds": 0.7625,
+      "duration_seconds": 0.0125,
+      "sha256": "69148e5478a6c683225179f72ebdd2b1e957440493bfcbb6ae638e7879f1593f",
+      "decoded_source_sha256": "0f9e2e6c348b479fc91115ec95ccffef66dbbf963d3a2a2ea417ffacdc94984b",
+      "bbox": [
+        94,
+        73,
+        254,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 86186,
+      "removed_isolated_seed_pixels": 4,
+      "background_rgb": [
+        240.0,
+        238.0,
+        239.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        255,
+        261,
+        725,
+        712
+      ]
+    },
+    {
+      "file": "attack_0031.png",
+      "source_frame": 31,
+      "original_source_frame": 40,
+      "source_pts": 11904,
+      "original_source_pts": 17792,
+      "duration_ticks": 128,
+      "source_time_seconds": 0.775,
+      "output_time_seconds": 0.775,
+      "duration_seconds": 0.008333333333333333,
+      "sha256": "3ee22cf675e92923d079455adfc47b58c34d885147074529a09992c90394ea4b",
+      "decoded_source_sha256": "7ed81a76309c009aaf09204bc32c46138422a8c0317cdc848e9c09ab7dd3c407",
+      "bbox": [
+        91,
+        72,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85921,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        238.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        247,
+        258,
+        725,
+        712
+      ]
+    },
+    {
+      "file": "attack_0032.png",
+      "source_frame": 32,
+      "original_source_frame": 41,
+      "source_pts": 12032,
+      "original_source_pts": 17920,
+      "duration_ticks": 768,
+      "source_time_seconds": 0.7833333333333333,
+      "output_time_seconds": 0.7833333333333333,
+      "duration_seconds": 0.05,
+      "sha256": "e6a3577164a6adaf4b79c0b8d6c1539e6651879372c0f9aa0c93e7b665893364",
+      "decoded_source_sha256": "1775bd350e63255b7e0434d46da2162197c584622916375510e8d5d22b4a7e32",
+      "bbox": [
+        87,
+        71,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85670,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        234,
+        254,
+        725,
+        712
+      ]
+    },
+    {
+      "file": "attack_0033.png",
+      "source_frame": 33,
+      "original_source_frame": 42,
+      "source_pts": 12800,
+      "original_source_pts": 18688,
+      "duration_ticks": 512,
+      "source_time_seconds": 0.8333333333333334,
+      "output_time_seconds": 0.8333333333333334,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "76b4a9b46711fabf53e25ac9e8aa72f0fe6426df747e42a6cf95be2af684fd60",
+      "decoded_source_sha256": "acaf52f39f445a09f0bad4bf8981d66617c589dbe81ef957ed3cab7df4978a08",
+      "bbox": [
+        79,
+        69,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85818,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        237.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        211,
+        249,
+        724,
+        712
+      ]
+    },
+    {
+      "file": "attack_0034.png",
+      "source_frame": 34,
+      "original_source_frame": 43,
+      "source_pts": 13312,
+      "original_source_pts": 19200,
+      "duration_ticks": 768,
+      "source_time_seconds": 0.8666666666666667,
+      "output_time_seconds": 0.8666666666666667,
+      "duration_seconds": 0.05,
+      "sha256": "cf71771d6dacbd90799a020ac5547e4295afb9582980d4cbcf75a42738a9aff4",
+      "decoded_source_sha256": "fb077465f88daa45ecc0c2fefd695ad77700d64e1702d2367db49585e58810d4",
+      "bbox": [
+        65,
+        66,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 86533,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        169,
+        242,
+        723,
+        713
+      ]
+    },
+    {
+      "file": "attack_0035.png",
+      "source_frame": 35,
+      "original_source_frame": 44,
+      "source_pts": 14080,
+      "original_source_pts": 19968,
+      "duration_ticks": 512,
+      "source_time_seconds": 0.9166666666666666,
+      "output_time_seconds": 0.9166666666666666,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "99d71fffd87c85ad3eb073fca638cceb02030b6451cae2e38fe349cae49a70a9",
+      "decoded_source_sha256": "e3305ceca18aacff052d456aff048e16ffa3fd2cebccb1ee9ef5289b2a51fd75",
+      "bbox": [
+        50,
+        65,
+        253,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 88516,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        126,
+        239,
+        724,
+        713
+      ]
+    },
+    {
+      "file": "attack_0036.png",
+      "source_frame": 36,
+      "original_source_frame": 45,
+      "source_pts": 14592,
+      "original_source_pts": 20480,
+      "duration_ticks": 768,
+      "source_time_seconds": 0.95,
+      "output_time_seconds": 0.95,
+      "duration_seconds": 0.05,
+      "sha256": "4fc26b69f1767ed2c032feafc7f6bd2ca3442cd139b61357b6e2c5d040398d3d",
+      "decoded_source_sha256": "26ad4511b97a6bc94ce99fde0d76d132b8efd25aef4f085efcdd462267f5f220",
+      "bbox": [
+        37,
+        64,
+        254,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 92087,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        237.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        86,
+        236,
+        725,
+        713
+      ]
+    },
+    {
+      "file": "attack_0037.png",
+      "source_frame": 37,
+      "original_source_frame": 46,
+      "source_pts": 15360,
+      "original_source_pts": 21248,
+      "duration_ticks": 512,
+      "source_time_seconds": 1.0,
+      "output_time_seconds": 1.0,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "7d1b0ed015c5082eb11ba2eab2f324e8035f6e17ced3f3b1d141a7d804ba6d99",
+      "decoded_source_sha256": "74d3980cfa393bd553fe66b2d7f1442aefca3e0ef6a35316bac29f9863b58805",
+      "bbox": [
+        29,
+        64,
+        256,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 93313,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        61,
+        235,
+        733,
+        713
+      ]
+    },
+    {
+      "file": "attack_0038.png",
+      "source_frame": 38,
+      "original_source_frame": 47,
+      "source_pts": 15872,
+      "original_source_pts": 21760,
+      "duration_ticks": 768,
+      "source_time_seconds": 1.0333333333333334,
+      "output_time_seconds": 1.0333333333333334,
+      "duration_seconds": 0.05,
+      "sha256": "e14d2a9372239c939c18653f3097c922b45fac1db3fba437f97b84394e62de9e",
+      "decoded_source_sha256": "2dcb72c7c3bf4aff291d2ad0fe07eb1091000408eb063fe498d94f771218138f",
+      "bbox": [
+        87,
+        63,
+        267,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 85060,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        234,
+        231,
+        766,
+        713
+      ]
+    },
+    {
+      "file": "attack_0039.png",
+      "source_frame": 39,
+      "original_source_frame": 48,
+      "source_pts": 16640,
+      "original_source_pts": 22528,
+      "duration_ticks": 512,
+      "source_time_seconds": 1.0833333333333333,
+      "output_time_seconds": 1.0833333333333333,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "59df77714784c5861fb24c8d58329d6870e26032ff39a7f4a37d94178eb6197e",
+      "decoded_source_sha256": "67f26691d9fa0972fe26c254b4f0292bc97354fa0cab131d5eda22b3ff907ce9",
+      "bbox": [
+        81,
+        21,
+        272,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 99278,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        217,
+        106,
+        779,
+        713
+      ]
+    },
+    {
+      "file": "attack_0040.png",
+      "source_frame": 40,
+      "original_source_frame": 49,
+      "source_pts": 17152,
+      "original_source_pts": 23040,
+      "duration_ticks": 768,
+      "source_time_seconds": 1.1166666666666667,
+      "output_time_seconds": 1.1166666666666667,
+      "duration_seconds": 0.05,
+      "sha256": "ba3e94e73d4b81dd5f9b47925fc79f6308074b2673374d5ec11f0c50e4769756",
+      "decoded_source_sha256": "e80ebedce0425d129c4398c0e92c95d747d53805eabbdb9a784100d0a6f035c9",
+      "bbox": [
+        75,
+        16,
+        269,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 101043,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        199,
+        92,
+        772,
+        713
+      ]
+    },
+    {
+      "file": "attack_0041.png",
+      "source_frame": 41,
+      "original_source_frame": 50,
+      "source_pts": 17920,
+      "original_source_pts": 23808,
+      "duration_ticks": 512,
+      "source_time_seconds": 1.1666666666666667,
+      "output_time_seconds": 1.1666666666666667,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "d9b71f44fc5a44547d7fd003fd5363988caa198b5433cefd50f82fa24f5667b6",
+      "decoded_source_sha256": "047e7857a6c579c9bae1a4adcede588c7084bbf69419d81c47c5d542ec9a7147",
+      "bbox": [
+        83,
+        20,
+        255,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 92623,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        223,
+        103,
+        729,
+        713
+      ]
+    },
+    {
+      "file": "attack_0042.png",
+      "source_frame": 42,
+      "original_source_frame": 51,
+      "source_pts": 18432,
+      "original_source_pts": 24320,
+      "duration_ticks": 768,
+      "source_time_seconds": 1.2,
+      "output_time_seconds": 1.2,
+      "duration_seconds": 0.05,
+      "sha256": "3e2a406776ce7f467676c7b8dc68337bda6913815fd4c88d45ac2a1f47a0c6b0",
+      "decoded_source_sha256": "98b78bc2ed00b417e27b098d101ec176cd7f049f1ba3350090b614f899c44064",
+      "bbox": [
+        120,
+        74,
+        247,
+        233
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 49514,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.2,
+      "source_matte_bbox": [
+        332,
+        265,
+        705,
+        734
+      ]
+    },
+    {
+      "file": "attack_0043.png",
+      "source_frame": 43,
+      "original_source_frame": 52,
+      "source_pts": 19200,
+      "original_source_pts": 25088,
+      "duration_ticks": 512,
+      "source_time_seconds": 1.25,
+      "output_time_seconds": 1.25,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "a8dfb4c35842a1217dd411c6847bae66b8daa0410512d92336598947aa208d4e",
+      "decoded_source_sha256": "7d89f914a9737be801e78b4edf5aec6633a3d5b5d18047679b691915409a13fe",
+      "bbox": [
+        119,
+        73,
+        351,
+        226
+      ],
+      "repair": {
+        "donor": 45,
+        "source_pivot": [
+          775,
+          432
+        ],
+        "target_pivot": [
+          775,
+          511
+        ],
+        "angle": 20,
+        "scale": 1.22,
+        "blur": 1.25
+      },
+      "upper_body_unchanged_pixels": 66430,
+      "removed_isolated_seed_pixels": 8,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.35,
+      "source_matte_bbox": [
+        330,
+        263,
+        960,
+        713
+      ]
+    },
+    {
+      "file": "attack_0044.png",
+      "source_frame": 44,
+      "original_source_frame": 53,
+      "source_pts": 19712,
+      "original_source_pts": 25600,
+      "duration_ticks": 768,
+      "source_time_seconds": 1.2833333333333334,
+      "output_time_seconds": 1.2833333333333334,
+      "duration_seconds": 0.05,
+      "sha256": "e7badcba283c3c25168e7735a6520d5809365df476efa232b8b9b1d3d9daee81",
+      "decoded_source_sha256": "83b7ba2a62a54d2d92f2a1f52e2e6485383f119746cedb8359598309e8d38a9f",
+      "bbox": [
+        118,
+        73,
+        345,
+        226
+      ],
+      "repair": {
+        "donor": 45,
+        "source_pivot": [
+          775,
+          432
+        ],
+        "target_pivot": [
+          787,
+          453
+        ],
+        "angle": 9,
+        "scale": 1.12,
+        "blur": 0.35
+      },
+      "upper_body_unchanged_pixels": 70758,
+      "removed_isolated_seed_pixels": 8,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.32,
+      "source_matte_bbox": [
+        327,
+        262,
+        960,
+        713
+      ]
+    },
+    {
+      "file": "attack_0045.png",
+      "source_frame": 45,
+      "original_source_frame": 54,
+      "source_pts": 20480,
+      "original_source_pts": 26368,
+      "duration_ticks": 512,
+      "source_time_seconds": 1.3333333333333333,
+      "output_time_seconds": 1.3333333333333333,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "5ba0fcdef1a2534156854e18b43eef878ce075c605b5714fe00c2912d23de939",
+      "decoded_source_sha256": "83820b1838dedd3eb24d321594254b06f5d66fc9fbfcc0f7d9d2416a7511a55b",
+      "bbox": [
+        118,
+        73,
+        330,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 72153,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.27,
+      "source_matte_bbox": [
+        327,
+        262,
+        953,
+        713
+      ]
+    },
+    {
+      "file": "attack_0046.png",
+      "source_frame": 46,
+      "original_source_frame": 55,
+      "source_pts": 20992,
+      "original_source_pts": 26880,
+      "duration_ticks": 768,
+      "source_time_seconds": 1.3666666666666667,
+      "output_time_seconds": 1.3666666666666667,
+      "duration_seconds": 0.05,
+      "sha256": "cdef161173bdc9050f57e856b011ff98052768bb79a14ddd6559d0104022d717",
+      "decoded_source_sha256": "e751bde595ed3d5884633d4797ffaa1c94a97d27ded7c5f3bb92ca7651bdfea8",
+      "bbox": [
+        118,
+        73,
+        318,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 72452,
+      "removed_isolated_seed_pixels": 1,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.18,
+      "source_matte_bbox": [
+        328,
+        261,
+        916,
+        713
+      ]
+    },
+    {
+      "file": "attack_0047.png",
+      "source_frame": 47,
+      "original_source_frame": 56,
+      "source_pts": 21760,
+      "original_source_pts": 27648,
+      "duration_ticks": 512,
+      "source_time_seconds": 1.4166666666666667,
+      "output_time_seconds": 1.4166666666666667,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "483bac24072b96a1236f22b0a2598e5e3549db83936199b025bcb1bf0f6381ce",
+      "decoded_source_sha256": "61c2087c830707fc3c766b3c39d8d76a4c34bb99562ec27785c3b13efe48b876",
+      "bbox": [
+        119,
+        73,
+        315,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 72727,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.09,
+      "source_matte_bbox": [
+        328,
+        261,
+        908,
+        713
+      ]
+    },
+    {
+      "file": "attack_0048.png",
+      "source_frame": 48,
+      "original_source_frame": 57,
+      "source_pts": 22272,
+      "original_source_pts": 28160,
+      "duration_ticks": 768,
+      "source_time_seconds": 1.45,
+      "output_time_seconds": 1.45,
+      "duration_seconds": 0.05,
+      "sha256": "6e991916b9eac2d15fdc6d304fe847d79a441121ceba4536a2cc2b500edb678e",
+      "decoded_source_sha256": "7dde351981c20a8dc08d388cd7c810f69ef2bd311fef87892f6dce871933a285",
+      "bbox": [
+        118,
+        73,
+        315,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 72646,
+      "removed_isolated_seed_pixels": 1,
+      "background_rgb": [
+        239.0,
+        238.0,
+        238.0
+      ],
+      "veil_strength": 0.04,
+      "source_matte_bbox": [
+        326,
+        261,
+        906,
+        713
+      ]
+    },
+    {
+      "file": "attack_0049.png",
+      "source_frame": 49,
+      "original_source_frame": 58,
+      "source_pts": 23040,
+      "original_source_pts": 28928,
+      "duration_ticks": 512,
+      "source_time_seconds": 1.5,
+      "output_time_seconds": 1.5,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "3068d37ce25a27925fa9e9ca9f0d5b01ff32e8bb5312e67c681c733422da0614",
+      "decoded_source_sha256": "d08e55e2b9f9a51125d227efe301708815350ee4a3ead0c0df3e95b34b39da7f",
+      "bbox": [
+        118,
+        73,
+        314,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 72168,
+      "removed_isolated_seed_pixels": 4,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        326,
+        260,
+        904,
+        713
+      ]
+    },
+    {
+      "file": "attack_0050.png",
+      "source_frame": 50,
+      "original_source_frame": 59,
+      "source_pts": 23552,
+      "original_source_pts": 29440,
+      "duration_ticks": 768,
+      "source_time_seconds": 1.5333333333333334,
+      "output_time_seconds": 1.5333333333333334,
+      "duration_seconds": 0.05,
+      "sha256": "34f7656e771713a192139d170ff232806b80958fcc07cacb4dd26a9f31ba5e8a",
+      "decoded_source_sha256": "38de8d4af10e0787f00fe917592f12ee2b8ed7325b49489955b89231daa17d10",
+      "bbox": [
+        118,
+        73,
+        313,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 71716,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        326,
+        260,
+        902,
+        713
+      ]
+    },
+    {
+      "file": "attack_0051.png",
+      "source_frame": 51,
+      "original_source_frame": 60,
+      "source_pts": 24320,
+      "original_source_pts": 30208,
+      "duration_ticks": 512,
+      "source_time_seconds": 1.5833333333333333,
+      "output_time_seconds": 1.5833333333333333,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "b702fd729e0665efe284076b723effe5a1da0a78dd1bb5b4e5a0f7624298a6d7",
+      "decoded_source_sha256": "a3860f3bc2195dd167763d0db08ec09b184b3b62b0beda4cffa9d1380d3f579b",
+      "bbox": [
+        118,
+        73,
+        313,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 71412,
+      "removed_isolated_seed_pixels": 1,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        327,
+        260,
+        902,
+        713
+      ]
+    },
+    {
+      "file": "attack_0052.png",
+      "source_frame": 52,
+      "original_source_frame": 61,
+      "source_pts": 24832,
+      "original_source_pts": 30720,
+      "duration_ticks": 768,
+      "source_time_seconds": 1.6166666666666667,
+      "output_time_seconds": 1.6166666666666667,
+      "duration_seconds": 0.05,
+      "sha256": "6561bbf91dbdbe57f789335c95472e926921c73c876e8904047f466735049bcf",
+      "decoded_source_sha256": "c30f5ee6a9956b581c906410758bfb2501f9233cda57f44193f3609c12c072be",
+      "bbox": [
+        118,
+        73,
+        313,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 71189,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        328,
+        260,
+        901,
+        713
+      ]
+    },
+    {
+      "file": "attack_0053.png",
+      "source_frame": 53,
+      "original_source_frame": 62,
+      "source_pts": 25600,
+      "original_source_pts": 31488,
+      "duration_ticks": 512,
+      "source_time_seconds": 1.6666666666666667,
+      "output_time_seconds": 1.6666666666666667,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "e803f553943e254abe3215fb4780f2b4f7e8ad75adb42696bfe44d325ba0e31b",
+      "decoded_source_sha256": "1c60d105c20adb9954a451c46737b09cffb78a612416d88d83f9376ad2514833",
+      "bbox": [
+        119,
+        73,
+        313,
+        227
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 71049,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        330,
+        261,
+        901,
+        713
+      ]
+    },
+    {
+      "file": "attack_0054.png",
+      "source_frame": 54,
+      "original_source_frame": 63,
+      "source_pts": 26112,
+      "original_source_pts": 32000,
+      "duration_ticks": 768,
+      "source_time_seconds": 1.7,
+      "output_time_seconds": 1.7,
+      "duration_seconds": 0.05,
+      "sha256": "133168c0541f51ed855f75f23b0e8f03943bebbbf6608211e3322c92d32ca8b2",
+      "decoded_source_sha256": "905b00015b2a6b7b3fc6cad0148d9a940fee77121faef37e3dde2a913611d0c1",
+      "bbox": [
+        121,
+        72,
+        313,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 70807,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        238.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        336,
+        261,
+        901,
+        713
+      ]
+    },
+    {
+      "file": "attack_0055.png",
+      "source_frame": 55,
+      "original_source_frame": 64,
+      "source_pts": 26880,
+      "original_source_pts": 32768,
+      "duration_ticks": 512,
+      "source_time_seconds": 1.75,
+      "output_time_seconds": 1.75,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "83b0f93f276bf2b57e9b147bd1ec83c1ed201f5aa919028f55060d5af643bff9",
+      "decoded_source_sha256": "d64c66715a384e59734872a75ac5ccb6584240ddd47651920d9019c87b03590f",
+      "bbox": [
+        123,
+        73,
+        313,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 70696,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        238.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        341,
+        261,
+        901,
+        713
+      ]
+    },
+    {
+      "file": "attack_0056.png",
+      "source_frame": 56,
+      "original_source_frame": 65,
+      "source_pts": 27392,
+      "original_source_pts": 33280,
+      "duration_ticks": 768,
+      "source_time_seconds": 1.7833333333333334,
+      "output_time_seconds": 1.7833333333333334,
+      "duration_seconds": 0.05,
+      "sha256": "70e8159bf97b062a615f6f449b381057a7392db4f6baf18ee0674fffb9fb93a0",
+      "decoded_source_sha256": "0f5cd9de8f7f3174c334a21716bd161fa45c5af76b6c50b629acbd668e2a420b",
+      "bbox": [
+        123,
+        73,
+        313,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 70547,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        341,
+        261,
+        900,
+        713
+      ]
+    },
+    {
+      "file": "attack_0057.png",
+      "source_frame": 57,
+      "original_source_frame": 66,
+      "source_pts": 28160,
+      "original_source_pts": 34048,
+      "duration_ticks": 512,
+      "source_time_seconds": 1.8333333333333333,
+      "output_time_seconds": 1.8333333333333333,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "6f6577df9edd99ba0e16ad631e1c25531e8ee545ba8ba77369d391b48964cd7a",
+      "decoded_source_sha256": "a8c7aa6f7da9c0a945ba90d9e31ea1feb9b8ec8018e441723208ba8e332e6076",
+      "bbox": [
+        124,
+        73,
+        313,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 70345,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        345,
+        261,
+        900,
+        713
+      ]
+    },
+    {
+      "file": "attack_0058.png",
+      "source_frame": 58,
+      "original_source_frame": 67,
+      "source_pts": 28672,
+      "original_source_pts": 34560,
+      "duration_ticks": 768,
+      "source_time_seconds": 1.8666666666666667,
+      "output_time_seconds": 1.8666666666666667,
+      "duration_seconds": 0.05,
+      "sha256": "373b3e018930b0be22ceec709ff756775352265ed384adcc8aec7dce8e7311b3",
+      "decoded_source_sha256": "f4aebe3459e3412c196c28432fefc83c2e5daba10445f4718e3f820a87617867",
+      "bbox": [
+        126,
+        73,
+        312,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 70085,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        350,
+        261,
+        900,
+        713
+      ]
+    },
+    {
+      "file": "attack_0059.png",
+      "source_frame": 59,
+      "original_source_frame": 68,
+      "source_pts": 29440,
+      "original_source_pts": 35328,
+      "duration_ticks": 512,
+      "source_time_seconds": 1.9166666666666667,
+      "output_time_seconds": 1.9166666666666667,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "b18b231775aa7125827d48f6bc51ea6a7a23fb0c5b4e01382c22513c6a4e55ea",
+      "decoded_source_sha256": "e79cf766ce6825c2f9ee7cdc8dab8d1111339ff0b09b46a295396fde05c2ceb3",
+      "bbox": [
+        127,
+        73,
+        312,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 69852,
+      "removed_isolated_seed_pixels": 2,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        353,
+        261,
+        900,
+        713
+      ]
+    },
+    {
+      "file": "attack_0060.png",
+      "source_frame": 60,
+      "original_source_frame": 69,
+      "source_pts": 29952,
+      "original_source_pts": 35840,
+      "duration_ticks": 768,
+      "source_time_seconds": 1.95,
+      "output_time_seconds": 1.95,
+      "duration_seconds": 0.05,
+      "sha256": "9ff4bb0415c9c4c4959b8db5c190141163cf7942077bad3cce346b6e9b7d8961",
+      "decoded_source_sha256": "736092b7bfb92ec6efc4c2cc2181610343597b88da5b080959de42faea51fa8a",
+      "bbox": [
+        128,
+        73,
+        313,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 69292,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        243.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        355,
+        262,
+        901,
+        713
+      ]
+    },
+    {
+      "file": "attack_0061.png",
+      "source_frame": 61,
+      "original_source_frame": 70,
+      "source_pts": 30720,
+      "original_source_pts": 36608,
+      "duration_ticks": 512,
+      "source_time_seconds": 2.0,
+      "output_time_seconds": 2.0,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "0212d37e07f6c359a12f8083427c34be67f954b2dbc3f8705e7035d8b95adfb1",
+      "decoded_source_sha256": "08b34c833704b34e62cd28159feb5e52776e5288952fca916adc5bf8c56824ef",
+      "bbox": [
+        128,
+        73,
+        313,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 68110,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        356,
+        263,
+        902,
+        713
+      ]
+    },
+    {
+      "file": "attack_0062.png",
+      "source_frame": 62,
+      "original_source_frame": 71,
+      "source_pts": 31232,
+      "original_source_pts": 37120,
+      "duration_ticks": 768,
+      "source_time_seconds": 2.033333333333333,
+      "output_time_seconds": 2.033333333333333,
+      "duration_seconds": 0.05,
+      "sha256": "1bad6650c3181359ec91484b319c47a87900091facdb824c7119873e899cd1b6",
+      "decoded_source_sha256": "716acfd3de0ff101fa9dc3618f7214ff57e97e06159237d7adaa944119d499c2",
+      "bbox": [
+        128,
+        73,
+        313,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 66313,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        357,
+        263,
+        903,
+        713
+      ]
+    },
+    {
+      "file": "attack_0063.png",
+      "source_frame": 63,
+      "original_source_frame": 72,
+      "source_pts": 32000,
+      "original_source_pts": 37888,
+      "duration_ticks": 512,
+      "source_time_seconds": 2.0833333333333335,
+      "output_time_seconds": 2.0833333333333335,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "091b2c9774636fbedc2794a06167e537507553922f39b77aaaf9cbdd86cdd5d0",
+      "decoded_source_sha256": "79693dcbe296bd8e5800c06d84ad2eba152561e1ce069d2a7c49d975a83f4f38",
+      "bbox": [
+        128,
+        74,
+        314,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 64575,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        238.0,
+        239.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        357,
+        264,
+        905,
+        713
+      ]
+    },
+    {
+      "file": "attack_0064.png",
+      "source_frame": 64,
+      "original_source_frame": 73,
+      "source_pts": 32512,
+      "original_source_pts": 38400,
+      "duration_ticks": 768,
+      "source_time_seconds": 2.1166666666666667,
+      "output_time_seconds": 2.1166666666666667,
+      "duration_seconds": 0.05,
+      "sha256": "69f5f7949d2c5e4058764d0fd8f0f2ffc5d40c58bfa391b4b3ea39882e93f6f8",
+      "decoded_source_sha256": "f50732f02ad876e39690ae4d85e866e0a14fb62112398897b160d37178ef8f2c",
+      "bbox": [
+        128,
+        74,
+        315,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 63541,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        239.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        358,
+        265,
+        907,
+        713
+      ]
+    },
+    {
+      "file": "attack_0065.png",
+      "source_frame": 65,
+      "original_source_frame": 74,
+      "source_pts": 33280,
+      "original_source_pts": 39168,
+      "duration_ticks": 512,
+      "source_time_seconds": 2.1666666666666665,
+      "output_time_seconds": 2.1666666666666665,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "7276b32a5cd7bc53ecf4582a637fce8653067813e589ec57e06e0d58752b1180",
+      "decoded_source_sha256": "c3e20f6b1c2b69e80cbedc38260ad23b58b2e1cbfc8e515d8ff354b40e5a0643",
+      "bbox": [
+        128,
+        75,
+        316,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 62333,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        238.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        358,
+        267,
+        909,
+        713
+      ]
+    },
+    {
+      "file": "attack_0066.png",
+      "source_frame": 66,
+      "original_source_frame": 75,
+      "source_pts": 33792,
+      "original_source_pts": 39680,
+      "duration_ticks": 768,
+      "source_time_seconds": 2.2,
+      "output_time_seconds": 2.2,
+      "duration_seconds": 0.05,
+      "sha256": "b6d640701c95e59766d52d90a59de842d05ae139585cae48213c95e58b8e2e99",
+      "decoded_source_sha256": "7ed407436b274f54cee8640352d66a2c81b15f2323c25792c46757dceb7af95a",
+      "bbox": [
+        128,
+        75,
+        315,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 62720,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        357,
+        268,
+        908,
+        713
+      ]
+    },
+    {
+      "file": "attack_0067.png",
+      "source_frame": 67,
+      "original_source_frame": 76,
+      "source_pts": 34560,
+      "original_source_pts": 40448,
+      "duration_ticks": 512,
+      "source_time_seconds": 2.25,
+      "output_time_seconds": 2.25,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "1503b244a0c400941d5ba3f28318c5ada41d34c65cd657bcefb85929900487cf",
+      "decoded_source_sha256": "c478b6fcc9500a285e30f1946e6e21782723db3019eed64c120d55221cf1bc20",
+      "bbox": [
+        128,
+        75,
+        314,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 64224,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        237.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        357,
+        268,
+        906,
+        713
+      ]
+    },
+    {
+      "file": "attack_0068.png",
+      "source_frame": 68,
+      "original_source_frame": 77,
+      "source_pts": 35072,
+      "original_source_pts": 40960,
+      "duration_ticks": 768,
+      "source_time_seconds": 2.283333333333333,
+      "output_time_seconds": 2.283333333333333,
+      "duration_seconds": 0.05,
+      "sha256": "652181e93652446db1f65a3376b5950bae48be6e3d56aefed0232895b34dcb72",
+      "decoded_source_sha256": "7fe4c61067feccc719157d0ad59d09f1407e41097a0bdeefd26e58cd3cc972ce",
+      "bbox": [
+        128,
+        75,
+        313,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 65247,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        238.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        357,
+        268,
+        901,
+        713
+      ]
+    },
+    {
+      "file": "attack_0069.png",
+      "source_frame": 69,
+      "original_source_frame": 78,
+      "source_pts": 35840,
+      "original_source_pts": 41728,
+      "duration_ticks": 512,
+      "source_time_seconds": 2.3333333333333335,
+      "output_time_seconds": 2.3333333333333335,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "22aa9045e8b30ba3eab1cae4f5da55a3c4a9b4bef022aa55e3062d512578789e",
+      "decoded_source_sha256": "6ff65259757dea172fd0cc4da20e7fb0ea3776db77b25968056810e1e6de7479",
+      "bbox": [
+        128,
+        75,
+        309,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 66204,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        357,
+        268,
+        889,
+        713
+      ]
+    },
+    {
+      "file": "attack_0070.png",
+      "source_frame": 70,
+      "original_source_frame": 79,
+      "source_pts": 36352,
+      "original_source_pts": 42240,
+      "duration_ticks": 768,
+      "source_time_seconds": 2.3666666666666667,
+      "output_time_seconds": 2.3666666666666667,
+      "duration_seconds": 0.05,
+      "sha256": "4129697decdfe10d28e2a652894007cc29b4c350c6316d86db7043bf63656e71",
+      "decoded_source_sha256": "e2dfd9ffff3585a64949dcfa9976a0e385718c07603765fc0ff5c68d482ea11a",
+      "bbox": [
+        128,
+        75,
+        301,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 65860,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        357,
+        267,
+        867,
+        713
+      ]
+    },
+    {
+      "file": "attack_0071.png",
+      "source_frame": 71,
+      "original_source_frame": 80,
+      "source_pts": 37120,
+      "original_source_pts": 43008,
+      "duration_ticks": 512,
+      "source_time_seconds": 2.4166666666666665,
+      "output_time_seconds": 2.4166666666666665,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "8bcf7499d730d59fce8a7f020a818d064214ad377c7d3971518b495ab41b3332",
+      "decoded_source_sha256": "32c2fb3aba318289d7815169a129fdf49352ef7b52b0d8d81720dd1d3239fec9",
+      "bbox": [
+        129,
+        75,
+        294,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 62706,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        357,
+        266,
+        845,
+        713
+      ]
+    },
+    {
+      "file": "attack_0072.png",
+      "source_frame": 72,
+      "original_source_frame": 81,
+      "source_pts": 37632,
+      "original_source_pts": 43520,
+      "duration_ticks": 768,
+      "source_time_seconds": 2.45,
+      "output_time_seconds": 2.45,
+      "duration_seconds": 0.05,
+      "sha256": "37377290911a30212f6200af2ce09cf940db518d62df3d815531f019014680b2",
+      "decoded_source_sha256": "ed45ac9e1812be86af01279a98e6966aff1f31d2d66219e695a063070a06e53a",
+      "bbox": [
+        127,
+        74,
+        284,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 61111,
+      "removed_isolated_seed_pixels": 1,
+      "background_rgb": [
+        239.0,
+        237.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        354,
+        265,
+        817,
+        713
+      ]
+    },
+    {
+      "file": "attack_0073.png",
+      "source_frame": 73,
+      "original_source_frame": 82,
+      "source_pts": 38400,
+      "original_source_pts": 44288,
+      "duration_ticks": 512,
+      "source_time_seconds": 2.5,
+      "output_time_seconds": 2.5,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "5fb69a8091b19bdaa5806266fd844f2b9ed83ebc68b3fdf0bcb006d6e5822e2c",
+      "decoded_source_sha256": "cc88f8b11903f5522b42d9db85feddaf5124a78959b6f5c10836a1336f5dd627",
+      "bbox": [
+        123,
+        74,
+        274,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 63646,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        342,
+        264,
+        788,
+        713
+      ]
+    },
+    {
+      "file": "attack_0074.png",
+      "source_frame": 74,
+      "original_source_frame": 83,
+      "source_pts": 38912,
+      "original_source_pts": 44800,
+      "duration_ticks": 768,
+      "source_time_seconds": 2.533333333333333,
+      "output_time_seconds": 2.533333333333333,
+      "duration_seconds": 0.05,
+      "sha256": "38900b75710cab7f7790c58a7a0e8685031f450a2d8b0938ca63a198d346c515",
+      "decoded_source_sha256": "09c105aa7ae0b26d397c7f6587cd31723647f309e51379784dbfb5cf5a24ad04",
+      "bbox": [
+        118,
+        73,
+        260,
+        227
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 66200,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        326,
+        263,
+        745,
+        713
+      ]
+    },
+    {
+      "file": "attack_0075.png",
+      "source_frame": 75,
+      "original_source_frame": 84,
+      "source_pts": 39680,
+      "original_source_pts": 45568,
+      "duration_ticks": 512,
+      "source_time_seconds": 2.5833333333333335,
+      "output_time_seconds": 2.5833333333333335,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "13eff5b7042e6ba99c99ea3442982bb4b76a8d6c412ce4c685ea3983df38b0a5",
+      "decoded_source_sha256": "8f8662f2a65890d0fd134a626e435aae21d8368d5f3754fc8fd5c6bee79d4480",
+      "bbox": [
+        114,
+        73,
+        250,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 68019,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        313,
+        263,
+        716,
+        713
+      ]
+    },
+    {
+      "file": "attack_0076.png",
+      "source_frame": 76,
+      "original_source_frame": 85,
+      "source_pts": 40192,
+      "original_source_pts": 46080,
+      "duration_ticks": 768,
+      "source_time_seconds": 2.6166666666666667,
+      "output_time_seconds": 2.6166666666666667,
+      "duration_seconds": 0.05,
+      "sha256": "8e40dbf4bbc23c316de8c68c30b5abfa2592698a857c86eae15ee16c62a81cf8",
+      "decoded_source_sha256": "138578f29b995bd682be3bc5eb0c82de6e0ec00714e616ceb742d97f93e04290",
+      "bbox": [
+        112,
+        74,
+        240,
+        226
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 69191,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        237.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        307,
+        263,
+        685,
+        712
+      ]
+    },
+    {
+      "file": "attack_0077.png",
+      "source_frame": 77,
+      "original_source_frame": 86,
+      "source_pts": 40960,
+      "original_source_pts": 46848,
+      "duration_ticks": 512,
+      "source_time_seconds": 2.6666666666666665,
+      "output_time_seconds": 2.6666666666666665,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "5ac8fccf0382d77b4f6454ef9edd06c16ca1e7745859d72ecf84fa77612d148c",
+      "decoded_source_sha256": "41cd7385bff87e33376b38b7b407966ea1dcd6326025749d2b2fd10e349c1067",
+      "bbox": [
+        109,
+        73,
+        240,
+        227
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 71020,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        299,
+        262,
+        684,
+        714
+      ]
+    },
+    {
+      "file": "attack_0078.png",
+      "source_frame": 78,
+      "original_source_frame": 87,
+      "source_pts": 41472,
+      "original_source_pts": 47360,
+      "duration_ticks": 768,
+      "source_time_seconds": 2.7,
+      "output_time_seconds": 2.7,
+      "duration_seconds": 0.05,
+      "sha256": "5a4a3d7e1cba9c74af5b289792acc3f1ff7e6d259d08ca179ae8137c3a3f8b08",
+      "decoded_source_sha256": "2a0db1d4b33b9fe8f2efabfbffb34c7af4fada9aff32fc4a7c66ac9175f13837",
+      "bbox": [
+        106,
+        73,
+        239,
+        229
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 72101,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        292,
+        262,
+        684,
+        720
+      ]
+    },
+    {
+      "file": "attack_0079.png",
+      "source_frame": 79,
+      "original_source_frame": 88,
+      "source_pts": 42240,
+      "original_source_pts": 48128,
+      "duration_ticks": 512,
+      "source_time_seconds": 2.75,
+      "output_time_seconds": 2.75,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "d63af127324cc1ef7597f0728bfd37c655c01e839f61d2b531516f1fbed36e23",
+      "decoded_source_sha256": "041704345c2c851f5336a7a067fc71920bf4f5629b9c12f0598eb4079ffe8b09",
+      "bbox": [
+        105,
+        73,
+        240,
+        230
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 72862,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        289,
+        261,
+        684,
+        723
+      ]
+    },
+    {
+      "file": "attack_0080.png",
+      "source_frame": 80,
+      "original_source_frame": 89,
+      "source_pts": 42752,
+      "original_source_pts": 48640,
+      "duration_ticks": 768,
+      "source_time_seconds": 2.783333333333333,
+      "output_time_seconds": 2.783333333333333,
+      "duration_seconds": 0.05,
+      "sha256": "5f7deecbc832dd5d848b58e66cbe6202c38f6a853ce6d2a35a6f99c95720ebfc",
+      "decoded_source_sha256": "97a838a810cbac4d10ea0418b6f0fc0b046f59b4805dddc7b0ee74ed1be3c871",
+      "bbox": [
+        105,
+        73,
+        240,
+        231
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 73123,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        240.0,
+        238.0,
+        238.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        287,
+        261,
+        684,
+        726
+      ]
+    },
+    {
+      "file": "attack_0081.png",
+      "source_frame": 81,
+      "original_source_frame": 90,
+      "source_pts": 43520,
+      "original_source_pts": 49408,
+      "duration_ticks": 512,
+      "source_time_seconds": 2.8333333333333335,
+      "output_time_seconds": 2.8333333333333335,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "7cb06f62231436b06c3543962368f00c6efb4ba0aca4f355f97c49e8804b8c08",
+      "decoded_source_sha256": "4c90b65dc2c09e54058282013127a93a9be9beeabdecfaf41be51305c1e3f7d0",
+      "bbox": [
+        104,
+        73,
+        239,
+        230
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 73558,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        286,
+        261,
+        683,
+        726
+      ]
+    },
+    {
+      "file": "attack_0082.png",
+      "source_frame": 82,
+      "original_source_frame": 91,
+      "source_pts": 44032,
+      "original_source_pts": 49920,
+      "duration_ticks": 768,
+      "source_time_seconds": 2.8666666666666667,
+      "output_time_seconds": 2.8666666666666667,
+      "duration_seconds": 0.05,
+      "sha256": "b27471a9351e141a37a04e7d4cc43219a1745e70781976320c739c60bc31e73a",
+      "decoded_source_sha256": "ea957639e84ff9e6de31f856131bded6164b8f6d58120eb6c5c931e5976b52a2",
+      "bbox": [
+        104,
+        72,
+        239,
+        231
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 73801,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        285,
+        260,
+        682,
+        727
+      ]
+    },
+    {
+      "file": "attack_0083.png",
+      "source_frame": 83,
+      "original_source_frame": 92,
+      "source_pts": 44800,
+      "original_source_pts": 50688,
+      "duration_ticks": 512,
+      "source_time_seconds": 2.9166666666666665,
+      "output_time_seconds": 2.9166666666666665,
+      "duration_seconds": 0.03333333333333333,
+      "sha256": "fc14e219b7f20c3706bc921019d96433546f645502591273673cfb0b937bb1e0",
+      "decoded_source_sha256": "456a7a7b0702c354f493a56a34b9150138da0bca50c796c2869211469c438f46",
+      "bbox": [
+        104,
+        72,
+        239,
+        231
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 73876,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        285,
+        260,
+        682,
+        727
+      ]
+    },
+    {
+      "file": "attack_0084.png",
+      "source_frame": 84,
+      "original_source_frame": 93,
+      "source_pts": 45312,
+      "original_source_pts": 51200,
+      "duration_ticks": 768,
+      "source_time_seconds": 2.95,
+      "output_time_seconds": 2.95,
+      "duration_seconds": 0.05,
+      "sha256": "1cfe8ef0067ce7791a747402ec1a57648d73b235111a2fb849cdef4601d191ad",
+      "decoded_source_sha256": "d7ba3d05e5452bf9e315b3fba3dd525ca94cf6fef7fc3226668cfec1710a8282",
+      "bbox": [
+        104,
+        73,
+        239,
+        231
+      ],
+      "repair": null,
+      "upper_body_unchanged_pixels": 73861,
+      "removed_isolated_seed_pixels": 0,
+      "background_rgb": [
+        239.0,
+        238.0,
+        237.0
+      ],
+      "veil_strength": 0.0,
+      "source_matte_bbox": [
+        285,
+        260,
+        681,
+        727
+      ]
     }
   ]
 }

@@ -1,0 +1,89 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Condition "ret != noErr" is true. Returning: ""
+   at: get_system_ca_certificates (platform/macos/os_macos.mm:1035)
+ERROR: back expected unique texture count
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://test.gd:26)
+       [1] check_clip (res://test.gd:87)
+       [2] run (res://test.gd:152)
+ERROR: direction 1 switch audio starts at matching source phase
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://test.gd:26)
+       [1] check_restart (res://test.gd:105)
+       [2] run (res://test.gd:160)
+ERROR: exact loop boundary audio starts at matching source phase
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://test.gd:26)
+       [1] check_restart (res://test.gd:105)
+       [2] run (res://test.gd:183)
+ERROR: multi-loop nonzero-phase jump audio starts at matching source phase
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://test.gd:26)
+       [1] check_restart (res://test.gd:105)
+       [2] run (res://test.gd:187)
+ERROR: direction 2 switch audio starts at matching source phase
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://test.gd:26)
+       [1] check_restart (res://test.gd:105)
+       [2] run (res://test.gd:160)
+ERROR: exact loop boundary audio starts at matching source phase
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://test.gd:26)
+       [1] check_restart (res://test.gd:105)
+       [2] run (res://test.gd:183)
+ERROR: multi-loop nonzero-phase jump audio starts at matching source phase
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://test.gd:26)
+       [1] check_restart (res://test.gd:105)
+       [2] run (res://test.gd:187)
+ERROR: direction 3 switch audio starts at matching source phase
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://test.gd:26)
+       [1] check_restart (res://test.gd:105)
+       [2] run (res://test.gd:160)
+ERROR: exact loop boundary audio starts at matching source phase
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://test.gd:26)
+       [1] check_restart (res://test.gd:105)
+       [2] run (res://test.gd:183)
+ERROR: multi-loop nonzero-phase jump audio starts at matching source phase
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://test.gd:26)
+       [1] check_restart (res://test.gd:105)
+       [2] run (res://test.gd:187)
+ERROR: direction 0 switch audio starts at matching source phase
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://test.gd:26)
+       [1] check_restart (res://test.gd:105)
+       [2] run (res://test.gd:160)
+ERROR: exact loop boundary audio starts at matching source phase
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://test.gd:26)
+       [1] check_restart (res://test.gd:105)
+       [2] run (res://test.gd:183)
+ERROR: multi-loop nonzero-phase jump audio starts at matching source phase
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://test.gd:26)
+       [1] check_restart (res://test.gd:105)
+       [2] run (res://test.gd:187)
+WARNING: An input event object is being parsed more than once in the same frame, which is unsafe.
+If you are generating events in a script, you have to instantiate a new event instead of sending the same one more than once, unless the original one was sent on an earlier frame.
+You can call duplicate() on the event to get a new instance with identical values.
+   at: parse_input_event (core/input/input.cpp:1543)
+   GDScript backtrace (most recent call first):
+       [0] run (res://test.gd:222)
+BEAR_FOUR_DIRECTION 3701 checks / 13 failures
