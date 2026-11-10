@@ -1,0 +1,21 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Invalid display scale, world foot or audio offset
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _require (res://showcase.gd:57)
+       [1] _load_assets (res://showcase.gd:112)
+       [2] _ready (res://showcase.gd:48)
+       [3] make_scene (res://qa07/qa07_b04_logic.gd:33)
+       [4] run (res://qa07/qa07_b04_logic.gd:171)
+ERROR: Invalid display scale, world foot or audio offset
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _require (res://showcase.gd:57)
+       [1] _load_assets (res://showcase.gd:112)
+       [2] _ready (res://showcase.gd:48)
+       [3] make_scene (res://qa07/qa07_b04_logic.gd:33)
+       [4] run (res://qa07/qa07_b04_logic.gd:171)
+QA07_B04_LOGIC 53 checks / 0 failures | {"canvas_world_rect":[671.52001953125,331.559997558594,809.760009765625,453.160003662109],"ms_samples_differing_from_fixed_24fps":350}
+WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)

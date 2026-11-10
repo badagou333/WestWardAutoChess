@@ -1,0 +1,21 @@
+{
+  "canvas_rect_checked": [
+    669,
+    329,
+    813,
+    456
+  ],
+  "canvas_right_edge_world_x": 809.760009765625,
+  "checks": 7,
+  "failures": [],
+  "frame35_alpha_px_on_right_canvas_column": 173,
+  "idx0_vs_35_outside_inside": [
+    0,
+    8654
+  ],
+  "process_peak_static_mb": 77.9129991531372,
+  "renderer": "AMD Radeon RX 7700 XT / opengl3",
+  "static_mem_delta_mb": 45.5937614440918,
+  "static_mem_total_mb": 77.9125070571899,
+  "texture_mem_mb": 287.020402908325
+}

@@ -1,0 +1,16 @@
+﻿[��Ϣ] ʹ�û������� GODOT_BIN: C:\software\Godot-4.7.2\Godot_v4.7.2-stable_win64_console.exe
+[��Ϣ] Godot : C:\software\Godot-4.7.2\Godot_v4.7.2-stable_win64_console.exe
+[��Ϣ] ��Ŀ  : <QA07_TMP>\cold\bear-forehand-showcase
+[��Ϣ] �����...
+
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+cmd.exe : WARNING: 2 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+At line:1 char:723
++ ... c.v; $out = & cmd.exe /c "`"$S\cold\$p\launch.bat`" --headless --quit ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: 2 Obje...` for details).:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   at: cleanup (core/object/object.cpp:2536)
+
