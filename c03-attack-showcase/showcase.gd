@@ -33,6 +33,16 @@ var play_button: Button
 var replay_button: Button
 var status_label: Label
 var _inspection_index := 0
+## D-20261110-004 horizontal mirror. 1 = original source direction, -1 = mirrored
+## around the same world foot. Facing is presentation only: switching never
+## touches elapsed time, state, the sound event or the playing WAV.
+const FACING_ORIGINAL := 1
+const FACING_MIRRORED := -1
+var facing := FACING_ORIGINAL
+var original_button: Button
+var mirrored_button: Button
+## Review-only: hide board/cell overlay so pixel symmetry can be measured.
+var review_plain_background := false
 
 func _ready() -> void:
 	font = SystemFont.new()
@@ -162,7 +172,23 @@ func current_frame_index() -> int:
 	return _inspection_index if state == INSPECTION else frame_at(elapsed)
 
 func source_to_world(point: Vector2) -> Vector2:
-	return world_foot + (point - foot_reference) * display_scale
+	return world_foot + (point - foot_reference) * draw_scale()
+
+func draw_scale() -> Vector2:
+	return Vector2(display_scale * float(facing), display_scale)
+
+func set_facing(value: int) -> void:
+	if value != FACING_ORIGINAL and value != FACING_MIRRORED: return
+	if value == facing: return
+	facing = value
+	_update_controls()
+	queue_redraw()
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if not event is InputEventKey or not event.pressed or event.echo: return
+	match event.keycode:
+		KEY_1: set_facing(FACING_ORIGINAL)
+		KEY_2: set_facing(FACING_MIRRORED)
 
 func play_from_start() -> void:
 	if not ready_to_play: return
@@ -224,6 +250,23 @@ func _make_controls() -> void:
 	play_button.pressed.connect(play_from_start)
 	replay_button.pressed.connect(play_from_start)
 	add_child(row)
+	var facing_row := HBoxContainer.new()
+	facing_row.position = Vector2(1050, 84)
+	facing_row.add_theme_constant_override("separation", 12)
+	original_button = Button.new()
+	mirrored_button = Button.new()
+	original_button.text = "原向 (1)"
+	mirrored_button.text = "镜像 (2)"
+	for button in [original_button, mirrored_button]:
+		button.custom_minimum_size = Vector2(155, 44)
+		button.toggle_mode = true
+		button.focus_mode = Control.FOCUS_NONE
+		button.add_theme_font_override("font", font)
+		button.add_theme_font_size_override("font_size", 20)
+		facing_row.add_child(button)
+	original_button.pressed.connect(set_facing.bind(FACING_ORIGINAL))
+	mirrored_button.pressed.connect(set_facing.bind(FACING_MIRRORED))
+	add_child(facing_row)
 	status_label = Label.new()
 	status_label.position = Vector2(35, 62)
 	status_label.add_theme_font_override("font", font)
@@ -234,6 +277,10 @@ func _update_controls() -> void:
 	if not is_instance_valid(play_button): return
 	play_button.disabled = not ready_to_play or state != READY
 	replay_button.disabled = not ready_to_play or state == READY
+	original_button.disabled = not ready_to_play
+	mirrored_button.disabled = not ready_to_play
+	original_button.set_pressed_no_signal(facing == FACING_ORIGINAL)
+	mirrored_button.set_pressed_no_signal(facing == FACING_MIRRORED)
 	if not ready_to_play:
 		status_label.text = "素材暂未就绪"
 	else:
@@ -245,19 +292,22 @@ func _update_controls() -> void:
 
 func _draw() -> void:
 	draw_rect(Rect2(0, 0, 1440, 810), Color("102323"))
-	if board != null: draw_texture_rect(board, Rect2(0, 0, 1440, 810), false)
-	if ready_to_play:
+	if board != null and not review_plain_background: draw_texture_rect(board, Rect2(0, 0, 1440, 810), false)
+	if ready_to_play and not review_plain_background:
 		var diamond := PackedVector2Array([world_foot + Vector2(0, -34.56), world_foot + Vector2(69.12, 0),
 			world_foot + Vector2(0, 34.56), world_foot + Vector2(-69.12, 0)])
 		draw_colored_polygon(diamond, Color(0.44, 0.73, 0.58, 0.14))
 		diamond.append(diamond[0])
 		draw_polyline(diamond, Color("a9dbb1"), 2, true)
-		draw_set_transform(world_foot, 0, Vector2.ONE * display_scale)
+	if ready_to_play:
+		# Mirror = negative X scale around the same world foot; same texture/PTS.
+		draw_set_transform(world_foot, 0, draw_scale())
 		draw_texture_rect(frames[current_frame_index()], Rect2(-foot_reference, canvas), false)
 		draw_set_transform(Vector2.ZERO)
 	if font != null:
 		draw_rect(Rect2(20, 20, 410, 78), Color(0.04, 0.08, 0.07, 0.65))
-		draw_string(font, Vector2(35, 51), "翠鸟 · 单向攻击", HORIZONTAL_ALIGNMENT_LEFT, -1, 25, Color("e3e6db"))
+		var title := "翠鸟 · 攻击 · 原向" if facing == FACING_ORIGINAL else "翠鸟 · 攻击 · 镜像"
+		draw_string(font, Vector2(35, 51), title, HORIZONTAL_ALIGNMENT_LEFT, -1, 25, Color("e3e6db"))
 
 func _exit_tree() -> void:
 	if is_instance_valid(sound_player): sound_player.stop()

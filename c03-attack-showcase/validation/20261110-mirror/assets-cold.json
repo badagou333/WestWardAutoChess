@@ -1,0 +1,18 @@
+{
+  "schema": "c03-single-author-resource-checks-v1",
+  "scope": "Resource bytes and metadata only; no Godot execution, pixel/video decoding, visual judgement, device listening, OS input or independent acceptance.",
+  "project": "C:\\Users\\32888\\AppData\\Local\\Temp\\claude\\faae23c4f900d718\\c11a17a1-b583-4555-ab3c-9262d3ad9b68\\scratchpad\\cold\\c03-attack-showcase",
+  "source_asset_commit": "a36cd562ee4f8876635b57c9136c4416357afe22",
+  "resource_list_sha256": "eb2aecdb0766b89ca8d9d178c09db2c51126a06c65d0d2be7833017d0c10eef5",
+  "copied_resource_count": 101,
+  "source_manifest_entries": 98,
+  "media_end_ticks": 260250,
+  "media_end_seconds": 2.8916666666666666,
+  "final_sample_duration_ticks": 0,
+  "candidate_comparison": "absent; all pinned runtime/resource-list/PNG/WAV/PCM checks remained mandatory",
+  "board_source_comparison": "absent; pinned board SHA remained mandatory",
+  "audio_duration_seconds": 1.0,
+  "checks": 1108,
+  "failures": 0,
+  "failure_messages": []
+}

@@ -11,10 +11,12 @@ var manifest: Dictionary = {}
 var errors: Array[String] = []
 var samples: Array[Dictionary] = []
 var png_count := 0
+var facing := 1
 
 func _initialize() -> void:
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--output="): output = arg.trim_prefix("--output=")
+		if arg == "--facing=mirrored": facing = -1
 	call_deferred("run")
 
 func require(ok: bool, message: String) -> bool:
@@ -70,7 +72,7 @@ func sample_current(index: int, expected_state: String) -> Dictionary:
 		"manifest_path":MANIFEST_PATH, "manifest_sha256":MANIFEST_SHA,
 		"canvas":xy(scene.canvas), "foot_reference":xy(scene.foot_reference),
 		"world_foot":xy(actual_foot), "display_scale":scene.display_scale,
-		"canvas_world_corners":[xy(a),xy(b)], "mirrored":false,
+		"canvas_world_corners":[xy(a),xy(b)], "mirrored":scene.facing == -1, "facing":scene.facing,
 		"file":filename, "sha256":screenshot_sha, "viewport_size":[SIZE.x,SIZE.y],
 		"character_file":crop_filename, "character_sha256":crop_sha,
 		"character_viewport_rect":[crop_rect.position.x,crop_rect.position.y,crop_rect.size.x,crop_rect.size.y],
@@ -82,7 +84,7 @@ func finish() -> void:
 	require(complete, "Capture must contain all nine source samples and eighteen PNGs")
 	var report := {"schema":"c03-single-author-graphical-capture-v1", "task":"D-20261101-002",
 		"scope":"Real dedicated Godot Viewport; Ready/paused inspection and actual Ended state. Not normal continuous playback or listening acceptance.",
-		"display_server":DisplayServer.get_name(), "engine_version":Engine.get_version_info(),
+		"facing":facing, "display_server":DisplayServer.get_name(), "engine_version":Engine.get_version_info(),
 		"window_title":root.title, "viewport_size":[SIZE.x,SIZE.y], "audio_driver":AudioServer.get_driver_name(),
 		"master_muted":true, "os_input":false, "device_listening":false,
 		"crop_method":"Image.get_region of the same actual Viewport screenshot; no offline compositing",
@@ -120,7 +122,8 @@ func run() -> void:
 	scene = packed.instantiate()
 	root.add_child(scene)
 	scene.set_process(false)
-	if not require(scene.ready_to_play and scene.state == "ready", "Standalone source assets must initialize in silent Ready"):
+	scene.set_facing(facing)
+	if not require(scene.ready_to_play and scene.state == "ready" and scene.facing == facing, "Standalone source assets must initialize in silent Ready"):
 		await finish()
 		return
 	var raw = JSON.parse_string(FileAccess.get_file_as_string(MANIFEST_PATH))

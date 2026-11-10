@@ -172,6 +172,76 @@ func check_playback_boundaries(scene) -> void:
 	scene.play_from_start()
 	check(scene.state=="playing" and scene.elapsed==0.0 and not scene.audio_event_handled and not scene.sound_player.playing,"replay from end inspection starts a clean playback")
 
+func check_mirror(scene) -> void:
+	# D-20261110-004: horizontal mirror reuses the same textures/PTS/WAV and world foot.
+	check(scene.facing==1 and scene.original_button.button_pressed and not scene.mirrored_button.button_pressed,
+		"default facing is the original single direction")
+	var original_corners: Array[Vector2] = []
+	var probe_points := [Vector2.ZERO,Vector2(960,0),Vector2(0,960),Vector2(960,960),Vector2(300,500),scene.foot_reference]
+	for point in probe_points:
+		original_corners.append(scene.source_to_world(point))
+	var textures_before: Array = scene.frames.duplicate()
+	var ticks_before: Array = scene.frame_ticks.duplicate()
+	scene.mirrored_button.pressed.emit()
+	check(scene.facing==-1 and scene.mirrored_button.button_pressed and not scene.original_button.button_pressed,
+		"mirror button selects mirrored facing")
+	check(scene.draw_scale()==Vector2(-scene.display_scale,scene.display_scale),"mirror is a pure negative X scale with unchanged trial scale")
+	check(scene.source_to_world(scene.foot_reference).is_equal_approx(scene.world_foot),"mirrored source foot maps to the same world foot")
+	for i in probe_points.size():
+		var mirrored: Vector2 = scene.source_to_world(probe_points[i])
+		var reflected := Vector2(2.0*scene.world_foot.x-original_corners[i].x,original_corners[i].y)
+		check(mirrored.is_equal_approx(reflected),"mirrored point is the reflection about world foot x at "+str(probe_points[i]))
+	check(scene.frames==textures_before and scene.frame_ticks==ticks_before,"mirror reuses identical texture objects and source ticks")
+	for i in scene.frame_ticks.size():
+		check(scene.frame_at(float(scene.frame_ticks[i])/90000.0)==i,"mirrored timeline keeps source start "+str(i))
+	# Mirrored facing must pass the same full playback/audio boundaries.
+	scene.play_from_start()
+	scene.inspect_frame(0)
+	check_playback_boundaries_from_any(scene,"mirrored")
+	# Switching mid-play changes presentation only: time, state, event and live sound remain.
+	AudioServer.lock()
+	scene.play_from_start()
+	scene._process(scene.audio_start_seconds+0.15)
+	var live = scene.sound_player.get_stream_playback()
+	var elapsed_before: float = scene.elapsed
+	check(scene.sound_player.playing,"switch case starts with an active sound")
+	scene.original_button.pressed.emit()
+	check(scene.facing==1 and scene.state=="playing" and scene.elapsed==elapsed_before and scene.audio_event_handled
+		and scene.sound_player.playing and scene.sound_player.get_stream_playback()==live,"switch to original keeps time, state and the same live WAV")
+	scene.mirrored_button.pressed.emit()
+	check(scene.facing==-1 and scene.state=="playing" and scene.elapsed==elapsed_before
+		and scene.sound_player.get_stream_playback()==live,"switch to mirrored keeps time, state and the same live WAV")
+	scene.mirrored_button.pressed.emit()
+	check(scene.facing==-1 and scene.mirrored_button.button_pressed and scene.sound_player.get_stream_playback()==live,"same-direction selection is a no-op")
+	AudioServer.unlock()
+	scene.play_from_start()
+	scene._process(scene.duration)
+	scene.original_button.pressed.emit()
+	check(scene.state=="ended" and scene.current_frame_index()==97 and not scene.sound_player.playing and scene.facing==1,
+		"switching at Ended keeps the static terminal entry silent")
+	scene.set_facing(0)
+	scene.set_facing(5)
+	check(scene.facing==1,"invalid facing values are rejected")
+	var key := InputEventKey.new()
+	key.pressed = true
+	key.keycode = KEY_2
+	scene._unhandled_key_input(key)
+	check(scene.facing==-1,"key 2 selects mirrored")
+	key.keycode = KEY_1
+	scene._unhandled_key_input(key)
+	check(scene.facing==1,"key 1 selects original")
+	check(scene.state=="ended" and not scene.sound_player.playing,"keys only change facing")
+
+func check_playback_boundaries_from_any(scene, label: String) -> void:
+	# Reuse the original boundary suite from a clean Ready-equivalent start.
+	scene.sound_player.stop()
+	scene.state = "ready"
+	scene.elapsed = 0.0
+	scene.audio_event_handled = false
+	var before_failures := failure_messages.size()
+	check_playback_boundaries(scene)
+	check(failure_messages.size()==before_failures,label+": complete original playback boundary suite passes")
+
 func finish() -> void:
 	var report := {"schema":"c3-single-direction-author-boundaries-v1","checks":checks,
 		"failures":failure_messages.size(),"failure_messages":failure_messages,"phase_observations":phase_observations,
@@ -202,6 +272,7 @@ func run() -> void:
 	if scene.ready_to_play:
 		check_assets_and_timeline(scene)
 		check_playback_boundaries(scene)
+		check_mirror(scene)
 	scene.sound_player.stop()
 	scene.queue_free()
 	await process_frame

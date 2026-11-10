@@ -1,5 +1,22 @@
 # 06｜程序开发
 
+## 2026-11-10 D-20261110-004 C3翠鸟水平镜像（作者自测完成，待07／05）
+
+- 更新时间／授权：2026-11-10，按00派工（D-20261110-004，基线origin/main 3b7a9ad）在`c03-attack-showcase/`实现水平镜像；未碰bear-forehand-showcase/与godot-demo/。
+- 已完成：`showcase.gd`加`facing`（1原向／-1镜像），围同一世界脚点(720,441)以`(±0.21,0.21)`绘制，复用同一98纹理/PTS/1秒WAV；“原向 (1)／镜像 (2)”按钮与数字键1/2切换，切向只改显示、不动时间/状态/声音，同向为空操作；标题显示朝向。新增`launch.bat`（改写自熊展示，GBK保持）、`mirror_symmetry.gd`；`capture.gd`/`realtime_probe.gd`加可选`--facing=mirrored`（默认不变）；`tests/test.gd`加镜像检查。101素材、manifest SHA、showcase.json未改。
+- 环境修复：本机`core.autocrlf=true`把冻结JSON检出为CRLF，运行时manifest SHA校验失败、展示无法启动（原单向版本在Windows同样受影响）。新增`c03-attack-showcase/.gitattributes`（`*.json -text`、`*.bat eol=crlf`），仓库blob不变。
+- 验证：引擎源码/冷副本/经launch.bat各1182项0失败（原1032＋镜像150，含镜像方向整套播放/声音边界重跑）；资源源码1210/0（候选取自git archive原字节）、冷副本1108/0；实际图形采样两向各9组0错误；正常播放两向各4段34项0错误（两次完整播放到T停index97、重播清旧声、退出移除混音）。逐像素对称98索引：79个逐位相同，其余19个共49像素差1/255（GPU插值舍入）；严格脚本按“全部逐位相同”判定，退出1，未放宽门限。
+- 首次失败：manifest SHA（CRLF）→加.gitattributes后通过；资源对照因godot-demo候选CRLF检出失败1项（blob相同），保留`assets-source-first-crlf-candidate.json`，改用原字节导出对照。
+- 修改文件：c03-attack-showcase/{showcase.gd, capture.gd, realtime_probe.gd, tests/test.gd, README.md, HANDOFF.md}；新增{.gitattributes, launch.bat, mirror_symmetry.gd, validation/20261110-mirror/}；本工作流。
+- 证据：`c03-attack-showcase/validation/20261110-mirror/README.md`。
+- 未验：07独立复验；05镜像实际视觉（持械侧、烘焙飞羽与光影方向）；真人连续观感/设备听感；OS鼠标点击；macOS重跑。0.21/0.405仍是试接参数。
+- 阻塞：无。
+
+### 待总控同步
+
+- D-20261110-004 C3镜像作者自测完成并已提交推送（提交号见00回报），请安排07独立复验、05视觉复核。
+- 跨领域提示：`bear-forehand-showcase/`及`godot-demo/`的JSON在本机同样被检出为CRLF（如`bear-forehand-showcase/art/attack/manifest.json`为w/crlf），若其运行时也校验manifest SHA，Windows上可能同样无法启动；建议00判断是否另派06为这两处加同类`.gitattributes`。本批未改。
+
 ## 2026-11-02 D-20261101-002 C3单向展示（作者实测完成，待07／C3美术）
 
 > 00同步标记（2026-11-02）：6349598／6f8ff00已核收至PROJECT_STATE和D-20261101-002；101原素材保持，06已idle释放窗口，Gitee仍未同步。接续07独立正常播放/声音边界，再原C3美术实际视觉，单向通过后才按授权镜像；作者结果不作独立、视觉或设备听感通过。

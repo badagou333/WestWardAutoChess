@@ -1,0 +1,1025 @@
+{
+	"compare_region": [
+		560,
+		260,
+		320,
+		240
+	],
+	"display_server": "Windows",
+	"engine_version": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"errors": [],
+	"indices_bit_identical": 79,
+	"indices_compared": 98,
+	"master_muted": true,
+	"os_input": false,
+	"per_index": [
+		{
+			"character_pixels_in_region": 5610,
+			"index": 0,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7232,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 0
+		},
+		{
+			"character_pixels_in_region": 5662,
+			"index": 1,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7278,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 1125
+		},
+		{
+			"character_pixels_in_region": 5670,
+			"index": 2,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7306,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 1875
+		},
+		{
+			"character_pixels_in_region": 5674,
+			"index": 3,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7300,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 3000
+		},
+		{
+			"character_pixels_in_region": 5669,
+			"index": 4,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7300,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 3750
+		},
+		{
+			"character_pixels_in_region": 5720,
+			"index": 5,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7362,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 4875
+		},
+		{
+			"character_pixels_in_region": 5691,
+			"index": 6,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7330,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 5625
+		},
+		{
+			"character_pixels_in_region": 5727,
+			"index": 7,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7358,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 6750
+		},
+		{
+			"character_pixels_in_region": 5798,
+			"index": 8,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7426,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 7500
+		},
+		{
+			"character_pixels_in_region": 5791,
+			"index": 9,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7406,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 8625
+		},
+		{
+			"character_pixels_in_region": 5839,
+			"index": 10,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7460,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 9375
+		},
+		{
+			"character_pixels_in_region": 5920,
+			"index": 11,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7572,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 10500
+		},
+		{
+			"character_pixels_in_region": 5996,
+			"index": 12,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7656,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 11250
+		},
+		{
+			"character_pixels_in_region": 6139,
+			"index": 13,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7840,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 13500
+		},
+		{
+			"character_pixels_in_region": 6386,
+			"index": 14,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 8144,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 15000
+		},
+		{
+			"character_pixels_in_region": 6631,
+			"index": 15,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 8460,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 17250
+		},
+		{
+			"character_pixels_in_region": 6852,
+			"index": 16,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 8770,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 18750
+		},
+		{
+			"character_pixels_in_region": 7102,
+			"index": 17,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 9266,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 21000
+		},
+		{
+			"character_pixels_in_region": 7806,
+			"index": 18,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 10112,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 22500
+		},
+		{
+			"character_pixels_in_region": 8146,
+			"index": 19,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 10550,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 24750
+		},
+		{
+			"character_pixels_in_region": 8280,
+			"index": 20,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 10936,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 26250
+		},
+		{
+			"character_pixels_in_region": 8276,
+			"index": 21,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 11188,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 28500
+		},
+		{
+			"character_pixels_in_region": 8119,
+			"index": 22,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 11512,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 30000
+		},
+		{
+			"character_pixels_in_region": 8100,
+			"index": 23,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 11614,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 32250
+		},
+		{
+			"character_pixels_in_region": 8123,
+			"index": 24,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 11664,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 33750
+		},
+		{
+			"character_pixels_in_region": 8011,
+			"index": 25,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 11656,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 36000
+		},
+		{
+			"character_pixels_in_region": 8347,
+			"index": 26,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 12252,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 37500
+		},
+		{
+			"character_pixels_in_region": 8407,
+			"index": 27,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 12458,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 39750
+		},
+		{
+			"character_pixels_in_region": 8104,
+			"index": 28,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 11930,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 41250
+		},
+		{
+			"character_pixels_in_region": 7895,
+			"index": 29,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 11292,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 44250
+		},
+		{
+			"character_pixels_in_region": 8990,
+			"index": 30,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 11942,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 47250
+		},
+		{
+			"character_pixels_in_region": 9869,
+			"index": 31,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 12848,
+			"pixels_not_bit_identical_to_reflection": 1,
+			"source_pts_ticks": 51750
+		},
+		{
+			"character_pixels_in_region": 8351,
+			"index": 32,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 10884,
+			"pixels_not_bit_identical_to_reflection": 3,
+			"source_pts_ticks": 54750
+		},
+		{
+			"character_pixels_in_region": 9009,
+			"index": 33,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 11150,
+			"pixels_not_bit_identical_to_reflection": 1,
+			"source_pts_ticks": 59250
+		},
+		{
+			"character_pixels_in_region": 10345,
+			"index": 34,
+			"max_channel_diff": 0.00392159819602966,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 13602,
+			"pixels_not_bit_identical_to_reflection": 5,
+			"source_pts_ticks": 62250
+		},
+		{
+			"character_pixels_in_region": 10155,
+			"index": 35,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 14258,
+			"pixels_not_bit_identical_to_reflection": 6,
+			"source_pts_ticks": 66750
+		},
+		{
+			"character_pixels_in_region": 9468,
+			"index": 36,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 13330,
+			"pixels_not_bit_identical_to_reflection": 2,
+			"source_pts_ticks": 69750
+		},
+		{
+			"character_pixels_in_region": 8905,
+			"index": 37,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 12392,
+			"pixels_not_bit_identical_to_reflection": 4,
+			"source_pts_ticks": 74250
+		},
+		{
+			"character_pixels_in_region": 8988,
+			"index": 38,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 12512,
+			"pixels_not_bit_identical_to_reflection": 3,
+			"source_pts_ticks": 77250
+		},
+		{
+			"character_pixels_in_region": 8967,
+			"index": 39,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 12496,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 81750
+		},
+		{
+			"character_pixels_in_region": 8555,
+			"index": 40,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 11664,
+			"pixels_not_bit_identical_to_reflection": 3,
+			"source_pts_ticks": 84750
+		},
+		{
+			"character_pixels_in_region": 8353,
+			"index": 41,
+			"max_channel_diff": 0.00392157584428787,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 11324,
+			"pixels_not_bit_identical_to_reflection": 4,
+			"source_pts_ticks": 88821
+		},
+		{
+			"character_pixels_in_region": 8298,
+			"index": 42,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 11260,
+			"pixels_not_bit_identical_to_reflection": 1,
+			"source_pts_ticks": 90964
+		},
+		{
+			"character_pixels_in_region": 8340,
+			"index": 43,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 11320,
+			"pixels_not_bit_identical_to_reflection": 2,
+			"source_pts_ticks": 94179
+		},
+		{
+			"character_pixels_in_region": 8223,
+			"index": 44,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 11350,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 96321
+		},
+		{
+			"character_pixels_in_region": 8031,
+			"index": 45,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 11274,
+			"pixels_not_bit_identical_to_reflection": 3,
+			"source_pts_ticks": 99536
+		},
+		{
+			"character_pixels_in_region": 7945,
+			"index": 46,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 11212,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 101679
+		},
+		{
+			"character_pixels_in_region": 7844,
+			"index": 47,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 11148,
+			"pixels_not_bit_identical_to_reflection": 1,
+			"source_pts_ticks": 104893
+		},
+		{
+			"character_pixels_in_region": 7615,
+			"index": 48,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 11066,
+			"pixels_not_bit_identical_to_reflection": 1,
+			"source_pts_ticks": 107036
+		},
+		{
+			"character_pixels_in_region": 7467,
+			"index": 49,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 10924,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 110250
+		},
+		{
+			"character_pixels_in_region": 7022,
+			"index": 50,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 10382,
+			"pixels_not_bit_identical_to_reflection": 4,
+			"source_pts_ticks": 112393
+		},
+		{
+			"character_pixels_in_region": 6775,
+			"index": 51,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 10060,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 115607
+		},
+		{
+			"character_pixels_in_region": 6543,
+			"index": 52,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 9662,
+			"pixels_not_bit_identical_to_reflection": 2,
+			"source_pts_ticks": 117750
+		},
+		{
+			"character_pixels_in_region": 6203,
+			"index": 53,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 8870,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 120964
+		},
+		{
+			"character_pixels_in_region": 6332,
+			"index": 54,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 8534,
+			"pixels_not_bit_identical_to_reflection": 2,
+			"source_pts_ticks": 123107
+		},
+		{
+			"character_pixels_in_region": 6162,
+			"index": 55,
+			"max_channel_diff": 0.00392156839370728,
+			"max_channel_diff_8bit": 1,
+			"pixels_differing_from_unreflected_mirror": 8140,
+			"pixels_not_bit_identical_to_reflection": 1,
+			"source_pts_ticks": 126321
+		},
+		{
+			"character_pixels_in_region": 5771,
+			"index": 56,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7156,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 128464
+		},
+		{
+			"character_pixels_in_region": 5682,
+			"index": 57,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 6408,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 131679
+		},
+		{
+			"character_pixels_in_region": 6038,
+			"index": 58,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 6652,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 133821
+		},
+		{
+			"character_pixels_in_region": 6263,
+			"index": 59,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 6908,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 137036
+		},
+		{
+			"character_pixels_in_region": 6288,
+			"index": 60,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7018,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 139179
+		},
+		{
+			"character_pixels_in_region": 6505,
+			"index": 61,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7510,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 142393
+		},
+		{
+			"character_pixels_in_region": 6965,
+			"index": 62,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 8370,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 144536
+		},
+		{
+			"character_pixels_in_region": 7222,
+			"index": 63,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 8872,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 147750
+		},
+		{
+			"character_pixels_in_region": 7216,
+			"index": 64,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 9080,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 149893
+		},
+		{
+			"character_pixels_in_region": 7286,
+			"index": 65,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 9254,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 153107
+		},
+		{
+			"character_pixels_in_region": 7385,
+			"index": 66,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 9650,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 155250
+		},
+		{
+			"character_pixels_in_region": 7343,
+			"index": 67,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 9634,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 158464
+		},
+		{
+			"character_pixels_in_region": 7211,
+			"index": 68,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 9472,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 160607
+		},
+		{
+			"character_pixels_in_region": 6819,
+			"index": 69,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 8870,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 163821
+		},
+		{
+			"character_pixels_in_region": 6687,
+			"index": 70,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 8730,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 165964
+		},
+		{
+			"character_pixels_in_region": 6561,
+			"index": 71,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 8542,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 169179
+		},
+		{
+			"character_pixels_in_region": 6538,
+			"index": 72,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 8520,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 171321
+		},
+		{
+			"character_pixels_in_region": 6365,
+			"index": 73,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 8268,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 174536
+		},
+		{
+			"character_pixels_in_region": 6212,
+			"index": 74,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 8074,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 176679
+		},
+		{
+			"character_pixels_in_region": 6126,
+			"index": 75,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7938,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 180750
+		},
+		{
+			"character_pixels_in_region": 6141,
+			"index": 76,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7956,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 183750
+		},
+		{
+			"character_pixels_in_region": 6104,
+			"index": 77,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7900,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 188250
+		},
+		{
+			"character_pixels_in_region": 5968,
+			"index": 78,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7694,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 191250
+		},
+		{
+			"character_pixels_in_region": 5906,
+			"index": 79,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7594,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 195750
+		},
+		{
+			"character_pixels_in_region": 5888,
+			"index": 80,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7558,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 198750
+		},
+		{
+			"character_pixels_in_region": 5845,
+			"index": 81,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7488,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 203250
+		},
+		{
+			"character_pixels_in_region": 5831,
+			"index": 82,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7470,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 206250
+		},
+		{
+			"character_pixels_in_region": 5819,
+			"index": 83,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7442,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 210750
+		},
+		{
+			"character_pixels_in_region": 5811,
+			"index": 84,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7434,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 213750
+		},
+		{
+			"character_pixels_in_region": 5761,
+			"index": 85,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7400,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 218250
+		},
+		{
+			"character_pixels_in_region": 5761,
+			"index": 86,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7392,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 221250
+		},
+		{
+			"character_pixels_in_region": 5765,
+			"index": 87,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7396,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 225750
+		},
+		{
+			"character_pixels_in_region": 5792,
+			"index": 88,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7426,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 228750
+		},
+		{
+			"character_pixels_in_region": 5744,
+			"index": 89,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7372,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 233250
+		},
+		{
+			"character_pixels_in_region": 5743,
+			"index": 90,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7388,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 236250
+		},
+		{
+			"character_pixels_in_region": 5754,
+			"index": 91,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7400,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 240750
+		},
+		{
+			"character_pixels_in_region": 5754,
+			"index": 92,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7386,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 243750
+		},
+		{
+			"character_pixels_in_region": 5726,
+			"index": 93,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7370,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 248250
+		},
+		{
+			"character_pixels_in_region": 5698,
+			"index": 94,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7328,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 251250
+		},
+		{
+			"character_pixels_in_region": 5690,
+			"index": 95,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7330,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 255750
+		},
+		{
+			"character_pixels_in_region": 5669,
+			"index": 96,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7296,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 258750
+		},
+		{
+			"character_pixels_in_region": 5669,
+			"index": 97,
+			"max_channel_diff": 0.0,
+			"max_channel_diff_8bit": 0,
+			"pixels_differing_from_unreflected_mirror": 7296,
+			"pixels_not_bit_identical_to_reflection": 0,
+			"source_pts_ticks": 260250
+		}
+	],
+	"reflection": "original(x,y) vs mirrored(1439-x,y)",
+	"rendering_driver": "opengl3",
+	"saved_samples": [
+		{
+			"facing": 1,
+			"file": "board-original-index-000.png",
+			"index": 0,
+			"sha256": "d3670d8b0da2e429567a32b9dc97b68b6427cada28f8ba18bd2482a130940492",
+			"state": "inspection",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"facing": -1,
+			"file": "board-mirrored-index-000.png",
+			"index": 0,
+			"sha256": "637096e9c5ca225a809f461f5738e82599edb4d422c531c1d67b8458f637b5b9",
+			"state": "inspection",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"facing": 1,
+			"file": "board-original-index-031.png",
+			"index": 31,
+			"sha256": "bbe48a20d20cc63e4bec8ddfb5367006ac5845dee119ac0efab456876af6687f",
+			"state": "inspection",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"facing": -1,
+			"file": "board-mirrored-index-031.png",
+			"index": 31,
+			"sha256": "85b40d02f2781a9d47fa864f19acfcb778ce4d158c8c5a952b276c7d3f027351",
+			"state": "inspection",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"facing": 1,
+			"file": "board-original-index-097.png",
+			"index": 97,
+			"sha256": "e2ed0a08f4a33513d0589d15f0895053e6b4eddcba67b9dd26a11be192e22efc",
+			"state": "ended",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"facing": -1,
+			"file": "board-mirrored-index-097.png",
+			"index": 97,
+			"sha256": "d25149d040cc8c4d10087020cc18703585fd0a5c9cdfc3268ae47dbcf7ad729f",
+			"state": "ended",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"facing": 1,
+			"file": "plain-original-index-000-region.png",
+			"index": 0,
+			"sha256": "dd344314aa1bbffd971938403c82b379e370bd57fe9b0cb87c1da4dcdcb3f66a"
+		},
+		{
+			"facing": -1,
+			"file": "plain-mirrored-index-000-region.png",
+			"index": 0,
+			"sha256": "15dc741f5e94266ecb7ac1b82256a528975972dc5e290e7fcde7e3a9f3f1e3c8"
+		},
+		{
+			"facing": 1,
+			"file": "plain-original-index-031-region.png",
+			"index": 31,
+			"sha256": "0abae3fafb8699e676dff0df053a4366ee564b302582c410b11ee8475aea2f8b"
+		},
+		{
+			"facing": -1,
+			"file": "plain-mirrored-index-031-region.png",
+			"index": 31,
+			"sha256": "d411fe34c8546bc8d817247752d6c51aec0dc13306f027b75d903e78aec13058"
+		},
+		{
+			"facing": 1,
+			"file": "plain-original-index-097-region.png",
+			"index": 97,
+			"sha256": "964b73b4f65e7f6032d1a6bd8fbfcd8df2843e96b2b3c59fb12dc227873b921f"
+		},
+		{
+			"facing": -1,
+			"file": "plain-mirrored-index-097-region.png",
+			"index": 97,
+			"sha256": "b476675c781d6555ae691d8fe910a63a86ddf63da9c1e27e3450ca352935aa23"
+		}
+	],
+	"schema": "c03-mirror-symmetry-v1",
+	"scope": "Real dedicated Viewport, plain background, original vs mirrored facing reflected about world foot x=720. Not human visual acceptance.",
+	"success": false,
+	"task": "D-20261110-004",
+	"video_adapter": "AMD Radeon RX 7700 XT",
+	"viewport_size": [
+		1440,
+		810
+	],
+	"worst_max_channel_diff_8bit": 1
+}

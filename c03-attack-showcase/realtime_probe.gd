@@ -8,10 +8,12 @@ var runs: Array[Dictionary] = []
 var resets: Array[Dictionary] = []
 var stop_observations: Array[Dictionary] = []
 var checks := 0
+var facing := 1
 
 func _initialize() -> void:
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--output="): output = arg.trim_prefix("--output=")
+		if arg == "--facing=mirrored": facing = -1
 	call_deferred("run")
 
 func require(ok: bool, message: String) -> bool:
@@ -128,7 +130,7 @@ func observe(label: String, stop_on_sound: bool = false) -> Dictionary:
 func finish(exit_stopped: bool) -> void:
 	var report := {"schema":"c03-single-author-normal-graphical-v1","task":"D-20261101-002",
 		"scope":"Normal dedicated graphical automatic playback and programmatic button-signal replay; not human continuous visual or device listening acceptance.",
-		"display_server":DisplayServer.get_name(),"engine_version":Engine.get_version_info(),
+		"facing":facing,"display_server":DisplayServer.get_name(),"engine_version":Engine.get_version_info(),
 		"viewport_size":[root.size.x,root.size.y],"audio_driver":AudioServer.get_driver_name(),
 		"master_muted":true,"os_input":false,"device_listening":false,
 		"manifest_sha256":MANIFEST_SHA,"frame_index_base":0,"runs":runs,"resets":resets,
@@ -164,6 +166,8 @@ func run() -> void:
 		return
 	scene = packed.instantiate()
 	root.add_child(scene)
+	scene.set_facing(facing)
+	require(scene.facing == facing, "Requested facing is active before playback")
 	if not require(scene.ready_to_play and scene.state == "ready" and not scene.sound_player.playing,
 		"Standalone starts silent and Ready with all frozen resources"):
 		await finish(false)

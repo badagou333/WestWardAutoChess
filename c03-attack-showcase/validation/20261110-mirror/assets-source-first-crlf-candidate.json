@@ -1,0 +1,20 @@
+{
+  "schema": "c03-single-author-resource-checks-v1",
+  "scope": "Resource bytes and metadata only; no Godot execution, pixel/video decoding, visual judgement, device listening, OS input or independent acceptance.",
+  "project": "C:\\software\\workSpace\\WestWardAutoChess\\c03-attack-showcase",
+  "source_asset_commit": "a36cd562ee4f8876635b57c9136c4416357afe22",
+  "resource_list_sha256": "eb2aecdb0766b89ca8d9d178c09db2c51126a06c65d0d2be7833017d0c10eef5",
+  "copied_resource_count": 101,
+  "source_manifest_entries": 98,
+  "media_end_ticks": 260250,
+  "media_end_seconds": 2.8916666666666666,
+  "final_sample_duration_ticks": 0,
+  "candidate_comparison": "compared all 98 PNGs, mapped manifest and selected WAV byte for byte",
+  "board_source_comparison": "compared repository board byte for byte",
+  "audio_duration_seconds": 1.0,
+  "checks": 1209,
+  "failures": 1,
+  "failure_messages": [
+    "manifest.json candidate-to-runtime byte equality"
+  ]
+}

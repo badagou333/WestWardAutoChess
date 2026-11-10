@@ -1,0 +1,57 @@
+{
+	"checks": 1182,
+	"failure_messages": [],
+	"failures": 0,
+	"phase_observations": [
+		{
+			"actual_native_position": 0.00290249433106576,
+			"case": "small step crosses sound start",
+			"difference": 0.0,
+			"expected_submitted_phase": 0.000000100000000002876,
+			"reference_native_position": 0.00290249433106576,
+			"sample_quantization_tolerance": 0.0000453514739229025
+		},
+		{
+			"actual_native_position": 0.00290249433106576,
+			"case": "exact audio start boundary",
+			"difference": 0.0,
+			"expected_submitted_phase": 0.0,
+			"reference_native_position": 0.00290249433106576,
+			"sample_quantization_tolerance": 0.0000453514739229025
+		},
+		{
+			"actual_native_position": 0.202902494331066,
+			"case": "late frame seeks 0.2 seconds into WAV",
+			"difference": 0.0,
+			"expected_submitted_phase": 0.2,
+			"reference_native_position": 0.202902494331066,
+			"sample_quantization_tolerance": 0.0000453514739229025
+		},
+		{
+			"actual_native_position": 0.00290249433106576,
+			"case": "small step crosses sound start",
+			"difference": 0.0,
+			"expected_submitted_phase": 0.000000100000000002876,
+			"reference_native_position": 0.00290249433106576,
+			"sample_quantization_tolerance": 0.0000453514739229025
+		},
+		{
+			"actual_native_position": 0.00290249433106576,
+			"case": "exact audio start boundary",
+			"difference": 0.0,
+			"expected_submitted_phase": 0.0,
+			"reference_native_position": 0.00290249433106576,
+			"sample_quantization_tolerance": 0.0000453514739229025
+		},
+		{
+			"actual_native_position": 0.202902494331066,
+			"case": "late frame seeks 0.2 seconds into WAV",
+			"difference": 0.0,
+			"expected_submitted_phase": 0.2,
+			"reference_native_position": 0.202902494331066,
+			"sample_quantization_tolerance": 0.0000453514739229025
+		}
+	],
+	"schema": "c3-single-direction-author-boundaries-v1",
+	"scope": "author source/timing/audio/transform checks; no GUI, OS input, listening or independent visual acceptance"
+}
