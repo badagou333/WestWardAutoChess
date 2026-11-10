@@ -1,74 +1,77 @@
-# 换机器开发与项目交接
+# 换机器开发与多聊天分工
+
+更新时间：2026-11-10（GitHub 为权威远端；主攻 2.5D 熊山君展示；改用 Claude 项目聊天分工）
 
 ## 跨机器同步原则
 
-- Gitee 仓库 `https://gitee.com/baiweicheng/tower-defense.git` 是跨机器共享项目文件和项目记忆的权威来源。
-- Codex 聊天记录不是项目事实源；换机器后可以建立新的同职责任务，通过受 Git 管理的文档恢复上下文。
-- 开始修改前先确认本机没有未处理改动，再从 `origin/master` 快进更新。
-- 完成一批修改后更新对应工作流文档，创建 Git 提交并推送到 Gitee。
-- `/tmp`、`/var/folders`、下载目录中的附件，以及任何未跟踪或未提交文件都不会随仓库同步。需要保留的图片或文件必须先放入仓库内的正确目录并提交。
+- GitHub 仓库 `https://github.com/badagou333/WestWardAutoChess.git` 的 `main` 分支是跨机器共享项目文件和项目记忆的权威来源（D-20261110-001）。
+- 原 Gitee 仓库 `https://gitee.com/baiweicheng/tower-defense.git` 因项目体积过大已无法推送，停止使用；其内容停留在旧提交。
+- 聊天记录不是项目事实源；换机器或换聊天后，通过受 Git 管理的文档恢复上下文。
+- 开始修改前先确认本机没有未处理改动，再从 `origin/main` 快进更新。完成一批修改后更新对应工作流文档，提交并推送到 GitHub。
+- 下载目录、临时目录中的附件，以及任何未跟踪或未提交文件都不会随仓库同步。需要保留的文件必须先放入仓库内的正确目录并提交。
+- GitHub 拒绝单个超过 100MB 的文件；大体积视频/母版素材入库前先确认大小，必要时改用 Git LFS 或仓库外存档并在说明中登记来源与哈希。
 
 ## 首次获取项目
 
-新机器先安装 Git、ChatGPT 桌面 App 和 Godot 4.7.x，然后执行：
+新机器先安装 Git 和 Godot 4.7.x Standard（本机现用 `C:\software\Godot-4.7.2\Godot_v4.7.2-stable_win64.exe`），然后执行：
 
 ```bash
-git clone https://gitee.com/baiweicheng/tower-defense.git
-cd tower-defense
-git switch master
-git pull --ff-only origin master
+git clone https://github.com/badagou333/WestWardAutoChess.git
+cd WestWardAutoChess
+git switch main
+git pull --ff-only origin main
 ```
 
-首次提交前配置本机的 Git 身份：
-
-```bash
-git config user.name "你的名字"
-git config user.email "你的邮箱"
-```
-
-远端应显示为：
-
-```bash
-git remote -v
-```
+首次提交前配置本机 Git 身份（`git config user.name` / `user.email`）。远端应显示为：
 
 ```text
-origin  https://gitee.com/baiweicheng/tower-defense.git (fetch)
-origin  https://gitee.com/baiweicheng/tower-defense.git (push)
+origin  https://github.com/badagou333/WestWardAutoChess.git (fetch)
+origin  https://github.com/badagou333/WestWardAutoChess.git (push)
 ```
 
-使用 HTTPS 推送时，按 Gitee 的账号安全设置完成登录或使用私人令牌。不得把密码、令牌或本机凭据写进仓库。
+不得把密码、令牌或本机凭据写进仓库。
 
-## 在 Codex 中建立本地项目
+## 在 Claude 中建立分工聊天
 
-1. 打开 ChatGPT 桌面 App，切换到 Codex。
-2. 添加本地项目，选择刚克隆的 `tower-defense` 仓库根目录，而不是只选择 `godot-demo/`。
-3. 如果项目附加了多个文件夹，将 `tower-defense` 设为主文件夹。新任务会从主文件夹启动，Codex 也会从这里识别 `AGENTS.md`、Git 仓库和项目配置。
-4. 长期职责聊天选择 `Local`，让它们共同读写这个本地仓库。
-5. 只有需要隔离并行代码修改时才选择 `Worktree`。Worktree 中的成果必须提交并合并，或交接回 Local，才算进入共享项目。
+本项目在 Claude 项目「游戏开发」中沿用多聊天分工（D-20261110-003）。每个职责一个长期聊天，聊天标题使用下表名称，均在该项目内新建，并关联本机仓库目录 `C:\software\workSpace\WestWardAutoChess`。
 
-建议按顺序建立以下八个任务：
+| 聊天标题 | 工作流文件 | 当前方向下的重点 |
+| --- | --- | --- |
+| `00｜项目总控` | `PROJECT_STATE.md`、`DECISION_LOG.md` | 拆任务、汇总“待总控同步”、维护全局状态 |
+| `01｜玩法与系统设计` | `workstreams/01-gameplay.md` | 为 2.5D 新方向重新提出玩法范围，待负责人确认 |
+| `02｜英雄 / 敌人设计` | `workstreams/02-units.md` | 角色身份、机制与四方向动作需求 |
+| `03｜关卡 / 数值 / 经济` | `workstreams/03-levels-balance.md` | 新玩法确认后再启动 |
+| `04｜剧情 / 世界观` | `workstreams/04-story.md` | 世界观与叙事 |
+| `05｜美术 / 角色 / UI` | `workstreams/05-art-ui.md` | 2.5D 棋盘与角色逐帧素材加工、视觉复核 |
+| `06｜程序开发` | `workstreams/06-development.md` | 在熊山君展示基础上扩展 2.5D 运行逻辑 |
+| `07｜测试 / Bug / 发布` | `workstreams/07-qa-release.md` | 独立验收、Windows 实机 |
+| `08｜音效设计` | `workstreams/08-audio.md` | 音效与原声来源/授权 |
+| `09｜Spine 动画` | `workstreams/09-spine.md` | 骨骼动画候选（按需） |
+| `10｜项目清理` | `workstreams/10-cleanup.md` | 负责人确认范围内的归档/删除 |
 
-1. `00｜项目总控`
-2. `01｜玩法与系统设计`
-3. `02｜英雄 / 敌人设计`
-4. `03｜关卡 / 数值 / 经济`
-5. `04｜剧情 / 世界观`
-6. `05｜美术 / 角色 / UI`
-7. `06｜程序开发`
-8. `07｜测试 / Bug / 发布`
+不必一次建齐：先建 `00`，其他职责在第一次派工时再建。
 
-新建 `01`～`07` 任务后，可发送以下初始化提示，并将最后一个文件替换为当前职责对应的工作流文件：
+### 初始化提示
+
+新建 `01`～`10` 聊天后发送以下提示，把最后一个文件替换为该职责的工作流文件：
 
 ```text
-请按 AGENTS.md 初始化当前职责。只依次读取 AGENTS.md、docs/PROJECT_STATE.md、docs/DECISION_LOG.md 和当前职责对应的 docs/workstreams/*.md，报告简短摘要后等待安排。不要扫描资产目录，不要打开图片或其他媒体文件。
+你是本项目的「<聊天标题>」。项目在本机 C:\software\workSpace\WestWardAutoChess（GitHub badagou333/WestWardAutoChess，main 分支）。请按 AGENTS.md 初始化：只依次读取 AGENTS.md、docs/PROJECT_STATE.md、docs/DECISION_LOG.md（先看最新几条）和 docs/workstreams/<对应文件>.md，报告简短摘要后等待安排。不要扫描资产目录，不要打开图片或其他媒体文件。
 ```
 
 `00｜项目总控` 使用：
 
 ```text
-请按 AGENTS.md 初始化项目总控。读取 AGENTS.md、docs/PROJECT_STATE.md、docs/DECISION_LOG.md，并只检查各工作流文件中的“待总控同步”，报告简短摘要后等待安排。不要扫描资产目录，不要打开图片或其他媒体文件。
+你是本项目的「00｜项目总控」。项目在本机 C:\software\workSpace\WestWardAutoChess（GitHub badagou333/WestWardAutoChess，main 分支）。请按 AGENTS.md 初始化：读取 AGENTS.md、docs/PROJECT_STATE.md、docs/DECISION_LOG.md（先看最新几条），并只检查各工作流文件中的“待总控同步”，报告简短摘要后等待安排。不要扫描资产目录，不要打开图片或其他媒体文件。
 ```
+
+### 聊天之间如何交接
+
+Claude 聊天之间不能直接发消息。专项完成或受阻时，把报告写进自己工作流的“待总控同步”，并在聊天末尾给出一段可转给 00 的简短回报；负责人把这段话贴给 `00｜项目总控`。00 每次工作都会检查全部工作流的“待总控同步”。详细规则见 `AGENTS.md` 的“主动交接与异常恢复”。
+
+### 关于提交与推送
+
+能在本机执行 git 的会话（例如 Claude Code，或具备本机 shell 的聊天）按 `AGENTS.md` 自动提交并推送到 `origin/main`。只能读写文件、不能执行 git 的聊天，须在回报中列出修改文件并注明“未提交”，由负责人或有 shell 的会话完成提交。
 
 ## 每次切换机器
 
@@ -76,107 +79,44 @@ origin  https://gitee.com/baiweicheng/tower-defense.git (push)
 
 ```bash
 git status --short --branch
-git push origin master
+git push origin main
 ```
-
-必须确认重要修改已经提交，且状态不再显示本地领先 `origin/master`。如果仍有未跟踪或未提交文件，先完成当前批次的整理、验证和提交；不要假设另一台机器能看到它们。
 
 在另一台机器开始工作前：
 
 ```bash
 git status --short --branch
-git pull --ff-only origin master
+git pull --ff-only origin main
 ```
 
-如果工作区不干净、分支出现分叉或拉取失败，先停止修改并处理冲突，不要强制覆盖任何一台机器的内容。
+如果工作区不干净、分支出现分叉或拉取失败，先停止修改并处理，不要强制覆盖任何一台机器的内容。
 
-完成新一批工作后：
+## 项目主入口（当前方向）
 
-```bash
-git status --short --branch
-git add <本批相关文件>
-git commit -m "简洁描述本批修改"
-git push origin master
+- 主攻：`bear-forehand-showcase/`，2.5D 熊山君四方向攻击展示（D-20261110-002）。
+  - Godot 项目文件：`bear-forehand-showcase/project.godot`，主场景 `showcase.tscn`，逻辑 `showcase.gd`。
+  - 播放配置：`clips.json`；正面素材 `art/attack/`，背面素材 `art/back/`，原声 `audio/`。
+  - 详细说明与边界：`bear-forehand-showcase/README.md`。
+- 同方法的其他角色展示：`c03-attack-showcase/`（翠鸟）。
+- 素材加工方法：`docs/VIDEO_TO_GAME_WORKFLOW.md`；Skill 清单：`docs/GAME_PRODUCTION_SKILLS.md`。
+- 已作废的旧玩法原型：`godot-demo/`（棋盘自走棋、更早的 A→B 护送）。仅作历史参考与共用素材来源，不再迭代。
+
+## 运行与验证
+
+Windows：双击 `bear-forehand-showcase\launch.bat`。它会依次查找环境变量 `GODOT_BIN`、PATH 中的 `godot.exe`/`godot4.exe`、`C:\software\Godot-4.7.2\`。带参数运行时在当前窗口执行，设 `GODOT_CONSOLE=1` 使用控制台版查看日志。
+
+无界面测试：
+
+```bat
+bear-forehand-showcase\launch.bat --headless --audio-driver Dummy --script res://test.gd
 ```
 
-Codex 应按照 `AGENTS.md` 自动完成提交和推送；以上命令用于人工检查或在需要时手动补充。
+Mac/Linux 用 `launch.command` 加同样参数。素材校验：`python bear-forehand-showcase/verify_front_v3.py --output=<输出json>`。更多检查与采样命令见该目录 README。
 
-## 项目主入口
+打开编辑器：`godot --editor --path bear-forehand-showcase`。不需要跨机器复制 `.godot/` 缓存目录。
 
-- 当前有效原型：`godot-demo/`
-- Godot 项目文件：`godot-demo/project.godot`
-- 主场景：`godot-demo/scenes/escort_route.tscn`（2026-09-30 起：不规则地图、A→B 护送、战中调度）；入口操作与原型参数以 `godot-demo/README.md` 为准。
-- 旧固定棋盘对照场景：`godot-demo/scenes/main.tscn`，旧自动测试继续针对它；新模式专项为 `tests/escort_route_test.gd`，不得把旧回归通过当作新模式验收。
-- 核心逻辑：`godot-demo/scripts/game.gd`
-- 已确认设计：`docs/CONFIRMED_GAME_DESIGN.md`
-- 第一章梳理：`docs/FIRST_CHAPTER_DESIGN.md`
-- 当前美术状态：`godot-demo/art/ART_DIRECTION.md`
+## 当前边界
 
-旧浏览器原型和“守粮仓”Godot 原型已经从当前项目删除；如需查阅，只能从 Git 历史恢复。
-
-## Godot 环境准备
-
-1. 安装 Godot 4.7.x Standard 版本。
-2. 获取完整项目仓库。
-3. 进入项目目录并运行：
-
-```bash
-cd godot-demo
-godot --editor --path .
-```
-
-如果系统中的可执行文件名是 `godot4`，把命令中的 `godot` 换成 `godot4`。也可以在 Godot 项目管理器中导入 `godot-demo/project.godot`。
-
-直接运行游戏：
-
-```bash
-cd godot-demo
-godot --path .
-```
-
-## 验证环境
-
-迁移后先运行两项测试：
-
-```bash
-cd godot-demo
-godot --headless --path . --script res://tests/smoke_test.gd
-godot --headless --path . --script res://tests/full_battle_test.gd
-```
-
-预期分别看到：
-
-- `SMOKE_TEST_OK`
-- `FULL_BATTLE_TEST_OK`
-
-## 需要保留的文件
-
-- `godot-demo/art/demo/`：当前 Demo 使用的战场与角色图集。
-- `godot-demo/scenes/`：Godot 场景。
-- `godot-demo/scripts/`：全部游戏逻辑。
-- `godot-demo/tests/`：自动检查脚本。
-- `godot-demo/project.godot`：项目配置。
-- `docs/`：确认版设计与交接说明。
-
-不需要跨机器复制 `godot-demo/.godot/`，Godot 会在新机器重新生成导入缓存。
-
-## 当前 Demo 与正式设计的边界
-
-- Demo 只实现一场四波 Boss 战，不代表第一章 7 难已经完成。
-- Demo 中玉兔、青羽、铁角、黑狼和虎先锋等名称、技能与数值均为原型配置，不是最终内容名单。
-- Demo 使用的明亮国风 Q 版美术仍在评估，不能据此直接批量生产正式资产。
-- Demo 的目的，是验证商店、自动合成、合成锁、布阵、自动战斗、护送血量和战后结算是否好玩。
-- 正式版本已经确认需要操作后自动存档，但当前单战 Demo 还没有实现存档系统。
-
-## 已确认的下一步
-
-1. 暂不批量制作正式英雄和场景素材。
-2. 使用相同的角色、相同的场景和相同的构图制作几套画风对照方案。
-3. 在游戏实际显示尺寸下比较角色辨识度、棋盘可读性和 UI 协调性。
-4. 用户确认最终画风后，再开始第一章正式美术生产。
-
-在画风确认前，可以继续讨论第一章英雄、敌人和关卡设计，但新图必须标记为探索稿。
-
-## 迁移前检查
-
-如果使用 Git 换机器，迁移前确认 `git status` 中的 Demo 图片、脚本、测试和文档都已经加入提交。只复制仓库但没有提交或复制未跟踪文件，会导致新机器缺少当前美术资源。
+- 熊山君展示只有一只熊、四个方向的攻击动作，没有战斗、敌人、伤害或菜单；不代表新玩法已经确定。
+- 新方向下的玩法、关卡、数值和美术规范都需由负责人重新确认；`docs/CONFIRMED_GAME_DESIGN.md` 中的旧玩法规则已标注作废。
+- 视频原声的商用授权未核实，仅供项目内试验。

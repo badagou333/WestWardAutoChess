@@ -12,8 +12,8 @@ config_version=5
 
 config/name="西游护送"
 run/main_scene="res://scenes/board_trial.tscn"
-run/main_scene.diamond_duel="res://scenes/diamond_duel.tscn"
 config/features=PackedStringArray("4.7")
+run/main_scene.diamond_duel="res://scenes/diamond_duel.tscn"
 
 [display]
 
