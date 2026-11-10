@@ -1,0 +1,1637 @@
+{
+  "board_probe_points_identical": 5,
+  "checks": 7,
+  "default_filter": {
+    "hist": {
+      "1": 49
+    },
+    "indices_with_diff": 19,
+    "label": "default_filter",
+    "max_8bit": 1,
+    "min_character_px": 5610,
+    "min_px_differs_unreflected": 6408,
+    "per_index": [
+      {
+        "character_px": 5610,
+        "diff_px": 0,
+        "differs_unreflected": 7232,
+        "hist": {},
+        "index": 0,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5662,
+        "diff_px": 0,
+        "differs_unreflected": 7278,
+        "hist": {},
+        "index": 1,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5670,
+        "diff_px": 0,
+        "differs_unreflected": 7306,
+        "hist": {},
+        "index": 2,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5674,
+        "diff_px": 0,
+        "differs_unreflected": 7300,
+        "hist": {},
+        "index": 3,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5669,
+        "diff_px": 0,
+        "differs_unreflected": 7300,
+        "hist": {},
+        "index": 4,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5720,
+        "diff_px": 0,
+        "differs_unreflected": 7362,
+        "hist": {},
+        "index": 5,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5691,
+        "diff_px": 0,
+        "differs_unreflected": 7330,
+        "hist": {},
+        "index": 6,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5727,
+        "diff_px": 0,
+        "differs_unreflected": 7358,
+        "hist": {},
+        "index": 7,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5798,
+        "diff_px": 0,
+        "differs_unreflected": 7426,
+        "hist": {},
+        "index": 8,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5791,
+        "diff_px": 0,
+        "differs_unreflected": 7406,
+        "hist": {},
+        "index": 9,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5839,
+        "diff_px": 0,
+        "differs_unreflected": 7460,
+        "hist": {},
+        "index": 10,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5920,
+        "diff_px": 0,
+        "differs_unreflected": 7572,
+        "hist": {},
+        "index": 11,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5996,
+        "diff_px": 0,
+        "differs_unreflected": 7656,
+        "hist": {},
+        "index": 12,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6139,
+        "diff_px": 0,
+        "differs_unreflected": 7840,
+        "hist": {},
+        "index": 13,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6386,
+        "diff_px": 0,
+        "differs_unreflected": 8144,
+        "hist": {},
+        "index": 14,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6631,
+        "diff_px": 0,
+        "differs_unreflected": 8460,
+        "hist": {},
+        "index": 15,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6852,
+        "diff_px": 0,
+        "differs_unreflected": 8770,
+        "hist": {},
+        "index": 16,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7102,
+        "diff_px": 0,
+        "differs_unreflected": 9266,
+        "hist": {},
+        "index": 17,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7806,
+        "diff_px": 0,
+        "differs_unreflected": 10112,
+        "hist": {},
+        "index": 18,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8146,
+        "diff_px": 0,
+        "differs_unreflected": 10550,
+        "hist": {},
+        "index": 19,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8280,
+        "diff_px": 0,
+        "differs_unreflected": 10936,
+        "hist": {},
+        "index": 20,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8276,
+        "diff_px": 0,
+        "differs_unreflected": 11188,
+        "hist": {},
+        "index": 21,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8119,
+        "diff_px": 0,
+        "differs_unreflected": 11512,
+        "hist": {},
+        "index": 22,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8100,
+        "diff_px": 0,
+        "differs_unreflected": 11614,
+        "hist": {},
+        "index": 23,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8123,
+        "diff_px": 0,
+        "differs_unreflected": 11664,
+        "hist": {},
+        "index": 24,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8011,
+        "diff_px": 0,
+        "differs_unreflected": 11656,
+        "hist": {},
+        "index": 25,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8347,
+        "diff_px": 0,
+        "differs_unreflected": 12252,
+        "hist": {},
+        "index": 26,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8407,
+        "diff_px": 0,
+        "differs_unreflected": 12458,
+        "hist": {},
+        "index": 27,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8104,
+        "diff_px": 0,
+        "differs_unreflected": 11930,
+        "hist": {},
+        "index": 28,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7895,
+        "diff_px": 0,
+        "differs_unreflected": 11292,
+        "hist": {},
+        "index": 29,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8990,
+        "diff_px": 0,
+        "differs_unreflected": 11942,
+        "hist": {},
+        "index": 30,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 9869,
+        "diff_px": 1,
+        "differs_unreflected": 12848,
+        "hist": {
+          "1": 1
+        },
+        "index": 31,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 8351,
+        "diff_px": 3,
+        "differs_unreflected": 10884,
+        "hist": {
+          "1": 3
+        },
+        "index": 32,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 9009,
+        "diff_px": 1,
+        "differs_unreflected": 11150,
+        "hist": {
+          "1": 1
+        },
+        "index": 33,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 10345,
+        "diff_px": 5,
+        "differs_unreflected": 13602,
+        "hist": {
+          "1": 5
+        },
+        "index": 34,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 10155,
+        "diff_px": 6,
+        "differs_unreflected": 14258,
+        "hist": {
+          "1": 6
+        },
+        "index": 35,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 9468,
+        "diff_px": 2,
+        "differs_unreflected": 13330,
+        "hist": {
+          "1": 2
+        },
+        "index": 36,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 8905,
+        "diff_px": 4,
+        "differs_unreflected": 12392,
+        "hist": {
+          "1": 4
+        },
+        "index": 37,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 8988,
+        "diff_px": 3,
+        "differs_unreflected": 12512,
+        "hist": {
+          "1": 3
+        },
+        "index": 38,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 8967,
+        "diff_px": 0,
+        "differs_unreflected": 12496,
+        "hist": {},
+        "index": 39,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8555,
+        "diff_px": 3,
+        "differs_unreflected": 11664,
+        "hist": {
+          "1": 3
+        },
+        "index": 40,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 8353,
+        "diff_px": 4,
+        "differs_unreflected": 11324,
+        "hist": {
+          "1": 4
+        },
+        "index": 41,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 8298,
+        "diff_px": 1,
+        "differs_unreflected": 11260,
+        "hist": {
+          "1": 1
+        },
+        "index": 42,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 8340,
+        "diff_px": 2,
+        "differs_unreflected": 11320,
+        "hist": {
+          "1": 2
+        },
+        "index": 43,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 8223,
+        "diff_px": 0,
+        "differs_unreflected": 11350,
+        "hist": {},
+        "index": 44,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8031,
+        "diff_px": 3,
+        "differs_unreflected": 11274,
+        "hist": {
+          "1": 3
+        },
+        "index": 45,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 7945,
+        "diff_px": 0,
+        "differs_unreflected": 11212,
+        "hist": {},
+        "index": 46,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7844,
+        "diff_px": 1,
+        "differs_unreflected": 11148,
+        "hist": {
+          "1": 1
+        },
+        "index": 47,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 7615,
+        "diff_px": 1,
+        "differs_unreflected": 11066,
+        "hist": {
+          "1": 1
+        },
+        "index": 48,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 7467,
+        "diff_px": 0,
+        "differs_unreflected": 10924,
+        "hist": {},
+        "index": 49,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7022,
+        "diff_px": 4,
+        "differs_unreflected": 10382,
+        "hist": {
+          "1": 4
+        },
+        "index": 50,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 6775,
+        "diff_px": 0,
+        "differs_unreflected": 10060,
+        "hist": {},
+        "index": 51,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6543,
+        "diff_px": 2,
+        "differs_unreflected": 9662,
+        "hist": {
+          "1": 2
+        },
+        "index": 52,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 6203,
+        "diff_px": 0,
+        "differs_unreflected": 8870,
+        "hist": {},
+        "index": 53,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6332,
+        "diff_px": 2,
+        "differs_unreflected": 8534,
+        "hist": {
+          "1": 2
+        },
+        "index": 54,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 6162,
+        "diff_px": 1,
+        "differs_unreflected": 8140,
+        "hist": {
+          "1": 1
+        },
+        "index": 55,
+        "max_8bit": 1
+      },
+      {
+        "character_px": 5771,
+        "diff_px": 0,
+        "differs_unreflected": 7156,
+        "hist": {},
+        "index": 56,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5682,
+        "diff_px": 0,
+        "differs_unreflected": 6408,
+        "hist": {},
+        "index": 57,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6038,
+        "diff_px": 0,
+        "differs_unreflected": 6652,
+        "hist": {},
+        "index": 58,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6263,
+        "diff_px": 0,
+        "differs_unreflected": 6908,
+        "hist": {},
+        "index": 59,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6288,
+        "diff_px": 0,
+        "differs_unreflected": 7018,
+        "hist": {},
+        "index": 60,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6505,
+        "diff_px": 0,
+        "differs_unreflected": 7510,
+        "hist": {},
+        "index": 61,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6965,
+        "diff_px": 0,
+        "differs_unreflected": 8370,
+        "hist": {},
+        "index": 62,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7222,
+        "diff_px": 0,
+        "differs_unreflected": 8872,
+        "hist": {},
+        "index": 63,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7216,
+        "diff_px": 0,
+        "differs_unreflected": 9080,
+        "hist": {},
+        "index": 64,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7286,
+        "diff_px": 0,
+        "differs_unreflected": 9254,
+        "hist": {},
+        "index": 65,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7385,
+        "diff_px": 0,
+        "differs_unreflected": 9650,
+        "hist": {},
+        "index": 66,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7343,
+        "diff_px": 0,
+        "differs_unreflected": 9634,
+        "hist": {},
+        "index": 67,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7211,
+        "diff_px": 0,
+        "differs_unreflected": 9472,
+        "hist": {},
+        "index": 68,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6819,
+        "diff_px": 0,
+        "differs_unreflected": 8870,
+        "hist": {},
+        "index": 69,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6687,
+        "diff_px": 0,
+        "differs_unreflected": 8730,
+        "hist": {},
+        "index": 70,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6561,
+        "diff_px": 0,
+        "differs_unreflected": 8542,
+        "hist": {},
+        "index": 71,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6538,
+        "diff_px": 0,
+        "differs_unreflected": 8520,
+        "hist": {},
+        "index": 72,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6365,
+        "diff_px": 0,
+        "differs_unreflected": 8268,
+        "hist": {},
+        "index": 73,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6212,
+        "diff_px": 0,
+        "differs_unreflected": 8074,
+        "hist": {},
+        "index": 74,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6126,
+        "diff_px": 0,
+        "differs_unreflected": 7938,
+        "hist": {},
+        "index": 75,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6141,
+        "diff_px": 0,
+        "differs_unreflected": 7956,
+        "hist": {},
+        "index": 76,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6104,
+        "diff_px": 0,
+        "differs_unreflected": 7900,
+        "hist": {},
+        "index": 77,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5968,
+        "diff_px": 0,
+        "differs_unreflected": 7694,
+        "hist": {},
+        "index": 78,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5906,
+        "diff_px": 0,
+        "differs_unreflected": 7594,
+        "hist": {},
+        "index": 79,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5888,
+        "diff_px": 0,
+        "differs_unreflected": 7558,
+        "hist": {},
+        "index": 80,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5845,
+        "diff_px": 0,
+        "differs_unreflected": 7488,
+        "hist": {},
+        "index": 81,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5831,
+        "diff_px": 0,
+        "differs_unreflected": 7470,
+        "hist": {},
+        "index": 82,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5819,
+        "diff_px": 0,
+        "differs_unreflected": 7442,
+        "hist": {},
+        "index": 83,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5811,
+        "diff_px": 0,
+        "differs_unreflected": 7434,
+        "hist": {},
+        "index": 84,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5761,
+        "diff_px": 0,
+        "differs_unreflected": 7400,
+        "hist": {},
+        "index": 85,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5761,
+        "diff_px": 0,
+        "differs_unreflected": 7392,
+        "hist": {},
+        "index": 86,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5765,
+        "diff_px": 0,
+        "differs_unreflected": 7396,
+        "hist": {},
+        "index": 87,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5792,
+        "diff_px": 0,
+        "differs_unreflected": 7426,
+        "hist": {},
+        "index": 88,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5744,
+        "diff_px": 0,
+        "differs_unreflected": 7372,
+        "hist": {},
+        "index": 89,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5743,
+        "diff_px": 0,
+        "differs_unreflected": 7388,
+        "hist": {},
+        "index": 90,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5754,
+        "diff_px": 0,
+        "differs_unreflected": 7400,
+        "hist": {},
+        "index": 91,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5754,
+        "diff_px": 0,
+        "differs_unreflected": 7386,
+        "hist": {},
+        "index": 92,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5726,
+        "diff_px": 0,
+        "differs_unreflected": 7370,
+        "hist": {},
+        "index": 93,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5698,
+        "diff_px": 0,
+        "differs_unreflected": 7328,
+        "hist": {},
+        "index": 94,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5690,
+        "diff_px": 0,
+        "differs_unreflected": 7330,
+        "hist": {},
+        "index": 95,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5669,
+        "diff_px": 0,
+        "differs_unreflected": 7296,
+        "hist": {},
+        "index": 96,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5669,
+        "diff_px": 0,
+        "differs_unreflected": 7296,
+        "hist": {},
+        "index": 97,
+        "max_8bit": 0
+      }
+    ],
+    "total_diff_px": 49
+  },
+  "determinism_index31_diff_px": 0,
+  "failures": [],
+  "nearest_filter_control": {
+    "hist": {},
+    "indices_with_diff": 0,
+    "label": "nearest_filter_control",
+    "max_8bit": 0,
+    "min_character_px": 5524,
+    "min_px_differs_unreflected": 6342,
+    "per_index": [
+      {
+        "character_px": 5524,
+        "diff_px": 0,
+        "differs_unreflected": 7132,
+        "hist": {},
+        "index": 0,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5590,
+        "diff_px": 0,
+        "differs_unreflected": 7214,
+        "hist": {},
+        "index": 1,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5592,
+        "diff_px": 0,
+        "differs_unreflected": 7210,
+        "hist": {},
+        "index": 2,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5598,
+        "diff_px": 0,
+        "differs_unreflected": 7228,
+        "hist": {},
+        "index": 3,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5592,
+        "diff_px": 0,
+        "differs_unreflected": 7222,
+        "hist": {},
+        "index": 4,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5636,
+        "diff_px": 0,
+        "differs_unreflected": 7266,
+        "hist": {},
+        "index": 5,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5616,
+        "diff_px": 0,
+        "differs_unreflected": 7246,
+        "hist": {},
+        "index": 6,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5656,
+        "diff_px": 0,
+        "differs_unreflected": 7288,
+        "hist": {},
+        "index": 7,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5715,
+        "diff_px": 0,
+        "differs_unreflected": 7328,
+        "hist": {},
+        "index": 8,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5701,
+        "diff_px": 0,
+        "differs_unreflected": 7298,
+        "hist": {},
+        "index": 9,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5739,
+        "diff_px": 0,
+        "differs_unreflected": 7352,
+        "hist": {},
+        "index": 10,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5812,
+        "diff_px": 0,
+        "differs_unreflected": 7448,
+        "hist": {},
+        "index": 11,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5912,
+        "diff_px": 0,
+        "differs_unreflected": 7562,
+        "hist": {},
+        "index": 12,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6055,
+        "diff_px": 0,
+        "differs_unreflected": 7742,
+        "hist": {},
+        "index": 13,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6308,
+        "diff_px": 0,
+        "differs_unreflected": 8066,
+        "hist": {},
+        "index": 14,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6561,
+        "diff_px": 0,
+        "differs_unreflected": 8384,
+        "hist": {},
+        "index": 15,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6747,
+        "diff_px": 0,
+        "differs_unreflected": 8666,
+        "hist": {},
+        "index": 16,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7010,
+        "diff_px": 0,
+        "differs_unreflected": 9190,
+        "hist": {},
+        "index": 17,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7706,
+        "diff_px": 0,
+        "differs_unreflected": 10032,
+        "hist": {},
+        "index": 18,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8031,
+        "diff_px": 0,
+        "differs_unreflected": 10454,
+        "hist": {},
+        "index": 19,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8159,
+        "diff_px": 0,
+        "differs_unreflected": 10816,
+        "hist": {},
+        "index": 20,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8180,
+        "diff_px": 0,
+        "differs_unreflected": 11114,
+        "hist": {},
+        "index": 21,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8000,
+        "diff_px": 0,
+        "differs_unreflected": 11392,
+        "hist": {},
+        "index": 22,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7966,
+        "diff_px": 0,
+        "differs_unreflected": 11468,
+        "hist": {},
+        "index": 23,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8011,
+        "diff_px": 0,
+        "differs_unreflected": 11536,
+        "hist": {},
+        "index": 24,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7889,
+        "diff_px": 0,
+        "differs_unreflected": 11534,
+        "hist": {},
+        "index": 25,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8215,
+        "diff_px": 0,
+        "differs_unreflected": 12124,
+        "hist": {},
+        "index": 26,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8292,
+        "diff_px": 0,
+        "differs_unreflected": 12326,
+        "hist": {},
+        "index": 27,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7992,
+        "diff_px": 0,
+        "differs_unreflected": 11778,
+        "hist": {},
+        "index": 28,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7788,
+        "diff_px": 0,
+        "differs_unreflected": 11156,
+        "hist": {},
+        "index": 29,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8946,
+        "diff_px": 0,
+        "differs_unreflected": 11910,
+        "hist": {},
+        "index": 30,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 9826,
+        "diff_px": 0,
+        "differs_unreflected": 12814,
+        "hist": {},
+        "index": 31,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8276,
+        "diff_px": 0,
+        "differs_unreflected": 10800,
+        "hist": {},
+        "index": 32,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8880,
+        "diff_px": 0,
+        "differs_unreflected": 11046,
+        "hist": {},
+        "index": 33,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 10196,
+        "diff_px": 0,
+        "differs_unreflected": 13424,
+        "hist": {},
+        "index": 34,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 10017,
+        "diff_px": 0,
+        "differs_unreflected": 14116,
+        "hist": {},
+        "index": 35,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 9313,
+        "diff_px": 0,
+        "differs_unreflected": 13130,
+        "hist": {},
+        "index": 36,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8770,
+        "diff_px": 0,
+        "differs_unreflected": 12228,
+        "hist": {},
+        "index": 37,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8862,
+        "diff_px": 0,
+        "differs_unreflected": 12392,
+        "hist": {},
+        "index": 38,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8849,
+        "diff_px": 0,
+        "differs_unreflected": 12376,
+        "hist": {},
+        "index": 39,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8431,
+        "diff_px": 0,
+        "differs_unreflected": 11530,
+        "hist": {},
+        "index": 40,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8244,
+        "diff_px": 0,
+        "differs_unreflected": 11240,
+        "hist": {},
+        "index": 41,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8170,
+        "diff_px": 0,
+        "differs_unreflected": 11138,
+        "hist": {},
+        "index": 42,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8206,
+        "diff_px": 0,
+        "differs_unreflected": 11200,
+        "hist": {},
+        "index": 43,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 8120,
+        "diff_px": 0,
+        "differs_unreflected": 11248,
+        "hist": {},
+        "index": 44,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7906,
+        "diff_px": 0,
+        "differs_unreflected": 11162,
+        "hist": {},
+        "index": 45,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7843,
+        "diff_px": 0,
+        "differs_unreflected": 11104,
+        "hist": {},
+        "index": 46,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7739,
+        "diff_px": 0,
+        "differs_unreflected": 11058,
+        "hist": {},
+        "index": 47,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7508,
+        "diff_px": 0,
+        "differs_unreflected": 10958,
+        "hist": {},
+        "index": 48,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7387,
+        "diff_px": 0,
+        "differs_unreflected": 10846,
+        "hist": {},
+        "index": 49,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6909,
+        "diff_px": 0,
+        "differs_unreflected": 10262,
+        "hist": {},
+        "index": 50,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6651,
+        "diff_px": 0,
+        "differs_unreflected": 9912,
+        "hist": {},
+        "index": 51,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6454,
+        "diff_px": 0,
+        "differs_unreflected": 9558,
+        "hist": {},
+        "index": 52,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6118,
+        "diff_px": 0,
+        "differs_unreflected": 8762,
+        "hist": {},
+        "index": 53,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6247,
+        "diff_px": 0,
+        "differs_unreflected": 8452,
+        "hist": {},
+        "index": 54,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6085,
+        "diff_px": 0,
+        "differs_unreflected": 8064,
+        "hist": {},
+        "index": 55,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5675,
+        "diff_px": 0,
+        "differs_unreflected": 7036,
+        "hist": {},
+        "index": 56,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5605,
+        "diff_px": 0,
+        "differs_unreflected": 6342,
+        "hist": {},
+        "index": 57,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5974,
+        "diff_px": 0,
+        "differs_unreflected": 6592,
+        "hist": {},
+        "index": 58,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6198,
+        "diff_px": 0,
+        "differs_unreflected": 6856,
+        "hist": {},
+        "index": 59,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6212,
+        "diff_px": 0,
+        "differs_unreflected": 6946,
+        "hist": {},
+        "index": 60,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6431,
+        "diff_px": 0,
+        "differs_unreflected": 7448,
+        "hist": {},
+        "index": 61,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6894,
+        "diff_px": 0,
+        "differs_unreflected": 8310,
+        "hist": {},
+        "index": 62,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7131,
+        "diff_px": 0,
+        "differs_unreflected": 8776,
+        "hist": {},
+        "index": 63,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7096,
+        "diff_px": 0,
+        "differs_unreflected": 8970,
+        "hist": {},
+        "index": 64,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7188,
+        "diff_px": 0,
+        "differs_unreflected": 9150,
+        "hist": {},
+        "index": 65,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7275,
+        "diff_px": 0,
+        "differs_unreflected": 9542,
+        "hist": {},
+        "index": 66,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7232,
+        "diff_px": 0,
+        "differs_unreflected": 9522,
+        "hist": {},
+        "index": 67,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 7114,
+        "diff_px": 0,
+        "differs_unreflected": 9356,
+        "hist": {},
+        "index": 68,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6715,
+        "diff_px": 0,
+        "differs_unreflected": 8760,
+        "hist": {},
+        "index": 69,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6569,
+        "diff_px": 0,
+        "differs_unreflected": 8588,
+        "hist": {},
+        "index": 70,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6463,
+        "diff_px": 0,
+        "differs_unreflected": 8434,
+        "hist": {},
+        "index": 71,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6449,
+        "diff_px": 0,
+        "differs_unreflected": 8424,
+        "hist": {},
+        "index": 72,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6238,
+        "diff_px": 0,
+        "differs_unreflected": 8120,
+        "hist": {},
+        "index": 73,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6097,
+        "diff_px": 0,
+        "differs_unreflected": 7942,
+        "hist": {},
+        "index": 74,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6031,
+        "diff_px": 0,
+        "differs_unreflected": 7824,
+        "hist": {},
+        "index": 75,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6037,
+        "diff_px": 0,
+        "differs_unreflected": 7820,
+        "hist": {},
+        "index": 76,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 6007,
+        "diff_px": 0,
+        "differs_unreflected": 7784,
+        "hist": {},
+        "index": 77,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5883,
+        "diff_px": 0,
+        "differs_unreflected": 7596,
+        "hist": {},
+        "index": 78,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5825,
+        "diff_px": 0,
+        "differs_unreflected": 7492,
+        "hist": {},
+        "index": 79,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5808,
+        "diff_px": 0,
+        "differs_unreflected": 7472,
+        "hist": {},
+        "index": 80,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5757,
+        "diff_px": 0,
+        "differs_unreflected": 7392,
+        "hist": {},
+        "index": 81,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5740,
+        "diff_px": 0,
+        "differs_unreflected": 7370,
+        "hist": {},
+        "index": 82,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5747,
+        "diff_px": 0,
+        "differs_unreflected": 7370,
+        "hist": {},
+        "index": 83,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5740,
+        "diff_px": 0,
+        "differs_unreflected": 7376,
+        "hist": {},
+        "index": 84,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5672,
+        "diff_px": 0,
+        "differs_unreflected": 7288,
+        "hist": {},
+        "index": 85,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5673,
+        "diff_px": 0,
+        "differs_unreflected": 7306,
+        "hist": {},
+        "index": 86,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5687,
+        "diff_px": 0,
+        "differs_unreflected": 7314,
+        "hist": {},
+        "index": 87,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5723,
+        "diff_px": 0,
+        "differs_unreflected": 7362,
+        "hist": {},
+        "index": 88,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5672,
+        "diff_px": 0,
+        "differs_unreflected": 7300,
+        "hist": {},
+        "index": 89,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5671,
+        "diff_px": 0,
+        "differs_unreflected": 7312,
+        "hist": {},
+        "index": 90,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5678,
+        "diff_px": 0,
+        "differs_unreflected": 7316,
+        "hist": {},
+        "index": 91,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5676,
+        "diff_px": 0,
+        "differs_unreflected": 7312,
+        "hist": {},
+        "index": 92,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5650,
+        "diff_px": 0,
+        "differs_unreflected": 7286,
+        "hist": {},
+        "index": 93,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5626,
+        "diff_px": 0,
+        "differs_unreflected": 7262,
+        "hist": {},
+        "index": 94,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5606,
+        "diff_px": 0,
+        "differs_unreflected": 7236,
+        "hist": {},
+        "index": 95,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5567,
+        "diff_px": 0,
+        "differs_unreflected": 7180,
+        "hist": {},
+        "index": 96,
+        "max_8bit": 0
+      },
+      {
+        "character_px": 5567,
+        "diff_px": 0,
+        "differs_unreflected": 7180,
+        "hist": {},
+        "index": 97,
+        "max_8bit": 0
+      }
+    ],
+    "total_diff_px": 0
+  },
+  "renderer": "AMD Radeon RX 7700 XT / opengl3"
+}

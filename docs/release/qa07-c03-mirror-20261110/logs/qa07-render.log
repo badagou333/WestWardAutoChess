@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 Core Profile Context 24.7.1.240711 - Compatibility - Using Device: ATI Technologies Inc. - AMD Radeon RX 7700 XT
+
+QA07_C03_MIRROR_RENDER 7 checks / 0 failures | default: 19 idx 49 px max 1 hist { 1: 49 } | nearest: 0 idx 0 px max 0 | det 0
