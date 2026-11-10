@@ -20,8 +20,6 @@ if not exist "%PROJECT_DIR%\project.godot" (
     exit /b 1
 )
 
-set "GODOT_BIN="
-
 rem ---------- 1) 优先使用环境变量 GODOT_BIN ----------
 if defined GODOT_BIN (
     if exist "%GODOT_BIN%" (
