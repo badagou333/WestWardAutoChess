@@ -1,0 +1,31 @@
+{
+  "board": "bear-forehand-showcase/art/forest-board.png (read only, resized to viewport)",
+  "board_size": [
+    1440,
+    810
+  ],
+  "world_foot": [
+    720,
+    441
+  ],
+  "proposed_total_scale_from_canvas": 0.16,
+  "sprite_size_px": [
+    138,
+    122
+  ],
+  "visible_height_px_min_max": [
+    95,
+    101
+  ],
+  "keyframes_in_png": [
+    0,
+    20,
+    30,
+    33,
+    35,
+    40,
+    60,
+    83
+  ],
+  "note": "proposal for review only; bear reference is ~118 px visible height on this board"
+}
