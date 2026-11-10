@@ -1,0 +1,12 @@
+{
+ "schema": "character-showcase-asset-check-v1",
+ "project": "C:\\software\\workSpace\\WestWardAutoChess\\character-showcase",
+ "files_checked": {
+  "bear": 428,
+  "kingfisher": 100,
+  "herb_boy": 86
+ },
+ "board_checked": true,
+ "failures": 0,
+ "failure_messages": []
+}

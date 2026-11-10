@@ -1,0 +1,8 @@
+{
+  "schema": "character-showcase-index-v1",
+  "characters": [
+    {"id": "bear", "name": "熊山君", "summary": "四方向循环攻击 · 正面 v3／背面 v1 与镜像"},
+    {"id": "kingfisher", "name": "翠鸟", "summary": "单次攻击 · 原向／镜像"},
+    {"id": "herb_boy", "name": "药龄童子", "summary": "单次正面攻击"}
+  ]
+}

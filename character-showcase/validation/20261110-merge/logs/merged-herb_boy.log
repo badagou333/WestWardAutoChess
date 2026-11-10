@@ -1,0 +1,11 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 Core Profile Context 24.7.1.240711 - Compatibility - Using Device: ATI Technologies Inc. - AMD Radeon RX 7700 XT
+
+WARNING: Nodes with non-equal opposite anchors will have their size overridden after _ready(). 
+If you want to set size, change the anchors or consider using set_deferred().
+   at: _set_size (scene/gui/control.cpp:1519)
+   GDScript backtrace (most recent call first):
+       [0] _build_selector (res://app/app.gd:25)
+       [1] _ready (res://app/app.gd:18)
+       [2] run (res://tests/baseline.gd:167)
+FINGERPRINT herb_boy 1 directions

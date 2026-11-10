@@ -1,0 +1,22 @@
+{
+	"checks": 2964,
+	"failure_messages": [],
+	"failures": 0,
+	"per_character": {
+		"bear": {
+			"checks": 2153,
+			"failures": 0
+		},
+		"herb_boy": {
+			"checks": 275,
+			"failures": 0
+		},
+		"kingfisher": {
+			"checks": 520,
+			"failures": 0
+		}
+	},
+	"schema": "character-showcase-author-checks-v1",
+	"scope": "author engine checks; no GUI acceptance, OS input or listening",
+	"task": "D-20261110-005"
+}

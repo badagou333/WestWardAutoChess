@@ -1,0 +1,23 @@
+{
+ "legacy": "legacy-c03",
+ "merged": "merged-kingfisher",
+ "differences": 0,
+ "first_differences": [],
+ "compared": {
+  "mirrored": {
+   "frames": 98,
+   "timeline_samples": 3091,
+   "edge_samples": 296,
+   "audio_trace_rows": 50,
+   "crops": 9
+  },
+  "original": {
+   "frames": 98,
+   "timeline_samples": 3091,
+   "edge_samples": 296,
+   "audio_trace_rows": 50,
+   "crops": 9
+  }
+ },
+ "audio_position_tolerance_s": 6.25e-05
+}

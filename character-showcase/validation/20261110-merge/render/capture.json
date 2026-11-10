@@ -1,0 +1,240 @@
+{
+	"display_server": "Windows",
+	"engine": "4.7.2-stable (official)",
+	"errors": [],
+	"master_muted": true,
+	"os_input": false,
+	"rendering_driver": "opengl3",
+	"samples": [
+		{
+			"file": "selector.png",
+			"screen": "selector",
+			"sha256": "88f158fcaca55c4457cde43af58df1192324b895836763dbf637c33d7b94d0bd"
+		},
+		{
+			"character": "bear",
+			"direction": "front_right",
+			"file": "bear-front_right-0.0.png",
+			"frame": 0,
+			"moment": 0.0,
+			"sha256": "8a170355fa8879c6d399a329e4e23094c7bc753670366f9be145ab876b5a9d7f",
+			"state": "loop",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "bear",
+			"direction": "front_right",
+			"file": "bear-front_right-1.4.png",
+			"frame": 45,
+			"moment": 1.4,
+			"sha256": "831c53c6e46f4f18c017426d53b4aa31ed5fdb7c1aac62f40e066f43d1abe114",
+			"state": "loop",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "bear",
+			"direction": "front_left",
+			"file": "bear-front_left-0.0.png",
+			"frame": 0,
+			"moment": 0.0,
+			"sha256": "f56cb4a8cb3f1caa90251c60924e37ffbf40037d562e179ccb337b2ee968007d",
+			"state": "loop",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "bear",
+			"direction": "front_left",
+			"file": "bear-front_left-1.4.png",
+			"frame": 45,
+			"moment": 1.4,
+			"sha256": "77db00560e9c106729f9fda07347991061f2fc8da5c8b661ccadcd6a49f1f8f4",
+			"state": "loop",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "bear",
+			"direction": "back_right",
+			"file": "bear-back_right-0.0.png",
+			"frame": 0,
+			"moment": 0.0,
+			"sha256": "8d48ce44fa231c8b60c5f5a1245c53ab1e1fcf85717120efb55a0f5089d3f30f",
+			"state": "loop",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "bear",
+			"direction": "back_right",
+			"file": "bear-back_right-1.4.png",
+			"frame": 134,
+			"moment": 1.4,
+			"sha256": "cfea368d603988f3f2df8bcab4b22200022efb612683891cf99b67de0f731238",
+			"state": "loop",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "bear",
+			"direction": "back_left",
+			"file": "bear-back_left-0.0.png",
+			"frame": 0,
+			"moment": 0.0,
+			"sha256": "b24e32d1153e1a906d548545c237d023e69db59170075993e572008d53c42287",
+			"state": "loop",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "bear",
+			"direction": "back_left",
+			"file": "bear-back_left-1.4.png",
+			"frame": 134,
+			"moment": 1.4,
+			"sha256": "30abb56a17498656ba2919d2981088fc377f11963627e8ef21137f9d20940551",
+			"state": "loop",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "kingfisher",
+			"direction": "original",
+			"file": "kingfisher-original-0.png",
+			"frame": 0,
+			"moment": 0,
+			"sha256": "05c02e4d5216f19226b7f804b76a78cc442f050c4dffac28c8865096535a4dcf",
+			"state": "ready",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "kingfisher",
+			"direction": "original",
+			"file": "kingfisher-original-31.png",
+			"frame": 31,
+			"moment": 31,
+			"sha256": "8a3f976246c68d08733ed5bcea054ef3ae8c7b5595dc8dae3ef139cf469938f9",
+			"state": "inspection",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "kingfisher",
+			"direction": "original",
+			"file": "kingfisher-original-97.png",
+			"frame": 97,
+			"moment": 97,
+			"sha256": "2b049e0b2879ee919b18b523c9eaedd140787e11f3802ff896c3e78bb6dcffe0",
+			"state": "ended",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "kingfisher",
+			"direction": "mirrored",
+			"file": "kingfisher-mirrored-0.png",
+			"frame": 0,
+			"moment": 0,
+			"sha256": "1e54d8203268d9da0c664ee716dbdf019459d11ff253318aaf3b822b1ffdf38e",
+			"state": "ready",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "kingfisher",
+			"direction": "mirrored",
+			"file": "kingfisher-mirrored-31.png",
+			"frame": 31,
+			"moment": 31,
+			"sha256": "d284a5e9fb774a2034a2869242c18679fc04d98a69d1856fc2403ef938954138",
+			"state": "inspection",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "kingfisher",
+			"direction": "mirrored",
+			"file": "kingfisher-mirrored-97.png",
+			"frame": 97,
+			"moment": 97,
+			"sha256": "14fa7f608aaec51fb794c4473f0215866995336b8c294233904f6f670d51f6c1",
+			"state": "ended",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "herb_boy",
+			"direction": "original",
+			"file": "herb_boy-original-0.png",
+			"frame": 0,
+			"moment": 0,
+			"sha256": "8b6002bb6407e5437cc45eab246d5e3381774be476ff5fd896b859913ea4fb75",
+			"state": "ready",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "herb_boy",
+			"direction": "original",
+			"file": "herb_boy-original-35.png",
+			"frame": 35,
+			"moment": 35,
+			"sha256": "e7489ce3fe2c8eaee84dbbbea7d7046257df2a98165a75f554394a5cb22c3374",
+			"state": "inspection",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		},
+		{
+			"character": "herb_boy",
+			"direction": "original",
+			"file": "herb_boy-original-83.png",
+			"frame": 83,
+			"moment": 83,
+			"sha256": "40c23458a893ac263e0b2e35c5faf7477ed8dee04c00861c503895103002576e",
+			"state": "ended",
+			"world_foot": [
+				720.0,
+				441.0
+			]
+		}
+	],
+	"schema": "character-showcase-capture-v1",
+	"success": true,
+	"task": "D-20261110-005",
+	"video_adapter": "AMD Radeon RX 7700 XT"
+}

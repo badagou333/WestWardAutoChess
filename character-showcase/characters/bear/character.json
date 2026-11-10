@@ -1,0 +1,42 @@
+{
+  "schema": "character-showcase-v1",
+  "id": "bear",
+  "name": "熊山君",
+  "title": "熊山君 · 四方向攻击",
+  "hint": "点击按钮或按 1–4 切换方向",
+  "mode": "loop",
+  "board_style": "grid",
+  "world_foot": [720, 441],
+  "mipmaps": false,
+  "clips": {
+    "front": {
+      "manifest": "art/attack/manifest.json",
+      "manifest_sha256": "53f2cd27b2678282ae8e8fa905b4ce8e46cded2623a7b9384e1c870c3b3e2237",
+      "audio": "audio/source-track.wav",
+      "audio_sha256": "aaaf61ca9f75ebb4f8c9657108ac0a47245f0ef00efa38bd6a95066803b9caf9",
+      "video_duration_seconds": 3.0,
+      "loop_interval_seconds": 0.0,
+      "display_scale": 0.75,
+      "source_sign": 1,
+      "source_back": false
+    },
+    "back": {
+      "manifest": "art/back/manifest.json",
+      "manifest_sha256": "57fcd1ef9657f283cbd2d4d9779fa7d7d8b62c110414691c8928f83a721d1399",
+      "audio": "audio/back-source-track.wav",
+      "audio_sha256": "f22f557d3a4eac26ea8055b4cfe363374361d602e7eaf0d49c9f0718fc3bd2d3",
+      "video_duration_seconds": 3.5416666666666665,
+      "loop_interval_seconds": 0.35,
+      "display_scale": 0.75,
+      "source_sign": 1,
+      "source_back": true
+    }
+  },
+  "direction_switch": "restart",
+  "directions": [
+    {"id": "front_right", "label": "右前", "button": "1  右前", "clip": "front", "sign": 1},
+    {"id": "front_left", "label": "左前", "button": "2  左前", "clip": "front", "sign": -1},
+    {"id": "back_right", "label": "右后", "button": "3  右后", "clip": "back", "sign": 1},
+    {"id": "back_left", "label": "左后", "button": "4  左后", "clip": "back", "sign": -1}
+  ]
+}

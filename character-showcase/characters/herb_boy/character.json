@@ -1,0 +1,27 @@
+{
+  "schema": "character-showcase-v1",
+  "id": "herb_boy",
+  "name": "药龄童子",
+  "title": "药龄童子 · 正面攻击",
+  "mode": "one_shot",
+  "board_style": "cell",
+  "world_foot": [720, 441],
+  "mipmaps": true,
+  "clips": {
+    "attack": {
+      "manifest": "art/manifest.json",
+      "manifest_sha256": "cefc1cec66ffdf3c0df817dd050f191a1dc96bf16b683e062e806e829d5afa84",
+      "audio_sha256": "66ee72af663a0c2eecdd4c7c6817b149cb3b232227ae337e3b85a2333b7d3418",
+      "timing": {"pts_field": "pts", "time_base": 15360},
+      "canvas_field": "canvas.size",
+      "foot_field": "foot",
+      "media_end_ticks": 53760,
+      "display_scale": 0.16,
+      "audio_start_seconds": 0.0
+    }
+  },
+  "direction_switch": "display_only",
+  "directions": [
+    {"id": "original", "label": "正面", "button": "", "clip": "attack", "sign": 1}
+  ]
+}

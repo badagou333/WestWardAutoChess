@@ -1,5 +1,22 @@
 # 06｜程序开发
 
+## 2026-11-10 D-20261110-005 三个角色展示合并为character-showcase（作者回归完成，待07／05）
+
+- 更新时间／授权：2026-11-10，按00派工（基线origin/main d19a97f）。只做结构整合与共用化，素材/参数/玩法未改。
+- 新结构：`character-showcase/`，一个project.godot＋launch.bat/launch.command。启动先进选择界面（熊山君/翠鸟/药龄童子，按钮或1–3），进入后是原测试控件，Esc或“返回选择”回到选择界面；`-- --character=<id>`可直接进入。共用`app/player.gd`按`characters/<id>/character.json`驱动（loop/one_shot两种模式、方向与镜像、起声偏移、倍率、mipmap、棋盘样式）；`app/app.gd`为选择界面。林间棋盘只留`shared/forest-board.png`。素材、各角色validation/provenance、旧README/HANDOFF/校验脚本全部git mv到`characters/{bear,kingfisher,herb_boy}/`（后者进legacy/）；旧三目录删除；旧程序文件（三份showcase.gd及其测试/采样/探针/配置/启动器共33个）由共用程序取代。`.gitattributes`保JSON原字节。翠鸟窗口标题已不再写“单向”（项目名“角色攻击展示”）。
+- 回归方法：先在d19a97f原字节导出的旧项目里跑`legacy_baseline.gd`导出行为指纹（逐毫秒帧序、帧边界、纹理散列、脚点映射、固定步长声音轨迹、切向轨迹、实窗裁片散列），迁移后经真实app场景跑同格式`tests/baseline.gd`，用`tools/compare_fingerprints.py`比对。
+- 验证：熊山君4向、翠鸟2向、药龄童子1向指纹全部0差异（含65张实窗裁片）；旧树994文件中961个迁移/去重后blob相同、0不一致；素材散列源码与冷副本各616件0失败；共用引擎检查2964项0失败（源码与冷副本经launch.bat）；实窗截图18张0错误；正常播放32项0错误；冷副本经launch.bat实窗启动选择界面及三角色各240帧exit 0。
+- 过程修正：导出器类型推断错误与切向轨迹读取时机已修，三角色全部重新导出；选择界面锚点告警已修并重跑。
+- 修改文件：新增`character-showcase/`（app、tests、tools、characters/*/character.json、index.json、README、validation/20261110-merge）；git mv迁移三旧目录内容；删除三旧目录；本工作流。未改全局文档。
+- 证据：`character-showcase/validation/20261110-merge/README.md`。
+- 未验：07独立回归；05对药龄童子实际视觉；真人观感/设备听感；OS鼠标；macOS；熊山君退出时“2 ObjectDB instances leaked”告警（合并前同类告警已有记录，未逐一比对）。
+- 阻塞：无。
+
+### 待总控同步（D-20261110-005）
+
+- 合并完成并已推送（提交号见00回报）。请00更新AGENTS/CLAUDE/README及docs中对`bear-forehand-showcase/`、`c03-attack-showcase/`、`b04-attack-showcase/`的入口引用（现为`character-showcase/`），并安排07独立回归、05药龄童子视觉复核。
+- 各角色历史证据里的旧路径和命令按d19a97f理解，README已注明。
+
 ## 2026-11-10 D-20261110-004 launch.bat小修＋B4药龄童子单角色展示（作者自测完成，待07／05）
 
 - 更新时间／授权：2026-11-10，按00派工（基线origin/main c5ae78e）。先①后②，分开提交。

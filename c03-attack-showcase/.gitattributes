@@ -1,4 +1,0 @@
-# Frozen JSON is SHA-pinned at runtime: never convert line endings on checkout.
-*.json -text
-# Windows batch launcher keeps CRLF in the working tree.
-*.bat text eol=crlf

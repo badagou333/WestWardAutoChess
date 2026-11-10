@@ -1,0 +1,29 @@
+{
+  "schema": "character-showcase-v1",
+  "id": "kingfisher",
+  "name": "翠鸟",
+  "title": "翠鸟 · 攻击",
+  "title_shows_direction": true,
+  "mode": "one_shot",
+  "board_style": "cell",
+  "world_foot": [720, 441],
+  "mipmaps": false,
+  "clips": {
+    "attack": {
+      "manifest": "art/manifest.json",
+      "manifest_sha256": "fd1ae8323bae9bbc24cef60a68fa715ed5228474bb7e9d11dfd4b13617f98b98",
+      "audio_sha256": "d1310bdaa9ea6017c2bef9e9b159c73f9fa39e15f3d6e337b37250f65ca77cfb",
+      "timing": {"pts_field": "pts_ticks", "time_base": 90000},
+      "canvas_field": "canvas",
+      "foot_field": "foot_reference",
+      "media_end_ticks": 260250,
+      "display_scale": 0.21,
+      "audio_start_seconds": 0.405
+    }
+  },
+  "direction_switch": "display_only",
+  "directions": [
+    {"id": "original", "label": "原向", "button": "原向 (1)", "clip": "attack", "sign": 1},
+    {"id": "mirrored", "label": "镜像", "button": "镜像 (2)", "clip": "attack", "sign": -1}
+  ]
+}

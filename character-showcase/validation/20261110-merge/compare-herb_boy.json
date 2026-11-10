@@ -1,0 +1,16 @@
+{
+ "legacy": "legacy-b04",
+ "merged": "merged-herb_boy",
+ "differences": 0,
+ "first_differences": [],
+ "compared": {
+  "original": {
+   "frames": 84,
+   "timeline_samples": 3700,
+   "edge_samples": 254,
+   "audio_trace_rows": 58,
+   "crops": 11
+  }
+ },
+ "audio_position_tolerance_s": 6.25e-05
+}
