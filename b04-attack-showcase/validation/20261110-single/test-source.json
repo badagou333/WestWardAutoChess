@@ -1,0 +1,34 @@
+{
+	"checks": 889,
+	"failure_messages": [],
+	"failures": 0,
+	"phase_observations": [
+		{
+			"actual_native_position": 0.00290249433106576,
+			"case": "sound starts together with frame 0",
+			"difference": 0.0,
+			"expected_phase": 0.0,
+			"reference_native_position": 0.00290249433106576,
+			"tolerance": 0.0000453514739229025
+		},
+		{
+			"actual_native_position": 0.00290249433106576,
+			"case": "replay restarts WAV from 0",
+			"difference": 0.0,
+			"expected_phase": 0.0,
+			"reference_native_position": 0.00290249433106576,
+			"tolerance": 0.0000453514739229025
+		},
+		{
+			"actual_native_position": 0.752902494331066,
+			"case": "stalled start seeks WAV to current phase",
+			"difference": 0.0,
+			"expected_phase": 0.75,
+			"reference_native_position": 0.752902494331066,
+			"tolerance": 0.0000453514739229025
+		}
+	],
+	"schema": "b04-single-author-boundaries-v1",
+	"scope": "author engine checks; no GUI, OS input, listening or independent acceptance",
+	"task": "D-20261110-004"
+}

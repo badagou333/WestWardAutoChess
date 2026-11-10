@@ -1,5 +1,22 @@
 # 06｜程序开发
 
+## 2026-11-10 D-20261110-004 launch.bat小修＋B4药龄童子单角色展示（作者自测完成，待07／05）
+
+- 更新时间／授权：2026-11-10，按00派工（基线origin/main c5ae78e）。先①后②，分开提交。
+- ① QA-20261110-C03M-01（P3）：`c03-attack-showcase/launch.bat`与`bear-forehand-showcase/launch.bat`都在判断前`set "GODOT_BIN="`清空用户值，两处均删除该行（GBK编码保持），其余不变。复测两个脚本各三种情况：设为console版→提示“使用环境变量”并选用；未设→自动找到标准版不变；指向不存在→警告后自动查找，均exit 0。证据`c03-attack-showcase/validation/20261110-launch-fix/`。提交`6f279e8`已推送。c03其他文件未动。
+- ② 新建`b04-attack-showcase/`：一只药龄童子，中文播放/重播，单次播放到T=3.5秒停index83，不循环、不镜像。05交付180acf2的84PNG/manifest/WAV及林间棋盘共87件原字节复制，`provenance/resource-list.json`记来源散列；manifest SHA运行时校验；`.gitattributes`保JSON原字节。按manifest PTS（1/15360，768/512交替）查表，不按固定FPS；WAV与第0帧同时起播（偏移0），首帧拖延时按当前进度定位，到T与画面同停，重播先停旧声，退出清声。脚锚[303,684]→(720,441)。`showcase.json`中`display_scale=0.16`（05提案待负责人定）及`mipmaps=true`可直接改。提供launch.bat/launch.command。
+- ②验证：引擎源码/冷副本/经launch.bat各889项0失败；资源87件运行＝候选＝清单；实际图形11组/22PNG 0错误（含第35帧光球出画处、真正Ended 83）；正常播放4段33项0错误。首次正常播放探针4项失败是探针计数期望错误（偏移0时按下即已处理），保留`realtime-first.json`，仅改探针后通过，生产未改。
+- ②修改文件：新增`b04-attack-showcase/`全部；本工作流。未碰godot-demo运行代码、bear-forehand-showcase（除①launch.bat）及c03其他文件；未改素材。
+- 证据：`b04-attack-showcase/validation/20261110-single/README.md`。
+- 未验：07独立；05实际视觉（0.16倍率、落格、mipmap观感、光球出画、辉光雾感、浅边）；真人观感/设备听感；OS鼠标；macOS；显存实测（满分辨率84帧约220MB，加mipmap约290MB）。
+- 阻塞：无。
+
+### 待总控同步（本批）
+
+- ①QA-20261110-C03M-01已修（6f279e8），bear展示同问题一并修；可交07复测。
+- ②B4单角色展示作者自测完成并已推送（提交号见00回报），请安排07独立验收、05视觉复核（含0.16倍率与mipmap取舍），倍率请负责人看后定。
+- 07观察项未处理（不在本批范围）：c03 `project.godot`窗口标题仍为“翠鸟单向攻击展示”；c03 `validation/20261110-mirror/`三个作者证据JSON以CRLF内容入库。是否处理请00定。
+
 ## 2026-11-10 D-20261110-004 C3翠鸟水平镜像（作者自测完成，待07／05）
 
 - 更新时间／授权：2026-11-10，按00派工（D-20261110-004，基线origin/main 3b7a9ad）在`c03-attack-showcase/`实现水平镜像；未碰bear-forehand-showcase/与godot-demo/。

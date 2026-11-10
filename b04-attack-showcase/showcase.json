@@ -1,0 +1,22 @@
+{
+  "schema": "b04-single-showcase-v1",
+  "assets": {
+    "manifest": "art/b04/manifest.json",
+    "manifest_sha256": "cefc1cec66ffdf3c0df817dd050f191a1dc96bf16b683e062e806e829d5afa84",
+    "board": "art/forest-board.png",
+    "board_sha256": "7b568eb54ad25d18efa7dab24adcce833a4528940fdd615ca053196cd6ad1ed6"
+  },
+  "presentation": {
+    "world_foot": [720, 441],
+    "display_scale": 0.16,
+    "mipmaps": true
+  },
+  "playback": {
+    "media_end_ticks": 53760,
+    "terminal_index": 83,
+    "terminal_policy": "ended_static"
+  },
+  "audio": {
+    "start_seconds": 0.0
+  }
+}

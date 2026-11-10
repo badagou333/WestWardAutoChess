@@ -1,0 +1,24 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 Core Profile Context 24.7.1.240711 - Compatibility - Using Device: ATI Technologies Inc. - AMD Radeon RX 7700 XT
+
+ERROR: first complete playback plays exactly one WAV playback started at frame 0, never retriggered
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] require (res://realtime_probe.gd:22)
+       [1] observe (res://realtime_probe.gd:121)
+ERROR: replay until live sound plays exactly one WAV playback started at frame 0, never retriggered
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] require (res://realtime_probe.gd:22)
+       [1] observe (res://realtime_probe.gd:121)
+ERROR: second complete playback plays exactly one WAV playback started at frame 0, never retriggered
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] require (res://realtime_probe.gd:22)
+       [1] observe (res://realtime_probe.gd:121)
+ERROR: active sound before actual exit plays exactly one WAV playback started at frame 0, never retriggered
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] require (res://realtime_probe.gd:22)
+       [1] observe (res://realtime_probe.gd:121)
+B4_SINGLE_REALTIME 4 runs / 33 checks / 4 errors
