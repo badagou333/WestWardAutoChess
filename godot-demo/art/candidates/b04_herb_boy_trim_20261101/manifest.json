@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-01",
+  "files": [
+    {
+      "file": "B04-SE-attack-8662-trim.mp4",
+      "bytes": 5540905,
+      "sha256": "7a14c9b0df5bb14da5780be4757420a43c30763458866e085603f55c2945eae0"
+    },
+    {
+      "file": "README.md",
+      "bytes": 2770,
+      "sha256": "873ebc2ea4d116c8b1848694f04a80d7ca70b14d2f32e0b9fcbbe298835c868e"
+    },
+    {
+      "file": "output-first-frame.jpg",
+      "bytes": 190018,
+      "sha256": "b47c2379175c0c263ed5197ed095ae68a4e74be26941f79e5538ed735f01f6fc"
+    },
+    {
+      "file": "output-last-frame.jpg",
+      "bytes": 190767,
+      "sha256": "1d8f96bf16d2380be50a4745c193e30f16327dc30dffd21efce2287343dedbd0"
+    },
+    {
+      "file": "review-start-end.jpg",
+      "bytes": 128043,
+      "sha256": "3d9ec8db3cb23494e710feb7f7c11583485408a17bcce9ef998b100b6362b4c0"
+    },
+    {
+      "file": "source-8662.mp4",
+      "bytes": 5618319,
+      "sha256": "3f65c6a5b483a454324f4b38ff26df7fc3c9d9e0f9037078e62f882ff7e6d29e"
+    },
+    {
+      "file": "source.json",
+      "bytes": 314,
+      "sha256": "34e3acfeeaa8bacf8d53f41fcc01c7c9298bc37baeff898ae59889ac3684642f"
+    },
+    {
+      "file": "trim.swift",
+      "bytes": 1154,
+      "sha256": "876b41fe5dddab8c6e31c6b0e8f6487ec9535040d281df1fc51e7e0d1a7f2336"
+    },
+    {
+      "file": "validation.json",
+      "bytes": 1250,
+      "sha256": "f890601db81f149d0da3c32db1a4698279ce41a228fc484b4b36a86d9506e898"
+    }
+  ]
+}

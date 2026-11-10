@@ -1,0 +1,31 @@
+{
+  "source_sha256": "3f65c6a5b483a454324f4b38ff26df7fc3c9d9e0f9037078e62f882ff7e6d29e",
+  "output_sha256": "7a14c9b0df5bb14da5780be4757420a43c30763458866e085603f55c2945eae0",
+  "source_video_duration_seconds": 4.017,
+  "source_container_duration_seconds": 4.094548752834467,
+  "chosen_range_seconds": [
+    0.4166666666666667,
+    3.9166666666666665
+  ],
+  "end_exclusive": true,
+  "output_container_duration_seconds": 3.5,
+  "output_audio_track_reported_duration_seconds": 3.4740362811791385,
+  "audio_pcm_44100_mono_samples": 154350,
+  "audio_pcm_matches_source_slice": true,
+  "audio_offset_samples": 18375,
+  "frame_time_requests": 84,
+  "frame_comparison_mismatches": [],
+  "frame_check_note": "Each decoded frame at 24 evenly spaced requests matched corresponding source +10/24 sec; some requests map to the same source presentation time.",
+  "background_upper_right_start_rgb": [
+    239.00216666666665,
+    234.00216666666665,
+    228.00216666666665
+  ],
+  "background_upper_right_last_rgb": [
+    238.99716666666666,
+    233.99716666666666,
+    227.99716666666666
+  ],
+  "playback_and_audio_audition": "not performed by reviewer; technical read/decode and alignment checks only",
+  "video_edit": "AVFoundation passthrough, no re-encoding"
+}
